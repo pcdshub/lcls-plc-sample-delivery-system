@@ -9,11 +9,17 @@ file "bi_bit.template"{ pattern,
 {"$(DEV)",  "REG:01:Seeking",  "BI_PORT",  "20",  "Stable",  "Seeking", "NO_ALARM", "MINOR", "I/O Intr"}
 {"$(DEV)",  "REG:02:Seeking",  "BI_PORT",  "21",  "Stable",  "Seeking", "NO_ALARM", "MINOR", "I/O Intr"}
 
-{"$(DEV)",  "SEL:FlowOoR",  "BI_PORT",  "30",  "In-range",  "Out of range", "NO_ALARM", "MINOR", "I/O Intr"}
-{"$(DEV)",  "SEL:FlowValid",  "BI_PORT",  "31",  "Invalid Data",  "Valid Data", "MAJOR", "NO_ALARM", "I/O Intr"}
-{"$(DEV)",  "SEL:Syncd",  "BI_PORT",  "32",  "Not syncd",  "Syncd", "MAJOR", "NO_ALARM", "I/O Intr"}
-{"$(DEV)",  "SEL:Locked",  "BI_PORT",  "33",  "Unlocked",  "Locked", "MAJOR", "NO_ALARM", "I/O Intr"}
-{"$(DEV)",  "SEL:FMModeRb",  "BI_PORT",  "34",  "Precision",  "Extended", "NO_ALARM", "NO_ALARM", "I/O Intr"}
+{"$(DEV)",  "SEL1:FlowOoR",  "BI_PORT",  "30",  "In-range",  "Out of range", "NO_ALARM", "MINOR", "I/O Intr"}
+{"$(DEV)",  "SEL1:FlowValid",  "BI_PORT",  "31",  "Invalid Data",  "Valid Data", "MAJOR", "NO_ALARM", "I/O Intr"}
+{"$(DEV)",  "SEL1:Syncd",  "BI_PORT",  "32",  "Not syncd",  "Syncd", "MAJOR", "NO_ALARM", "I/O Intr"}
+{"$(DEV)",  "SEL1:Locked",  "BI_PORT",  "33",  "Unlocked",  "Locked", "MAJOR", "NO_ALARM", "I/O Intr"}
+{"$(DEV)",  "SEL1:FMModeRb",  "BI_PORT",  "34",  "Precision",  "Extended", "NO_ALARM", "NO_ALARM", "I/O Intr"}
+
+{"$(DEV)",  "SEL2:FlowOoR",  "BI_PORT",  "40",  "In-range",  "Out of range", "NO_ALARM", "MINOR", "I/O Intr"}
+{"$(DEV)",  "SEL2:FlowValid",  "BI_PORT",  "41",  "Invalid Data",  "Valid Data", "MAJOR", "NO_ALARM", "I/O Intr"}
+{"$(DEV)",  "SEL2:Syncd",  "BI_PORT",  "42",  "Not syncd",  "Syncd", "MAJOR", "NO_ALARM", "I/O Intr"}
+{"$(DEV)",  "SEL2:Locked",  "BI_PORT",  "43",  "Unlocked",  "Locked", "MAJOR", "NO_ALARM", "I/O Intr"}
+{"$(DEV)",  "SEL2:FMModeRb",  "BI_PORT",  "44",  "Precision",  "Extended", "NO_ALARM", "NO_ALARM", "I/O Intr"}
 
 {"$(DEV)",  "PREG:01:PressureStable",  "BI_PORT",  "50",  "Adjusting",  "Pressure stable", "MINOR", "NO_ALARM", "I/O Intr"}
 {"$(DEV)",  "PREG:02:PressureStable",  "BI_PORT",  "51",  "Adjusting",  "Pressure stable", "MINOR", "NO_ALARM", "I/O Intr"}
@@ -29,16 +35,16 @@ file "ai_no_conv.template"{ pattern,
 #Real readbacks
 file "aiFloat64.template"{ pattern,
 {P,			R,	PORT,	OFFSET, DATA_TYPE, PREC, HOPR, LOPR, SCAN, UNITS}
-{"$(DEV)",  "SEL:Flow",  "aiFLOAT_PORT",  "0", "FLOAT32_LE", "2", "100", "0", "I/O Intr", "uL/min"}
+{"$(DEV)",  "SEL1:Flow",  "aiFLOAT_PORT",  "0", "FLOAT32_LE", "2", "100", "0", "I/O Intr", "uL/min"}
 }
 
 #Selector 1
 #Vici controls
 file "ao_no_conv.template"{ pattern,
 {P, R, PORT, OFFSET, BITS, LOPR, HOPR, PREC}
-{"$(DEV)",  "VLV:01:REQ_POS",  "AO_PORT",  "0", "16", "1", "12", "0"}
-{"$(DEV)",  "VLV:02:REQ_POS",  "AO_PORT",  "1", "16", "1", "12", "0"}
-{"$(DEV)",  "SYNC:REQ_POS",  "AO_PORT",    "2", "16", "1", "12", "0"}
+{"$(DEV)",  "SEL1:VLV:01:REQ_POS",  "AO_PORT",  "30", "16", "1", "12", "0"}
+{"$(DEV)",  "SEL1:VLV:02:REQ_POS",  "AO_PORT",  "31", "16", "1", "12", "0"}
+{"$(DEV)",  "SEL1:SYNC:REQ_POS",  "AO_PORT",    "32", "16", "1", "12", "0"}
 }
 
 #Selector 2 controls
@@ -54,11 +60,11 @@ file "ao_no_conv.template"{ pattern,
 #Vici readbacks
 file "ai_no_conv.template"{ pattern,
 {P, R, PORT, OFFSET, BITS, LOPR, HOPR, PREC, SCAN}
-{"$(DEV)",  "VLV:01:CURR_POS",  "AI_PORT",  "30", "16", "1", "12", "0",  "I/O Intr"}
-{"$(DEV)",  "VLV:02:CURR_POS",  "AI_PORT",  "31", "16", "1", "12", "0",  "I/O Intr"}
-{"$(DEV)",  "SYNC:CURR_POS",  "AI_PORT",  "32", "16", "1", "12", "0",  "I/O Intr"}		
-{"$(DEV)",  "SEL:rawStateFlowMeter",  "AI_PORT",  "33", "16", "0", "12", "0",  "I/O Intr"}		
-{"$(DEV)",  "SEL:rawTypeFlowMeter",  "AI_PORT",  "34", "16", "0", "12", "0",  "I/O Intr"}		
+{"$(DEV)",  "SEL1:VLV:01:CURR_POS",  "AI_PORT",  "30", "16", "1", "12", "0",  "I/O Intr"}
+{"$(DEV)",  "SEL1:VLV:02:CURR_POS",  "AI_PORT",  "31", "16", "1", "12", "0",  "I/O Intr"}
+{"$(DEV)",  "SEL1:SYNC:CURR_POS",  "AI_PORT",  "32", "16", "1", "12", "0",  "I/O Intr"}		
+{"$(DEV)",  "SEL1:rawStateFlowMeter",  "AI_PORT",  "33", "16", "0", "12", "0",  "I/O Intr"}		
+{"$(DEV)",  "SEL1:rawTypeFlowMeter",  "AI_PORT",  "34", "16", "0", "12", "0",  "I/O Intr"}		
 }
 
 #Selector 2
@@ -105,10 +111,15 @@ file "bo_bit.template"{ pattern,
 {"$(DEV)",  "REG:01:Enable",  "BO_PORT",  "20",  "Disabled",  "Enabled"}
 {"$(DEV)",  "REG:02:Enable",  "BO_PORT",  "21",  "Disabled",  "Enabled"}
 
-{"$(DEV)",  "SEL:Lock",  "BO_PORT",  "30",  "",  "Lock"}
-{"$(DEV)",  "SEL:FMReset",  "BO_PORT",  "31",  "",  ""}
-{"$(DEV)",  "SEL:FMMode",  "BO_PORT",  "32",  "Precision",  "Extended"}
-{"$(DEV)",  "SEL:Unlock",  "BO_PORT",  "33",  "",  "Unlock"}
+{"$(DEV)",  "SEL1:Lock",  "BO_PORT",  "30",  "",  "Lock"}
+{"$(DEV)",  "SEL1:FMReset",  "BO_PORT",  "31",  "",  ""}
+{"$(DEV)",  "SEL1:FMMode",  "BO_PORT",  "32",  "Precision",  "Extended"}
+{"$(DEV)",  "SEL1:Unlock",  "BO_PORT",  "33",  "",  "Unlock"}
+
+{"$(DEV)",  "SEL2:Lock",  "BO_PORT",  "40",  "",  "Lock"}
+{"$(DEV)",  "SEL2:FMReset",  "BO_PORT",  "41",  "",  ""}
+{"$(DEV)",  "SEL2:FMMode",  "BO_PORT",  "42",  "Precision",  "Extended"}
+{"$(DEV)",  "SEL2:Unlock",  "BO_PORT",  "43",  "",  "Unlock"}
 
 {"$(DEV)",  "PAREG:01:Enable",  "BO_PORT",  "50",  "Disabled",  "Enabled"}
 {"$(DEV)",  "PAREG:02:Enable",  "BO_PORT",  "51",  "Disabled",  "Enabled"}

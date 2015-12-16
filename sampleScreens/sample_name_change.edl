@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2437
-y 324
+x 994
+y 504
 w 212
 h 538
 font "helvetica-medium-r-18.0"
@@ -109,7 +109,7 @@ x 40
 y 88
 w 128
 h 36
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.TWST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.TWST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -128,7 +128,7 @@ x 40
 y 128
 w 128
 h 36
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.THST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.THST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -147,7 +147,7 @@ x 40
 y 168
 w 128
 h 36
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.FRST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.FRST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -166,7 +166,7 @@ x 40
 y 208
 w 128
 h 36
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.FVST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.FVST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -185,7 +185,7 @@ x 40
 y 248
 w 128
 h 36
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.SXST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.SXST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -204,7 +204,7 @@ x 40
 y 288
 w 128
 h 36
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.SVST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.SVST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -223,7 +223,7 @@ x 40
 y 328
 w 128
 h 36
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.EIST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.EIST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -242,7 +242,7 @@ x 40
 y 368
 w 128
 h 36
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.NIST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.NIST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -261,7 +261,7 @@ x 40
 y 408
 w 128
 h 36
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.TEST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.TEST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -299,7 +299,7 @@ x 40
 y 48
 w 128
 h 36
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.ONST NPP"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.ONST NPP"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -308,3 +308,208 @@ font "helvetica-medium-r-14.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 16
+y 48
+w 16
+h 36
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "1"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 16
+y 88
+w 16
+h 36
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "2"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 16
+y 128
+w 16
+h 36
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "3"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 16
+y 168
+w 16
+h 36
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "4"
+}
+autoSize
+endObjectProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 16
+y 208
+w 16
+h 36
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "5"
+}
+autoSize
+endObjectProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 16
+y 248
+w 16
+h 36
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "6"
+}
+autoSize
+endObjectProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 16
+y 288
+w 16
+h 36
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "7"
+}
+autoSize
+endObjectProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 16
+y 328
+w 16
+h 36
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "8"
+}
+autoSize
+endObjectProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 16
+y 368
+w 16
+h 36
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "9"
+}
+autoSize
+endObjectProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 16
+y 408
+w 16
+h 36
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "10"
+}
+autoSize
+endObjectProperties

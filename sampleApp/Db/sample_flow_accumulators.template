@@ -39,7 +39,7 @@ record(calc, "$(P):$(N):EstDepletionTime"){
 	field(SCAN, "10 second")
 	field(INPA, "$(P):$(N):StartingVol NP")
 	field(INPB, "$(P):$(N):IntgFlow NP")
-	field(INPC, "$(DEV):SEL:Flow NP")
+	field(INPC, "$(DEV):SEL$(NUM):Flow NP")
 	field(CALC, "MAX(((A-B)/C),0)")
 	field(EGU, "min")
 	field(LOPR, "0")

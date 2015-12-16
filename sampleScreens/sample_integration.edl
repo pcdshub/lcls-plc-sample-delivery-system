@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1371
-y 1254
+x 52
+y 76
 w 430
 h 412
 font "helvetica-medium-r-18.0"
@@ -235,7 +235,7 @@ x 16
 y 101
 w 115
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.TWST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.TWST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -346,7 +346,7 @@ x 16
 y 130
 w 115
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.THST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.THST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -457,7 +457,7 @@ x 16
 y 159
 w 115
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.FRST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.FRST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -568,7 +568,7 @@ x 16
 y 189
 w 115
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.FVST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.FVST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -679,7 +679,7 @@ x 16
 y 218
 w 115
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.SXST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.SXST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -790,7 +790,7 @@ x 16
 y 248
 w 115
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.SVST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.SVST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -901,7 +901,7 @@ x 16
 y 277
 w 115
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.EIST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.EIST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -1012,7 +1012,7 @@ x 16
 y 306
 w 115
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.NIST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.NIST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -1123,7 +1123,7 @@ x 16
 y 336
 w 115
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.TEST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.TEST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -1234,7 +1234,7 @@ x 16
 y 72
 w 115
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.ONST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.ONST"
 fgColor index 14
 fgAlarm
 bgColor index 1

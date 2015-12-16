@@ -37,12 +37,13 @@ dbLoadRecords( "db/save_restoreStatus.db",  "IOC=$(EPICS_PV)" )
 dbLoadRecords("db/sds-m2-modbus.db",	"DEV=$(LOC):$(SYS):")
 
 #Auxiliary files
-dbLoadRecords("db/sds-m2-sampleSelection.db",   "P=$(LOC):$(SYS)")
+dbLoadRecords("db/sds-m2-sampleSelection.db",   "P=$(LOC):$(SYS),NUM=1")
+dbLoadRecords("db/sds-m2-sampleSelection.db",   "P=$(LOC):$(SYS),NUM=2")
 dbLoadRecords("db/sds-m2-regulatorLimiter.db", "DEV=$(LOC):$(SYS):REG:01")
 dbLoadRecords("db/sds-m2-regulatorLimiter.db", "DEV=$(LOC):$(SYS):REG:02")
 
 dbLoadRecords("db/sample_flow_accumulators.db", "DEV=$(LOC):$(SYS)")
-dbLoadRecords("db/sample_flow_integration.db", "LOC=$(LOC),SYS=$(SYS), FLOWMETER=$(LOC):$(SYS):SEL:Flow")
+dbLoadRecords("db/sample_flow_integration.db", "LOC=$(LOC),SYS=$(SYS), FLOWMETER=$(LOC):$(SYS):SEL1:Flow")
 
 #Autosave
 save_restoreSet_status_prefix("$(EPICS_PV)" )

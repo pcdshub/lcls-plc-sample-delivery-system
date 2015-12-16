@@ -17,15 +17,27 @@ $(P):PAREG:02:HiPressLimit	30 monitor
 $(P):VLV:01:REQ_POS		30 monitor
 $(P):VLV:02:REQ_POS		30 monitor
 $(P):SYNC:REQ_POS		30 monitor
-$(P):SEL2:SYNC:REQ_POS		30 monitor
+$(P):SEL:SYNC:REQ_POS		30 monitor
 $(P):VLV:01:CURR_POS	30 monitor
-$(P):SEL2:VLV:01:CURR_POS	30 monitor
+$(P):SEL:VLV:01:CURR_POS	30 monitor
 $(P):VLV:02:CURR_POS	30 monitor
-$(P):SEL2:VLV:02:CURR_POS	30 monitor
+$(P):SEL:VLV:02:CURR_POS	30 monitor
 $(P):SYNC:CURR_POS		30 monitor
-$(P):SEL2:SYNC:CURR_POS		30 monitor
+$(P):SEL:SYNC:CURR_POS		30 monitor
+
+$(P):VLV:01:REQ_POS		30 monitor
+$(P):VLV:02:REQ_POS		30 monitor
+$(P):SYNC:REQ_POS		30 monitor
+$(P):SEL:SYNC:REQ_POS		30 monitor
+$(P):VLV:01:CURR_POS	30 monitor
+$(P):SEL:VLV:01:CURR_POS	30 monitor
+$(P):VLV:02:CURR_POS	30 monitor
+$(P):SEL:VLV:02:CURR_POS	30 monitor
+$(P):SYNC:CURR_POS		30 monitor
+$(P):SEL:SYNC:CURR_POS		30 monitor
 
 $(P):SEL:VLV_LOCK		30 monitor
+
 $(P):01:SampleShaker	30 monitor
 $(P):01:SampleShaker	30 monitor
 $(P):01:SampleShaker	30 monitor

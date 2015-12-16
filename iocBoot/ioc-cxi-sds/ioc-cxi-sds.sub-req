@@ -12,6 +12,6 @@ file sds-m2.tpl-req
 file autosave-sample_selection.tpl-req
 {
 	pattern
-	{ LOC,		SYS}
-	{ $(LOC),	$(SYS)}
+	{ LOC,		SYS, NUM}
+	{ $(LOC),	$(SYS), "1"}
 }

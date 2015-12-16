@@ -1,8 +1,8 @@
 #Flow meter conversion for the Bronkhorst
 
-record(ai, "$(P):$(S):SEL:Flow"){
+record(ai, "$(P):$(S):SEL1:Flow"){
 field(DESC, "Convert the raw percent to real flow")
-field(INP, "$(P):$(S):SEL:FlowRawPercentage CP")
+field(INP, "$(P):$(S):SEL1:FlowRawPercentage CP")
 field(DTYP, "Raw Soft Channel")
 field(ASLO, "2")
 field(AOFF, "0")

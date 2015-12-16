@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1104
-y 382
+x 1106
+y 408
 w 182
 h 206
 font "helvetica-medium-r-18.0"
@@ -133,7 +133,7 @@ onColor index 1
 offColor index 1
 topShadowColor index 1
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):SEL:FMReset"
+controlPv "$(LOC):$(SYS):SEL1:FMReset"
 pressValue "1"
 releaseValue "0"
 onLabel "Reset FM"
@@ -174,7 +174,7 @@ x 16
 y 64
 w 100
 h 14
-controlPv "$(LOC):$(SYS):SEL:Flow"
+controlPv "$(LOC):$(SYS):SEL1:Flow"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 15
@@ -200,7 +200,7 @@ x 16
 y 80
 w 100
 h 14
-controlPv "$(LOC):$(SYS):SEL:stateFlowMeter"
+controlPv "$(LOC):$(SYS):SEL1:stateFlowMeter"
 format "string"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -209,7 +209,7 @@ fgAlarm
 bgColor index 13
 autoHeight
 nullColor index 1
-colorPv "$(LOC):$(SYS):SEL:stateFlowMeter"
+colorPv "$(LOC):$(SYS):SEL1:stateFlowMeter"
 useHexPrefix
 newPos
 objType "monitors"
@@ -224,8 +224,8 @@ release 0
 x 16
 y 96
 w 104
-h 16
-controlPv "$(LOC):$(SYS):SEL:typeFlowMeter"
+h 14
+controlPv "$(LOC):$(SYS):SEL1:typeFlowMeter"
 format "string"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -234,7 +234,7 @@ fgAlarm
 bgColor index 13
 autoHeight
 nullColor index 1
-colorPv "$(LOC):$(SYS):SEL:typeFlowMeter"
+colorPv "$(LOC):$(SYS):SEL1:typeFlowMeter"
 useHexPrefix
 newPos
 objType "monitors"
@@ -256,8 +256,8 @@ offColor index 34
 inconsistentColor index 36
 topShadowColor index 0
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):SEL:FMMode"
-indicatorPv "$(LOC):$(SYS):SEL:FMModeRb"
+controlPv "$(LOC):$(SYS):SEL1:FMMode"
+indicatorPv "$(LOC):$(SYS):SEL1:FMModeRb"
 3d
 font "helvetica-medium-r-12.0"
 objType "controls"
@@ -273,7 +273,7 @@ x 16
 y 112
 w 104
 h 14
-controlPv "$(LOC):$(SYS):SEL:FMModeRb"
+controlPv "$(LOC):$(SYS):SEL1:FMModeRb"
 format "string"
 font "helvetica-medium-r-12.0"
 fontAlign "center"

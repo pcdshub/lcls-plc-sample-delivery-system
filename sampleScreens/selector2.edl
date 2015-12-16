@@ -3,9 +3,9 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1455
-y 819
-w 701
+x 5857
+y 2291
+w 190
 h 457
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -37,73 +37,12 @@ minor 0
 release 0
 x 4
 y 4
-w 692
+w 180
 h 448
 lineColor index 4
 fill
 fillColor index 5
 lineWidth 0
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 304
-y 56
-w 56
-h 24
-fgColor index 14
-onColor index 4
-offColor index 3
-topShadowColor index 1
-botShadowColor index 14
-controlPv "$(LOC):$(SYS):SEL:VLV_LOCK"
-pressValue "0"
-onLabel "Unlock"
-offLabel "Unlock"
-3d
-useEnumNumeric
-font "helvetica-medium-r-14.0"
-visMin "0"
-visMax "1"
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 36
-y 380
-w 28
-h 68
-lineColor index 14
-fill
-fillColor index 14
-lineWidth 2
-numPoints 7
-xPoints {
-  0 36
-  1 64
-  2 64
-  3 54
-  4 47
-  5 36
-  6 36
-}
-yPoints {
-  0 380
-  1 380
-  2 420
-  3 448
-  4 448
-  5 420
-  6 380
-}
 endObjectProperties
 
 # (Lines)
@@ -128,819 +67,47 @@ yPoints {
 }
 endObjectProperties
 
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 56
-y 284
-w 132
-h 144
-lineColor index 14
-fillColor index 1
-lineWidth 4
-numPoints 3
-xPoints {
-  0 188
-  1 56
-  2 56
-}
-yPoints {
-  0 284
-  1 284
-  2 428
-}
-endObjectProperties
-
-# (Choice Button)
-object activeChoiceButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 260
-y 88
-w 148
-h 332
-fgColor index 14
-bgColor index 5
-selectColor index 8
-inconsistentColor index 35
-topShadowColor index 2
-botShadowColor index 14
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ"
-indicatorPv "$(LOC):$(SYS):SYNC:CURR_POS"
-font "helvetica-medium-r-14.0"
-visPv "$(LOC):$(SYS):SEL:VLV_LOCK"
-visMin "1"
-visMax "2"
-endObjectProperties
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
 release 1
-x 72
-y 416
-w 83
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
+x 36
+y 8
+w 132
+h 42
+font "helvetica-bold-r-18.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 1
 useDisplayBg
 value {
-  "Sample Nozzle"
+  "$(LOC):$(SYS)"
+  "Selector 2"
 }
 autoSize
 endObjectProperties
 
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 188
-y 96
-w 72
-h 312
-
-beginGroup
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 188
-y 160
-w 68
-h 124
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
-visMin "2"
-visMax "3"
-numPoints 4
-xPoints {
-  0 188
-  1 208
-  2 208
-  3 256
-}
-yPoints {
-  0 284
-  1 284
-  2 160
-  3 160
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 188
-y 192
-w 68
-h 92
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
-visMin "3"
-visMax "4"
-numPoints 4
-xPoints {
-  0 188
-  1 208
-  2 208
-  3 256
-}
-yPoints {
-  0 284
-  1 284
-  2 192
-  3 192
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 188
-y 220
-w 68
-h 64
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
-visMin "4"
-visMax "5"
-numPoints 4
-xPoints {
-  0 188
-  1 208
-  2 208
-  3 256
-}
-yPoints {
-  0 284
-  1 284
-  2 220
-  3 220
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 188
-y 252
-w 68
-h 32
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
-visMin "5"
-visMax "6"
-numPoints 4
-xPoints {
-  0 188
-  1 208
-  2 208
-  3 256
-}
-yPoints {
-  0 284
-  1 284
-  2 252
-  3 252
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 188
-y 284
-w 68
-h 0
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
-visMin "6"
-visMax "7"
-numPoints 2
-xPoints {
-  0 188
-  1 256
-}
-yPoints {
-  0 284
-  1 284
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 188
-y 284
-w 68
-h 28
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
-visMin "7"
-visMax "8"
-numPoints 4
-xPoints {
-  0 188
-  1 208
-  2 208
-  3 256
-}
-yPoints {
-  0 284
-  1 284
-  2 312
-  3 312
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 188
-y 284
-w 68
-h 60
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
-visMin "8"
-visMax "9"
-numPoints 4
-xPoints {
-  0 188
-  1 208
-  2 208
-  3 256
-}
-yPoints {
-  0 284
-  1 284
-  2 344
-  3 344
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 188
-y 284
-w 68
-h 92
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
-visMin "9"
-visMax "10"
-numPoints 4
-xPoints {
-  0 256
-  1 208
-  2 208
-  3 188
-}
-yPoints {
-  0 376
-  1 376
-  2 284
-  3 284
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 188
-y 284
-w 68
-h 124
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
-visMin "10"
-visMax "11"
-numPoints 4
-xPoints {
-  0 256
-  1 208
-  2 208
-  3 188
-}
-yPoints {
-  0 408
-  1 408
-  2 284
-  3 284
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 188
-y 96
-w 72
-h 188
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
-visMin "11"
-visMax "12"
-numPoints 4
-xPoints {
-  0 260
-  1 208
-  2 208
-  3 188
-}
-yPoints {
-  0 96
-  1 96
-  2 284
-  3 284
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 188
-y 128
-w 68
-h 156
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS.VAL"
-visMin "1"
-visMax "2"
-numPoints 5
-xPoints {
-  0 256
-  1 208
-  2 208
-  3 208
-  4 188
-}
-yPoints {
-  0 128
-  1 128
-  2 284
-  3 284
-  4 284
-}
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 304
-y 56
-w 56
-h 24
-fgColor index 14
-onColor index 4
-offColor index 3
-topShadowColor index 1
-botShadowColor index 14
-controlPv "$(LOC):$(SYS):SEL:VLV_LOCK"
-pressValue "1"
-onLabel "Lock"
-offLabel "Lock"
-3d
-useEnumNumeric
-font "helvetica-medium-r-14.0"
-visPv "CALC\\\{(A==B)&&!C\}($(LOC):$(SYS):VLV:01:CURR_POS, $(LOC):$(SYS):VLV:02:CURR_POS, $(LOC):$(SYS):SEL:VLV_LOCK)"
-visMin "1"
-visMax "2"
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 412
-y 160
-w 68
-h 124
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS"
-visMin "2"
-visMax "3"
-numPoints 4
-xPoints {
-  0 480
-  1 460
-  2 460
-  3 412
-}
-yPoints {
-  0 284
-  1 284
-  2 160
-  3 160
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 412
-y 192
-w 68
-h 92
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS"
-visMin "3"
-visMax "4"
-numPoints 4
-xPoints {
-  0 480
-  1 460
-  2 460
-  3 412
-}
-yPoints {
-  0 284
-  1 284
-  2 192
-  3 192
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 412
-y 220
-w 68
-h 64
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS"
-visMin "4"
-visMax "5"
-numPoints 4
-xPoints {
-  0 480
-  1 460
-  2 460
-  3 412
-}
-yPoints {
-  0 284
-  1 284
-  2 220
-  3 220
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 412
-y 252
-w 68
-h 32
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS"
-visMin "5"
-visMax "6"
-numPoints 4
-xPoints {
-  0 480
-  1 460
-  2 460
-  3 412
-}
-yPoints {
-  0 284
-  1 284
-  2 252
-  3 252
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 412
-y 284
-w 68
-h 0
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS"
-visMin "6"
-visMax "7"
-numPoints 2
-xPoints {
-  0 480
-  1 412
-}
-yPoints {
-  0 284
-  1 284
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 412
-y 284
-w 68
-h 28
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS"
-visMin "7"
-visMax "8"
-numPoints 4
-xPoints {
-  0 480
-  1 460
-  2 460
-  3 412
-}
-yPoints {
-  0 284
-  1 284
-  2 312
-  3 312
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 412
-y 284
-w 68
-h 60
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS"
-visMin "8"
-visMax "9"
-numPoints 4
-xPoints {
-  0 480
-  1 460
-  2 460
-  3 412
-}
-yPoints {
-  0 284
-  1 284
-  2 344
-  3 344
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 412
-y 284
-w 68
-h 92
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS"
-visMin "9"
-visMax "10"
-numPoints 4
-xPoints {
-  0 412
-  1 460
-  2 460
-  3 480
-}
-yPoints {
-  0 376
-  1 376
-  2 284
-  3 284
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 412
-y 284
-w 68
-h 124
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS"
-visMin "10"
-visMax "11"
-numPoints 4
-xPoints {
-  0 412
-  1 460
-  2 460
-  3 480
-}
-yPoints {
-  0 408
-  1 408
-  2 284
-  3 284
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 408
-y 96
-w 72
-h 188
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "CALC\\\{A=11||!B\}($(LOC):$(SYS):VLV:01:CURR_POS, $(LOC):$(SYS):SEL:VLV_LOCK)"
-visMin "1"
-visMax "2"
-numPoints 4
-xPoints {
-  0 408
-  1 460
-  2 460
-  3 480
-}
-yPoints {
-  0 96
-  1 96
-  2 284
-  3 284
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 412
-y 128
-w 68
-h 156
-lineColor index 14
-fillColor index 1
-lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS.VAL"
-visMin "1"
-visMax "2"
-numPoints 5
-xPoints {
-  0 412
-  1 460
-  2 460
-  3 460
-  4 480
-}
-yPoints {
-  0 128
-  1 128
-  2 284
-  3 284
-  4 284
-}
-endObjectProperties
-
 # (Choice Button)
 object activeChoiceButtonClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 376
-y 88
+x 132
+y 112
 w 32
 h 332
 fgColor index 14
 bgColor index 5
 selectColor index 8
-inconsistentColor index 35
+inconsistentColor index 8
 topShadowColor index 2
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):VLV:01:RES_REQ"
-indicatorPv "$(LOC):$(SYS):VLV:01:CURR_POS"
+controlPv "$(LOC):$(SYS):SEL2:VLV:01:RES_REQ"
+indicatorPv "$(LOC):$(SYS):SEL2:VLV:01:CURR_POS"
 font "helvetica-medium-r-14.0"
-visPv "$(LOC):$(SYS):SEL:VLV_LOCK"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -951,20 +118,19 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 260
-y 88
+x 16
+y 112
 w 32
 h 332
 fgColor index 14
 bgColor index 5
 selectColor index 8
-inconsistentColor index 35
+inconsistentColor index 8
 topShadowColor index 2
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):VLV:02:RES_REQ"
-indicatorPv "$(LOC):$(SYS):VLV:02:CURR_POS"
+controlPv "$(LOC):$(SYS):SEL2:VLV:02:RES_REQ"
+indicatorPv "$(LOC):$(SYS):SEL2:VLV:02:CURR_POS"
 font "helvetica-medium-r-14.0"
-visPv "$(LOC):$(SYS):SEL:VLV_LOCK"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -975,8 +141,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 300
-y 120
+x 56
+y 144
 w 68
 h 300
 
@@ -988,13 +154,12 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 300
-y 400
+x 56
+y 424
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.TEST"
+controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.TEST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1006,13 +171,12 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 300
-y 368
+x 56
+y 392
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.NIST"
+controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.NIST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1024,13 +188,12 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 300
-y 340
+x 56
+y 364
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.EIST"
+controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.EIST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1042,13 +205,12 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 300
-y 308
+x 56
+y 332
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.SVST"
+controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.SVST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1060,13 +222,12 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 300
-y 276
+x 56
+y 300
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.SXST"
+controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.SXST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1078,13 +239,12 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 300
-y 244
+x 56
+y 268
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.FVST"
+controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.FVST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1096,13 +256,12 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 300
-y 216
+x 56
+y 240
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.FRST"
+controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.FRST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1114,13 +273,12 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 300
-y 184
+x 56
+y 208
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.THST"
+controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.THST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1132,13 +290,12 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 300
-y 152
+x 56
+y 176
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.TWST"
+controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.TWST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1150,13 +307,12 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 300
-y 120
+x 56
+y 144
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.ONST"
+controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.ONST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1164,76 +320,87 @@ endObjectProperties
 
 endGroup
 
-visPv "$(LOC):$(SYS):SEL:VLV_LOCK"
 visMin "0"
 visMax "1"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
+# (Message Button)
+object activeMessageButtonClass
 beginObjectProperties
 major 4
 minor 1
-release 1
-x 488
-y 20
-w 191
-h 21
-font "helvetica-bold-r-18.0"
-fontAlign "right"
+release 0
+x 112
+y 80
+w 56
+h 24
 fgColor index 14
-bgColor index 1
-useDisplayBg
-value {
-  "$(LOC):$(SYS):MarkII"
-}
-autoSize
+onColor index 4
+offColor index 3
+topShadowColor index 1
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):SEL2:Unlock"
+pressValue "1"
+releaseValue "0"
+onLabel "Unlock"
+offLabel "Unlock"
+useEnumNumeric
+font "helvetica-medium-r-14.0"
+visPv "$(LOC):$(SYS):SEL2:Locked"
+visMin "1"
+visMax "2"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
+# (Message Button)
+object activeMessageButtonClass
 beginObjectProperties
 major 4
 minor 1
-release 1
-x 640
-y 44
-w 38
-h 21
-font "helvetica-bold-r-18.0"
-fontAlign "right"
+release 0
+x 112
+y 80
+w 56
+h 24
 fgColor index 14
-bgColor index 1
-useDisplayBg
-value {
-  "V2.1"
-}
-autoSize
+onColor index 4
+offColor index 3
+topShadowColor index 1
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):SEL2:Lock"
+pressValue "1"
+releaseValue "0"
+onLabel "Lock"
+offLabel "Lock"
+useEnumNumeric
+font "helvetica-medium-r-14.0"
+visPv "CALC\\\{(A==B)&&!C\}($(LOC):$(SYS):SEL2:VLV:01:CURR_POS, $(LOC):$(SYS):SEL2:VLV:02:CURR_POS, $(LOC):$(SYS):SEL2:Locked)"
+visMin "1"
+visMax "2"
 endObjectProperties
 
-# (Lines)
-object activeLineClass
+# (Related Display)
+object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 0
-release 1
-x 480
-y 140
-w 132
-h 144
-lineColor index 14
-fillColor index 1
-lineWidth 4
-numPoints 3
-xPoints {
-  0 480
-  1 612
-  2 612
+minor 4
+release 0
+x 20
+y 80
+w 64
+h 24
+fgColor index 14
+bgColor index 1
+topShadowColor index 1
+botShadowColor index 14
+font "helvetica-medium-r-14.0"
+buttonLabel "Names"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "sampleScreens/sample_name_change.edl"
 }
-yPoints {
-  0 284
-  1 284
-  2 140
+symbols {
+  0 "LOC=$(LOC),SYS=$(SYS),NUM=2"
 }
 endObjectProperties
 

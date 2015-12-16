@@ -12,7 +12,7 @@ record(genSub, "$(LOC):$(SYS):RES:IntegratorSub") {
   
 #Selector input
 	field(FTT, "DOUBLE")
-  	field(INPT, "$(LOC):$(SYS):SYNC:CURR_POS PP")
+  	field(INPT, "$(LOC):$(SYS):SEL$(NUM):SYNC:CURR_POS PP")
   
 # Flowmeter input
 	field(FTU, "DOUBLE")

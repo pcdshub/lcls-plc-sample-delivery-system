@@ -2,11 +2,11 @@
 # A. Wallace 2014-3-18
 
 
-record(mbbo, "$(P):RES:SYNC_RES_REQ"){
+record(mbbo, "$(P):SEL$(NUM):SYNC_RES_REQ"){
 	field(DESC, "Current Reservoir")
 	field(OMSL, "supervisory")
 	field(DTYP, "Raw Soft Channel")
-	field(OUT, "$(P):SYNC:REQ_POS PP")
+	field(OUT, "$(P):SEL$(NUM):SYNC:REQ_POS PP")
 	field(SHFT, "0")
 	field(ZRVL, "11")
 	field(ONVL, "1")
@@ -32,11 +32,11 @@ record(mbbo, "$(P):RES:SYNC_RES_REQ"){
 	field(TEST, "Sample J")
 }
 
-record(mbbo, "$(P):VLV:01:RES_REQ"){
+record(mbbo, "$(P):SEL$(NUM):VLV:01:RES_REQ"){
 	field(DESC, "Independent V1 Reservoir")
 	field(OMSL, "supervisory")
 	field(DTYP, "Raw Soft Channel")
-	field(OUT,	"$(P):VLV:01:REQ_POS PP")
+	field(OUT,	"$(P):SEL$(NUM):VLV:01:REQ_POS PP")
 	field(SHFT, "0")
 	field(ZRVL, "11")
 	field(ONVL, "1")
@@ -63,11 +63,11 @@ record(mbbo, "$(P):VLV:01:RES_REQ"){
 	#field(FLNK, "$(P):VLV:01:Fanout")
 }
 
-record(mbbo, "$(P):VLV:02:RES_REQ"){
+record(mbbo, "$(P):SEL$(NUM):VLV:02:RES_REQ"){
 	field(DESC, "Independent V2 Reservoir")
 	field(OMSL, "supervisory")
 	field(DTYP, "Raw Soft Channel")
-	field(OUT,	"$(P):VLV:02:REQ_POS PP")
+	field(OUT,	"$(P):SEL$(NUM):VLV:02:REQ_POS PP")
 	field(SHFT, "0")
 	field(ZRVL, "11")
 	field(ONVL, "1")
@@ -96,10 +96,10 @@ record(mbbo, "$(P):VLV:02:RES_REQ"){
 
 
 # Flowmeter stuff
-record(mbbi, "$(P):SEL:stateFlowMeter"){
+record(mbbi, "$(P):SEL$(NUM):stateFlowMeter"){
 	field(DESC, "Flowmeter state enumeration")
 	field(DTYP, "Raw Soft Channel")
-	field(INP, "$(P):SEL:rawStateFlowMeter CP")
+	field(INP, "$(P):SEL$(NUM):rawStateFlowMeter CP")
 	field(ZRVL, "0")
 	field(ONVL, "1")
 	field(TWVL, "2")
@@ -116,10 +116,10 @@ record(mbbi, "$(P):SEL:stateFlowMeter"){
 	field(THSV, "MAJOR")
 }
 
-record(mbbi, "$(P):SEL:typeFlowMeter"){
+record(mbbi, "$(P):SEL$(NUM):typeFlowMeter"){
 	field(DESC, "Flowmeter type")
 	field(DTYP, "Raw Soft Channel")
-	field(INP, "$(P):SEL:rawTypeFlowMeter CP")
+	field(INP, "$(P):SEL$(NUM):rawTypeFlowMeter CP")
 	field(ZRVL, "0")
 	field(ONVL, "1")
 	field(TWVL, "2")

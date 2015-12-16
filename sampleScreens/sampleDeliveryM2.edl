@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 197
-y 1106
+x 924
+y 316
 w 701
 h 467
 font "helvetica-medium-r-12.0"
@@ -569,7 +569,7 @@ h 124
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:02:CURR_POS"
 visMin "2"
 visMax "3"
 numPoints 4
@@ -600,7 +600,7 @@ h 92
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:02:CURR_POS"
 visMin "3"
 visMax "4"
 numPoints 4
@@ -631,7 +631,7 @@ h 64
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:02:CURR_POS"
 visMin "4"
 visMax "5"
 numPoints 4
@@ -662,7 +662,7 @@ h 32
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:02:CURR_POS"
 visMin "5"
 visMax "6"
 numPoints 4
@@ -693,7 +693,7 @@ h 0
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:02:CURR_POS"
 visMin "6"
 visMax "7"
 numPoints 2
@@ -720,7 +720,7 @@ h 28
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:02:CURR_POS"
 visMin "7"
 visMax "8"
 numPoints 4
@@ -751,7 +751,7 @@ h 60
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:02:CURR_POS"
 visMin "8"
 visMax "9"
 numPoints 4
@@ -782,7 +782,7 @@ h 92
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:02:CURR_POS"
 visMin "9"
 visMax "10"
 numPoints 4
@@ -813,7 +813,7 @@ h 124
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:02:CURR_POS"
 visMin "10"
 visMax "11"
 numPoints 4
@@ -844,7 +844,7 @@ h 188
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:02:CURR_POS"
 visMin "11"
 visMax "12"
 numPoints 4
@@ -875,7 +875,7 @@ h 156
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:02:CURR_POS.VAL"
+visPv "$(LOC):$(SYS):SEL1:VLV:02:CURR_POS.VAL"
 visMin "1"
 visMax "2"
 numPoints 5
@@ -912,7 +912,7 @@ h 124
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:01:CURR_POS"
 visMin "2"
 visMax "3"
 numPoints 4
@@ -943,7 +943,7 @@ h 92
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:01:CURR_POS"
 visMin "3"
 visMax "4"
 numPoints 4
@@ -974,7 +974,7 @@ h 64
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:01:CURR_POS"
 visMin "4"
 visMax "5"
 numPoints 4
@@ -1005,7 +1005,7 @@ h 32
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:01:CURR_POS"
 visMin "5"
 visMax "6"
 numPoints 4
@@ -1036,7 +1036,7 @@ h 0
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:01:CURR_POS"
 visMin "6"
 visMax "7"
 numPoints 2
@@ -1063,7 +1063,7 @@ h 28
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:01:CURR_POS"
 visMin "7"
 visMax "8"
 numPoints 4
@@ -1094,7 +1094,7 @@ h 60
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:01:CURR_POS"
 visMin "8"
 visMax "9"
 numPoints 4
@@ -1125,7 +1125,7 @@ h 92
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:01:CURR_POS"
 visMin "9"
 visMax "10"
 numPoints 4
@@ -1156,7 +1156,7 @@ h 124
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS"
+visPv "$(LOC):$(SYS):SEL1:VLV:01:CURR_POS"
 visMin "10"
 visMax "11"
 numPoints 4
@@ -1187,7 +1187,7 @@ h 188
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "CALC\\\{A=11||!B\}($(LOC):$(SYS):VLV:01:CURR_POS, $(LOC):$(SYS):SEL:Locked)"
+visPv "CALC\\\{A=11||!B\}($(LOC):$(SYS):SEL1:VLV:01:CURR_POS, $(LOC):$(SYS):SEL1:Locked)"
 visMin "1"
 visMax "2"
 numPoints 4
@@ -1218,7 +1218,7 @@ h 156
 lineColor index 14
 fillColor index 1
 lineWidth 4
-visPv "$(LOC):$(SYS):VLV:01:CURR_POS.VAL"
+visPv "$(LOC):$(SYS):SEL1:VLV:01:CURR_POS.VAL"
 visMin "1"
 visMax "2"
 numPoints 5
@@ -1254,8 +1254,8 @@ selectColor index 8
 inconsistentColor index 8
 topShadowColor index 2
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):VLV:01:RES_REQ"
-indicatorPv "$(LOC):$(SYS):VLV:01:CURR_POS"
+controlPv "$(LOC):$(SYS):SEL1:VLV:01:RES_REQ"
+indicatorPv "$(LOC):$(SYS):SEL1:VLV:01:CURR_POS"
 font "helvetica-medium-r-14.0"
 visMin "0"
 visMax "1"
@@ -1277,8 +1277,8 @@ selectColor index 8
 inconsistentColor index 8
 topShadowColor index 2
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):VLV:02:RES_REQ"
-indicatorPv "$(LOC):$(SYS):VLV:02:CURR_POS"
+controlPv "$(LOC):$(SYS):SEL1:VLV:02:RES_REQ"
+indicatorPv "$(LOC):$(SYS):SEL1:VLV:02:CURR_POS"
 font "helvetica-medium-r-14.0"
 visMin "0"
 visMax "1"
@@ -1307,9 +1307,8 @@ x 300
 y 400
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.TEST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.TEST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1325,9 +1324,8 @@ x 300
 y 368
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.NIST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.NIST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1343,9 +1341,8 @@ x 300
 y 340
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.EIST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.EIST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1361,9 +1358,8 @@ x 300
 y 308
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.SVST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.SVST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1379,9 +1375,8 @@ x 300
 y 276
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.SXST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.SXST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1397,9 +1392,8 @@ x 300
 y 244
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.FVST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.FVST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1415,9 +1409,8 @@ x 300
 y 216
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.FRST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.FRST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1433,9 +1426,8 @@ x 300
 y 184
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.THST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.THST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1451,9 +1443,8 @@ x 300
 y 152
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.TWST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.TWST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1469,9 +1460,8 @@ x 300
 y 120
 w 68
 h 20
-controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.ONST"
+controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.ONST"
 fgColor index 14
-fgAlarm
 bgColor index 1
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1644,7 +1634,7 @@ fgColor index 14
 bgColor index 1
 useDisplayBg
 value {
-  "V2.6.1"
+  "V2.7.0"
 }
 autoSize
 endObjectProperties
@@ -1790,7 +1780,7 @@ x 476
 y 212
 w 100
 h 14
-controlPv "$(LOC):$(SYS):SEL:Flow"
+controlPv "$(LOC):$(SYS):SEL1:Flow"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 15
@@ -1816,7 +1806,7 @@ x 476
 y 228
 w 100
 h 14
-controlPv "$(LOC):$(SYS):SEL:stateFlowMeter"
+controlPv "$(LOC):$(SYS):SEL1:stateFlowMeter"
 format "string"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1825,7 +1815,7 @@ fgAlarm
 bgColor index 13
 autoHeight
 nullColor index 1
-colorPv "$(LOC):$(SYS):SEL:stateFlowMeter"
+colorPv "$(LOC):$(SYS):SEL1:stateFlowMeter"
 useHexPrefix
 newPos
 objType "monitors"
@@ -1870,7 +1860,7 @@ botShadowColor index 11
 font "helvetica-bold-r-10.0"
 buttonLabel "Control Screens"
 numPvs 4
-numDsps 8
+numDsps 10
 displayFileName {
   0 "sampleScreens/iclVacuum.edl"
   1 "sampleScreens/manual_regulator_controls.edl"
@@ -1880,15 +1870,19 @@ displayFileName {
   5 "sampleScreens/flowMeterControls.edl"
   6 "sampleScreens/ptc10Screens/ptc10.edl"
   7 "sampleScreens/proportionair_regulator_controls.edl"
+  8 "sampleScreens/selector2.edl"
+  9 "sampleScreens/lc20Screens/lc20.edl"
 }
 menuLabel {
   1 "Regulator sliders"
-  2 "Syringe pump"
+  2 "HPLC Pump"
   3 "Integrated flows"
   4 "Edit names"
   5 "Flowmeter"
   6 "CoolerShaker"
   7 "Proportionair Control"
+  8 "Selector 2"
+  9 "HPLC Pump 2"
 }
 setPosition {
   0 "parentWindow"
@@ -1898,10 +1892,12 @@ symbols {
   1 "LOC=$(LOC),SYS=$(SYS)"
   2 "DEV=$(LOC):LC20:$(SYS),IOC=$(HPLC_IOC)"
   3 "LOC=$(LOC),SYS=$(SYS)"
-  4 "LOC=$(LOC),SYS=$(SYS)"
+  4 "LOC=$(LOC),SYS=$(SYS),NUM=1"
   5 "LOC=$(LOC),SYS=$(SYS)"
   6 "DEV=$(LOC):PTC:01,IOC=$(LOC):PTC10:IOC:00"
   7 "LOC=$(LOC),SYS=$(SYS)"
+  8 "LOC=$(LOC),SYS=$(SYS)"
+  9 "DEV=$(LOC):LC20:$(SYS)B,IOC=$(HPLC_IOC)"
 }
 endObjectProperties
 
@@ -2309,14 +2305,14 @@ onColor index 4
 offColor index 3
 topShadowColor index 1
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):SEL:Unlock"
+controlPv "$(LOC):$(SYS):SEL1:Unlock"
 pressValue "1"
 releaseValue "0"
 onLabel "Unlock"
 offLabel "Unlock"
 useEnumNumeric
 font "helvetica-medium-r-14.0"
-visPv "$(LOC):$(SYS):SEL:Locked"
+visPv "$(LOC):$(SYS):SEL1:Locked"
 visMin "1"
 visMax "2"
 endObjectProperties
@@ -2336,14 +2332,14 @@ onColor index 4
 offColor index 3
 topShadowColor index 1
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):SEL:Lock"
+controlPv "$(LOC):$(SYS):SEL1:Lock"
 pressValue "1"
 releaseValue "0"
 onLabel "Lock"
 offLabel "Lock"
 useEnumNumeric
 font "helvetica-medium-r-14.0"
-visPv "CALC\\\{(A==B)&&!C\}($(LOC):$(SYS):VLV:01:CURR_POS, $(LOC):$(SYS):VLV:02:CURR_POS, $(LOC):$(SYS):SEL:Locked)"
+visPv "CALC\\\{(A==B)&&!C\}($(LOC):$(SYS):SEL1:VLV:01:CURR_POS, $(LOC):$(SYS):SEL1:VLV:02:CURR_POS, $(LOC):$(SYS):SEL1:Locked)"
 visMin "1"
 visMax "2"
 endObjectProperties
@@ -2358,7 +2354,7 @@ x 476
 y 244
 w 104
 h 14
-controlPv "$(LOC):$(SYS):SEL:FMModeRb"
+controlPv "$(LOC):$(SYS):SEL1:FMModeRb"
 format "string"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -2387,8 +2383,8 @@ offColor index 34
 inconsistentColor index 36
 topShadowColor index 0
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):SEL:FMMode"
-indicatorPv "$(LOC):$(SYS):SEL:FMModeRb"
+controlPv "$(LOC):$(SYS):SEL1:FMMode"
+indicatorPv "$(LOC):$(SYS):SEL1:FMModeRb"
 3d
 font "helvetica-medium-r-12.0"
 objType "controls"

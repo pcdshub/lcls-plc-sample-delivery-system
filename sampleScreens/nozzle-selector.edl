@@ -1,0 +1,113 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 86
+y 530
+w 306
+h 459
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+ctlFont "helvetica-medium-r-14.0"
+ctlFontAlign "center"
+btnFont "helvetica-medium-r-14.0"
+btnFontAlign "center"
+fgColor index 14
+bgColor index 7
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 1
+ctlBgColor1 index 1
+ctlBgColor2 index 14
+topShadowColor index 1
+botShadowColor index 14
+title "Nozzle Selector"
+showGrid
+snapToGrid
+gridSize 4
+orthoLineDraw
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 4
+w 292
+h 448
+lineColor index 4
+fill
+fillColor index 5
+lineWidth 0
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 332
+y 612
+w 0
+h 0
+lineColor index 14
+fillColor index 1
+lineWidth 2
+numPoints 1
+xPoints {
+  0 332
+}
+yPoints {
+  0 612
+}
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 80
+y 64
+w 148
+h 332
+fgColor index 14
+bgColor index 5
+selectColor index 8
+inconsistentColor index 35
+topShadowColor index 2
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):SEL2:RES:SYNC_RES_REQ"
+indicatorPv "$(LOC):$(SYS):SEL2:SYNC:CURR_POS"
+font "helvetica-medium-r-14.0"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 8
+y 8
+w 279
+h 21
+font "helvetica-bold-r-18.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "$(LOC):$(SYS):Nozzle Selector"
+}
+autoSize
+endObjectProperties
+

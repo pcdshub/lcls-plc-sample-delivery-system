@@ -1,0 +1,90 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 638
+y 1764
+w 180 
+h 24
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 6
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 0
+ctlBgColor1 index 0
+ctlBgColor2 index 14
+topShadowColor index 0
+botShadowColor index 14
+title "$(MOTOR) CNTRL"
+showGrid
+snapToGrid
+gridSize 4
+disableScroll
+endScreenProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 0
+y 0
+w 150 
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-bold-r-12.0"
+#buttonLabel $(MOTOR).DESC
+numCmds 8 
+commandLabel {
+  0 "Detailed"
+  1 "IOC"
+  2 "Setup"
+  3 "Homing"
+  4 "Mcode"
+  5 "Confluence"
+  6 "Telnet"
+  7 "Profile"
+}
+command {
+  0 "./launch-control.sh $(MOTOR)"
+  1 "./launch-control.sh $(MOTOR) ioc"
+  2 "./launch-control.sh $(MOTOR) setup"
+  3 "./launch-control.sh $(MOTOR) homing"
+  4 "./launch-control.sh $(MOTOR) mcode"
+  5 "./launch-control.sh $(MOTOR) confluence"
+  6 "./launch-control.sh $(MOTOR) telnet"
+  7 "./launch-control.sh $(MOTOR) profile"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 0 
+y 0
+w 150
+h 24
+controlPv "$(MOTOR).DESC"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+nullColor index 18
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+

@@ -1,0 +1,83 @@
+# Based on KLG's flowmeter accumulation code
+
+
+record(genSub, "$(LOC):$(SYS):RES:IntegratorSub") {
+  field(DESC, "Moving Window")
+  field(SCAN, "Passive")
+  field(INAM, "subSampleIntegratorInit")
+  field(SNAM, "subSampleIntegratorProcess")
+
+  field(EFLG, "ALWAYS")
+  field(LFLG, "IGNORE")
+  
+#Selector input
+	field(FTT, "DOUBLE")
+  	field(INPT, "$(LOC):$(SYS):SYNC:CURR_POS PP")
+  
+# Flowmeter input
+	field(FTU, "DOUBLE")
+	field(INPU, "$(FLOWMETER) CP MS")
+	
+	#IN
+	field(FTA, "DOUBLE")
+	field(INPA, "$(LOC):$(SYS):RES:1:IntgFlow")
+	
+	field(FTB, "DOUBLE")
+	field(INPB, "$(LOC):$(SYS):RES:2:IntgFlow")
+	
+	field(FTC, "DOUBLE")
+	field(INPC, "$(LOC):$(SYS):RES:3:IntgFlow")
+	
+	field(FTD, "DOUBLE")
+	field(INPD, "$(LOC):$(SYS):RES:4:IntgFlow")
+	
+	field(FTE, "DOUBLE")
+	field(INPE, "$(LOC):$(SYS):RES:5:IntgFlow")
+	
+	field(FTF, "DOUBLE")
+	field(INPF, "$(LOC):$(SYS):RES:6:IntgFlow")
+	
+	field(FTG, "DOUBLE")
+	field(INPG, "$(LOC):$(SYS):RES:7:IntgFlow")
+	
+	field(FTH, "DOUBLE")
+	field(INPH, "$(LOC):$(SYS):RES:8:IntgFlow")
+	
+	field(FTI, "DOUBLE")
+	field(INPI, "$(LOC):$(SYS):RES:9:IntgFlow")
+	
+	field(FTJ, "DOUBLE")
+	field(INPJ, "$(LOC):$(SYS):RES:10:IntgFlow")
+	
+	#OUT
+	field(FTVA, "DOUBLE")
+	field(OUTA, "$(LOC):$(SYS):RES:1:IntgFlow PP")
+	
+	field(FTVB, "DOUBLE")
+	field(OUTB, "$(LOC):$(SYS):RES:2:IntgFlow PP")
+	
+	field(FTVC, "DOUBLE")
+	field(OUTC, "$(LOC):$(SYS):RES:3:IntgFlow PP")
+	
+	field(FTVD, "DOUBLE")
+	field(OUTD, "$(LOC):$(SYS):RES:4:IntgFlow PP")
+	
+	field(FTVE, "DOUBLE")
+	field(OUTE, "$(LOC):$(SYS):RES:5:IntgFlow PP")
+	
+	field(FTVF, "DOUBLE")
+	field(OUTF, "$(LOC):$(SYS):RES:6:IntgFlow PP")
+	
+	field(FTVG, "DOUBLE")
+	field(OUTG, "$(LOC):$(SYS):RES:7:IntgFlow PP")
+	
+	field(FTVH, "DOUBLE")
+	field(OUTH, "$(LOC):$(SYS):RES:8:IntgFlow PP")
+	
+	field(FTVI, "DOUBLE")
+	field(OUTI, "$(LOC):$(SYS):RES:9:IntgFlow")
+	
+	field(FTVJ, "DOUBLE")
+	field(OUTJ, "$(LOC):$(SYS):RES:10:IntgFlow")
+	
+}

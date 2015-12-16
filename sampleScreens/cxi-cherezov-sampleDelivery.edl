@@ -1,0 +1,824 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 994
+y 450
+w 708
+h 580
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+ctlFont "helvetica-medium-r-14.0"
+ctlFontAlign "center"
+btnFont "helvetica-medium-r-14.0"
+btnFontAlign "center"
+fgColor index 14
+bgColor index 7
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 1
+ctlBgColor1 index 1
+ctlBgColor2 index 14
+topShadowColor index 1
+botShadowColor index 14
+title "Sample Delivery System"
+showGrid
+snapToGrid
+gridSize 4
+orthoLineDraw
+endScreenProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 332
+y 612
+w 0
+h 0
+lineColor index 14
+fillColor index 1
+lineWidth 2
+numPoints 1
+xPoints {
+  0 332
+}
+yPoints {
+  0 612
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 40
+y 0
+w 108
+h 316
+lineColor index 14
+fillColor index 1
+lineWidth 4
+numPoints 3
+xPoints {
+  0 148
+  1 40
+  2 40
+}
+yPoints {
+  0 316
+  1 316
+  2 0
+}
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 20
+y 76
+w 168
+h 140
+fgColor index 14
+bgColor index 1
+topShadowColor index 1
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\embdisplay=0"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "sampleScreens/emb-sample-small.edl"
+}
+menuLabel {
+  0 "motor"
+}
+symbols {
+  0 "MOTOR=$(LOC):$(SYS):MMS:02"
+}
+replaceSymbols {
+  0 1
+}
+noScroll
+ignoreMultiplexors
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 140
+y 220
+w 75
+h 190
+
+beginGroup
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 149
+y 292
+w 0
+h 83
+lineColor index 11
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 149
+  1 149
+}
+yPoints {
+  0 292
+  1 375
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 141
+y 331
+w 16
+h 32
+lineColor index 14
+fill
+fillColor index 20
+numPoints 5
+xPoints {
+  0 157
+  1 141
+  2 157
+  3 141
+  4 157
+}
+yPoints {
+  0 331
+  1 361
+  2 361
+  3 331
+  4 331
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 141
+y 263
+w 16
+h 32
+lineColor index 14
+fill
+fillColor index 20
+numPoints 5
+xPoints {
+  0 157
+  1 141
+  2 157
+  3 141
+  4 157
+}
+yPoints {
+  0 263
+  1 294
+  2 294
+  3 263
+  4 263
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 169
+y 245
+w 46
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "VCC-01"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 169
+y 314
+w 46
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "VCC-02"
+}
+autoSize
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 178
+y 262
+w 29
+h 18
+fgColor index 25
+onColor index 4
+offColor index 4
+topShadowColor index 1
+botShadowColor index 11
+controlPv "CXI:DG4:VCC:01:OPN_SW"
+pressValue "1"
+onLabel "OPN"
+offLabel "OPN"
+3d
+useEnumNumeric
+font "courier-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 178
+y 281
+w 29
+h 18
+fgColor index 25
+onColor index 4
+offColor index 4
+topShadowColor index 1
+botShadowColor index 11
+controlPv "CXI:DG4:VCC:01:OPN_SW"
+pressValue "0"
+onLabel "CLS"
+offLabel "CLS"
+3d
+useEnumNumeric
+font "courier-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 178
+y 331
+w 29
+h 18
+fgColor index 25
+onColor index 4
+offColor index 4
+topShadowColor index 1
+botShadowColor index 11
+controlPv "CXI:DG4:VCC:02:OPN_SW"
+pressValue "1"
+onLabel "OPN"
+offLabel "OPN"
+3d
+useEnumNumeric
+font "courier-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 178
+y 350
+w 29
+h 18
+fgColor index 25
+onColor index 4
+offColor index 4
+topShadowColor index 1
+botShadowColor index 11
+controlPv "CXI:DG4:VCC:02:OPN_SW"
+pressValue "0"
+onLabel "CLS"
+offLabel "CLS"
+3d
+useEnumNumeric
+font "courier-medium-r-12.0"
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 150
+y 272
+w 16
+h 16
+lineColor index 14
+fill
+fillColor index 15
+fillAlarm
+alarmPv "CXI:DG4:VCC:01:OPN_OK"
+closePolygon
+numPoints 7
+xPoints {
+  0 150
+  1 158
+  2 158
+  3 166
+  4 166
+  5 158
+  6 158
+}
+yPoints {
+  0 278
+  1 278
+  2 272
+  3 272
+  4 286
+  5 286
+  6 278
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 150
+y 340
+w 16
+h 16
+lineColor index 14
+fill
+fillColor index 15
+fillAlarm
+alarmPv "CXI:DG4:VCC:02:OPN_OK"
+closePolygon
+numPoints 7
+xPoints {
+  0 150
+  1 158
+  2 158
+  3 166
+  4 166
+  5 158
+  6 158
+}
+yPoints {
+  0 346
+  1 346
+  2 340
+  3 340
+  4 354
+  5 354
+  6 346
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 149
+y 254
+w 0
+h 9
+lineColor index 14
+fillColor index 0
+numPoints 2
+xPoints {
+  0 149
+  1 149
+}
+yPoints {
+  0 254
+  1 263
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 141
+y 331
+w 16
+h 32
+lineColor index 14
+fill
+fillColor index 15
+visPv "CXI:DG4:VCC:02:OPN_DO"
+visMin "1"
+visMax "2"
+numPoints 5
+xPoints {
+  0 157
+  1 141
+  2 157
+  3 141
+  4 157
+}
+yPoints {
+  0 331
+  1 361
+  2 361
+  3 331
+  4 331
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 141
+y 263
+w 16
+h 33
+lineColor index 14
+fill
+fillColor index 15
+visPv "CXI:DG4:VCC:01:OPN_DO"
+visMin "1"
+visMax "2"
+numPoints 5
+xPoints {
+  0 157
+  1 141
+  2 157
+  3 141
+  4 157
+}
+yPoints {
+  0 263
+  1 294
+  2 294
+  3 263
+  4 263
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 140
+y 220
+w 18
+h 34
+
+beginGroup
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 149
+y 238
+w 9
+h 16
+lineColor index 14
+fillColor index 0
+numPoints 2
+xPoints {
+  0 149
+  1 158
+}
+yPoints {
+  0 238
+  1 254
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 140
+y 237
+w 9
+h 16
+lineColor index 14
+fillColor index 0
+numPoints 2
+xPoints {
+  0 149
+  1 140
+}
+yPoints {
+  0 237
+  1 253
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 141
+y 253
+w 16
+h 0
+lineColor index 14
+fillColor index 0
+numPoints 2
+xPoints {
+  0 141
+  1 157
+}
+yPoints {
+  0 253
+  1 253
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 142
+y 220
+w 16
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "N2"
+}
+autoSize
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 140
+y 376
+w 18
+h 34
+
+beginGroup
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 149
+y 376
+w 9
+h 16
+lineColor index 14
+fillColor index 0
+numPoints 2
+xPoints {
+  0 149
+  1 158
+}
+yPoints {
+  0 392
+  1 376
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 140
+y 377
+w 9
+h 16
+lineColor index 14
+fillColor index 0
+numPoints 2
+xPoints {
+  0 149
+  1 140
+}
+yPoints {
+  0 393
+  1 377
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 141
+y 377
+w 16
+h 0
+lineColor index 14
+fillColor index 0
+numPoints 2
+xPoints {
+  0 141
+  1 157
+}
+yPoints {
+  0 377
+  1 377
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 142
+y 396
+w 16
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "He"
+}
+autoSize
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 40
+y 16
+w 151
+h 40
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 68
+y 16
+w 120
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "Sheath Pressure (psi)"
+}
+autoSize
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 40
+y 44
+w 16
+h 0
+lineColor index 14
+fillColor index 1
+lineWidth 3
+numPoints 2
+xPoints {
+  0 40
+  1 56
+}
+yPoints {
+  0 44
+  1 44
+}
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 56
+y 32
+w 24
+h 24
+lineColor index 14
+fillColor index 1
+lineWidth 2
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 88
+y 36
+w 88
+h 20
+controlPv "$(LOC):$(SYS):AIN:02"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+

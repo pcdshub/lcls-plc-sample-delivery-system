@@ -1,0 +1,27 @@
+file KL3102.template
+{
+    pattern
+    {   SLOT,
+        SIG1,       SIG1.DESC,
+            SIG1.ADEL,  SIG1.MDEL,  SIG1.SMOO,  SIG1.UNIT, SIG1.EGUF,   SIG1.EGUL,  
+            SIG1.HOPR,  SIG1.HIHI,  SIG1.HIGH,  SIG1.HYST,  
+            SIG1.LOW,   SIG1.LOLO,  SIG1.LOPR,  SIG1.SCAN,
+        SIG2,       SIG2.DESC,
+            SIG2.ADEL,  SIG2.MDEL,  SIG2.SMOO,  SIG2.UNIT, SIG2.EGUF,   SIG2.EGUL,  
+            SIG2.HOPR,  SIG2.HIHI,  SIG2.HIGH,  SIG2.HYST,  
+            SIG2.LOW,   SIG2.LOLO,  SIG2.LOPR,  SIG2.SCAN
+    }
+#   Include one instance of the pattern for each instance
+#   of this module, substituting the appropriate slot number
+#   and signal attributes
+    {   3,
+        $(COUPLER_LOC):AIN:01,            "H20 Gas Supp. Press.",
+            0,          0,          0,          Psi,       3000,         -3000,
+            10,         3000,       3000,          0,
+            0,          0,          0,          ".1 second",
+        $(COUPLER_LOC):AIN:02,            "Pressure Regulator 2",
+            0,          0,          0,          Psi,       3000,         -3000,
+            10,         3000,       1500,          0,
+            0,          0,          0,          ".1 second"
+    }
+}

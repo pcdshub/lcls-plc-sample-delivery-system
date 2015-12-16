@@ -1,0 +1,469 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 52
+y 76
+w 306
+h 459
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+ctlFont "helvetica-medium-r-14.0"
+ctlFontAlign "center"
+btnFont "helvetica-medium-r-14.0"
+btnFontAlign "center"
+fgColor index 14
+bgColor index 7
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 1
+ctlBgColor1 index 1
+ctlBgColor2 index 14
+topShadowColor index 1
+botShadowColor index 14
+title "Manual Regulator Controls"
+showGrid
+snapToGrid
+gridSize 4
+orthoLineDraw
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 4
+w 292
+h 448
+lineColor index 4
+fill
+fillColor index 5
+lineWidth 0
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 332
+y 612
+w 0
+h 0
+lineColor index 14
+fillColor index 1
+lineWidth 2
+numPoints 1
+xPoints {
+  0 332
+}
+yPoints {
+  0 612
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 8
+y 8
+w 293
+h 21
+font "helvetica-bold-r-18.0"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "$(LOC):$(SYS):Manual Regualtor"
+}
+autoSize
+endObjectProperties
+
+# (Motif Slider)
+object activeMotifSliderClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 196
+y 156
+w 64
+h 292
+fgColor index 14
+bgColor index 7
+2ndBgColor index 14
+topShadowColor index 1
+botShadowColor index 14
+increment 1
+controlPv "$(LOC):$(SYS):REG:01:PercSP"
+controlLabel "Liquid"
+font "helvetica-medium-r-14.0"
+precision 0
+scaleMin 0
+scaleMax 100
+showLimits
+showLabel
+showValue
+orientation "vertical"
+endObjectProperties
+
+# (Motif Slider)
+object activeMotifSliderClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 28
+y 156
+w 64
+h 292
+fgColor index 14
+bgColor index 7
+2ndBgColor index 14
+topShadowColor index 1
+botShadowColor index 14
+increment 0.1
+controlPv "$(LOC):$(SYS):REG:02:PercSP"
+controlLabel "Sheath"
+font "helvetica-medium-r-14.0"
+precision 1
+scaleMin 0
+scaleMax 100
+showLimits
+showLabel
+showValue
+orientation "vertical"
+endObjectProperties
+
+# (Bar)
+object activeBarClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 188
+y 80
+w 80
+h 4
+indicatorColor index 15
+fgColor index 14
+bgColor index 14
+indicatorPv "$(LOC):$(SYS):REG:01:PercentageOpen"
+font "helvetica-medium-r-14.0"
+min "0"
+max "100"
+scaleFormat "FFloat"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 188
+y 88
+w 80
+h 36
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 188
+y 88
+w 57
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "Outlet(psi)"
+}
+autoSize
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 188
+y 104
+w 80
+h 20
+controlPv "$(LOC):$(SYS):REG:01:PRESS"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 188
+y 32
+w 80
+h 40
+
+beginGroup
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 188
+y 52
+w 80
+h 20
+controlPv "$(LOC):$(SYS):REG:01:UP_PRESS"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 188
+y 32
+w 75
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "Upstream(psi)"
+}
+autoSize
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Bar)
+object activeBarClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 80
+w 80
+h 4
+indicatorColor index 15
+fgColor index 14
+bgColor index 14
+indicatorPv "$(LOC):$(SYS):REG:02:PercentageOpen"
+font "helvetica-medium-r-14.0"
+min "0"
+max "100"
+scaleFormat "FFloat"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 20
+y 88
+w 80
+h 36
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 88
+w 57
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "Outlet(psi)"
+}
+autoSize
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 20
+y 104
+w 80
+h 20
+controlPv "$(LOC):$(SYS):REG:02:PRESS"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 20
+y 32
+w 80
+h 40
+
+beginGroup
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 20
+y 52
+w 80
+h 20
+controlPv "$(LOC):$(SYS):REG:02:UP_PRESS"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 32
+w 75
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "Upstream(psi)"
+}
+autoSize
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 188
+y 128
+w 72
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+inconsistentColor index 14
+topShadowColor index 1
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):REG:01:Enable"
+3d
+font "helvetica-medium-r-14.0"
+objType "controls"
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 20
+y 128
+w 72
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+inconsistentColor index 14
+topShadowColor index 1
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):REG:02:Enable"
+3d
+font "helvetica-medium-r-14.0"
+objType "controls"
+endObjectProperties
+

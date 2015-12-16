@@ -1,0 +1,1315 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 1371
+y 1254
+w 430
+h 412
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 7
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 0
+ctlBgColor1 index 0
+ctlBgColor2 index 14
+topShadowColor index 0
+botShadowColor index 14
+title "Integrated Sample Flow"
+showGrid
+snapToGrid
+gridSize 8
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 8
+y 0
+w 416
+h 32
+lineColor index 54
+fill
+fillColor index 54
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 11
+y 10
+w 162
+h 16
+font "helvetica-bold-r-14.0"
+fgColor index 14
+bgColor index 54
+value {
+  "Integrated Sample Flow"
+}
+autoSize
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 8
+y 40
+w 416
+h 360
+lineColor index 3
+fill
+fillColor index 3
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 259
+y -5
+w 0
+h 0
+lineColor index 14
+fillColor index 10
+numPoints 3
+xPoints {
+  0 259
+  1 259
+  2 259
+}
+yPoints {
+  0 -5
+  1 -5
+  2 -5
+}
+endObjectProperties
+
+# (Exit Button)
+object activeExitButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 160
+y 368
+w 40
+h 24
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+label "Done"
+font "helvetica-medium-r-10.0"
+3d
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 384
+y 8
+w 20
+h 16
+controlPv "$(LOC):$(SYS):RES:1:IntgFlow.EGU"
+displayMode "exp"
+precision 1
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 152
+y 40
+w 42
+h 28
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Starting"
+  "volume"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 224
+y 40
+w 28
+h 14
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Used"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 296
+y 40
+w 53
+h 28
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Estmated"
+  "time (min)"
+}
+autoSize
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 296
+y 101
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:2:EstDepletionTime"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 16
+y 101
+w 115
+h 20
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.TWST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 368
+y 101
+w 48
+h 16
+fgColor index 14
+onColor index 0
+offColor index 0
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):RES:2:IntgFlow"
+releaseValue "0"
+onLabel "Reset"
+offLabel "Reset"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 224
+y 101
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:2:IntgFlow"
+displayMode "decimal"
+precision 4
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 152
+y 101
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:2:StartingVol"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 9
+editable
+precision 4
+nullColor index 1
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 296
+y 130
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:3:EstDepletionTime"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 16
+y 130
+w 115
+h 20
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.THST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 368
+y 130
+w 48
+h 16
+fgColor index 14
+onColor index 0
+offColor index 0
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):RES:3:IntgFlow"
+releaseValue "0"
+onLabel "Reset"
+offLabel "Reset"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 224
+y 130
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:3:IntgFlow"
+displayMode "decimal"
+precision 4
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 152
+y 130
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:3:StartingVol"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 9
+editable
+precision 4
+nullColor index 1
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 296
+y 159
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:4:EstDepletionTime"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 16
+y 159
+w 115
+h 20
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.FRST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 368
+y 159
+w 48
+h 16
+fgColor index 14
+onColor index 0
+offColor index 0
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):RES:4:IntgFlow"
+releaseValue "0"
+onLabel "Reset"
+offLabel "Reset"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 224
+y 159
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:4:IntgFlow"
+displayMode "decimal"
+precision 4
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 152
+y 159
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:4:StartingVol"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 9
+editable
+precision 4
+nullColor index 1
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 296
+y 189
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:5:EstDepletionTime"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 16
+y 189
+w 115
+h 20
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.FVST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 368
+y 189
+w 48
+h 16
+fgColor index 14
+onColor index 0
+offColor index 0
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):RES:5:IntgFlow"
+releaseValue "0"
+onLabel "Reset"
+offLabel "Reset"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 224
+y 189
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:5:IntgFlow"
+displayMode "decimal"
+precision 4
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 152
+y 189
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:5:StartingVol"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 9
+editable
+precision 4
+nullColor index 1
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 296
+y 218
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:6:EstDepletionTime"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 16
+y 218
+w 115
+h 20
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.SXST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 368
+y 218
+w 48
+h 16
+fgColor index 14
+onColor index 0
+offColor index 0
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):RES:6:IntgFlow"
+releaseValue "0"
+onLabel "Reset"
+offLabel "Reset"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 224
+y 218
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:6:IntgFlow"
+displayMode "decimal"
+precision 4
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 152
+y 218
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:6:StartingVol"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 9
+editable
+precision 4
+nullColor index 1
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 296
+y 248
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:7:EstDepletionTime"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 16
+y 248
+w 115
+h 20
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.SVST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 368
+y 248
+w 48
+h 16
+fgColor index 14
+onColor index 0
+offColor index 0
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):RES:7:IntgFlow"
+releaseValue "0"
+onLabel "Reset"
+offLabel "Reset"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 224
+y 248
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:7:IntgFlow"
+displayMode "decimal"
+precision 4
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 152
+y 248
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:7:StartingVol"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 9
+editable
+precision 4
+nullColor index 1
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 296
+y 277
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:8:EstDepletionTime"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 16
+y 277
+w 115
+h 20
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.EIST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 368
+y 277
+w 48
+h 16
+fgColor index 14
+onColor index 0
+offColor index 0
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):RES:8:IntgFlow"
+releaseValue "0"
+onLabel "Reset"
+offLabel "Reset"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 224
+y 277
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:8:IntgFlow"
+displayMode "decimal"
+precision 4
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 152
+y 277
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:8:StartingVol"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 9
+editable
+precision 4
+nullColor index 1
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 296
+y 306
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:9:EstDepletionTime"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 16
+y 306
+w 115
+h 20
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.NIST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 368
+y 306
+w 48
+h 16
+fgColor index 14
+onColor index 0
+offColor index 0
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):RES:9:IntgFlow"
+releaseValue "0"
+onLabel "Reset"
+offLabel "Reset"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 224
+y 306
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:9:IntgFlow"
+displayMode "decimal"
+precision 4
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 152
+y 306
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:9:StartingVol"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 9
+editable
+precision 4
+nullColor index 1
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 296
+y 336
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:10:EstDepletionTime"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 16
+y 336
+w 115
+h 20
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.TEST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 368
+y 336
+w 48
+h 16
+fgColor index 14
+onColor index 0
+offColor index 0
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):RES:10:IntgFlow"
+releaseValue "0"
+onLabel "Reset"
+offLabel "Reset"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 224
+y 336
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:10:IntgFlow"
+displayMode "decimal"
+precision 4
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 152
+y 336
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:10:StartingVol"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 9
+editable
+precision 4
+nullColor index 1
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 296
+y 72
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:1:EstDepletionTime"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 16
+y 72
+w 115
+h 20
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.ONST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 368
+y 72
+w 48
+h 16
+fgColor index 14
+onColor index 0
+offColor index 0
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):RES:1:IntgFlow"
+releaseValue "0"
+onLabel "Reset"
+offLabel "Reset"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 224
+y 72
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:1:IntgFlow"
+displayMode "decimal"
+precision 4
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 152
+y 72
+w 64
+h 16
+controlPv "$(LOC):$(SYS):RES:1:StartingVol"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 9
+editable
+precision 4
+nullColor index 1
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+

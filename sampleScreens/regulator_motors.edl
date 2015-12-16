@@ -1,0 +1,503 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 1000
+y 1194
+w 425
+h 323
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 7
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 0
+ctlBgColor1 index 0
+ctlBgColor2 index 14
+topShadowColor index 0
+botShadowColor index 14
+title "Regulator Motors"
+showGrid
+snapToGrid
+gridSize 8
+endScreenProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 259
+y -5
+w 0
+h 0
+lineColor index 14
+fillColor index 10
+numPoints 3
+xPoints {
+  0 259
+  1 259
+  2 259
+}
+yPoints {
+  0 -5
+  1 -5
+  2 -5
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 16
+y 8
+w 400
+h 40
+font "helvetica-bold-r-18.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 54
+value {
+  "Pressure Regulator Motors"
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 24
+y 64
+w 384
+h 72
+lineColor index 14
+fillColor index 0
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 296
+y 96
+w 104
+h 32
+controlPv "$(LOC):$(SYS):REG:01:PRESS_SP.DESC"
+fgColor index 14
+bgColor index 8
+fill
+font "helvetica-medium-r-12.0"
+lineWidth 1
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 296
+y 72
+w 100
+h 16
+font "helvetica-medium-r-14.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Regulator Label"
+}
+autoSize
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 24
+y 152
+w 384
+h 72
+lineColor index 14
+fillColor index 0
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 296
+y 184
+w 104
+h 32
+controlPv "$(LOC):$(SYS):REG:02:PRESS_SP.DESC"
+fgColor index 14
+bgColor index 8
+fill
+font "helvetica-medium-r-12.0"
+lineWidth 1
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 296
+y 160
+w 100
+h 16
+font "helvetica-medium-r-14.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Regulator Label"
+}
+autoSize
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 24
+y 240
+w 384
+h 72
+lineColor index 14
+fillColor index 0
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 296
+y 272
+w 104
+h 32
+controlPv "$(LOC):$(SYS):REG:03:PRESS_SP.DESC"
+fgColor index 14
+bgColor index 8
+fill
+font "helvetica-medium-r-12.0"
+lineWidth 1
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 296
+y 248
+w 100
+h 16
+font "helvetica-medium-r-14.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Regulator Label"
+}
+autoSize
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 248
+y 72
+w 40
+h 24
+controlPv "$(LOC):$(SYS):REG:01:Deadband"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 9
+editable
+precision 0
+nullColor index 1
+useHexPrefix
+newPos
+objType "controls"
+clipToDspLimits
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 248
+y 104
+w 40
+h 24
+controlPv "$(LOC):$(SYS):REG:01:Speed"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 9
+editable
+precision 2
+nullColor index 1
+useHexPrefix
+newPos
+objType "controls"
+clipToDspLimits
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 32
+y 72
+w 204
+h 14
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(LOC):$(SYS):REG:01:Deadband"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 48
+y 104
+w 183
+h 14
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(LOC):$(SYS):REG:01:Speed"
+}
+autoSize
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 248
+y 160
+w 40
+h 24
+controlPv "$(LOC):$(SYS):REG:02:Deadband"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 9
+editable
+precision 0
+nullColor index 1
+useHexPrefix
+newPos
+objType "controls"
+clipToDspLimits
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 248
+y 192
+w 40
+h 24
+controlPv "$(LOC):$(SYS):REG:02:Speed"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 9
+editable
+precision 0
+nullColor index 1
+useHexPrefix
+newPos
+objType "controls"
+clipToDspLimits
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 32
+y 160
+w 204
+h 14
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(LOC):$(SYS):REG:02:Deadband"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 48
+y 192
+w 183
+h 14
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(LOC):$(SYS):REG:02:Speed"
+}
+autoSize
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 248
+y 248
+w 40
+h 24
+controlPv "$(LOC):$(SYS):REG:03:Deadband"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 9
+editable
+precision 0
+nullColor index 1
+useHexPrefix
+newPos
+objType "controls"
+clipToDspLimits
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 248
+y 280
+w 40
+h 24
+controlPv "$(LOC):$(SYS):REG:03:Speed"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 9
+editable
+precision 0
+nullColor index 1
+useHexPrefix
+newPos
+objType "controls"
+clipToDspLimits
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 32
+y 248
+w 204
+h 14
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(LOC):$(SYS):REG:03:Deadband"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 48
+y 280
+w 183
+h 14
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(LOC):$(SYS):REG:03:Speed"
+}
+autoSize
+endObjectProperties
+

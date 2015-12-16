@@ -1,0 +1,15 @@
+file sample_flow_accumulators.template
+{
+pattern
+{P, N}
+{"$(DEV):RES", "1"}
+{"$(DEV):RES", "2"}
+{"$(DEV):RES", "3"}
+{"$(DEV):RES", "4"}
+{"$(DEV):RES", "5"}
+{"$(DEV):RES", "6"}
+{"$(DEV):RES", "7"}
+{"$(DEV):RES", "8"}
+{"$(DEV):RES", "9"}
+{"$(DEV):RES", "10"}
+}

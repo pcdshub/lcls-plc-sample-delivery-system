@@ -1,0 +1,141 @@
+
+
+# EPICS Subfile   ############################################
+
+#Binary readbacks
+file "bi_bit.template"{ pattern,
+{P,			R,	PORT,	OFFSET,  ZNAM,      ONAM,  ZSV,     OSV,         SCAN}
+{"$(DEV)",  "RemoteControlEnabled",  "BI_PORT",  "0",  "Control Not Enabled",  "Control Enabled", "MINOR", "NO_ALARM", "I/O Intr"}
+{"$(DEV)",  "REG:01:Seeking",  "BI_PORT",  "20",  "Stable",  "Seeking", "NO_ALARM", "MINOR", "I/O Intr"}
+{"$(DEV)",  "REG:02:Seeking",  "BI_PORT",  "21",  "Stable",  "Seeking", "NO_ALARM", "MINOR", "I/O Intr"}
+
+{"$(DEV)",  "SEL:FlowOoR",  "BI_PORT",  "30",  "In-range",  "Out of range", "NO_ALARM", "MINOR", "I/O Intr"}
+{"$(DEV)",  "SEL:FlowValid",  "BI_PORT",  "31",  "Invalid Data",  "Valid Data", "MAJOR", "NO_ALARM", "I/O Intr"}
+{"$(DEV)",  "SEL:Syncd",  "BI_PORT",  "32",  "Not syncd",  "Syncd", "MAJOR", "NO_ALARM", "I/O Intr"}
+{"$(DEV)",  "SEL:Locked",  "BI_PORT",  "33",  "Unlocked",  "Locked", "MAJOR", "NO_ALARM", "I/O Intr"}
+{"$(DEV)",  "SEL:FMModeRb",  "BI_PORT",  "34",  "Precision",  "Extended", "NO_ALARM", "NO_ALARM", "I/O Intr"}
+
+{"$(DEV)",  "PREG:01:PressureStable",  "BI_PORT",  "50",  "Adjusting",  "Pressure stable", "MINOR", "NO_ALARM", "I/O Intr"}
+{"$(DEV)",  "PREG:02:PressureStable",  "BI_PORT",  "51",  "Adjusting",  "Pressure stable", "MINOR", "NO_ALARM", "I/O Intr"}
+}
+
+
+#Int readbacks, regulator pressure transducers, and flowmeter	
+file "ai_no_conv.template"{ pattern,
+{P,			R,	PORT,	OFFSET, BITS,  PREC, LOPR, HOPR, SCAN, UNITS}
+
+}
+
+#Real readbacks
+file "aiFloat64.template"{ pattern,
+{P,			R,	PORT,	OFFSET, DATA_TYPE, PREC, HOPR, LOPR, SCAN, UNITS}
+{"$(DEV)",  "SEL:Flow",  "aiFLOAT_PORT",  "0", "FLOAT32_LE", "2", "100", "0", "I/O Intr", "uL/min"}
+}
+
+#Selector 1
+#Vici controls
+file "ao_no_conv.template"{ pattern,
+{P, R, PORT, OFFSET, BITS, LOPR, HOPR, PREC}
+{"$(DEV)",  "VLV:01:REQ_POS",  "AO_PORT",  "0", "16", "1", "12", "0"}
+{"$(DEV)",  "VLV:02:REQ_POS",  "AO_PORT",  "1", "16", "1", "12", "0"}
+{"$(DEV)",  "SYNC:REQ_POS",  "AO_PORT",    "2", "16", "1", "12", "0"}
+}
+
+#Selector 2 controls
+#Vici controls
+file "ao_no_conv.template"{ pattern,
+{P, R, PORT, OFFSET, BITS, LOPR, HOPR, PREC}
+{"$(DEV)",  "SEL2:VLV:01:REQ_POS",  "AO_PORT",  "40", "16", "1", "12", "0"}
+{"$(DEV)",  "SEL2:VLV:02:REQ_POS",  "AO_PORT",  "41", "16", "1", "12", "0"}
+{"$(DEV)",  "SEL2:SYNC:REQ_POS",  "AO_PORT",    "42", "16", "1", "12", "0"}
+}
+
+#Selector 1
+#Vici readbacks
+file "ai_no_conv.template"{ pattern,
+{P, R, PORT, OFFSET, BITS, LOPR, HOPR, PREC, SCAN}
+{"$(DEV)",  "VLV:01:CURR_POS",  "AI_PORT",  "30", "16", "1", "12", "0",  "I/O Intr"}
+{"$(DEV)",  "VLV:02:CURR_POS",  "AI_PORT",  "31", "16", "1", "12", "0",  "I/O Intr"}
+{"$(DEV)",  "SYNC:CURR_POS",  "AI_PORT",  "32", "16", "1", "12", "0",  "I/O Intr"}		
+{"$(DEV)",  "SEL:rawStateFlowMeter",  "AI_PORT",  "33", "16", "0", "12", "0",  "I/O Intr"}		
+{"$(DEV)",  "SEL:rawTypeFlowMeter",  "AI_PORT",  "34", "16", "0", "12", "0",  "I/O Intr"}		
+}
+
+#Selector 2
+#Vici readbacks
+file "ai_no_conv.template"{ pattern,
+{P, R, PORT, OFFSET, BITS, LOPR, HOPR, PREC, SCAN}
+{"$(DEV)",  "SEL2:VLV:01:CURR_POS",  "AI_PORT",  "40", "16", "1", "12", "0",  "I/O Intr"}
+{"$(DEV)",  "SEL2:VLV:02:CURR_POS",  "AI_PORT",  "41", "16", "1", "12", "0",  "I/O Intr"}
+{"$(DEV)",  "SEL2:SYNC:CURR_POS",  "AI_PORT",  "42", "16", "1", "12", "0",  "I/O Intr"}		
+}
+
+#Regulator readbacks
+file "ai_no_conv.template"{ pattern,
+{P, R, PORT, OFFSET, BITS, PREC, LOPR, HOPR, SCAN, EGU}
+{"$(DEV)",  "REG:01:PRESS",  "AI_PORT",  "10", "16", "0", "0", "6000" "I/O Intr", "psi"}
+{"$(DEV)",  "REG:02:PRESS",  "AI_PORT",  "11", "16", "0", "0", "6000" "I/O Intr", "psi"}
+{"$(DEV)",  "REG:03:PRESS",  "AI_PORT",  "12", "16", "0", "0", "6000" "I/O Intr", "psi"}
+
+{"$(DEV)",  "REG:01:PercentageOpen",  "AI_PORT",  "13", "16", "0", "0", "100" "I/O Intr", "%"}
+{"$(DEV)",  "REG:02:PercentageOpen",  "AI_PORT",  "14", "16", "0", "0", "100" "I/O Intr", "%"}
+{"$(DEV)",  "REG:03:PercentageOpen",  "AI_PORT",  "15", "16", "0", "0", "100" "I/O Intr", "%"}		
+
+{"$(DEV)",  "REG:01:UP_PRESS",  "AI_PORT",  "16", "16", "0", "0", "6000" "I/O Intr", "psi"}
+{"$(DEV)",  "REG:02:UP_PRESS",  "AI_PORT",  "17", "16", "0", "0", "6000" "I/O Intr", "psi"}
+{"$(DEV)",  "REG:01:UP_PRESS",  "AI_PORT",  "16", "16", "0", "0", "6000" "I/O Intr", "psi"}
+{"$(DEV)",  "REG:02:UP_PRESS",  "AI_PORT",  "17", "16", "0", "0", "6000" "I/O Intr", "psi"}
+{"$(DEV)",  "REG:03:UP_PRESS",  "AI_PORT",  "18", "16", "0", "0", "6000" "I/O Intr", "psi"}
+}
+
+
+
+#Binary control outputs
+file "bo_bit.template"{ pattern,
+{P,			R,	PORT,	OFFSET,  ZNAM,      ONAM}
+{"$(DEV)",  "RemoteControlEnable",  			"BO_PORT",  "0",  "Disabled",  "Enabled"}
+{"$(DEV)",  "E_STOP",  			"BO_PORT",  "1",  "Stop",  "Stop"}
+{"$(DEV)",  "N2_PURGE",  		"BO_PORT",  "9",  "na",  "purge it will"}
+
+{"$(DEV)",  "01:SampleShaker",  "BO_PORT",  "10",  "Off",  "On"}
+{"$(DEV)",  "02:SampleShaker",  "BO_PORT",  "11",  "Off",  "On"}
+{"$(DEV)",  "03:SampleShaker",  "BO_PORT",  "12",  "Off",  "On"}
+{"$(DEV)",  "04:SampleShaker",  "BO_PORT",  "13",  "Off",  "On"}
+
+{"$(DEV)",  "REG:01:Enable",  "BO_PORT",  "20",  "Disabled",  "Enabled"}
+{"$(DEV)",  "REG:02:Enable",  "BO_PORT",  "21",  "Disabled",  "Enabled"}
+
+{"$(DEV)",  "SEL:Lock",  "BO_PORT",  "30",  "",  "Lock"}
+{"$(DEV)",  "SEL:FMReset",  "BO_PORT",  "31",  "",  ""}
+{"$(DEV)",  "SEL:FMMode",  "BO_PORT",  "32",  "Precision",  "Extended"}
+{"$(DEV)",  "SEL:Unlock",  "BO_PORT",  "33",  "",  "Unlock"}
+
+{"$(DEV)",  "PAREG:01:Enable",  "BO_PORT",  "50",  "Disabled",  "Enabled"}
+{"$(DEV)",  "PAREG:02:Enable",  "BO_PORT",  "51",  "Disabled",  "Enabled"}
+}
+
+
+#Regulator int control outputs
+file "ao_no_conv.template"{ pattern,
+{P, R, PORT, OFFSET, LOPR, HOPR, PREC, BITS, SCAN, EGU}
+{"$(DEV)",  "REG:01:PercSP",  "AO_PORT",  "19",  "0", "100", "0", "16", "I/O Intr", "%"}
+{"$(DEV)",  "REG:02:PercSP",  "AO_PORT",  "20",  "0", "100", "0", "16", "I/O Intr", "%"}
+}
+
+#Proportionair int control outputs
+file "ao_no_conv.template"{ pattern,
+{P, R, PORT, OFFSET, LOPR, HOPR, PREC, BITS, SCAN, EGU}
+{"$(DEV)",  "PAREG:01:PressSP",  "AO_PORT",  "50",  "0", "1000", "0", "16", "I/O Intr", "%"}
+{"$(DEV)",  "PAREG:02:PressSP",  "AO_PORT",  "51",  "0", "1000", "0", "16", "I/O Intr", "%"}
+{"$(DEV)",  "PAREG:01:HiPressLimit",  "AO_PORT",  "52",  "0", "1000", "0", "16", "I/O Intr", "%"}
+{"$(DEV)",  "PAREG:02:HiPressLimit",  "AO_PORT",  "53",  "0", "1000", "0", "16", "I/O Intr", "%"}
+}
+
+#Proportionair int readbacks
+file "ai_no_conv.template"{ pattern,
+{P, R, PORT, OFFSET, BITS, PREC, LOPR, HOPR, SCAN, EGU}
+{"$(DEV)",  "PAREG:01:PRESS",  "AI_PORT",  "50", "16", "0", "0", "2000" "I/O Intr", "psi"}
+{"$(DEV)",  "PAREG:02:PRESS",  "AI_PORT",  "51", "16", "0", "0", "2000" "I/O Intr", "psi"}
+}
+
+#################################################################################

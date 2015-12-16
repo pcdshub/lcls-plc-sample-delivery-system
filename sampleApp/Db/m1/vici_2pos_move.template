@@ -1,0 +1,59 @@
+#Template covering the commands that will move the actuator
+##The GO command will move the actuator to the specified position
+# when in mode 1,2 A or B must be sent
+# in mode 3 <num> can be sent
+
+#The requested position
+record(mbbo, "$(DEV):REQ_POS")  {
+    field(DESC, "Mode1,2 Go")
+    field(DTYP, "Soft Channel")
+    field(OMSL, "supervisory")
+    field(OUT, "") #0 is A, 1 is B
+    field(SHFT, "0")
+    field(ZRVL, "0")
+    field(ONVL, "1")
+    field(ZRST, "Flow") #make sure this matches SND_POS and CURR_POS
+    field(ONST, "Clean")
+    field(FLNK, "$(DEV):REQ_CHK.PROC")
+}
+
+#Check that all the selector valves are in the clean state (pos 1)
+record(calcout, "$(DEV):REQ_CHK") {
+	field(DESC, "Check req pos")
+	field(INPA, "$(V1):CURR_POS.VAL CP") #watching both valves to make sure they stay 1. if they change to something other than 1 we need change from trash to flow
+	field(INPB, "$(V2):CURR_POS.VAL CP")
+	field(INPC, "$(DEV):REQ_POS.VAL")
+	field(OOPT, "Every Time")
+	field(CALC, "(A=1)&&(B=1)&&(C=1)?1:0") #if V1 is in pos 1 or 2, and V2 is in pos. 1 or 2 and they are matched and the requested position is 1 (ie clean), then write out a 1
+	field(OUT,	"$(DEV):SND_POS.VAL PP")
+#	field(IVOA,	"Set output to IVOV")
+#	field(IVOV, "0")
+	field(SCAN, "Passive")
+#	field(PINI, "YES") #check on startup that we're OK
+}
+
+#Send out the position request to the VICI
+record(mbbo, "$(DEV):SND_POS")  {
+    field(DESC, "Pos 1,2 Go")
+    field(DTYP, "stream")
+    field(OMSL, "closed_loop")
+    field(OUT, "@VICI.proto 2PosSet $(PORT)") #0 is A, 1 is B
+    field(SHFT, "0")
+    field(ZRVL, "0")
+    field(ONVL, "1")
+    field(ZRST, "Flow") #make sure this matches REQ_POS
+    field(ONST, "Clean")
+}
+
+record(mbbi, "$(DEV):CURR_POS")	{
+	field(DESC, "Current Position")
+	field(DTYP, "stream")
+	field(INP,  "@VICI.proto 2PosGet $(PORT)")
+	field(PINI, "YES")
+	field(SCAN, ".5 second")
+    field(SHFT, "0")
+    field(ZRVL, "0")
+    field(ONVL, "1")
+    field(ZRST, "Flow") #make sure this matches REQ_POS
+    field(ONST, "Clean")
+}

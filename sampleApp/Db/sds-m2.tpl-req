@@ -1,0 +1,42 @@
+# Sample Delivery System Mark II
+# Autosave request template
+# Alex Wallace 14-11-13
+# In general the ioc needs to retain:
+# The current position of both valves in the selector
+# Locked or unlocked valve bit
+# The regulator descriptions, ie. labels
+# Regulator setpoints x
+# Regulator enabled or disabled x
+# Flow meter integration values
+# Sample names, this is done in the autosave-sample_selection.tpl-req
+
+# Regulator stuff
+$(LOC):$(SYS):REG:01:PercSP.VAL
+$(LOC):$(SYS):REG:01:Enable.VAL
+$(LOC):$(SYS):REG:01:Enable.DESC
+
+$(LOC):$(SYS):REG:02:PercSP.VAL
+$(LOC):$(SYS):REG:02:Enable.VAL
+$(LOC):$(SYS):REG:02:Enable.DESC
+
+$(LOC):$(SYS):PAREG:01:HiPressLimit.VAL
+$(LOC):$(SYS):PAREG:01:PressSP.VAL
+$(LOC):$(SYS):PAREG:01:Enable.VAL
+
+$(LOC):$(SYS):PAREG:02:HiPressLimit.VAL
+$(LOC):$(SYS):PAREG:02:PressSP.VAL
+$(LOC):$(SYS):PAREG:02:Enable.VAL
+
+
+# Selector Stuff
+$(LOC):$(SYS):VLV:01:REQ_POS.RVAL
+$(LOC):$(SYS):VLV:01:REQ_POS.VAL
+
+$(LOC):$(SYS):VLV:02:REQ_POS.RVAL
+$(LOC):$(SYS):VLV:02:REQ_POS.VAL
+
+$(LOC):$(SYS):SYNC:REQ_POS.RVAL
+$(LOC):$(SYS):SYNC:REQ_POS.VAL
+
+$(LOC):$(SYS):SEL:VLV_LOCK.VAL
+

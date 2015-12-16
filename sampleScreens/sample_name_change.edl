@@ -1,0 +1,310 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 2437
+y 324
+w 212
+h 538
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 7
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 0
+ctlBgColor1 index 0
+ctlBgColor2 index 14
+topShadowColor index 0
+botShadowColor index 14
+title "Sample Names"
+showGrid
+snapToGrid
+gridSize 8
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 8
+y 0
+w 192
+h 32
+lineColor index 54
+fill
+fillColor index 54
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 11
+y 10
+w 102
+h 16
+font "helvetica-bold-r-14.0"
+fgColor index 14
+bgColor index 54
+value {
+  "Sample Names"
+}
+autoSize
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 8
+y 40
+w 192
+h 488
+lineColor index 3
+fill
+fillColor index 3
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 259
+y -5
+w 0
+h 0
+lineColor index 14
+fillColor index 10
+numPoints 3
+xPoints {
+  0 259
+  1 259
+  2 259
+}
+yPoints {
+  0 -5
+  1 -5
+  2 -5
+}
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 88
+w 128
+h 36
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.TWST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+fill
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 128
+w 128
+h 36
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.THST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+fill
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 168
+w 128
+h 36
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.FRST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+fill
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 208
+w 128
+h 36
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.FVST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+fill
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 248
+w 128
+h 36
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.SXST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+fill
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 288
+w 128
+h 36
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.SVST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+fill
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 328
+w 128
+h 36
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.EIST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+fill
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 368
+w 128
+h 36
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.NIST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+fill
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 408
+w 128
+h 36
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.TEST"
+fgColor index 14
+fgAlarm
+bgColor index 1
+fill
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Exit Button)
+object activeExitButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 80
+y 496
+w 40
+h 24
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+label "Done"
+font "helvetica-medium-r-10.0"
+3d
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 48
+w 128
+h 36
+controlPv "$(LOC):$(SYS):RES:SYNC_RES_REQ.ONST NPP"
+fgColor index 14
+fgAlarm
+bgColor index 1
+fill
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+endObjectProperties
+

@@ -1,0 +1,24 @@
+#Records for controlling the V1 and V2 movement. This is different from Mark I as the PLC keeps the valves in sync.
+# A. Wallace 2014-3-18
+
+
+record(mbbo, "$(P):RES:SYNC_RES_REQ"){
+	field(DESC, "Current Reservoir")
+	field(OMSL, "supervisory")
+	field(DTYP, "Raw Soft Channel")
+	field(OUT, "$(P):SYNC:REQ_POS PP")
+	field(SHFT, "0")
+	field(ZRVL, "1")
+	field(ONVL, "2")
+	field(TWVL, "3")
+	field(THVL, "4")
+	field(FRVL, "5")
+	field(FVVL, "6")
+	field(ZRST, "Nozzle 1")
+	field(ONST, "Nozzle 2")
+	field(TWST, "Nozzle 3")
+	field(THST, "Nozzle 4")
+	field(FRST, "Nozzle 5")
+	field(FVST, "Nozzle 6")
+}
+

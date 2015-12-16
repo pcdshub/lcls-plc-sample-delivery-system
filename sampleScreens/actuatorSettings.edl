@@ -1,0 +1,267 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 556
+y 427
+w 894
+h 566
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+ctlFont "helvetica-medium-r-14.0"
+ctlFontAlign "center"
+btnFont "helvetica-medium-r-14.0"
+btnFontAlign "center"
+fgColor index 14
+bgColor index 7
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 1
+ctlBgColor1 index 1
+ctlBgColor2 index 14
+topShadowColor index 1
+botShadowColor index 14
+title "myIoc Status"
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 12
+y 8
+w 796
+h 56
+font "helvetica-bold-r-18.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 54
+value {
+  "Selector Settings"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 20
+y 20
+w 168
+h 20
+font "helvetica-bold-r-14.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "$(DEV)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 24
+y 72
+w 75
+h 14
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "Descreption:"
+}
+autoSize
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 116
+y 72
+w 176
+h 28
+controlPv "$(DEV):DESC"
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+limitsFromDb
+nullColor index 11
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 516
+y 20
+w 77
+h 14
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "PCB Version:"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 508
+y 36
+w 86
+h 14
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "Serial Version:"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 600
+y 20
+w 168
+h 14
+controlPv "$(DEV):VR_PCBGET"
+font "helvetica-bold-r-12.0"
+fgColor index 38
+bgColor index 1
+useDisplayBg
+autoHeight
+limitsFromDb
+nullColor index 1
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 600
+y 36
+w 168
+h 14
+controlPv "$(DEV):VR_SERGET"
+font "helvetica-bold-r-12.0"
+fgColor index 38
+bgColor index 1
+useDisplayBg
+autoHeight
+limitsFromDb
+nullColor index 1
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 112
+y 116
+w 76
+h 28
+controlPv "$(DEV):NP_GET"
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 15
+bgColor index 13
+nullColor index 1
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 12
+y 116
+w 95
+h 28
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "Number of"
+  "Valve Positions:"
+}
+autoSize
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 232
+y 152
+w 68
+h 14
+controlPv "$(DEV):NP_USRSET"
+format "float"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+autoHeight
+limitsFromDb
+nullColor index 1
+newPos
+objType "controls"
+endObjectProperties
+

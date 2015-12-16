@@ -1,0 +1,36 @@
+# Generate a list of PV's which will be expanded
+# once using the $(IOC) macro for each IOC instance.
+#
+# Typically, IOC will be expanded in
+#	iocBoot/<ioc_name>/Makefile
+# so no need to define it here.
+#
+
+# Generate iocAdmin archive PV's 
+#	Macros:
+#		IOC		- PV prefix for all iocAdmin PV's
+file archive_iocAdmin.tpl-arch
+{
+	{
+		IOC="IOC:CXI:SDS:01"
+	}
+}
+
+# Generate Save/Restore archive PV's
+#	Macros:
+#		IOC		- PV prefix for all IOC Save/Restore PV's
+file archive_SR.tpl-arch
+{
+	{
+		IOC="IOC:CXI:SDS:01"
+	}
+}
+
+
+# Archiving the selector and regulator pvs
+file sds-m2.tpl-arch
+{
+	{P="CXI:SDS"}
+}
+
+

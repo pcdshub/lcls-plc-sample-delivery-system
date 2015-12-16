@@ -1,0 +1,27 @@
+# sub file for sample environments pressure regulator.
+
+file pcds_motor_ims.template
+{
+pattern
+   {P,                      M,  C, DESC,              EGU, DIR, PREC, SREV,  UREV,  SP,   SBAS, SMAX, ACCL, RDBD,   DHLM,  DLLM, UEvent, UEIP, DVER     }
+#   {$(LOC):$(SYS):MMS:, $(M01), 0, "Pressure Reg 1",  "%",  Neg, 1,   2048,  16.67,  1,    0.1,  .5,    .5,  .2,      100,   0,  1,      Yes,  $(DVER)  }
+   {"$(LOC):$(SYS):MMS:", "$(M02)", 1, "Pressure Reg 2",  "%",  Neg, 1,   2048,  16.67,  1,    0.1,  .5,    .5,  .2,      100,   0,  2,      Yes,  $(DVER)  }
+   
+}
+
+file motor-status.template
+{
+pattern
+   {MOT,                    FW_MEANS, REV_MEANS}
+#   {"$(LOC):$(SYS):MMS:$(M01)", "+",      "-"}
+   {"$(LOC):$(SYS):MMS:$(M02)", "+",      "-"}
+   
+}
+
+file mcode.template
+{
+pattern
+   {cont,                        M,     addr   }
+#   {"$(LOC):$(SYS):MMS:$(M01)",  $(M01),    1      }
+   {"$(LOC):$(SYS):MMS:$(M02)",  $(M02),    1      }
+}

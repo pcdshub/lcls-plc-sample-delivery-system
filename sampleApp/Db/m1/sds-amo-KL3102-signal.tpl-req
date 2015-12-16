@@ -1,0 +1,21 @@
+# Autosave Beckhoff KL3064 Analog Input Signal PV list
+$(SIG).ADEL
+$(SIG).DESC
+$(SIG).EGU
+$(SIG).EGUF
+$(SIG).EGUL
+$(SIG).HHSV
+$(SIG).HIGH
+$(SIG).HIHI
+$(SIG).HOPR
+$(SIG).HSV
+$(SIG).HYST
+$(SIG).LLSV
+$(SIG).LOLO
+$(SIG).LOPR
+$(SIG).LOW
+$(SIG).LSV
+$(SIG).MDEL
+$(SIG).SMOO
+$(SIG).PREC
+$(SIG).ASLO

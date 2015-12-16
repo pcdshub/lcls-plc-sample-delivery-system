@@ -1,0 +1,43 @@
+# RELEASE
+# Defines location of external products
+include $(TOP)/RELEASE_SITE
+
+# ===============================================================
+# Define the location and version of EPICS base
+# ===============================================================
+BASE_MODULE_VERSION=R3.14.12-0.4.0
+EPICS_BASE=$(EPICS_SITE_TOP)/base/$(BASE_MODULE_VERSION)
+
+# ===============================================================
+# Define the version of modules needed by
+# IOC apps or other Support apps
+# ===============================================================
+ASYN_MODULE_VERSION          = R4.23-0.4.0
+AUTOSAVE_MODULE_VERSION      = R4.2.1.2-2.7.0
+CALC_MODULE_VERSION          = R3.2-0.4.0
+GENSUB_MODULE_VERSION        = R1.6.1.3-4.0.0
+IOCADMIN_MODULE_VERSION      = R3.0.0-2.0.1
+STREAMDEVICE_MODULE_VERSION  = R2.5-0.8.0
+MODBUS_MODULE_VERSION	     = R2.6.0-0.2.0
+
+
+# ============================================================
+# External Support module path definitions
+#
+# If any of these macros expand to a path which
+# contains an "include" directory, that directory will be
+# included in the compiler include path.
+#
+# If any of these macros expand to a path which
+# contains a "lib/<arch>" directory, that directory will be
+# included in the compiler link path for that architecture.
+#
+# If your build fails, look for these paths in your build output
+# ============================================================
+ASYN          = $(EPICS_MODULES)/asyn/$(ASYN_MODULE_VERSION)
+AUTOSAVE      = $(EPICS_MODULES)/autosave/$(AUTOSAVE_MODULE_VERSION)
+CALC          = $(EPICS_MODULES)/calc/$(CALC_MODULE_VERSION)
+GENSUB        = $(EPICS_MODULES)/genSub/$(GENSUB_MODULE_VERSION)
+IOCADMIN      = $(EPICS_MODULES)/iocAdmin/$(IOCADMIN_MODULE_VERSION)
+STREAMDEVICE  = $(EPICS_MODULES)/streamdevice/$(STREAMDEVICE_MODULE_VERSION)
+MODBUS	     = $(EPICS_MODULES)/modbus/$(MODBUS_MODULE_VERSION)

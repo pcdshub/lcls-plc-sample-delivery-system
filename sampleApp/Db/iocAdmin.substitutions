@@ -1,0 +1,16 @@
+#==============================================================================
+#
+# Abs:  IOC Administration Records
+#
+# Name: iocAdmin.substitutions
+#
+#==============================================================================
+#
+# use one of
+# file iocHard.db
+# file iocSoft.db
+
+file iocHard.db
+{
+	{ IOC	= $(IOC)  }
+}

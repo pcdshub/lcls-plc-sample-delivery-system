@@ -1,0 +1,171 @@
+#template for recording pertaining to the settings, status of the actuator
+
+#Holder for name of device
+record(stringout, "$(DEV):DESC")  {
+    field(DESC, "Description")
+    field(OMSL, "supervisory")
+    field(DTYP, "Soft Channel")
+}
+
+#The am commands will read and write the current mode of the actuator
+record(mbbi, "$(DEV):AM_GET")  {
+    field(DESC, "Read Actuator Mode")
+    field(DTYP, "stream")  
+    field(INP,  "@VICI.proto ParamGet(AM) $(PORT)")
+    field(ZRST, "Bad Mode")
+    field(ONST, "2 Pos w/Stops")
+    field(TWST, "2 Pos wo/Stops")
+    field(THST, "Multi Pos")
+    field(FLNK, "$(DEV):MODE_CALC.PROC")
+    field(PINI, "YES")
+}
+
+record(mbbo, "$(DEV):AM_SET")  {
+    field(DESC, "Set Actuator Mode")
+    field(DTYP, "stream")
+    field(OMSL, "supervisory")  
+    field(OUT,  "@VICI.proto ParamSet(AM) $(PORT)")
+    field(ZRST, "Bad Mode")
+    field(ONST, "2 Pos w/Stops")
+    field(TWST, "2 Pos wo/Stops")
+    field(THST, "Mulit Pos")
+    field(FLNK, "$(DEV):AM_GET")
+}
+
+
+##the DT command will cause the actuator to move back to its previous position
+#after the specificed time, 0 will disable this feature
+#record(ai, "$(DEV):DT_GET") {
+#    field(DESC, "Delay Time")
+#    field(DTYP, "stream")
+#    field(INP,  "@VICI.proto ParamGet(DT) $(PORT)")
+#    field(LINR, "NO CONVERSION")
+#    field(EGU, "ms")
+#    field(HIGH, 1)
+#    field(HSV, "MAJOR")
+#    field(PINI, "YES")
+#}
+
+##the IFM command dictates what the controller responds with after action 
+#commands
+record(mbbo, "$(DEV):IFM_GET")  {
+    field(DESC, "Response Mode")
+    field(DTYP, "stream")
+    field(OMSL, "supervisory")
+    field(OUT,  "@VICI.proto ParamGet(IFM) $(PORT)")
+    field(ZRST, "No Response")
+    field(ONST, "Basic Response")
+    field(TWST, "Extended Response")
+    field(PINI, "YES")
+}
+
+
+##The NP command sets/gets the number of positions available on the valve/selector
+#record(ai, "$(DEV):NP_GET")  {
+#    field(DESC, "Number Positions")
+#    field(DTYP, "stream")
+#    field(INP,  "@VICI.proto ParamGet(NP) $(PORT)")
+#    field(LINR, "NO CONVERSION")
+#    field(PINI, "YES")
+#    field(EGU,  "Pos")
+#}
+## To check it the input the user has given is even needed,
+#user input -> Calcout(check evenness) -> writing to actuator record
+#record(ao, $(DEV):NP_USRSET) {
+#    field(DESC, "User NP Set")
+#    field(DTYP, "Soft Channel")
+#    field(OMSL, "supervisory")
+#    field(DRVH, 40)
+#    field(DRVL, 2)
+#    field(FLNK, "$(DEV):NP_SCALC")
+#}
+#record(calc, "$(DEV):NP_SCALC")  {
+#    field(DESC, "NP Even Check")
+#    field(INPA, "$(DEV):NP_USRSET MS")
+#    field(CALC, "A = (CEIL(A/2) + CEIL(A/2)) ? 1:2")
+#    field(FLNK, "$(DEV):NP_ALCALC")
+#    field(HIHI, 2)
+#    field(HHSV, "INVALID")
+#}
+#record(calcout, "$(DEV):NP_ALCALC")  {
+#    field(DESC, "Alarm Calc")
+#    field(DOPT, "Use CALC")
+#    field(INPA, "$(DEV):NP_SCALE MS")
+#    field(INPB, "$(DEV):NP_USRSET MS")
+#    field(CALC, "B")
+##    field(HIHI, 2)
+##    field(HHSV, "INVALID")
+#    field(OUT,  "$(DEV):NP_SET")
+#    field(IVOA, "Don't drive outputs")
+#}
+    
+#record(ao, "$(DEV):NP_SET")  {
+#    field(DESC, "Set Number of Positions")
+#    field(DTYP, "stream")
+#    field(OUT,  "@VICI.proto ParamSet(NP) $(PORT)")
+#    field(DOL,  "$(DEV):NP_SCALC")
+#    field(OMSL, "closed_loop")
+#    field(DRVH, 40)
+#    field(DRVL, 2)
+#    field(FLNK, "$(DEV):NP_GET")
+#}
+
+
+## the SM command defines the direction of rotation
+#record(stringin, "$(DEV):SM_GET")  {
+#    field(DESC, "Rotation Direction")
+#    field(DTYP, "stream")
+#    field(INP,  "@VICI.proto SParamGet(SM) $(PORT)")
+#    field(PINI, "YES")
+#}
+#record(mbbo, "$(DEV):SM_USRSET")  {
+#    field(DESC, "Rotation Direction")
+#    field(OMSL, "supervisory")
+#    field(DTYP, "Soft Channel")
+#    field(ZRST, "Foward")
+#    field(ONST, "Reverse")
+#    field(TWST, "Auto")
+#    field(OUT,  "$(DEV):SM_STTRANS PP")
+#}
+#record(mbbi, "$(DEV):SM_STTRANS")  {
+#    field(DESC, "String Translate")
+#    field(DTYP, "Soft Channel")
+#    field(INP,  "$(DEV):SM_USRSET")
+#    field(ZRST, "F")
+#    field(ONST, "R")
+#    field(TWST, "A")
+#    field(FLNK, "$(DEV):SM_SET")
+#}
+    
+#record(stringout, "$(DEV):SM_SET")  {
+#    field(DESC, "Rotation Direction Set")
+#    field(DTYP, "stream")
+#    field(DOL,  "$(DEV):SM_STTRANS")
+#    field(OUT,  "@VICI.proto ParamSet(SM) $(PORT)")
+#    field(OMSL, "closed_loop")
+#    field(FLNK, "$(DEV):SM_GET")
+#}
+
+
+
+##The version command prints the software version for PCB and serial interface
+record(stringin, "$(DEV):VR_PCBGET")  {
+    field(DESC, "Main Version")
+    field(DTYP, "stream")
+    field(INP, "@VICI.proto VerGet(VR) $(PORT)")
+    field(PINI, "YES")
+}
+
+record(stringin, "$(DEV):VR_SERGET")  {
+    field(DESC, "Serial Version")
+    field(DTYP, "stream")
+    field(INP, "@VICI.proto VerGet(VR2) $(PORT)")
+    field(PINI, "YES")
+}
+    
+    
+    
+    
+    
+    
+    

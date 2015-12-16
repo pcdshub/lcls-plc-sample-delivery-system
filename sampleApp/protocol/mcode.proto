@@ -1,0 +1,290 @@
+# Schneider Electric MDrivePlus Motor Protocol
+
+InTerminator  = CR;
+OutTerminator = CR LF;
+ReplyTimeout  = 800;
+ReadTimeout   = 100;
+WriteTimeout  = 100;
+ExtraInput    = Ignore;
+
+# MDrivePlus MCode commands (See MCode Manual for descriptions)
+
+## Read Only
+GET_BY       { out "1PR BY";        in "%b";        wait 25;	@init { out "1PR BY"; 	in "%b"; } }
+GET_EF       { out "1PR EF";        in "%b";        wait 25;	@init { out "1PR EF"; 	in "%b"; } }
+GET_I1       { out "1PR I1";        in "%b";        wait 25;	@init { out "1PR I1"; 	in "%b"; } }
+GET_I2       { out "1PR I2";        in "%b";        wait 25;	@init { out "1PR I2"; 	in "%b"; } }
+GET_I3       { out "1PR I3";        in "%b";        wait 25;	@init { out "1PR I3"; 	in "%b"; } }
+GET_I4       { out "1PR I4";        in "%b";        wait 25;	@init { out "1PR I4"; 	in "%b"; } }
+GET_I5       { out "1PR I5";        in "%d";        wait 25; }
+GET_I6       { out "1PR I6";        in "%b";        wait 25;	@init { out "1PR I6";   in "%b"; } }
+GET_I9       { out "1PR I9";        in "%b";        wait 25; }
+GET_I10      { out "1PR I10";       in "%b";        wait 25; }
+GET_I11      { out "1PR I11";       in "%b";        wait 25; }
+GET_I12      { out "1PR I12";       in "%b";        wait 25; }
+GET_IF       { out "1PR IF";        in "%b";        wait 25; }
+GET_IH       { out "1PR IH";        in "%d";        wait 25; }
+GET_IL       { out "1PR IL";        in "%d";        wait 25; }
+GET_IN       { out "1PR IN";        in "%d";        wait 25; }
+GET_IT       { out "1PR IT";        in "%d";        wait 25; }
+GET_MD       { out "1PR MD";        in "%[A-Z, ]";  wait 25;	@init { out "1PR MD";   in "%[A-Z, ]"; } }
+GET_MP       { out "1PR MP";        in "%b";        wait 25; }
+GET_MV       { out "1PR MV";        in "%b";        wait 25; }
+GET_PC       { out "1PR PC";        in "%d";        wait 25; }
+GET_PN       { out "1PR PN";        in "%s";        wait 25;	@init { out "1PR PN"; 	in "%s"; } }
+GET_SN       { out "1PR SN";        in "%s";        wait 25;	@init { out "1PR SN"; 	in "%s"; } }
+GET_V        { out "1PR V";         in "%d";        wait 25; }
+GET_VC       { out "1PR VC";        in "%b";        wait 25; }
+GET_VR       { out "1PR VR";        in "%s";        wait 25;	@init { out "1PR VR"; 	in "%s"; } }
+
+## Read/Write
+GET_A        { out "1PR A";         in "%d";        wait 25;	@init { out "1PR A"; 	in "%d"; } }
+SET_A        { out "1A %d";                         wait 25; }
+
+GET_BD       { out "1PR BD";        in "%d";        wait 25;	@init { out "1PR BD"; 	in "%d"; } }
+SET_BD       { out "1BD %d";                        wait 25; }
+
+GET_BP       { out "1PR BP";        in "%[, 0-9]";  wait 25; } 
+SET_BP       { out "1BP %s";                        wait 25; }
+
+GET_C1       { out "1PR C1";        in "%d";        wait 25;	@init { out "1PR C1"; 	in "%d"; } }
+SET_C1       { out "1C1 %d";                        wait 25; }
+
+GET_C2       { out "1PR C2";        in "%d";        wait 25;	@init { out "1PR C2"; 	in "%d"; } }
+SET_C2       { out "1C2 %d";                        wait 25; }
+
+GET_CE       { out "1PR CE";        in "%d";        wait 25;	@init { out "1PR CE";   in "%d"; } }
+SET_CE       { out "1CE %d";                        wait 25; }
+
+GET_CK       { out "1PR CK";        in "%d";        wait 25;	@init { out "1PR CK";   in "%d"; } }
+SET_CK       { out "1CK %d";                        wait 25; }
+
+GET_CM       { out "1PR CM";        in "%b";        wait 25; }
+SET_CM       { out "1CM %b";                        wait 25; }
+
+GET_CR       { out "1PR CR";        in "%f";        wait 25; }
+SET_CR       { out "1CR %f";                        wait 25; }
+
+GET_CW       { out "1PR CW";        in "%d";        wait 25; }
+SET_CW       { out "1CW %d";                        wait 25; }
+
+GET_D        { out "1PR D";         in "%d";        wait 25;	@init { out "1PR D"; 	in "%d"; } }
+SET_D        { out "1D %d";                         wait 25; }
+
+GET_D1       { out "1PR D1";        in "%d";        wait 25;	@init { out "1PR D1"; 	in "%d"; } }
+SET_D1       { out "1D1 %d";                        wait 25; }
+
+GET_D2       { out "1PR D2";        in "%d";        wait 25;	@init { out "1PR D2"; 	in "%d"; } }
+SET_D2       { out "1D2 %d";                        wait 25; }
+
+GET_D3       { out "1PR D3";        in "%d";        wait 25;	@init { out "1PR D3"; 	in "%d"; } }
+SET_D3       { out "1D3 %d";                        wait 25; }
+
+GET_D4       { out "1PR D4";        in "%d";        wait 25;	@init { out "1PR D4"; 	in "%d"; } }
+SET_D4       { out "1D4 %d";                        wait 25; }
+
+GET_D5       { out "1PR D5";        in "%d";        wait 25; }
+SET_D5       { out "1D5 %d";                        wait 25; }
+
+GET_D9       { out "1PR D9";        in "%d";        wait 25; }
+SET_D9       { out "1D9 %d";                        wait 25; }
+
+GET_D10      { out "1PR D10";       in "%d";        wait 25; }
+SET_D10      { out "1D10 %d";                       wait 25; }
+
+GET_D11      { out "1PR D11";       in "%d";        wait 25; }
+SET_D11      { out "1D11 %d";                       wait 25; }
+
+GET_D12      { out "1PR D12";       in "%d";        wait 25; }
+SET_D12      { out "1D12 %d";                       wait 25; }
+
+GET_DB       { out "1PR DB";        in "%d";        wait 25;	@init { out "1PR DB"; 	in "%d"; } }
+SET_DB       { out "1DB %d";                        wait 25; }
+
+GET_DE       { out "1PR DE";        in "%b";        wait 25;	@init { out "1PR DE";   in "%b"; } }
+SET_DE       { out "1DE %b";                        wait 25; }
+
+GET_DG       { out "1PR DG";        in "%b";        wait 25;	@init { out "1PR DG";   in "%b"; } }
+SET_DG       { out "1DG %b";                        wait 25; }
+
+GET_DN       { out "1PR DN";        in "%s";        wait 25;	@init { out "1PR DN"; 	in "%s"; } }
+SET_DN       { out "1DN %s";                        wait 25; }
+
+GET_EE       { out "1PR EE";        in "%b";        wait 25;	@init { out "1PR EE";   in "%b"; } }
+SET_EE       { out "1EE %b";                        wait 25; }
+
+GET_EL       { out "1PR EL";        in "%d";        wait 25;	@init { out "1PR EL"; 	in "%d"; } }
+SET_EL       { out "1EL %d";                        wait 25; }
+
+GET_EM       { out "1PR EM";        in "%d";        wait 25;	@init { out "1PR EM"; 	in "%d"; } }
+SET_EM       { out "1EM %d";                        wait 25; }
+
+GET_ER       { out "1PR ER";        in "%d";        wait 25;	@init { out "1PR ER"; 	in "%d"; } }
+CLEAR_ER     { out "1ER=0";                         wait 25; }
+
+GET_ES       { out "1PR ES";        in "%d";        wait 25; }
+SET_ES       { out "1ES %d";                        wait 25; }
+
+GET_FC       { out "1PR FC";        in "%d";        wait 25; }
+SET_FC       { out "1FC %d";                        wait 25; }
+
+GET_FM       { out "1PR FM";        in "%d";        wait 25; }
+SET_FM       { out "1FM %d";                        wait 25; }
+
+GET_HC       { out "1PR HC";        in "%d";        wait 25;	@init { out "1PR HC"; 	in "%d"; } }
+SET_HC       { out "1HC %d";                        wait 25; }
+
+GET_HT       { out "1PR HT";        in "%d";        wait 25; 	@init { out "1PR HT"; 	in "%d"; } }
+SET_HT       { out "1HT %d";                        wait 25; }
+
+GET_JE       { out "1PR JE";        in "%b";        wait 25;	@init { out "1PR JE";   in "%b"; } }
+SET_JE       { out "1JE %b";                        wait 25; }
+
+GET_LK       { out "1PR LK";        in "%b";        wait 25;	@init { out "1PR LK";   in "%b"; } }
+SET_LK       { out "1LK %b";                        wait 25; }
+
+GET_LM       { out "1PR LM";        in "%d";        wait 25; 	@init { out "1PR LM"; 	in "%d"; } }
+SET_LM       { out "1LM %d";                        wait 25; }
+
+GET_MS       { out "1PR MS";        in "%d";        wait 25; 	@init { out "1PR MS"; 	in "%d"; } }
+SET_MS       { out "1MS %d";                        wait 25; }
+
+GET_MT       { out "1PR MT";        in "%d";        wait 25; 	@init { out "1PR MT"; 	in "%d"; } }
+SET_MT       { out "1MT %d";                        wait 25; }
+
+GET_NE       { out "1PR NE";        in "%b";        wait 25;	@init { out "1PR NE";   in "%b"; } }
+SET_NE       { out "1NE %b";                        wait 25; }
+
+GET_P        { out "1PR P";         in "%d";        wait 25; 	@init { out "1PR P"; 	in "%d"; } }
+SET_P        { out "1P %d";                         wait 25; }
+
+GET_PM       { out "1PR PM";        in "%b";        wait 25; 	@init { out "1PR PM"; 	in "%b"; } }
+SET_PM       { out "1PM %b";                        wait 25; }
+
+GET_PY       { out "1PR PY";        in "%b";        wait 25; 	@init { out "1PR PY"; 	in "%b"; } }
+SET_PY       { out "1PY %b";                        wait 25; }
+
+GET_QD       { out "1PR QD";        in "%b";        wait 25;	@init { out "1PR QD";   in "%b"; } }
+SET_QD       { out "1QD %b";                        wait 25; }
+
+GET_R1       { out "1PR R1";        in "%d";        wait 25; 	@init { out "1PR R1"; 	in "%d"; } }
+SET_R1       { out "1R1 %d";                        wait 25; }
+
+GET_R2       { out "1PR R2";        in "%d";        wait 25; 	@init { out "1PR R2"; 	in "%d"; } }
+SET_R2       { out "1R2 %d";                        wait 25; }
+
+GET_R3       { out "1PR R3";        in "%d";        wait 25; 	@init { out "1PR R3"; 	in "%d"; } }
+SET_R3       { out "1R3 %d";                        wait 25; }
+
+GET_R4       { out "1PR R4";        in "%d";        wait 25; 	@init { out "1PR R4"; 	in "%d"; } }
+SET_R4       { out "1R4 %d";                        wait 25; }
+
+GET_RC       { out "1PR RC";        in "%d";        wait 25; 	@init { out "1PR RC"; 	in "%d"; } }
+SET_RC       { out "1RC %d";                        wait 25; }
+
+SAVE         { out "1S";                            wait 25; }
+
+GET_S1       { out "1PR S1";        in "%[, 0-9]";  wait 25; 	@init { out "1PR S1"; 	in "%[, 0-9]"; } }
+SET_S1       { out "1S1 %s";                        wait 25; }
+
+GET_S2       { out "1PR S2";        in "%[, 0-9]";  wait 25; 	@init { out "1PR S2"; 	in "%[, 0-9]"; } }
+SET_S2       { out "1S2 %s";                        wait 25; }
+
+GET_S3       { out "1PR S3";        in "%[, 0-9]";  wait 25; 	@init { out "1PR S3"; 	in "%[, 0-9]"; } }
+SET_S3       { out "1S3 %s";                        wait 25; }
+
+GET_S4       { out "1PR S4";        in "%[, 0-9]";  wait 25; 	@init { out "1PR S4"; 	in "%[, 0-9]"; } }
+SET_S4       { out "1S4 %s";                        wait 25; }
+
+GET_S5       { out "1PR S5";        in "%[, 0-9]";  wait 25; }
+SET_S5       { out "1S5 %s";                        wait 25; }
+
+GET_S7       { out "1PR S7";        in "%[, 0-9]";  wait 25; }
+SET_S7       { out "1S7 %s";                        wait 25; }
+
+GET_S8       { out "1PR S8";        in "%[, 0-9]";  wait 25; }
+SET_S8       { out "1S8 %s";                        wait 25; }
+
+GET_S9       { out "1PR S9";        in "%[, 0-9]";  wait 25; }
+SET_S9       { out "1S9 %s";                        wait 25; }
+
+GET_S10      { out "1PR S10";       in "%[, 0-9]";  wait 25; }
+SET_S10      { out "1S10 %s";                       wait 25; }
+
+GET_S11      { out "1PR S11";       in "%[, 0-9]";  wait 25; }
+SET_S11      { out "1S11 %s";                       wait 25; }
+
+GET_S12      { out "1PR S12";       in "%[, 0-9]";  wait 25; }
+SET_S12      { out "1S12 %s";                       wait 25; }
+
+GET_S13      { out "1PR S13";       in "%[, 0-9]";  wait 25; }
+SET_S13      { out "1S13 %s";                       wait 25; }
+
+GET_SF       { out "1PR SF";        in "%d";        wait 25; 	@init { out "1PR SF"; 	in "%d"; } }
+SET_SF       { out "1SF %d";                        wait 25; }
+
+GET_SM       { out "1PR SM";        in "%b";        wait 25;	@init { out "1PR SM";   in "%b"; } }
+SET_SM       { out "1SM %b";                        wait 25; }
+
+GET_ST       { out "1PR ST";        in "%b";        wait 25;	@init { out "1PR ST"; 	in "%b"; } }
+CLEAR_ST     { out "1ST 0";                         wait 25; }
+
+GET_TC       { out "1PR TC";        in "%s";        wait 25; }
+SET_TC       { out "1TC %s";                        wait 25; }
+
+GET_TE       { out "1PR TE";        in "%d";        wait 25; }
+SET_TE       { out "1TE %d";                        wait 25; }
+
+GET_TI       { out "1PR TI";        in "%[, 0-9]";  wait 25; }
+SET_TI       { out "1TI %s";                        wait 25; }
+
+GET_TP       { out "1PR TP";        in "%[, 0-9]";  wait 25; }
+SET_TP       { out "1TP %s";                        wait 25; }
+
+GET_TR       { out "1PR TR";        in "%[, 0-9]";  wait 25; }
+SET_TR       { out "1TR %s";                        wait 25; }
+
+GET_TT       { out "1PR TT";        in "%[, 0-9]";  wait 25; }
+SET_TT       { out "1TT %s";                        wait 25; }
+
+GET_VI       { out "1PR VI";        in "%d";        wait 25;  	@init { out "1PR VI"; 	in "%d"; } }
+SET_VI       { out "1VI %d";                        wait 25; }
+
+GET_VM       { out "1PR VM";        in "%d";        wait 25;  	@init { out "1PR VM"; 	in "%d"; } }
+SET_VM       { out "1VM %d";                        wait 25; }
+
+GET_WT       { out "1PR WT";        in "%d";        wait 25; }
+SET_WT       { out "1WT %d";                        wait 25; }
+
+STOP         { out "\e";                            wait 25; }
+STOP_DCL     { out "1SL=0";                         wait 25; }
+
+ZERO_POS     { out "1P=0";                          wait 25; }
+
+GET_CUSTOM   { out "%s";            in "%s";        wait 25; }
+
+
+## Motion related fields
+MOV_MR       { out "1MR %d";                        wait 25; }
+MOV_MA       { out "1MA %d";                        wait 25; }
+MOV_HI       { out "1HI %d";                        wait 25; }
+MOV_HM       { out "1HM %d";                        wait 25; }
+MOV_SL       { out "1SL %d";                        wait 25; }
+
+SAVED_P      { ReplyTimeout = 50; ReadTimeout = 10; InTerminator =; in  "Saved %d"; }
+
+
+## Additional fields
+# Power up flag
+GET_PU       { out "1PR PU";        in "%b";        wait 25;  	@init { out "1PR PU"; 	in "%b"; } }
+SET_PU       { out "1PU %b";                        wait 25; }
+
+
+# Autosave position related
+GET_HB       { out "1PR HB";        in "%d";        wait 25;  	@init { out "1PR HB"; 	in "%d"; } }
+GET_P1       { out "1PR P1";        in "%d";        wait 25;  	@init { out "1PR P1"; 	in "%d"; } }
+GET_NS       { out "1PR NS";        in "%d";        wait 25;  	@init { out "1PR NS"; 	in "%d"; } }
+GET_SD       { out "1PR SD";        in "%d";        wait 25;  	@init { out "1PR SD"; 	in "%d"; } }
+GET_VE       { out "1PR VE";        in "%d";        wait 25;  	@init { out "1PR VE"; 	in "%d"; } }
+EXE_PG       { out "1EX=1";                         wait 25; }
+

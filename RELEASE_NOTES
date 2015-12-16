@@ -1,0 +1,8 @@
+2.5.2
+~ Fixed autosave for the sample integrators.
+~ Fixed autosave for the sample labels.
+~ Added extra flowmeter readback stuff
+~ Flow integrators now have an estimated depletion time field
+~ Flow integrator screens are now fixed and update regularly.
+~ Percentage based controls, first pass. Regulator sliders now control percentage of total turns on the regulator. Precision is down to the ones place at this time. Screens included.
+

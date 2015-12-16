@@ -1,0 +1,137 @@
+#Records for controlling the V1 and V2 movement. This is different from Mark I as the PLC keeps the valves in sync.
+# A. Wallace 2014-3-18
+
+
+record(mbbo, "$(P):RES:SYNC_RES_REQ"){
+	field(DESC, "Current Reservoir")
+	field(OMSL, "supervisory")
+	field(DTYP, "Raw Soft Channel")
+	field(OUT, "$(P):SYNC:REQ_POS PP")
+	field(SHFT, "0")
+	field(ZRVL, "11")
+	field(ONVL, "1")
+	field(TWVL, "2")
+	field(THVL, "3")
+	field(FRVL, "4")
+	field(FVVL, "5")
+	field(SXVL, "6")
+	field(SVVL, "7")
+	field(EIVL, "8")
+	field(NIVL, "9")
+	field(TEVL, "10")
+	field(ZRST, "Water")
+	field(ONST, "Sample A")
+	field(TWST, "Sample B")
+	field(THST, "Sample C")
+	field(FRST, "Sample D")
+	field(FVST, "Sample E")
+	field(SXST, "Sample F")
+	field(SVST, "Sample G")
+	field(EIST, "Sample H")
+	field(NIST, "Sample I")
+	field(TEST, "Sample J")
+}
+
+record(mbbo, "$(P):VLV:01:RES_REQ"){
+	field(DESC, "Independent V1 Reservoir")
+	field(OMSL, "supervisory")
+	field(DTYP, "Raw Soft Channel")
+	field(OUT,	"$(P):VLV:01:REQ_POS PP")
+	field(SHFT, "0")
+	field(ZRVL, "11")
+	field(ONVL, "1")
+	field(TWVL, "2")
+	field(THVL, "3")
+	field(FRVL, "4")
+	field(FVVL, "5")
+	field(SXVL, "6")
+	field(SVVL, "7")
+	field(EIVL, "8")
+	field(NIVL, "9")
+	field(TEVL, "10")
+	field(ZRST, "Water")
+	field(ONST, "1")
+	field(TWST, "2")
+	field(THST, "3")
+	field(FRST, "4")
+	field(FVST, "5")
+	field(SXST, "6")
+	field(SVST, "7")
+	field(EIST, "8")
+	field(NIST, "9")
+	field(TEST, "10")
+	#field(FLNK, "$(P):VLV:01:Fanout")
+}
+
+record(mbbo, "$(P):VLV:02:RES_REQ"){
+	field(DESC, "Independent V2 Reservoir")
+	field(OMSL, "supervisory")
+	field(DTYP, "Raw Soft Channel")
+	field(OUT,	"$(P):VLV:02:REQ_POS PP")
+	field(SHFT, "0")
+	field(ZRVL, "11")
+	field(ONVL, "1")
+	field(TWVL, "2")
+	field(THVL, "3")
+	field(FRVL, "4")
+	field(FVVL, "5")
+	field(SXVL, "6")
+	field(SVVL, "7")
+	field(EIVL, "8")
+	field(NIVL, "9")
+	field(TEVL, "10")
+	field(ZRST, "Water")
+	field(ONST, "1")
+	field(TWST, "2")
+	field(THST, "3")
+	field(FRST, "4")
+	field(FVST, "5")
+	field(SXST, "6")
+	field(SVST, "7")
+	field(EIST, "8")
+	field(NIST, "9")
+	field(TEST, "10")
+	#field(FLNK, "$(P):VLV:02:Fanout")
+}
+
+
+# Flowmeter stuff
+record(mbbi, "$(P):SEL:stateFlowMeter"){
+	field(DESC, "Flowmeter state enumeration")
+	field(DTYP, "Raw Soft Channel")
+	field(INP, "$(P):SEL:rawStateFlowMeter CP")
+	field(ZRVL, "0")
+	field(ONVL, "1")
+	field(TWVL, "2")
+	field(THVL, "3")
+	#state names
+	field(ZRST, "OK")
+	field(ONST, "OoR>")
+	field(TWST, "<OoR")
+	field(THST, "Flow Invalid")
+	#severities
+	field(ZRSV, "NO_ALARM")
+	field(ONSV, "MINOR")
+	field(TWSV, "MINOR")
+	field(THSV, "MAJOR")
+}
+
+record(mbbi, "$(P):SEL:typeFlowMeter"){
+	field(DESC, "Flowmeter type")
+	field(DTYP, "Raw Soft Channel")
+	field(INP, "$(P):SEL:rawTypeFlowMeter CP")
+	field(ZRVL, "0")
+	field(ONVL, "1")
+	field(TWVL, "2")
+	#state names
+	field(ZRST, "Unrecognized")
+	field(ONST, "Sensirion")
+	field(TWST, "Bronkhorst")
+	#state severities
+	field(ZRSV, "MAJOR")
+	field(ONSV, "NO_ALARM")
+	field(TWSV, "NO_ALARM")
+}
+
+
+

@@ -1,0 +1,78 @@
+#this template contains records that  disable and enable certain 
+#records depending on the controller's mode. calcout record added to 
+#reduce the number of times the seq records are processed.
+record(calcout, $(DEV):MODE_CALC) { 
+    field(DESC, "Mode Calcout")
+    field(DOPT, "Use CALC")
+    field(OUT, "$(DEV):MODE_SEL PP")
+    field(OOPT, "On Change")
+    field(INPA, "$(DEV):AM_GET")
+    field(CALC, "A")
+}   
+    
+record(seq, "$(DEV):MODE_SEL") {
+    field(DESC, "Dis/enable select")
+    field(SELM, "Specified")
+    field(SELN, 0)
+    field(DO1,  1)
+    field(LNK1, "$(DEV):MODE_1.PROC")
+    field(DO2,  1)
+    field(LNK2, "$(DEV):MODE_2.PROC")
+    field(DO3,  1)
+    field(LNK3, "$(DEV):MODE_3.PROC")
+}
+
+record(seq, "$(DEV):MODE_1")  {
+    field(DESC, "Mode 1 Enable/Disable")
+    field(SELM, "All")
+    field(DO1,  "$(SCAN)")   
+    field(LNK1, "$(DEV):CP_1GET.SCAN")
+    field(DO2,  0)   
+    field(LNK2, "$(DEV):CP_2GET.SCAN")
+    field(DO3,  0)   
+    field(LNK3, "$(DEV):CP_1GET.DISP")
+    field(DO4,  1)
+    field(LNK4, "$(DEV):CP_3GET.DISP")
+    field(DO5,  0)
+    field(LNK5, "$(DEV):GO_1SET.DISP")
+    field(DO6,  1)
+    field(LNK6, "$(DEV):GO_3SET.DISP")
+}    
+    
+    
+record(seq, "$(DEV):MODE_2")  {
+    field(DESC, "Mode 1 Enable/Disable")
+    field(SELM, "All")
+    field(DO1,  0)   
+    field(LNK1, "$(DEV):CP_1GET.SCAN")
+    field(DO2,  "$(SCAN)")   
+    field(LNK2, "$(DEV):CP_2GET.SCAN")
+    field(DO3,  0)
+    field(LNK3, "$(DEV):CP_1GET.DISP")
+    field(DO4,  1)
+    field(LNK4, "$(DEV):CP_3GET.DISP")
+    field(DO5,  0)
+    field(LNK5, "$(DEV):GO_1SET.DISP")
+    field(DO6,  1)
+    field(LNK6, "$(DEV):GO_3SET.DISP")
+}    
+    
+    
+    
+record(seq, "$(DEV):MODE_3")  {
+    field(DESC, "Mode 1 Enable/Disable")
+    field(SELM, "All")
+    field(DO1,  0)   
+    field(LNK1, "$(DEV):CP_1GET.SCAN")
+    field(DO2,  $(SCAN))   
+    field(LNK2, "$(DEV):CP_3GET.SCAN")
+    field(DO3,  1)
+    field(LNK3, "$(DEV):CP_1GET.DISP")
+    field(DO4,  0)
+    field(LNK4, "$(DEV):CP_3GET.DISP")
+    field(DO5,  1)
+    field(LNK5, "$(DEV):GO_1SET.DISP")
+    field(DO6,  0)
+    field(LNK6, "$(DEV):GO_3SET.DISP")
+ }   
+    

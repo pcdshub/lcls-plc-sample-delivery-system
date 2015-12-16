@@ -1,0 +1,42 @@
+#==============================================================================
+#
+# Abs:  Beckhoff Bx9000 Controller
+#
+# Name: Bx9000.substitutions
+#
+# Auth: 22-May-2009, Bruce Hill			(bhill)
+# Rev : dd-mmm-yyyy, Reviewer's Name	(USERNAME)
+#
+#==============================================================================
+#
+
+file Bx9000Info.template
+{
+	pattern
+	{	REPROCEVT	}
+	{	188			}
+}
+
+file Bx9000InstalledBTs.template
+{
+	pattern
+	{	SLOT	}
+	{	0		}
+	{	1		}
+	{	2		}
+	{	3		}
+	{	4		}
+	{	5		}
+	{	6		}
+	{	7		}
+	{	8		}
+	{	9		}
+	{	10		}
+	{	11		}
+	{	12		}
+	{	13		}
+	{	14		}
+	{	15		}
+	{	16		}
+}
+

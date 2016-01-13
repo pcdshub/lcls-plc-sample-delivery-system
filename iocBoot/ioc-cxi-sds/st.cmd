@@ -42,7 +42,7 @@ dbLoadRecords("db/sds-m2-sampleSelection.db",   "P=$(LOC):$(SYS),NUM=2")
 dbLoadRecords("db/sds-m2-regulatorLimiter.db", "DEV=$(LOC):$(SYS):REG:01")
 dbLoadRecords("db/sds-m2-regulatorLimiter.db", "DEV=$(LOC):$(SYS):REG:02")
 
-dbLoadRecords("db/sample_flow_accumulators.db", "DEV=$(LOC):$(SYS)")
+dbLoadRecords("db/sample_flow_accumulators.db", "DEV=$(LOC):$(SYS),NUM=1")
 dbLoadRecords("db/sample_flow_integration.db", "LOC=$(LOC),SYS=$(SYS), FLOWMETER=$(LOC):$(SYS):SEL1:Flow")
 
 #Autosave

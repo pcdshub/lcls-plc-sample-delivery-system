@@ -127,10 +127,10 @@ file "bo_bit.template"{ pattern,
 
 
 #Regulator int control outputs
-file "ao_no_conv.template"{ pattern,
-{P, R, PORT, OFFSET, LOPR, HOPR, PREC, BITS, SCAN, EGU}
-{"$(DEV)",  "REG:01:PercSP",  "AO_PORT",  "19",  "0", "100", "0", "16", "I/O Intr", "%"}
-{"$(DEV)",  "REG:02:PercSP",  "AO_PORT",  "20",  "0", "100", "0", "16", "I/O Intr", "%"}
+file "ao.template"{ pattern,
+{P, R, PORT, OFFSET, EGUL, EGUF, PREC, BITS, DRVL, DRVH, SCAN, EGU}
+{"$(DEV)",  "REG:01:PercSP",  "AO_PORT",  "19",  "0", "100", "0", "16", "0", "100", "I/O Intr", "%"}
+{"$(DEV)",  "REG:02:PercSP",  "AO_PORT",  "20",  "0", "100", "0", "16", "0", "100", "I/O Intr", "%"}
 }
 
 #Proportionair int control outputs

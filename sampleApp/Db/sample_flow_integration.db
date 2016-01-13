@@ -3,7 +3,7 @@
 
 record(genSub, "$(LOC):$(SYS):RES:IntegratorSub") {
   field(DESC, "Moving Window")
-  field(SCAN, "Passive")
+  field(SCAN, ".5 second")
   field(INAM, "subSampleIntegratorInit")
   field(SNAM, "subSampleIntegratorProcess")
 
@@ -75,9 +75,9 @@ record(genSub, "$(LOC):$(SYS):RES:IntegratorSub") {
 	field(OUTH, "$(LOC):$(SYS):RES:8:IntgFlow PP")
 	
 	field(FTVI, "DOUBLE")
-	field(OUTI, "$(LOC):$(SYS):RES:9:IntgFlow")
+	field(OUTI, "$(LOC):$(SYS):RES:9:IntgFlow PP")
 	
 	field(FTVJ, "DOUBLE")
-	field(OUTJ, "$(LOC):$(SYS):RES:10:IntgFlow")
+	field(OUTJ, "$(LOC):$(SYS):RES:10:IntgFlow PP")
 	
 }

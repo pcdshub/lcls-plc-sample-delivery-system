@@ -23,6 +23,15 @@ file "bi_bit.template"{ pattern,
 
 {"$(DEV)",  "PREG:01:PressureStable",  "BI_PORT",  "50",  "Adjusting",  "Pressure stable", "MINOR", "NO_ALARM", "I/O Intr"}
 {"$(DEV)",  "PREG:02:PressureStable",  "BI_PORT",  "51",  "Adjusting",  "Pressure stable", "MINOR", "NO_ALARM", "I/O Intr"}
+
+{"$(DEV)", "VLV:01:OpnRB", "BI_PORT", "60", "Not Open", "Open", "NO_ALARM", "NO_ALARM", "I/O Intr"}
+{"$(DEV)", "VLV:02:OpnRB", "BI_PORT", "61", "Not Open", "Open", "NO_ALARM", "NO_ALARM", "I/O Intr"}
+{"$(DEV)", "VLV:03:OpnRB", "BI_PORT", "62", "Not Open", "Open", "NO_ALARM", "NO_ALARM", "I/O Intr"}
+{"$(DEV)", "VLV:04:OpnRB", "BI_PORT", "63", "Not Open", "Open", "NO_ALARM", "NO_ALARM", "I/O Intr"}
+{"$(DEV)", "VLV:05:OpnRB", "BI_PORT", "64", "Not Open", "Open", "NO_ALARM", "NO_ALARM", "I/O Intr"}
+{"$(DEV)", "VLV:06:OpnRB", "BI_PORT", "65", "Not Open", "Open", "NO_ALARM", "NO_ALARM", "I/O Intr"}
+{"$(DEV)", "VLV:07:OpnRB", "BI_PORT", "66", "Not Open", "Open", "NO_ALARM", "NO_ALARM", "I/O Intr"}
+{"$(DEV)", "VLV:08:OpnRB", "BI_PORT", "67", "Not Open", "Open", "NO_ALARM", "NO_ALARM", "I/O Intr"}
 }
 
 
@@ -123,6 +132,16 @@ file "bo_bit.template"{ pattern,
 
 {"$(DEV)",  "PAREG:01:Enable",  "BO_PORT",  "50",  "Disabled",  "Enabled"}
 {"$(DEV)",  "PAREG:02:Enable",  "BO_PORT",  "51",  "Disabled",  "Enabled"}
+
+{"$(DEV)",  "VLV:1:OpnSW",  "BO_PORT",  "60",  "Cls",  "Opn"}
+{"$(DEV)",  "VLV:2:OpnSW",  "BO_PORT",  "61",  "Cls",  "Opn"}
+{"$(DEV)",  "VLV:3:OpnSW",  "BO_PORT",  "62",  "Cls",  "Opn"}
+{"$(DEV)",  "VLV:4:OpnSW",  "BO_PORT",  "63",  "Cls",  "Opn"}
+
+{"$(DEV)",  "VLV:5:OpnSW",  "BO_PORT",  "64",  "Cls",  "Opn"}
+{"$(DEV)",  "VLV:6:OpnSW",  "BO_PORT",  "65",  "Cls",  "Opn"}
+{"$(DEV)",  "VLV:7:OpnSW",  "BO_PORT",  "66",  "Cls",  "Opn"}
+{"$(DEV)",  "VLV:8:OpnSW",  "BO_PORT",  "67",  "Cls",  "Opn"}
 }
 
 

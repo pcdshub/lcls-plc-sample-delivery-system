@@ -1,0 +1,1774 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 782
+y 1307
+w 755
+h 334
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 7
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 0
+ctlBgColor1 index 0
+ctlBgColor2 index 14
+topShadowColor index 0
+botShadowColor index 14
+title "Gas Delivery Manifold"
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 80
+y 60
+w 512
+h 272
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 7
+xPoints {
+  0 80
+  1 80
+  2 592
+  3 592
+  4 592
+  5 592
+  6 592
+}
+yPoints {
+  0 236
+  1 60
+  2 60
+  3 220
+  4 332
+  5 260
+  6 100
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 8
+y 0
+w 736
+h 32
+lineColor index 54
+fill
+fillColor index 54
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 11
+y 10
+w 152
+h 16
+font "helvetica-bold-r-14.0"
+fgColor index 14
+bgColor index 54
+value {
+  "Gas Delivery Manifold"
+}
+autoSize
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 259
+y -5
+w 0
+h 0
+lineColor index 14
+fillColor index 10
+numPoints 3
+xPoints {
+  0 259
+  1 259
+  2 259
+}
+yPoints {
+  0 -5
+  1 -5
+  2 -5
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 8
+y 44
+w 96
+h 40
+
+beginGroup
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 60
+y 40
+w 40
+h 40
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 60
+y 40
+w 40
+h 40
+lineColor index 14
+fill
+fillColor index 20
+lineWidth 3
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 60
+y 40
+w 40
+h 40
+lineColor index 14
+fill
+fillColor index 15
+lineWidth 0
+visPv "$(LOC):$(SYS):VLV:01:OpnRB"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 65
+y 44
+w 31
+h 31
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 96
+  1 65
+}
+yPoints {
+  0 44
+  1 75
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 65
+y 44
+w 31
+h 31
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 96
+  1 65
+}
+yPoints {
+  0 75
+  1 44
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 28
+y 40
+w 24
+h 40
+fgColor index 14
+onColor index 8
+offColor index 7
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):VLV:01:OpnSW"
+pressValue "1"
+releaseValue "1"
+onLabel "Open"
+offLabel "Open"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 40
+w 24
+h 40
+fgColor index 14
+onColor index 8
+offColor index 7
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):VLV:01:OpnSW"
+pressValue "0"
+releaseValue "0"
+onLabel "Close"
+offLabel "Close"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 80
+y 140
+w 512
+h 0
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 80
+  1 592
+}
+yPoints {
+  0 140
+  1 140
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 108
+y 116
+w 40
+h 96
+
+beginGroup
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 104
+y 120
+w 40
+h 40
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 104
+y 120
+w 40
+h 40
+lineColor index 14
+fill
+fillColor index 20
+lineWidth 3
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 104
+y 120
+w 40
+h 40
+lineColor index 14
+fill
+fillColor index 15
+lineWidth 0
+visPv "$(LOC):$(SYS):VLV:02:OpnRB"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 108
+y 124
+w 31
+h 31
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 108
+  1 139
+}
+yPoints {
+  0 124
+  1 155
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 108
+y 124
+w 31
+h 31
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 139
+  1 108
+}
+yPoints {
+  0 124
+  1 155
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 104
+y 168
+w 40
+h 24
+fgColor index 14
+onColor index 8
+offColor index 7
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):VLV:02:OpnSW"
+pressValue "1"
+releaseValue "1"
+onLabel "Open"
+offLabel "Open"
+3d
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 104
+y 192
+w 40
+h 24
+fgColor index 14
+onColor index 8
+offColor index 7
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):VLV:02:OpnSW"
+pressValue "0"
+releaseValue "0"
+onLabel "Close"
+offLabel "Close"
+3d
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 508
+y 120
+w 40
+h 96
+
+beginGroup
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 508
+y 120
+w 40
+h 40
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 508
+y 120
+w 40
+h 40
+lineColor index 14
+fill
+fillColor index 20
+lineWidth 3
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 508
+y 120
+w 40
+h 40
+lineColor index 14
+fill
+fillColor index 15
+lineWidth 0
+visPv "$(LOC):$(SYS):VLV:07:OpnRB"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 512
+y 124
+w 31
+h 31
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 512
+  1 543
+}
+yPoints {
+  0 124
+  1 155
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 512
+y 124
+w 31
+h 31
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 543
+  1 512
+}
+yPoints {
+  0 124
+  1 155
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 508
+y 168
+w 40
+h 24
+fgColor index 14
+onColor index 8
+offColor index 7
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):VLV:01:OpnSW"
+pressValue "1"
+releaseValue "1"
+onLabel "Open"
+offLabel "Open"
+3d
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 508
+y 192
+w 40
+h 24
+fgColor index 14
+onColor index 8
+offColor index 7
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):VLV:01:OpnSW"
+pressValue "0"
+releaseValue "0"
+onLabel "Close"
+offLabel "Close"
+3d
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 184
+y 140
+w 0
+h 44
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 184
+  1 184
+}
+yPoints {
+  0 184
+  1 140
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 280
+y 140
+w 0
+h 44
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 280
+  1 280
+}
+yPoints {
+  0 184
+  1 140
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 376
+y 140
+w 0
+h 44
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 376
+  1 376
+}
+yPoints {
+  0 184
+  1 140
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 472
+y 140
+w 0
+h 44
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 472
+  1 472
+}
+yPoints {
+  0 184
+  1 140
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 452
+y 164
+w 40
+h 96
+
+beginGroup
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 452
+y 164
+w 40
+h 40
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 452
+y 164
+w 40
+h 40
+lineColor index 14
+fill
+fillColor index 20
+lineWidth 3
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 452
+y 164
+w 40
+h 40
+lineColor index 14
+fill
+fillColor index 15
+lineWidth 0
+visPv "$(LOC):$(SYS):VLV:06:OpnRB"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 456
+y 168
+w 31
+h 31
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 456
+  1 487
+}
+yPoints {
+  0 168
+  1 199
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 456
+y 168
+w 31
+h 31
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 487
+  1 456
+}
+yPoints {
+  0 168
+  1 199
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 452
+y 212
+w 40
+h 24
+fgColor index 14
+onColor index 8
+offColor index 7
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):VLV:06:OpnSW"
+pressValue "1"
+releaseValue "1"
+onLabel "Open"
+offLabel "Open"
+3d
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 452
+y 236
+w 40
+h 24
+fgColor index 14
+onColor index 8
+offColor index 7
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):VLV:06:OpnSW"
+pressValue "0"
+releaseValue "0"
+onLabel "Close"
+offLabel "Close"
+3d
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 356
+y 164
+w 40
+h 96
+
+beginGroup
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 356
+y 164
+w 40
+h 40
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 356
+y 164
+w 40
+h 40
+lineColor index 14
+fill
+fillColor index 20
+lineWidth 3
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 356
+y 164
+w 40
+h 40
+lineColor index 14
+fill
+fillColor index 15
+lineWidth 0
+visPv "$(LOC):$(SYS):VLV:05:OpnRB"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 360
+y 168
+w 31
+h 31
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 360
+  1 391
+}
+yPoints {
+  0 168
+  1 199
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 360
+y 168
+w 31
+h 31
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 391
+  1 360
+}
+yPoints {
+  0 168
+  1 199
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 356
+y 212
+w 40
+h 24
+fgColor index 14
+onColor index 8
+offColor index 7
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):VLV:05:OpnSW"
+pressValue "1"
+releaseValue "1"
+onLabel "Open"
+offLabel "Open"
+3d
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 356
+y 236
+w 40
+h 24
+fgColor index 14
+onColor index 8
+offColor index 7
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):VLV:05:OpnSW"
+pressValue "0"
+releaseValue "0"
+onLabel "Close"
+offLabel "Close"
+3d
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 260
+y 164
+w 40
+h 96
+
+beginGroup
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 260
+y 164
+w 40
+h 40
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 260
+y 164
+w 40
+h 40
+lineColor index 14
+fill
+fillColor index 20
+lineWidth 3
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 260
+y 164
+w 40
+h 40
+lineColor index 14
+fill
+fillColor index 15
+lineWidth 0
+visPv "$(LOC):$(SYS):VLV:04:OpnRB"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 264
+y 168
+w 31
+h 31
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 264
+  1 295
+}
+yPoints {
+  0 168
+  1 199
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 264
+y 168
+w 31
+h 31
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 295
+  1 264
+}
+yPoints {
+  0 168
+  1 199
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 260
+y 212
+w 40
+h 24
+fgColor index 14
+onColor index 8
+offColor index 7
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):VLV:04:OpnSW"
+pressValue "1"
+releaseValue "1"
+onLabel "Open"
+offLabel "Open"
+3d
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 260
+y 236
+w 40
+h 24
+fgColor index 14
+onColor index 8
+offColor index 7
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):VLV:04:OpnSW"
+pressValue "0"
+releaseValue "0"
+onLabel "Close"
+offLabel "Close"
+3d
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 164
+y 164
+w 40
+h 96
+
+beginGroup
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 164
+y 164
+w 40
+h 40
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 164
+y 164
+w 40
+h 40
+lineColor index 14
+fill
+fillColor index 20
+lineWidth 3
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 164
+y 164
+w 40
+h 40
+lineColor index 14
+fill
+fillColor index 15
+lineWidth 0
+visPv "$(LOC):$(SYS):VLV:03:OpnRB"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 168
+y 168
+w 31
+h 31
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 168
+  1 199
+}
+yPoints {
+  0 168
+  1 199
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 168
+y 168
+w 31
+h 31
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 199
+  1 168
+}
+yPoints {
+  0 168
+  1 199
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 164
+y 212
+w 40
+h 24
+fgColor index 14
+onColor index 8
+offColor index 7
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):VLV:03:OpnSW"
+pressValue "1"
+releaseValue "1"
+onLabel "Open"
+offLabel "Open"
+3d
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 164
+y 236
+w 40
+h 24
+fgColor index 14
+onColor index 8
+offColor index 7
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):VLV:03:OpnSW"
+pressValue "0"
+releaseValue "0"
+onLabel "Close"
+offLabel "Close"
+3d
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 572
+y 156
+w 40
+h 56
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+font "helvetica-medium-r-18.0"
+invisible
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "sampleScreens/rvc300Screens/rvc300-abridged.edl"
+}
+symbols {
+  0 "DEV=$(LOC):VAC:VCN:10"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 580
+y 256
+w 24
+h 24
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 580
+y 256
+w 24
+h 24
+lineColor index 14
+fill
+fillColor index 14
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 581
+y 257
+w 22
+h 22
+lineColor index 14
+fill
+fillColor index 15
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 612
+y 256
+w 88
+h 21
+controlPv "$(LOC):MKS670:READINGGET"
+font "helvetica-medium-r-18.0"
+fgColor index 15
+bgColor index 14
+autoHeight
+limitsFromDb
+nullColor index 0
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 612
+y 232
+w 109
+h 21
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Cell Pressure"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 620
+y 100
+w 110
+h 21
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Needle Valve"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 620
+y 124
+w 100
+h 28
+font "helvetica-medium-r-14.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Flow Setpoint"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 620
+y 184
+w 88
+h 28
+controlPv "$(LOC):VAC:VCN:10:SetFlowSetpoint"
+format "exponential"
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 4
+editable
+motifWidget
+precision 2
+nullColor index 15
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 620
+y 152
+w 120
+h 28
+controlPv "$(LOC):VAC:VCN:10:GetFlowSetpoint"
+format "exponential"
+font "helvetica-bold-r-14.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 14
+precision 2
+nullColor index 41
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 576
+y 252
+w 36
+h 36
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+font "helvetica-medium-r-18.0"
+invisible
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "sampleScreens/mks670bScreens/mks670b.edl"
+}
+symbols {
+  0 "P=$(LOC):MKS670"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 60
+y 236
+w 40
+h 40
+
+beginGroup
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 60
+y 236
+w 40
+h 40
+lineColor index 14
+fill
+fillColor index 8
+lineWidth 3
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 60
+y 236
+w 40
+h 40
+lineColor index 14
+fillColor index 0
+lineWidth 3
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 580
+y 164
+w 24
+h 36
+
+beginGroup
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 580
+y 164
+w 24
+h 36
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 5
+xPoints {
+  0 580
+  1 604
+  2 580
+  3 604
+  4 580
+}
+yPoints {
+  0 164
+  1 164
+  2 200
+  3 200
+  4 164
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 580
+y 172
+w 24
+h 20
+lineColor index 14
+fillColor index 0
+lineWidth 2
+numPoints 2
+xPoints {
+  0 580
+  1 604
+}
+yPoints {
+  0 192
+  1 172
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 468
+y 4
+w 152
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+inconsistentColor index 35
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):RemoteControlEnable"
+indicatorPv "$(LOC):$(SYS):RemoteControlEnabled"
+onLabel "Disable System Control"
+offLabel "Enable System Control"
+labelType "literal"
+3d
+font "helvetica-medium-r-12.0"
+objType "controls"
+endObjectProperties
+

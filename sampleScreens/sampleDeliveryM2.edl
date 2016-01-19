@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 924
-y 316
+x 2893
+y 1805
 w 701
 h 467
 font "helvetica-medium-r-12.0"
@@ -1860,7 +1860,7 @@ botShadowColor index 11
 font "helvetica-bold-r-10.0"
 buttonLabel "Control Screens"
 numPvs 4
-numDsps 10
+numDsps 11
 displayFileName {
   0 "sampleScreens/iclVacuum.edl"
   1 "sampleScreens/manual_regulator_controls.edl"
@@ -1872,6 +1872,7 @@ displayFileName {
   7 "sampleScreens/proportionair_regulator_controls.edl"
   8 "sampleScreens/selector2.edl"
   9 "sampleScreens/lc20Screens/lc20.edl"
+  10 "sampleScreens/manifold.edl"
 }
 menuLabel {
   1 "Regulator sliders"
@@ -1883,6 +1884,7 @@ menuLabel {
   7 "Proportionair Control"
   8 "Selector 2"
   9 "HPLC Pump 2"
+  10 "Gas Delivery Manifold"
 }
 setPosition {
   0 "parentWindow"
@@ -1898,6 +1900,7 @@ symbols {
   7 "LOC=$(LOC),SYS=$(SYS)"
   8 "LOC=$(LOC),SYS=$(SYS)"
   9 "DEV=$(LOC):LC20:$(SYS)B,IOC=$(HPLC_IOC)"
+  10 "LOC=$(LOC),SYS=$(SYS)"
 }
 endObjectProperties
 

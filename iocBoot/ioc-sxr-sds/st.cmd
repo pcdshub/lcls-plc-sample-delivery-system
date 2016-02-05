@@ -111,7 +111,7 @@ dbLoadRecords("db/m2_sample_selection.db",	"P=$(LOC):$(SYS)")
 #dbLoadRecords("db/sds-m2-nozzleselector.db",	"P=$(LOC):$(SYS):SEL2")
 
 
-dbLoadRecords("db/sample_flow_accumulators.db", "LOC=$(LOC),SYS=$(SYS)")
+dbLoadRecords("db/sample_flow_accumulators.db", "DEV=$(LOC):$(SYS),LOC=$(LOC),SYS=$(SYS)")
 dbLoadRecords("db/sample_flow_integration.db", "LOC=$(LOC),SYS=$(SYS), FLOWMETER=$(LOC):$(SYS):SEL:Flow")
 
 	

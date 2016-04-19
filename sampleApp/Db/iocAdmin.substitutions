@@ -10,7 +10,7 @@
 # file iocHard.db
 # file iocSoft.db
 
-file iocHard.db
+file iocSoft.db
 {
 	{ IOC	= $(IOC)  }
 }

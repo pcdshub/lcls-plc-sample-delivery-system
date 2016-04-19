@@ -1,9 +1,9 @@
 #!/bin/bash
 
-export IOC="ioc-cxi-sds"
+export IOC="ioc-xpp-sds"
 
 # Setup the IOC user environment
-source /reg/d/iocCommon/All/cxi_env.sh
+source /reg/d/iocCommon/All/xpp_env.sh
 
 # Make sure the IOC's data directories are ready for use
 

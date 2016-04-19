@@ -19,7 +19,7 @@ sampleDelivery_registerRecordDeviceDriver(pdbbase)
 epicsEnvSet("EPICS_PV", "IOC:AMO:SDS:MASTODON")
 epicsEnvSet( "LOC", "AMO")
 epicsEnvSet( "SYS", "SDS") #Sample Delivery System
-epicsEnvSet( "PLC", "plc-sds-mastodon")
+epicsEnvSet( "PLC", "172.21.37.23")
 
 < iocBoot/ioc-tst-sds/plcPorts.cmd
 

@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 5857
-y 2291
-w 190
-h 457
+x 50
+y 50
+w 376
+h 459
 font "helvetica-medium-r-12.0"
 fontAlign "center"
 ctlFont "helvetica-medium-r-14.0"
@@ -37,7 +37,7 @@ minor 0
 release 0
 x 4
 y 4
-w 180
+w 368
 h 448
 lineColor index 4
 fill
@@ -73,9 +73,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 36
+x 224
 y 8
-w 132
+w 146
 h 42
 font "helvetica-bold-r-18.0"
 fontAlign "right"
@@ -84,7 +84,7 @@ bgColor index 1
 useDisplayBg
 value {
   "$(LOC):$(SYS)"
-  "Selector 2"
+  "Selector $(NUM)"
 }
 autoSize
 endObjectProperties
@@ -402,5 +402,377 @@ displayFileName {
 symbols {
   0 "LOC=$(LOC),SYS=$(SYS),NUM=2"
 }
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 196
+y 60
+w 152
+h 112
+
+beginGroup
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 196
+y 124
+w 104
+h 14
+controlPv "$(LOC):$(SYS):SEL$(NUM):FMModeRb"
+format "string"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 15
+bgColor index 13
+autoHeight
+nullColor index 1
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 268
+y 148
+w 80
+h 24
+fgColor index 14
+onColor index 30
+offColor index 34
+inconsistentColor index 36
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):SEL$(NUM):FMMode"
+indicatorPv "$(LOC):$(SYS):SEL$(NUM):FMModeRb"
+3d
+font "helvetica-medium-r-12.0"
+objType "controls"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 196
+y 108
+w 104
+h 14
+controlPv "$(LOC):$(SYS):SEL$(NUM):typeFlowMeter"
+format "string"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 13
+autoHeight
+nullColor index 1
+colorPv "$(LOC):$(SYS):SEL$(NUM):typeFlowMeter"
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 196
+y 92
+w 100
+h 14
+controlPv "$(LOC):$(SYS):SEL$(NUM):stateFlowMeter"
+format "string"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 13
+autoHeight
+nullColor index 1
+colorPv "$(LOC):$(SYS):SEL$(NUM):stateFlowMeter"
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 196
+y 76
+w 100
+h 14
+controlPv "$(LOC):$(SYS):SEL$(NUM):Flow"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 13
+bgAlarm
+autoHeight
+precision 3
+nullColor index 1
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 196
+y 60
+w 57
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "H2O Flow"
+}
+autoSize
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 196
+y 148
+w 72
+h 24
+fgColor index 14
+onColor index 1
+offColor index 1
+topShadowColor index 1
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):SEL$(NUM):FMReset"
+pressValue "1"
+releaseValue "0"
+onLabel "Reset FM"
+offLabel "Reset FM"
+3d
+useEnumNumeric
+font "helvetica-medium-r-14.0"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 12
+y 12
+w 164
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+inconsistentColor index 35
+topShadowColor index 1
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):RemoteControlEnable"
+indicatorPv "$(LOC):$(SYS):RemoteControlEnabled"
+onLabel "System Enabled"
+offLabel "System Locked"
+labelType "literal"
+3d
+font "helvetica-medium-r-14.0"
+objType "controls"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 12
+y 40
+w 116
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-bold-r-10.0"
+buttonLabel "Control Screens"
+numPvs 4
+numDsps 11
+displayFileName {
+  0 "sampleScreens/iclVacuum.edl"
+  1 "sampleScreens/manual_regulator_controls.edl"
+  2 "sampleScreens/lc20Screens/lc20.edl"
+  3 "sampleScreens/sample_integration.edl"
+  4 "sampleScreens/sample_name_change.edl"
+  5 "sampleScreens/flowMeterControls.edl"
+  6 "sampleScreens/ptc10Screens/ptc10.edl"
+  7 "sampleScreens/proportionair_regulator_controls.edl"
+  8 "sampleScreens/selector2.edl"
+  9 "sampleScreens/lc20Screens/lc20.edl"
+  10 "sampleScreens/manifold.edl"
+}
+menuLabel {
+  1 "Regulator sliders"
+  2 "HPLC Pump"
+  3 "Integrated flows"
+  4 "Edit names"
+  5 "Flowmeter"
+  6 "CoolerShaker"
+  7 "Proportionair Control"
+  8 "Selector 2"
+  9 "HPLC Pump 2"
+  10 "Gas Delivery Manifold"
+}
+setPosition {
+  0 "parentWindow"
+}
+symbols {
+  0 "LOC=$(LOC),SYS=$(SYS)"
+  1 "LOC=$(LOC),SYS=$(SYS)"
+  2 "DEV=$(LOC):LC20:$(SYS),IOC=$(HPLC_IOC)"
+  3 "LOC=$(LOC),SYS=$(SYS)"
+  4 "LOC=$(LOC),SYS=$(SYS),NUM=1"
+  5 "LOC=$(LOC),SYS=$(SYS)"
+  6 "DEV=$(LOC):PTC:01,IOC=$(LOC):PTC10:IOC:00"
+  7 "LOC=$(LOC),SYS=$(SYS)"
+  8 "LOC=$(LOC),SYS=$(SYS),NUM=2"
+  9 "DEV=$(LOC):LC20:$(SYS)B,IOC=$(HPLC_IOC)"
+  10 "LOC=$(LOC),SYS=$(SYS)"
+}
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 196
+y 192
+w 72
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+inconsistentColor index 14
+topShadowColor index 1
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):SEL$(NUM):Shaker1"
+onLabel "Stop"
+offLabel "Shake 1"
+labelType "literal"
+3d
+font "helvetica-medium-r-14.0"
+objType "controls"
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 196
+y 216
+w 72
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+inconsistentColor index 14
+topShadowColor index 1
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):SEL$(NUM):Shaker2"
+onLabel "Stop"
+offLabel "Shake 2"
+labelType "literal"
+3d
+font "helvetica-medium-r-14.0"
+objType "controls"
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 196
+y 240
+w 72
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+inconsistentColor index 14
+topShadowColor index 1
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):SEL$(NUM):Shaker3"
+onLabel "Stop"
+offLabel "Shake 3"
+labelType "literal"
+3d
+font "helvetica-medium-r-14.0"
+objType "controls"
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 196
+y 264
+w 72
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+inconsistentColor index 14
+topShadowColor index 1
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):SEL$(NUM):Shaker4"
+onLabel "Stop"
+offLabel "Shake 4"
+labelType "literal"
+3d
+font "helvetica-medium-r-14.0"
+objType "controls"
 endObjectProperties
 

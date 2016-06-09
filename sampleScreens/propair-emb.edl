@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 818
-y 389
+x 1437
+y 679
 w 1026
 h 600
 font "helvetica-medium-r-14.0"
@@ -21,120 +21,6 @@ topShadowColor index 0
 botShadowColor index 14
 endScreenProperties
 
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 0
-y 192
-w 115
-h 56
-
-beginGroup
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 0
-y 192
-w 69
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 1
-useDisplayBg
-value {
-  "Pressure SP"
-}
-autoSize
-endObjectProperties
-
-# (Text Entry)
-object TextentryClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 0
-y 212
-w 80
-h 36
-controlPv "$(LOC):$(SYS):PAREG:$(NUM):PressSP"
-fgColor index 15
-fgAlarm
-bgColor index 14
-fill
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 0
-y 128
-w 115
-h 56
-
-beginGroup
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 0
-y 128
-w 86
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 1
-useDisplayBg
-value {
-  "Upper Limit(psi)"
-}
-autoSize
-endObjectProperties
-
-# (Text Entry)
-object TextentryClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 0
-y 148
-w 80
-h 36
-controlPv "$(LOC):$(SYS):PAREG:$(NUM):HiPressLimit"
-fgColor index 15
-fgAlarm
-bgColor index 14
-fill
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
 # (Button)
 object activeButtonClass
 beginObjectProperties
@@ -146,6 +32,7 @@ y 96
 w 80
 h 24
 fgColor index 14
+fgAlarm
 onColor index 4
 offColor index 4
 inconsistentColor index 14
@@ -166,15 +53,14 @@ major 4
 minor 1
 release 1
 x 1
-y 1
-w 69
-h 28
+y 46
+w 81
+h 18
 font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 1
 useDisplayBg
 value {
-  "Reg $(NUM)"
   "Outlet (psi)"
 }
 autoSize
@@ -230,21 +116,100 @@ showValue
 orientation "vertical"
 endObjectProperties
 
-# (Text Update)
-object TextupdateClass
+# (Text Entry)
+object TextentryClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 2
-y 34
+x -5
+y -4
+w 75
+h 37
+controlPv "$(LOC):$(SYS):PAREG:$(NUM):PressSP.DESC"
+fgColor index 14
+fgAlarm
+bgColor index 0
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 0
+y 192
+w 60
+h 18
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "Setpoint"
+}
+autoSize
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 0
+y 212
 w 80
-h 28
-controlPv "$(LOC):$(SYS):PREG:$(NUM):PressureStable"
+h 36
+controlPv "$(LOC):$(SYS):PAREG:$(NUM):PressSP"
 fgColor index 15
 fgAlarm
 bgColor index 14
 fill
-font "helvetica-medium-r-10.0"
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 1
+y 132
+w 66
+h 18
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "Limit(psi)"
+}
+autoSize
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x -2
+y 155
+w 80
+h 36
+controlPv "$(LOC):$(SYS):PAREG:$(NUM):HiPressLimit"
+fgColor index 15
+fgAlarm
+bgColor index 14
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
 endObjectProperties
 

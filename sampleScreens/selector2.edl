@@ -105,8 +105,8 @@ selectColor index 8
 inconsistentColor index 8
 topShadowColor index 2
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):SEL2:VLV:01:RES_REQ"
-indicatorPv "$(LOC):$(SYS):SEL2:VLV:01:CURR_POS"
+controlPv "$(LOC):$(SYS):SEL$(NUM):VLV:01:RES_REQ"
+indicatorPv "$(LOC):$(SYS):SEL$(NUM):VLV:01:CURR_POS"
 font "helvetica-medium-r-14.0"
 visMin "0"
 visMax "1"
@@ -128,8 +128,8 @@ selectColor index 8
 inconsistentColor index 8
 topShadowColor index 2
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):SEL2:VLV:02:RES_REQ"
-indicatorPv "$(LOC):$(SYS):SEL2:VLV:02:CURR_POS"
+controlPv "$(LOC):$(SYS):SEL$(NUM):VLV:02:RES_REQ"
+indicatorPv "$(LOC):$(SYS):SEL$(NUM):VLV:02:CURR_POS"
 font "helvetica-medium-r-14.0"
 visMin "0"
 visMax "1"
@@ -158,7 +158,7 @@ x 56
 y 424
 w 68
 h 20
-controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.TEST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.TEST"
 fgColor index 14
 bgColor index 1
 font "helvetica-medium-r-12.0"
@@ -175,7 +175,7 @@ x 56
 y 392
 w 68
 h 20
-controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.NIST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.NIST"
 fgColor index 14
 bgColor index 1
 font "helvetica-medium-r-12.0"
@@ -192,7 +192,7 @@ x 56
 y 364
 w 68
 h 20
-controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.EIST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.EIST"
 fgColor index 14
 bgColor index 1
 font "helvetica-medium-r-12.0"
@@ -209,7 +209,7 @@ x 56
 y 332
 w 68
 h 20
-controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.SVST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.SVST"
 fgColor index 14
 bgColor index 1
 font "helvetica-medium-r-12.0"
@@ -226,7 +226,7 @@ x 56
 y 300
 w 68
 h 20
-controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.SXST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.SXST"
 fgColor index 14
 bgColor index 1
 font "helvetica-medium-r-12.0"
@@ -243,7 +243,7 @@ x 56
 y 268
 w 68
 h 20
-controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.FVST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.FVST"
 fgColor index 14
 bgColor index 1
 font "helvetica-medium-r-12.0"
@@ -260,7 +260,7 @@ x 56
 y 240
 w 68
 h 20
-controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.FRST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.FRST"
 fgColor index 14
 bgColor index 1
 font "helvetica-medium-r-12.0"
@@ -277,7 +277,7 @@ x 56
 y 208
 w 68
 h 20
-controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.THST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.THST"
 fgColor index 14
 bgColor index 1
 font "helvetica-medium-r-12.0"
@@ -294,7 +294,7 @@ x 56
 y 176
 w 68
 h 20
-controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.TWST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.TWST"
 fgColor index 14
 bgColor index 1
 font "helvetica-medium-r-12.0"
@@ -311,7 +311,7 @@ x 56
 y 144
 w 68
 h 20
-controlPv "$(LOC):$(SYS):SEL2:SYNC_RES_REQ.ONST"
+controlPv "$(LOC):$(SYS):SEL$(NUM):SYNC_RES_REQ.ONST"
 fgColor index 14
 bgColor index 1
 font "helvetica-medium-r-12.0"
@@ -366,7 +366,7 @@ onColor index 4
 offColor index 3
 topShadowColor index 1
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):SEL2:Lock"
+controlPv "$(LOC):$(SYS):SEL$(NUM):Lock"
 pressValue "1"
 releaseValue "0"
 onLabel "Lock"
@@ -400,7 +400,7 @@ displayFileName {
   0 "sampleScreens/sample_name_change.edl"
 }
 symbols {
-  0 "LOC=$(LOC),SYS=$(SYS),NUM=2"
+  0 "LOC=$(LOC),SYS=$(SYS),NUM=$(NUM)"
 }
 endObjectProperties
 

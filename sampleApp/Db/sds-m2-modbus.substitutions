@@ -59,6 +59,7 @@ file "aiFloat64.template"{ pattern,
 {"$(DEV)",  "Aerojet:NozzleBox:Press",  "aiFLOAT_PORT",  "4", "FLOAT32_LE", "2", "760", "0", "I/O Intr", "T"}
 {"$(DEV)",  "Aerojet:Nebulizer:Press",  "aiFLOAT_PORT",  "8", "FLOAT32_LE", "2", "760", "0", "I/O Intr", "T"}
 {"$(DEV)",  "Aerojet:Lens:Press",  "aiFLOAT_PORT",  "12", "FLOAT32_LE", "2", "760", "0", "I/O Intr", "T"}
+{"$(DEV)",  "SEL2:Flow",  "aiFLOAT_PORT",  "16", "FLOAT32_LE", "2", "100", "0", "I/O Intr", "uL/min"}
 }
 
 #Selector 1
@@ -97,6 +98,8 @@ file "ai_no_conv.template"{ pattern,
 {"$(DEV)",  "SEL2:VLV:01:CURR_POS",  "AI_PORT",  "40", "16", "1", "12", "0",  "I/O Intr"}
 {"$(DEV)",  "SEL2:VLV:02:CURR_POS",  "AI_PORT",  "41", "16", "1", "12", "0",  "I/O Intr"}
 {"$(DEV)",  "SEL2:SYNC:CURR_POS",  "AI_PORT",  "42", "16", "1", "12", "0",  "I/O Intr"}		
+{"$(DEV)",  "SEL2:rawStateFlowMeter",  "AI_PORT",  "43", "16", "0", "12", "0",  "I/O Intr"}		
+{"$(DEV)",  "SEL2:rawTypeFlowMeter",  "AI_PORT",  "44", "16", "0", "12", "0",  "I/O Intr"}		
 }
 
 #Regulator readbacks
@@ -126,10 +129,10 @@ file "bo_bit.template"{ pattern,
 {"$(DEV)",  "E_STOP",  			"BO_PORT",  "1",  "Stop",  "Stop"}
 {"$(DEV)",  "N2_PURGE",  		"BO_PORT",  "9",  "na",  "purge it will"}
 
-{"$(DEV)",  "01:SampleShaker",  "BO_PORT",  "10",  "Off",  "On"}
-{"$(DEV)",  "02:SampleShaker",  "BO_PORT",  "11",  "Off",  "On"}
-{"$(DEV)",  "03:SampleShaker",  "BO_PORT",  "12",  "Off",  "On"}
-{"$(DEV)",  "04:SampleShaker",  "BO_PORT",  "13",  "Off",  "On"}
+{"$(DEV)",  "SEL1:Shaker1",  "BO_PORT",  "10",  "Off",  "On"}
+{"$(DEV)",  "SEL1:Shaker2",  "BO_PORT",  "11",  "Off",  "On"}
+{"$(DEV)",  "SEL1:Shaker3",  "BO_PORT",  "12",  "Off",  "On"}
+{"$(DEV)",  "SEL1:Shaker4",  "BO_PORT",  "13",  "Off",  "On"}
 
 {"$(DEV)",  "REG:01:Enable",  "BO_PORT",  "20",  "Disabled",  "Enabled"}
 {"$(DEV)",  "REG:02:Enable",  "BO_PORT",  "21",  "Disabled",  "Enabled"}
@@ -143,6 +146,11 @@ file "bo_bit.template"{ pattern,
 {"$(DEV)",  "SEL2:FMReset",  "BO_PORT",  "41",  "",  ""}
 {"$(DEV)",  "SEL2:FMMode",  "BO_PORT",  "42",  "Precision",  "Extended"}
 {"$(DEV)",  "SEL2:Unlock",  "BO_PORT",  "43",  "",  "Unlock"}
+
+{"$(DEV)",  "SEL2:Shaker1",  "BO_PORT",  "44",  "Off",  "On"}
+{"$(DEV)",  "SEL2:Shaker2",  "BO_PORT",  "45",  "Off",  "On"}
+{"$(DEV)",  "SEL2:Shaker3",  "BO_PORT",  "46",  "Off",  "On"}
+{"$(DEV)",  "SEL2:Shaker4",  "BO_PORT",  "47",  "Off",  "On"}
 
 {"$(DEV)",  "PAREG:01:Enable",  "BO_PORT",  "50",  "Disabled",  "Enabled"}
 {"$(DEV)",  "PAREG:02:Enable",  "BO_PORT",  "51",  "Disabled",  "Enabled"}
@@ -163,9 +171,9 @@ file "bo_bit.template"{ pattern,
 
 #Regulator int control outputs
 file "ao.template"{ pattern,
-{P, R, PORT, OFFSET, EGUL, EGUF, PREC, BITS, DRVL, DRVH, SCAN, EGU}
-{"$(DEV)",  "REG:01:PercSP",  "AO_PORT",  "19",  "0", "100", "0", "16", "0", "100", "I/O Intr", "%"}
-{"$(DEV)",  "REG:02:PercSP",  "AO_PORT",  "20",  "0", "100", "0", "16", "0", "100", "I/O Intr", "%"}
+{P, R, PORT, OFFSET, EGUL, EGUF, PREC, BITS, SCAN, EGU}
+{"$(DEV)",  "REG:01:PercSP",  "AO_PORT",  "19",  "0", "100", "0", "16", "I/O Intr", "%"}
+{"$(DEV)",  "REG:02:PercSP",  "AO_PORT",  "20",  "0", "100", "0", "16", "I/O Intr", "%"}
 }
 
 #Proportionair int control outputs

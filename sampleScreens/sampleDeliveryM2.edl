@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 50
-y 50
+x 820
+y 255
 w 701
 h 467
 font "helvetica-medium-r-12.0"
@@ -1634,7 +1634,7 @@ fgColor index 14
 bgColor index 1
 useDisplayBg
 value {
-  "V2.7.5"
+  "V2.7.6"
 }
 autoSize
 endObjectProperties

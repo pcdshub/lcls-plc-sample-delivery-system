@@ -26,7 +26,6 @@ record ( calcout, "$(P):$(N):ClearIntgFlowCalc" )
 
 record(ao, "$(P):$(N):StartingVol"){
 	field(DESC, "Sample volume to start")
-	field(FLNK, "$(P):$(N):ClearIntgFlow")
 	field(EGU, "uL")
 	field(OMSL, "supervisory")
 	field(DRVL, "0")

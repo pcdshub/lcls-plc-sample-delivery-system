@@ -1,0 +1,716 @@
+
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 77
+y 121
+w 755
+h 334
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 7
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 0
+ctlBgColor1 index 0
+ctlBgColor2 index 14
+topShadowColor index 0
+botShadowColor index 14
+title "Gas Delivery Manifold"
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 160
+y 50
+w 568
+h 272
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 0
+xPoints {
+}
+yPoints {
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 8
+y 0
+w 736
+h 32
+lineColor index 54
+fill
+fillColor index 54
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 11
+y 10
+w 152
+h 16
+font "helvetica-bold-r-14.0"
+fgColor index 14
+bgColor index 54
+value {
+  "Gas Delivery Manifold"
+}
+autoSize
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 259
+y -5
+w 0
+h 0
+lineColor index 14
+fillColor index 10
+numPoints 3
+xPoints {
+  0 259
+  1 259
+  2 259
+}
+yPoints {
+  0 -5
+  1 -5
+  2 -5
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 24
+y 175
+w 568
+h 0
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 24
+  1 592
+}
+yPoints {
+  0 175
+  1 175
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 568
+y 180
+w 40
+h 56
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+font "helvetica-medium-r-18.0"
+invisible
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "sampleScreens/rvc300Screens/rvc300-abridged.edl"
+}
+symbols {
+  0 "DEV=$(LOC):USR:VCN:10"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 578
+y 296
+w 24
+h 24
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 578
+y 296
+w 24
+h 24
+lineColor index 14
+fill
+fillColor index 14
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 579
+y 297
+w 22
+h 22
+lineColor index 14
+fill
+fillColor index 15
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 616
+y 300
+w 88
+h 21
+controlPv "$(LOC):MKS670:READINGGET"
+font "helvetica-medium-r-18.0"
+fgColor index 15
+bgColor index 14
+autoHeight
+limitsFromDb
+nullColor index 0
+useHexPrefix
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 612
+y 272
+w 109
+h 21
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Cell Pressure"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 620
+y 140
+w 110
+h 21
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Needle Valve"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 620
+y 156
+w 100
+h 28
+font "helvetica-medium-r-14.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Flow Setpoint"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 620
+y 220
+w 88
+h 28
+controlPv "$(LOC):USR:VCN:10:SetFlowSetpoint"
+format "exponential"
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 4
+editable
+motifWidget
+precision 2
+nullColor index 15
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 620
+y 188
+w 120
+h 28
+controlPv "$(LOC):USR:VCN:10:GetFlowSetpoint"
+format "exponential"
+font "helvetica-bold-r-14.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 14
+precision 2
+nullColor index 41
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 572
+y 290
+w 36
+h 36
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+font "helvetica-medium-r-18.0"
+invisible
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "sampleScreens/mks670bScreens/mks670b.edl"
+}
+symbols {
+  0 "P=$(LOC):MKS670"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 236
+w 40
+h 40
+
+beginGroup
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 236
+w 40
+h 40
+lineColor index 14
+fill
+fillColor index 8
+lineWidth 3
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 236
+w 40
+h 40
+lineColor index 14
+fillColor index 0
+lineWidth 3
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 576
+y 188
+w 24
+h 36
+
+beginGroup
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 576
+y 188
+w 24
+h 36
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 5
+xPoints {
+  0 576
+  1 600
+  2 576
+  3 600
+  4 576
+}
+yPoints {
+  0 188
+  1 188
+  2 224
+  3 224
+  4 188
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 576
+y 196
+w 24
+h 20
+lineColor index 14
+fillColor index 0
+lineWidth 2
+numPoints 2
+xPoints {
+  0 576
+  1 600
+}
+yPoints {
+  0 216
+  1 196
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 468
+y 4
+w 152
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+inconsistentColor index 35
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):RemoteControlEnable"
+indicatorPv "$(LOC):$(SYS):RemoteControlEnabled"
+onLabel "Disable System Control"
+offLabel "Enable System Control"
+labelType "literal"
+3d
+font "helvetica-medium-r-12.0"
+objType "controls"
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 36
+y 152
+w 89
+h 79
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\emb-sc2-mmsss=0"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "sampleScreens/manifold_vlv.edl"
+}
+symbols {
+  0 "LOC=$(LOC),SYS=$(SYS),NUM=02"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 464
+y 152
+w 89
+h 79
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\emb-sc2-mmsss=0"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "sampleScreens/manifold_vlv.edl"
+}
+symbols {
+  0 "LOC=$(LOC),SYS=$(SYS),NUM=01"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 336
+y 152
+w 89
+h 79
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\emb-sc2-mmsss=0"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "sampleScreens/manifold_vlv.edl"
+}
+symbols {
+  0 "LOC=$(LOC),SYS=$(SYS),NUM=04"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 120
+y 52
+w 89
+h 79
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\emb-sc2-mmsss=0"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "sampleScreens/manifold_vlv.edl"
+}
+symbols {
+  0 "LOC=$(LOC),SYS=$(SYS),NUM=07"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 204
+y 152
+w 89
+h 79
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\emb-sc2-mmsss=0"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "sampleScreens/manifold_vlv.edl"
+}
+symbols {
+  0 "LOC=$(LOC),SYS=$(SYS),NUM=03"
+}
+noScroll
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 168
+y 75
+w 423
+h 0
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 168
+  1 591
+}
+yPoints {
+  0 75
+  1 75
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 590
+y 75
+w 0
+h 260
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 590
+  1 590
+}
+yPoints {
+  0 75
+  1 335
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 145
+y 104
+w 0
+h 72
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 145
+  1 145
+}
+yPoints {
+  0 104
+  1 176
+}
+endObjectProperties
+

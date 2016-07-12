@@ -116,6 +116,9 @@ menuLabel {
 symbols {
   0 "LOC=$(LOC),SYS=$(SYS),NUM=01"
 }
+propagateMacros {
+  0 0
+}
 noScroll
 ignoreMultiplexors
 endObjectProperties
@@ -148,6 +151,9 @@ menuLabel {
 }
 symbols {
   0 "LOC=$(LOC),SYS=$(SYS),NUM=02"
+}
+propagateMacros {
+  0 0
 }
 noScroll
 ignoreMultiplexors
@@ -182,6 +188,9 @@ menuLabel {
 symbols {
   0 "LOC=$(LOC),SYS=$(SYS),NUM=03"
 }
+propagateMacros {
+  0 0
+}
 noScroll
 ignoreMultiplexors
 endObjectProperties
@@ -214,6 +223,9 @@ menuLabel {
 }
 symbols {
   0 "LOC=$(LOC),SYS=$(SYS),NUM=04"
+}
+propagateMacros {
+  0 0
 }
 noScroll
 ignoreMultiplexors

@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1437
-y 679
+x 1516
+y 866
 w 1026
 h 600
 font "helvetica-medium-r-14.0"
@@ -21,31 +21,6 @@ topShadowColor index 0
 botShadowColor index 14
 endScreenProperties
 
-# (Button)
-object activeButtonClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 0
-y 96
-w 80
-h 24
-fgColor index 14
-fgAlarm
-onColor index 4
-offColor index 4
-inconsistentColor index 14
-topShadowColor index 1
-botShadowColor index 14
-controlPv "$(LOC):$(SYS):PAREG:$(NUM):Enable"
-onLabel "Disable"
-offLabel "Enable"
-3d
-font "helvetica-medium-r-14.0"
-objType "controls"
-endObjectProperties
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -54,8 +29,8 @@ minor 1
 release 1
 x 1
 y 46
-w 81
-h 18
+w 61
+h 14
 font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 1
@@ -88,6 +63,61 @@ lineWidth 2
 lineAlarm
 endObjectProperties
 
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x -5
+y -4
+w 75
+h 37
+controlPv "$(LOC):$(SYS):PAREG:$(NUM):PressSP.DESC"
+fgColor index 14
+fgAlarm
+bgColor index 0
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x -2
+y 96
+w 82
+h 348
+
+beginGroup
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 0
+y 96
+w 80
+h 24
+fgColor index 14
+fgAlarm
+onColor index 4
+offColor index 4
+inconsistentColor index 14
+topShadowColor index 1
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):PAREG:$(NUM):Enable"
+onLabel "Disable"
+offLabel "Enable"
+3d
+font "helvetica-medium-r-14.0"
+objType "controls"
+endObjectProperties
+
 # (Motif Slider)
 object activeMotifSliderClass
 beginObjectProperties
@@ -116,23 +146,6 @@ showValue
 orientation "vertical"
 endObjectProperties
 
-# (Text Entry)
-object TextentryClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x -5
-y -4
-w 75
-h 37
-controlPv "$(LOC):$(SYS):PAREG:$(NUM):PressSP.DESC"
-fgColor index 14
-fgAlarm
-bgColor index 0
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -141,8 +154,8 @@ minor 1
 release 1
 x 0
 y 192
-w 60
-h 18
+w 45
+h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
@@ -181,8 +194,8 @@ minor 1
 release 1
 x 1
 y 132
-w 66
-h 18
+w 49
+h 14
 font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
@@ -211,5 +224,12 @@ bgColor index 14
 fill
 font "helvetica-medium-r-12.0"
 fontAlign "center"
+endObjectProperties
+
+endGroup
+
+visPv "$(LOC):$(SYS):RemoteControlEnable"
+visMin "1"
+visMax "2"
 endObjectProperties
 

@@ -1,0 +1,195 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 678
+y 1257
+w 89
+h 78
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 7
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 0
+ctlBgColor1 index 0
+ctlBgColor2 index 14
+topShadowColor index 0
+botShadowColor index 14
+title "Gas Delivery Manifold"
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 4
+w 40
+h 40
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 4
+w 40
+h 40
+lineColor index 14
+fill
+fillColor index 20
+lineWidth 3
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 4
+w 40
+h 40
+lineColor index 14
+fill
+fillColor index 15
+lineWidth 0
+visPv "$(LOC):$(SYS):VLV:$(NUM):OpnRB"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 8
+y 8
+w 31
+h 31
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 8
+  1 39
+}
+yPoints {
+  0 8
+  1 39
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 8
+y 8
+w 31
+h 31
+lineColor index 14
+fillColor index 0
+lineWidth 3
+numPoints 2
+xPoints {
+  0 39
+  1 8
+}
+yPoints {
+  0 8
+  1 39
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 48
+y 0
+w 36
+h 24
+fgColor index 14
+onColor index 8
+offColor index 7
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):VLV:$(NUM):OpnSW"
+pressValue "1"
+releaseValue "1"
+onLabel "Open"
+offLabel "Open"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 48
+y 24
+w 36
+h 24
+fgColor index 14
+onColor index 8
+offColor index 7
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):VLV:$(NUM):OpnSW"
+pressValue "0"
+releaseValue "0"
+onLabel "Close"
+offLabel "Close"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 4
+y 52
+w 80
+h 24
+controlPv "$(LOC):$(SYS):VLV:$(NUM):OpnSW.DESC"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-medium-r-12.0"
+endObjectProperties
+

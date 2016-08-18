@@ -2180,11 +2180,19 @@ External Setpoint Generation:
 				<Axis CreateSymbols="true" AxisType="1" Id="3">
 					<Name>ALI_X</Name>
 					<AxisPara>
+						<Dynamic AccelerationMaximum="300" DecelerationMaximum="300" Acceleration="100" Deceleration="100"/>
+						<Velo Maximum="10"/>
 						<OtherSettings AllowMotionCmdToSlave="true"/>
+						<ParameterChanged>39</ParameterChanged>
+						<ParameterChanged>257</ParameterChanged>
+						<ParameterChanged>242</ParameterChanged>
+						<ParameterChanged>258</ParameterChanged>
+						<ParameterChanged>241</ParameterChanged>
 					</AxisPara>
 					<Encoder Name="Enc" EncType="4">
-						<EncPara MaxCount="#x0000ffff">
+						<EncPara ScaleFactorNumerator="0.0416" MaxCount="#x0000ffff">
 							<Inc RefSoftSyncMask="#x0000ffff"/>
+							<ParameterChanged>35</ParameterChanged>
 						</EncPara>
 						<Vars VarGrpType="1">
 							<Name>Inputs</Name>
@@ -2250,6 +2258,7 @@ External Setpoint Generation:
 					</Encoder>
 					<Drive Name="Drive" DrvType="24">
 						<DrvPara>
+							<Analog VeloReferenz="83.2"/>
 							<TimeComp TaskDelayCycles="1"/>
 						</DrvPara>
 						<Vars VarGrpType="1">
@@ -2407,11 +2416,20 @@ External Setpoint Generation:
 				<Axis CreateSymbols="true" AxisType="1" Id="4">
 					<Name>ALI_Y</Name>
 					<AxisPara>
+						<Dynamic AccelerationMaximum="300" DecelerationMaximum="300" Acceleration="100" Deceleration="100"/>
+						<Velo Maximum="10"/>
 						<OtherSettings AllowMotionCmdToSlave="true"/>
+						<ParameterChanged>39</ParameterChanged>
+						<ParameterChanged>257</ParameterChanged>
+						<ParameterChanged>259</ParameterChanged>
+						<ParameterChanged>242</ParameterChanged>
+						<ParameterChanged>258</ParameterChanged>
+						<ParameterChanged>241</ParameterChanged>
 					</AxisPara>
 					<Encoder Name="Enc" EncType="4">
-						<EncPara MaxCount="#x0000ffff">
+						<EncPara ScaleFactorNumerator="0.0416" MaxCount="#x0000ffff">
 							<Inc RefSoftSyncMask="#x0000ffff"/>
+							<ParameterChanged>35</ParameterChanged>
 						</EncPara>
 						<Vars VarGrpType="1">
 							<Name>Inputs</Name>
@@ -2477,6 +2495,7 @@ External Setpoint Generation:
 					</Encoder>
 					<Drive Name="Drive" DrvType="24">
 						<DrvPara>
+							<Analog VeloReferenz="83.2"/>
 							<TimeComp TaskDelayCycles="1"/>
 						</DrvPara>
 						<Vars VarGrpType="1">
@@ -2634,14 +2653,17 @@ External Setpoint Generation:
 				<Axis CreateSymbols="true" AxisType="1" Id="5">
 					<Name>ALI_Z</Name>
 					<AxisPara>
-						<General UnitFlags="#x00000001"/>
 						<Dynamic AccelerationMaximum="1000" DecelerationMaximum="1000" Acceleration="10" Deceleration="10" Jerk="100"/>
-						<Velo Maximum="1"/>
+						<Velo Maximum="3"/>
 						<OtherSettings AllowMotionCmdToSlave="true"/>
+						<ParameterChanged>39</ParameterChanged>
+						<ParameterChanged>257</ParameterChanged>
 					</AxisPara>
 					<Encoder Name="Enc" EncType="4">
-						<EncPara ScaleFactorNumerator="0.028125" ScaleFactorDenominator="712.4" MaxCount="#x0000ffff">
+						<EncPara ScaleFactorNumerator="0.00256" MaxCount="#x0000ffff">
 							<Inc RefMode="2" RefSoftSyncMask="#x0000ffff"/>
+							<ParameterChanged>36</ParameterChanged>
+							<ParameterChanged>35</ParameterChanged>
 						</EncPara>
 						<Vars VarGrpType="1">
 							<Name>Inputs</Name>
@@ -2707,7 +2729,7 @@ External Setpoint Generation:
 					</Encoder>
 					<Drive Name="Drive" DrvType="24">
 						<DrvPara>
-							<Analog VeloReferenz="1.01666666666667"/>
+							<Analog VeloReferenz="5.12"/>
 							<TimeComp TaskDelayCycles="1"/>
 						</DrvPara>
 						<Vars VarGrpType="1">

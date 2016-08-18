@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <DUT Name="ST_ALI" Id="{0b7a7a1a-1335-4a3d-a5dc-8467cfe96304}">
+    <Declaration><![CDATA[TYPE ST_ALI :
+STRUCT
+	(* Manipulator *)
+	axisX	:	ST_ManipAxis;
+	axisY	:	ST_ManipAxis;
+	axisZ	:	ST_ManipAxis;
+	
+	(* Vacuum gauges *)
+	stVgALINB1	: ST_VG;
+	stVgALINB2	: ST_VG;
+	stVgALINB3	: ST_VG;
+	
+	(* Butterfly valve *)
+	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

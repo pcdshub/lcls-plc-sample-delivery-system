@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
+  <POU Name="FB_ProportionairRegulator" Id="{8353dc22-d596-4ee5-8fe9-fb2eb72364f8}">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_ProportionairRegulator
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR_IN_OUT
+	iq_stRegProp	:	ST_Proportionair;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* A. Wallace 2015-10-7
+Proportionair regulator control *)
+
+(* Pressure signal conversion, max pressure out 1000 (I think...) *)
+iq_stRegProp.iPressure := REAL_TO_INT(1000 * (INT_TO_REAL(iq_stRegProp.iPressureRaw) / 32767));
+
+iq_stRegProp.iSetpoint := LIMIT(iq_stRegProp.iLoLimit, iq_stRegProp.iSetpoint, iq_stRegProp.iHiLimit);
+
+iq_stRegProp.iSetpointRaw := REAL_TO_INT( (INT_TO_REAL(iq_stRegProp.iSetpoint)/1000)*32767);]]></ST>
+    </Implementation>
+    <ObjectProperties />
+  </POU>
+</TcPlcObject>

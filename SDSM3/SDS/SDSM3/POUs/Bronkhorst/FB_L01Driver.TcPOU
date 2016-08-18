@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
+  <POU Name="FB_L01Driver" Id="{096b1d72-7e8f-4d88-b76f-e4fd96546366}">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_L01Driver
+
+VAR_INPUT
+	i_xExecute				: BOOL;					(* rising edge execute *)
+	i_tTimeOut				: TIME := t#10s;  		(* Maximum wait time for reply *)
+	i_stControl				: ST_BhFMControl;
+END_VAR
+VAR_OUTPUT
+	q_xDone					: BOOL;
+	q_xError				: BOOL;
+	q_xWarning				: BOOL;					(* set in the event of an unexpected reply *)
+	q_xTimeout				: BOOL;
+	q_sResult				: STRING(255);
+	q_sLastSentString		: ARRAY[1..40] OF STRING;				(* Last String Sent to Serial Device - for debugging *)
+	q_sLastReceivedString	: ARRAY[1..40] OF STRING;				(* Last String Received from Serial Device - for debugging *)
+	q_stStatus				: ST_BhFMStatus;
+END_VAR
+VAR_IN_OUT
+	iq_stSerialRXBuffer 	: ComBuffer;
+	iq_stSerialTXBuffer 	: ComBuffer;
+END_VAR
+VAR
+	rtExecute				: R_TRIG;
+	iStep					: INT;
+	sSendData				: STRING;
+	fbFlowBusTransaction		: FB_FlowBusTransaction;
+	(*fbFormatString			: FB_FormatString;*)
+	(*fbSplit					: FB_Split255;*)
+	asReplyFields			: ARRAY[1..20] OF T_MaxString;
+	wChecksum: WORD;
+
+	sWorking: STRING;
+	strResponseExpected: STRING;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* This function block performs serial communication with a Bronkhorst L01 u-Flow meter *)
+
+(* rising edge trigger *)
+rtExecute(CLK:= i_xExecute);
+IF rtExecute.Q  THEN
+	q_xDone	:= FALSE;
+	q_xError := FALSE;
+	q_xWarning := FALSE;
+	q_xTimeout := FALSE;
+	q_sResult:= '';
+	fbFlowBusTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+	iStep := 10;
+END_IF
+
+CASE iStep OF
+	0: (* idle *)
+		;
+
+	10: (* Get Flow *)
+		fbFlowBusTransaction(
+			i_xExecute:= TRUE,
+			i_sNode:='80',
+			i_sCmd:= '01',
+			i_sProcess := '01',
+			i_sParameter := '20',
+			i_tTimeOut:= i_tTimeOut,
+			iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+			iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
+			i_CmdFlag :=FALSE);
+			
+		IF fbFlowBusTransaction.q_xError THEN
+			q_sResult := CONCAT('in Step 10 serial transaction failed with message: ', fbFlowBusTransaction.q_sResult);
+			q_stStatus.xFlowValid := FALSE; (* used to signal an invalid readback or control exchange *)
+			iStep := 9000;
+		ELSIF fbFlowBusTransaction.q_xDone THEN
+			q_stStatus.sReply := fbFlowBusTransaction.q_sResponseData;
+			
+			(* Parsing the response *)
+			sWorking := MID(q_stStatus.sReply, 8, 11);
+			sWorking := CONCAT('16#', sWorking);
+			q_stStatus.uiFlowPercentageRaw := STRING_TO_UINT(sWorking);
+			q_stStatus.rFlowPercentage := UINT_TO_REAL(q_stStatus.uiFlowPercentageRaw) /32000;
+			//Real flow
+			q_stStatus.rFlow := (q_stStatus.rFlowPercentage * (2-0)(*g/h*) + 0(*g/h*)) * (1000(*uL*)/60(*min*));
+			
+			IF (q_stStatus.rFlow > 33(* uL/min *) ) THEN
+				q_stStatus.iState := 1;
+			ELSIF (q_stStatus.rFlow < 16 (* uL/min *) ) THEN
+				q_stStatus.iState := 2;
+			ELSE
+				q_stStatus.iState := 0; //flow OK
+			END_IF
+			
+			
+			
+			fbFlowBusTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer, i_CmdFlag :=FALSE);  (* reset *)
+			iStep := 8000;
+			
+		END_IF
+
+
+	8000: (* done *)
+		q_xDone := TRUE;
+		IF q_sResult = '' THEN
+			q_sResult := 'Success';
+		END_IF
+		IF  i_xExecute = FALSE THEN
+			q_xDone:= FALSE;
+			iStep := 0;
+		END_IF
+		
+
+	9000:
+		_A_ClearStatus();
+		q_xTimeout := fbFlowBusTransaction.q_xTimeout;
+		q_xError := TRUE;
+		q_stStatus.xFlowValid := FALSE;
+		q_stStatus.iState := 3; //flow invalid
+
+END_CASE
+
+q_sLastSentString := fbFlowBusTransaction.q_sLastSentString;
+q_sLastReceivedString := fbFlowBusTransaction.q_sLastReceivedString;]]></ST>
+    </Implementation>
+    <Action Name="_A_ClearStatus" Id="{11bb7603-7702-4db9-9ed5-4794740eefbc}">
+      <Implementation>
+        <ST><![CDATA[q_stStatus.sReply := '';]]></ST>
+      </Implementation>
+    </Action>
+    <ObjectProperties />
+  </POU>
+</TcPlcObject>

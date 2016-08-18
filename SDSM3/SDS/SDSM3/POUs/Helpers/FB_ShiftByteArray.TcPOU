@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
+  <POU Name="FB_ShiftByteArray" Id="{4ec9fba6-d602-4cf1-98d7-79ad87f6fbee}">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_ShiftByteArray
+VAR_INPUT
+	ptArray	:	POINTER TO BYTE;
+	iSize	:	INT;
+	iCurrIndex	:	INT;
+	iMessageLen	:	INT;
+	iShift		:	INT;
+	
+END_VAR
+VAR_OUTPUT
+	q_xError	:	BOOL;
+END_VAR
+VAR
+	howbig	: UINT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[howbig := sizeof(ptArray^);
+// Clear error bit
+q_xError := FALSE;
+IF iMessageLen = iCurrIndex THEN
+	//Dont do a damn thing
+	;
+// Check the remaining length and shift amount summed is not greater than the total array width.
+ELSIF iSize < (iMessageLen - iCurrIndex) + iShift THEN
+	q_xError := TRUE;
+ELSE// MEMMOVE from 1+ the current index to the remaining length by the shift amount
+	IF MEMMOVE(srcAddr:=(ptArray + iCurrIndex + 1), destAddr:=(ptArray + iCurrIndex + 1 + iShift), n:=(iMessageLen + 1 - iCurrIndex)) =0 THEN
+		q_xError := TRUE;
+	END_IF
+END_IF]]></ST>
+    </Implementation>
+    <ObjectProperties />
+  </POU>
+</TcPlcObject>

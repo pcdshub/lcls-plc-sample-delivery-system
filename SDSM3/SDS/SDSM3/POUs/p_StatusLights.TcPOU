@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
+  <POU Name="p_StatusLights" Id="{614a6145-0e85-4695-9427-e36cd2542668}">
+    <Declaration><![CDATA[PROGRAM p_StatusLights
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[gxRedLight := xEnableRemoteControl;//Remote control in use
+gxYellowLight := stRegSheath.wInPress > 100 OR stRegWater.wInPress > 100;
+gxGreenLight := NOT (gxRedLight or gxYellowLight); (* attach system error or something here someday *)]]></ST>
+    </Implementation>
+    <ObjectProperties />
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
+  <DUT Name="ST_Proportionair" Id="{1cb50253-0c45-4afc-8e14-284b1dbf64b6}">
+    <Declaration><![CDATA[TYPE ST_Proportionair :
+STRUCT
+	
+(* Control *)
+xEnable	:	BOOL;
+iSetpoint	:	INT;
+iSetpointRaw	:	INT;
+iHiLimit	:	INT;
+iLoLimit	:	INT;
+
+(* Readback *)
+xStable	:	BOOL;//TTL signal from the proportionair controller that the pressure is stable
+iPressure	:	INT;
+iPressureRaw : INT;
+
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+    <ObjectProperties />
+  </DUT>
+</TcPlcObject>

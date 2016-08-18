@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.24">
+  <DUT Name="ST_RegDeadbandControls" Id="{a04513ee-c76f-4682-bef9-04f3920c05e2}">
+    <Declaration><![CDATA[TYPE ST_RegDeadbandControls :
+STRUCT
+	(* Deadband controls *)
+iDeadband	:	INT;
+iMaxSpeed	:	INT; // degrees per second
+END_STRUCT
+END_TYPE
+]]></Declaration>
+    <ObjectProperties />
+  </DUT>
+</TcPlcObject>

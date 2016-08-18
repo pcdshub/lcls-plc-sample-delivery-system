@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
+  <DUT Name="ST_SensirionFMControl" Id="{89f4a14e-1f6e-4779-bc2b-905b7f9fda62}">
+    <Declaration><![CDATA[TYPE ST_SensirionFMControl :
+STRUCT
+	
+xCalMode	:	BOOL;
+
+xReset		:	BOOL;
+	
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+    <ObjectProperties />
+  </DUT>
+</TcPlcObject>

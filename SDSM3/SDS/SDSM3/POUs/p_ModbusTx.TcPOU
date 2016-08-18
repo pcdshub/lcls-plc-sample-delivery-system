@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <POU Name="p_ModbusTx" Id="{7dfde301-1300-4648-85ba-2185bbf045a9}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM p_ModbusTx
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Modbus controls/ readbacks back to EPICS *)
+
+(* Global system controls *)
+mb_Input_Coils[0] := xEnableRemoteControl;
+mb_Input_Coils[1] := xSystemPressurized;
+
+(* Selector Controls *)
+mb_Output_Registers[30] := stSelector.iVici1ReqPos;
+mb_Output_Registers[31] := stSelector.iVici2ReqPos;
+mb_Output_Registers[32] := stSelector.iSyncReqPos;
+mb_Output_Coils[30] := 0;
+mb_Output_Coils[31]:= stSelector.xFMReset;
+mb_Output_Coils[33] := 0;
+
+(* Selector 2 Controls *)
+mb_Output_Registers[40] := stSelector2.iVici1ReqPos;
+mb_Output_Registers[41] := stSelector2.iVici2ReqPos;
+mb_Output_Registers[42] := stSelector2.iSyncReqPos;
+mb_Output_Coils[40] := stSelector2.xResLock;
+mb_Output_Coils[41]:= stSelector2.xFMReset;
+
+(* Selector Readbacks *)
+mb_Input_Registers[30] := stSelector.stViciVlvStatus[1].iCurrPos;
+mb_Input_Registers[31] := stSelector.stViciVlvStatus[2].iCurrPos;
+mb_Input_Registers[32] := stSelector.iSyncResPos;
+mb_Input_Registers[33] := stSelector.iFMState;
+mb_Input_Registers[34] := stSelector.iFlowMeterType;
+
+mb_Input_Coils[30] := stSelector.xFMOoR;
+mb_Input_Coils[31] := stSelector.xFlowValid;
+mb_Input_Coils[32] := stSelector.xResSyncd;
+mb_Input_Coils[33] := stSelector.xResLocked;
+mb_Input_Coils[34] := stSelector.xFMModeRb;
+
+(* Selector 2 Readbacks *)
+mb_Input_Registers[40] := stSelector2.stViciVlvStatus[1].iCurrPos;
+mb_Input_Registers[41] := stSelector2.stViciVlvStatus[2].iCurrPos;
+mb_Input_Registers[42] := stSelector2.iSyncResPos;
+mb_Input_Registers[43] := stSelector2.iFMState;
+mb_Input_Registers[44] := stSelector2.iFlowMeterType;
+
+mb_Input_Coils[40] := stSelector2.xFMOoR;
+mb_Input_Coils[41] := stSelector2.xFlowValid;
+mb_Input_Coils[42] := stSelector2.xResSyncd;
+mb_Input_Coils[43] := stSelector2.xResLocked;
+mb_Input_Coils[44] := stSelector2.xFMModeRb;
+
+
+(* Regulator Readbacks *)
+mb_Input_Coils[20] := stRegWater.xSeeking;
+mb_Input_Coils[21]	:= stRegSheath.xSeeking;
+mb_Input_Coils[22]	:= stRegAux.xSeeking;
+
+mb_Input_Registers[10]:= stRegWater.wOutPress;
+mb_Input_Registers[11]:= stRegSheath.wOutPress;
+mb_Input_Registers[12]:= stRegAux.wOutPress;
+
+mb_Input_Registers[13]:= stRegWater.wPercentageOpen;
+mb_Input_Registers[14]:= stRegSheath.wPercentageOpen;
+mb_Input_Registers[15]:= stRegAux.wPercentageOpen;
+
+mb_Input_Registers[16]:= stRegWater.wInPress;
+mb_Input_Registers[17]:= stRegSheath.wInPress;
+mb_Input_Registers[18]:= stRegAux.wInPress;
+
+
+(* Flow meters *)
+MEMCPY(destAddr:=ADR( mb_PLC_Memory[0]), srcAddr:=ADR(stSelector.rFlow), n:=4);
+MEMCPY(destAddr:=ADR( mb_PLC_Memory[16]), srcAddr:=ADR(stSelector2.rFlow), n:=4);
+
+mb_Output_Registers[19] := stRegWater.i_iPercSP;
+mb_Output_Registers[20] := stRegSheath.i_iPercSP;
+
+(* Proportionair controls *)
+mb_Output_Coils[50]:=stRegProp1.xEnable;  //Proportionair controls
+mb_Output_Coils[51]:=stRegProp2.xEnable;  //Proportionair controls
+
+mb_Output_Coils[52]:=stRegProp3.xEnable;  //Proportionair controls
+mb_Output_Coils[53]:=stRegProp4.xEnable;  //Proportionair controls
+
+mb_Output_Registers[50]:=stRegProp1.iSetpoint;  //Proportionair controls
+mb_Output_Registers[51]:=stRegProp2.iSetpoint;  //Proportionair controls
+mb_Output_Registers[52]:=stRegProp1.iHiLimit;  //Proportionair controls
+mb_Output_Registers[53]:=stRegProp2.iHiLimit;  //Proportionair controls
+
+mb_Output_Registers[54]:=stRegProp3.iSetpoint;  //Proportionair controls
+mb_Output_Registers[55]:=stRegProp4.iSetpoint;  //Proportionair controls
+mb_Output_Registers[56]:=stRegProp3.iHiLimit;  //Proportionair controls
+mb_Output_Registers[57]:=stRegProp4.iHiLimit;  //Proportionair controls
+
+mb_Input_Registers[50]:=stRegProp1.iPressure;  //Proportionair readbacks
+mb_Input_Registers[51]:=stRegProp2.iPressure;  //Proportionair readbacks
+
+mb_Input_Registers[52]:=stRegProp3.iPressure;  //Proportionair readbacks
+mb_Input_Registers[53]:=stRegProp4.iPressure;  //Proportionair readbacks
+
+mb_Input_Coils[50]:=stRegProp1.xStable;  //Proportionair readbacks
+mb_Input_Coils[51]:=stRegProp2.xStable;  //Proportionair readbacks
+
+mb_Input_Coils[52]:=stRegProp3.xStable;  //Proportionair readbacks
+mb_Input_Coils[53]:=stRegProp4.xStable;  //Proportionair readbacks
+
+
+(* Minitti Manifold Controls *)
+mb_Input_Coils[60]:=stManiVlv1.xILK;  //Minitti manifold valve controls
+mb_Input_Coils[61]:=stManiVlv2.xILK;  //Minitti manifold valve controls
+mb_Input_Coils[62]:=stManiVlv3.xILK;  //Minitti manifold valve controls
+mb_Input_Coils[63]:=stManiVlv4.xILK;  //Minitti manifold valve controls
+mb_Input_Coils[64]:=stManiVlv5.xILK;  //Minitti manifold valve controls
+mb_Input_Coils[65]:=stManiVlv6.xILK;  //Minitti manifold valve controls
+mb_Input_Coils[66]:=stManiVlv7.xILK;  //Minitti manifold valve controls
+mb_Input_Coils[67]:=stManiVlv8.xILK;  //Minitti manifold valve controls
+mb_Input_Coils[68]:=stManiVlv1.ixOPN;  //Minitti manifold valve controls
+mb_Input_Coils[69]:=stManiVlv2.ixOPN;  //Minitti manifold valve controls
+mb_Input_Coils[70]:=stManiVlv3.ixOPN;  //Minitti manifold valve controls
+mb_Input_Coils[71]:=stManiVlv4.ixOPN;  //Minitti manifold valve controls
+mb_Input_Coils[72]:=stManiVlv5.ixOPN;  //Minitti manifold valve controls
+mb_Input_Coils[73]:=stManiVlv6.ixOPN;  //Minitti manifold valve controls
+mb_Input_Coils[74]:=stManiVlv7.ixOPN;  //Minitti manifold valve controls
+mb_Input_Coils[75]:=stManiVlv8.ixOPN;  //Minitti manifold valve controls
+//=========================================================
+// ALI Controls
+	mb_Input_Coils[80]:=stALI.axisX.xHiLS;  //ALI_Manip
+	mb_Input_Coils[81]:=stALI.axisX.xLoLS;  //ALI_Manip
+	mb_Input_Coils[82]:=stALI.axisY.xHiLS;  //ALI_Manip
+	mb_Input_Coils[83]:=stALI.axisY.xLoLS;  //ALI_Manip
+	mb_Input_Coils[84]:=stALI.axisZ.xHiLS;  //ALI_Manip
+	mb_Input_Coils[85]:=stALI.axisZ.xLoLS;  //ALI_Manip
+	mb_Input_Coils[86]:=FALSE;  //ALI_Manip
+	mb_Input_Coils[87]:=FALSE;  //ALI_Manip
+	mb_Input_Coils[88]:=FALSE;  //ALI_Manip
+	mb_Input_Coils[89]:=FALSE;  //ALI_Manip
+	
+	mb_Input_Registers[80]:=0;  //ALI_Manip
+	mb_Input_Registers[81]:=0;  //ALI_Manip
+	mb_Input_Registers[82]:=0;  //ALI_Manip
+	mb_Input_Registers[83]:=0;  //ALI_Manip
+	mb_Input_Registers[84]:=0;  //ALI_Manip
+	mb_Input_Registers[85]:=0;  //ALI_Manip
+	mb_Input_Registers[86]:=0;  //ALI_Manip
+	mb_Input_Registers[87]:=0;  //ALI_Manip
+	mb_Input_Registers[88]:=0;  //ALI_Manip
+	mb_Input_Registers[89]:=0;  //ALI_Manip
+	
+	mb_Output_Coils[80]:=stALI.axisX.xStart;  //ALI_Manip
+	mb_Output_Coils[81]:=stALI.axisX.xStop;  //ALI_Manip
+	mb_Output_Coils[82]:=stALI.axisY.xStart;  //ALI_Manip
+	mb_Output_Coils[83]:=stALI.axisY.xStop;  //ALI_Manip
+	mb_Output_Coils[84]:=stALI.axisZ.xStart;  //ALI_Manip
+	mb_Output_Coils[85]:=stALI.axisZ.xStop;  //ALI_Manip
+	mb_Output_Coils[86]:=stALI.axisY.xStop;  //ALI_Manip
+	mb_Output_Coils[87]:=stALI.axisZ.xStart;  //ALI_Manip
+	mb_Output_Coils[88]:=stALI.axisZ.xStop;  //ALI_Manip
+	mb_Output_Coils[89]:=FALSE;  //ALI_Manip
+	
+	mb_Output_Registers[78]:=stALI.axisX.wMode;  //ALI_Manip
+	mb_Output_Registers[79]:=stALI.axisY.wMode;  //ALI_Manip
+	mb_Output_Registers[80]:=stALI.axisZ.wMode;  //ALI_Manip
+	mb_Output_Registers[81]:=0;  //ALI_Manip
+	mb_Output_Registers[82]:=0;  //ALI_Manip
+	mb_Output_Registers[83]:=0;  //ALI_Manip
+	mb_Output_Registers[84]:=0;  //ALI_Manip
+	mb_Output_Registers[85]:=0;  //ALI_Manip
+	mb_Output_Registers[86]:=0;  //ALI_Manip
+	mb_Output_Registers[87]:=0;  //ALI_Manip
+	mb_Output_Registers[88]:=0;  //ALI_Manip
+	mb_Output_Registers[89]:=0;  //ALI_Manip
+	
+	MEMCPY(destAddr:=ADR(mb_PLC_Memory[70]), srcAddr:=ADR(stALI.axisX.stAxis.NcToPlc.ActPos), n:=SIZEOF(stALI.axisX.stAxis.NcToPlc.ActPos));  //ALI RB
+	MEMCPY(destAddr:=ADR(mb_PLC_Memory[72]), srcAddr:=ADR(stALI.axisY.stAxis.NcToPlc.ActPos), n:=SIZEOF(stALI.axisY.stAxis.NcToPlc.ActPos));  //ALI RB
+	MEMCPY(destAddr:=ADR(mb_PLC_Memory[74]), srcAddr:=ADR(stALI.axisZ.stAxis.NcToPlc.ActPos), n:=SIZEOF(stALI.axisZ.stAxis.NcToPlc.ActPos));  //ALI RB
+	MEMCPY(destAddr:=ADR(mb_PLC_Memory[76]), srcAddr:=ADR(stALI.stVgALINB1.rPRESS), n:=SIZEOF(stALI.stVgALINB1.rPRESS));  //ALI RB
+	MEMCPY(destAddr:=ADR(mb_PLC_Memory[78]), srcAddr:=ADR(stALI.stVgALINB2.rPRESS), n:=SIZEOF(stALI.stVgALINB2.rPRESS));  //ALI RB
+	MEMCPY(destAddr:=ADR(mb_PLC_Memory[80]), srcAddr:=ADR(stALI.stVgALINB3.rPRESS), n:=SIZEOF(stALI.stVgALINB3.rPRESS));  //ALI RB
+	MEMCPY(destAddr:=ADR(mb_PLC_Memory[90]), srcAddr:=ADR(stALI.axisX.rReqAbsPos), n:=SIZEOF(stALI.axisX.rReqAbsPos));  //ALI CTRL
+	MEMCPY(destAddr:=ADR(mb_PLC_Memory[92]), srcAddr:=ADR(stALI.axisY.rReqAbsPos), n:=SIZEOF(stALI.axisY.rReqAbsPos));  //ALI CTRL
+	MEMCPY(destAddr:=ADR(mb_PLC_Memory[94]), srcAddr:=ADR(stALI.axisZ.rReqAbsPos), n:=SIZEOF(stALI.axisZ.rReqAbsPos));  //ALI CTRL
+	MEMCPY(destAddr:=ADR(mb_PLC_Memory[96]), srcAddr:=ADR(stALI.axisX.rReqRelPos), n:=SIZEOF(stALI.axisX.rReqRelPos));  //ALI CTRL
+	MEMCPY(destAddr:=ADR(mb_PLC_Memory[98]), srcAddr:=ADR(stALI.axisY.rReqRelPos), n:=SIZEOF(stALI.axisY.rReqRelPos));  //ALI CTRL
+	MEMCPY(destAddr:=ADR(mb_PLC_Memory[100]), srcAddr:=ADR(stALI.axisZ.rReqRelPos), n:=SIZEOF(stALI.axisZ.rReqRelPos));  //ALI CTRL
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

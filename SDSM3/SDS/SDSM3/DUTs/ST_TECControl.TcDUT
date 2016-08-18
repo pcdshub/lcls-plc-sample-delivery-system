@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.24">
+  <DUT Name="ST_TECControl" Id="{754f1107-f4e8-4f0f-9bfc-f24d03105031}">
+    <Declaration><![CDATA[TYPE ST_TECControl :
+STRUCT
+
+sAddress	:	STRING(2);	
+diTempSetpoint	:	DINT;
+xOutputOn	:	BOOL;
+
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+    <ObjectProperties />
+  </DUT>
+</TcPlcObject>

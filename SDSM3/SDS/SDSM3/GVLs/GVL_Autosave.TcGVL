@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <GVL Name="GVL_Autosave" Id="{57fffe7e-baad-4b8a-bbdf-c2b15427a566}">
+    <Declaration><![CDATA[VAR_GLOBAL PERSISTENT
+	
+	gp_stWaterRegDeadband	:	ST_RegDeadbandControls;
+	gp_stSheathRegDeadband	:	ST_RegDeadbandControls;
+
+	gp_stSelector	:	ST_Selector;
+	gp_stSelector2	:	ST_Selector;
+	
+	gp_stRegProp1	:	ST_Proportionair;
+	gp_stRegProp2	:	ST_Proportionair;
+	gp_stRegProp3	:	ST_Proportionair;
+	gp_stRegProp4	:	ST_Proportionair;
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

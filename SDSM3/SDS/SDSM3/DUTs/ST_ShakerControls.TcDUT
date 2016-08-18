@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.24">
+  <DUT Name="ST_ShakerControls" Id="{9cbbc00e-43f1-4085-876b-85a268f5e488}">
+    <Declaration><![CDATA[TYPE ST_ShakerControls :
+STRUCT
+	
+xShaker1On	:	BOOL;
+xShaker2On	:	BOOL;
+xShaker3On	:	BOOL;
+xShaker4On	:	BOOL;
+xShaker5On	:	BOOL;
+xShaker6On	:	BOOL;
+xShaker7On	:	BOOL;
+xShaker8On	:	BOOL;
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+    <ObjectProperties />
+  </DUT>
+</TcPlcObject>

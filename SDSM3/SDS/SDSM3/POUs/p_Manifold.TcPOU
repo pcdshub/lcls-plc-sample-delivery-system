@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
+  <POU Name="p_Manifold" Id="{7c0ffa86-dfae-423e-93c2-5474c4362dd8}">
+    <Declaration><![CDATA[PROGRAM p_Manifold
+VAR
+	fbManiValve : FB_ManiValve;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Valve 1 *)
+stManiVlv1.xILK := TRUE;
+fbManiValve(iq_valve:=stManiVlv1);
+
+(* Valve 2 *)
+stManiVlv2.xILK := TRUE;
+fbManiValve(iq_valve:=stManiVlv2);
+
+(* Valve 3 *)
+stManiVlv3.xILK := TRUE;
+fbManiValve(iq_valve:=stManiVlv3);
+
+(* Valve 4 *)
+stManiVlv4.xILK := TRUE;
+fbManiValve(iq_valve:=stManiVlv4);
+
+(* Valve 5 *)
+stManiVlv5.xILK := TRUE;
+fbManiValve(iq_valve:=stManiVlv5);
+
+(* Valve 6 *)
+stManiVlv6.xILK := TRUE;
+fbManiValve(iq_valve:=stManiVlv6);
+
+(* Valve 7 *)
+stManiVlv7.xILK := TRUE;
+fbManiValve(iq_valve:=stManiVlv7);
+
+(* Valve 8 *)
+stManiVlv8.xILK := TRUE;
+fbManiValve(iq_valve:=stManiVlv8);
+]]></ST>
+    </Implementation>
+    <ObjectProperties />
+  </POU>
+</TcPlcObject>

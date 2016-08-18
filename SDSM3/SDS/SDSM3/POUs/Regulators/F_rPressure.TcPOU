@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.24">
+  <POU Name="F_rPressure" Id="{be680594-3bc8-4d10-9c84-f2a20035e519}">
+    <Declaration><![CDATA[FUNCTION F_rPressure : WORD
+VAR_INPUT
+	iRawVoltage : INT;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Transducer voltage to pressure *)
+(* Add formula in here *)
+F_rPressure := INT_TO_WORD((iRawVoltage*3000)/32767);]]></ST>
+    </Implementation>
+    <ObjectProperties />
+  </POU>
+</TcPlcObject>

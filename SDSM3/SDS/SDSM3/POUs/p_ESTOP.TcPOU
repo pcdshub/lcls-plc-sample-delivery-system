@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
+  <POU Name="p_ESTOP" Id="{56f6f6e5-239f-4cf4-a815-302180d5dfcd}">
+    <Declaration><![CDATA[PROGRAM p_ESTOP
+VAR
+	rtEstop : R_TRIG;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* 
+Estop checks for a rising edge on the estop global variable then triggeres the following actions
+1. Set selector to position 12, the default resting place
+2. Set the water regulator to 0
+The sheath regulator is not set to zero at this point because we don't want to ice the jet.
+*)
+
+rtEstop(CLK:=g_xEstop);
+
+(* Check for E-Stop *)
+IF rtEstop.Q THEN
+	stRegWater.i_iPercSP := 0;
+	stSelector.iVici1ReqPos := 12;
+	stSelector.iVici2ReqPos := 12;
+	stSelector.iSyncReqPos	:= 12;	
+END_IF
+
+]]></ST>
+    </Implementation>
+    <ObjectProperties />
+  </POU>
+</TcPlcObject>

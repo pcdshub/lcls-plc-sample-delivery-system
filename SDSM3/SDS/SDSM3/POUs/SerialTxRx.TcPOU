@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
+  <POU Name="SerialTxRx" Id="{8ce33525-cb60-4010-bca4-10eb26b43a58}">
+    <Declaration><![CDATA[PROGRAM SerialTxRx
+VAR
+	
+	fbSerialLineControl_SelectorVici: SerialLineControl;
+	fbSerialLineControl_Selector2Vici: SerialLineControl;
+	fbSerialLineControl_SelectorFlwMtr: SerialLineControl;
+	fbSerialLineControl_Selector2FlwMtr: SerialLineControl;
+	fbSerialLineControl_CoolerShakerTEC: SerialLineControl;
+	
+
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+
+fbSerialLineControl_SelectorVici(
+	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
+	pComIn:= ADR(stComIn_SelB2P2),
+	pComOut:=ADR(stComOut_SelB2P2) ,
+	SizeComIn:= SIZEOF(stComIn_SelB2P2),
+	TxBuffer:= SerialTXBuffer_SelVici,
+	RxBuffer:= SerialRXBuffer_SelVici,
+	Error=> ,
+	ErrorID=> );
+	
+	(* Optional expansion for extra selector box *)
+fbSerialLineControl_Selector2Vici(
+	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
+	pComIn:= ADR(stComIn_Sel2B2P2),
+	pComOut:=ADR(stComOut_Sel2B2P2) ,
+	SizeComIn:= SIZEOF(stComIn_Sel2B2P2),
+	TxBuffer:= SerialTXBuffer_Sel2Vici,
+	RxBuffer:= SerialRXBuffer_Sel2Vici,
+	Error=> ,
+	ErrorID=> );
+	
+	fbSerialLineControl_SelectorFlwMtr(
+	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
+	pComIn:= ADR(stComIn_SelB2P1),
+	pComOut:=ADR(stComOut_SelB2P1) ,
+	SizeComIn:= SIZEOF(stComIn_SelB2P1),
+	TxBuffer:= SerialTXBuffer_SelFlwMtr,
+	RxBuffer:= SerialRXBuffer_SelFlwMtr,
+	Error=> ,
+	ErrorID=> );
+	
+fbSerialLineControl_Selector2FlwMtr(
+	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
+	pComIn:= ADR(stComIn_Sel2B2P1),
+	pComOut:=ADR(stComOut_Sel2B2P1) ,
+	SizeComIn:= SIZEOF(stComIn_Sel2B2P1),
+	TxBuffer:= SerialTXBuffer_Sel2FlwMtr,
+	RxBuffer:= SerialRXBuffer_Sel2FlwMtr,
+	Error=> ,
+	ErrorID=> );
+	
+fbSerialLineControl_CoolerShakerTEC(
+	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
+	pComIn:= ADR(stComIn_CoolerShakerB2P1),
+	pComOut:=ADR(stComOut_CoolerShakerB2P1) ,
+	SizeComIn:= SIZEOF(stComIn_CoolerShakerB2P1),
+	TxBuffer:= SerialTXBuffer_CoolerShakerTEC,
+	RxBuffer:= SerialRXBuffer_CoolerShakerTEC,
+	Error=> ,
+	ErrorID=> );]]></ST>
+    </Implementation>
+    <ObjectProperties />
+  </POU>
+</TcPlcObject>

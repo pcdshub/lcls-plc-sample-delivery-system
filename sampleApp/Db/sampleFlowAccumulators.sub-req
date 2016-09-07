@@ -3,14 +3,25 @@ file sampleFlowAccumulators.tpl-req
 {
 	pattern
 	{P, N}
-	{$(LOC):$(SYS):RES, 1}
-	{$(LOC):$(SYS):RES, 2}
-	{$(LOC):$(SYS):RES, 3}
-	{$(LOC):$(SYS):RES, 4}
-	{$(LOC):$(SYS):RES, 5}
-	{$(LOC):$(SYS):RES, 6}
-	{$(LOC):$(SYS):RES, 7}
-	{$(LOC):$(SYS):RES, 8}
-	{$(LOC):$(SYS):RES, 9}
-	{$(LOC):$(SYS):RES, 10}
+	{$(LOC):$(SYS):SEL1:RES, 1}
+	{$(LOC):$(SYS):SEL1:RES, 2}
+	{$(LOC):$(SYS):SEL1:RES, 3}
+	{$(LOC):$(SYS):SEL1:RES, 4}
+	{$(LOC):$(SYS):SEL1:RES, 5}
+	{$(LOC):$(SYS):SEL1:RES, 6}
+	{$(LOC):$(SYS):SEL1:RES, 7}
+	{$(LOC):$(SYS):SEL1:RES, 8}
+	{$(LOC):$(SYS):SEL1:RES, 9}
+	{$(LOC):$(SYS):SEL1:RES, 10}
+
+	{$(LOC):$(SYS):SEL2:RES, 1}
+	{$(LOC):$(SYS):SEL2:RES, 2}
+	{$(LOC):$(SYS):SEL2:RES, 3}
+	{$(LOC):$(SYS):SEL2:RES, 4}
+	{$(LOC):$(SYS):SEL2:RES, 5}
+	{$(LOC):$(SYS):SEL2:RES, 6}
+	{$(LOC):$(SYS):SEL2:RES, 7}
+	{$(LOC):$(SYS):SEL2:RES, 8}
+	{$(LOC):$(SYS):SEL2:RES, 9}
+	{$(LOC):$(SYS):SEL2:RES, 10}
 }

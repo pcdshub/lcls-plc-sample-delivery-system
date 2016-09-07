@@ -15,3 +15,10 @@ file autosave-sample_selection.tpl-req
 	{ LOC,		SYS, NUM}
 	{ $(LOC),	$(SYS), "1"}
 }
+
+file autosave-sample_selection.tpl-req
+{
+	pattern
+	{ LOC,		SYS, NUM}
+	{ $(LOC),	$(SYS), "2"}
+}

@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 994
-y 504
+x 1003
+y 540
 w 212
 h 538
 font "helvetica-medium-r-18.0"
@@ -48,13 +48,13 @@ minor 1
 release 1
 x 11
 y 10
-w 102
+w 221
 h 16
 font "helvetica-bold-r-14.0"
 fgColor index 14
 bgColor index 54
 value {
-  "Sample Names"
+  "Sample Names Selector $(NUM)"
 }
 autoSize
 endObjectProperties
@@ -316,8 +316,8 @@ minor 1
 release 1
 x 16
 y 48
-w 16
-h 36
+w 10
+h 21
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -336,8 +336,8 @@ minor 1
 release 1
 x 16
 y 88
-w 16
-h 36
+w 10
+h 21
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -356,8 +356,8 @@ minor 1
 release 1
 x 16
 y 128
-w 16
-h 36
+w 10
+h 21
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -376,8 +376,8 @@ minor 1
 release 1
 x 16
 y 168
-w 16
-h 36
+w 10
+h 21
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -388,7 +388,6 @@ value {
 autoSize
 endObjectProperties
 
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -397,8 +396,8 @@ minor 1
 release 1
 x 16
 y 208
-w 16
-h 36
+w 10
+h 21
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -409,7 +408,6 @@ value {
 autoSize
 endObjectProperties
 
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -418,8 +416,8 @@ minor 1
 release 1
 x 16
 y 248
-w 16
-h 36
+w 10
+h 21
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -430,7 +428,6 @@ value {
 autoSize
 endObjectProperties
 
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -439,8 +436,8 @@ minor 1
 release 1
 x 16
 y 288
-w 16
-h 36
+w 10
+h 21
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -451,7 +448,6 @@ value {
 autoSize
 endObjectProperties
 
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -460,8 +456,8 @@ minor 1
 release 1
 x 16
 y 328
-w 16
-h 36
+w 10
+h 21
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -472,7 +468,6 @@ value {
 autoSize
 endObjectProperties
 
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -481,8 +476,8 @@ minor 1
 release 1
 x 16
 y 368
-w 16
-h 36
+w 10
+h 21
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -493,7 +488,6 @@ value {
 autoSize
 endObjectProperties
 
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -502,8 +496,8 @@ minor 1
 release 1
 x 16
 y 408
-w 16
-h 36
+w 20
+h 21
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -513,3 +507,4 @@ value {
 }
 autoSize
 endObjectProperties
+

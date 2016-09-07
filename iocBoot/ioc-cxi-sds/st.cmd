@@ -42,8 +42,11 @@ dbLoadRecords("db/sds-m2-sampleSelection.db",   "P=$(LOC):$(SYS),NUM=2")
 dbLoadRecords("db/sds-m2-regulatorLimiter.db", "DEV=$(LOC):$(SYS):REG:01")
 dbLoadRecords("db/sds-m2-regulatorLimiter.db", "DEV=$(LOC):$(SYS):REG:02")
 
-dbLoadRecords("db/sample_flow_accumulators.db", "DEV=$(LOC):$(SYS),NUM=1")
-dbLoadRecords("db/sample_flow_integration.db", "LOC=$(LOC),SYS=$(SYS), FLOWMETER=$(LOC):$(SYS):SEL1:Flow,NUM=1")
+dbLoadRecords("db/sample_flow_accumulators.db", "DEV=$(LOC):$(SYS):SEL1,NUM=1")
+dbLoadRecords("db/sample_flow_integration.db", "DEV=$(LOC):$(SYS):SEL1, FLOWMETER=$(LOC):$(SYS):SEL1:Flow,NUM=1")
+
+dbLoadRecords("db/sample_flow_accumulators.db", "DEV=$(LOC):$(SYS):SEL2,NUM=2")
+dbLoadRecords("db/sample_flow_integration.db", "DEV=$(LOC):$(SYS):SEL2, FLOWMETER=$(LOC):$(SYS):SEL2:Flow,NUM=2")
 
 #Autosave
 save_restoreSet_status_prefix("$(EPICS_PV)" )

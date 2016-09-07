@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 52
-y 76
+x 2387
+y 1095
 w 430
 h 412
 font "helvetica-medium-r-18.0"
@@ -19,7 +19,7 @@ ctlBgColor1 index 0
 ctlBgColor2 index 14
 topShadowColor index 0
 botShadowColor index 14
-title "Integrated Sample Flow"
+title "Selector $(NUM) Flow Integrator"
 showGrid
 snapToGrid
 gridSize 8
@@ -48,13 +48,13 @@ minor 1
 release 1
 x 11
 y 10
-w 162
+w 281
 h 16
 font "helvetica-bold-r-14.0"
 fgColor index 14
 bgColor index 54
 value {
-  "Integrated Sample Flow"
+  "Integrated Sample Flow Selector $(NUM)"
 }
 autoSize
 endObjectProperties
@@ -99,25 +99,6 @@ yPoints {
 }
 endObjectProperties
 
-# (Exit Button)
-object activeExitButtonClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 160
-y 368
-w 40
-h 24
-fgColor index 14
-bgColor index 4
-topShadowColor index 1
-botShadowColor index 11
-label "Done"
-font "helvetica-medium-r-10.0"
-3d
-endObjectProperties
-
 # (Text Update)
 object TextupdateClass
 beginObjectProperties
@@ -128,7 +109,7 @@ x 384
 y 8
 w 20
 h 16
-controlPv "$(LOC):$(SYS):RES:1:IntgFlow.EGU"
+controlPv "$(DEV):RES:1:IntgFlow.EGU"
 displayMode "exp"
 precision 1
 fgColor index 15
@@ -148,7 +129,7 @@ major 4
 minor 1
 release 1
 x 152
-y 40
+y 80
 w 42
 h 28
 font "helvetica-medium-r-12.0"
@@ -169,7 +150,7 @@ major 4
 minor 1
 release 1
 x 224
-y 40
+y 80
 w 28
 h 14
 font "helvetica-medium-r-12.0"
@@ -189,7 +170,7 @@ major 4
 minor 1
 release 1
 x 296
-y 40
+y 80
 w 53
 h 28
 font "helvetica-medium-r-12.0"
@@ -210,10 +191,10 @@ major 10
 minor 0
 release 0
 x 296
-y 101
+y 144
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:2:EstDepletionTime"
+controlPv "$(DEV):RES:2:EstDepletionTime"
 displayMode "decimal"
 fgColor index 15
 fgAlarm
@@ -232,10 +213,10 @@ major 10
 minor 0
 release 0
 x 16
-y 101
+y 144
 w 115
 h 20
-controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.TWST"
+controlPv "$(DEV):SYNC_RES_REQ.TWST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -250,7 +231,7 @@ major 4
 minor 1
 release 0
 x 368
-y 101
+y 144
 w 48
 h 16
 fgColor index 14
@@ -258,7 +239,7 @@ onColor index 0
 offColor index 0
 topShadowColor index 0
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):RES:2:IntgFlow"
+controlPv "$(DEV):RES:2:IntgFlow"
 releaseValue "0"
 onLabel "Reset"
 offLabel "Reset"
@@ -274,10 +255,10 @@ major 10
 minor 0
 release 0
 x 224
-y 101
+y 144
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:2:IntgFlow"
+controlPv "$(DEV):RES:2:IntgFlow"
 displayMode "decimal"
 precision 4
 fgColor index 15
@@ -297,10 +278,10 @@ major 4
 minor 7
 release 0
 x 152
-y 101
+y 144
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:2:StartingVol"
+controlPv "$(DEV):RES:2:StartingVol"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -321,10 +302,10 @@ major 10
 minor 0
 release 0
 x 296
-y 130
+y 168
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:3:EstDepletionTime"
+controlPv "$(DEV):RES:3:EstDepletionTime"
 displayMode "decimal"
 fgColor index 15
 fgAlarm
@@ -343,10 +324,10 @@ major 10
 minor 0
 release 0
 x 16
-y 130
+y 168
 w 115
 h 20
-controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.THST"
+controlPv "$(DEV):SYNC_RES_REQ.THST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -361,7 +342,7 @@ major 4
 minor 1
 release 0
 x 368
-y 130
+y 168
 w 48
 h 16
 fgColor index 14
@@ -369,7 +350,7 @@ onColor index 0
 offColor index 0
 topShadowColor index 0
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):RES:3:IntgFlow"
+controlPv "$(DEV):RES:3:IntgFlow"
 releaseValue "0"
 onLabel "Reset"
 offLabel "Reset"
@@ -385,10 +366,10 @@ major 10
 minor 0
 release 0
 x 224
-y 130
+y 168
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:3:IntgFlow"
+controlPv "$(DEV):RES:3:IntgFlow"
 displayMode "decimal"
 precision 4
 fgColor index 15
@@ -408,10 +389,10 @@ major 4
 minor 7
 release 0
 x 152
-y 130
+y 168
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:3:StartingVol"
+controlPv "$(DEV):RES:3:StartingVol"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -432,10 +413,10 @@ major 10
 minor 0
 release 0
 x 296
-y 159
+y 200
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:4:EstDepletionTime"
+controlPv "$(DEV):RES:4:EstDepletionTime"
 displayMode "decimal"
 fgColor index 15
 fgAlarm
@@ -454,10 +435,10 @@ major 10
 minor 0
 release 0
 x 16
-y 159
+y 200
 w 115
 h 20
-controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.FRST"
+controlPv "$(DEV):SYNC_RES_REQ.FRST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -472,7 +453,7 @@ major 4
 minor 1
 release 0
 x 368
-y 159
+y 200
 w 48
 h 16
 fgColor index 14
@@ -480,7 +461,7 @@ onColor index 0
 offColor index 0
 topShadowColor index 0
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):RES:4:IntgFlow"
+controlPv "$(DEV):RES:4:IntgFlow"
 releaseValue "0"
 onLabel "Reset"
 offLabel "Reset"
@@ -496,10 +477,10 @@ major 10
 minor 0
 release 0
 x 224
-y 159
+y 200
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:4:IntgFlow"
+controlPv "$(DEV):RES:4:IntgFlow"
 displayMode "decimal"
 precision 4
 fgColor index 15
@@ -519,10 +500,10 @@ major 4
 minor 7
 release 0
 x 152
-y 159
+y 200
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:4:StartingVol"
+controlPv "$(DEV):RES:4:StartingVol"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -543,10 +524,10 @@ major 10
 minor 0
 release 0
 x 296
-y 189
+y 232
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:5:EstDepletionTime"
+controlPv "$(DEV):RES:5:EstDepletionTime"
 displayMode "decimal"
 fgColor index 15
 fgAlarm
@@ -565,10 +546,10 @@ major 10
 minor 0
 release 0
 x 16
-y 189
+y 232
 w 115
 h 20
-controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.FVST"
+controlPv "$(DEV):SYNC_RES_REQ.FVST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -583,7 +564,7 @@ major 4
 minor 1
 release 0
 x 368
-y 189
+y 232
 w 48
 h 16
 fgColor index 14
@@ -591,7 +572,7 @@ onColor index 0
 offColor index 0
 topShadowColor index 0
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):RES:5:IntgFlow"
+controlPv "$(DEV):RES:5:IntgFlow"
 releaseValue "0"
 onLabel "Reset"
 offLabel "Reset"
@@ -607,10 +588,10 @@ major 10
 minor 0
 release 0
 x 224
-y 189
+y 232
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:5:IntgFlow"
+controlPv "$(DEV):RES:5:IntgFlow"
 displayMode "decimal"
 precision 4
 fgColor index 15
@@ -630,10 +611,10 @@ major 4
 minor 7
 release 0
 x 152
-y 189
+y 232
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:5:StartingVol"
+controlPv "$(DEV):RES:5:StartingVol"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -654,10 +635,10 @@ major 10
 minor 0
 release 0
 x 296
-y 218
+y 256
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:6:EstDepletionTime"
+controlPv "$(DEV):RES:6:EstDepletionTime"
 displayMode "decimal"
 fgColor index 15
 fgAlarm
@@ -676,10 +657,10 @@ major 10
 minor 0
 release 0
 x 16
-y 218
+y 256
 w 115
 h 20
-controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.SXST"
+controlPv "$(DEV):SYNC_RES_REQ.SXST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -694,7 +675,7 @@ major 4
 minor 1
 release 0
 x 368
-y 218
+y 256
 w 48
 h 16
 fgColor index 14
@@ -702,7 +683,7 @@ onColor index 0
 offColor index 0
 topShadowColor index 0
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):RES:6:IntgFlow"
+controlPv "$(DEV):RES:6:IntgFlow"
 releaseValue "0"
 onLabel "Reset"
 offLabel "Reset"
@@ -718,10 +699,10 @@ major 10
 minor 0
 release 0
 x 224
-y 218
+y 256
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:6:IntgFlow"
+controlPv "$(DEV):RES:6:IntgFlow"
 displayMode "decimal"
 precision 4
 fgColor index 15
@@ -741,10 +722,10 @@ major 4
 minor 7
 release 0
 x 152
-y 218
+y 256
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:6:StartingVol"
+controlPv "$(DEV):RES:6:StartingVol"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -765,10 +746,10 @@ major 10
 minor 0
 release 0
 x 296
-y 248
+y 288
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:7:EstDepletionTime"
+controlPv "$(DEV):RES:7:EstDepletionTime"
 displayMode "decimal"
 fgColor index 15
 fgAlarm
@@ -787,10 +768,10 @@ major 10
 minor 0
 release 0
 x 16
-y 248
+y 288
 w 115
 h 20
-controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.SVST"
+controlPv "$(DEV):SYNC_RES_REQ.SVST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -805,7 +786,7 @@ major 4
 minor 1
 release 0
 x 368
-y 248
+y 288
 w 48
 h 16
 fgColor index 14
@@ -813,7 +794,7 @@ onColor index 0
 offColor index 0
 topShadowColor index 0
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):RES:7:IntgFlow"
+controlPv "$(DEV):RES:7:IntgFlow"
 releaseValue "0"
 onLabel "Reset"
 offLabel "Reset"
@@ -829,10 +810,10 @@ major 10
 minor 0
 release 0
 x 224
-y 248
+y 288
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:7:IntgFlow"
+controlPv "$(DEV):RES:7:IntgFlow"
 displayMode "decimal"
 precision 4
 fgColor index 15
@@ -852,10 +833,10 @@ major 4
 minor 7
 release 0
 x 152
-y 248
+y 288
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:7:StartingVol"
+controlPv "$(DEV):RES:7:StartingVol"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -876,10 +857,10 @@ major 10
 minor 0
 release 0
 x 296
-y 277
+y 320
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:8:EstDepletionTime"
+controlPv "$(DEV):RES:8:EstDepletionTime"
 displayMode "decimal"
 fgColor index 15
 fgAlarm
@@ -898,10 +879,10 @@ major 10
 minor 0
 release 0
 x 16
-y 277
+y 320
 w 115
 h 20
-controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.EIST"
+controlPv "$(DEV):SYNC_RES_REQ.EIST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -916,7 +897,7 @@ major 4
 minor 1
 release 0
 x 368
-y 277
+y 320
 w 48
 h 16
 fgColor index 14
@@ -924,7 +905,7 @@ onColor index 0
 offColor index 0
 topShadowColor index 0
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):RES:8:IntgFlow"
+controlPv "$(DEV):RES:8:IntgFlow"
 releaseValue "0"
 onLabel "Reset"
 offLabel "Reset"
@@ -940,10 +921,10 @@ major 10
 minor 0
 release 0
 x 224
-y 277
+y 320
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:8:IntgFlow"
+controlPv "$(DEV):RES:8:IntgFlow"
 displayMode "decimal"
 precision 4
 fgColor index 15
@@ -963,10 +944,10 @@ major 4
 minor 7
 release 0
 x 152
-y 277
+y 320
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:8:StartingVol"
+controlPv "$(DEV):RES:8:StartingVol"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -987,10 +968,10 @@ major 10
 minor 0
 release 0
 x 296
-y 306
+y 344
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:9:EstDepletionTime"
+controlPv "$(DEV):RES:9:EstDepletionTime"
 displayMode "decimal"
 fgColor index 15
 fgAlarm
@@ -1009,10 +990,10 @@ major 10
 minor 0
 release 0
 x 16
-y 306
+y 344
 w 115
 h 20
-controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.NIST"
+controlPv "$(DEV):SYNC_RES_REQ.NIST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -1027,7 +1008,7 @@ major 4
 minor 1
 release 0
 x 368
-y 306
+y 344
 w 48
 h 16
 fgColor index 14
@@ -1035,7 +1016,7 @@ onColor index 0
 offColor index 0
 topShadowColor index 0
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):RES:9:IntgFlow"
+controlPv "$(DEV):RES:9:IntgFlow"
 releaseValue "0"
 onLabel "Reset"
 offLabel "Reset"
@@ -1051,10 +1032,10 @@ major 10
 minor 0
 release 0
 x 224
-y 306
+y 344
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:9:IntgFlow"
+controlPv "$(DEV):RES:9:IntgFlow"
 displayMode "decimal"
 precision 4
 fgColor index 15
@@ -1074,10 +1055,10 @@ major 4
 minor 7
 release 0
 x 152
-y 306
+y 344
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:9:StartingVol"
+controlPv "$(DEV):RES:9:StartingVol"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1098,10 +1079,10 @@ major 10
 minor 0
 release 0
 x 296
-y 336
+y 376
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:10:EstDepletionTime"
+controlPv "$(DEV):RES:10:EstDepletionTime"
 displayMode "decimal"
 fgColor index 15
 fgAlarm
@@ -1120,10 +1101,10 @@ major 10
 minor 0
 release 0
 x 16
-y 336
+y 376
 w 115
 h 20
-controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.TEST"
+controlPv "$(DEV):SYNC_RES_REQ.TEST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -1138,7 +1119,7 @@ major 4
 minor 1
 release 0
 x 368
-y 336
+y 376
 w 48
 h 16
 fgColor index 14
@@ -1146,7 +1127,7 @@ onColor index 0
 offColor index 0
 topShadowColor index 0
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):RES:10:IntgFlow"
+controlPv "$(DEV):RES:10:IntgFlow"
 releaseValue "0"
 onLabel "Reset"
 offLabel "Reset"
@@ -1162,10 +1143,10 @@ major 10
 minor 0
 release 0
 x 224
-y 336
+y 376
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:10:IntgFlow"
+controlPv "$(DEV):RES:10:IntgFlow"
 displayMode "decimal"
 precision 4
 fgColor index 15
@@ -1185,10 +1166,10 @@ major 4
 minor 7
 release 0
 x 152
-y 336
+y 376
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:10:StartingVol"
+controlPv "$(DEV):RES:10:StartingVol"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1209,10 +1190,10 @@ major 10
 minor 0
 release 0
 x 296
-y 72
+y 112
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:1:EstDepletionTime"
+controlPv "$(DEV):RES:1:EstDepletionTime"
 displayMode "decimal"
 fgColor index 15
 fgAlarm
@@ -1231,10 +1212,10 @@ major 10
 minor 0
 release 0
 x 16
-y 72
+y 112
 w 115
 h 20
-controlPv "$(LOC):$(SYS):SEL1:SYNC_RES_REQ.ONST"
+controlPv "$(DEV):SYNC_RES_REQ.ONST"
 fgColor index 14
 fgAlarm
 bgColor index 1
@@ -1249,7 +1230,7 @@ major 4
 minor 1
 release 0
 x 368
-y 72
+y 112
 w 48
 h 16
 fgColor index 14
@@ -1257,7 +1238,7 @@ onColor index 0
 offColor index 0
 topShadowColor index 0
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):RES:1:IntgFlow"
+controlPv "$(DEV):RES:1:IntgFlow"
 releaseValue "0"
 onLabel "Reset"
 offLabel "Reset"
@@ -1273,10 +1254,10 @@ major 10
 minor 0
 release 0
 x 224
-y 72
+y 112
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:1:IntgFlow"
+controlPv "$(DEV):RES:1:IntgFlow"
 displayMode "decimal"
 precision 4
 fgColor index 15
@@ -1296,10 +1277,10 @@ major 4
 minor 7
 release 0
 x 152
-y 72
+y 112
 w 64
 h 16
-controlPv "$(LOC):$(SYS):RES:1:StartingVol"
+controlPv "$(DEV):RES:1:StartingVol"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -1311,5 +1292,27 @@ nullColor index 1
 useHexPrefix
 newPos
 objType "controls"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 64
+y 40
+w 360
+h 32
+fgColor index 14
+bgColor index 5
+selectColor index 4
+inconsistentColor index 14
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(DEV):RES:FlowSrcSelection"
+indicatorPv "$(DEV):RES:FlowSrcSelection"
+font "helvetica-medium-r-18.0"
+orientation "horizontal"
 endObjectProperties
 

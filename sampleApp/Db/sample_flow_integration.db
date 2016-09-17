@@ -3,10 +3,20 @@
 record(sel, "$(DEV):RES:IntegratorSrcSel"){
 	field(DESC, "Source selector")
 	field(SELM, "Specified")
-	field(NVL, "$(DEV):RES:SourceSelection.VAL")
-	field(INPA, "$(FLOWMETER)")
-	field(INPB, "$(PUMP)")
+	field(NVL, "$(DEV):RES:FlowSrcSelection.VAL")
+	field(INPA, "$(FLOWMETER) CP")
+	field(INPB, "$(DEV):RES:PumpUnitConverter CP")
 }
+
+record(ai, "$(DEV):RES:PumpUnitConverter"){
+	field(DESC, "Scale pump from mL/min to uL")
+	field(DTYP, "Raw Soft Channel")
+	field(LINR, "SLOPE")
+	field(ESLO, "1000")
+	field(EOFF, "0")
+	field(INP, "$(PUMP) PP")
+}
+
 
 record(mbbi, "$(DEV):RES:FlowSrcSelection"){
 	field(DESC, "Flow selection")
@@ -16,6 +26,7 @@ record(mbbi, "$(DEV):RES:FlowSrcSelection"){
 	field(ONST, "HPLC Pump $(NUM)")
 	field(ZRVL, "0")
 	field(ONVL, "1")
+	field(FLNK, "$(DEV):RES:IntegratorSrcSel")
 }
 
 
@@ -30,11 +41,11 @@ record(genSub, "$(DEV):RES:IntegratorSub") {
   
 #Selector input
 	field(FTT, "DOUBLE")
-  	field(INPT, "$(DEV):SEL$(NUM):SYNC:CURR_POS PP")
+  	field(INPT, "$(DEV):SYNC:CURR_POS PP")
   
 # Flow input
 	field(FTU, "DOUBLE")
-	field(INPU, "$(DEV):RES:IntegratorSrcSel CP MS")
+	field(INPU, "$(DEV):RES:IntegratorSrcSel.VAL CP MS")
 
 	#IN
 	field(FTA, "DOUBLE")

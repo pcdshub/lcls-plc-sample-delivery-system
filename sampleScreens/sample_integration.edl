@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2387
-y 1095
+x 2870
+y 1362
 w 430
 h 412
 font "helvetica-medium-r-18.0"
@@ -105,8 +105,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 384
-y 8
+x 256
+y 80
 w 20
 h 16
 controlPv "$(DEV):RES:1:IntgFlow.EGU"
@@ -1314,5 +1314,51 @@ controlPv "$(DEV):RES:FlowSrcSelection"
 indicatorPv "$(DEV):RES:FlowSrcSelection"
 font "helvetica-medium-r-18.0"
 orientation "horizontal"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 336
+y 8
+w 64
+h 16
+controlPv "$(DEV):RES:IntegratorSrcSel"
+displayMode "decimal"
+precision 4
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 200
+y 80
+w 20
+h 16
+controlPv "$(DEV):RES:1:IntgFlow.EGU"
+displayMode "exp"
+precision 1
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
 endObjectProperties
 

@@ -35,10 +35,10 @@ record(ao, "$(P):$(N):StartingVol"){
 
 record(calc, "$(P):$(N):EstDepletionTime"){
 	field(DESC, "Est. when sample will run out")
-	field(SCAN, "10 second")
+	field(SCAN, "1 second")
 	field(INPA, "$(P):$(N):StartingVol NP")
 	field(INPB, "$(P):$(N):IntgFlow NP")
-	field(INPC, "$(DEV):SEL$(NUM):Flow NP")
+	field(INPC, "$(DEV):RES:IntegratorSrcSel.VAL NP")
 	field(CALC, "MAX(((A-B)/C),0)")
 	field(EGU, "min")
 	field(LOPR, "0")

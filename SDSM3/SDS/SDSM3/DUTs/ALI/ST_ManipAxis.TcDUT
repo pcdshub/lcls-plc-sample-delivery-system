@@ -14,7 +14,7 @@ wMode	:	E_AxisMoveMode;
 	
 (* Axis motor *)
 stAxis	:	AXIS_REF;
-lrVelocity	:	LREAL	:=20; //mm/min
+lrVelocity	:	LREAL	:=1; //mm/s
 
 eState	:	E_AxisMotionState;
 

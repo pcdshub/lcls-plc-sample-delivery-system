@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
   <DUT Name="ST_Selector" Id="{edea215a-6843-498f-9e8b-ebe30f5a62c3}">
     <Declaration><![CDATA[TYPE ST_Selector :
 STRUCT
@@ -16,6 +16,18 @@ STRUCT
 	stSelFMStatusSens	:	ST_SensirionFMStatus;
 	stSelFMControlBh	:	ST_BhFMControl;
 	stSelFMControlSens	:	ST_SensirionFMControl;
+	
+	(* Mark 3 Selector Items *)
+	//Flowmeters
+	////////////////////////
+		stMFM	:	ST_BhElFlow;
+		astSelFMStat	: ARRAY[1..2] OF	ST_SensirionFMStatus;
+		astSelFMCtrl	: ARRAY[1..2] OF	ST_SensirionFMControl;
+		
+		rLowFlow	:	REAL;
+		rHighFlow	:	REAL;
+		rGasFlow	:	REAL;
+		
 	
 	//Common parameters
 	iFlowMeterType	:	INT; //see below

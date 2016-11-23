@@ -20,7 +20,7 @@ STRUCT
 	(* Mark 3 Selector Items *)
 	//Flowmeters
 	////////////////////////
-		stMFM	:	ST_BhElFlow;
+//		stMFM	:	ST_BhElFlow;
 		astSelFMStat	: ARRAY[1..2] OF	ST_SensirionFMStatus;
 		astSelFMCtrl	: ARRAY[1..2] OF	ST_SensirionFMControl;
 		

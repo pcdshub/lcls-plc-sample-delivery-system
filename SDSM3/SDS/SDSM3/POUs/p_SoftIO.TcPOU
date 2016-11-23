@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
   <POU Name="p_SoftIO" Id="{08bd4e2d-3139-4f8e-b2bd-85fa0e412ded}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM p_SoftIO
 VAR
@@ -25,59 +25,7 @@ stSelector2.stShaker04.i_xSwitch := i_xSelB2Ch7;
 q_xSel2B2Ch0	:= stSelector2.stShaker01.q_xPwrDO;
 q_xSel2B2Ch1	:= stSelector2.stShaker02.q_xPwrDO;
 q_xSel2B2Ch2	:= stSelector2.stShaker03.q_xPwrDO;
-q_xSel2B2Ch3	:= stSelector2.stShaker04.q_xPwrDO;
-
-(* Regulators *)
-(* Pressure transducers *)
-stRegWater.i_iRawInPress	:= i_iEB1Ch0;// input
-stRegWater.i_iRawOutPress	:= i_iEB1Ch1;// output
-stRegSheath.i_iRawInPress	:= i_iEB1Ch2;// input
-stRegSheath.i_iRawOutPress	:= i_iEB1Ch3;//output
-
-(* Proportionair *)
-q_iTerm2Ch0AO := stRegProp1.iSetpointRaw;
-q_iTerm2Ch1AO := stRegProp2.iSetpointRaw;
-q_iTerm2Ch2AO := stRegProp3.iSetpointRaw;
-q_iTerm2Ch3AO := stRegProp4.iSetpointRaw;
-
-stRegProp1.iPressureRaw := i_iTerm1Ch0AI;
-stRegProp2.iPressureRaw := i_iTerm1Ch1AI;
-stRegProp3.iPressureRaw := i_iTerm1Ch2AI;
-stRegProp4.iPressureRaw := i_iTerm1Ch3AI;
-
-stRegProp1.xStable := i_xTerm3Ch1;
-stRegProp2.xStable := i_xTerm3Ch2;
-stRegProp3.xStable := i_xTerm3Ch3;
-stRegProp4.xStable := i_xTerm3Ch4;
-
-(* Status lights *)
-(*
-q_xTerm5Ch1 := gxGreenLight;
-q_xTerm5Ch2 := gxYellowLight;
-q_xTerm5Ch3 := gxRedLight;
-*)
-
-(* Manifold Controls *)
-q_xTerm5Ch1 := stManiVlv1.qxDO;
-q_xTerm5Ch2 := stManiVlv2.qxDO;
-q_xTerm5Ch3 := stManiVlv3.qxDO;
-q_xTerm5Ch4 := stManiVlv4.qxDO;
-q_xTerm5Ch5 := stManiVlv5.qxDO;
-q_xTerm5Ch6 := stManiVlv6.qxDO;
-q_xTerm5Ch7 := stManiVlv7.qxDO;
-(* Manifold Readbacks *)
-stManiVlv1.ixOPN := i_xTerm4Ch1;
-stManiVlv2.ixOPN := i_xTerm4Ch2;
-stManiVlv3.ixOPN := i_xTerm4Ch3;
-stManiVlv4.ixOPN := i_xTerm4Ch4;
-stManiVlv5.ixOPN := i_xTerm4Ch5;
-stManiVlv6.ixOPN := i_xTerm4Ch6;
-stManiVlv7.ixOPN := i_xTerm4Ch7;
-
-(* Aerojet Nozzle Box Gauges *)
-stALI.stVgALINB1.iPRESS_R	:= i_iMcr1EB4Ch0AI;
-stALI.stVgALINB2.iPRESS_R	:= i_iMcr1EB4Ch1AI;
-stALI.stVgALINB3.iPRESS_R	:= i_iMcr1EB4Ch2AI;]]></ST>
+q_xSel2B2Ch3	:= stSelector2.stShaker04.q_xPwrDO;]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

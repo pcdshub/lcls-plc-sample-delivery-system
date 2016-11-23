@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
   <GVL Name="GVL_IO" Id="{72fbb778-259d-42b9-8ccf-d5ffd47335bc}">
     <Declaration><![CDATA[VAR_GLOBAL
 	
+	iq_stM3SelectorA	:	ST_M3SelectorIO;
+
 	i_iFscEB1Ch0AI	AT	%I*	:	INT;
 	i_iFscEB1Ch1AI	AT	%I*	:	INT;
 	i_iFscEB1Ch2AI	AT	%I*	:	INT;
@@ -27,62 +29,6 @@
 	i_xSel2B2Ch5	AT	%I*	:	BOOL;
 	i_xSel2B2Ch6	AT	%I*	:	BOOL;
 	i_xSel2B2Ch7	AT	%I*	:	BOOL;
-	
-	(* PLC Rail *)
-	i_iTerm1Ch0AI	AT	%I*	:	INT;
-	i_iTerm1Ch1AI	AT	%I*	:	INT;
-	i_iTerm1Ch2AI	AT	%I*	:	INT;
-	i_iTerm1Ch3AI	AT	%I*	:	INT;
-	
-	q_iTerm2Ch0AO	AT	%Q*	:	INT;
-	q_iTerm2Ch1AO	AT	%Q*	:	INT;
-	q_iTerm2Ch2AO	AT	%Q*	:	INT;
-	q_iTerm2Ch3AO	AT	%Q*	:	INT;
-	
-	i_xTerm3Ch1	AT	%I*	:	BOOL;
-	i_xTerm3Ch2	AT	%I*	:	BOOL;
-	i_xTerm3Ch3	AT	%I*	:	BOOL;
-	i_xTerm3Ch4	AT	%I*	:	BOOL;
-
-	i_xTerm4Ch1	AT	%I*	:	BOOL;
-	i_xTerm4Ch2	AT	%I*	:	BOOL;
-	i_xTerm4Ch3	AT	%I*	:	BOOL;
-	i_xTerm4Ch4	AT	%I*	:	BOOL;		
-	i_xTerm4Ch5	AT	%I*	:	BOOL;
-	i_xTerm4Ch6	AT	%I*	:	BOOL;
-	i_xTerm4Ch7	AT	%I*	:	BOOL;
-	i_xTerm4Ch8	AT	%I*	:	BOOL;
-	
-	q_xTerm5Ch1	AT	%Q*	:	BOOL;
-	q_xTerm5Ch2	AT	%Q*	:	BOOL;
-	q_xTerm5Ch3	AT	%Q*	:	BOOL;
-	q_xTerm5Ch4	AT	%Q*	:	BOOL;
-	q_xTerm5Ch5	AT	%Q*	:	BOOL;
-	q_xTerm5Ch6	AT	%Q*	:	BOOL;
-	q_xTerm5Ch7	AT	%Q*	:	BOOL;
-	q_xTerm5Ch8	AT	%Q*	:	BOOL;
-	
-	
-	q_xTerm6Ch1	AT	%Q*	:	BOOL;
-	q_xTerm6Ch2	AT	%Q*	:	BOOL;
-	q_xTerm6Ch3	AT	%Q*	:	BOOL;
-	q_xTerm6Ch4	AT	%Q*	:	BOOL;
-	q_xTerm6Ch5	AT	%Q*	:	BOOL;
-	q_xTerm6Ch6	AT	%Q*	:	BOOL;
-	q_xTerm6Ch7	AT	%Q*	:	BOOL;
-	q_xTerm6Ch8	AT	%Q*	:	BOOL;
-	
-	(* SDS Remote Test Station *)
-	i_iEB1Ch0	AT %I*	:	INT;
-	i_iEB1Ch1	AT %I*	:	INT;
-	i_iEB1Ch2	AT %I*	:	INT;
-	i_iEB1Ch3	AT %I*	:	INT;
-	
-	(* Master Controller Rail *)
-	i_iMcr1EB4Ch0AI	AT	%I*	:	INT;
-	i_iMcr1EB4Ch1AI	AT	%I*	:	INT;
-	i_iMcr1EB4Ch2AI	AT	%I*	:	INT;
-	i_iMcr1EB4Ch3AI	AT	%I*	:	INT;
 	
 
 END_VAR]]></Declaration>

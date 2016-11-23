@@ -3187,14 +3187,6 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.i_iFscEB1Ch0AI</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iFscEB1Ch1AI</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
 							<Name>GVL_Devices.stALI.axisX.stAxis.NcToPlc</Name>
 							<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 							<SubVar>
@@ -3366,6 +3358,14 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
+							<Name>GVL_IO.i_iFscEB1Ch0AI</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.i_iFscEB1Ch1AI</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
 							<Name>GVL_IO.i_iFscEB1Ch2AI</Name>
 							<Type>INT</Type>
 						</Var>
@@ -3405,118 +3405,9 @@ External Setpoint Generation:
 							<Name>GVL_IO.i_xSel2B2Ch7</Name>
 							<Type>BOOL</Type>
 						</Var>
-						<Var>
-							<Name>GVL_IO.i_xTerm3Ch1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iTerm1Ch0AI</Name>
-							<Comment>
-								<![CDATA[ PLC Rail ]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iTerm1Ch1AI</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iTerm1Ch2AI</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iTerm1Ch3AI</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_xTerm3Ch2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_xTerm3Ch3</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_xTerm3Ch4</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_xTerm4Ch1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_xTerm4Ch2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_xTerm4Ch3</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_xTerm4Ch4</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_xTerm4Ch5</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_xTerm4Ch6</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_xTerm4Ch7</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_xTerm4Ch8</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iEB1Ch0</Name>
-							<Comment>
-								<![CDATA[ SDS Remote Test Station ]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iEB1Ch1</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iEB1Ch2</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iEB1Ch3</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iMcr1EB4Ch0AI</Name>
-							<Comment>
-								<![CDATA[ Master Controller Rail ]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iMcr1EB4Ch1AI</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iMcr1EB4Ch2AI</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iMcr1EB4Ch3AI</Name>
-							<Type>INT</Type>
-						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
-						<Var>
-							<Name>GVL_IO.q_xSelB2Ch0</Name>
-							<Type>BOOL</Type>
-						</Var>
 						<Var>
 							<Name>GVL_Devices.stRegSheath.stRegulatorMotor.PlcToNc</Name>
 							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
@@ -3540,6 +3431,14 @@ External Setpoint Generation:
 						<Var>
 							<Name>GVL_Devices.stALI.axisZ.stAxis.PlcToNc</Name>
 							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorA.i_xShaker1</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.q_xSelB2Ch0</Name>
+							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_IO.q_xSelB2Ch1</Name>
@@ -3567,86 +3466,6 @@ External Setpoint Generation:
 						</Var>
 						<Var>
 							<Name>GVL_IO.q_xSel2B2Ch3</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_iTerm2Ch0AO</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_iTerm2Ch1AO</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_iTerm2Ch2AO</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_iTerm2Ch3AO</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_xTerm5Ch1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_xTerm5Ch2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_xTerm5Ch3</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_xTerm5Ch4</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_xTerm5Ch5</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_xTerm5Ch6</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_xTerm5Ch7</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_xTerm5Ch8</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_xTerm6Ch1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_xTerm6Ch2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_xTerm6Ch3</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_xTerm6Ch4</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_xTerm6Ch5</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_xTerm6Ch6</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_xTerm6Ch7</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.q_xTerm6Ch8</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
@@ -13650,7 +13469,6 @@ Bit1: Value smaller than Limit2]]>
 		<MappingInfo Identifier="{01010011-0010-0304-1000-010110000403}" Id="#x03070020" Watchdog="00000000000000000000000000000000"/>
 		<MappingInfo Identifier="{05000010-0011-0101-5000-040310000101}" Id="#x03070080" Watchdog="14000000040000000400000004000000"/>
 		<MappingInfo Identifier="{00000000-0011-0101-1000-010120000403}" Id="#x03070070"/>
-		<MappingInfo Identifier="{00000000-0011-0101-1000-010140000403}" Id="#x03070030"/>
 		<MappingInfo Identifier="{00000000-0010-0304-5000-040310000403}" Id="#x03070010"/>
 		<OwnerA Name="TINC^NC-Task 1 SAF^Axes^ALI_X">
 			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_X (EP7041-0002)">
@@ -13874,12 +13692,6 @@ Bit1: Value smaller than Limit2]]>
 			<OwnerB Name="TIID^MFX (EtherCAT)">
 				<Link VarA="PlcTask Inputs^GVL.g_aEcatMaster2" VarB="InfoData^AmsNetId"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MFX (EtherCAT)^MCB1 (EP3184-0002)">
-				<Link VarA="PlcTask Inputs^GVL_IO.i_iEB1Ch0" VarB="AI Standard Channel 1^Value"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.i_iEB1Ch1" VarB="AI Standard Channel 2^Value"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.i_iEB1Ch2" VarB="AI Standard Channel 3^Value"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.i_iEB1Ch3" VarB="AI Standard Channel 4^Value"/>
-			</OwnerB>
 			<OwnerB Name="TIID^MFX (EtherCAT)^MCB2 (EP7041-0002)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.stRegWater.xRegHiLS" VarB="STM Status^Status^Digital input 2"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.stRegWater.xRegLoLS" VarB="STM Status^Status^Digital input 1"/>
@@ -13887,12 +13699,6 @@ Bit1: Value smaller than Limit2]]>
 			<OwnerB Name="TIID^MFX (EtherCAT)^MCB3 (EP7041-0002)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.stRegSheath.xRegHiLS" VarB="STM Status^Status^Digital input 2"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.stRegSheath.xRegLoLS" VarB="STM Status^Status^Digital input 1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^MFX (EtherCAT)^MCB4 (EP3174-0002)">
-				<Link VarA="PlcTask Inputs^GVL_IO.i_iMcr1EB4Ch0AI" VarB="AI Standard Channel 1^Value"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.i_iMcr1EB4Ch1AI" VarB="AI Standard Channel 2^Value"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.i_iMcr1EB4Ch2AI" VarB="AI Standard Channel 3^Value"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.i_iMcr1EB4Ch3AI" VarB="AI Standard Channel 4^Value"/>
 			</OwnerB>
 			<OwnerB Name="TIID^MFX (EtherCAT)^Sel2B1 (EP2338-1001)">
 				<Link VarA="PlcTask Outputs^GVL_IO.q_xSel2B2Ch0" VarB="Channel 9^Output"/>

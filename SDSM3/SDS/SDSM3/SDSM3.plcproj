@@ -42,6 +42,9 @@
     <Compile Include="DUTs\ST_BhFMControl.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\ST_M3SelectorIO.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\ST_ManifoldValve.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -162,9 +165,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\p_SampleSelector2.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\p_SelectorDetector.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\p_Shakers.TcPOU">

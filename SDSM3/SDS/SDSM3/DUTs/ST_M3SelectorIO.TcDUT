@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+  <DUT Name="ST_M3SelectorIO" Id="{312b2dba-2603-45b3-923b-4fd923e08057}">
+    <Declaration><![CDATA[TYPE ST_M3SelectorIO :
+STRUCT
+	i_xShaker1	AT %Q*	:	BOOL;	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

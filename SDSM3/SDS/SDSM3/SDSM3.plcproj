@@ -287,6 +287,9 @@
     <Content Include="SDSM3.tmc">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="SelectorEP6002Settings.xml">
+      <SubType>Content</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <PlaceholderResolution Include="LCLSVacuumLib">

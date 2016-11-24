@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
-  <POU Name="SerialTxRx" Id="{8ce33525-cb60-4010-bca4-10eb26b43a58}">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+  <POU Name="SerialTxRx" Id="{8ce33525-cb60-4010-bca4-10eb26b43a58}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM SerialTxRx
 VAR
 	
@@ -56,18 +56,7 @@ fbSerialLineControl_Selector2FlwMtr(
 	TxBuffer:= SerialTXBuffer_Sel2FlwMtr,
 	RxBuffer:= SerialRXBuffer_Sel2FlwMtr,
 	Error=> ,
-	ErrorID=> );
-	
-fbSerialLineControl_CoolerShakerTEC(
-	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
-	pComIn:= ADR(stComIn_CoolerShakerB2P1),
-	pComOut:=ADR(stComOut_CoolerShakerB2P1) ,
-	SizeComIn:= SIZEOF(stComIn_CoolerShakerB2P1),
-	TxBuffer:= SerialTXBuffer_CoolerShakerTEC,
-	RxBuffer:= SerialRXBuffer_CoolerShakerTEC,
-	Error=> ,
 	ErrorID=> );]]></ST>
     </Implementation>
-    <ObjectProperties />
   </POU>
 </TcPlcObject>

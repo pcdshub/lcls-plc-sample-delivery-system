@@ -7,25 +7,25 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[(* Shakers *)
-stSelector.stShaker01.i_xSwitch := i_xSelB2Ch4;
-stSelector.stShaker02.i_xSwitch := i_xSelB2Ch5;
-stSelector.stShaker03.i_xSwitch := i_xSelB2Ch6;
-stSelector.stShaker04.i_xSwitch := i_xSelB2Ch7;
+stSelector.stShaker01.i_xSwitch := iq_stM2SelectorA.i_EP2338_Ch5;
+stSelector.stShaker02.i_xSwitch := iq_stM2SelectorA.i_EP2338_Ch6;
+stSelector.stShaker03.i_xSwitch := iq_stM2SelectorA.i_EP2338_Ch7;
+stSelector.stShaker04.i_xSwitch := iq_stM2SelectorA.i_EP2338_Ch8;
 
-q_xSelB2Ch0	:= stSelector.stShaker01.q_xPwrDO;
-q_xSelB2Ch1	:= stSelector.stShaker02.q_xPwrDO;
-q_xSelB2Ch2	:= stSelector.stShaker03.q_xPwrDO;
-q_xSelB2Ch3	:= stSelector.stShaker04.q_xPwrDO;
+iq_stM2SelectorA.q_EP2338_Ch1	:= stSelector.stShaker01.q_xPwrDO;
+iq_stM2SelectorA.q_EP2338_Ch2	:= stSelector.stShaker02.q_xPwrDO;
+iq_stM2SelectorA.q_EP2338_Ch3	:= stSelector.stShaker03.q_xPwrDO;
+iq_stM2SelectorA.q_EP2338_Ch4	:= stSelector.stShaker04.q_xPwrDO;
 
-stSelector2.stShaker01.i_xSwitch := i_xSel2B2Ch4;
-stSelector2.stShaker02.i_xSwitch := i_xSel2B2Ch5;
-stSelector2.stShaker03.i_xSwitch := i_xSel2B2Ch6;
-stSelector2.stShaker04.i_xSwitch := i_xSelB2Ch7;
+stSelector2.stShaker01.i_xSwitch := iq_stM2SelectorB.i_EP2338_Ch5;
+stSelector2.stShaker02.i_xSwitch := iq_stM2SelectorB.i_EP2338_Ch6;
+stSelector2.stShaker03.i_xSwitch := iq_stM2SelectorB.i_EP2338_Ch7;
+stSelector2.stShaker04.i_xSwitch := iq_stM2SelectorB.i_EP2338_Ch8;
 
-q_xSel2B2Ch0	:= stSelector2.stShaker01.q_xPwrDO;
-q_xSel2B2Ch1	:= stSelector2.stShaker02.q_xPwrDO;
-q_xSel2B2Ch2	:= stSelector2.stShaker03.q_xPwrDO;
-q_xSel2B2Ch3	:= stSelector2.stShaker04.q_xPwrDO;]]></ST>
+iq_stM2SelectorB.i_EP2338_Ch5	:= stSelector2.stShaker01.q_xPwrDO;
+iq_stM2SelectorB.i_EP2338_Ch6	:= stSelector2.stShaker02.q_xPwrDO;
+iq_stM2SelectorB.i_EP2338_Ch7	:= stSelector2.stShaker03.q_xPwrDO;
+iq_stM2SelectorB.i_EP2338_Ch8	:= stSelector2.stShaker04.q_xPwrDO;]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

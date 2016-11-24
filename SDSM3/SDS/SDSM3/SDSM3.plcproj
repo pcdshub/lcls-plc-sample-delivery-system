@@ -45,6 +45,9 @@
     <Compile Include="DUTs\ST_M3SelectorIO.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\ST_M2SelectorIO.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\ST_ManifoldValve.TcDUT">
       <SubType>Code</SubType>
     </Compile>

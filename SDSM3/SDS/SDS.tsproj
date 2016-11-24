@@ -3187,6 +3187,14 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
+							<Name>GVL_IO.i_iFscEB1Ch0AI</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.i_iFscEB1Ch1AI</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
 							<Name>GVL_Devices.stALI.axisX.stAxis.NcToPlc</Name>
 							<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 							<SubVar>
@@ -3358,14 +3366,6 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.i_iFscEB1Ch0AI</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iFscEB1Ch1AI</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
 							<Name>GVL_IO.i_iFscEB1Ch2AI</Name>
 							<Type>INT</Type>
 						</Var>
@@ -3374,36 +3374,116 @@ External Setpoint Generation:
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.i_xSelB2Ch4</Name>
+							<Name>GVL_IO.iq_stM2SelectorA.i_EP2338_Ch5</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.i_xSelB2Ch5</Name>
+							<Name>GVL_IO.iq_stM2SelectorA.i_EP2338_Ch6</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.i_xSelB2Ch6</Name>
+							<Name>GVL_IO.iq_stM2SelectorA.i_EP2338_Ch7</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.i_xSelB2Ch7</Name>
+							<Name>GVL_IO.iq_stM2SelectorA.i_EP2338_Ch8</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.i_xSel2B2Ch4</Name>
+							<Name>GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1</Name>
+							<Type GUID="{36F14137-BDBF-4071-A1BA-DA14C40D8519}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2</Name>
+							<Type GUID="{36F14137-BDBF-4071-A1BA-DA14C40D8519}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM2SelectorB.i_EP2338_Ch5</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.i_xSel2B2Ch5</Name>
+							<Name>GVL_IO.iq_stM2SelectorB.i_EP2338_Ch6</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.i_xSel2B2Ch6</Name>
+							<Name>GVL_IO.iq_stM2SelectorB.i_EP2338_Ch7</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.i_xSel2B2Ch7</Name>
+							<Name>GVL_IO.iq_stM2SelectorB.i_EP2338_Ch8</Name>
 							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1</Name>
+							<Type GUID="{36F14137-BDBF-4071-A1BA-DA14C40D8519}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2</Name>
+							<Type GUID="{36F14137-BDBF-4071-A1BA-DA14C40D8519}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorA.i_EP2338_Ch5</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorA.i_EP2338_Ch6</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorA.i_EP2338_Ch7</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorA.i_EP2338_Ch8</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1</Name>
+							<Type GUID="{36F14137-BDBF-4071-A1BA-DA14C40D8519}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2</Name>
+							<Type GUID="{36F14137-BDBF-4071-A1BA-DA14C40D8519}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorA.i_mfmFlow</Name>
+							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorA.i_RawUnit</Name>
+							<Type>UDINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorB.i_EP2338_Ch5</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorB.i_EP2338_Ch6</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorB.i_EP2338_Ch7</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorB.i_EP2338_Ch8</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1</Name>
+							<Type GUID="{36F14137-BDBF-4071-A1BA-DA14C40D8519}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2</Name>
+							<Type GUID="{36F14137-BDBF-4071-A1BA-DA14C40D8519}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorB.i_mfmFlow</Name>
+							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorB.i_RawUnit</Name>
+							<Type>UDINT</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
@@ -3433,40 +3513,100 @@ External Setpoint Generation:
 							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.iq_stM3SelectorA.i_xShaker1</Name>
+							<Name>GVL_IO.iq_stM2SelectorA.q_EP2338_Ch1</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.q_xSelB2Ch0</Name>
+							<Name>GVL_IO.iq_stM2SelectorA.q_EP2338_Ch2</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.q_xSelB2Ch1</Name>
+							<Name>GVL_IO.iq_stM2SelectorA.q_EP2338_Ch3</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.q_xSelB2Ch2</Name>
+							<Name>GVL_IO.iq_stM2SelectorA.q_EP2338_Ch4</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.q_xSelB2Ch3</Name>
+							<Name>GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1</Name>
+							<Type GUID="{50443F2A-20C4-4CF6-BF4C-6E216480FC53}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2</Name>
+							<Type GUID="{50443F2A-20C4-4CF6-BF4C-6E216480FC53}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM2SelectorB.q_EP2338_Ch1</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.q_xSel2B2Ch0</Name>
+							<Name>GVL_IO.iq_stM2SelectorB.q_EP2338_Ch2</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.q_xSel2B2Ch1</Name>
+							<Name>GVL_IO.iq_stM2SelectorB.q_EP2338_Ch3</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.q_xSel2B2Ch2</Name>
+							<Name>GVL_IO.iq_stM2SelectorB.q_EP2338_Ch4</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.q_xSel2B2Ch3</Name>
+							<Name>GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1</Name>
+							<Type GUID="{50443F2A-20C4-4CF6-BF4C-6E216480FC53}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2</Name>
+							<Type GUID="{50443F2A-20C4-4CF6-BF4C-6E216480FC53}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorA.q_EP2338_Ch1</Name>
 							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorA.q_EP2338_Ch2</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorA.q_EP2338_Ch3</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorA.q_EP2338_Ch4</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1</Name>
+							<Type GUID="{50443F2A-20C4-4CF6-BF4C-6E216480FC53}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2</Name>
+							<Type GUID="{50443F2A-20C4-4CF6-BF4C-6E216480FC53}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorB.q_EP2338_Ch1</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorB.q_EP2338_Ch2</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorB.q_EP2338_Ch3</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorB.q_EP2338_Ch4</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1</Name>
+							<Type GUID="{50443F2A-20C4-4CF6-BF4C-6E216480FC53}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2</Name>
+							<Type GUID="{50443F2A-20C4-4CF6-BF4C-6E216480FC53}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 						</Var>
 					</Vars>
 					<TaskPouOids>
@@ -10784,9 +10924,6 @@ External Setpoint Generation:
 				<Image Id="6" AddrType="9" ImageType="3">
 					<Name>Image</Name>
 				</Image>
-				<Image Id="8" AddrType="10" ImageType="3">
-					<Name>Image-2</Name>
-				</Image>
 				<Box Disabled="true" BoxType="9099" Id="25">
 					<Name>MCB1 (EP3184-0002)</Name>
 					<ImageId>1007</ImageId>
@@ -13699,12 +13836,6 @@ Bit1: Value smaller than Limit2]]>
 			<OwnerB Name="TIID^MFX (EtherCAT)^MCB3 (EP7041-0002)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.stRegSheath.xRegHiLS" VarB="STM Status^Status^Digital input 2"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.stRegSheath.xRegLoLS" VarB="STM Status^Status^Digital input 1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^MFX (EtherCAT)^Sel2B1 (EP2338-1001)">
-				<Link VarA="PlcTask Outputs^GVL_IO.q_xSel2B2Ch0" VarB="Channel 9^Output"/>
-				<Link VarA="PlcTask Outputs^GVL_IO.q_xSel2B2Ch1" VarB="Channel 10^Output"/>
-				<Link VarA="PlcTask Outputs^GVL_IO.q_xSel2B2Ch2" VarB="Channel 11^Output"/>
-				<Link VarA="PlcTask Outputs^GVL_IO.q_xSel2B2Ch3" VarB="Channel 12^Output"/>
 			</OwnerB>
 			<OwnerB Name="TIID^MFX (EtherCAT)^Sel2B2 (EP6002-0002)">
 				<Link VarA="SerialComm Inputs^GVL_ComBuffers.stComIn_Sel2B2P1^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0"/>

@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
   <DUT Name="ST_M3SelectorIO" Id="{312b2dba-2603-45b3-923b-4fd923e08057}">
-    <Declaration><![CDATA[TYPE ST_M3SelectorIO :
+    <Declaration><![CDATA[TYPE ST_M3SelectorIO EXTENDS ST_M2SelectorIO:
 STRUCT
-	i_xShaker1	AT %Q*	:	BOOL;	
+	
+	i_mfmFlow		AT	%I*	:	REAL;
+	i_RawUnit		AT %I*	:	UDINT;
+	
 END_STRUCT
 END_TYPE
 ]]></Declaration>

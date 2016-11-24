@@ -3,33 +3,16 @@
   <GVL Name="GVL_IO" Id="{72fbb778-259d-42b9-8ccf-d5ffd47335bc}">
     <Declaration><![CDATA[VAR_GLOBAL
 	
+	iq_stM2SelectorA	:	ST_M2SelectorIO;
+	iq_stM2SelectorB	:	ST_M2SelectorIO;
+
 	iq_stM3SelectorA	:	ST_M3SelectorIO;
+	iq_stM3SelectorB	:	ST_M3SelectorIO;
 
 	i_iFscEB1Ch0AI	AT	%I*	:	INT;
 	i_iFscEB1Ch1AI	AT	%I*	:	INT;
 	i_iFscEB1Ch2AI	AT	%I*	:	INT;
 	i_iFscEB1Ch3AI	AT	%I*	:	INT;
-		
-	q_xSelB2Ch0	AT	%Q*	:	BOOL;
-	q_xSelB2Ch1	AT	%Q*	:	BOOL;
-	q_xSelB2Ch2	AT	%Q*	:	BOOL;
-	q_xSelB2Ch3	AT	%Q*	:	BOOL;
-	
-	i_xSelB2Ch4	AT	%I*	:	BOOL;
-	i_xSelB2Ch5	AT	%I*	:	BOOL;
-	i_xSelB2Ch6	AT	%I*	:	BOOL;
-	i_xSelB2Ch7	AT	%I*	:	BOOL;
-	
-	q_xSel2B2Ch0	AT	%Q*	:	BOOL;
-	q_xSel2B2Ch1	AT	%Q*	:	BOOL;
-	q_xSel2B2Ch2	AT	%Q*	:	BOOL;
-	q_xSel2B2Ch3	AT	%Q*	:	BOOL;
-	
-	i_xSel2B2Ch4	AT	%I*	:	BOOL;
-	i_xSel2B2Ch5	AT	%I*	:	BOOL;
-	i_xSel2B2Ch6	AT	%I*	:	BOOL;
-	i_xSel2B2Ch7	AT	%I*	:	BOOL;
-	
 
 END_VAR]]></Declaration>
   </GVL>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
   <POU Name="MAIN" Id="{42c5d645-8f72-4a7d-9897-ab636f1cee6d}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
@@ -34,7 +34,6 @@ p_SoftIO();
 p_SampleSelector();
 p_SampleSelector2();
 p_Regulators();
-p_Shakers();
 p_Manifold();
 p_ALI();
 //p_VacGaugeSup();

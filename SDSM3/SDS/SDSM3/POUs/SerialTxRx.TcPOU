@@ -4,55 +4,57 @@
     <Declaration><![CDATA[PROGRAM SerialTxRx
 VAR
 	
-	fbSerialLineControl_SelectorVici: SerialLineControl;
-	fbSerialLineControl_Selector2Vici: SerialLineControl;
-	fbSerialLineControl_SelectorFlwMtr: SerialLineControl;
-	fbSerialLineControl_Selector2FlwMtr: SerialLineControl;
-	fbSerialLineControl_CoolerShakerTEC: SerialLineControl;
+	fbSerialLineControl_M2SelAVici: SerialLineControl;
+	fbSerialLineControl_M2SelBVici: SerialLineControl;
+	fbSerialLineControl_M2SelAFM: SerialLineControl;
+	fbSerialLineControl_M2SelBFM: SerialLineControl;
 	
-
+	fbSerialLineControl_M3SelAVici: SerialLineControl;
+	fbSerialLineControl_M3SelAFM: SerialLineControl;
+	fbSerialLineControl_M3SelBVici: SerialLineControl;
+	fbSerialLineControl_M3SelBFM: SerialLineControl;
 
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
 
-fbSerialLineControl_SelectorVici(
+fbSerialLineControl_M2SelAVici(
 	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
-	pComIn:= ADR(stComIn_SelB2P2),
-	pComOut:=ADR(stComOut_SelB2P2) ,
-	SizeComIn:= SIZEOF(stComIn_SelB2P2),
+	pComIn:= ADR(iq_stM2SelectorA.stComIn_EP6002P2),
+	pComOut:=ADR(iq_stM2SelectorA.stComOut_EP6002P2) ,
+	SizeComIn:= SIZEOF(iq_stM2SelectorA.stComIn_EP6002P2),
 	TxBuffer:= SerialTXBuffer_SelVici,
 	RxBuffer:= SerialRXBuffer_SelVici,
 	Error=> ,
 	ErrorID=> );
 	
 	(* Optional expansion for extra selector box *)
-fbSerialLineControl_Selector2Vici(
+fbSerialLineControl_M2SelBVici(
 	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
-	pComIn:= ADR(stComIn_Sel2B2P2),
-	pComOut:=ADR(stComOut_Sel2B2P2) ,
-	SizeComIn:= SIZEOF(stComIn_Sel2B2P2),
+	pComIn:= ADR(iq_stM2SelectorB.stComIn_EP6002P2),
+	pComOut:=ADR(iq_stM2SelectorB.stComOut_EP6002P2) ,
+	SizeComIn:= SIZEOF(iq_stM2SelectorB.stComIn_EP6002P2),
 	TxBuffer:= SerialTXBuffer_Sel2Vici,
 	RxBuffer:= SerialRXBuffer_Sel2Vici,
 	Error=> ,
 	ErrorID=> );
 	
-	fbSerialLineControl_SelectorFlwMtr(
+	fbSerialLineControl_M2SelAFM(
 	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
-	pComIn:= ADR(stComIn_SelB2P1),
-	pComOut:=ADR(stComOut_SelB2P1) ,
-	SizeComIn:= SIZEOF(stComIn_SelB2P1),
+	pComIn:= ADR(iq_stM2SelectorA.stComIn_EP6002P1),
+	pComOut:=ADR(iq_stM2SelectorA.stComOut_EP6002P1) ,
+	SizeComIn:= SIZEOF(iq_stM2SelectorA.stComIn_EP6002P1),
 	TxBuffer:= SerialTXBuffer_SelFlwMtr,
 	RxBuffer:= SerialRXBuffer_SelFlwMtr,
 	Error=> ,
 	ErrorID=> );
 	
-fbSerialLineControl_Selector2FlwMtr(
+fbSerialLineControl_M2SelBFM(
 	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
-	pComIn:= ADR(stComIn_Sel2B2P1),
-	pComOut:=ADR(stComOut_Sel2B2P1) ,
-	SizeComIn:= SIZEOF(stComIn_Sel2B2P1),
+	pComIn:= ADR(iq_stM2SelectorB.stComIn_EP6002P1),
+	pComOut:=ADR(iq_stM2SelectorB.stComOut_EP6002P1) ,
+	SizeComIn:= SIZEOF(iq_stM2SelectorB.stComIn_EP6002P1),
 	TxBuffer:= SerialTXBuffer_Sel2FlwMtr,
 	RxBuffer:= SerialRXBuffer_Sel2FlwMtr,
 	Error=> ,

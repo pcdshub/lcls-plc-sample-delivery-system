@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
   <GVL Name="GVL_ComBuffers" Id="{ee5e8366-e426-4696-b6a2-52ab207bc2cf}">
     <Declaration><![CDATA[VAR_GLOBAL
 	
@@ -18,22 +18,6 @@
 	SerialRXBuffer_CoolerShakerTEC : ComBuffer;
 	SerialTXBuffer_CoolerShakerTEC : ComBuffer;
 	
-	stComIn_SelB2P2		AT %I*	:	EL6inData22B (*KL6inData22B*);
-	stComOut_SelB2P2		AT %Q*	:	EL6outData22B (*KL6outData22B*);
-	
-	stComIn_SelB2P1		AT %I*	:	EL6inData22B (*KL6inData22B*);
-	stComOut_SelB2P1		AT %Q*	:	EL6outData22B (*KL6outData22B*);
-	
-	stComIn_Sel2B2P1		AT %I*	:	EL6inData22B (*KL6inData22B*);
-	stComOut_Sel2B2P1		AT %Q*	:	EL6outData22B (*KL6outData22B*);
-	
-	stComIn_Sel2B2P2		AT %I*	:	EL6inData22B (*KL6inData22B*);
-	stComOut_Sel2B2P2		AT %Q*	:	EL6outData22B (*KL6outData22B*);
-	
-	stComIn_CoolerShakerB2P1		AT %I*	:	EL6inData22B (*KL6inData22B*);
-	stComOut_CoolerShakerB2P1		AT %Q*	:	EL6outData22B (*KL6outData22B*);
-	
 END_VAR]]></Declaration>
-    <ObjectProperties />
   </GVL>
 </TcPlcObject>

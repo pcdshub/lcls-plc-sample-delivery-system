@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
-  <POU Name="FB_SelectorSync" Id="{3c8e7f94-adbe-48fd-9d57-64a70797da6b}">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <POU Name="FB_SelectorSync" Id="{3c8e7f94-adbe-48fd-9d57-64a70797da6b}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SelectorSync
 VAR_INPUT
 END_VAR
@@ -54,11 +54,9 @@ IF iq_stSelector.xResLocked AND iq_stSelector.xResSyncd THEN
 		iq_stSelector.iVici2ReqPos := iq_stSelector.iVici1ReqPos;
 	ELSIF iq_stSelector.iVici2ReqPos <> iq_stselector.iSyncReqPos THEN
 		iq_stSelector.iSyncReqPos := iq_stSelector.iVici2ReqPos;
-		iq_stSelector.iVici1ReqPos := iq_stSelector.iVici2ReqPos;
-	END_IF
+		iq_stSelector.iVici1ReqPos := iq_stSelector.iV_IF
 END_IF
 ]]></ST>
     </Implementation>
-    <ObjectProperties />
   </POU>
 </TcPlcObject>

@@ -39,13 +39,15 @@
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
     </Compile>
+    <Compile Include="DUTs\E_BHElFlowUnit.TcDUT">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="DUTs\ST_BhElFlow.TcDUT">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
     <Compile Include="DUTs\ST_BhFMControl.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\ST_M3SelectorIO.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\ST_M2SelectorIO.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\ST_ManifoldValve.TcDUT">
@@ -62,6 +64,14 @@
     </Compile>
     <Compile Include="DUTs\ST_Selector.TcDUT">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\ST_SelectorM3.TcDUT">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="DUTs\ST_SensirionFM.TcDUT">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
     </Compile>
     <Compile Include="DUTs\ST_SensirionFMControl.TcDUT">
       <SubType>Code</SubType>
@@ -121,6 +131,10 @@
     <Compile Include="POUs\Bronkhorst\FB_FlowBusTransaction.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FB_SelectorM3.TcPOU">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
     <Compile Include="POUs\Helpers\FB_EcatDiag.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -168,6 +182,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\p_SampleSelector2.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\p_SelectorDetector.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\p_Shakers.TcPOU">
@@ -287,9 +304,6 @@
     <Content Include="SDSM3.tmc">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="SelectorEP6002Settings.xml">
-      <SubType>Content</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <PlaceholderResolution Include="LCLSVacuumLib">
@@ -299,8 +313,8 @@
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-        <Data>
-          <o xml:space="preserve" t="OptionKey">
+  <Data>
+    <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{FE9F63D4-9E34-43ce-9322-D46747A00F33}</v>
@@ -308,12 +322,12 @@
           <v n="Name">"{FE9F63D4-9E34-43ce-9322-D46747A00F33}"</v>
           <d n="SubKeys" t="Hashtable" />
           <d n="Values" t="Hashtable" ckt="String">
-            <v>SourceDownloadContent</v>
-            <v>1</v>
             <v>SourceDownloadContent2</v>
             <a cet="Guid">
               <v>b0b53f83-af78-49aa-8133-0063f476bd7c</v>
             </a>
+            <v>SourceDownloadContent</v>
+            <v>1</v>
           </d>
         </o>
         <v>{8F99A816-E488-41E4-9FA3-846536012284}</v>
@@ -357,13 +371,15 @@
           <v n="Name">"{C70B7845-2722-4a9b-A0EA-88C877A4B36F}"</v>
           <d n="SubKeys" t="Hashtable" />
           <d n="Values" t="Hashtable" ckt="String">
+            <v>EnableMaxAuthenticationTrials</v>
+            <v>true</v>
             <v>MaxAuthenticationTrials</v>
             <v>3</v>
             <v>UserList</v>
             <o t="UserList">
               <a n="Users" cet="User">
                 <o>
-                  <v n="Id">{35650b27-7c73-457e-8971-983959af0c7e}</v>
+                  <v n="Id">{ac0e3137-9fce-4002-97f5-598bab473c82}</v>
                   <v n="Name">"Owner"</v>
                   <v n="FullName">""</v>
                   <v n="Description">""</v>
@@ -379,24 +395,24 @@
             <o t="GroupList">
               <a n="Groups" cet="Group">
                 <o>
-                  <v n="Id">{63c7cb15-fb17-4e98-914c-6c0427439554}</v>
-                  <v n="Name">"Owner"</v>
-                  <v n="Description">""</v>
-                  <v n="IsEveryoneGroup">false</v>
-                  <v n="IsOwnerGroup">true</v>
-                  <l n="UserMembers" t="ArrayList" cet="Guid">
-                    <v>35650b27-7c73-457e-8971-983959af0c7e</v>
-                  </l>
-                  <l n="GroupMembers" t="ArrayList" />
-                </o>
-                <o>
-                  <v n="Id">{ea484caf-b741-414b-9f10-772f9e8b0ebe}</v>
+                  <v n="Id">{130d7ce8-331b-4626-ad43-b9389e2742d1}</v>
                   <v n="Name">"Everyone"</v>
                   <v n="Description">""</v>
                   <v n="IsEveryoneGroup">true</v>
                   <v n="IsOwnerGroup">false</v>
                   <l n="UserMembers" t="ArrayList" cet="Guid">
-                    <v>35650b27-7c73-457e-8971-983959af0c7e</v>
+                    <v>ac0e3137-9fce-4002-97f5-598bab473c82</v>
+                  </l>
+                  <l n="GroupMembers" t="ArrayList" />
+                </o>
+                <o>
+                  <v n="Id">{437598a9-3df6-4559-84cd-bb1106a30c11}</v>
+                  <v n="Name">"Owner"</v>
+                  <v n="Description">""</v>
+                  <v n="IsEveryoneGroup">false</v>
+                  <v n="IsOwnerGroup">true</v>
+                  <l n="UserMembers" t="ArrayList" cet="Guid">
+                    <v>ac0e3137-9fce-4002-97f5-598bab473c82</v>
                   </l>
                   <l n="GroupMembers" t="ArrayList" />
                 </o>
@@ -405,12 +421,10 @@
             <v>UserAuthentication</v>
             <o t="UserAuthentication">
               <d n="UserToPasswordHash" t="Hashtable" ckt="Guid" cvt="String">
-                <v>35650b27-7c73-457e-8971-983959af0c7e</v>
+                <v>ac0e3137-9fce-4002-97f5-598bab473c82</v>
                 <v>d41d8cd98f00b204e9800998ecf8427e</v>
               </d>
             </o>
-            <v>EnableMaxAuthenticationTrials</v>
-            <v>true</v>
           </d>
         </o>
         <v>{192FAD59-8248-4824-A8DE-9177C94C195A}</v>
@@ -428,23 +442,23 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-        </Data>
-        <TypeList>
-          <Type n="ArrayList">System.Collections.ArrayList</Type>
-          <Type n="Boolean">System.Boolean</Type>
-          <Type n="Group">{daecd4be-1e2b-4335-a125-4a1ac83ea49f}</Type>
-          <Type n="GroupList">{bf4dffda-f055-446d-9d7a-5f126720896b}</Type>
-          <Type n="Guid">System.Guid</Type>
-          <Type n="Guid[]">System.Guid[]</Type>
-          <Type n="Hashtable">System.Collections.Hashtable</Type>
-          <Type n="Int32">System.Int32</Type>
-          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-          <Type n="String">System.String</Type>
-          <Type n="User">{cd83029e-13b0-491e-9e4b-921adda0d86b}</Type>
-          <Type n="UserAuthentication">{3635a671-97f5-41bb-9e29-0ebb9795975c}</Type>
-          <Type n="UserList">{9fe6b547-6bc8-4f11-b589-b517860c5891}</Type>
-        </TypeList>
-      </XmlArchive>
+  </Data>
+  <TypeList>
+    <Type n="ArrayList">System.Collections.ArrayList</Type>
+    <Type n="Boolean">System.Boolean</Type>
+    <Type n="Group">{daecd4be-1e2b-4335-a125-4a1ac83ea49f}</Type>
+    <Type n="GroupList">{bf4dffda-f055-446d-9d7a-5f126720896b}</Type>
+    <Type n="Guid">System.Guid</Type>
+    <Type n="Guid[]">System.Guid[]</Type>
+    <Type n="Hashtable">System.Collections.Hashtable</Type>
+    <Type n="Int32">System.Int32</Type>
+    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+    <Type n="String">System.String</Type>
+    <Type n="User">{cd83029e-13b0-491e-9e4b-921adda0d86b}</Type>
+    <Type n="UserAuthentication">{3635a671-97f5-41bb-9e29-0ebb9795975c}</Type>
+    <Type n="UserList">{9fe6b547-6bc8-4f11-b589-b517860c5891}</Type>
+  </TypeList>
+</XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5" FileSignature="486827c55c4a595bbcb5b329fc9946cbcc9b5cb9821b888f62d88b92d7e43af9274f084f7cc45e5a749c7e9fdb2b90e81a088bf78107e081653a82618aaec00eea0f7b40dfc2f0a6cf39d84b4213eaae12dafe8a0d1603369258c91014d3321bd0b0c736ba5e9c977680b2ab3c9e790fd555ca4a9b510030a9aa097ecce7f997235ee773d6c279937ba968e9a75b200a85b1f60f00d4c1cf9b084f3d6ad4cf618532f8b52a10a4f4d297a7c5a5b1eb102a39e1fc117cfd5b0e206ac319ba366d6a3ecb87bf912aa0dede87d55dcbfc37529d962218f0d031d7aa357ded1eaaabe365bd8205db09b27d670b595f2e1941aace35a13c67b6aa62bc1533b9b72e50">
+  <DUT Name="E_BHElFlowUnit" Id="{a59c4aca-98b8-4245-97be-7e7b16fb42bd}">
+    <Declaration><![CDATA[TYPE E_BHElFlowUnit :
+(
+	enum_member := 0
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -8,6 +8,9 @@
 
 	iq_stM3SelectorA	:	ST_M3SelectorIO;
 	iq_stM3SelectorB	:	ST_M3SelectorIO;
+	
+	iq_stPressCtrlA		:	ST_ProportionairIO;
+	iq_stPressCtrlB		:	ST_ProportionairIO;
 
 	i_iFscEB1Ch0AI	AT	%I*	:	INT;
 	i_iFscEB1Ch1AI	AT	%I*	:	INT;

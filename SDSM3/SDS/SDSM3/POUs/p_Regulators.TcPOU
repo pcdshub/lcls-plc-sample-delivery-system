@@ -15,8 +15,7 @@ END_VAR
       <ST><![CDATA[(* Proportionair regulators *)
 fbRegProp1(iq_stRegProp:=stRegProp1);
 fbRegProp2(iq_stRegProp:=stRegProp2);
-fbRegProp3(iq_stRegProp:=stRegProp3);
-fbRegProp4(iq_stRegProp:=stRegProp4);]]></ST>
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

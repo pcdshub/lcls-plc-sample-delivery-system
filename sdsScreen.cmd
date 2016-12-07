@@ -1,1 +1,2 @@
-edm -x -eolc -m "LOC=TST,SYS=SDS,selNum=1" sampleScreens/sdsMain.edl &
+
+edm -x -eolc -m "LOC=$1,SYS=SDS,selNum=1" sampleScreens/sdsMain.edl &

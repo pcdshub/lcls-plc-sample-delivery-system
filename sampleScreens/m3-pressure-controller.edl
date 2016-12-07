@@ -1,0 +1,206 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 3355
+y 416
+w 385
+h 485
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+ctlFont "helvetica-medium-r-14.0"
+ctlFontAlign "center"
+btnFont "helvetica-medium-r-14.0"
+btnFontAlign "center"
+fgColor index 14
+bgColor index 7
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 1
+ctlBgColor1 index 1
+ctlBgColor2 index 14
+topShadowColor index 1
+botShadowColor index 14
+title "M3 Pressure Regs and Pumps"
+showGrid
+snapToGrid
+gridSize 4
+orthoLineDraw
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 4
+w 376
+h 476
+lineColor index 4
+fill
+fillColor index 5
+lineWidth 0
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 332
+y 612
+w 0
+h 0
+lineColor index 14
+fillColor index 1
+lineWidth 2
+numPoints 1
+xPoints {
+  0 332
+}
+yPoints {
+  0 612
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 8
+y 8
+w 287
+h 16
+font "helvetica-bold-r-14.0"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "$(LOC):$(SYS) Pressure Controller $(PC)"
+}
+autoSize
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 28
+w 92
+h 452
+fgColor index 14
+bgColor index 1
+topShadowColor index 1
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\somepv=i:0"
+center
+setSize
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "sampleScreens/propair-emb.edl"
+}
+menuLabel {
+  0 "Blank"
+}
+symbols {
+  0 "LOC=$(LOC),SYS=$(SYS),NUM=01"
+}
+propagateMacros {
+  0 0
+}
+noScroll
+ignoreMultiplexors
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 100
+y 28
+w 92
+h 452
+fgColor index 14
+bgColor index 1
+topShadowColor index 1
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\somepv=i:0"
+center
+setSize
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "sampleScreens/propair-emb.edl"
+}
+menuLabel {
+  0 "Blank"
+}
+symbols {
+  0 "LOC=$(LOC),SYS=$(SYS),NUM=02"
+}
+propagateMacros {
+  0 0
+}
+noScroll
+ignoreMultiplexors
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 244
+y 68
+w 80
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "Module Status"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 244
+y 84
+w 100
+h 16
+controlPv "$(LOC):$(SYS):PressCtrlA:ConnStat"
+font "helvetica-bold-r-14.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 13
+autoHeight
+precision 3
+nullColor index 1
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+

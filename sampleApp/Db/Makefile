@@ -24,6 +24,8 @@ DB += sds-m2-modbus.db
 DB += sds-m2-regulatorLimiter.db
 #DB += sds-m2-setpointForwarder.db
 
+#M3 Stuff
+DB += m3-sds-modbus.db
 #----------------------------------------------------
 # Create and install (or just install)
 # Archive files, templates, substitutions like this

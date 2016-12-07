@@ -1,0 +1,24 @@
+# Sample Delivery System IOC instance autosave file
+
+#Generate IOC specific 
+file sds-m2.tpl-req
+{
+	pattern
+	{ LOC,		SYS}
+	{ $(LOC),	$(SYS)}
+}
+
+#Generate IOC specific 
+file autosave-sample_selection.tpl-req
+{
+	pattern
+	{ LOC,		SYS, NUM}
+	{ $(LOC),	$(SYS), "1"}
+}
+
+file autosave-sample_selection.tpl-req
+{
+	pattern
+	{ LOC,		SYS, NUM}
+	{ $(LOC),	$(SYS), "2"}
+}

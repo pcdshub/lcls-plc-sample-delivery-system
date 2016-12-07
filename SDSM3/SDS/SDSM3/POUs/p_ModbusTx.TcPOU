@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
   <POU Name="p_ModbusTx" Id="{7dfde301-1300-4648-85ba-2185bbf045a9}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM p_ModbusTx
 VAR
@@ -11,6 +11,13 @@ END_VAR
 (* Global system controls *)
 mb_Input_Coils[0] := xEnableRemoteControl;
 mb_Input_Coils[1] := xSystemPressurized;
+
+mb_Input_Coils[10]:=iq_stPressCtrlA.i_SyncUnitWC;  //WC readbacks
+mb_Input_Coils[11]:=iq_stPressCtrlB.i_SyncUnitWC;  //WC readbacks
+mb_Input_Coils[12]:=iq_stM2SelectorA.i_SyncUnitWC;  //WC readbacks
+mb_Input_Coils[13]:=iq_stM2SelectorB.i_SyncUnitWC;  //WC readbacks
+mb_Input_Coils[14]:=iq_stM3SelectorA.i_SyncUnitWC;  //WC readbacks
+mb_Input_Coils[15]:=iq_stM3SelectorB.i_SyncUnitWC;  //WC readbacks
 
 (* Selector Controls *)
 mb_Output_Registers[30] := stSelector.iVici1ReqPos;

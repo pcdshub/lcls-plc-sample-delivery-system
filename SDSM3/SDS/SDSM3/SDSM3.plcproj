@@ -39,7 +39,16 @@
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
     </Compile>
+    <Compile Include="DUTs\Sensirion\ST_SensirionFMControl.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Sensirion\ST_SensirionFMStatus.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\ST_BhFMControl.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\ST_M3DeviceBaseIO.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\ST_M3SelectorIO.TcDUT">
@@ -54,7 +63,7 @@
     <Compile Include="DUTs\ST_Proportionair.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\ST_ProportionairIO.TcDUT">
+    <Compile Include="DUTs\ST_M3PressCtrlIO.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\ST_RegDeadbandControls.TcDUT">
@@ -66,31 +75,25 @@
     <Compile Include="DUTs\ST_Selector.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\ST_SensirionFMControl.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\ST_SensirionFMStatus.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="DUTs\ST_Shaker.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\ST_ShakerControls.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\ST_TECControl.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\ST_TECStatus.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="DUTs\ST_BhFMStatus.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\ST_ViciControl.TcDUT">
+    <Compile Include="DUTs\TEC\ST_TECControl.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\ST_ViciStatus.TcDUT">
+    <Compile Include="DUTs\TEC\ST_TECStatus.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Vici\ST_ViciControl.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Vici\ST_ViciStatus.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GVLs\GVL.TcGVL">
@@ -233,6 +236,9 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="DUTs\ALI" />
+    <Folder Include="DUTs\Vici" />
+    <Folder Include="DUTs\TEC" />
+    <Folder Include="DUTs\Sensirion" />
     <Folder Include="GVLs" />
     <Folder Include="POUs\Bronkhorst" />
     <Folder Include="POUs\Helpers" />

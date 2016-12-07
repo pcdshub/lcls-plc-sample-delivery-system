@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
   <DUT Name="ST_M2SelectorIO" Id="{8847cae4-58e8-4ecd-b246-7e3fca7dfce8}">
-    <Declaration><![CDATA[TYPE ST_M2SelectorIO :
+    <Declaration><![CDATA[TYPE ST_M2SelectorIO EXTENDS ST_M3DeviceBaseIO:
 STRUCT
 
 	q_EP2338_Ch1	AT	%Q*	:	BOOL;

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
   <DUT Name="ST_SensirionFMStatus" Id="{167d0110-ce48-475a-b7ba-7b29f3e90a1e}">
     <Declaration><![CDATA[TYPE ST_SensirionFMStatus :
 STRUCT
@@ -29,6 +29,5 @@ Bit 3: (for Firmware . 1.3)
 END_STRUCT
 END_TYPE
 ]]></Declaration>
-    <ObjectProperties />
   </DUT>
 </TcPlcObject>

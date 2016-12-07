@@ -1772,7 +1772,7 @@ External Setpoint Generation:
 		<ImageData Id="1007">424de6000000000000007600000028000000100000000e000000010004000000000070000000c30e0000c30e000010000000100000000000ff00ff00ff00ff000000ffff000000ff000000ffff0000008000800080008000000080800000008000000080800080808000c0c0c000ffffff00000000001111111111111111fffffffffffffffffcfcfcfcfffff44ff4f4f4f4fffff44ffffffffffffffffffffffffffffffffffcfcfcfcfffff44ff4f4f4f4fffff44fffffffffffffffff24444411111111112244441111111111222444111111111122224411111111112222241111111111</ImageData>
 		<ImageData Id="1008">424de6000000000000007600000028000000100000000e000000010004000000000070000000c30e0000c30e000010000000100000000000ff00ff00ff00ff000000ffff000000ff000000ffff0000008000800080008000000080800000008000000080800080808000c0c0c000ffffff00000000001111111111111111fffffffffffffffffcfcfcfcfffff44ff4f4f4f4fffff44ffffffffffffffffffffffffffffffffffcfcfcfcfffff44ff4f4f4f4fffff44fffffffffffffffff44444411111111114444441111111111444444111111111144444411111111114444441111111111</ImageData>
 	</ImageDatas>
-	<Project SccProjectName="Svn" SccAuxPath="Svn" SccLocalPath="Svn" SccProvider="SubversionScc" ProjectGUID="{68A97FD5-8312-43E5-B70A-63B3D02786CB}" TargetNetId="5.38.139.172.1.1" Target64Bit="true" ShowHideConfigurations="#x6">
+	<Project SccProjectName="Svn" SccAuxPath="Svn" SccLocalPath="Svn" SccProvider="SubversionScc" ProjectGUID="{68A97FD5-8312-43E5-B70A-63B3D02786CB}" TargetNetId="5.38.139.172.1.1" ShowHideConfigurations="#x6">
 		<System>
 			<Licenses>
 				<Target BkhfOrder="VE2274136">
@@ -3183,6 +3183,10 @@ External Setpoint Generation:
 							<Type>INT</Type>
 						</Var>
 						<Var>
+							<Name>GVL_IO.i_iFscEB1Ch1AI</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
 							<Name>GVL_Devices.stALI.axisX.stAxis.NcToPlc</Name>
 							<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 							<SubVar>
@@ -3354,6 +3358,23 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
+							<Name>GVL_IO.i_iFscEB1Ch2AI</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.i_iFscEB1Ch3AI</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM2SelectorA.i_SyncUnitWC</Name>
+							<Comment>
+								<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>GVL_IO.iq_stM2SelectorA.i_EP2338_Ch5</Name>
 							<Type>BOOL</Type>
 						</Var>
@@ -3370,6 +3391,15 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
+							<Name>GVL_IO.iq_stM2SelectorB.i_SyncUnitWC</Name>
+							<Comment>
+								<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>GVL_IO.iq_stM2SelectorB.i_EP2338_Ch5</Name>
 							<Type>BOOL</Type>
 						</Var>
@@ -3383,6 +3413,15 @@ External Setpoint Generation:
 						</Var>
 						<Var>
 							<Name>GVL_IO.iq_stM2SelectorB.i_EP2338_Ch8</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stM3SelectorA.i_SyncUnitWC</Name>
+							<Comment>
+								<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -3418,6 +3457,15 @@ External Setpoint Generation:
 							<Type>UDINT</Type>
 						</Var>
 						<Var>
+							<Name>GVL_IO.iq_stM3SelectorB.i_SyncUnitWC</Name>
+							<Comment>
+								<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>GVL_IO.iq_stM3SelectorB.i_EP2338_Ch5</Name>
 							<Type>BOOL</Type>
 						</Var>
@@ -3448,6 +3496,15 @@ External Setpoint Generation:
 						<Var>
 							<Name>GVL_IO.iq_stM3SelectorB.i_RawUnit</Name>
 							<Type>UDINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.iq_stPressCtrlA.i_SyncUnitWC</Name>
+							<Comment>
+								<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+							</Comment>
+							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_IO.iq_stPressCtrlA.i_EP4374_Ch1</Name>
@@ -3482,6 +3539,15 @@ External Setpoint Generation:
 							<Type GUID="{36F14137-BDBF-4071-A1BA-DA14C40D8519}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 						</Var>
 						<Var>
+							<Name>GVL_IO.iq_stPressCtrlB.i_SyncUnitWC</Name>
+							<Comment>
+								<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>GVL_IO.iq_stPressCtrlB.i_EP4374_Ch1</Name>
 							<Type>INT</Type>
 						</Var>
@@ -3512,18 +3578,6 @@ External Setpoint Generation:
 						<Var>
 							<Name>GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2</Name>
 							<Type GUID="{36F14137-BDBF-4071-A1BA-DA14C40D8519}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iFscEB1Ch1AI</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iFscEB1Ch2AI</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iFscEB1Ch3AI</Name>
-							<Type>INT</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
@@ -10991,7 +11045,7 @@ External Setpoint Generation:
 					</EtherCAT>
 				</Box>
 				<Box BoxType="9099" Id="2">
-					<Name>Box 2 (EP1111)</Name>
+					<Name>M3 Pressure Controller A(EP1111)</Name>
 					<ImageId>1003</ImageId>
 					<EtherCAT SlaveType="2" PdiType="#x0205" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="3" FoeType="1" VendorId="#x00000002" ProductCode="#x04574052" RevisionNo="#x00140000" InfoDataAddr="true" TimeoutMailbox2="2000" PortPhys="17" IdentificationAdo="308" IdentificationValue="330" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP1111-0000 ID-Switch" Desc="EP1111" PortABoxInfo="#xffffffff">
 						<SyncMan>001180002600010001000000800080008000001126010000</SyncMan>
@@ -11011,7 +11065,7 @@ External Setpoint Generation:
 					</EtherCAT>
 				</Box>
 				<Box BoxType="9099" Id="5">
-					<Name>Box 5 (EP4374-0002)</Name>
+					<Name>M3 Pressure Controller A PropAir 2Ch (EP4374-0002)</Name>
 					<ImageId>1007</ImageId>
 					<EtherCAT SlaveType="2" PdiType="#x0605" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="7" FoeType="1" VendorId="#x00000002" ProductCode="#x11164052" RevisionNo="#x00120002" InfoDataAddr="true" TimeoutMailbox2="2000" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP4374-0002 2Ch. Ana. Input +/-10V, 0-10V, 0/4-20mA configurable; 2Ch. Ana. Output +/-10V, 0-10V, 0/4-20mA configurable" Desc="EP4374-0002" PortABoxInfo="#x01000002">
 						<SyncMan>001080002600010001000000800080008000001026010000</SyncMan>
@@ -11159,7 +11213,7 @@ Bit1: Value is greater than or equal to limit 2]]>
 					</EtherCAT>
 				</Box>
 				<Box BoxType="9099" Id="6">
-					<Name>Box 6 (EP3174-0002)</Name>
+					<Name>M3 Pressure Controller A Misc Analog In(EP3174-0002)</Name>
 					<ImageId>1008</ImageId>
 					<EtherCAT SlaveType="2" PdiType="#x0605" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="7" FoeType="1" VendorId="#x00000002" ProductCode="#x0c664052" RevisionNo="#x00160002" InfoDataAddr="true" TimeoutMailbox2="2000" CheckRevisionNoType="3" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP3174-0002 4Ch. Ana. Input +/-10V, 0-10V, 0/4-20mA configurable" Desc="EP3174-0002" PortABoxInfo="#x01000005">
 						<SyncMan>001080002600010001000000800080008000001026010000</SyncMan>
@@ -11415,7 +11469,7 @@ Bit1: Value smaller than Limit2]]>
 					</EtherCAT>
 				</Box>
 				<Box BoxType="9101" Id="7">
-					<Name>Term 7 (EP6002-0002)</Name>
+					<Name>M3 Pressure Controller A Pump Serial Interface (EP6002-0002)</Name>
 					<ImageId>1005</ImageId>
 					<EtherCAT SlaveType="7" PdiType="#x0205" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="39" FoeType="1" VendorId="#x00000002" ProductCode="#x17724052" RevisionNo="#x00150002" InfoDataAddr="true" TimeoutMailbox2="2000" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP6002-0002 Interface (RS232/422/485)" Desc="EP6002-0002" PortABoxInfo="#x01000006">
 						<SyncMan>001000012600010001000000400000010001001026010000</SyncMan>
@@ -12700,9 +12754,9 @@ Bit1: Value smaller than Limit2]]>
 				</Box>
 				<EtherCAT>
 					<SyncUnit Name="[ALI (EP1111)]" HcName="ALI (EP1111)"/>
-					<SyncUnit Name="[Box 2 (EP1111)]" HcName="Box 2 (EP1111)"/>
 					<SyncUnit Name="[M2 Selector A (EP1111)]" HcName="M2 Selector A (EP1111)"/>
 					<SyncUnit Name="[M2 Selector B (EP1111)]" HcName="M2 Selector B (EP1111)"/>
+					<SyncUnit Name="[M3 Pressure Controller A(EP1111)]" HcName="M3 Pressure Controller A(EP1111)"/>
 					<SyncUnit Name="[M3 Selector A (EP1111)]" HcName="M3 Selector A (EP1111)"/>
 					<SyncUnit Name="[M3 Selector B (EP1111)]" HcName="M3 Selector B (EP1111)"/>
 				</EtherCAT>
@@ -12848,6 +12902,11 @@ Bit1: Value smaller than Limit2]]>
 		<OwnerA Name="TIPC^SDSM3^SDSM3 Instance">
 			<OwnerB Name="TIID^MAIN (EtherCAT)">
 				<Link VarA="PlcTask Inputs^GVL.g_aEcatMaster1" VarB="InfoData^AmsNetId"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorA.i_SyncUnitWC" VarB="SyncUnits^[M2 Selector A (EP1111)]^PlcTask^WcState^WcState"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorB.i_SyncUnitWC" VarB="SyncUnits^[M2 Selector B (EP1111)]^PlcTask^WcState^WcState"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.i_SyncUnitWC" VarB="SyncUnits^[M3 Selector A (EP1111)]^PlcTask^WcState^WcState"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.i_SyncUnitWC" VarB="SyncUnits^[M3 Selector B (EP1111)]^PlcTask^WcState^WcState"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_SyncUnitWC" VarB="SyncUnits^[M3 Pressure Controller A(EP1111)]^&lt;unreferenced&gt;^WcState^WcState"/>
 			</OwnerB>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_X (EP7041-0002)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisX.xHiLS" VarB="STM Status^Status^Digital input 2"/>
@@ -12856,18 +12915,6 @@ Bit1: Value smaller than Limit2]]>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_Z (EP7041-0002)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisZ.xHiLS" VarB="STM Status^Status^Digital input 2"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisZ.xLoLS" VarB="STM Status^Status^Digital input 1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^Box 5 (EP4374-0002)">
-				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP4374_Ch1" VarB="AI Inputs Channel 1^Value"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP4374_Ch2" VarB="AI Inputs Channel 2^Value"/>
-				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.q_EP4374_Ch3" VarB="AO Outputs Channel 3^Analog output"/>
-				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.q_EP4374_Ch4" VarB="AO Outputs Channel 4^Analog output"/>
-			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^Box 6 (EP3174-0002)">
-				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP3174_Ch1" VarB="AI Standard Channel 1^Value"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP3174_Ch2" VarB="AI Standard Channel 2^Value"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP3174_Ch3" VarB="AI Standard Channel 3^Value"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP3174_Ch4" VarB="AI Standard Channel 4^Value"/>
 			</OwnerB>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^M2 Selector A (EP2338-0001)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorA.i_EP2338_Ch5" VarB="Channel 5^Input"/>
@@ -13076,6 +13123,18 @@ Bit1: Value smaller than Limit2]]>
 				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[7]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 7"/>
 				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[8]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 8"/>
 				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[9]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 9"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Pressure Controller A Misc Analog In(EP3174-0002)">
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP3174_Ch1" VarB="AI Standard Channel 1^Value"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP3174_Ch2" VarB="AI Standard Channel 2^Value"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP3174_Ch3" VarB="AI Standard Channel 3^Value"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP3174_Ch4" VarB="AI Standard Channel 4^Value"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Pressure Controller A PropAir 2Ch (EP4374-0002)">
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP4374_Ch1" VarB="AI Inputs Channel 1^Value"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP4374_Ch2" VarB="AI Inputs Channel 2^Value"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.q_EP4374_Ch3" VarB="AO Outputs Channel 3^Analog output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.q_EP4374_Ch4" VarB="AO Outputs Channel 4^Analog output"/>
 			</OwnerB>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector A Digital IO (EP2338-1001)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.i_EP2338_Ch5" VarB="Channel 5^Input"/>

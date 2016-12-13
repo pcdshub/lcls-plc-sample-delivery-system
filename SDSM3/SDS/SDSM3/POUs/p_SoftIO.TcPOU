@@ -22,10 +22,10 @@ stSelector2.stShaker02.i_xSwitch := iq_stM2SelectorB.i_EP2338_Ch6;
 stSelector2.stShaker03.i_xSwitch := iq_stM2SelectorB.i_EP2338_Ch7;
 stSelector2.stShaker04.i_xSwitch := iq_stM2SelectorB.i_EP2338_Ch8;
 
-iq_stM2SelectorB.i_EP2338_Ch5	:= stSelector2.stShaker01.q_xPwrDO;
-iq_stM2SelectorB.i_EP2338_Ch6	:= stSelector2.stShaker02.q_xPwrDO;
-iq_stM2SelectorB.i_EP2338_Ch7	:= stSelector2.stShaker03.q_xPwrDO;
-iq_stM2SelectorB.i_EP2338_Ch8	:= stSelector2.stShaker04.q_xPwrDO;
+iq_stM2SelectorB.q_EP2338_Ch1	:= stSelector2.stShaker01.q_xPwrDO;
+iq_stM2SelectorB.q_EP2338_Ch2	:= stSelector2.stShaker02.q_xPwrDO;
+iq_stM2SelectorB.q_EP2338_Ch3	:= stSelector2.stShaker03.q_xPwrDO;
+iq_stM2SelectorB.q_EP2338_Ch4	:= stSelector2.stShaker04.q_xPwrDO;
 
 stRegProp1.iPressureRaw := iq_stPressCtrlA.i_EP4374_Ch1;
 stRegProp2.iPressureRaw := iq_stPressCtrlA.i_EP4374_Ch2;

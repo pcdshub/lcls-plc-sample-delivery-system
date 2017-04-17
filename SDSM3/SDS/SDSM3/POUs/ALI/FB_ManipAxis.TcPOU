@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <POU Name="FB_ManipAxis" Id="{2c576ec6-7433-4ec0-8547-ab9b5dd393c9}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ManipAxis
 VAR_INPUT
@@ -61,7 +61,7 @@ CASE iq_ManipAxis.eState OF
 	0: iq_ManipAxis.eState := Init;
 	Init:
 	(* Start by initializing the motor axis *)
-	mcPower.Enable S= iq_ManipAxis.xEnable;
+	mcPower.Enable := iq_ManipAxis.xEnable;
 	
 	IF mcPower.Status THEN //success
 		xInitComplete := TRUE;
@@ -135,12 +135,18 @@ ActMove();]]></ST>
                 <v n="DefaultViewMode">"Fbd"</v>
                 <l2 n="NetworkList" cet="Network">
                   <o>
+                    <v n="ILActive">false</v>
+                    <v n="FBDValid">false</v>
+                    <v n="ILValid">false</v>
+                    <l2 n="ILLines" />
                     <v n="Comment">""</v>
                     <v n="Title">""</v>
                     <v n="Label">""</v>
                     <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeBox">
                       <o>
+                        <v n="ContainsExtensibleInputs">false</v>
+                        <v n="ProvidesSTSnippet">false</v>
                         <v n="BoxType">"MC_Power"</v>
                         <o n="Instance" t="Operand">
                           <v n="Operand">"mcPower"</v>
@@ -149,6 +155,7 @@ ActMove();]]></ST>
                           <v n="SymbolComment">""</v>
                           <v n="Address">""</v>
                           <o n="Flags" t="Flags">
+                            <v n="Extensible">false</v>
                             <v n="Flags">0</v>
                             <v n="Fixed">false</v>
                           </o>
@@ -167,6 +174,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -182,6 +190,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -197,6 +206,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -212,6 +222,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -223,6 +234,7 @@ ActMove();]]></ST>
                           </l2>
                         </o>
                         <o n="Flags" t="Flags">
+                          <v n="Extensible">false</v>
                           <v n="Flags">0</v>
                           <v n="Fixed">false</v>
                         </o>
@@ -236,6 +248,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">" Axis motor "</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -254,6 +267,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -272,6 +286,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">"%I*"</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -290,6 +305,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">"%I*"</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -308,6 +324,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -326,6 +343,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -344,6 +362,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -398,10 +417,6 @@ ActMove();]]></ST>
                         <v n="Id">3L</v>
                       </o>
                     </l2>
-                    <v n="ILActive">false</v>
-                    <v n="FBDValid">false</v>
-                    <v n="ILValid">false</v>
-                    <l2 n="ILLines" />
                     <l2 n="Connectors" />
                     <v n="Id">1L</v>
                   </o>
@@ -439,12 +454,18 @@ ActMove();]]></ST>
                 <v n="DefaultViewMode">"Fbd"</v>
                 <l2 n="NetworkList" cet="Network">
                   <o>
+                    <v n="ILActive">false</v>
+                    <v n="FBDValid">false</v>
+                    <v n="ILValid">false</v>
+                    <l2 n="ILLines" />
                     <v n="Comment">""</v>
                     <v n="Title">""</v>
                     <v n="Label">""</v>
                     <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeBox">
                       <o>
+                        <v n="ContainsExtensibleInputs">false</v>
+                        <v n="ProvidesSTSnippet">false</v>
                         <v n="BoxType">"MC_MoveAbsolute"</v>
                         <o n="Instance" t="Operand">
                           <v n="Operand">"mcMoveAbsolute"</v>
@@ -453,6 +474,7 @@ ActMove();]]></ST>
                           <v n="SymbolComment">""</v>
                           <v n="Address">""</v>
                           <o n="Flags" t="Flags">
+                            <v n="Extensible">false</v>
                             <v n="Flags">0</v>
                             <v n="Fixed">false</v>
                           </o>
@@ -471,6 +493,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -486,6 +509,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -501,6 +525,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -516,6 +541,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -531,6 +557,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -542,6 +569,7 @@ ActMove();]]></ST>
                           </l2>
                         </o>
                         <o n="Flags" t="Flags">
+                          <v n="Extensible">false</v>
                           <v n="Flags">0</v>
                           <v n="Fixed">false</v>
                         </o>
@@ -555,6 +583,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">" Axis motor "</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -573,6 +602,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -591,6 +621,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -609,6 +640,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">"mm/min"</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -627,6 +659,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -645,6 +678,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -663,6 +697,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -681,6 +716,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -699,6 +735,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -759,20 +796,22 @@ ActMove();]]></ST>
                         <v n="Id">3L</v>
                       </o>
                     </l2>
-                    <v n="ILActive">false</v>
-                    <v n="FBDValid">false</v>
-                    <v n="ILValid">false</v>
-                    <l2 n="ILLines" />
                     <l2 n="Connectors" />
                     <v n="Id">1L</v>
                   </o>
                   <o>
+                    <v n="ILActive">false</v>
+                    <v n="FBDValid">false</v>
+                    <v n="ILValid">false</v>
+                    <l2 n="ILLines" />
                     <v n="Comment">""</v>
                     <v n="Title">""</v>
                     <v n="Label">""</v>
                     <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeBox">
                       <o>
+                        <v n="ContainsExtensibleInputs">false</v>
+                        <v n="ProvidesSTSnippet">false</v>
                         <v n="BoxType">"MC_MoveRelative"</v>
                         <o n="Instance" t="Operand">
                           <v n="Operand">"mcMoveRelative"</v>
@@ -781,6 +820,7 @@ ActMove();]]></ST>
                           <v n="SymbolComment">""</v>
                           <v n="Address">""</v>
                           <o n="Flags" t="Flags">
+                            <v n="Extensible">false</v>
                             <v n="Flags">0</v>
                             <v n="Fixed">false</v>
                           </o>
@@ -799,6 +839,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -814,6 +855,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -829,6 +871,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -844,6 +887,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -859,6 +903,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -870,6 +915,7 @@ ActMove();]]></ST>
                           </l2>
                         </o>
                         <o n="Flags" t="Flags">
+                          <v n="Extensible">false</v>
                           <v n="Flags">0</v>
                           <v n="Fixed">false</v>
                         </o>
@@ -883,6 +929,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">" Axis motor "</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -901,6 +948,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -919,6 +967,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -937,6 +986,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">"mm/min"</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -955,6 +1005,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -973,6 +1024,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -991,6 +1043,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -1009,6 +1062,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -1027,6 +1081,7 @@ ActMove();]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
+                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
                               </o>
@@ -1087,10 +1142,6 @@ ActMove();]]></ST>
                         <v n="Id">54L</v>
                       </o>
                     </l2>
-                    <v n="ILActive">false</v>
-                    <v n="FBDValid">false</v>
-                    <v n="ILValid">false</v>
-                    <l2 n="ILLines" />
                     <l2 n="Connectors" />
                     <v n="Id">27L</v>
                   </o>
@@ -1132,5 +1183,13 @@ q_asResult[indexResult] := fbFormatString.sOut;
 indexResult := indexResult +1;]]></ST>
       </Implementation>
     </Action>
+    <LineIds Name="FB_ManipAxis">
+      <LineId Id="3" Count="86" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_ManipAxis.ActError">
+      <LineId Id="2" Count="8" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

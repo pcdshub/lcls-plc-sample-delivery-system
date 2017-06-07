@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <DUT Name="ST_BhFMStatus" Id="{956ac3ba-fa11-4079-a7f0-2e4d7c89266b}">
     <Declaration><![CDATA[TYPE ST_BhFMStatus :
 STRUCT
@@ -15,6 +15,5 @@ xFlowValid	:	BOOL;
 END_STRUCT
 END_TYPE
 ]]></Declaration>
-    <ObjectProperties />
   </DUT>
 </TcPlcObject>

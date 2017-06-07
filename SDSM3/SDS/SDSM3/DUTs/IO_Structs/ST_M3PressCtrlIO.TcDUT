@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <DUT Name="ST_M3PressCtrlIO" Id="{bcb61481-a185-4559-9f0f-f02ed6fd842a}">
     <Declaration><![CDATA[TYPE ST_M3PressCtrlIO EXTENDS ST_M3DeviceBaseIO:
 STRUCT

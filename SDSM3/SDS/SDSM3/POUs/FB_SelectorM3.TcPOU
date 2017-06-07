@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <POU Name="FB_SelectorM3" Id="{a6869ee8-a1a6-4578-87e8-3c9673bf57ea}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SelectorM3
 VAR_INPUT
@@ -76,8 +76,8 @@ END_IF]]></ST>
         <ST><![CDATA[(* Sensirion Flowmeter driver encapsulation*)	
 
 (* Reinitialize flowmeter *)
-iq_stSelector[1].stSelFMControlSens.xReset := stSelector.xFMReset;
-iq_stSelector[1].stSelFMControlSens.xCalMode := stSelector.xFMModeReq;
+iq_stSelector.stSelFMControlSens.xReset := stSelector.xFMReset;
+iq_stSelector.stSelFMControlSens.xCalMode := stSelector.xFMModeReq;
 
 	
 iq_stSelector.fbSensirionDriver[fmIndex](
@@ -92,17 +92,21 @@ IF iq_stSelector.fbSensirionDriver[fmIndex].q_xDone OR
 	iq_stSelector.fbSensirionDriver[fmIndex].q_xError OR
 	iq_stSelector.fbSensirionDriver[fmIndex].q_xTimeout THEN
 
-	//Legacy flow
-	iq_stSelector.rFlow := iq_stSelector[fmIndex].stSelFMStatusSens.rFlow;
-	iq_stSelector.xFMOoR := iq_stSelector[fmIndex].stSelFMStatusSens.xOoR;
-	iq_stSelector.xFlowValid := iq_stSelector[fmIndex].stSelFMStatusSens.xFlowValid;
-	iq_stSelector.iFMState := iq_stSelector[fmIndex].stSelFMStatusSens.iState;
-	iq_stSelector.xFMModeRb := iq_stSelector[fmIndex].stSelFMStatusSens.xFMMode;
 	
-	//M3 flows
-	iq_stSelector.rLowFlow := iq_stSelector[fmIndex].stSelFMStatusSens.rFlow;
-	iq_stSelector.rHighFlow := iq_stSelector[fmIndex].stSelFMStatusSens.rFlow;
-	
+	IF fmIndex = 1 THEN 
+		//Legacy flow
+		//low flow maps to legacy readbacks
+		iq_stSelector.rFlow := iq_stSelector.astSelFM[fmIndex].stat.rFlow;
+		iq_stSelector.xFMOoR := iq_stSelector.astSelFM[fmIndex].stat.xOoR;
+		iq_stSelector.xFlowValid := iq_stSelector.astSelFM[fmIndex].stat.xFlowValid;
+		iq_stSelector.iFMState := iq_stSelector.astSelFM[fmIndex].stat.iState;
+		iq_stSelector.xFMModeRb := iq_stSelector.astSelFM[fmIndex].stat.xFMMode;
+		//M3 flows
+		iq_stSelector.rLowFlow := iq_stSelector.astSelFM[fmIndex].stat.rFlow;
+	ELSIF fmIndex = 2 THEN
+		iq_stSelector.rHighFlow := iq_stSelector.astSelFM[fmIndex].stat.rFlow;
+	END_IF
+
 	(* reset function for next time *)
 	iq_stSelector.fbSensirionDriver[fmIndex](i_xExecute:=FALSE, iq_stSerialRXBuffer:= SerialRXBuffer_SelFlwMtr, iq_stSerialTXBuffer:=  SerialTXBuffer_SelFlwMtr);
 
@@ -111,5 +115,26 @@ IF iq_stSelector.fbSensirionDriver[fmIndex].q_xDone OR
 END_IF]]></ST>
       </Implementation>
     </Action>
+    <LineIds Name="FB_SelectorM3">
+      <LineId Id="3" Count="17" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SelectorM3.ViciDrivers">
+      <LineId Id="2" Count="16" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SelectorM3.Sensirion">
+      <LineId Id="2" Count="18" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="51" Count="1" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="45" Count="3" />
+      <LineId Id="53" Count="1" />
+      <LineId Id="49" Count="1" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="31" Count="5" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

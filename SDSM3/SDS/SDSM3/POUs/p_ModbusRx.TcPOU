@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <POU Name="p_ModbusRx" Id="{20750476-3750-4dd9-9eaa-26d5f7c2ab85}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM p_ModbusRx
 VAR
@@ -44,15 +44,6 @@ stSelector2.stShaker01.i_xEpics := mb_Output_Coils[44];
 stSelector2.stShaker02.i_xEpics := mb_Output_Coils[45];
 stSelector2.stShaker03.i_xEpics := mb_Output_Coils[46];
 stSelector2.stShaker04.i_xEpics := mb_Output_Coils[47];
-
-
-(* Regulator Controls *)
-stRegWater.xRegEnab	:=	mb_Output_Coils[20];
-stRegSheath.xRegEnab:=	mb_Output_Coils[21];
-stRegAux.xRegEnab	:=	mb_Output_Coils[22];
-
-stRegWater.i_iPercSP := mb_Output_Registers[19];
-stRegSheath.i_iPercSP := mb_Output_Registers[20];
 
 (* Proportionair controls *)
 stRegProp1.xEnable:=mb_Output_Coils[50];  //Proportionair controls
@@ -114,5 +105,10 @@ END_IF
 
 ]]></ST>
     </Implementation>
+    <LineIds Name="p_ModbusRx">
+      <LineId Id="3" Count="36" />
+      <LineId Id="49" Count="59" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

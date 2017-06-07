@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <POU Name="p_ModbusTx" Id="{7dfde301-1300-4648-85ba-2185bbf045a9}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM p_ModbusTx
 VAR
@@ -61,30 +61,9 @@ mb_Input_Coils[43] := stSelector2.xResLocked;
 mb_Input_Coils[44] := stSelector2.xFMModeRb;
 
 
-(* Regulator Readbacks *)
-mb_Input_Coils[20] := stRegWater.xSeeking;
-mb_Input_Coils[21]	:= stRegSheath.xSeeking;
-mb_Input_Coils[22]	:= stRegAux.xSeeking;
-
-mb_Input_Registers[10]:= stRegWater.wOutPress;
-mb_Input_Registers[11]:= stRegSheath.wOutPress;
-mb_Input_Registers[12]:= stRegAux.wOutPress;
-
-mb_Input_Registers[13]:= stRegWater.wPercentageOpen;
-mb_Input_Registers[14]:= stRegSheath.wPercentageOpen;
-mb_Input_Registers[15]:= stRegAux.wPercentageOpen;
-
-mb_Input_Registers[16]:= stRegWater.wInPress;
-mb_Input_Registers[17]:= stRegSheath.wInPress;
-mb_Input_Registers[18]:= stRegAux.wInPress;
-
-
 (* Flow meters *)
 MEMCPY(destAddr:=ADR( mb_PLC_Memory[0]), srcAddr:=ADR(stSelector.rFlow), n:=4);
 MEMCPY(destAddr:=ADR( mb_PLC_Memory[16]), srcAddr:=ADR(stSelector2.rFlow), n:=4);
-
-mb_Output_Registers[19] := stRegWater.i_iPercSP;
-mb_Output_Registers[20] := stRegSheath.i_iPercSP;
 
 (* Proportionair controls *)
 mb_Output_Coils[50]:=stRegProp1.xEnable;  //Proportionair controls
@@ -195,5 +174,11 @@ mb_Input_Coils[75]:=stManiVlv8.ixOPN;  //Minitti manifold valve controls
 	MEMCPY(destAddr:=ADR(mb_PLC_Memory[100]), srcAddr:=ADR(stALI.axisZ.rReqRelPos), n:=SIZEOF(stALI.axisZ.rReqRelPos));  //ALI CTRL
 ]]></ST>
     </Implementation>
+    <LineIds Name="p_ModbusTx">
+      <LineId Id="3" Count="51" />
+      <LineId Id="73" Count="4" />
+      <LineId Id="81" Count="108" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
-  <POU Name="p_ESTOP" Id="{56f6f6e5-239f-4cf4-a815-302180d5dfcd}">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="p_ESTOP" Id="{56f6f6e5-239f-4cf4-a815-302180d5dfcd}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM p_ESTOP
 VAR
 	rtEstop : R_TRIG;
@@ -18,7 +18,6 @@ rtEstop(CLK:=g_xEstop);
 
 (* Check for E-Stop *)
 IF rtEstop.Q THEN
-	stRegWater.i_iPercSP := 0;
 	stSelector.iVici1ReqPos := 12;
 	stSelector.iVici2ReqPos := 12;
 	stSelector.iSyncReqPos	:= 12;	
@@ -26,6 +25,10 @@ END_IF
 
 ]]></ST>
     </Implementation>
-    <ObjectProperties />
+    <LineIds Name="p_ESTOP">
+      <LineId Id="3" Count="9" />
+      <LineId Id="14" Count="5" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

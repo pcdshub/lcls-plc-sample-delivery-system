@@ -35,9 +35,33 @@
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
     </Compile>
+    <Compile Include="DUTs\Bronkhorst\E_BHElFlowUnit.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Bronkhorst\ST_BhElFlow.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Bronkhorst\ST_BhFMControl.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Bronkhorst\ST_BhFMStatus.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\E_AxisMotionState.TcDUT">
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="DUTs\IO_Structs\ST_M2SelectorIO.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\IO_Structs\ST_M3DeviceBaseIO.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\IO_Structs\ST_M3PressCtrlIO.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\IO_Structs\ST_M3SelectorIO.TcDUT">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\Sensirion\ST_SensirionFMControl.TcDUT">
       <SubType>Code</SubType>
@@ -45,25 +69,10 @@
     <Compile Include="DUTs\Sensirion\ST_SensirionFMStatus.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\ST_BhFMControl.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\ST_M3DeviceBaseIO.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\ST_M3SelectorIO.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\ST_M2SelectorIO.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="DUTs\ST_ManifoldValve.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\ST_Proportionair.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\ST_M3PressCtrlIO.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\ST_RegDeadbandControls.TcDUT">
@@ -75,13 +84,16 @@
     <Compile Include="DUTs\ST_Selector.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\ST_SelectorM3.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\ST_SensirionFM.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\ST_Shaker.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\ST_ShakerControls.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\ST_BhFMStatus.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\TEC\ST_TECControl.TcDUT">
@@ -125,6 +137,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Bronkhorst\FB_FlowBusTransaction.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FB_SelectorM3.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Helpers\FB_EcatDiag.TcPOU">
@@ -236,6 +251,8 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="DUTs\ALI" />
+    <Folder Include="DUTs\IO_Structs" />
+    <Folder Include="DUTs\Bronkhorst" />
     <Folder Include="DUTs\Vici" />
     <Folder Include="DUTs\TEC" />
     <Folder Include="DUTs\Sensirion" />
@@ -270,6 +287,9 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
+    <LibraryReference Include="LCLS General,newest,SLAC">
+      <Namespace>LCLS_General</Namespace>
+    </LibraryReference>
     <LibraryReference Include="Tc2_EtherCAT,newest,Beckhoff Automation GmbH">
       <Namespace>Tc2_EtherCAT</Namespace>
     </LibraryReference>
@@ -301,6 +321,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <PlaceholderResolution Include="LCLS General">
+      <Resolution>LCLS General, 0.1.1 (SLAC)</Resolution>
+    </PlaceholderResolution>
     <PlaceholderResolution Include="LCLSVacuumLib">
       <Resolution>LCLSVacuumLib, * (SLAC)</Resolution>
     </PlaceholderResolution>

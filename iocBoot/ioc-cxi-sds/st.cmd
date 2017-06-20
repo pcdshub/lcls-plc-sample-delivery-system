@@ -18,7 +18,7 @@ sampleDelivery_registerRecordDeviceDriver(pdbbase)
 ##Basic ioc stuff
 epicsEnvSet( "LOC", "CXI")
 epicsEnvSet( "SYS", "SDS") #Sample Delivery System
-epicsEnvSet( "PLC", "plc-sds-sabertooth")
+epicsEnvSet( "PLC", "plc-cxi-sds")
 epicsEnvSet("EPICS_PV", "IOC:$(LOC):$(SYS):01")
 
 < iocBoot/ioc-tst-sds/plcPorts.cmd
@@ -34,7 +34,7 @@ dbLoadRecords( "db/save_restoreStatus.db",  "IOC=$(EPICS_PV)" )
 
 
 #PLC modbus file
-dbLoadRecords("db/sds-m2-modbus.db",	"DEV=$(LOC):$(SYS):")
+dbLoadRecords("db/m3-sds-modbus.db",	"DEV=$(LOC):$(SYS):")
 
 #Auxiliary files
 dbLoadRecords("db/sds-m2-sampleSelection.db",   "P=$(LOC):$(SYS),NUM=1")

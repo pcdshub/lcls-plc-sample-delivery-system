@@ -21,6 +21,7 @@ sampleDelivery_DBD += asyn.dbd
 sampleDelivery_DBD += stream.dbd
 sampleDelivery_DBD += modbus.dbd
 sampleDelivery_DBD += modbusSupport.dbd
+sampleDelivery_DBD += caPutLog.dbd
 
 sampleDelivery_DBD += genSubRecord.dbd
 
@@ -41,6 +42,7 @@ sampleDelivery_LIBS += stream
 sampleDelivery_LIBS += autosave
 sampleDelivery_LIBS += devIocStats
 sampleDelivery_LIBS += modbus
+sampleDelivery_LIBS += caPutLog
 sampleDelivery_LIBS += genSub
 sampleDelivery_LIBS += asyn
 sampleDelivery_LIBS += $(EPICS_BASE_IOC_LIBS)

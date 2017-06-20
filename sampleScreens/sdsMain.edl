@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 3549
-y 537
+x 1115
+y 632
 w 376
 h 459
 font "helvetica-medium-r-12.0"
@@ -339,14 +339,13 @@ onColor index 4
 offColor index 3
 topShadowColor index 1
 botShadowColor index 14
-controlPv "$(LOC):$(SYS):SEL2:Unlock"
+controlPv "$(LOC):$(SYS):SEL$(selNum):Unlock"
 pressValue "1"
-releaseValue "0"
 onLabel "Unlock"
 offLabel "Unlock"
 useEnumNumeric
 font "helvetica-medium-r-14.0"
-visPv "$(LOC):$(SYS):SEL2:Locked"
+visPv "$(LOC):$(SYS):SEL$(selNum):Locked"
 visMin "1"
 visMax "2"
 endObjectProperties
@@ -368,12 +367,11 @@ topShadowColor index 1
 botShadowColor index 14
 controlPv "$(LOC):$(SYS):SEL$(selNum):Lock"
 pressValue "1"
-releaseValue "0"
 onLabel "Lock"
 offLabel "Lock"
 useEnumNumeric
 font "helvetica-medium-r-14.0"
-visPv "CALC\\\{(A==B)&&!C\}($(LOC):$(SYS):SEL2:VLV:01:CURR_POS, $(LOC):$(SYS):SEL2:VLV:02:CURR_POS, $(LOC):$(SYS):SEL2:Locked)"
+visPv "CALC\\\{(A==B)&&!C\}($(LOC):$(SYS):SEL$(selNum):VLV:01:CURR_POS, $(LOC):$(SYS):SEL$(selNum):VLV:02:CURR_POS, $(LOC):$(SYS):SEL$(selNum):Locked)"
 visMin "1"
 visMax "2"
 endObjectProperties
@@ -447,7 +445,7 @@ botShadowColor index 11
 font "helvetica-bold-r-10.0"
 buttonLabel "Control Screens"
 numPvs 4
-numDsps 10
+numDsps 11
 displayFileName {
   0 "sampleScreens/sdsMain.edl"
   1 "sampleScreens/lc20Screens/lc20.edl"
@@ -459,6 +457,7 @@ displayFileName {
   7 "sampleScreens/sample_integration.edl"
   8 "sampleScreens/manifold.edl"
   9 "sampleScreens/m3-pressure-controller.edl"
+  10 "sampleScreens/dod.edl"
 }
 menuLabel {
   0 "Selector 1"
@@ -471,6 +470,7 @@ menuLabel {
   7 "Selector 2 Flow Integrator"
   8 "Gas Delivery Manifold"
   9 "M3 Pressure Controller A"
+  10 "Drop On Demand"
 }
 setPosition {
   0 "parentWindow"
@@ -494,6 +494,7 @@ symbols {
   7 "DEV=$(LOC):$(SYS):SEL2,NUM=2"
   8 "LOC=$(LOC),SYS=$(SYS)"
   9 "LOC=$(LOC),SYS=$(SYS),PC=A"
+  10 "LOC=$(LOC),SYS=$(SYS)"
 }
 replaceSymbols {
   0 1

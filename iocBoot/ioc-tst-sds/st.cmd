@@ -35,7 +35,7 @@ dbLoadRecords( "db/save_restoreStatus.db",  "IOC=$(EPICS_PV)" )
 
 
 #PLC modbus file
-dbLoadRecords("db/sds-m2-modbus.db",	"DEV=$(LOC):$(SYS):")
+dbLoadRecords("db/m3-sds-modbus.db",	"DEV=$(LOC):$(SYS):")
 
 #Auxiliary files
 dbLoadRecords("db/sds-m2-sampleSelection.db",	"P=$(LOC):$(SYS),NUM=1")
@@ -61,17 +61,21 @@ set_pass0_restoreFile( "$(IOC).sav" )
 set_pass1_restoreFile( "$(IOC).sav" )
 set_pass1_restoreFile( "sampleFlowAccumulators.sav")
 
+#Access Security (for caPutLog)
+asSetFilename("$(TOP)/etc/default.acf")
+
+#Setting the caPutLog file location
+caPutLogFile("$(IOC_DATA)/$(IOC)/logs/caPutLog.log")
 # Initialize the IOC and start processing records
 iocInit()
+
+#Start caPutLog
+#caPutLogInit "$(EPICS_IOC_LOG_INET):$(EPICS_IOC_LOG_PORT)"
+caPutLogInit "psloghost:$(EPICS_IOC_LOG_PORT)"
 
 # Start autosave backups
 create_monitor_set( "$(IOC).req", 30, "LOC=$(LOC), SYS=$(SYS)" )
 create_monitor_set( "sampleFlowAccumulators.req", 1, "LOC=$(LOC),SYS=$(SYS)" )
-
-
-
-# Initialize the IOC and start processing records
-iocInit()
 
 
 # All IOCs should dump some common info after initial startup.

@@ -3140,6 +3140,14 @@ External Setpoint Generation:
 							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 						</Var>
 						<Var>
+							<Name>GVL_IO.i_iFscEB1Ch1AI</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.i_iFscEB1Ch2AI</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
 							<Name>GVL_Devices.stALI.axisX.stAxis.NcToPlc</Name>
 							<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 							<SubVar>
@@ -3523,14 +3531,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 						<Var>
 							<Name>GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2</Name>
 							<Type GUID="{36F14137-BDBF-4071-A1BA-DA14C40D8519}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iFscEB1Ch1AI</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iFscEB1Ch2AI</Name>
-							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>GVL_IO.i_iFscEB1Ch3AI</Name>
@@ -13194,7 +13194,7 @@ Bit1: Value smaller than Limit2]]>
 				<Box BoxType="9099" Id="26">
 					<Name>PCM B (EP1111)</Name>
 					<ImageId>1006</ImageId>
-					<EtherCAT SlaveType="2" PdiType="#x0205" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="3" FoeType="1" VendorId="#x00000002" ProductCode="#x04574052" RevisionNo="#x00140000" InfoDataAddr="true" TimeoutMailbox2="2000" PortPhys="17" IdentificationAdo="308" IdentificationValue="330" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP1111-0000 ID-Switch" Desc="EP1111" PortABoxInfo="#xffffffff">
+					<EtherCAT SlaveType="2" PdiType="#x0205" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="3" FoeType="1" VendorId="#x00000002" ProductCode="#x04574052" RevisionNo="#x00140000" InfoDataAddr="true" TimeoutMailbox2="2000" PortPhys="17" IdentificationAdo="308" IdentificationValue="331" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP1111-0000 ID-Switch" Desc="EP1111" PortABoxInfo="#xffffffff">
 						<SyncMan>001180002600010001000000800080008000001126010000</SyncMan>
 						<SyncMan>801080002200010002000000800080008000801022010000</SyncMan>
 						<SyncMan>101000000400000003000000000000000000101004000000</SyncMan>
@@ -13202,7 +13202,7 @@ Bit1: Value smaller than Limit2]]>
 						<Fmmu>0000000000000000801100010100000002000000000000000000000000000000</Fmmu>
 						<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
 						<BootStrapData>0010f400f410f400</BootStrapData>
-						<HcData>0400000008000000020000000000000000000000000000000000000000000000</HcData>
+						<HcData>0200000008000000020000000000000000000000000000000000000000000000</HcData>
 						<Pdo Name="ID Inputs" Index="#x1a00" Flags="#x0011" SyncMan="3">
 							<Entry Name="ID" Index="#xf600" Sub="#x01">
 								<Type>UINT</Type>
@@ -13359,7 +13359,7 @@ Bit1: Value is greater than or equal to limit 2]]>
 						<CoeProfile ProfileNo="26219401"/>
 					</EtherCAT>
 				</Box>
-				<Box BoxType="9099" Id="43">
+				<Box Disabled="true" BoxType="9099" Id="43">
 					<Name>PCM B (EP3174-0002)</Name>
 					<ImageId>1011</ImageId>
 					<EtherCAT SlaveType="2" PdiType="#x0605" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="7" FoeType="1" VendorId="#x00000002" ProductCode="#x0c664052" RevisionNo="#x00160002" InfoDataAddr="true" TimeoutMailbox2="2000" CheckRevisionNoType="3" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP3174-0002 4Ch. Ana. Input +/-10V, 0-10V, 0/4-20mA configurable" Desc="EP3174-0002" PortABoxInfo="#x0100001b">
@@ -13615,7 +13615,7 @@ Bit1: Value smaller than Limit2]]>
 						<CoeProfile ProfileNo="19665801" DisplayName="Analog Input"/>
 					</EtherCAT>
 				</Box>
-				<Box BoxType="9101" Id="44">
+				<Box Disabled="true" BoxType="9101" Id="44">
 					<Name>PCM B (EP6002-0002)</Name>
 					<ImageId>1008</ImageId>
 					<EtherCAT SlaveType="7" PdiType="#x0205" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="39" FoeType="1" VendorId="#x00000002" ProductCode="#x17724052" RevisionNo="#x00150002" InfoDataAddr="true" TimeoutMailbox2="2000" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP6002-0002 Interface (RS232/422/485)" Desc="EP6002-0002" PortABoxInfo="#x0100002b">

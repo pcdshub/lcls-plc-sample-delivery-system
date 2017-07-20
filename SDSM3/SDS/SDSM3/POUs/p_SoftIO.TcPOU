@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <POU Name="p_SoftIO" Id="{08bd4e2d-3139-4f8e-b2bd-85fa0e412ded}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM p_SoftIO
 VAR
@@ -31,7 +31,18 @@ stRegProp1.iPressureRaw := iq_stPressCtrlA.i_EP4374_Ch1;
 stRegProp2.iPressureRaw := iq_stPressCtrlA.i_EP4374_Ch2;
 
 iq_stPressCtrlA.q_EP4374_Ch3 := stRegProp1.iSetpointRaw;
-iq_stPressCtrlA.q_EP4374_Ch4 := stRegProp2.iSetpointRaw;]]></ST>
+iq_stPressCtrlA.q_EP4374_Ch4 := stRegProp2.iSetpointRaw;
+
+stRegProp3.iPressureRaw := iq_stPressCtrlB.i_EP4374_Ch1;
+stRegProp4.iPressureRaw := iq_stPressCtrlB.i_EP4374_Ch2;
+
+iq_stPressCtrlB.q_EP4374_Ch3 := stRegProp3.iSetpointRaw;
+iq_stPressCtrlB.q_EP4374_Ch4 := stRegProp4.iSetpointRaw;]]></ST>
     </Implementation>
+    <LineIds Name="p_SoftIO">
+      <LineId Id="3" Count="24" />
+      <LineId Id="34" Count="5" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

@@ -15314,6 +15314,8 @@ Bit1: Value smaller than Limit2]]>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.i_EP4374_Ch1" VarB="AI Inputs Channel 1^Value"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.i_EP4374_Ch2" VarB="AI Inputs Channel 2^Value"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.q_EP4374_Ch3" VarB="AO Outputs Channel 3^Analog output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.q_EP4374_Ch4" VarB="AO Outputs Channel 4^Analog output"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^ALI_X">
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisX.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>

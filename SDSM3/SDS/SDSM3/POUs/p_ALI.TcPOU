@@ -1,26 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <POU Name="p_ALI" Id="{2f24df4a-4e55-4a2a-b530-4a66a8831e7d}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM p_ALI
 VAR
-	fb925ALINB1 : FB_925;
-	fb925ALINB2 : FB_925;
-	fb925ALINB3 : FB_925;
-	
-	fbManipX	:	FB_ManipAxis;
-	fbManipY	:	FB_ManipAxis;
-	fbManipZ	:	FB_ManipAxis;
+	fbALI_A	:	FB_ALI;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(* Vacuum Gauge Supervisor *)
-fb925ALINB1(VG:=stALI.stVgALINB1);
-fb925ALINB2(VG:=stALI.stVgALINB2);
-fb925ALINB3(VG:=stALI.stVgALINB3);
-
-fbManipX(iq_ManipAxis:=stALI.axisX);
-fbManipY(iq_ManipAxis:=stALI.axisY);
-fbManipZ(iq_ManipAxis:=stALI.axisZ);]]></ST>
+      <ST><![CDATA[]]></ST>
     </Implementation>
+    <LineIds Name="p_ALI">
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

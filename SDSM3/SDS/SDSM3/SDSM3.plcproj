@@ -35,6 +35,9 @@
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
     </Compile>
+    <Compile Include="DUTs\ALI\ST_PropValveMKS253.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\Bronkhorst\E_BHElFlowUnit.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -127,6 +130,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\ALI\FB_ALI.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\ALI\FB_ManipAxis.TcPOU">

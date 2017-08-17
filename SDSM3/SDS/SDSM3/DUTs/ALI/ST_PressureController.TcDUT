@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <DUT Name="ST_PressureController" Id="{9d96757f-fb04-4cdc-9a8a-fde30a416828}">
+    <Declaration><![CDATA[TYPE ST_PressureController :
+STRUCT
+	(* Intent of this structure is to provide generic variables
+	for a pressure controller. It is meant to be extended by 
+	the hardware IO variables into a specific structure. *)
+	
+	//Controls
+	//Pressure setpoint
+	i_rPressSP	:	REAL;
+	//Actuator percentage open 0-100%
+	i_iPercOpenSP	:	INT;
+	//Controller Mode
+	i_eCntlMode	:	E_CTRL_MODE;
+	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

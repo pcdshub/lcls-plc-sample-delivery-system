@@ -20,20 +20,25 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
-
+      <ST><![CDATA[(* Soft IO *)
+iq_Injector.stNozzleBoxVG.iPRESS_R :=iq_Injector.i_EP3174_Ch1;
+iq_Injector.stSkimmerVG.iPRESS_R := iq_Injector.i_EP3174_Ch2;
+iq_Injector.stRelaxVG.iPRESS_R := iq_Injector.i_EP3174_Ch3;
 
 (* Vacuum Gauge Supervisor *)
-fb925ALINB1(VG:=stALI.stVgALINB1);
-fb925ALINB2(VG:=stALI.stVgALINB2);
-fb925ALINB3(VG:=stALI.stVgALINB3);
+fb925ALINB1(VG:=stALI.stNozzleBoxVG);
+fb925ALINB2(VG:=stALI.stSkimmerVG);
+fb925ALINB3(VG:=stALI.stRelaxVG);
 
 fbManipX(iq_ManipAxis:=stALI.axisX);
 fbManipY(iq_ManipAxis:=stALI.axisY);
 fbManipZ(iq_ManipAxis:=stALI.axisZ);]]></ST>
     </Implementation>
     <LineIds Name="FB_ALI">
-      <LineId Id="17" Count="9" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="18" Count="8" />
       <LineId Id="9" Count="0" />
     </LineIds>
   </POU>

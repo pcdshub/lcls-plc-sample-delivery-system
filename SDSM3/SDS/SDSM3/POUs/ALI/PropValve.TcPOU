@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="PropValve" Id="{5d37ea8b-affd-40c7-9959-7bc359f6de15}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PropValve
+VAR
+	mcPower	:	MC_Power;
+	stPropValve	:	ST_PropValveMKS253;
+	tofLLSFilter	:	TOF := (PT:=T#100MS);
+	tofHLSFilter	:	TOF := (PT:=T#100MS);
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* The low limit switch was flakey, I added the filters*)
+tofLLSFilter(IN:=stPropValve.i_LLS);
+tofHLSFilter(IN:=stPropValve.i_HLS);
+mcPower.Enable_Positive := tofHLSFilter.Q;
+mcPower.Enable_Negative := tofLLSFilter.Q;
+mcPower(Axis:=stPropValve.stAxis);]]></ST>
+    </Implementation>
+    <LineIds Name="PropValve">
+      <LineId Id="13" Count="1" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

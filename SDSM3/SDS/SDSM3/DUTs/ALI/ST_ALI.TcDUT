@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <DUT Name="ST_ALI" Id="{0b7a7a1a-1335-4a3d-a5dc-8467cfe96304}">
-    <Declaration><![CDATA[TYPE ST_ALI EXTENDS ST_M3DeviceBaseIO:
+    <Declaration><![CDATA[TYPE ST_ALI EXTENDS ST_ALIIO:
 STRUCT
 	(* Aerodynamic Lens Injector *)
 
@@ -11,12 +11,19 @@ STRUCT
 	axisZ	:	ST_ManipAxis;
 	
 	(* Vacuum gauges *)
-	stVgALINB1	: ST_VG;
-	stVgALINB2	: ST_VG;
-	stVgALINB3	: ST_VG;
+	//925
+	stNozzleBoxVG	: ST_VG;
+	//925
+	stSkimmerVG	: ST_VG;
+	//722
+	stRelaxVG	: ST_VG;
 	
-	(* Butterfly valve *)
+	(* Butterfly valve pressure controller *)
 	stPropVlv	:	ST_PropValveMKS253;
+	
+	(* PropValve Pressure Controller *)
+	stPressCtrl	:	ST_PressureController;
+	
 	
 END_STRUCT
 END_TYPE

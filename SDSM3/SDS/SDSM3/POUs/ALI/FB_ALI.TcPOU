@@ -12,7 +12,7 @@ END_VAR
 VAR
 	fb925ALINB1 : FB_925;
 	fb925ALINB2 : FB_925;
-	fb925ALINB3 : FB_925;
+	fb722ALINB3 : FB_GCM;
 	
 	fbManipX	:	FB_ManipAxis;
 	fbManipY	:	FB_ManipAxis;
@@ -32,7 +32,7 @@ iq_Injector.stRelaxVG.iPRESS_R := iq_Injector.i_EP3174_Ch3;
 (* Vacuum Gauge Supervisor *)
 fb925ALINB1(VG:=iq_Injector.stNozzleBoxVG);
 fb925ALINB2(VG:=iq_Injector.stSkimmerVG);
-fb925ALINB3(VG:=iq_Injector.stRelaxVG);
+fb722ALINB3(VG:=iq_Injector.stRelaxVG);
 
 (* Butterfly valve *)
 fbPropValve(stPropValve:=iq_Injector.stPropVlv);

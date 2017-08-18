@@ -16,7 +16,7 @@ STRUCT
 	//925
 	stSkimmerVG	: ST_VG;
 	//722
-	stRelaxVG	: ST_VG;
+	stRelaxVG	: ST_VG := (rFULL_SCALE:=10);
 	
 	(* Butterfly valve pressure controller *)
 	stPropVlv	:	ST_PropValveMKS253;

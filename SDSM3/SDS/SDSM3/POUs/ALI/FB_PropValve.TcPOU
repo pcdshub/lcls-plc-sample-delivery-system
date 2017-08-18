@@ -2,6 +2,9 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <POU Name="FB_PropValve" Id="{5d37ea8b-affd-40c7-9959-7bc359f6de15}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_PropValve
+VAR_INPUT
+	i_xExtIlk	:	BOOL;
+END_VAR
 VAR_IN_OUT
 	stPropValve	:	ST_PropValveMKS253;
 END_VAR
@@ -15,14 +18,19 @@ END_VAR
     <Implementation>
       <ST><![CDATA[(* Provide the motor enable and limit switch functions for the MKS 253 valve *)
 
-
+stPropValve.xEnable R= NOT stPropValve.xInterlock;
 
 (* The low limit switch was flakey, I added the filters *)
 tofLLSFilter(IN:=stPropValve.i_LLS);
 tofHLSFilter(IN:=stPropValve.i_HLS);
 mcPower.Enable_Positive := tofHLSFilter.Q;
 mcPower.Enable_Negative := tofLLSFilter.Q;
-mcPower(Axis:=stPropValve.stAxis);]]></ST>
+mcPower.Enable := stPropValve.xInterlock AND stPropValve.xEnable;
+mcPower(Axis:=stPropValve.stAxis);
+
+(* EPICS display of limits *)
+stPropValve.xHLS := NOT tofHLSFilter.Q;
+stPropValve.xLLS := NOT tofLLSFilter.Q; ]]></ST>
     </Implementation>
     <LineIds Name="FB_PropValve">
       <LineId Id="25" Count="0" />
@@ -31,7 +39,9 @@ mcPower(Axis:=stPropValve.stAxis);]]></ST>
       <LineId Id="13" Count="1" />
       <LineId Id="8" Count="0" />
       <LineId Id="10" Count="0" />
+      <LineId Id="48" Count="0" />
       <LineId Id="9" Count="0" />
+      <LineId Id="44" Count="3" />
       <LineId Id="5" Count="0" />
     </LineIds>
   </POU>

@@ -7,10 +7,20 @@ STRUCT
 	(* Prop valve structure, open is considered to be the higher axis position *)
 	(* Note: The wiring (if using the dongle from the ALI schematic is such that the 
 	stepper driver must be inverted to make the increasing counter value correspond to a more open valve. *)
+	//EPICS Enable Switch
+	xEnable	:	BOOL;
+	//EPICS Enable Control;
+	xEnabled	:	BOOL;
+	//Valve interlock
+	xInterlock	:	BOOL;
+	//NC Axis Ref
 	stAxis	:	AXIS_REF;
 	i_HLS	AT %I*	:	BOOL; //Open
 	i_LLS	AT %I*	:	BOOL; // Closed
-
+	//Open EPICS LS
+	xHLS	:	BOOL;
+	//Close EPICS LS
+	xLLS	:	BOOL;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

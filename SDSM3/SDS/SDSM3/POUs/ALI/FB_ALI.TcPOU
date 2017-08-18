@@ -18,7 +18,7 @@ VAR
 	fbManipY	:	FB_ManipAxis;
 	fbManipZ	:	FB_ManipAxis;
 	
-	fbAxisToMSTA	:	FB_AxisRef_To_MSTA;
+
 	
 	fbPropValve		:	FB_PropValve;
 END_VAR
@@ -41,9 +41,9 @@ fbPropValve(stPropValve:=iq_Injector.stPropVlv);
 fbManipX(iq_ManipAxis:=iq_Injector.axisX);
 fbManipY(iq_ManipAxis:=iq_Injector.axisY);
 fbManipZ(iq_ManipAxis:=iq_Injector.axisZ);
-fbAxisToMSTA(stAxis:=iq_Injector.axisX.stAxis, MSTA=>iq_Injector.axisX.uiMsta);
-fbAxisToMSTA(stAxis:=iq_Injector.axisY.stAxis, MSTA=>iq_Injector.axisY.uiMsta);
-fbAxisToMSTA(stAxis:=iq_Injector.axisZ.stAxis, MSTA=>iq_Injector.axisZ.uiMsta);]]></ST>
+F_AxisRef_To_MSTA(stManipAxis:=iq_Injector.axisX, MSTA=>iq_Injector.axisX.uiMsta);
+F_AxisRef_To_MSTA(stManipAxis:=iq_Injector.axisY, MSTA=>iq_Injector.axisY.uiMsta);
+F_AxisRef_To_MSTA(stManipAxis:=iq_Injector.axisZ, MSTA=>iq_Injector.axisZ.uiMsta);]]></ST>
     </Implementation>
     <LineIds Name="FB_ALI">
       <LineId Id="44" Count="0" />

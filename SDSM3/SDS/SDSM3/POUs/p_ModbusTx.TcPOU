@@ -159,9 +159,9 @@ mb_Input_Coils[75]:=stManiVlv8.ixOPN;  //Minitti manifold valve controls
 	mb_Output_Registers[88]:=0;  //ALI_Manip
 	mb_Output_Registers[89]:=0;  //ALI_Manip
 	
-	MEMCPY(destAddr:=ADR(mb_PLC_Memory[70]), srcAddr:=ADR(stALI.axisX.stAxis.NcToPlc.ActPos), n:=SIZEOF(stALI.axisX.stAxis.NcToPlc.ActPos));  //ALI RB
-	MEMCPY(destAddr:=ADR(mb_PLC_Memory[72]), srcAddr:=ADR(stALI.axisY.stAxis.NcToPlc.ActPos), n:=SIZEOF(stALI.axisY.stAxis.NcToPlc.ActPos));  //ALI RB
-	MEMCPY(destAddr:=ADR(mb_PLC_Memory[74]), srcAddr:=ADR(stALI.axisZ.stAxis.NcToPlc.ActPos), n:=SIZEOF(stALI.axisZ.stAxis.NcToPlc.ActPos));  //ALI RB
+	MEMCPY(destAddr:=ADR(mb_PLC_Memory[70]), srcAddr:=ADR(stALI.axisX.rActPos), n:=SIZEOF(stALI.axisX.rActPos));  //ALI RB
+	MEMCPY(destAddr:=ADR(mb_PLC_Memory[72]), srcAddr:=ADR(stALI.axisY.rActPos), n:=SIZEOF(stALI.axisY.rActPos));  //ALI RB
+	MEMCPY(destAddr:=ADR(mb_PLC_Memory[74]), srcAddr:=ADR(stALI.axisZ.rActPos), n:=SIZEOF(stALI.axisZ.rActPos));  //ALI RB
 	MEMCPY(destAddr:=ADR(mb_PLC_Memory[76]), srcAddr:=ADR(stALI.stNozzleBoxVG.rPRESS), n:=SIZEOF(stALI.stNozzleBoxVG.rPRESS));  //ALI RB
 	MEMCPY(destAddr:=ADR(mb_PLC_Memory[78]), srcAddr:=ADR(stALI.stSkimmerVG.rPRESS), n:=SIZEOF(stALI.stSkimmerVG.rPRESS));  //ALI RB
 	MEMCPY(destAddr:=ADR(mb_PLC_Memory[80]), srcAddr:=ADR(stALI.stRelaxVG.rPRESS), n:=SIZEOF(stALI.stRelaxVG.rPRESS));  //ALI RB

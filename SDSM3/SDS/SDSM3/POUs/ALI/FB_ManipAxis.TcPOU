@@ -31,6 +31,7 @@ VAR
 	rtEnable : R_TRIG;
 	ftEnable : F_TRIG;
 	rtStop	:	R_TRIG;
+	rtStart	:	R_TRIG;
 	rReqAbsPosOld: REAL := 0;
 	rReqAbsPosPrevious: REAL;
 	iI: INT;
@@ -57,6 +58,12 @@ ELSIF xInitComplete THEN
 	iq_ManipAxis.eState := MoveEnabled;
 END_IF
 
+//Restart a move
+rtStart(CLK:=iq_ManipAxis.xStart);
+
+//For EPICS, because the modbus map was made for 32 bit..
+iq_ManipAxis.rActPos := LREAL_TO_REAL(iq_ManipAxis.stAxis.NcToPlc.ActPos);
+
 
 CASE iq_ManipAxis.eState OF
 	0: iq_ManipAxis.eState := Init;
@@ -76,7 +83,7 @@ CASE iq_ManipAxis.eState OF
 	END_IF
 		
 	MoveEnabled:
-		IF iq_ManipAxis.rReqAbsPos <> rReqAbsPosPrevious  AND iq_ManipAxis.xEnable THEN
+		IF (iq_ManipAxis.rReqAbsPos <> rReqAbsPosPrevious OR rtStart.Q)  AND iq_ManipAxis.xEnable THEN
 			mcMoveAbsolute[imcBlockIndex].Execute := FALSE;
 			imcBlockIndex := imcBlockIndex + 1;
 			IF imcBlockIndex >2 THEN imcBlockIndex := 1; END_IF
@@ -85,11 +92,12 @@ CASE iq_ManipAxis.eState OF
 			rReqAbsPosPrevious := iq_ManipAxis.rReqAbsPos;
 		ELSIF mcMoveAbsolute[imcBlockIndex].Done OR mcMoveAbsolute[imcBlockIndex].CommandAborted OR mcMoveAbsolute[imcBlockIndex].Busy OR mcMoveAbsolute[imcBlockIndex].Error THEN
 			mcMoveAbsolute[imcBlockIndex].Execute := FALSE;
+			iq_ManipAxis.xStart := FALSE;
 		END_IF
 		//Halt
 		mcHalt.Execute S= iq_ManipAxis.xStop;
 		mcHalt.Execute R= mcHalt.Busy;
-		
+		iq_ManipAxis.xStop R= mcHalt.Busy;
 
 	Error:
 		mcReset.Execute := rtEnable.Q;
@@ -128,32 +136,12 @@ END_FOR]]></ST>
                     <v n="Title">""</v>
                     <v n="Label">""</v>
                     <v n="OutCommented">false</v>
-                    <l2 n="NetworkItems" cet="BoxTreeBox">
+                    <l2 n="NetworkItems" cet="BoxTreeAssign">
                       <o>
-                        <v n="ContainsExtensibleInputs">false</v>
-                        <v n="ProvidesSTSnippet">false</v>
-                        <v n="BoxType">"MC_Power"</v>
-                        <o n="Instance" t="Operand">
-                          <v n="Operand">"mcPower"</v>
-                          <v n="Type">"MC_Power"</v>
-                          <v n="Comment">""</v>
-                          <v n="SymbolComment">""</v>
-                          <v n="Address">""</v>
-                          <o n="Flags" t="Flags">
-                            <v n="Extensible">false</v>
-                            <v n="Flags">0</v>
-                            <v n="Fixed">false</v>
-                          </o>
-                          <v n="LValue">false</v>
-                          <v n="Boolean">false</v>
-                          <v n="IsInstance">true</v>
-                          <v n="Id">2L</v>
-                        </o>
                         <o n="OutputItems" t="OutputItemList">
                           <l2 n="OutputItems" cet="Operand">
-                            <n />
                             <o>
-                              <v n="Operand">""</v>
+                              <v n="Operand">"iq_ManipAxis.xEnabled"</v>
                               <v n="Type">"BOOL"</v>
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
@@ -166,55 +154,7 @@ END_FOR]]></ST>
                               <v n="LValue">true</v>
                               <v n="Boolean">false</v>
                               <v n="IsInstance">false</v>
-                              <v n="Id">4L</v>
-                            </o>
-                            <o>
-                              <v n="Operand">""</v>
-                              <v n="Type">"BOOL"</v>
-                              <v n="Comment">""</v>
-                              <v n="SymbolComment">""</v>
-                              <v n="Address">""</v>
-                              <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
-                                <v n="Flags">0</v>
-                                <v n="Fixed">false</v>
-                              </o>
-                              <v n="LValue">true</v>
-                              <v n="Boolean">false</v>
-                              <v n="IsInstance">false</v>
-                              <v n="Id">5L</v>
-                            </o>
-                            <o>
-                              <v n="Operand">""</v>
-                              <v n="Type">"BOOL"</v>
-                              <v n="Comment">""</v>
-                              <v n="SymbolComment">""</v>
-                              <v n="Address">""</v>
-                              <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
-                                <v n="Flags">0</v>
-                                <v n="Fixed">false</v>
-                              </o>
-                              <v n="LValue">true</v>
-                              <v n="Boolean">false</v>
-                              <v n="IsInstance">false</v>
-                              <v n="Id">6L</v>
-                            </o>
-                            <o>
-                              <v n="Operand">""</v>
-                              <v n="Type">"UDINT"</v>
-                              <v n="Comment">""</v>
-                              <v n="SymbolComment">""</v>
-                              <v n="Address">""</v>
-                              <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
-                                <v n="Flags">0</v>
-                                <v n="Fixed">false</v>
-                              </o>
-                              <v n="LValue">true</v>
-                              <v n="Boolean">false</v>
-                              <v n="IsInstance">false</v>
-                              <v n="Id">7L</v>
+                              <v n="Id">22L</v>
                             </o>
                           </l2>
                         </o>
@@ -223,183 +163,279 @@ END_FOR]]></ST>
                           <v n="Flags">0</v>
                           <v n="Fixed">false</v>
                         </o>
-                        <n n="InputFlags" />
-                        <l2 n="InputItems" cet="BoxTreeOperand">
-                          <o>
-                            <o n="Operand" t="Operand">
-                              <v n="Operand">"iq_ManipAxis.stAxis"</v>
-                              <v n="Type">"AXIS_REF"</v>
-                              <v n="Comment">""</v>
-                              <v n="SymbolComment">" Axis motor "</v>
-                              <v n="Address">""</v>
-                              <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
-                                <v n="Flags">0</v>
-                                <v n="Fixed">false</v>
-                              </o>
-                              <v n="LValue">false</v>
-                              <v n="Boolean">false</v>
-                              <v n="IsInstance">false</v>
-                              <v n="Id">9L</v>
+                        <o n="RValue" t="BoxTreeBox">
+                          <v n="ContainsExtensibleInputs">false</v>
+                          <v n="ProvidesSTSnippet">false</v>
+                          <v n="BoxType">"MC_Power"</v>
+                          <o n="Instance" t="Operand">
+                            <v n="Operand">"mcPower"</v>
+                            <v n="Type">"MC_Power"</v>
+                            <v n="Comment">""</v>
+                            <v n="SymbolComment">""</v>
+                            <v n="Address">""</v>
+                            <o n="Flags" t="Flags">
+                              <v n="Extensible">false</v>
+                              <v n="Flags">0</v>
+                              <v n="Fixed">false</v>
                             </o>
-                            <v n="Id">8L</v>
+                            <v n="LValue">false</v>
+                            <v n="Boolean">false</v>
+                            <v n="IsInstance">true</v>
+                            <v n="Id">2L</v>
                           </o>
-                          <o>
-                            <o n="Operand" t="Operand">
-                              <v n="Operand">""</v>
-                              <v n="Type">"BOOL"</v>
-                              <v n="Comment">""</v>
-                              <v n="SymbolComment">""</v>
-                              <v n="Address">""</v>
-                              <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
-                                <v n="Flags">0</v>
-                                <v n="Fixed">false</v>
+                          <o n="OutputItems" t="OutputItemList">
+                            <l2 n="OutputItems" cet="Operand">
+                              <n />
+                              <o>
+                                <v n="Operand">""</v>
+                                <v n="Type">"BOOL"</v>
+                                <v n="Comment">""</v>
+                                <v n="SymbolComment">""</v>
+                                <v n="Address">""</v>
+                                <o n="Flags" t="Flags">
+                                  <v n="Extensible">false</v>
+                                  <v n="Flags">0</v>
+                                  <v n="Fixed">false</v>
+                                </o>
+                                <v n="LValue">true</v>
+                                <v n="Boolean">false</v>
+                                <v n="IsInstance">false</v>
+                                <v n="Id">4L</v>
                               </o>
-                              <v n="LValue">false</v>
-                              <v n="Boolean">false</v>
-                              <v n="IsInstance">false</v>
-                              <v n="Id">11L</v>
-                            </o>
-                            <v n="Id">10L</v>
-                          </o>
-                          <o>
-                            <o n="Operand" t="Operand">
-                              <v n="Operand">"iq_ManipAxis.xHiLS"</v>
-                              <v n="Type">"BOOL"</v>
-                              <v n="Comment">""</v>
-                              <v n="SymbolComment">""</v>
-                              <v n="Address">"%I*"</v>
-                              <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
-                                <v n="Flags">0</v>
-                                <v n="Fixed">false</v>
+                              <o>
+                                <v n="Operand">""</v>
+                                <v n="Type">"BOOL"</v>
+                                <v n="Comment">""</v>
+                                <v n="SymbolComment">""</v>
+                                <v n="Address">""</v>
+                                <o n="Flags" t="Flags">
+                                  <v n="Extensible">false</v>
+                                  <v n="Flags">0</v>
+                                  <v n="Fixed">false</v>
+                                </o>
+                                <v n="LValue">true</v>
+                                <v n="Boolean">false</v>
+                                <v n="IsInstance">false</v>
+                                <v n="Id">5L</v>
                               </o>
-                              <v n="LValue">false</v>
-                              <v n="Boolean">false</v>
-                              <v n="IsInstance">false</v>
-                              <v n="Id">13L</v>
-                            </o>
-                            <v n="Id">12L</v>
-                          </o>
-                          <o>
-                            <o n="Operand" t="Operand">
-                              <v n="Operand">"iq_ManipAxis.xLoLS"</v>
-                              <v n="Type">"BOOL"</v>
-                              <v n="Comment">""</v>
-                              <v n="SymbolComment">""</v>
-                              <v n="Address">"%I*"</v>
-                              <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
-                                <v n="Flags">0</v>
-                                <v n="Fixed">false</v>
+                              <o>
+                                <v n="Operand">""</v>
+                                <v n="Type">"BOOL"</v>
+                                <v n="Comment">""</v>
+                                <v n="SymbolComment">""</v>
+                                <v n="Address">""</v>
+                                <o n="Flags" t="Flags">
+                                  <v n="Extensible">false</v>
+                                  <v n="Flags">0</v>
+                                  <v n="Fixed">false</v>
+                                </o>
+                                <v n="LValue">true</v>
+                                <v n="Boolean">false</v>
+                                <v n="IsInstance">false</v>
+                                <v n="Id">6L</v>
                               </o>
-                              <v n="LValue">false</v>
-                              <v n="Boolean">false</v>
-                              <v n="IsInstance">false</v>
-                              <v n="Id">15L</v>
-                            </o>
-                            <v n="Id">14L</v>
-                          </o>
-                          <o>
-                            <o n="Operand" t="Operand">
-                              <v n="Operand">""</v>
-                              <v n="Type">"LREAL"</v>
-                              <v n="Comment">""</v>
-                              <v n="SymbolComment">""</v>
-                              <v n="Address">""</v>
-                              <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
-                                <v n="Flags">0</v>
-                                <v n="Fixed">false</v>
+                              <o>
+                                <v n="Operand">""</v>
+                                <v n="Type">"UDINT"</v>
+                                <v n="Comment">""</v>
+                                <v n="SymbolComment">""</v>
+                                <v n="Address">""</v>
+                                <o n="Flags" t="Flags">
+                                  <v n="Extensible">false</v>
+                                  <v n="Flags">0</v>
+                                  <v n="Fixed">false</v>
+                                </o>
+                                <v n="LValue">true</v>
+                                <v n="Boolean">false</v>
+                                <v n="IsInstance">false</v>
+                                <v n="Id">7L</v>
                               </o>
-                              <v n="LValue">false</v>
-                              <v n="Boolean">false</v>
-                              <v n="IsInstance">false</v>
-                              <v n="Id">17L</v>
-                            </o>
-                            <v n="Id">16L</v>
+                            </l2>
                           </o>
-                          <o>
-                            <o n="Operand" t="Operand">
-                              <v n="Operand">"MC_Aborting"</v>
-                              <v n="Type">"MC_BUFFERMODE"</v>
-                              <v n="Comment">""</v>
-                              <v n="SymbolComment">""</v>
-                              <v n="Address">""</v>
-                              <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
-                                <v n="Flags">0</v>
-                                <v n="Fixed">false</v>
+                          <o n="Flags" t="Flags">
+                            <v n="Extensible">false</v>
+                            <v n="Flags">0</v>
+                            <v n="Fixed">false</v>
+                          </o>
+                          <n n="InputFlags" />
+                          <l2 n="InputItems" cet="BoxTreeOperand">
+                            <o>
+                              <o n="Operand" t="Operand">
+                                <v n="Operand">"iq_ManipAxis.stAxis"</v>
+                                <v n="Type">"AXIS_REF"</v>
+                                <v n="Comment">""</v>
+                                <v n="SymbolComment">" Axis motor "</v>
+                                <v n="Address">""</v>
+                                <o n="Flags" t="Flags">
+                                  <v n="Extensible">false</v>
+                                  <v n="Flags">0</v>
+                                  <v n="Fixed">false</v>
+                                </o>
+                                <v n="LValue">false</v>
+                                <v n="Boolean">false</v>
+                                <v n="IsInstance">false</v>
+                                <v n="Id">9L</v>
                               </o>
-                              <v n="LValue">false</v>
-                              <v n="Boolean">false</v>
-                              <v n="IsInstance">false</v>
-                              <v n="Id">19L</v>
+                              <v n="Id">8L</v>
                             </o>
-                            <v n="Id">18L</v>
-                          </o>
-                          <o>
-                            <o n="Operand" t="Operand">
-                              <v n="Operand">""</v>
-                              <v n="Type">"ST_PowerOptions"</v>
-                              <v n="Comment">""</v>
-                              <v n="SymbolComment">""</v>
-                              <v n="Address">""</v>
-                              <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
-                                <v n="Flags">0</v>
-                                <v n="Fixed">false</v>
+                            <o>
+                              <o n="Operand" t="Operand">
+                                <v n="Operand">""</v>
+                                <v n="Type">"BOOL"</v>
+                                <v n="Comment">""</v>
+                                <v n="SymbolComment">""</v>
+                                <v n="Address">""</v>
+                                <o n="Flags" t="Flags">
+                                  <v n="Extensible">false</v>
+                                  <v n="Flags">0</v>
+                                  <v n="Fixed">false</v>
+                                </o>
+                                <v n="LValue">false</v>
+                                <v n="Boolean">false</v>
+                                <v n="IsInstance">false</v>
+                                <v n="Id">11L</v>
                               </o>
-                              <v n="LValue">false</v>
-                              <v n="Boolean">false</v>
-                              <v n="IsInstance">false</v>
-                              <v n="Id">21L</v>
+                              <v n="Id">10L</v>
                             </o>
-                            <v n="Id">20L</v>
-                          </o>
-                        </l2>
-                        <o n="InputParam" t="ParamList">
-                          <l2 n="Names" cet="String">
-                            <v>Axis</v>
-                            <v>Enable</v>
-                            <v>Enable_Positive</v>
-                            <v>Enable_Negative</v>
-                            <v>Override</v>
-                            <v>BufferMode</v>
-                            <v>Options</v>
+                            <o>
+                              <o n="Operand" t="Operand">
+                                <v n="Operand">"iq_ManipAxis.xHiLS"</v>
+                                <v n="Type">"BOOL"</v>
+                                <v n="Comment">""</v>
+                                <v n="SymbolComment">""</v>
+                                <v n="Address">"%I*"</v>
+                                <o n="Flags" t="Flags">
+                                  <v n="Extensible">false</v>
+                                  <v n="Flags">0</v>
+                                  <v n="Fixed">false</v>
+                                </o>
+                                <v n="LValue">false</v>
+                                <v n="Boolean">false</v>
+                                <v n="IsInstance">false</v>
+                                <v n="Id">13L</v>
+                              </o>
+                              <v n="Id">12L</v>
+                            </o>
+                            <o>
+                              <o n="Operand" t="Operand">
+                                <v n="Operand">"iq_ManipAxis.xLoLS"</v>
+                                <v n="Type">"BOOL"</v>
+                                <v n="Comment">""</v>
+                                <v n="SymbolComment">""</v>
+                                <v n="Address">"%I*"</v>
+                                <o n="Flags" t="Flags">
+                                  <v n="Extensible">false</v>
+                                  <v n="Flags">0</v>
+                                  <v n="Fixed">false</v>
+                                </o>
+                                <v n="LValue">false</v>
+                                <v n="Boolean">false</v>
+                                <v n="IsInstance">false</v>
+                                <v n="Id">15L</v>
+                              </o>
+                              <v n="Id">14L</v>
+                            </o>
+                            <o>
+                              <o n="Operand" t="Operand">
+                                <v n="Operand">""</v>
+                                <v n="Type">"LREAL"</v>
+                                <v n="Comment">""</v>
+                                <v n="SymbolComment">""</v>
+                                <v n="Address">""</v>
+                                <o n="Flags" t="Flags">
+                                  <v n="Extensible">false</v>
+                                  <v n="Flags">0</v>
+                                  <v n="Fixed">false</v>
+                                </o>
+                                <v n="LValue">false</v>
+                                <v n="Boolean">false</v>
+                                <v n="IsInstance">false</v>
+                                <v n="Id">17L</v>
+                              </o>
+                              <v n="Id">16L</v>
+                            </o>
+                            <o>
+                              <o n="Operand" t="Operand">
+                                <v n="Operand">"MC_Aborting"</v>
+                                <v n="Type">"MC_BUFFERMODE"</v>
+                                <v n="Comment">""</v>
+                                <v n="SymbolComment">""</v>
+                                <v n="Address">""</v>
+                                <o n="Flags" t="Flags">
+                                  <v n="Extensible">false</v>
+                                  <v n="Flags">0</v>
+                                  <v n="Fixed">false</v>
+                                </o>
+                                <v n="LValue">false</v>
+                                <v n="Boolean">false</v>
+                                <v n="IsInstance">false</v>
+                                <v n="Id">19L</v>
+                              </o>
+                              <v n="Id">18L</v>
+                            </o>
+                            <o>
+                              <o n="Operand" t="Operand">
+                                <v n="Operand">""</v>
+                                <v n="Type">"ST_PowerOptions"</v>
+                                <v n="Comment">""</v>
+                                <v n="SymbolComment">""</v>
+                                <v n="Address">""</v>
+                                <o n="Flags" t="Flags">
+                                  <v n="Extensible">false</v>
+                                  <v n="Flags">0</v>
+                                  <v n="Fixed">false</v>
+                                </o>
+                                <v n="LValue">false</v>
+                                <v n="Boolean">false</v>
+                                <v n="IsInstance">false</v>
+                                <v n="Id">21L</v>
+                              </o>
+                              <v n="Id">20L</v>
+                            </o>
                           </l2>
-                          <l2 n="Types" cet="String">
-                            <v>AXIS_REF[REF]</v>
-                            <v>BOOL</v>
-                            <v>BOOL</v>
-                            <v>BOOL</v>
-                            <v>LREAL</v>
-                            <v>MC_BufferMode</v>
-                            <v>ST_PowerOptions</v>
-                          </l2>
+                          <o n="InputParam" t="ParamList">
+                            <l2 n="Names" cet="String">
+                              <v>Axis</v>
+                              <v>Enable</v>
+                              <v>Enable_Positive</v>
+                              <v>Enable_Negative</v>
+                              <v>Override</v>
+                              <v>BufferMode</v>
+                              <v>Options</v>
+                            </l2>
+                            <l2 n="Types" cet="String">
+                              <v>AXIS_REF[REF]</v>
+                              <v>BOOL</v>
+                              <v>BOOL</v>
+                              <v>BOOL</v>
+                              <v>LREAL</v>
+                              <v>MC_BufferMode</v>
+                              <v>ST_PowerOptions</v>
+                            </l2>
+                          </o>
+                          <o n="OutputParam" t="ParamList">
+                            <l2 n="Names" cet="String">
+                              <v>Status</v>
+                              <v>Busy</v>
+                              <v>Active</v>
+                              <v>Error</v>
+                              <v>ErrorID</v>
+                            </l2>
+                            <l2 n="Types" cet="String">
+                              <v>BOOL</v>
+                              <v>BOOL</v>
+                              <v>BOOL</v>
+                              <v>BOOL</v>
+                              <v>UDINT</v>
+                            </l2>
+                          </o>
+                          <v n="CallType" t="Operator">FunctionBlock</v>
+                          <v n="EN">false</v>
+                          <v n="ENO">false</v>
+                          <n n="STSnippet" />
+                          <v n="Id">3L</v>
                         </o>
-                        <o n="OutputParam" t="ParamList">
-                          <l2 n="Names" cet="String">
-                            <v>Status</v>
-                            <v>Busy</v>
-                            <v>Active</v>
-                            <v>Error</v>
-                            <v>ErrorID</v>
-                          </l2>
-                          <l2 n="Types" cet="String">
-                            <v>BOOL</v>
-                            <v>BOOL</v>
-                            <v>BOOL</v>
-                            <v>BOOL</v>
-                            <v>UDINT</v>
-                          </l2>
-                        </o>
-                        <v n="CallType" t="Operator">FunctionBlock</v>
-                        <v n="EN">false</v>
-                        <v n="ENO">false</v>
-                        <n n="STSnippet" />
-                        <v n="Id">3L</v>
+                        <v n="Id">23L</v>
                       </o>
                     </l2>
                     <l2 n="Connectors" />
@@ -412,6 +448,7 @@ END_FOR]]></ST>
             </Data>
             <TypeList>
               <Type n="Boolean">System.Boolean</Type>
+              <Type n="BoxTreeAssign">{9873c309-1f09-4ebf-9078-42d8057ef11b}</Type>
               <Type n="BoxTreeBox">{acfc6f68-8e3a-4af5-bf81-3dd512095a46}</Type>
               <Type n="BoxTreeOperand">{9de7f100-1b87-424c-a62e-45b0cfc85ed2}</Type>
               <Type n="Flags">{668066f2-6069-46b3-8962-8db8d13d7db2}</Type>
@@ -444,8 +481,16 @@ indexResult := indexResult +1;]]></ST>
       </Implementation>
     </Action>
     <LineIds Name="FB_ManipAxis">
-      <LineId Id="3" Count="38" />
-      <LineId Id="123" Count="8" />
+      <LineId Id="3" Count="18" />
+      <LineId Id="175" Count="0" />
+      <LineId Id="173" Count="1" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="171" Count="0" />
+      <LineId Id="169" Count="1" />
+      <LineId Id="23" Count="18" />
+      <LineId Id="123" Count="7" />
+      <LineId Id="176" Count="0" />
+      <LineId Id="131" Count="0" />
       <LineId Id="67" Count="0" />
       <LineId Id="70" Count="19" />
       <LineId Id="133" Count="1" />

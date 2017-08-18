@@ -144,7 +144,7 @@
     <Compile Include="POUs\ALI\FB_ALI.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\ALI\FB_AxisRef_To_MSTA.TcPOU">
+    <Compile Include="POUs\ALI\F_AxisRef_To_MSTA.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\ALI\FB_ManipAxis.TcPOU">

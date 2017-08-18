@@ -13,6 +13,10 @@ xStop	:	BOOL;
 wMode	:	E_AxisMoveMode;
 //EPICS motor status
 uiMsta	:	UINT;
+//EPICS Position readback
+rActPos	:	REAL;
+//Axis enabled readback
+xEnabled	:	BOOL;
 	
 (* Axis motor *)
 stAxis	:	AXIS_REF;

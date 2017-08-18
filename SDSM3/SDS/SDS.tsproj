@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4020.32">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4020.28">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-000000000035}" TcBaseType="true" HideType="true">UINTARR2</Name>
@@ -1890,6 +1890,66 @@ External Setpoint Generation:
 			</Hides>
 		</DataType>
 		<DataType>
+			<Name GUID="{85DC3E7A-8ADA-435B-9479-25573909A7DB}" Namespace="AX5000" TcBaseType="true">E_AX5000_P_0275_ActiveFeedbackAndMemory</Name>
+			<BitSize>8</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<EnumInfo>
+				<Text>
+					<![CDATA[EAX5000_P_0275_MEMORY_NONE]]>
+				</Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_ENCODER]]>
+				</Text>
+				<Enum>1</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_DRIVE]]>
+				</Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_ENCODER]]>
+				</Text>
+				<Enum>8</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_DRIVE]]>
+				</Text>
+				<Enum>16</Enum>
+			</EnumInfo>
+			<Hides>
+				<Hide GUID="{F1A82E04-2D76-4E5D-BB15-437337214D25}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{D7D16A25-71D5-48E0-882D-56AB4D826BC2}" Namespace="AX5000" PersistentType="true">ST_AX5000_P_0275</Name>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>ActiveFeedbackAndMemory</Name>
+				<Type GUID="{85DC3E7A-8ADA-435B-9479-25573909A7DB}" Namespace="AX5000">E_AX5000_P_0275_ActiveFeedbackAndMemory</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>InitializationErrorBehavior</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{0D1A14D3-018F-4F48-88A7-90B490A317B5}"/>
+				<Hide GUID="{43B3CFF1-FA94-4CC1-8B03-C73EF940373B}"/>
+				<Hide GUID="{81B09CD0-943C-4070-AA5B-0A6818251CEB}"/>
+				<Hide GUID="{B6598B95-DC2C-454C-9B12-DE628B32D897}"/>
+			</Hides>
+		</DataType>
+		<DataType>
 			<Name GUID="{A39361D3-D4AC-4F67-8FEE-F366F3137B89}" Namespace="AX5000" PersistentType="true">E_AX5000_P_0275_ActiveFeedbackAndMemory</Name>
 			<BitSize>8</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
@@ -1949,66 +2009,6 @@ External Setpoint Generation:
 				<Hide GUID="{81B09CD0-943C-4070-AA5B-0A6818251CEB}"/>
 				<Hide GUID="{B6598B95-DC2C-454C-9B12-DE628B32D897}"/>
 				<Hide GUID="{D7D16A25-71D5-48E0-882D-56AB4D826BC2}"/>
-			</Hides>
-		</DataType>
-		<DataType>
-			<Name GUID="{85DC3E7A-8ADA-435B-9479-25573909A7DB}" Namespace="AX5000" TcBaseType="true">E_AX5000_P_0275_ActiveFeedbackAndMemory</Name>
-			<BitSize>8</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
-			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_MEMORY_NONE]]>
-				</Text>
-				<Enum>0</Enum>
-			</EnumInfo>
-			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_ENCODER]]>
-				</Text>
-				<Enum>1</Enum>
-			</EnumInfo>
-			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_DRIVE]]>
-				</Text>
-				<Enum>2</Enum>
-			</EnumInfo>
-			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_ENCODER]]>
-				</Text>
-				<Enum>8</Enum>
-			</EnumInfo>
-			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_DRIVE]]>
-				</Text>
-				<Enum>16</Enum>
-			</EnumInfo>
-			<Hides>
-				<Hide GUID="{F1A82E04-2D76-4E5D-BB15-437337214D25}"/>
-			</Hides>
-		</DataType>
-		<DataType>
-			<Name GUID="{D7D16A25-71D5-48E0-882D-56AB4D826BC2}" Namespace="AX5000" PersistentType="true">ST_AX5000_P_0275</Name>
-			<BitSize>16</BitSize>
-			<SubItem>
-				<Name>ActiveFeedbackAndMemory</Name>
-				<Type GUID="{85DC3E7A-8ADA-435B-9479-25573909A7DB}" Namespace="AX5000">E_AX5000_P_0275_ActiveFeedbackAndMemory</Type>
-				<BitSize>8</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>InitializationErrorBehavior</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
-				<BitSize>1</BitSize>
-				<BitOffs>8</BitOffs>
-			</SubItem>
-			<Hides>
-				<Hide GUID="{0D1A14D3-018F-4F48-88A7-90B490A317B5}"/>
-				<Hide GUID="{43B3CFF1-FA94-4CC1-8B03-C73EF940373B}"/>
-				<Hide GUID="{81B09CD0-943C-4070-AA5B-0A6818251CEB}"/>
-				<Hide GUID="{B6598B95-DC2C-454C-9B12-DE628B32D897}"/>
 			</Hides>
 		</DataType>
 	</DataTypes>
@@ -2523,8 +2523,8 @@ External Setpoint Generation:
 						<Velo Maximum="5"/>
 						<OtherSettings AllowMotionCmdToSlave="true"/>
 					</AxisPara>
-					<Encoder Name="Enc" EncType="4">
-						<EncPara ScaleFactorNumerator="9.921875e-005" MaxCount="#x0000ffff">
+					<Encoder Name="Enc" EncType="1">
+						<EncPara ScaleFactorNumerator="9.921875e-005">
 							<Inc RefSoftSyncMask="#x0000ffff"/>
 						</EncPara>
 						<Vars VarGrpType="1">
@@ -2589,7 +2589,7 @@ External Setpoint Generation:
 							</Var>
 						</Vars>
 					</Encoder>
-					<Drive Name="Drive" DrvType="24">
+					<Drive Name="Drive" DrvType="5">
 						<DrvPara>
 							<Analog VeloReferenz="12.7"/>
 							<TimeComp TaskDelayCycles="1"/>
@@ -2753,9 +2753,9 @@ External Setpoint Generation:
 						<Velo Maximum="1"/>
 						<OtherSettings AllowMotionCmdToSlave="true"/>
 					</AxisPara>
-					<Encoder Name="Enc" EncType="4">
-						<EncPara ScaleFactorNumerator="3.96875e-005" MaxCount="#x0000ffff">
-							<Inc RefMode="2" RefSoftSyncMask="#x0000ffff"/>
+					<Encoder Name="Enc" EncType="1">
+						<EncPara ScaleFactorNumerator="3.96875e-005">
+							<Inc RefSoftSyncMask="#x0000ffff"/>
 						</EncPara>
 						<Vars VarGrpType="1">
 							<Name>Inputs</Name>
@@ -2819,7 +2819,7 @@ External Setpoint Generation:
 							</Var>
 						</Vars>
 					</Encoder>
-					<Drive Name="Drive" DrvType="24">
+					<Drive Name="Drive" DrvType="5">
 						<DrvPara>
 							<Analog VeloReferenz="5.08"/>
 							<TimeComp TaskDelayCycles="1"/>
@@ -2983,8 +2983,8 @@ External Setpoint Generation:
 						<Velo Maximum="5"/>
 						<OtherSettings AllowMotionCmdToSlave="true"/>
 					</AxisPara>
-					<Encoder Name="Enc" EncType="4">
-						<EncPara ScaleFactorNumerator="9.921875e-005" MaxCount="#x0000ffff">
+					<Encoder Name="Enc" EncType="1">
+						<EncPara ScaleFactorNumerator="9.921875e-005">
 							<Inc RefSoftSyncMask="#x0000ffff"/>
 						</EncPara>
 						<Vars VarGrpType="1">
@@ -3049,7 +3049,7 @@ External Setpoint Generation:
 							</Var>
 						</Vars>
 					</Encoder>
-					<Drive Name="Drive" DrvType="24">
+					<Drive Name="Drive" DrvType="5">
 						<DrvPara>
 							<Analog VeloReferenz="12.7"/>
 							<TimeComp TaskDelayCycles="1"/>
@@ -3496,14 +3496,6 @@ External Setpoint Generation:
 							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.i_iFscEB1Ch1AI</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.i_iFscEB1Ch2AI</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
 							<Name>GVL_IO.iq_stM2SelectorA.i_SyncUnitWC</Name>
 							<Comment>
 								<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
@@ -3718,6 +3710,14 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 							<Type GUID="{36F14137-BDBF-4071-A1BA-DA14C40D8519}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 						</Var>
 						<Var>
+							<Name>GVL_IO.i_iFscEB1Ch1AI</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.i_iFscEB1Ch2AI</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
 							<Name>GVL_IO.i_iFscEB1Ch3AI</Name>
 							<Type>INT</Type>
 						</Var>
@@ -3751,6 +3751,33 @@ EP3174 Vacuum Gauges, misc analog]]>
 						</Var>
 						<Var>
 							<Name>GVL_Devices.stALI.i_EP3174_Ch4</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.stALI.i_EP2338_Ch5</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.stALI.i_EP2338_Ch6</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.stALI.i_EP2338_Ch7</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.stALI.i_EP2338_Ch8</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.stALI.i_EP4374_Ch1</Name>
+							<Comment>
+								<![CDATA[EP4374 Pressure Control]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.stALI.i_EP4374_Ch2</Name>
 							<Type>INT</Type>
 						</Var>
 						<Var>
@@ -3987,6 +4014,55 @@ External Setpoint Generation:
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>p_ALI.fbALI_A.fbAxisToMSTA.stAxis.NcToPlc</Name>
+							<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
@@ -4103,6 +4179,34 @@ External Setpoint Generation:
 							<Type GUID="{50443F2A-20C4-4CF6-BF4C-6E216480FC53}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 						</Var>
 						<Var>
+							<Name>GVL_Devices.stALI.q_EP2338_Ch1</Name>
+							<Comment>
+								<![CDATA[EP7041 - Prop valve
+EP2338 Misc DIO]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.stALI.q_EP2338_Ch2</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.stALI.q_EP2338_Ch3</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.stALI.q_EP2338_Ch4</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.stALI.q_EP4374_Ch3</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.stALI.q_EP4374_Ch4</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
 							<Name>GVL_Devices.stALI.axisX.stAxis.PlcToNc</Name>
 							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 						</Var>
@@ -4116,6 +4220,10 @@ External Setpoint Generation:
 						</Var>
 						<Var>
 							<Name>GVL_Devices.stALI.stPropVlv.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>p_ALI.fbALI_A.fbAxisToMSTA.stAxis.PlcToNc</Name>
 							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 						</Var>
 					</Vars>
@@ -4723,7 +4831,7 @@ Bit1: Value bigger/equal Limit2]]>
 						<Fmmu>0000000000000000801100010100000002000000000000000000000000000000</Fmmu>
 						<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
 						<BootStrapData>0010f400f410f400</BootStrapData>
-						<HcData>0900000008000000020000000000000000000000000000000000000000000000</HcData>
+						<HcData>0800000008000000020000000000000000000000000000000000000000000000</HcData>
 						<Pdo Name="ID Inputs" Index="#x1a00" Flags="#x0011" SyncMan="3">
 							<Entry Name="ID" Index="#xf600" Sub="#x01">
 								<Type>UINT</Type>
@@ -6947,9 +7055,9 @@ Bit1: Value smaller than Limit2]]>
 					</EtherCAT>
 				</Box>
 				<Box BoxType="9099" Id="47">
-					<Name>ALI_Y_ENC (EP5101-0002)</Name>
+					<Name>ALI_Y_ENC (EP5101-0011)</Name>
 					<ImageId>1008</ImageId>
-					<EtherCAT SlaveType="2" PdiType="#x0e05" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="7" FoeType="1" VendorId="#x00000002" ProductCode="#x13ed4052" RevisionNo="#x00130002" InfoDataAddr="true" TimeoutMailbox2="2000" CheckRevisionNoType="3" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP5101-0002 1Ch. Inc. Encoder 5V, M12" Desc="EP5101-0002" PortABoxInfo="#x0100002e">
+					<EtherCAT SlaveType="2" PdiType="#x0e05" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="7" FoeType="1" VendorId="#x00000002" ProductCode="#x13ed4052" RevisionNo="#x0013000b" InfoDataAddr="true" TimeoutMailbox2="2000" CheckRevisionNoType="3" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP5101-0011 1Ch. Inc. Encoder 5V, D-SUB15" Desc="EP5101-0011" PortABoxInfo="#x0100002e">
 						<SyncMan>001080002600010001000000800080008000001026010000</SyncMan>
 						<SyncMan>801080002200010002000000800080008000801022010000</SyncMan>
 						<SyncMan>001104002400010003000000000000000400001124010000</SyncMan>
@@ -6966,8 +7074,8 @@ Bit1: Value smaller than Limit2]]>
 							<Entry Name="Status__Latch C valid" Index="#x6000" Sub="#x01">
 								<Type>BIT</Type>
 							</Entry>
-							<Entry Name="Status__">
-								<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+							<Entry Name="Status__Latch extern valid" Index="#x6000" Sub="#x02">
+								<Type>BIT</Type>
 							</Entry>
 							<Entry Name="Status__Set counter done" Index="#x6000" Sub="#x03">
 								<Type>BIT</Type>
@@ -6978,8 +7086,8 @@ Bit1: Value smaller than Limit2]]>
 							<Entry Name="Status__Counter overflow" Index="#x6000" Sub="#x05">
 								<Type>BIT</Type>
 							</Entry>
-							<Entry Name="Status__">
-								<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+							<Entry Name="Status__Status of input status" Index="#x6000" Sub="#x06">
+								<Type>BIT</Type>
 							</Entry>
 							<Entry Name="Status__Open circuit" Index="#x6000" Sub="#x07">
 								<Type>BIT</Type>
@@ -6996,8 +7104,11 @@ Bit1: Value smaller than Limit2]]>
 							<Entry Name="Status__Status of input C" Index="#x6000" Sub="#x0b">
 								<Type>BIT</Type>
 							</Entry>
-							<Entry Name="Status__">
-								<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+							<Entry Name="Status__Status of input gate" Index="#x6000" Sub="#x0c">
+								<Type>BIT</Type>
+							</Entry>
+							<Entry Name="Status__Status of extern latch" Index="#x6000" Sub="#x0d">
+								<Type>BIT</Type>
 							</Entry>
 							<Entry Name="Status__Sync error" Index="#x1c32" Sub="#x20">
 								<Type>BIT</Type>
@@ -7020,8 +7131,8 @@ Bit1: Value smaller than Limit2]]>
 							<Entry Name="Status__Latch C valid" Index="#x6000" Sub="#x01">
 								<Type>BIT</Type>
 							</Entry>
-							<Entry Name="Status__">
-								<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+							<Entry Name="Status__Latch extern valid" Index="#x6000" Sub="#x02">
+								<Type>BIT</Type>
 							</Entry>
 							<Entry Name="Status__Set counter done" Index="#x6000" Sub="#x03">
 								<Type>BIT</Type>
@@ -7032,8 +7143,8 @@ Bit1: Value smaller than Limit2]]>
 							<Entry Name="Status__Counter overflow" Index="#x6000" Sub="#x05">
 								<Type>BIT</Type>
 							</Entry>
-							<Entry Name="Status__">
-								<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+							<Entry Name="Status__Status of input status" Index="#x6000" Sub="#x06">
+								<Type>BIT</Type>
 							</Entry>
 							<Entry Name="Status__Open circuit" Index="#x6000" Sub="#x07">
 								<Type>BIT</Type>
@@ -7050,8 +7161,11 @@ Bit1: Value smaller than Limit2]]>
 							<Entry Name="Status__Status of input C" Index="#x6000" Sub="#x0b">
 								<Type>BIT</Type>
 							</Entry>
-							<Entry Name="Status__">
-								<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+							<Entry Name="Status__Status of input gate" Index="#x6000" Sub="#x0c">
+								<Type>BIT</Type>
+							</Entry>
+							<Entry Name="Status__Status of extern latch" Index="#x6000" Sub="#x0d">
+								<Type>BIT</Type>
 							</Entry>
 							<Entry Name="Status__Sync error" Index="#x1c32" Sub="#x20">
 								<Type>BIT</Type>
@@ -7098,14 +7212,17 @@ Bit1: Value smaller than Limit2]]>
 							<Entry Name="Control__Enable latch C" Index="#x7000" Sub="#x01">
 								<Type>BIT</Type>
 							</Entry>
-							<Entry Name="Control__">
-								<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+							<Entry Name="Control__Enable latch extern on positive edge" Index="#x7000" Sub="#x02">
+								<Type>BIT</Type>
 							</Entry>
 							<Entry Name="Control__Set counter" Index="#x7000" Sub="#x03">
 								<Type>BIT</Type>
 							</Entry>
+							<Entry Name="Control__Enable latch extern on negative edge" Index="#x7000" Sub="#x04">
+								<Type>BIT</Type>
+							</Entry>
 							<Entry Name="Control__">
-								<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+								<Type GUID="{18071995-0000-0000-0000-002000000004}">ARRAY [0..3] OF BIT</Type>
 							</Entry>
 							<Entry Name="Control__">
 								<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
@@ -7119,14 +7236,17 @@ Bit1: Value smaller than Limit2]]>
 							<Entry Name="Control__Enable latch C" Index="#x7000" Sub="#x01">
 								<Type>BIT</Type>
 							</Entry>
-							<Entry Name="Control__">
-								<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+							<Entry Name="Control__Enable latch extern on positive edge" Index="#x7000" Sub="#x02">
+								<Type>BIT</Type>
 							</Entry>
 							<Entry Name="Control__Set counter" Index="#x7000" Sub="#x03">
 								<Type>BIT</Type>
 							</Entry>
+							<Entry Name="Control__Enable latch extern on negative edge" Index="#x7000" Sub="#x04">
+								<Type>BIT</Type>
+							</Entry>
 							<Entry Name="Control__">
-								<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+								<Type GUID="{18071995-0000-0000-0000-002000000004}">ARRAY [0..3] OF BIT</Type>
 							</Entry>
 							<Entry Name="Control__">
 								<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
@@ -7138,7 +7258,7 @@ Bit1: Value smaller than Limit2]]>
 						<CoeProfile ProfileNo="33493897"/>
 					</EtherCAT>
 				</Box>
-				<Box BoxType="9099" Id="48">
+				<Box Disabled="true" BoxType="9099" Id="48">
 					<Name>ALI_DIO (EP2338-0001)</Name>
 					<ImageId>1008</ImageId>
 					<EtherCAT SlaveType="1" PdiType="#x0304" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x09224052" RevisionNo="#x00170001" RepeatSupport="true" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP2338-0001 8 Ch. Dig. Input/Output 24V, 0,5A, M8" Desc="EP2338-0001" PortABoxInfo="#x0100002f">
@@ -16347,135 +16467,6 @@ Bit1: Value smaller than Limit2]]>
 		<MappingInfo Identifier="{00000000-0011-0101-1000-010120000403}" Id="#x02030050"/>
 		<MappingInfo Identifier="{00000000-0011-0101-1000-010140000403}" Id="#x02030040"/>
 		<MappingInfo Identifier="{00000000-0030-0304-5000-040330000403}" Id="#x02030020"/>
-		<OwnerA Name="TINC^NC-Task 1 SAF^Axes^ALI_X">
-			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_X (EP7041-0002)">
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Error" Size="1" OffsA="3"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Moving negative" Size="1" OffsA="5"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Moving positive" Size="1" OffsA="4"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Ready" Size="1" OffsA="1"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Ready to enable"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Torque reduced" Size="1" OffsA="6"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Warning" Size="1" OffsA="2"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^Digital input 1" Size="1" OffsA="3"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^Digital input 2" Size="1" OffsA="4"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^Sync error" Size="1" OffsA="5"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^TxPDO Toggle" Size="1" OffsA="7"/>
-				<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
-				<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^WcState"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="STM Control^Control^Enable"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="STM Control^Control^Reduce torque" Size="1" OffsA="2"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="STM Control^Control^Reset" Size="1" OffsA="1"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl2" VarB="STM Control^Control^Digital output 1" Size="1" OffsA="3"/>
-				<Link VarA="Drive^Outputs^Out^nDataOut2[0]" VarB="STM Velocity^Velocity"/>
-				<Link VarA="Enc^Inputs^In^nDataIn1[0]" VarB="ENC Status compact^Counter value"/>
-				<Link VarA="Enc^Inputs^In^nDataIn2[0]" VarB="ENC Status compact^Latch value"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Counter overflow" Size="1" OffsA="4"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Counter underflow" Size="1" OffsA="3"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Extrapolation stall" Size="1" OffsA="7"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Latch C valid"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Latch extern valid" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Set counter done" Size="1" OffsA="2"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Status of extern latch" Size="1" OffsA="4"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Status of input A"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Status of input B" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Status of input C" Size="1" OffsA="2"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Sync error" Size="1" OffsA="5"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^TxPDO Toggle" Size="1" OffsA="7"/>
-				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^WcState"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control compact^Control^Enable latch C"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control compact^Control^Enable latch extern on negative edge" Size="1" OffsA="3"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control compact^Control^Enable latch extern on positive edge" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control compact^Control^Set counter" Size="1" OffsA="2"/>
-				<Link VarA="Enc^Outputs^Out^nDataOut1[0]" VarB="ENC Control compact^Set counter value"/>
-			</OwnerB>
-		</OwnerA>
-		<OwnerA Name="TINC^NC-Task 1 SAF^Axes^ALI_Y">
-			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_Y (EP7041-0002)">
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Error" Size="1" OffsA="3"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Moving negative" Size="1" OffsA="5"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Moving positive" Size="1" OffsA="4"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Ready" Size="1" OffsA="1"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Ready to enable"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Torque reduced" Size="1" OffsA="6"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Warning" Size="1" OffsA="2"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^Digital input 1" Size="1" OffsA="3"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^Digital input 2" Size="1" OffsA="4"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^Sync error" Size="1" OffsA="5"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^TxPDO Toggle" Size="1" OffsA="7"/>
-				<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
-				<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^WcState"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="STM Control^Control^Enable"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="STM Control^Control^Reduce torque" Size="1" OffsA="2"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="STM Control^Control^Reset" Size="1" OffsA="1"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl2" VarB="STM Control^Control^Digital output 1" Size="1" OffsA="3"/>
-				<Link VarA="Drive^Outputs^Out^nDataOut2[0]" VarB="STM Velocity^Velocity"/>
-				<Link VarA="Enc^Inputs^In^nDataIn1[0]" VarB="ENC Status compact^Counter value"/>
-				<Link VarA="Enc^Inputs^In^nDataIn2[0]" VarB="ENC Status compact^Latch value"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Counter overflow" Size="1" OffsA="4"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Counter underflow" Size="1" OffsA="3"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Extrapolation stall" Size="1" OffsA="7"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Latch C valid"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Latch extern valid" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Set counter done" Size="1" OffsA="2"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Status of extern latch" Size="1" OffsA="4"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Status of input A"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Status of input B" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Status of input C" Size="1" OffsA="2"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Sync error" Size="1" OffsA="5"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^TxPDO Toggle" Size="1" OffsA="7"/>
-				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^WcState"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control compact^Control^Enable latch C"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control compact^Control^Enable latch extern on negative edge" Size="1" OffsA="3"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control compact^Control^Enable latch extern on positive edge" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control compact^Control^Set counter" Size="1" OffsA="2"/>
-				<Link VarA="Enc^Outputs^Out^nDataOut1[0]" VarB="ENC Control compact^Set counter value"/>
-			</OwnerB>
-		</OwnerA>
-		<OwnerA Name="TINC^NC-Task 1 SAF^Axes^ALI_Z">
-			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_Z (EP7041-0002)">
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Error" Size="1" OffsA="3"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Moving negative" Size="1" OffsA="5"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Moving positive" Size="1" OffsA="4"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Ready" Size="1" OffsA="1"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Ready to enable"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Torque reduced" Size="1" OffsA="6"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Warning" Size="1" OffsA="2"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^Digital input 1" Size="1" OffsA="3"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^Digital input 2" Size="1" OffsA="4"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^Sync error" Size="1" OffsA="5"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^TxPDO Toggle" Size="1" OffsA="7"/>
-				<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
-				<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^WcState"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="STM Control^Control^Enable"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="STM Control^Control^Reduce torque" Size="1" OffsA="2"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="STM Control^Control^Reset" Size="1" OffsA="1"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl2" VarB="STM Control^Control^Digital output 1" Size="1" OffsA="3"/>
-				<Link VarA="Drive^Outputs^Out^nDataOut2[0]" VarB="STM Velocity^Velocity"/>
-				<Link VarA="Enc^Inputs^In^nDataIn1[0]" VarB="ENC Status compact^Counter value"/>
-				<Link VarA="Enc^Inputs^In^nDataIn2[0]" VarB="ENC Status compact^Latch value"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Counter overflow" Size="1" OffsA="4"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Counter underflow" Size="1" OffsA="3"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Extrapolation stall" Size="1" OffsA="7"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Latch C valid"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Latch extern valid" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Set counter done" Size="1" OffsA="2"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Status of extern latch" Size="1" OffsA="4"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Status of input A"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Status of input B" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Status of input C" Size="1" OffsA="2"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Sync error" Size="1" OffsA="5"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^TxPDO Toggle" Size="1" OffsA="7"/>
-				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^WcState"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control compact^Control^Enable latch C"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control compact^Control^Enable latch extern on negative edge" Size="1" OffsA="3"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control compact^Control^Enable latch extern on positive edge" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control compact^Control^Set counter" Size="1" OffsA="2"/>
-				<Link VarA="Enc^Outputs^Out^nDataOut1[0]" VarB="ENC Control compact^Set counter value"/>
-			</OwnerB>
-		</OwnerA>
 		<OwnerA Name="TINC^NC-Task 1 SAF^Axes^Axis 6">
 			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_PropValve (EP7041-0002)">
 				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Error" Size="1" OffsA="3"/>
@@ -16522,6 +16513,7 @@ Bit1: Value smaller than Limit2]]>
 		<OwnerA Name="TIPC^SDSM3^SDSM3 Instance">
 			<OwnerB Name="TIID^MAIN (EtherCAT)">
 				<Link VarA="PlcTask Inputs^GVL.g_aEcatMaster1" VarB="InfoData^AmsNetId"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.i_SyncUnitWC" VarB="SyncUnits^[ALI (EP1111)]^PlcTask^WcState^WcState"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorA.i_SyncUnitWC" VarB="SyncUnits^[M2 Selector A (EP1111)]^PlcTask^WcState^WcState"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorB.i_SyncUnitWC" VarB="SyncUnits^[M2 Selector B (EP1111)]^&lt;unreferenced&gt;^WcState^WcState"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.i_SyncUnitWC" VarB="SyncUnits^[M3 Selector A (EP1111)]^PlcTask^WcState^WcState"/>
@@ -16535,9 +16527,17 @@ Bit1: Value smaller than Limit2]]>
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.i_EP3174_Ch3" VarB="AI Standard Channel 3^Value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.i_EP3174_Ch4" VarB="AI Standard Channel 4^Value"/>
 			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_PropValve (EP7041-0002)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.stPropVlv.i_HLS" VarB="STM Status^Status^Digital input 2"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.stPropVlv.i_LLS" VarB="STM Status^Status^Digital input 1"/>
+			</OwnerB>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_X (EP7041-0002)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisX.xHiLS" VarB="STM Status^Status^Digital input 2"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisX.xLoLS" VarB="STM Status^Status^Digital input 1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_Y (EP7041-0002)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisY.xHiLS" VarB="STM Status^Status^Digital input 2"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisY.xLoLS" VarB="STM Status^Status^Digital input 1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_Z (EP7041-0002)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisZ.xHiLS" VarB="STM Status^Status^Digital input 2"/>

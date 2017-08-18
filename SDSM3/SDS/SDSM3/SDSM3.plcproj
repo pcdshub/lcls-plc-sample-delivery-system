@@ -27,6 +27,9 @@
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
     </Compile>
+    <Compile Include="DUTs\ALI\E_CTRL_MODE.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\ALI\ST_ALI.TcDUT">
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
@@ -34,6 +37,9 @@
     <Compile Include="DUTs\ALI\ST_ManipAxis.TcDUT">
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="DUTs\ALI\ST_PressureController.TcDUT">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\ALI\ST_PropValveMKS253.TcDUT">
       <SubType>Code</SubType>
@@ -53,6 +59,9 @@
     <Compile Include="DUTs\E_AxisMotionState.TcDUT">
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="DUTs\IO_Structs\ST_ALIIO.TcDUT">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\IO_Structs\ST_M2SelectorIO.TcDUT">
       <SubType>Code</SubType>
@@ -135,9 +144,15 @@
     <Compile Include="POUs\ALI\FB_ALI.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\ALI\FB_AxisRef_To_MSTA.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\ALI\FB_ManipAxis.TcPOU">
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="POUs\ALI\FB_PropValve.TcPOU">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Bronkhorst\FB_L01Driver.TcPOU">
       <SubType>Code</SubType>

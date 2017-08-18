@@ -126,10 +126,10 @@ mb_Input_Coils[75]:=stManiVlv8.ixOPN;  //Minitti manifold valve controls
 	mb_Input_Coils[88]:=FALSE;  //ALI_Manip
 	mb_Input_Coils[89]:=FALSE;  //ALI_Manip
 	
-	mb_Input_Registers[80]:=0;  //ALI_Manip
-	mb_Input_Registers[81]:=0;  //ALI_Manip
-	mb_Input_Registers[82]:=0;  //ALI_Manip
-	mb_Input_Registers[83]:=0;  //ALI_Manip
+	mb_Input_Registers[80]:=stALI.stPressCtrl.q_iPercOpen;  //ALI_Manip
+	mb_Input_Registers[81]:=stALI.axisX.uiMsta;  //ALI_Manip
+	mb_Input_Registers[82]:=stALI.axisY.uiMsta;  //ALI_Manip
+	mb_Input_Registers[83]:=stALI.axisZ.uiMsta;  //ALI_Manip
 	mb_Input_Registers[84]:=0;  //ALI_Manip
 	mb_Input_Registers[85]:=0;  //ALI_Manip
 	mb_Input_Registers[86]:=0;  //ALI_Manip
@@ -148,9 +148,7 @@ mb_Input_Coils[75]:=stManiVlv8.ixOPN;  //Minitti manifold valve controls
 	mb_Output_Coils[88]:=stALI.axisZ.xStop;  //ALI_Manip
 	mb_Output_Coils[89]:=FALSE;  //ALI_Manip
 	
-	mb_Output_Registers[78]:=stALI.axisX.wMode;  //ALI_Manip
-	mb_Output_Registers[79]:=stALI.axisY.wMode;  //ALI_Manip
-	mb_Output_Registers[80]:=stALI.axisZ.wMode;  //ALI_Manip
+	mb_Output_Registers[80]:=stALI.stPressCtrl.i_iPercOpenSP;  //ALI_Manip
 	mb_Output_Registers[81]:=0;  //ALI_Manip
 	mb_Output_Registers[82]:=0;  //ALI_Manip
 	mb_Output_Registers[83]:=0;  //ALI_Manip
@@ -170,17 +168,12 @@ mb_Input_Coils[75]:=stManiVlv8.ixOPN;  //Minitti manifold valve controls
 	MEMCPY(destAddr:=ADR(mb_PLC_Memory[90]), srcAddr:=ADR(stALI.axisX.rReqAbsPos), n:=SIZEOF(stALI.axisX.rReqAbsPos));  //ALI CTRL
 	MEMCPY(destAddr:=ADR(mb_PLC_Memory[92]), srcAddr:=ADR(stALI.axisY.rReqAbsPos), n:=SIZEOF(stALI.axisY.rReqAbsPos));  //ALI CTRL
 	MEMCPY(destAddr:=ADR(mb_PLC_Memory[94]), srcAddr:=ADR(stALI.axisZ.rReqAbsPos), n:=SIZEOF(stALI.axisZ.rReqAbsPos));  //ALI CTRL
-	MEMCPY(destAddr:=ADR(mb_PLC_Memory[96]), srcAddr:=ADR(stALI.axisX.rReqRelPos), n:=SIZEOF(stALI.axisX.rReqRelPos));  //ALI CTRL
-	MEMCPY(destAddr:=ADR(mb_PLC_Memory[98]), srcAddr:=ADR(stALI.axisY.rReqRelPos), n:=SIZEOF(stALI.axisY.rReqRelPos));  //ALI CTRL
-	MEMCPY(destAddr:=ADR(mb_PLC_Memory[100]), srcAddr:=ADR(stALI.axisZ.rReqRelPos), n:=SIZEOF(stALI.axisZ.rReqRelPos));  //ALI CTRL
+
 ]]></ST>
     </Implementation>
     <LineIds Name="p_ModbusTx">
-      <LineId Id="3" Count="10" />
-      <LineId Id="193" Count="0" />
-      <LineId Id="14" Count="40" />
-      <LineId Id="73" Count="4" />
-      <LineId Id="81" Count="108" />
+      <LineId Id="197" Count="161" />
+      <LineId Id="361" Count="0" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

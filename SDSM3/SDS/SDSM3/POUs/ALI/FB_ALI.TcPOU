@@ -17,6 +17,10 @@ VAR
 	fbManipX	:	FB_ManipAxis;
 	fbManipY	:	FB_ManipAxis;
 	fbManipZ	:	FB_ManipAxis;
+	
+	fbAxisToMSTA	:	FB_AxisRef_To_MSTA;
+	
+	fbPropValve		:	FB_PropValve;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -26,19 +30,31 @@ iq_Injector.stSkimmerVG.iPRESS_R := iq_Injector.i_EP3174_Ch2;
 iq_Injector.stRelaxVG.iPRESS_R := iq_Injector.i_EP3174_Ch3;
 
 (* Vacuum Gauge Supervisor *)
-fb925ALINB1(VG:=stALI.stNozzleBoxVG);
-fb925ALINB2(VG:=stALI.stSkimmerVG);
-fb925ALINB3(VG:=stALI.stRelaxVG);
+fb925ALINB1(VG:=iq_Injector.stNozzleBoxVG);
+fb925ALINB2(VG:=iq_Injector.stSkimmerVG);
+fb925ALINB3(VG:=iq_Injector.stRelaxVG);
 
-fbManipX(iq_ManipAxis:=stALI.axisX);
-fbManipY(iq_ManipAxis:=stALI.axisY);
-fbManipZ(iq_ManipAxis:=stALI.axisZ);]]></ST>
+(* Butterfly valve *)
+fbPropValve(stPropValve:=iq_Injector.stPropVlv);
+
+(* Manipulator *)
+fbManipX(iq_ManipAxis:=iq_Injector.axisX);
+fbManipY(iq_ManipAxis:=iq_Injector.axisY);
+fbManipZ(iq_ManipAxis:=iq_Injector.axisZ);
+fbAxisToMSTA(stAxis:=iq_Injector.axisX.stAxis, MSTA=>iq_Injector.axisX.uiMsta);
+fbAxisToMSTA(stAxis:=iq_Injector.axisY.stAxis, MSTA=>iq_Injector.axisY.uiMsta);
+fbAxisToMSTA(stAxis:=iq_Injector.axisZ.stAxis, MSTA=>iq_Injector.axisZ.uiMsta);]]></ST>
     </Implementation>
     <LineIds Name="FB_ALI">
       <LineId Id="44" Count="0" />
       <LineId Id="17" Count="0" />
       <LineId Id="45" Count="0" />
-      <LineId Id="18" Count="8" />
+      <LineId Id="18" Count="4" />
+      <LineId Id="69" Count="2" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="65" Count="0" />
+      <LineId Id="24" Count="2" />
+      <LineId Id="66" Count="2" />
       <LineId Id="9" Count="0" />
     </LineIds>
   </POU>

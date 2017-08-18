@@ -10,8 +10,10 @@ STRUCT
 	//Controls
 	//Pressure setpoint
 	i_rPressSP	:	REAL;
-	//Actuator percentage open 0-100%
+	//Actuator percentage open setpoint 0-100%
 	i_iPercOpenSP	:	INT;
+	//Acuator percentage open readback
+	q_iPercOpen	:	INT;
 	//Controller Mode
 	i_eCntlMode	:	E_CTRL_MODE;
 	

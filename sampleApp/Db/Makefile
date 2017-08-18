@@ -26,6 +26,7 @@ DB += sds-m2-regulatorLimiter.db
 
 #M3 Stuff
 DB += m3-sds-modbus.db
+DB += ALI_manip_aux_records.db
 #----------------------------------------------------
 # Create and install (or just install)
 # Archive files, templates, substitutions like this

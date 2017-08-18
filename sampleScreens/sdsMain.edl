@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1115
-y 632
+x 50
+y 50
 w 376
 h 459
 font "helvetica-medium-r-12.0"
@@ -445,7 +445,7 @@ botShadowColor index 11
 font "helvetica-bold-r-10.0"
 buttonLabel "Control Screens"
 numPvs 4
-numDsps 11
+numDsps 12
 displayFileName {
   0 "sampleScreens/sdsMain.edl"
   1 "sampleScreens/lc20Screens/lc20.edl"
@@ -458,6 +458,7 @@ displayFileName {
   8 "sampleScreens/manifold.edl"
   9 "sampleScreens/m3-pressure-controller.edl"
   10 "sampleScreens/dod.edl"
+  11 "sampleScreens/ALI.edl"
 }
 menuLabel {
   0 "Selector 1"
@@ -471,6 +472,7 @@ menuLabel {
   8 "Gas Delivery Manifold"
   9 "M3 Pressure Controller A"
   10 "Drop On Demand"
+  11 "Aerodynamic Lens"
 }
 setPosition {
   0 "parentWindow"
@@ -495,6 +497,7 @@ symbols {
   8 "LOC=$(LOC),SYS=$(SYS)"
   9 "LOC=$(LOC),SYS=$(SYS),PC=A"
   10 "LOC=$(LOC),SYS=$(SYS)"
+  11 "LOC=$(LOC),SYS=$(SYS)"
 }
 replaceSymbols {
   0 1
@@ -649,7 +652,6 @@ topShadowColor index 0
 botShadowColor index 14
 controlPv "$(LOC):$(SYS):SEL$(selNum):FMMode"
 indicatorPv "$(LOC):$(SYS):SEL$(selNum):FMModeRb"
-3d
 font "helvetica-medium-r-12.0"
 objType "controls"
 endObjectProperties
@@ -762,16 +764,15 @@ y 168
 w 72
 h 24
 fgColor index 14
-onColor index 1
-offColor index 1
-topShadowColor index 1
+onColor index 93
+offColor index 42
+topShadowColor index 93
 botShadowColor index 14
 controlPv "$(LOC):$(SYS):SEL$(selNum):FMReset"
 pressValue "1"
 releaseValue "0"
 onLabel "Reset FM"
 offLabel "Reset FM"
-3d
 useEnumNumeric
 font "helvetica-medium-r-14.0"
 endObjectProperties

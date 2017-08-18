@@ -44,6 +44,10 @@ drvModbusAsynConfigure("AO_PORT",      "$(PLC)", 0, 6,  0x8000, 100,    0,  100,
 # I set the modbus length to 100, pretty much an arbitrary length, it can be longer
 drvModbusAsynConfigure("aiFLOAT_PORT",      "$(PLC)", 0, 3,  0x3000, 100,    7,  100, "BK")
 
+# FLOAT Outputs (EPICS -> PLC) starting at 0x3000 on function code 16, data type 7
+# I set the modbus length to 100, pretty much an arbitrary length, it can be longer
+drvModbusAsynConfigure("aiFLOAT_PORT",      "$(PLC)", 0, 16,  0x3000, 100,    7,  100, "BK")
+
 # DINT aka LONG Inputs (PLC -> EPICS) starting at 0x31F4 on function code 3, data type 5
 # I set the modbus length to 100, pretty much an arbitrary length, it can be longer
 # Note: the offset is 500 in hex. HEX...

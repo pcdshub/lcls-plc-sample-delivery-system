@@ -116,7 +116,10 @@ mcReset(Axis:=iq_ManipAxis.stAxis);
 mcHalt(Axis:=iq_ManipAxis.stAxis);
 FOR iI := 1 TO 2 DO
 mcMoveAbsolute[iI](Axis := iq_ManipAxis.stAxis, Velocity:=iq_ManipAxis.lrVelocity, BufferMode:=MC_Aborting);
-END_FOR]]></ST>
+END_FOR
+
+iq_ManipAxis.xHLS := NOT iq_ManipAxis.xHiLS;
+iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;]]></ST>
     </Implementation>
     <Action Name="ActPower" Id="{31b74a81-1b68-4db8-b9a3-64793fff0f5a}">
       <Implementation>
@@ -494,6 +497,7 @@ indexResult := indexResult +1;]]></ST>
       <LineId Id="67" Count="0" />
       <LineId Id="70" Count="19" />
       <LineId Id="133" Count="1" />
+      <LineId Id="177" Count="2" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_ManipAxis.ActError">

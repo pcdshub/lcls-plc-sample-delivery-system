@@ -17,6 +17,10 @@ uiMsta	:	UINT;
 rActPos	:	REAL;
 //Axis enabled readback
 xEnabled	:	BOOL;
+//EPICS High Limit Switch (NO)
+xHLS	:	BOOL;
+//EPICS Low Limit Switch (NO)
+xLLS	:	BOOL;
 	
 (* Axis motor *)
 stAxis	:	AXIS_REF;

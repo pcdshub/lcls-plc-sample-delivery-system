@@ -115,12 +115,12 @@ mb_Input_Coils[74]:=stManiVlv7.ixOPN;  //Minitti manifold valve controls
 mb_Input_Coils[75]:=stManiVlv8.ixOPN;  //Minitti manifold valve controls
 //=========================================================
 // ALI Controls
-	mb_Input_Coils[80]:=stALI.axisX.xHiLS;  //ALI_Manip
-	mb_Input_Coils[81]:=stALI.axisX.xLoLS;  //ALI_Manip
-	mb_Input_Coils[82]:=stALI.axisY.xHiLS;  //ALI_Manip
-	mb_Input_Coils[83]:=stALI.axisY.xLoLS;  //ALI_Manip
-	mb_Input_Coils[84]:=stALI.axisZ.xHiLS;  //ALI_Manip
-	mb_Input_Coils[85]:=stALI.axisZ.xLoLS;  //ALI_Manip
+	mb_Input_Coils[80]:=stALI.axisX.xHLS;  //ALI_Manip
+	mb_Input_Coils[81]:=stALI.axisX.xLLS;  //ALI_Manip
+	mb_Input_Coils[82]:=stALI.axisY.xHLS;  //ALI_Manip
+	mb_Input_Coils[83]:=stALI.axisY.xLLS;  //ALI_Manip
+	mb_Input_Coils[84]:=stALI.axisZ.xHLS;  //ALI_Manip
+	mb_Input_Coils[85]:=stALI.axisZ.xLLS;  //ALI_Manip
 	mb_Input_Coils[86]:=FALSE;  //ALI_Manip
 	mb_Input_Coils[87]:=FALSE;  //ALI_Manip
 	mb_Input_Coils[88]:=FALSE;  //ALI_Manip

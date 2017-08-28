@@ -3,6 +3,7 @@
   <POU Name="FB_ManipAxis" Id="{2c576ec6-7433-4ec0-8547-ab9b5dd393c9}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ManipAxis
 VAR_INPUT
+	i_xHotPlug	:	BOOL;
 END_VAR
 VAR_OUTPUT
 	q_asResult: ARRAY [1..20] OF STRING;
@@ -90,7 +91,10 @@ CASE iq_ManipAxis.eState OF
 			mcMoveAbsolute[imcBlockIndex].Position := LIMIT(0, REAL_TO_LREAL(iq_ManipAxis.rReqAbsPos), 100);
 			mcMoveAbsolute[imcBlockIndex].Execute := TRUE;
 			rReqAbsPosPrevious := iq_ManipAxis.rReqAbsPos;
-		ELSIF mcMoveAbsolute[imcBlockIndex].Done OR mcMoveAbsolute[imcBlockIndex].CommandAborted OR mcMoveAbsolute[imcBlockIndex].Busy OR mcMoveAbsolute[imcBlockIndex].Error THEN
+		ELSIF mcMoveAbsolute[imcBlockIndex].Done OR 
+				mcMoveAbsolute[imcBlockIndex].CommandAborted OR 
+				mcMoveAbsolute[imcBlockIndex].Busy OR 
+				mcMoveAbsolute[imcBlockIndex].Error THEN
 			mcMoveAbsolute[imcBlockIndex].Execute := FALSE;
 			iq_ManipAxis.xStart := FALSE;
 		END_IF
@@ -98,9 +102,11 @@ CASE iq_ManipAxis.eState OF
 		mcHalt.Execute S= iq_ManipAxis.xStop;
 		mcHalt.Execute R= mcHalt.Busy;
 		iq_ManipAxis.xStop R= mcHalt.Busy;
-
+		IF mcPower.Error THEN
+			iq_ManipAxis.eState:=Error;
+		END_IF
 	Error:
-		mcReset.Execute := rtEnable.Q;
+		mcReset.Execute := rtEnable.Q or i_xHotPlug;
 		IF mcReset.Done THEN
 			q_xError := FALSE;
 			mcReset.Execute := FALSE;
@@ -118,6 +124,7 @@ FOR iI := 1 TO 2 DO
 mcMoveAbsolute[iI](Axis := iq_ManipAxis.stAxis, Velocity:=iq_ManipAxis.lrVelocity, BufferMode:=MC_Aborting);
 END_FOR
 
+//For display, this logic is not for safety
 iq_ManipAxis.xHLS := NOT iq_ManipAxis.xHiLS;
 iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;]]></ST>
     </Implementation>
@@ -150,9 +157,9 @@ iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
                               </o>
                               <v n="LValue">true</v>
                               <v n="Boolean">false</v>
@@ -162,13 +169,11 @@ iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;]]></ST>
                           </l2>
                         </o>
                         <o n="Flags" t="Flags">
-                          <v n="Extensible">false</v>
                           <v n="Flags">0</v>
                           <v n="Fixed">false</v>
+                          <v n="Extensible">false</v>
                         </o>
                         <o n="RValue" t="BoxTreeBox">
-                          <v n="ContainsExtensibleInputs">false</v>
-                          <v n="ProvidesSTSnippet">false</v>
                           <v n="BoxType">"MC_Power"</v>
                           <o n="Instance" t="Operand">
                             <v n="Operand">"mcPower"</v>
@@ -177,9 +182,9 @@ iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;]]></ST>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>
                             <o n="Flags" t="Flags">
-                              <v n="Extensible">false</v>
                               <v n="Flags">0</v>
                               <v n="Fixed">false</v>
+                              <v n="Extensible">false</v>
                             </o>
                             <v n="LValue">false</v>
                             <v n="Boolean">false</v>
@@ -196,9 +201,9 @@ iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">false</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">true</v>
                                 <v n="Boolean">false</v>
@@ -212,9 +217,9 @@ iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">false</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">true</v>
                                 <v n="Boolean">false</v>
@@ -228,9 +233,9 @@ iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">false</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">true</v>
                                 <v n="Boolean">false</v>
@@ -244,9 +249,9 @@ iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">false</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">true</v>
                                 <v n="Boolean">false</v>
@@ -256,9 +261,9 @@ iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;]]></ST>
                             </l2>
                           </o>
                           <o n="Flags" t="Flags">
-                            <v n="Extensible">false</v>
                             <v n="Flags">0</v>
                             <v n="Fixed">false</v>
+                            <v n="Extensible">false</v>
                           </o>
                           <n n="InputFlags" />
                           <l2 n="InputItems" cet="BoxTreeOperand">
@@ -270,9 +275,9 @@ iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;]]></ST>
                                 <v n="SymbolComment">" Axis motor "</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">false</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
@@ -289,9 +294,9 @@ iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">false</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
@@ -308,9 +313,9 @@ iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">"%I*"</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">false</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
@@ -327,9 +332,9 @@ iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">"%I*"</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">false</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
@@ -346,9 +351,9 @@ iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">false</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
@@ -365,9 +370,9 @@ iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">false</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
@@ -384,9 +389,9 @@ iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">false</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
@@ -436,6 +441,8 @@ iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;]]></ST>
                           <v n="EN">false</v>
                           <v n="ENO">false</v>
                           <n n="STSnippet" />
+                          <v n="ContainsExtensibleInputs">false</v>
+                          <v n="ProvidesSTSnippet">false</v>
                           <v n="Id">3L</v>
                         </o>
                         <v n="Id">23L</v>
@@ -491,13 +498,19 @@ indexResult := indexResult +1;]]></ST>
       <LineId Id="171" Count="0" />
       <LineId Id="169" Count="1" />
       <LineId Id="23" Count="18" />
-      <LineId Id="123" Count="7" />
+      <LineId Id="123" Count="6" />
+      <LineId Id="217" Count="2" />
+      <LineId Id="130" Count="0" />
       <LineId Id="176" Count="0" />
       <LineId Id="131" Count="0" />
       <LineId Id="67" Count="0" />
-      <LineId Id="70" Count="19" />
+      <LineId Id="70" Count="3" />
+      <LineId Id="221" Count="1" />
+      <LineId Id="74" Count="15" />
       <LineId Id="133" Count="1" />
-      <LineId Id="177" Count="2" />
+      <LineId Id="177" Count="0" />
+      <LineId Id="216" Count="0" />
+      <LineId Id="178" Count="1" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_ManipAxis.ActError">

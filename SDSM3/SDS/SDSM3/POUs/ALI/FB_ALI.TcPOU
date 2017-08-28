@@ -21,10 +21,15 @@ VAR
 
 	
 	fbPropValve		:	FB_PropValve;
+	
+	ftHotPlug	:	F_TRIG;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(* Soft IO *)
+      <ST><![CDATA[//When the system is plugged in, WC goes to zero, so reset motion control and other stuff
+ftHotPlug(CLK:=iq_Injector.i_SyncUnitWC);
+
+(* Soft IO *)
 iq_Injector.stNozzleBoxVG.iPRESS_R :=iq_Injector.i_EP3174_Ch1;
 iq_Injector.stSkimmerVG.iPRESS_R := iq_Injector.i_EP3174_Ch2;
 iq_Injector.stRelaxVG.iPRESS_R := iq_Injector.i_EP3174_Ch3;
@@ -38,14 +43,16 @@ fb722ALINB3(VG:=iq_Injector.stRelaxVG);
 fbPropValve(stPropValve:=iq_Injector.stPropVlv);
 
 (* Manipulator *)
-fbManipX(iq_ManipAxis:=iq_Injector.axisX);
-fbManipY(iq_ManipAxis:=iq_Injector.axisY);
-fbManipZ(iq_ManipAxis:=iq_Injector.axisZ);
+fbManipX(iq_ManipAxis:=iq_Injector.axisX, i_xHotPlug:=ftHotPlug.Q);
+fbManipY(iq_ManipAxis:=iq_Injector.axisY, i_xHotPlug:=ftHotPlug.Q);
+fbManipZ(iq_ManipAxis:=iq_Injector.axisZ, i_xHotPlug:=ftHotPlug.Q);
 F_AxisRef_To_MSTA(stManipAxis:=iq_Injector.axisX, MSTA=>iq_Injector.axisX.uiMsta);
 F_AxisRef_To_MSTA(stManipAxis:=iq_Injector.axisY, MSTA=>iq_Injector.axisY.uiMsta);
 F_AxisRef_To_MSTA(stManipAxis:=iq_Injector.axisZ, MSTA=>iq_Injector.axisZ.uiMsta);]]></ST>
     </Implementation>
     <LineIds Name="FB_ALI">
+      <LineId Id="97" Count="0" />
+      <LineId Id="95" Count="1" />
       <LineId Id="44" Count="0" />
       <LineId Id="17" Count="0" />
       <LineId Id="45" Count="0" />

@@ -22,7 +22,7 @@ STRUCT
 	stPropVlv	:	ST_PropValveMKS253;
 	
 	(* PropValve Pressure Controller *)
-	stPressCtrl	:	ST_PressureController;
+	//stPressCtrl	:	ST_PressureController;
 	
 	
 END_STRUCT

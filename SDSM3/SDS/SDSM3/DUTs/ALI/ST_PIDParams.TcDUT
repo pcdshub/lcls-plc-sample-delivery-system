@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <DUT Name="ST_PIDParams" Id="{82dbac92-c6f8-45af-bdec-966b22136242}">
+    <Declaration><![CDATA[TYPE ST_PIDParams :
+STRUCT
+	fCtrlCycleTime : LREAL; (* controller cycle time in seconds [s] *)
+    fKp            : LREAL; (* proportional gain Kp (P) *)
+    fTn            : LREAL; (* integral gain Tn (I) [s] *)
+    fTv            : LREAL; (* derivative gain Tv (D-T1) [s] *)
+    fTd            : LREAL; (* derivative damping time Td (D-T1) [s] *)
+	fUpperLim		: 	LREAL; (* upper controller output range limit of PID block *)
+	fLowerLim		:	LREAL; (* lower controller output range limit of PID block *)
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

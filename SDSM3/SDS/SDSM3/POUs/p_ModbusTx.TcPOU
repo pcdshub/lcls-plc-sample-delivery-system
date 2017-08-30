@@ -126,11 +126,11 @@ mb_Input_Coils[75]:=stManiVlv8.ixOPN;  //Minitti manifold valve controls
 	mb_Input_Coils[88]:=stALI.stPropVlv.xEnabled;  //ALI_Manip
 	mb_Input_Coils[89]:=stALI.stPropVlv.xInterlock;  //ALI_Manip
 	
-	mb_Input_Registers[80]:=stALI.stPressCtrl.q_iPercOpen;  //ALI_Manip
+	mb_Input_Registers[80]:=stALI.stPropVlv.q_iPercOpen;  //ALI_Manip
 	mb_Input_Registers[81]:=stALI.axisX.uiMsta;  //ALI_Manip
 	mb_Input_Registers[82]:=stALI.axisY.uiMsta;  //ALI_Manip
 	mb_Input_Registers[83]:=stALI.axisZ.uiMsta;  //ALI_Manip
-	mb_Input_Registers[84]:=0;  //ALI_Manip
+	mb_Input_Registers[84]:=stALI.stPropVlv.ePVCtrlState;  //ALI_Manip
 	mb_Input_Registers[85]:=0;  //ALI_Manip
 	mb_Input_Registers[86]:=0;  //ALI_Manip
 	mb_Input_Registers[87]:=0;  //ALI_Manip
@@ -148,8 +148,8 @@ mb_Input_Coils[75]:=stManiVlv8.ixOPN;  //Minitti manifold valve controls
 	mb_Output_Coils[88]:=stALI.axisZ.xStop;  //ALI_Manip
 	mb_Output_Coils[89]:=FALSE;  //ALI_Manip
 	
-	mb_Output_Registers[80]:=stALI.stPressCtrl.i_iPercOpenSP;  //ALI_Manip
-	mb_Output_Registers[81]:=0;  //ALI_Manip
+	mb_Output_Registers[80]:=stALI.stPropVlv.q_iPercOpen;  //ALI_Manip
+	mb_Output_Registers[81]:=stALI.stPropVlv.ePVCtrlStateReq;  //ALI_Manip
 	mb_Output_Registers[82]:=0;  //ALI_Manip
 	mb_Output_Registers[83]:=0;  //ALI_Manip
 	mb_Output_Registers[84]:=0;  //ALI_Manip

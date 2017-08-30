@@ -42,7 +42,8 @@ END_VAR
       <ST><![CDATA[(* Manipulator Axis Function Block
 Alex Wallace, 2016-8-8 
 
-
+This block works by jumping between two absolute move blocks and buffering
+the motion between them.
 *)
 
 
@@ -491,7 +492,9 @@ indexResult := indexResult +1;]]></ST>
       </Implementation>
     </Action>
     <LineIds Name="FB_ManipAxis">
-      <LineId Id="3" Count="18" />
+      <LineId Id="3" Count="2" />
+      <LineId Id="259" Count="0" />
+      <LineId Id="6" Count="15" />
       <LineId Id="175" Count="0" />
       <LineId Id="173" Count="1" />
       <LineId Id="22" Count="0" />

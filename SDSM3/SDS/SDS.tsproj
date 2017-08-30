@@ -3217,10 +3217,11 @@ External Setpoint Generation:
 					<Name>ALI_PropValve</Name>
 					<AxisPara>
 						<OtherSettings AllowMotionCmdToSlave="true"/>
+						<ParameterChanged>257</ParameterChanged>
 					</AxisPara>
 					<Encoder Name="Enc" EncType="4">
 						<EncPara MaxCount="#x0000ffff">
-							<Inc RefSoftSyncMask="#x0000ffff"/>
+							<Inc RefMode="2" RefSoftSyncMask="#x0000ffff"/>
 						</EncPara>
 						<Vars VarGrpType="1">
 							<Name>Inputs</Name>
@@ -3289,6 +3290,7 @@ External Setpoint Generation:
 					</Encoder>
 					<Drive Name="Drive" DrvType="24">
 						<DrvPara>
+							<Analog VeloReferenz="3600"/>
 							<TimeComp TaskDelayCycles="1"/>
 						</DrvPara>
 						<Vars VarGrpType="1">
@@ -16613,7 +16615,6 @@ Bit1: Value smaller than Limit2]]>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_Gauges (EP3174-0002)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.i_EP3174_Ch1" VarB="AI Standard Channel 1^Value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.i_EP3174_Ch2" VarB="AI Standard Channel 2^Value"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.i_EP3174_Ch3" VarB="AI Standard Channel 3^Value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.i_EP3174_Ch4" VarB="AI Standard Channel 4^Value"/>
 			</OwnerB>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_PropValve (EP7041-0002)">

@@ -30,6 +30,12 @@
     <Compile Include="DUTs\ALI\E_CTRL_MODE.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\ALI\E_PropValveFBState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\ALI\HMI_PropValveCtrlState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\ALI\ST_ALI.TcDUT">
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
@@ -37,6 +43,9 @@
     <Compile Include="DUTs\ALI\ST_ManipAxis.TcDUT">
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="DUTs\ALI\ST_PIDParams.TcDUT">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\ALI\ST_PressureController.TcDUT">
       <SubType>Code</SubType>
@@ -142,6 +151,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\ALI\FB_ALI.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\ALI\FB_PID_EXT.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\ALI\F_AxisRef_To_MSTA.TcPOU">

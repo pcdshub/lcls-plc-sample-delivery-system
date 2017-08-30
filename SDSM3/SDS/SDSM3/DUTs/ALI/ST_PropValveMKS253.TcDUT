@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <DUT Name="ST_PropValveMKS253" Id="{73adc046-3cee-44d4-b7f7-e0e8dc3c838f}">
-    <Declaration><![CDATA[TYPE ST_PropValveMKS253:
+    <Declaration><![CDATA[TYPE ST_PropValveMKS253 EXTENDS ST_PressureController:
 STRUCT
 	
 	(* Prop valve structure, open is considered to be the higher axis position *)
@@ -13,6 +13,10 @@ STRUCT
 	xEnabled	:	BOOL;
 	//Valve interlock
 	xInterlock	:	BOOL;
+	//PropValve Control State Control
+	ePVCtrlStateReq : HMI_PropValveCtrlState;
+	//PropValve Control State Readback
+	ePVCtrlState : HMI_PropValveCtrlState;
 	//NC Axis Ref
 	stAxis	:	AXIS_REF;
 	i_HLS	AT %I*	:	BOOL; //Open

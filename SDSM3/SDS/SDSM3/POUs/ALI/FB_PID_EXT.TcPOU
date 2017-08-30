@@ -1,18 +1,120 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <POU Name="FB_PID_EXT" Id="{c05f2f87-9880-4b09-b5b5-0a395cb1c163}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK FB_PID_EXT EXTENDS FB_BasicPID
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_PID_EXT
 VAR_INPUT
+	i_lrSetpoint	:	LREAL;
+	i_lrActVal	:	LREAL;
+	i_stPIDParams	:	ST_PIDParams;
+	//Hold the output and pause the block
+	i_Hold	:	BOOL;
+	i_Reset	:	BOOL;
 END_VAR
 VAR_OUTPUT
+	q_lrCtrlOutput	:	LREAL;
+	q_Error	:	BOOL;
+	q_Limited	:	BOOL;
 END_VAR
 VAR
+	fbPID	:	FB_BasicPID;
+	eState	:	E_CTRL_MODE;
+	xInitialized	:	BOOL := FALSE;
+	lrSetpoint	:	LREAL;
+	lrActVal	:	LREAL;
+	bReset: BOOL;
+	lrCtrlOutput: LREAL;
+	xFirstPass: BOOL;
+	stDiag	:	ST_fbDiagnostics;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[
+IF fbPID.nErrorStatus <> 0 THEN
+	eState := E_CTRL_MODE.Error;
+ELSIF fbPID.nErrorStatus = 0 AND xInitialized THEN
+	IF i_Hold THEN 
+		eState := E_CTRL_MODE.Hold;
+	ELSE
+		eState := E_CTRL_MODE.Run;
+	END_IF
+END_IF
+
+CASE eState OF
+	E_CTRL_MODE.Init:
+		//Complete 1 pass through this FB to check PID block for errors
+		IF xFirstPass THEN
+			xInitialized := FALSE;//pass
+		ELSE
+			xInitialized := TRUE;
+		END_IF
+	E_CTRL_MODE.Run:
+		lrSetpoint := i_lrSetpoint;
+		lrCtrlOutput := fbPID.fCtrlOutput;
+		bReset := FALSE;
+	E_CTRL_MODE.Hold:
+	(* While holding, the setpoint value is set to the actual
+	value and the execution of the PID block is paused *)
+		lrSetpoint := lrActVal;
+		lrCtrlOutput := lrCtrlOutput;
+		bReset := TRUE;
+	E_CTRL_MODE.Error:
+		q_Error := TRUE;
+		lrSetpoint := 0;
+		lrCtrlOutput := 0;
+END_CASE
+
+fbPID(fSetpointValue := lrSetpoint,
+	fActualValue := lrActVal,
+	bReset := bReset,
+	fCtrlCycleTime :=i_stPIDParams.fCtrlCycleTime,
+	fKp := i_stPIDParams.fKp,
+	fTn := i_stPIDParams.fTn,
+	fTv := i_stPIDParams.fTv,
+	fTd := i_stPIDParams.fTd
+	);
+
+//Hold everything until fb is initialized
+IF xInitialized AND NOT q_Error THEN
+	//Indicate that the output is being limited
+	q_Limited := lrCtrlOutput > i_stPIDParams.fUpperLim OR lrCtrlOutput < i_stPIDParams.fLowerLim;
+	q_lrCtrlOutput := LIMIT(i_stPIDParams.fLowerLim, lrCtrlOutput, i_stPIDParams.fUpperLim);
+ELSE
+	q_lrCtrlOutput := 0;
+	q_Limited := FALSE;
+END_IF
+
+xFirstPass := False;]]></ST>
     </Implementation>
     <LineIds Name="FB_PID_EXT">
+      <LineId Id="29" Count="0" />
+      <LineId Id="101" Count="1" />
+      <LineId Id="105" Count="5" />
+      <LineId Id="30" Count="2" />
+      <LineId Id="55" Count="0" />
+      <LineId Id="80" Count="2" />
+      <LineId Id="79" Count="0" />
+      <LineId Id="84" Count="0" />
+      <LineId Id="36" Count="1" />
+      <LineId Id="98" Count="0" />
+      <LineId Id="97" Count="0" />
+      <LineId Id="38" Count="1" />
+      <LineId Id="44" Count="1" />
+      <LineId Id="63" Count="1" />
+      <LineId Id="40" Count="1" />
+      <LineId Id="99" Count="1" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="114" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="69" Count="2" />
+      <LineId Id="73" Count="3" />
+      <LineId Id="72" Count="0" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="85" Count="0" />
+      <LineId Id="87" Count="1" />
+      <LineId Id="90" Count="3" />
+      <LineId Id="113" Count="0" />
+      <LineId Id="89" Count="0" />
+      <LineId Id="115" Count="1" />
       <LineId Id="9" Count="0" />
     </LineIds>
   </POU>

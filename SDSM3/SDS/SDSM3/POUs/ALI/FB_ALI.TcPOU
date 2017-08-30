@@ -40,7 +40,7 @@ fb925ALINB2(VG:=iq_Injector.stSkimmerVG);
 fb722ALINB3(VG:=iq_Injector.stRelaxVG);
 
 (* Butterfly valve *)
-fbPropValve(stPropValve:=iq_Injector.stPropVlv);
+fbPropValve(stPropValve:=iq_Injector.stPropVlv, i_xExtIlk := TRUE);
 
 (* Manipulator *)
 fbManipX(iq_ManipAxis:=iq_Injector.axisX, i_xHotPlug:=ftHotPlug.Q);

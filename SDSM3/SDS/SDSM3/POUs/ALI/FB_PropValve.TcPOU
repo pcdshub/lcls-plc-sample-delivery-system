@@ -9,31 +9,47 @@ VAR_IN_OUT
 	stPropValve	:	ST_PropValveMKS253;
 END_VAR
 VAR
-	mcPower	:	MC_Power;
+	xInterlock	:	BOOL;
 	
+	eState : E_PropValveFBState := E_PropValveFBState.Init;
+	
+	mcPower	:	MC_Power;
 	tofLLSFilter	:	TOF := (PT:=T#100MS);
 	tofHLSFilter	:	TOF := (PT:=T#100MS);
+	
+	fbPID	:	FB_PID_EXT;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[(* Provide the motor enable and limit switch functions for the MKS 253 valve *)
 
-stPropValve.xEnable R= NOT stPropValve.xInterlock;
+xInterlock := stPropValve.xInterlock AND i_xExtIlk;
+stPropValve.xEnable R= NOT xInterlock;
 
 (* The low limit switch was flakey, I added the filters *)
 tofLLSFilter(IN:=stPropValve.i_LLS);
 tofHLSFilter(IN:=stPropValve.i_HLS);
 mcPower.Enable_Positive := tofHLSFilter.Q;
 mcPower.Enable_Negative := tofLLSFilter.Q;
-mcPower.Enable := stPropValve.xInterlock AND stPropValve.xEnable;
+mcPower.Enable := xInterlock AND stPropValve.xEnable;
 mcPower(Axis:=stPropValve.stAxis);
+
+(* Move the valve *)
+
+
+
+//Valve movement based on PID output
+fbPID(i_lrSetpoint := REAL_TO_LREAL(stPropValve.i_rPressSP),
+	i_lrActVal := REAL_TO_LREAL(stPropValve.i_rPressRB),
+	i_stPIDParams := stPropValve.stPIDParams);
 
 (* EPICS display of limits *)
 stPropValve.xHLS := NOT tofHLSFilter.Q;
-stPropValve.xLLS := NOT tofLLSFilter.Q; ]]></ST>
+stPropValve.xLLS := NOT tofLLSFilter.Q;]]></ST>
     </Implementation>
     <LineIds Name="FB_PropValve">
       <LineId Id="25" Count="0" />
+      <LineId Id="74" Count="0" />
       <LineId Id="27" Count="1" />
       <LineId Id="26" Count="0" />
       <LineId Id="13" Count="1" />
@@ -41,6 +57,12 @@ stPropValve.xLLS := NOT tofLLSFilter.Q; ]]></ST>
       <LineId Id="10" Count="0" />
       <LineId Id="48" Count="0" />
       <LineId Id="9" Count="0" />
+      <LineId Id="66" Count="1" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="77" Count="0" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="70" Count="2" />
       <LineId Id="44" Count="3" />
       <LineId Id="5" Count="0" />
     </LineIds>

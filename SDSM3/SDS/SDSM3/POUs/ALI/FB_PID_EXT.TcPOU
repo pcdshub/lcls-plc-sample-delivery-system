@@ -54,6 +54,7 @@ CASE eState OF
 	E_CTRL_MODE.Run:
 		lrSetpoint := i_lrSetpoint;
 		lrCtrlOutput := fbPID.fCtrlOutput;
+		lrActVal := i_lrActVal;
 		bReset := FALSE;
 	E_CTRL_MODE.Hold:
 	(* While holding, the setpoint value is set to the actual
@@ -104,6 +105,7 @@ xFirstPass := False;]]></ST>
       <LineId Id="84" Count="0" />
       <LineId Id="36" Count="1" />
       <LineId Id="98" Count="0" />
+      <LineId Id="146" Count="0" />
       <LineId Id="97" Count="0" />
       <LineId Id="38" Count="1" />
       <LineId Id="44" Count="1" />

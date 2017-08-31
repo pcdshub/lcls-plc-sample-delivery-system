@@ -41,6 +41,7 @@ fb722ALINB3(VG:=iq_Injector.stRelaxVG);
 
 (* Butterfly valve *)
 iq_Injector.stPropVlv.xInterlock := TRUE;
+iq_Injector.stPropVlv.i_rPressRB := iq_Injector.stSkimmerVG.rPRESS;
 fbPropValve(stPropValve:=iq_Injector.stPropVlv, i_xExtIlk := TRUE);
 
 (* Manipulator *)
@@ -60,6 +61,7 @@ F_AxisRef_To_MSTA(stManipAxis:=iq_Injector.axisZ, MSTA=>iq_Injector.axisZ.uiMsta
       <LineId Id="18" Count="4" />
       <LineId Id="69" Count="1" />
       <LineId Id="121" Count="0" />
+      <LineId Id="145" Count="0" />
       <LineId Id="71" Count="0" />
       <LineId Id="23" Count="0" />
       <LineId Id="65" Count="0" />

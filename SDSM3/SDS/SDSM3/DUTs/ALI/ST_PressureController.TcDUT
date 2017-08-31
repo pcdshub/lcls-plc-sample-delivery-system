@@ -12,6 +12,8 @@ STRUCT
 	i_rPressSP	:	REAL;
 	//Pressure readback
 	i_rPressRB	:	REAL;
+	//Controller deadband
+	rDeadband	:	REAL;
 	//Actuator percentage open setpoint 0-100%
 	i_iPercOpenSP	:	INT;
 	//Acuator percentage open readback
@@ -19,7 +21,13 @@ STRUCT
 	//Controller Mode
 	i_eCntlMode	:	E_CTRL_MODE;
 	//PID Parameters
-	stPIDParams :	ST_PIDParams;
+	stPIDParams :	ST_PIDParams := (
+		fKp := 1,
+		fTn := 1,
+		fUpperLim := 1,
+		fLowerLim := -1,
+		fCtrlCycleTime := 0.01
+	);
 	
 END_STRUCT
 END_TYPE

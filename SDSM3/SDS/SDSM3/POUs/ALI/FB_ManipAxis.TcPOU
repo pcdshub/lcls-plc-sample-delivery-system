@@ -13,13 +13,12 @@ VAR_IN_OUT
 	iq_ManipAxis	:	ST_ManipAxis;
 END_VAR
 VAR
-	
 
 	mcPower	:	MC_Power;
 	mcReset	:	MC_Reset;
 	mcMoveAbsolute : ARRAY[1..2] OF MC_MoveAbsolute;
 	mcHalt	:	MC_Halt;
-	
+	mcSmoothMover	:	MC_SmoothMover;
 	//Error Stuff
 	indexResult: INT := 1;
 	fbFormatString	:	FB_FormatString;
@@ -27,7 +26,6 @@ VAR
 	xInitComplete	:	BOOL := FALSE;
 	
 	imcBlockIndex: INT;
-	imcBlockIndexPrev : INT;
 	
 	rtEnable : R_TRIG;
 	ftEnable : F_TRIG;
@@ -60,9 +58,6 @@ ELSIF xInitComplete THEN
 	iq_ManipAxis.eState := MoveEnabled;
 END_IF
 
-//Restart a move
-rtStart(CLK:=iq_ManipAxis.xStart);
-
 //For EPICS, because the modbus map was made for 32 bit..
 iq_ManipAxis.rActPos := LREAL_TO_REAL(iq_ManipAxis.stAxis.NcToPlc.ActPos);
 
@@ -85,27 +80,21 @@ CASE iq_ManipAxis.eState OF
 	END_IF
 		
 	MoveEnabled:
-		IF (iq_ManipAxis.rReqAbsPos <> rReqAbsPosPrevious OR rtStart.Q)  AND iq_ManipAxis.xEnable THEN
-			mcMoveAbsolute[imcBlockIndex].Execute := FALSE;
-			imcBlockIndex := imcBlockIndex + 1;
-			IF imcBlockIndex >2 THEN imcBlockIndex := 1; END_IF
-			mcMoveAbsolute[imcBlockIndex].Position := LIMIT(0, REAL_TO_LREAL(iq_ManipAxis.rReqAbsPos), 100);
-			mcMoveAbsolute[imcBlockIndex].Execute := TRUE;
-			rReqAbsPosPrevious := iq_ManipAxis.rReqAbsPos;
-		ELSIF mcMoveAbsolute[imcBlockIndex].Done OR 
-				mcMoveAbsolute[imcBlockIndex].CommandAborted OR 
-				mcMoveAbsolute[imcBlockIndex].Busy OR 
-				mcMoveAbsolute[imcBlockIndex].Error THEN
-			mcMoveAbsolute[imcBlockIndex].Execute := FALSE;
-			iq_ManipAxis.xStart := FALSE;
-		END_IF
+		mcSmoothMover.Enable := iq_ManipAxis.xEnable;
+		mcSmoothMover.ReqAbsPos := LIMIT(0, REAL_TO_LREAL(iq_ManipAxis.rReqAbsPos), 100);
+		mcSmoothMover.Execute := iq_ManipAxis.xStart;
+		(*We've already captured the rising edge of start (if there was one, so 
+		go ahead and reset it.*)
+		iq_ManipAxis.xStart := FALSE;
+		
 		//Halt
 		mcHalt.Execute S= iq_ManipAxis.xStop;
 		mcHalt.Execute R= mcHalt.Busy;
 		iq_ManipAxis.xStop R= mcHalt.Busy;
-		IF mcPower.Error THEN
+		IF mcPower.Error OR mcSmoothMover.Error THEN
 			iq_ManipAxis.eState:=Error;
 		END_IF
+		
 	Error:
 		mcReset.Execute := rtEnable.Q or i_xHotPlug;
 		IF mcReset.Done THEN
@@ -120,10 +109,12 @@ END_CASE
 (* Run the mc blocks *)
 ActPower();
 mcReset(Axis:=iq_ManipAxis.stAxis);
+mcSmoothMover(Axis:=iq_ManipAxis.stAxis,
+	Velocity:=iq_ManipAxis.lrVelocity);
 mcHalt(Axis:=iq_ManipAxis.stAxis);
-FOR iI := 1 TO 2 DO
-mcMoveAbsolute[iI](Axis := iq_ManipAxis.stAxis, Velocity:=iq_ManipAxis.lrVelocity, BufferMode:=MC_Aborting);
-END_FOR
+
+iq_ManipAxis.xDmov := mcHalt.Done OR mcSmoothMover.Done;
+iq_ManipAxis.xMovn := mcHalt.Busy OR mcSmoothMover.Busy;
 
 //For display, this logic is not for safety
 iq_ManipAxis.xHLS := NOT iq_ManipAxis.xHiLS;
@@ -494,23 +485,24 @@ indexResult := indexResult +1;]]></ST>
     <LineIds Name="FB_ManipAxis">
       <LineId Id="3" Count="2" />
       <LineId Id="259" Count="0" />
-      <LineId Id="6" Count="15" />
-      <LineId Id="175" Count="0" />
-      <LineId Id="173" Count="1" />
+      <LineId Id="6" Count="14" />
+      <LineId Id="174" Count="0" />
       <LineId Id="22" Count="0" />
       <LineId Id="171" Count="0" />
       <LineId Id="169" Count="1" />
-      <LineId Id="23" Count="18" />
-      <LineId Id="123" Count="6" />
-      <LineId Id="217" Count="2" />
-      <LineId Id="130" Count="0" />
-      <LineId Id="176" Count="0" />
-      <LineId Id="131" Count="0" />
+      <LineId Id="23" Count="17" />
+      <LineId Id="260" Count="3" />
+      <LineId Id="279" Count="0" />
+      <LineId Id="278" Count="0" />
+      <LineId Id="264" Count="0" />
       <LineId Id="67" Count="0" />
       <LineId Id="70" Count="3" />
       <LineId Id="221" Count="1" />
-      <LineId Id="74" Count="15" />
-      <LineId Id="133" Count="1" />
+      <LineId Id="280" Count="0" />
+      <LineId Id="74" Count="13" />
+      <LineId Id="281" Count="1" />
+      <LineId Id="88" Count="1" />
+      <LineId Id="286" Count="1" />
       <LineId Id="177" Count="0" />
       <LineId Id="216" Count="0" />
       <LineId Id="178" Count="1" />

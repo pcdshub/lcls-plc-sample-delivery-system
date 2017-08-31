@@ -21,6 +21,10 @@ xEnabled	:	BOOL;
 xHLS	:	BOOL;
 //EPICS Low Limit Switch (NO)
 xLLS	:	BOOL;
+//EPICS MOVN
+xMovn	:	BOOL;
+//EPICS DMOV
+xDmov	:	BOOL;
 	
 (* Axis motor *)
 stAxis	:	AXIS_REF;

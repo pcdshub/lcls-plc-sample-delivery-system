@@ -156,6 +156,9 @@
     <Compile Include="POUs\ALI\FB_PID_EXT.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\ALI\MC_SmoothMover.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\ALI\F_AxisRef_To_MSTA.TcPOU">
       <SubType>Code</SubType>
     </Compile>

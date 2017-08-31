@@ -87,6 +87,7 @@ stManiVlv8.xSW:=mb_Output_Coils[67];  //Minitti manifold valve controls
 	MEMCPY(srcAddr:=ADR(mb_PLC_Memory[90]), destAddr:=ADR(stALI.axisX.rReqAbsPos), n:=SIZEOF(stALI.axisX.rReqAbsPos)); //ALI CTRL
 	MEMCPY(srcAddr:=ADR(mb_PLC_Memory[92]), destAddr:=ADR(stALI.axisY.rReqAbsPos), n:=SIZEOF(stALI.axisY.rReqAbsPos)); //ALI CTRL
 	MEMCPY(srcAddr:=ADR(mb_PLC_Memory[94]), destAddr:=ADR(stALI.axisZ.rReqAbsPos), n:=SIZEOF(stALI.axisZ.rReqAbsPos)); //ALI CTRL
+	MEMCPY(srcAddr:=ADR(mb_PLC_Memory[96]), destAddr:=ADR(stALI.stPropVlv.i_rPressSP), n:=SIZEOF(stALI.stPropVlv.i_rPressSP)); //ALI CTRL
 
 END_IF
 
@@ -102,7 +103,9 @@ END_IF
       <LineId Id="112" Count="0" />
       <LineId Id="88" Count="0" />
       <LineId Id="91" Count="0" />
-      <LineId Id="98" Count="3" />
+      <LineId Id="98" Count="2" />
+      <LineId Id="117" Count="0" />
+      <LineId Id="101" Count="0" />
       <LineId Id="104" Count="4" />
       <LineId Id="2" Count="0" />
     </LineIds>

@@ -28,10 +28,14 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
+      <ST><![CDATA[(*
+
+NOTE: If the PID block is having issues check the cycle time, it might be wrong.
+*)
 IF fbPID.nErrorStatus <> 0 THEN
 	eState := E_CTRL_MODE.Error;
 ELSIF fbPID.nErrorStatus = 0 AND xInitialized THEN
+	q_Error := FALSE;
 	IF i_Hold THEN 
 		eState := E_CTRL_MODE.Hold;
 	ELSE
@@ -86,8 +90,12 @@ END_IF
 xFirstPass := False;]]></ST>
     </Implementation>
     <LineIds Name="FB_PID_EXT">
+      <LineId Id="117" Count="0" />
+      <LineId Id="119" Count="0" />
+      <LineId Id="118" Count="0" />
       <LineId Id="29" Count="0" />
       <LineId Id="101" Count="1" />
+      <LineId Id="120" Count="0" />
       <LineId Id="105" Count="5" />
       <LineId Id="30" Count="2" />
       <LineId Id="55" Count="0" />

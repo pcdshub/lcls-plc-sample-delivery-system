@@ -1,0 +1,7 @@
+
+file "ALI_manip_aux_records.template"{ pattern,
+{MOTOR}
+{"$(DEV):ALI:MMC:X"}
+{"$(DEV):ALI:MMC:Y"}
+{"$(DEV):ALI:MMC:Z"}
+}

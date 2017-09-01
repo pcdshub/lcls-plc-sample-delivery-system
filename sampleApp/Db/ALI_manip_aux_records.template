@@ -1,0 +1,35 @@
+# Some auxiliary control records for the modbus manipulator controls
+
+record(ao, "$(MOTOR):TWV"){
+	field(EGU, "mm")
+}
+
+record(calcout, "$(MOTOR):TWF"){
+	field(OUT, "$(MOTOR):ReqAbsPos PP")
+	field(OOPT, "Every Time")
+	field(INPA, "$(MOTOR):ReqAbsPos NPP")
+	field(INPB, "$(MOTOR):TWV NPP")
+	field(CALC, "A+B")
+	}
+
+record(calcout, "$(MOTOR):TWR"){
+	field(OUT, "$(MOTOR):ReqAbsPos PP")
+	field(OOPT, "Every Time")
+	field(INPA, "$(MOTOR):ReqAbsPos NPP")
+	field(INPB, "$(MOTOR):TWV NPP")
+	field(CALC, "A-B")
+	}
+record(mbbi, "$(MOTOR):MSTA"){
+	field(DESC, "Sort of motor status")
+	field(INP, "$(MOTOR):MSTA_RAW CP")
+	field(ZRVL, "0")
+	field(ONVL, "1")
+	field(TWVL, "2")
+	field(ZRST, "Axis not enabled")
+	field(ONST, "Axis enabled")
+	field(TWST, "Axis Error")
+	field(ZRSV, "MINOR")
+	field(ONSV, "NO_ALARM")
+	field(TWSV, "MAJOR")
+}
+

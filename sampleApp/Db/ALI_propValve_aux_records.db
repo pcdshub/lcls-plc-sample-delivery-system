@@ -1,0 +1,27 @@
+record(mbbo, "$(VALVE):OpStateReq"){
+	field(DESC, "Propvalve Operating State Req")
+	field(OUT, "$(VALVE):OpStateReq_Raw PP")
+	field(OMSL, "supervisory")
+	field(ZRVL, "0")
+	field(ONVL, "1")
+	field(TWVL, "2")
+	field(ZRST, "Manual")
+	field(ONST, "Pressure")
+	field(TWST, "Hold")
+	field(ZRSV, "MINOR")
+	field(ONSV, "NO_ALARM")
+	field(TWSV, "NO_ALARM")
+}
+record(mbbi, "$(VALVE):OpState"){
+	field(DESC, "Propvalve Operating State")
+	field(INP, "$(VALVE):OpState_Raw CP")
+	field(ZRVL, "0")
+	field(ONVL, "1")
+	field(TWVL, "2")
+	field(ZRST, "Manual")
+	field(ONST, "Pressure")
+	field(TWST, "Hold")
+	field(ZRSV, "MINOR")
+	field(ONSV, "NO_ALARM")
+	field(TWSV, "NO_ALARM")
+}

@@ -7,8 +7,8 @@ file "bi_bit.template"{ pattern,
 {P,			R,	PORT,	OFFSET,  ZNAM,      ONAM,  ZSV,     OSV,         SCAN}
 {"$(DEV)",  "RemoteControlEnabled",  "BI_PORT",  "0",  "Control Not Enabled",  "Control Enabled", "MINOR", "NO_ALARM", "I/O Intr"}
 
-{"$(DEV)",  "PressCtrlA:ConnStat",  "BI_PORT",  "10",  "Online",  "Offline", "NO_ALARM", "MAJOR", "I/O Intr"}
-{"$(DEV)",  "PressCtrlB:ConnStat",  "BI_PORT",  "11",   "Online",  "Offline", "NO_ALARM", "MAJOR", "I/O Intr"}
+{"$(DEV)",  "PCM:A:ConnStat",  "BI_PORT",  "10",  "Online",  "Offline", "NO_ALARM", "MAJOR", "I/O Intr"}
+{"$(DEV)",  "PCM:B:ConnStat",  "BI_PORT",  "11",   "Online",  "Offline", "NO_ALARM", "MAJOR", "I/O Intr"}
 {"$(DEV)",  "SEL1:ConnStat",  "BI_PORT",  "12",  "Online",  "Offline", "NO_ALARM", "MAJOR", "I/O Intr"}
 {"$(DEV)",  "SEL2:ConnStat",  "BI_PORT",  "13",  "Online",  "Offline", "NO_ALARM", "MAJOR", "I/O Intr"}
 {"$(DEV)",  "SEL:A:ConnStat",  "BI_PORT",  "14", "Online",  "Offline", "NO_ALARM", "MAJOR", "I/O Intr"}
@@ -29,11 +29,6 @@ file "bi_bit.template"{ pattern,
 {"$(DEV)",  "SEL2:Syncd",  "BI_PORT",  "42",  "Not syncd",  "Syncd", "MAJOR", "NO_ALARM", "I/O Intr"}
 {"$(DEV)",  "SEL2:Locked",  "BI_PORT",  "43",  "Unlocked",  "Locked", "MAJOR", "NO_ALARM", "I/O Intr"}
 {"$(DEV)",  "SEL2:FMModeRb",  "BI_PORT",  "44",  "Precision",  "Extended", "NO_ALARM", "NO_ALARM", "I/O Intr"}
-
-{"$(DEV)",  "PREG:01:PressureStable",  "BI_PORT",  "50",  "Adjusting",  "Stable", "MINOR", "NO_ALARM", "I/O Intr"}
-{"$(DEV)",  "PREG:02:PressureStable",  "BI_PORT",  "51",  "Adjusting",  "Stable", "MINOR", "NO_ALARM", "I/O Intr"}
-{"$(DEV)",  "PREG:03:PressureStable",  "BI_PORT",  "52",  "Adjusting",  "Stable", "MINOR", "NO_ALARM", "I/O Intr"}
-{"$(DEV)",  "PREG:04:PressureStable",  "BI_PORT",  "53",  "Adjusting",  "Stable", "MINOR", "NO_ALARM", "I/O Intr"}
 
 {"$(DEV)", "VLV:01:IlkRB", "BI_PORT", "60", "Not Allowed", "Allowed", "NO_ALARM", "NO_ALARM", "I/O Intr"}
 {"$(DEV)", "VLV:02:IlkRB", "BI_PORT", "61", "Not Allowed", "Allowed", "NO_ALARM", "NO_ALARM", "I/O Intr"}
@@ -60,14 +55,16 @@ file "bi_bit.template"{ pattern,
 	{P,			R,	PORT,	OFFSET, BITS,  PREC, LOPR, HOPR, SCAN, UNITS}
 	{"$(DEV)",  "ALI:PropValve:PercOpen",  "AI_PORT",  "80", "16", "0", "0","100", "I/O Intr", "%"}
 	{"$(DEV)",  "ALI:MMC:X:MSTA_RAW",  "AI_PORT",  "81", "16", "0", "0", "3",  "I/O Intr", ""}
-	{"$(DEV)",  "ALI:MMC:Y:MSTA_RAW",  "AI_PORT",  "81", "16", "0", "0", "3",  "I/O Intr", ""}
-	{"$(DEV)",  "ALI:MMC:Z:MSTA_RAW",  "AI_PORT",  "81", "16", "0", "0", "3",  "I/O Intr", ""}
+	{"$(DEV)",  "ALI:MMC:Y:MSTA_RAW",  "AI_PORT",  "82", "16", "0", "0", "3",  "I/O Intr", ""}
+	{"$(DEV)",  "ALI:MMC:Z:MSTA_RAW",  "AI_PORT",  "83", "16", "0", "0", "3",  "I/O Intr", ""}
+	{"$(DEV)",  "ALI:PropValve:OpState_Raw",  "AI_PORT",  "84", "16", "0", "0","2", "I/O Intr", ""}
 	}
 
 #Int controls
 	file "ao_no_conv.template"{ pattern,
 	{P, R, PORT, OFFSET, LOPR, HOPR, PREC, BITS, SCAN, EGU}
-	{"$(DEV)",  "ALI:PropValve:PercOpenSP",  "AO_PORT",  "78",  "-1000", "1000", "0", "16", "I/O Intr", "%"}
+	{"$(DEV)",  "ALI:PropValve:PercOpenSP",  "AO_PORT",  "80",  "-1000", "1000", "0", "16", "I/O Intr", "%"}
+	{"$(DEV)",  "ALI:PropValve:OpStateReq_Raw",  "AO_PORT",  "81",  "0", "2", "0", "16", "I/O Intr", ""}
 	}
 #ALI Manipulator
 	file "bi_bit.template"{ pattern,
@@ -80,14 +77,20 @@ file "bi_bit.template"{ pattern,
 	{"$(DEV)",  "ALI:MMC:Z:LLS",  "BI_PORT",  "85",  "FWD Enabled",  "BWD Disabled", "NO_ALARM", "MINOR", "I/O Intr"}
 	{"$(DEV)",  "ALI:PropValve:HLS",  "BI_PORT",  "86",  "FWD Enabled",  "FWD Disabled", "NO_ALARM", "MINOR", "I/O Intr"}
 	{"$(DEV)",  "ALI:PropValve:LLS",  "BI_PORT",  "87",  "FWD Enabled",  "BWD Disabled", "NO_ALARM", "MINOR", "I/O Intr"}
+	{"$(DEV)",  "ALI:PropValve:Enabled",  "BI_PORT",  "88",  "Disabled",  "Enabled", "MINOR", "NO_ALARM", "I/O Intr"}
+	{"$(DEV)",  "ALI:PropValve:Interlock",  "BI_PORT",  "89",  "No Permission",  "Permitted", "MAJOR", "NO_ALARM", "I/O Intr"}
 	}
 
 #Binary control outputs
 	file "bo_bit.template"{ pattern,
 	{P,			R,	PORT,	OFFSET,  ZNAM,      ONAM}
+	{"$(DEV)",  "ALI:MMC:X:START",  		"BO_PORT",  "80",  "Not Starting",  "Starting"}
 	{"$(DEV)",  "ALI:MMC:X:STOP",  			"BO_PORT",  "81",  "Not Stopping",  "Stopping"}
+	{"$(DEV)",  "ALI:MMC:Y:START",  		"BO_PORT",  "82",  "Not Starting",  "Starting"}
 	{"$(DEV)",  "ALI:MMC:Y:STOP",  			"BO_PORT",  "83",  "Not Stopping",  "Stopping"}
+	{"$(DEV)",  "ALI:MMC:Z:START",  		"BO_PORT",  "84",  "Not Starting",  "Starting"}
 	{"$(DEV)",  "ALI:MMC:Z:STOP",  			"BO_PORT",  "85",  "Not Stopping",  "Stopping"}
+	{"$(DEV)",  "ALI:PropValve:Enable",  			"BO_PORT",  "86",  "Not Enabling",  "Enabling"}
 	}
 
 #Real readbacks
@@ -102,9 +105,10 @@ file "bi_bit.template"{ pattern,
 	}
 	file "aoFloat64.template"{ pattern,
 		{P,	R,	PORT,	OFFSET,	DATA_TYPE,	PREC,	HOPR,	LOPR,	UNITS}
-		{"$(DEV)",  "ALI:MMC:X:ReqAbsPos",  "aoFLOAT_PORT",  "90", "FLOAT2_LE", "4", "1000", "-1000", "mm"}
+		{"$(DEV)",  "ALI:MMC:X:ReqAbsPos",  "aoFLOAT_PORT",  "90", "FLOAT32_LE", "4", "1000", "-1000", "mm"}
 		{"$(DEV)",  "ALI:MMC:Y:ReqAbsPos",  "aoFLOAT_PORT",  "92", "FLOAT32_LE", "4", "1000", "-1000", "mm"}
 		{"$(DEV)",  "ALI:MMC:Z:ReqAbsPos",  "aoFLOAT_PORT",  "94", "FLOAT32_LE", "4", "1000", "-1000", "mm"}
+		{"$(DEV)",  "ALI:PropValve:PressSP",  "aoFLOAT_PORT",  "96", "FLOAT32_LE", "2", "0", "1000", "T"}
 }
 
 file "aiFloat64.template"{ pattern,
@@ -203,10 +207,10 @@ file "bo_bit.template"{ pattern,
 {"$(DEV)",  "SEL2:Shaker3",  "BO_PORT",  "46",  "Off",  "On"}
 {"$(DEV)",  "SEL2:Shaker4",  "BO_PORT",  "47",  "Off",  "On"}
 
-{"$(DEV)",  "PAREG:01:Enable",  "BO_PORT",  "50",  "Disabled",  "Enabled"}
-{"$(DEV)",  "PAREG:02:Enable",  "BO_PORT",  "51",  "Disabled",  "Enabled"}
-{"$(DEV)",  "PAREG:03:Enable",  "BO_PORT",  "53",  "Disabled",  "Enabled"}
-{"$(DEV)",  "PAREG:04:Enable",  "BO_PORT",  "54",  "Disabled",  "Enabled"}
+{"$(DEV)",  "PCM:A:01:Enable",  "BO_PORT",  "50",  "Disabled",  "Enabled"}
+{"$(DEV)",  "PCM:A:02:Enable",  "BO_PORT",  "51",  "Disabled",  "Enabled"}
+{"$(DEV)",  "PCM:B:01:Enable",  "BO_PORT",  "53",  "Disabled",  "Enabled"}
+{"$(DEV)",  "PCM:B:02:Enable",  "BO_PORT",  "54",  "Disabled",  "Enabled"}
 
 {"$(DEV)",  "VLV:01:OpnSW",  "BO_PORT",  "60",  "Cls",  "Opn"}
 {"$(DEV)",  "VLV:02:OpnSW",  "BO_PORT",  "61",  "Cls",  "Opn"}
@@ -232,24 +236,24 @@ file "ao.template"{ pattern,
 #Proportionair int control outputs
 file "ao_no_conv.template"{ pattern,
 {P, R, PORT, OFFSET, LOPR, HOPR, PREC, BITS, SCAN, EGU}
-{"$(DEV)",  "PAREG:01:PressSP",  "AO_PORT",  "50",  "0", "1000", "0", "16", "I/O Intr", "%"}
-{"$(DEV)",  "PAREG:02:PressSP",  "AO_PORT",  "51",  "0", "1000", "0", "16", "I/O Intr", "%"}
-{"$(DEV)",  "PAREG:01:HiPressLimit",  "AO_PORT",  "52",  "0", "1000", "0", "16", "I/O Intr", "%"}
-{"$(DEV)",  "PAREG:02:HiPressLimit",  "AO_PORT",  "53",  "0", "1000", "0", "16", "I/O Intr", "%"}
+{"$(DEV)",  "PCM:A:01:PressSP",  "AO_PORT",  "50",  "0", "1000", "0", "16", "I/O Intr", "%"}
+{"$(DEV)",  "PCM:A:02:PressSP",  "AO_PORT",  "51",  "0", "1000", "0", "16", "I/O Intr", "%"}
+{"$(DEV)",  "PCM:A:01:HiPressLimit",  "AO_PORT",  "52",  "0", "1000", "0", "16", "I/O Intr", "%"}
+{"$(DEV)",  "PCM:A:02:HiPressLimit",  "AO_PORT",  "53",  "0", "1000", "0", "16", "I/O Intr", "%"}
 
-{"$(DEV)",  "PAREG:03:PressSP",  "AO_PORT",  "54",  "0", "1000", "0", "16", "I/O Intr", "%"}
-{"$(DEV)",  "PAREG:04:PressSP",  "AO_PORT",  "55",  "0", "1000", "0", "16", "I/O Intr", "%"}
-{"$(DEV)",  "PAREG:03:HiPressLimit",  "AO_PORT",  "56",  "0", "1000", "0", "16", "I/O Intr", "%"}
-{"$(DEV)",  "PAREG:04:HiPressLimit",  "AO_PORT",  "57",  "0", "1000", "0", "16", "I/O Intr", "%"}
+{"$(DEV)",  "PCM:B:01:PressSP",  "AO_PORT",  "54",  "0", "1000", "0", "16", "I/O Intr", "%"}
+{"$(DEV)",  "PCM:B:02:PressSP",  "AO_PORT",  "55",  "0", "1000", "0", "16", "I/O Intr", "%"}
+{"$(DEV)",  "PCM:B:01:HiPressLimit",  "AO_PORT",  "56",  "0", "1000", "0", "16", "I/O Intr", "%"}
+{"$(DEV)",  "PCM:B:02:HiPressLimit",  "AO_PORT",  "57",  "0", "1000", "0", "16", "I/O Intr", "%"}
 }
 
 #Proportionair int readbacks
 file "ai_no_conv.template"{ pattern,
 {P, R, PORT, OFFSET, BITS, PREC, LOPR, HOPR, SCAN, EGU}
-{"$(DEV)",  "PAREG:01:PRESS",  "AI_PORT",  "50", "16", "0", "0", "2000" "I/O Intr", "psi"}
-{"$(DEV)",  "PAREG:02:PRESS",  "AI_PORT",  "51", "16", "0", "0", "2000" "I/O Intr", "psi"}
-{"$(DEV)",  "PAREG:03:PRESS",  "AI_PORT",  "52", "16", "0", "0", "2000" "I/O Intr", "psi"}
-{"$(DEV)",  "PAREG:04:PRESS",  "AI_PORT",  "53", "16", "0", "0", "2000" "I/O Intr", "psi"}
+{"$(DEV)",  "PCM:A:01:PRESS",  "AI_PORT",  "50", "16", "0", "0", "2000" "I/O Intr", "psi"}
+{"$(DEV)",  "PCM:A:02:PRESS",  "AI_PORT",  "51", "16", "0", "0", "2000" "I/O Intr", "psi"}
+{"$(DEV)",  "PCM:B:01:PRESS",  "AI_PORT",  "52", "16", "0", "0", "2000" "I/O Intr", "psi"}
+{"$(DEV)",  "PCM:B:02:PRESS",  "AI_PORT",  "53", "16", "0", "0", "2000" "I/O Intr", "psi"}
 }
 
 #################################################################################

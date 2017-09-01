@@ -43,6 +43,7 @@ dbLoadRecords("db/sds-m2-sampleSelection.db",	"P=$(LOC):$(SYS),NUM=2")
 dbLoadRecords("db/sds-m2-regulatorLimiter.db", "DEV=$(LOC):$(SYS):REG:01")
 dbLoadRecords("db/sds-m2-regulatorLimiter.db", "DEV=$(LOC):$(SYS):REG:02")
 dbLoadRecords("db/ALI_manip_aux_records.db", "DEV=$(LOC):$(SYS)")
+dbLoadRecords("db/ALI_propValve_aux_records.db", "VALVE=$(LOC):$(SYS):ALI:PropValve")
 
 dbLoadRecords("db/sample_flow_accumulators.db", "DEV=$(LOC):$(SYS):SEL1,NUM=1")
 dbLoadRecords("db/sample_flow_integration.db", "DEV=$(LOC):$(SYS):SEL1,FLOWMETER=$(LOC):$(SYS):SEL1:Flow,PUMP=$(LOC):LC20:$(SYS):FlowRate,NUM=1")

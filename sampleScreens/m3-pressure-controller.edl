@@ -3,9 +3,9 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 3355
-y 416
-w 385
+x 50
+y 50
+w 348
 h 485
 font "helvetica-medium-r-12.0"
 fontAlign "center"
@@ -37,7 +37,7 @@ minor 0
 release 0
 x 4
 y 4
-w 376
+w 340
 h 476
 lineColor index 4
 fill
@@ -114,7 +114,7 @@ menuLabel {
   0 "Blank"
 }
 symbols {
-  0 "LOC=$(LOC),SYS=$(SYS),NUM=01"
+  0 "LOC=$(LOC),SYS=$(SYS),NUM=01,PC=$(PC)"
 }
 propagateMacros {
   0 0
@@ -150,7 +150,7 @@ menuLabel {
   0 "Blank"
 }
 symbols {
-  0 "LOC=$(LOC),SYS=$(SYS),NUM=02"
+  0 "LOC=$(LOC),SYS=$(SYS),NUM=02,PC=$(PC)"
 }
 propagateMacros {
   0 0
@@ -165,8 +165,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 244
-y 68
+x 196
+y 100
 w 80
 h 14
 font "helvetica-medium-r-12.0"
@@ -186,11 +186,11 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 244
-y 84
+x 196
+y 116
 w 100
 h 16
-controlPv "$(LOC):$(SYS):PressCtrlA:ConnStat"
+controlPv "$(LOC):$(SYS):PCM:$(PC):ConnStat"
 font "helvetica-bold-r-14.0"
 fontAlign "center"
 fgColor index 15
@@ -202,5 +202,32 @@ nullColor index 1
 useHexPrefix
 newPos
 objType "monitors"
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 196
+y 28
+w 148
+h 68
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\display=i:0"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "sampleScreens/sds-base.edl"
+}
+symbols {
+  0 "LOC=$(LOC),SYS=$(SYS)"
+}
+noScroll
 endObjectProperties
 

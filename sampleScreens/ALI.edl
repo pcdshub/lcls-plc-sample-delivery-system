@@ -1,0 +1,545 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 100
+y 100
+w 1112
+h 429
+font "helvetica-medium-r-14.0"
+ctlFont "helvetica-medium-r-14.0"
+btnFont "helvetica-medium-r-14.0"
+fgColor index 14
+bgColor index 0
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 0
+ctlBgColor1 index 0
+ctlBgColor2 index 14
+topShadowColor index 0
+botShadowColor index 14
+showGrid
+endScreenProperties
+
+# (PNG Image)
+object activePngClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 2
+y 67
+w 1051
+h 341
+file "sampleScreens/ALI_edm_schematic.png"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 3
+y 3
+w 163
+h 42
+font "helvetica-bold-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(LOC):$(SYS)"
+  "Aerodynamic Lens"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 337
+y 116
+w 64
+h 16
+controlPv "$(LOC):$(SYS):ALI:NozzleBox:Press"
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 13
+bgAlarm
+autoHeight
+precision 2
+nullColor index 1
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 172
+y 115
+w 64
+h 16
+controlPv "$(LOC):$(SYS):ALI:Nebulizer:Press"
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 13
+bgAlarm
+autoHeight
+precision 2
+nullColor index 1
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 477
+y 116
+w 64
+h 16
+controlPv "$(LOC):$(SYS):ALI:Lens:Press"
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 13
+bgAlarm
+autoHeight
+precision 2
+nullColor index 1
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 181
+y 26
+w 100
+h 16
+controlPv "$(LOC):$(SYS):ALI:ConnStat"
+font "helvetica-bold-r-14.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 13
+autoHeight
+precision 3
+nullColor index 1
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 769
+y 63
+w 320
+h 100
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\disp=i:0"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "sampleScreens/emb-axis.edl"
+}
+symbols {
+  0 "MOTOR=$(LOC):$(SYS):ALI:MMC:X"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 769
+y 167
+w 320
+h 100
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\disp=i:0"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "sampleScreens/emb-axis.edl"
+}
+symbols {
+  0 "MOTOR=$(LOC):$(SYS):ALI:MMC:Y"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 769
+y 271
+w 320
+h 100
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\disp=i:0"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "sampleScreens/emb-axis.edl"
+}
+symbols {
+  0 "MOTOR=$(LOC):$(SYS):ALI:MMC:Z"
+}
+noScroll
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 478
+y 280
+w 16
+h 16
+lineColor index 14
+lineAlarm
+fill
+fillColor index 39
+lineWidth 2
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 478
+y 313
+w 16
+h 16
+lineColor index 14
+lineAlarm
+fill
+fillColor index 39
+lineWidth 2
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 438
+y 279
+w 35
+h 16
+font "helvetica-medium-r-14.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Open"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 427
+y 315
+w 45
+h 16
+font "helvetica-medium-r-14.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Closed"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 533
+y 283
+w 64
+h 16
+controlPv "$(LOC):$(SYS):ALI:PropValve:PercOpen"
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 13
+bgAlarm
+autoHeight
+precision 0
+nullColor index 1
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 478
+y 280
+w 16
+h 16
+lineColor index 14
+lineAlarm
+fill
+fillColor index 35
+lineWidth 2
+visPv "$(LOC):$(SYS):ALI:PropValve:HLS"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 478
+y 313
+w 16
+h 16
+lineColor index 14
+lineAlarm
+fill
+fillColor index 35
+lineWidth 2
+visPv "$(LOC):$(SYS):ALI:PropValve:LLS"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 532
+y 302
+w 66
+h 20
+controlPv "$(LOC):$(SYS):ALI:PropValve:PercOpenSP"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+precision 0
+nullColor index 18
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 296
+y 6
+w 156
+h 54
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\display=i:0"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "sampleScreens/sds-base.edl"
+}
+symbols {
+  0 "LOC=$(LOC),SYS=$(SYS)"
+}
+noScroll
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 531
+y 253
+w 86
+h 28
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Butterfly Valve "
+  "Percent Open"
+}
+autoSize
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 616
+y 257
+w 58
+h 20
+fgColor index 14
+onColor index 4
+offColor index 4
+inconsistentColor index 35
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):ALI:PropValve:Enable"
+indicatorPv "$(LOC):$(SYS):ALI:PropValve:Enabled"
+onLabel "Enabled"
+offLabel "Disabled"
+3d
+font "helvetica-medium-r-12.0"
+objType "controls"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 676
+y 259
+w 16
+h 16
+lineColor index 14
+fill
+fillColor index 35
+fillAlarm
+alarmPv "$(LOC):$(SYS):ALI:PropValve:Interlock"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 605
+y 303
+w 66
+h 20
+controlPv "$(LOC):$(SYS):ALI:PropValve:PressSP"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+precision 0
+nullColor index 18
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 531
+y 326
+w 213
+h 24
+fgColor index 14
+bgColor index 8
+selectColor index 5
+inconsistentColor index 35
+topShadowColor index 3
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):ALI:PropValve:OpStateReq"
+indicatorPv "$(LOC):$(SYS):ALI:PropValve:OpState"
+font "helvetica-medium-r-14.0"
+orientation "horizontal"
+endObjectProperties
+

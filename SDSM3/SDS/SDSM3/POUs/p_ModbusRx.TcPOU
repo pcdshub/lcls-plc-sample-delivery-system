@@ -82,6 +82,10 @@ stManiVlv8.xSW:=mb_Output_Coils[67];  //Minitti manifold valve controls
 	
 	stALI.stPropVlv.xEnable := mb_Output_Coils[86];
 	
+	stALI.axisX.xReset:=mb_Output_Coils[87];  //ALI_Manip
+	stALI.axisY.xReset:=mb_Output_Coils[88];  //ALI_Manip
+	stALI.axisZ.xReset:=mb_Output_Coils[89];  //ALI_Manip
+	
 	stALI.stPropVlv.i_iPercOpenSP := mb_Output_Registers[80]; //ALI Propvalve
 	stALI.stPropVlv.ePVCtrlStateReq := mb_Output_Registers[81]; //ALI Propvalve
 	MEMCPY(srcAddr:=ADR(mb_PLC_Memory[90]), destAddr:=ADR(stALI.axisX.rReqAbsPos), n:=SIZEOF(stALI.axisX.rReqAbsPos)); //ALI CTRL
@@ -101,6 +105,9 @@ END_IF
       <LineId Id="87" Count="0" />
       <LineId Id="113" Count="0" />
       <LineId Id="112" Count="0" />
+      <LineId Id="118" Count="0" />
+      <LineId Id="120" Count="1" />
+      <LineId Id="119" Count="0" />
       <LineId Id="88" Count="0" />
       <LineId Id="91" Count="0" />
       <LineId Id="98" Count="2" />

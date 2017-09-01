@@ -25,6 +25,8 @@ xLLS	:	BOOL;
 xMovn	:	BOOL;
 //EPICS DMOV
 xDmov	:	BOOL;
+//EPICS Reset
+xReset	:	BOOL;
 	
 (* Axis motor *)
 stAxis	:	AXIS_REF;

@@ -126,6 +126,13 @@ mb_Input_Coils[75]:=stManiVlv8.ixOPN;  //Minitti manifold valve controls
 	mb_Input_Coils[88]:=stALI.stPropVlv.xEnabled;  //ALI_Manip
 	mb_Input_Coils[89]:=stALI.stPropVlv.xInterlock;  //ALI_Manip
 	
+	mb_Input_Coils[90]:=stALI.axisX.xMovn;  //ALI_Manip
+	mb_Input_Coils[91]:=stALI.axisX.xDmov;  //ALI_Manip
+	mb_Input_Coils[92]:=stALI.axisY.xMovn;  //ALI_Manip
+	mb_Input_Coils[93]:=stALI.axisY.xDmov;  //ALI_Manip
+	mb_Input_Coils[94]:=stALI.axisZ.xMovn;  //ALI_Manip
+	mb_Input_Coils[95]:=stALI.axisZ.xDmov;  //ALI_Manip
+	
 	mb_Input_Registers[80]:=stALI.stPropVlv.q_iPercOpen;  //ALI_Manip
 	mb_Input_Registers[81]:=stALI.axisX.uiMsta;  //ALI_Manip
 	mb_Input_Registers[82]:=stALI.axisY.uiMsta;  //ALI_Manip
@@ -144,9 +151,9 @@ mb_Input_Coils[75]:=stManiVlv8.ixOPN;  //Minitti manifold valve controls
 	mb_Output_Coils[84]:=stALI.axisZ.xStart;  //ALI_Manip
 	mb_Output_Coils[85]:=stALI.axisZ.xStop;  //ALI_Manip
 	mb_Output_Coils[86]:=stALI.stPropVlv.xEnable;  //ALI_Manip
-	mb_Output_Coils[87]:=FALSE;  //ALI_Manip
-	mb_Output_Coils[88]:=FALSE;  //ALI_Manip
-	mb_Output_Coils[89]:=FALSE;  //ALI_Manip
+	mb_Output_Coils[87]:=stALI.axisX.xReset;  //ALI_Manip
+	mb_Output_Coils[88]:=stALI.axisY.xReset;  //ALI_Manip
+	mb_Output_Coils[89]:=stALI.axisZ.xReset;  //ALI_Manip
 	
 	mb_Output_Registers[80]:=stALI.stPropVlv.i_iPercOpenSP;  //ALI_Manip
 	mb_Output_Registers[81]:=stALI.stPropVlv.ePVCtrlStateReq;  //ALI_Manip
@@ -172,7 +179,9 @@ mb_Input_Coils[75]:=stManiVlv8.ixOPN;  //Minitti manifold valve controls
 ]]></ST>
     </Implementation>
     <LineIds Name="p_ModbusTx">
-      <LineId Id="197" Count="161" />
+      <LineId Id="197" Count="117" />
+      <LineId Id="365" Count="6" />
+      <LineId Id="315" Count="43" />
       <LineId Id="361" Count="0" />
       <LineId Id="2" Count="0" />
     </LineIds>

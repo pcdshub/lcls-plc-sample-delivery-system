@@ -96,10 +96,11 @@ CASE iq_ManipAxis.eState OF
 		END_IF
 		
 	Error:
-		mcReset.Execute := rtEnable.Q or i_xHotPlug;
+		mcReset.Execute := rtEnable.Q OR i_xHotPlug OR iq_ManipAxis.xReset;
 		IF mcReset.Done THEN
 			q_xError := FALSE;
 			mcReset.Execute := FALSE;
+			iq_ManipAxis.xReset := FALSE;
 			iq_ManipAxis.eState:=Init;
 		END_IF
 	
@@ -499,7 +500,9 @@ indexResult := indexResult +1;]]></ST>
       <LineId Id="70" Count="3" />
       <LineId Id="221" Count="1" />
       <LineId Id="280" Count="0" />
-      <LineId Id="74" Count="13" />
+      <LineId Id="74" Count="4" />
+      <LineId Id="290" Count="0" />
+      <LineId Id="79" Count="8" />
       <LineId Id="281" Count="1" />
       <LineId Id="88" Count="1" />
       <LineId Id="286" Count="1" />

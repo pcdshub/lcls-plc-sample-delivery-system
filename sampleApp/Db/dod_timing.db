@@ -1,0 +1,48 @@
+# DoD Timing records
+record(ai, "$(P):ReferenceTime"){
+	field(DESC, "Moves both")
+	field(EGU, "ns")
+}
+
+record(ai, "$(P):StrobeDelay"){
+	field(DESC, "Moves the strobe")
+	field(EGU, "ns")
+}
+record(ai "$(P):StrobeEVR"){
+	field(DESC, "Strobe EVR Channel")
+	field(DTYP, "Soft Channel")
+	field(INP, "$(StrobeEVR) CP")
+	field(LINR, "NO CONVERSION")
+	field(EGU, "ns")
+}
+record(ai "$(P):JetEVR"){
+	field(DESC, "Jet EVR Channel")
+	field(DTYP, "Soft Channel")
+	field(INP, "$(JetEVR) CP")
+	field(LINR, "NO CONVERSION")
+	field(EGU, "ns")
+}
+
+record(calcout, "$(P):MoveStrobeDelay"){
+	field(DESC, "Calculate and move strobe")
+	field(INPA, "$(P):StrobeDelay CP")
+	field(INPB, "$(P):ReferenceTime NPP")
+	field(INPC, "$(P):StrobeEVR NPP")
+	field(INPD, "$(P):JetEVR NPP")
+	field(CALC, "B+A")
+	field(OUT, "$(StrobeEVR)")
+}
+record(calc, "$(P):MoveReference"){
+	field(DESC, "Calculate and move reference")
+	field(INPA, "$(P):StrobeDelay CP")
+	field(INPB, "$(P):ReferenceTime NPP")
+	field(INPC, "$(P):StrobeEVR NPP")
+	field(INPD, "$(P):JetEVR NPP")
+	field(CALC, "B+A")
+}
+record(dfanout, "$(P):FanoutReferenceMove"){
+	field(DESC, "Fanout the change in reference")
+	field(INP, "$(P):MoveReference CP")
+	field(OUTA, "$(StrobeEVR)")
+	field(OUTB, "$(JetEVR)")
+}

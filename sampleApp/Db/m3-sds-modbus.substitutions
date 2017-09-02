@@ -79,6 +79,12 @@ file "bi_bit.template"{ pattern,
 	{"$(DEV)",  "ALI:PropValve:LLS",  "BI_PORT",  "87",  "FWD Enabled",  "BWD Disabled", "NO_ALARM", "MINOR", "I/O Intr"}
 	{"$(DEV)",  "ALI:PropValve:Enabled",  "BI_PORT",  "88",  "Disabled",  "Enabled", "MINOR", "NO_ALARM", "I/O Intr"}
 	{"$(DEV)",  "ALI:PropValve:Interlock",  "BI_PORT",  "89",  "No Permission",  "Permitted", "MAJOR", "NO_ALARM", "I/O Intr"}
+	{"$(DEV)",  "ALI:MMC:X:MOVN",  "BI_PORT",  "90",  "Not Moving",  "Moving", "NO_ALARM", "MINOR", "I/O Intr"}
+	{"$(DEV)",  "ALI:MMC:X:DMOV",  "BI_PORT",  "91",  "Not Done",  "Done", "NO_ALARM", "NO_ALARM", "I/O Intr"}
+	{"$(DEV)",  "ALI:MMC:Y:MOVN",  "BI_PORT",  "92",  "Not Moving",  "Moving", "NO_ALARM", "MINOR", "I/O Intr"}
+	{"$(DEV)",  "ALI:MMC:Y:DMOV",  "BI_PORT",  "93",  "Not Done",  "Done", "NO_ALARM", "NO_ALARM", "I/O Intr"}
+	{"$(DEV)",  "ALI:MMC:Z:MOVN",  "BI_PORT",  "94",  "Not Moving",  "Moving", "NO_ALARM", "MINOR", "I/O Intr"}
+	{"$(DEV)",  "ALI:MMC:Z:DMOV",  "BI_PORT",  "95",  "Not Done",  "Done", "NO_ALARM", "NO_ALARM", "I/O Intr"}
 	}
 
 #Binary control outputs
@@ -91,6 +97,9 @@ file "bi_bit.template"{ pattern,
 	{"$(DEV)",  "ALI:MMC:Z:START",  		"BO_PORT",  "84",  "Not Starting",  "Starting"}
 	{"$(DEV)",  "ALI:MMC:Z:STOP",  			"BO_PORT",  "85",  "Not Stopping",  "Stopping"}
 	{"$(DEV)",  "ALI:PropValve:Enable",  			"BO_PORT",  "86",  "Not Enabling",  "Enabling"}
+	{"$(DEV)",  "ALI:MMC:X:RESET",  		"BO_PORT",  "87",  "Not Starting",  "Starting"}
+	{"$(DEV)",  "ALI:MMC:Y:RESET",  		"BO_PORT",  "88",  "Not Starting",  "Starting"}
+	{"$(DEV)",  "ALI:MMC:Z:RESET",  		"BO_PORT",  "89",  "Not Starting",  "Starting"}
 	}
 
 #Real readbacks

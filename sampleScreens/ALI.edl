@@ -19,6 +19,7 @@ ctlBgColor1 index 0
 ctlBgColor2 index 14
 topShadowColor index 0
 botShadowColor index 14
+title "SDS Aerodynamic Lens Injector"
 showGrid
 endScreenProperties
 
@@ -321,8 +322,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 533
-y 283
+x 251
+y 321
 w 64
 h 16
 controlPv "$(LOC):$(SYS):ALI:PropValve:PercOpen"
@@ -387,8 +388,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 532
-y 302
+x 250
+y 340
 w 66
 h 20
 controlPv "$(LOC):$(SYS):ALI:PropValve:PercOpenSP"
@@ -438,8 +439,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 531
-y 253
+x 249
+y 291
 w 86
 h 28
 font "helvetica-medium-r-12.0"
@@ -459,8 +460,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 616
-y 257
+x 334
+y 295
 w 58
 h 20
 fgColor index 14
@@ -484,8 +485,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 676
-y 259
+x 394
+y 297
 w 16
 h 16
 lineColor index 14
@@ -503,8 +504,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 605
-y 303
+x 322
+y 340
 w 66
 h 20
 controlPv "$(LOC):$(SYS):ALI:PropValve:PressSP"
@@ -527,8 +528,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 531
-y 326
+x 249
+y 364
 w 213
 h 24
 fgColor index 14

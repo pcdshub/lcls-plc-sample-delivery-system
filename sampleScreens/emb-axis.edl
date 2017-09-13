@@ -334,7 +334,7 @@ fgColor index 25
 bgColor index 5
 editable
 motifWidget
-precision 4
+precision 3
 nullColor index 18
 newPos
 objType "controls"
@@ -357,7 +357,7 @@ fgColor index 25
 bgColor index 5
 editable
 motifWidget
-precision 4
+precision 3
 nullColor index 18
 newPos
 objType "controls"
@@ -380,7 +380,7 @@ fontAlign "center"
 fgColor index 15
 fgAlarm
 bgColor index 12
-precision 4
+precision 3
 nullColor index 18
 showUnits
 newPos
@@ -521,7 +521,7 @@ onColor index 4
 offColor index 4
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(MOTOR):Reset"
+controlPv "$(MOTOR):RESET"
 pressValue "1"
 onLabel "Reset"
 offLabel "Reset"

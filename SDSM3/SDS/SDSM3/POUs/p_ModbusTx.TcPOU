@@ -97,22 +97,22 @@ mb_Input_Coils[53]:=stRegProp4.xStable;  //Proportionair readbacks
 
 
 (* Minitti Manifold Controls *)
-mb_Input_Coils[60]:=stManiVlv1.xILK;  //Minitti manifold valve controls
-mb_Input_Coils[61]:=stManiVlv2.xILK;  //Minitti manifold valve controls
-mb_Input_Coils[62]:=stManiVlv3.xILK;  //Minitti manifold valve controls
-mb_Input_Coils[63]:=stManiVlv4.xILK;  //Minitti manifold valve controls
-mb_Input_Coils[64]:=stManiVlv5.xILK;  //Minitti manifold valve controls
-mb_Input_Coils[65]:=stManiVlv6.xILK;  //Minitti manifold valve controls
-mb_Input_Coils[66]:=stManiVlv7.xILK;  //Minitti manifold valve controls
-mb_Input_Coils[67]:=stManiVlv8.xILK;  //Minitti manifold valve controls
-mb_Input_Coils[68]:=stManiVlv1.ixOPN;  //Minitti manifold valve controls
-mb_Input_Coils[69]:=stManiVlv2.ixOPN;  //Minitti manifold valve controls
-mb_Input_Coils[70]:=stManiVlv3.ixOPN;  //Minitti manifold valve controls
-mb_Input_Coils[71]:=stManiVlv4.ixOPN;  //Minitti manifold valve controls
-mb_Input_Coils[72]:=stManiVlv5.ixOPN;  //Minitti manifold valve controls
-mb_Input_Coils[73]:=stManiVlv6.ixOPN;  //Minitti manifold valve controls
-mb_Input_Coils[74]:=stManiVlv7.ixOPN;  //Minitti manifold valve controls
-mb_Input_Coils[75]:=stManiVlv8.ixOPN;  //Minitti manifold valve controls
+mb_Input_Coils[60]:=stGasMani.stManiVlv1.xILK;  //Minitti manifold valve controls
+mb_Input_Coils[61]:=stGasMani.stManiVlv2.xILK;  //Minitti manifold valve controls
+mb_Input_Coils[62]:=stGasMani.stManiVlv3.xILK;  //Minitti manifold valve controls
+mb_Input_Coils[63]:=stGasMani.stManiVlv4.xILK;  //Minitti manifold valve controls
+mb_Input_Coils[64]:=stGasMani.stManiVlv5.xILK;  //Minitti manifold valve controls
+mb_Input_Coils[65]:=stGasMani.stManiVlv6.xILK;  //Minitti manifold valve controls
+mb_Input_Coils[66]:=stGasMani.stManiVlv7.xILK;  //Minitti manifold valve controls
+mb_Input_Coils[67]:=stGasMani.stManiVlv8.xILK;  //Minitti manifold valve controls
+mb_Input_Coils[68]:=stGasMani.stManiVlv1.ixOPN;  //Minitti manifold valve controls
+mb_Input_Coils[69]:=stGasMani.stManiVlv2.ixOPN;  //Minitti manifold valve controls
+mb_Input_Coils[70]:=stGasMani.stManiVlv3.ixOPN;  //Minitti manifold valve controls
+mb_Input_Coils[71]:=stGasMani.stManiVlv4.ixOPN;  //Minitti manifold valve controls
+mb_Input_Coils[72]:=stGasMani.stManiVlv5.ixOPN;  //Minitti manifold valve controls
+mb_Input_Coils[73]:=stGasMani.stManiVlv6.ixOPN;  //Minitti manifold valve controls
+mb_Input_Coils[74]:=stGasMani.stManiVlv7.ixOPN;  //Minitti manifold valve controls
+mb_Input_Coils[75]:=stGasMani.stManiVlv8.ixOPN;  //Minitti manifold valve controls
 //=========================================================
 // ALI Controls
 	mb_Input_Coils[80]:=stALI.axisX.xHLS;  //ALI_Manip

@@ -78,6 +78,9 @@
     <Compile Include="DUTs\IO_Structs\ST_M3DeviceBaseIO.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\IO_Structs\ST_M3GasManifoldIO.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\IO_Structs\ST_M3PressCtrlIO.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -88,6 +91,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\Sensirion\ST_SensirionFMStatus.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\ST_M3GasManifold.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\ST_ManifoldValve.TcDUT">

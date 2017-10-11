@@ -37,11 +37,34 @@ stRegProp3.iPressureRaw := iq_stPressCtrlB.i_EP4374_Ch1;
 stRegProp4.iPressureRaw := iq_stPressCtrlB.i_EP4374_Ch2;
 
 iq_stPressCtrlB.q_EP4374_Ch3 := stRegProp3.iSetpointRaw;
-iq_stPressCtrlB.q_EP4374_Ch4 := stRegProp4.iSetpointRaw;]]></ST>
+iq_stPressCtrlB.q_EP4374_Ch4 := stRegProp4.iSetpointRaw;
+
+stGasMani.xOnline := NOT iq_stM3GasManifold.i_SyncUnitWC;
+
+iq_stM3GasManifold.q_EP2338_Ch1 := stGasMani.stManiVlv1.qxDO;
+iq_stM3GasManifold.q_EP2338_Ch2 := stGasMani.stManiVlv2.qxDO;
+iq_stM3GasManifold.q_EP2338_Ch3 := stGasMani.stManiVlv3.qxDO;
+iq_stM3GasManifold.q_EP2338_Ch4 := stGasMani.stManiVlv4.qxDO;
+iq_stM3GasManifold.q_EP2338_Ch5 := stGasMani.stManiVlv5.qxDO;
+iq_stM3GasManifold.q_EP2338_Ch6 := stGasMani.stManiVlv6.qxDO;
+iq_stM3GasManifold.q_EP2338_Ch7 := stGasMani.stManiVlv7.qxDO;
+iq_stM3GasManifold.q_EP2338_Ch8 := stGasMani.stManiVlv8.qxDO;
+
+stGasMani.stManiVlv1.ixOPN := iq_stM3GasManifold.i_EP2338_Ch1;
+stGasMani.stManiVlv2.ixOPN := iq_stM3GasManifold.i_EP2338_Ch2;
+stGasMani.stManiVlv3.ixOPN := iq_stM3GasManifold.i_EP2338_Ch3;
+stGasMani.stManiVlv4.ixOPN := iq_stM3GasManifold.i_EP2338_Ch4;
+stGasMani.stManiVlv5.ixOPN := iq_stM3GasManifold.i_EP2338_Ch5;
+stGasMani.stManiVlv6.ixOPN := iq_stM3GasManifold.i_EP2338_Ch6;
+stGasMani.stManiVlv7.ixOPN := iq_stM3GasManifold.i_EP2338_Ch7;
+stGasMani.stManiVlv8.ixOPN := iq_stM3GasManifold.i_EP2338_Ch8;]]></ST>
     </Implementation>
     <LineIds Name="p_SoftIO">
       <LineId Id="3" Count="24" />
       <LineId Id="34" Count="5" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="61" Count="1" />
+      <LineId Id="44" Count="16" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

@@ -23,14 +23,7 @@
 	stShaker04	:	ST_Shaker;
 	
 	(* Minitti Manifold *)
-	stManiVlv1	:	ST_ManifoldValve;
-	stManiVlv2	:	ST_ManifoldValve;
-	stManiVlv3	:	ST_ManifoldValve;
-	stManiVlv4	:	ST_ManifoldValve;
-	stManiVlv5	:	ST_ManifoldValve;
-	stManiVlv6	:	ST_ManifoldValve;
-	stManiVlv7	:	ST_ManifoldValve;
-	stManiVlv8	:	ST_ManifoldValve;
+	stGasMani	:	ST_M3GasManifold;
 	
 	(* ALI *)
 	stALI	:	ST_ALI;

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <DUT Name="ST_M3GasManifold" Id="{01255b00-41b0-4bcc-9681-1f20a2dc6742}">
+    <Declaration><![CDATA[TYPE ST_M3GasManifold :
+STRUCT
+	stManiVlv1	:	ST_ManifoldValve;
+	stManiVlv2	:	ST_ManifoldValve;
+	stManiVlv3	:	ST_ManifoldValve;
+	stManiVlv4	:	ST_ManifoldValve;
+	stManiVlv5	:	ST_ManifoldValve;
+	stManiVlv6	:	ST_ManifoldValve;
+	stManiVlv7	:	ST_ManifoldValve;
+	stManiVlv8	:	ST_ManifoldValve;
+	
+	xOnline	:	BOOL; //WC inverse (true is good)
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

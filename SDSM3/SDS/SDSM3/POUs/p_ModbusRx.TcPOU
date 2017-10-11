@@ -63,14 +63,14 @@ stRegProp3.iHiLimit:=mb_Output_Registers[56];  //Proportionair controls
 stRegProp4.iHiLimit:=mb_Output_Registers[57];  //Proportionair controls
 
 (* Digital output controls *)
-stManiVlv1.xSW:=mb_Output_Coils[60];  //Minitti manifold valve controls
-stManiVlv2.xSW:=mb_Output_Coils[61];  //Minitti manifold valve controls
-stManiVlv3.xSW:=mb_Output_Coils[62];  //Minitti manifold valve controls
-stManiVlv4.xSW:=mb_Output_Coils[63];  //Minitti manifold valve controls
-stManiVlv5.xSW:=mb_Output_Coils[64];  //Minitti manifold valve controls
-stManiVlv6.xSW:=mb_Output_Coils[65];  //Minitti manifold valve controls
-stManiVlv7.xSW:=mb_Output_Coils[66];  //Minitti manifold valve controls
-stManiVlv8.xSW:=mb_Output_Coils[67];  //Minitti manifold valve controls
+stGasMani.stManiVlv1.xSW:=mb_Output_Coils[60];  //Minitti manifold valve controls
+stGasMani.stManiVlv2.xSW:=mb_Output_Coils[61];  //Minitti manifold valve controls
+stGasMani.stManiVlv3.xSW:=mb_Output_Coils[62];  //Minitti manifold valve controls
+stGasMani.stManiVlv4.xSW:=mb_Output_Coils[63];  //Minitti manifold valve controls
+stGasMani.stManiVlv5.xSW:=mb_Output_Coils[64];  //Minitti manifold valve controls
+stGasMani.stManiVlv6.xSW:=mb_Output_Coils[65];  //Minitti manifold valve controls
+stGasMani.stManiVlv7.xSW:=mb_Output_Coils[66];  //Minitti manifold valve controls
+stGasMani.stManiVlv8.xSW:=mb_Output_Coils[67];  //Minitti manifold valve controls
 //=========================================================
 // ALI Controls
 	stALI.axisX.xStart:=mb_Output_Coils[80];  //ALI_Manip

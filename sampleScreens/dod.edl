@@ -1,0 +1,395 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 5360
+y 1582
+w 376
+h 459
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+ctlFont "helvetica-medium-r-14.0"
+ctlFontAlign "center"
+btnFont "helvetica-medium-r-14.0"
+btnFontAlign "center"
+fgColor index 14
+bgColor index 7
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 1
+ctlBgColor1 index 1
+ctlBgColor2 index 14
+topShadowColor index 1
+botShadowColor index 14
+title "Drop On Demand"
+showGrid
+snapToGrid
+gridSize 4
+orthoLineDraw
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 4
+w 368
+h 448
+lineColor index 4
+fill
+fillColor index 5
+lineWidth 0
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 332
+y 612
+w 0
+h 0
+lineColor index 14
+fillColor index 1
+lineWidth 2
+numPoints 1
+xPoints {
+  0 332
+}
+yPoints {
+  0 612
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 212
+y 8
+w 155
+h 42
+font "helvetica-bold-r-18.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "$(LOC):$(SYS)"
+  "Drop On Demand"
+}
+autoSize
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 12
+y 12
+w 164
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+inconsistentColor index 35
+topShadowColor index 1
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):RemoteControlEnable"
+indicatorPv "$(LOC):$(SYS):RemoteControlEnabled"
+onLabel "System Enabled"
+offLabel "System Locked"
+labelType "literal"
+3d
+font "helvetica-medium-r-14.0"
+objType "controls"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 12
+y 40
+w 116
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-bold-r-10.0"
+buttonLabel "Control Screens"
+numPvs 4
+numDsps 11
+displayFileName {
+  0 "sampleScreens/sdsMain.edl"
+  1 "sampleScreens/lc20Screens/lc20.edl"
+  2 "sampleScreens/sample_integration.edl"
+  3 "sampleScreens/ptc10Screens/ptc10.edl"
+  4 "sampleScreens/proportionair_regulator_controls.edl"
+  5 "sampleScreens/sdsMain.edl"
+  6 "sampleScreens/lc20Screens/lc20.edl"
+  7 "sampleScreens/sample_integration.edl"
+  8 "sampleScreens/manifold.edl"
+  9 "sampleScreens/m3-pressure-controller.edl"
+  10 "sampleScreens/dod.edl"
+}
+menuLabel {
+  0 "Selector 1"
+  1 "HPLC Pump 1"
+  2 "Selector 1 Flow Integrator"
+  3 "CoolerShaker"
+  4 "Proportionair Control"
+  5 "Selector 2"
+  6 "HPLC Pump 2"
+  7 "Selector 2 Flow Integrator"
+  8 "Gas Delivery Manifold"
+  9 "M3 Pressure Controller A"
+  10 "Drop On Demand"
+}
+setPosition {
+  0 "parentWindow"
+  1 "parentWindow"
+  2 "parentWindow"
+  3 "parentWindow"
+  4 "parentWindow"
+  5 "parentWindow"
+  6 "parentWindow"
+  7 "parentWindow"
+  8 "parentWindow"
+}
+symbols {
+  0 "LOC=$(LOC),SYS=$(SYS),selNum=1"
+  1 "DEV=$(LOC):LC20:$(SYS),IOC=$(HPLC_IOC)"
+  2 "DEV=$(LOC):$(SYS):SEL1,NUM=1"
+  3 "DEV=$(LOC):PTC:01,IOC=$(LOC):PTC10:IOC:00"
+  4 "LOC=$(LOC),SYS=$(SYS)"
+  5 "LOC=$(LOC),SYS=$(SYS),selNum=2"
+  6 "DEV=$(LOC):LC20:$(SYS)B,IOC=$(HPLC_IOC)"
+  7 "DEV=$(LOC):$(SYS):SEL2,NUM=2"
+  8 "LOC=$(LOC),SYS=$(SYS)"
+  9 "LOC=$(LOC),SYS=$(SYS),PC=A"
+  10 "LOC=$(LOC),SYS=$(SYS)"
+}
+replaceSymbols {
+  0 1
+  4 1
+  5 1
+}
+propagateMacros {
+  0 0
+  4 0
+  5 0
+}
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 28
+y 136
+w 100
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+inconsistentColor index 14
+topShadowColor index 1
+botShadowColor index 14
+controlPv "$(LOC):$(SYS):DoD:Switch1"
+onLabel "Scienion"
+offLabel "MicroFab"
+labelType "literal"
+3d
+font "helvetica-medium-r-14.0"
+objType "controls"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 20
+y 128
+w 116
+h 40
+lineColor index 14
+fillColor index 1
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 112
+w 74
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "Piezo Trigger"
+}
+autoSize
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 20
+y 180
+w 124
+h 32
+fgColor index 14
+bgColor index 1
+topShadowColor index 1
+botShadowColor index 14
+font "helvetica-medium-r-14.0"
+buttonLabel "Scienion Laptop"
+numCmds 1
+command {
+  0 "rdesktop -u \"Scienion AG\" -p \"password\" -g 2000X900 pc-mfx-scienion &"
+}
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 20
+y 220
+w 124
+h 32
+fgColor index 14
+bgColor index 1
+topShadowColor index 1
+botShadowColor index 14
+font "helvetica-medium-r-14.0"
+buttonLabel "Strobe Laptop"
+numCmds 1
+command {
+  0 "rdesktop -u \"Administrator\" -p \"password\" -g 1024X700 laptop-cxi-ihDeponte &"
+}
+endObjectProperties
+
+# (Motif Slider)
+object activeMotifSliderClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 148
+y 100
+w 104
+h 312
+fgColor index 14
+bgColor index 1
+2ndBgColor index 14
+topShadowColor index 1
+botShadowColor index 14
+increment 1000
+controlPv "MFX:REC:EVR:02:TRIG1:TDES"
+controlLabel "Jet Delay"
+font "helvetica-medium-r-14.0"
+precision 0
+scaleMin 500000
+scaleMax 1e+06
+showLimits
+showLabel
+showValue
+orientation "vertical"
+endObjectProperties
+
+# (Motif Slider)
+object activeMotifSliderClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 264
+y 100
+w 104
+h 312
+fgColor index 14
+bgColor index 1
+2ndBgColor index 14
+topShadowColor index 1
+botShadowColor index 14
+increment 1000
+controlPv "MFX:REC:EVR:02:TRIG8:TDES"
+controlLabel "Strobe Delay"
+font "helvetica-medium-r-14.0"
+precision 0
+scaleMin 500000
+scaleMax 1e+06
+showLimits
+showLabel
+showValue
+orientation "vertical"
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 148
+y 56
+w 104
+h 36
+controlPv "MFX:REC:EVR:02:TRIG1:TDES"
+fgColor index 25
+fgAlarm
+bgColor index 4
+fill
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 260
+y 56
+w 104
+h 36
+controlPv "MFX:REC:EVR:02:TRIG8:TDES"
+fgColor index 25
+fgAlarm
+bgColor index 4
+fill
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+endObjectProperties
+

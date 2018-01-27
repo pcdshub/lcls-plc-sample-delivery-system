@@ -32,8 +32,9 @@ mb_Output_Coils[33] := 0;
 mb_Output_Registers[40] := stSelector2.iVici1ReqPos;
 mb_Output_Registers[41] := stSelector2.iVici2ReqPos;
 mb_Output_Registers[42] := stSelector2.iSyncReqPos;
-mb_Output_Coils[40] := stSelector2.xResLock;
+mb_Output_Coils[40] := 0;
 mb_Output_Coils[41]:= stSelector2.xFMReset;
+mb_Output_Coils[43]:= 0;
 
 (* Selector Readbacks *)
 mb_Input_Registers[30] := stSelector.stViciVlvStatus[1].iCurrPos;
@@ -179,7 +180,9 @@ mb_Input_Coils[75]:=stGasMani.stManiVlv8.ixOPN;  //Minitti manifold valve contro
 ]]></ST>
     </Implementation>
     <LineIds Name="p_ModbusTx">
-      <LineId Id="197" Count="117" />
+      <LineId Id="197" Count="26" />
+      <LineId Id="379" Count="0" />
+      <LineId Id="224" Count="90" />
       <LineId Id="365" Count="6" />
       <LineId Id="315" Count="36" />
       <LineId Id="375" Count="0" />

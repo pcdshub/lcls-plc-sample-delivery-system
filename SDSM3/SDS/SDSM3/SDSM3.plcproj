@@ -18,9 +18,10 @@
     <SccLocalPath>Svn</SccLocalPath>
     <Company>Aperture Science</Company>
     <Title>SDS M2</Title>
-    <ProjectVersion>2.6.0</ProjectVersion>
     <Author>A. Wallace</Author>
-    <Released>True</Released>
+    <Released>true</Released>
+    <CombineIds>false</CombineIds>
+    <ProjectVersion>2.6.1</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="DUTs\ALI\E_AxisMoveMode.TcDUT">

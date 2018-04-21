@@ -17,3 +17,5 @@ auto_settings.sav*
 auto_positions.sav*
 *.req
 build.log
+autosave/
+archive/

@@ -1,4 +1,0 @@
-# Archiver request file for sample flow accumulators
-
-$(P):$(N):StartingVol 30 monitor
-$(P):$(N):IntgFlow 30

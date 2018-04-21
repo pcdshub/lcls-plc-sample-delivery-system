@@ -10,5 +10,5 @@ EPICS_MODULES=$(EPICS_SITE_TOP)/modules
 EPICS_MODULES_DEV=$(EPICS_SITE_TOP)-dev/modules
 
 # Use the latest version of msi to avoid dependency on the extensions version
-MSI=$(EPICS_SITE_TOP)/extensions/current/bin/linux-x86/msi
+#MSI=$(EPICS_SITE_TOP)/extensions/current/bin/linux-x86/msi
 

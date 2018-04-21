@@ -30,7 +30,7 @@ record(mbbi, "$(DEV):RES:FlowSrcSelection"){
 }
 
 
-record(genSub, "$(DEV):RES:IntegratorSub") {
+record(aSub, "$(DEV):RES:IntegratorSub") {
   field(DESC, "Sample Flow Integrator")
   field(SCAN, ".5 second")
   field(INAM, "subSampleIntegratorInit")

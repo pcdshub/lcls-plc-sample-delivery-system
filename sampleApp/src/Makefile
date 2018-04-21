@@ -16,14 +16,15 @@ DBD += sampleDelivery.dbd
 
 sampleDelivery_DBD += base.dbd
 sampleDelivery_DBD += iocAdmin.dbd
-sampleDelivery_DBD += autosaveSupport.dbd
+sampleDelivery_DBD += asSupport.dbd
 sampleDelivery_DBD += asyn.dbd
 sampleDelivery_DBD += stream.dbd
+sampleDelivery_DBD += ads.dbd
 sampleDelivery_DBD += modbus.dbd
 sampleDelivery_DBD += modbusSupport.dbd
 sampleDelivery_DBD += caPutLog.dbd
 
-sampleDelivery_DBD += genSubRecord.dbd
+# sampleDelivery_DBD += genSubRecord.dbd
 
 # Sample Integrator
 sampleDelivery_DBD += SampleIntegrator.dbd
@@ -42,8 +43,9 @@ sampleDelivery_LIBS += stream
 sampleDelivery_LIBS += autosave
 sampleDelivery_LIBS += devIocStats
 sampleDelivery_LIBS += modbus
+sampleDelivery_LIBS += ads
 sampleDelivery_LIBS += caPutLog
-sampleDelivery_LIBS += genSub
+# sampleDelivery_LIBS += genSub
 sampleDelivery_LIBS += asyn
 sampleDelivery_LIBS += $(EPICS_BASE_IOC_LIBS)
 

@@ -8,7 +8,7 @@
 #include <registryFunction.h>
 #include <epicsExport.h>
 #include <recSup.h>
-#include <genSubRecord.h>
+#include <aSubRecord.h>
 #include <time.h>
 #include <errlog.h>
 
@@ -23,7 +23,7 @@ int ACCUM_DEBUG = 0;
 epicsExportAddress( int, ACCUM_DEBUG );
 
 
-long subSampleIntegratorInit(genSubRecord *pgsub)
+long subSampleIntegratorInit(aSubRecord *pgsub)
 {
 	time(&epoch_time);
     printf("subSampleIntegratorInit was called\n");
@@ -39,7 +39,7 @@ long subSampleIntegratorInit(genSubRecord *pgsub)
  * Sample 10 = J
  */
 
-long subSampleIntegratorProcess(genSubRecord *pgsub)
+long subSampleIntegratorProcess(aSubRecord *pgsub)
 {
 	//Get the current time
 	time(&curr_time);

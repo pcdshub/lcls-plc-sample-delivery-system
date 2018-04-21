@@ -1,0 +1,73 @@
+# Sample Delivery System Mark II
+# Archive Request Template
+# Alex Wallace
+# 14-11-13
+
+# Controls that don't change too much
+
+$(P):REG:01:PercSP	30 monitor
+$(P):REG:02:PercSP	30 monitor
+
+$(P):PAREG:01:PressSP	30 monitor
+$(P):PAREG:02:PressSP	30 monitor
+
+$(P):PAREG:01:HiPressLimit	30 monitor
+$(P):PAREG:02:HiPressLimit	30 monitor
+
+$(P):VLV:01:REQ_POS		30 monitor
+$(P):VLV:02:REQ_POS		30 monitor
+$(P):SYNC:REQ_POS		30 monitor
+$(P):SEL:SYNC:REQ_POS		30 monitor
+$(P):VLV:01:CURR_POS	30 monitor
+$(P):SEL:VLV:01:CURR_POS	30 monitor
+$(P):VLV:02:CURR_POS	30 monitor
+$(P):SEL:VLV:02:CURR_POS	30 monitor
+$(P):SYNC:CURR_POS		30 monitor
+$(P):SEL:SYNC:CURR_POS		30 monitor
+
+$(P):VLV:01:REQ_POS		30 monitor
+$(P):VLV:02:REQ_POS		30 monitor
+$(P):SYNC:REQ_POS		30 monitor
+$(P):SEL:SYNC:REQ_POS		30 monitor
+$(P):VLV:01:CURR_POS	30 monitor
+$(P):SEL:VLV:01:CURR_POS	30 monitor
+$(P):VLV:02:CURR_POS	30 monitor
+$(P):SEL:VLV:02:CURR_POS	30 monitor
+$(P):SYNC:CURR_POS		30 monitor
+$(P):SEL:SYNC:CURR_POS		30 monitor
+
+$(P):SEL:VLV_LOCK		30 monitor
+
+$(P):01:SampleShaker	30 monitor
+$(P):01:SampleShaker	30 monitor
+$(P):01:SampleShaker	30 monitor
+$(P):01:SampleShaker	30 monitor
+
+$(P):E_STOP				30 monitor
+
+$(P):REG:01:Enable		30 monitor
+$(P):REG:02:Enable		30 monitor
+
+$(P):PAREG:01:Enable		30 monitor
+$(P):PAREG:02:Enable		30 monitor
+
+$(P):VLV:01:OpnRB	30 monitor
+$(P):VLV:02:OpnRB	30 monitor
+$(P):VLV:03:OpnRB	30 monitor
+$(P):VLV:04:OpnRB	30 monitor
+$(P):VLV:05:OpnRB	30 monitor
+$(P):VLV:06:OpnRB	30 monitor
+$(P):VLV:07:OpnRB	30 monitor
+
+# Readback values for system parameters (eg. regulator pressure and flow)
+$(P):REG:01:PRESS	30
+$(P):REG:02:PRESS	30
+
+$(P):PAREG:01:PRESS	30
+$(P):PAREG:02:PRESS	30
+
+$(P):REG:01:UP_PRESS	30
+$(P):REG:02:UP_PRESS	30
+
+$(P):SEL:Flow			30
+

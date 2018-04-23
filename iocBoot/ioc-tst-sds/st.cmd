@@ -21,13 +21,10 @@ epicsEnvSet( "LOC", "TST")
 epicsEnvSet( "SYS", "SDS") #Sample Delivery System
 epicsEnvSet( "PLC", "plc-sds-raptor")
 
-< iocBoot/ioc-tst-sds/plcPorts.cmd
-
-
 epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES","2000000",1)
 
 
-
+< iocBoot/ioc-tst-sds/plcPorts.cmd
 
 ####### Load record instances
 dbLoadRecords( "db/iocAdmin.db",        "IOC=$(EPICS_PV)" )
@@ -50,6 +47,13 @@ dbLoadRecords("db/sample_flow_integration.db", "DEV=$(LOC):$(SYS):SEL1,FLOWMETER
 
 dbLoadRecords("db/sample_flow_accumulators.db", "DEV=$(LOC):$(SYS):SEL2,NUM=2")
 dbLoadRecords("db/sample_flow_integration.db", "DEV=$(LOC):$(SYS):SEL2,FLOWMETER=$(LOC):$(SYS):SEL2:Flow,PUMP=$(LOC):LC20:$(SYS)B:FlowRate,NUM=2")
+
+####PLC Diagnostics
+#Set up ADS interface
+drvAsynAdsPortConfigure("ADS_1","172.21.42.118","172.21.42.118.1.1",851,0, 0, 0)
+dbLoadRecords("db/TwincatAppInfo.db", "P=$(LOC):$(SYS):")
+dbLoadRecords("db/TwincatPlcTask.db", "P=$(LOC):$(SYS):")
+dbLoadRecords("db/TwincatTaskInfo.db", "P=$(LOC):$(SYS):")
 
 # Setup autosave
 save_restoreSet_status_prefix("$(EPICS_PV)" )

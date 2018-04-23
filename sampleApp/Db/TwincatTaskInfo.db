@@ -1,0 +1,113 @@
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:TaskInfo:1:ObjId"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList._TaskInfo[1].ObjId?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:TaskInfo:1:CycleTime"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList._TaskInfo[1].CycleTime?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:TaskInfo:1:Priority"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList._TaskInfo[1].Priority?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(waveform,"$(P)TwinCAT_SystemInfoVarList:TaskInfo:1:TaskName"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynInt8ArrayIn")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList._TaskInfo[1].TaskName?")
+  field(NELM,100)
+  field(SCAN,"I/O Intr")
+  field(FTVL,"CHAR")
+}
+
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:TaskInfo:1:AdsPort"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList._TaskInfo[1].AdsPort?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:TaskInfo:1:CycleCount"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList._TaskInfo[1].CycleCount?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:TaskInfo:1:DcTaskTime"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList._TaskInfo[1].DcTaskTime?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:TaskInfo:1:LastExecTime"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList._TaskInfo[1].LastExecTime?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:TaskInfo:1:FirstCycle"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynInt32")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList._TaskInfo[1].FirstCycle?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:TaskInfo:1:CycleTimeExceeded"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynInt32")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList._TaskInfo[1].CycleTimeExceeded?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:TaskInfo:1:InCallAfterOutputUpdate"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynInt32")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList._TaskInfo[1].InCallAfterOutputUpdate?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:TaskInfo:1:RTViolation"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynInt32")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList._TaskInfo[1].RTViolation?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+
+

@@ -1,0 +1,271 @@
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:dwVersion"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.dwVersion?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(waveform,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:pszName^"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.pszName^?")
+  field(NELM,100)
+  field(SCAN,"I/O Intr")
+  field(FTVL,"CHAR")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:nPriority"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynInt32")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.nPriority?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:KindOf"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.KindOf?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:bWatchdog"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynInt32")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.bWatchdog?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:bProfilingTask"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynInt32")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.bProfilingTask?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:dwEventFunctionPointer^"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.dwEventFunctionPointer^?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:pszExternalEvent^"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.pszExternalEvent^?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:dwTaskEntryFunctionPointer^"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.dwTaskEntryFunctionPointer^?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:dwWatchdogSensitivity"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.dwWatchdogSensitivity?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:dwInterval"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.dwInterval?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:dwWatchdogTime"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.dwWatchdogTime?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:dwLastCycleTime"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.dwLastCycleTime?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:dwAverageCycleTime"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.dwAverageCycleTime?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:dwMaxCycleTime"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.dwMaxCycleTime?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:dwMinCycleTime"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.dwMinCycleTime?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:diJitter"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynInt32")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.diJitter?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:diJitterMin"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynInt32")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.diJitterMin?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:diJitterMax"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynInt32")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.diJitterMax?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:dwCycleCount"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.dwCycleCount?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:wTaskStatus"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.wTaskStatus?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:wNumOfJitterDistributions"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.wNumOfJitterDistributions?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:pJitterDistribution^:wRangeMax"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.pJitterDistribution^.wRangeMax?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:pJitterDistribution^:wCountJitterNeg"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.pJitterDistribution^.wCountJitterNeg?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:pJitterDistribution^:wCountJitterPos"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.pJitterDistribution^.wCountJitterPos?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:bWithinSPSTimeSlicing"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynInt32")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.bWithinSPSTimeSlicing?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:byDummy"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.byDummy?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:bShouldBlock"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynInt32")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.bShouldBlock?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:bActive"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynInt32")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.bActive?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}
+
+record(ai,"$(P)TwinCAT_SystemInfoVarList:_PlcTask:dwIECCycleCount"){
+ field(PINI, "1")
+ field(TSE, -2)
+ field(DTYP, "asynFloat64")
+ field(INP,  "@asyn($(PORT),0,1)ADSPORT=851/TwinCAT_SystemInfoVarList.__PlcTask.dwIECCycleCount?")
+ field(PREC, "3")
+ field(SCAN,"I/O Intr")
+}

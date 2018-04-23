@@ -13,6 +13,9 @@ include $(TOP)/configure/CONFIG
 DB += iocAdmin.db
 DB += sample_selection.db
 DB += asynRecord.db
+DB += TwincatAppInfo.db
+DB += TwincatPlcTask.db
+DB += TwincatTaskInfo.db
 
 DB += sample_flow_integration.db
 DB += sample_flow_accumulators.db

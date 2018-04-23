@@ -17,12 +17,12 @@ USR_ARCHIVEFLAGS += -V
 #----------------------------------------------------
 # Create and install IOC archive file
 #
-ARCHIVE += ioc-cxi-sds.archive
+ARCHIVE += ioc-mfx-sds.archive
 
 #----------------------------------------------------
 # Create and install IOC autosave file
 #
-REQ += ioc-cxi-sds.req
+REQ += ioc-mfx-sds.req
 
 include $(CONFIG)/RULES
 include $(CONFIG)/RULES.ioc-targets

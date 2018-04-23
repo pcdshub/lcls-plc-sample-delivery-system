@@ -50,38 +50,39 @@ dbLoadRecords("db/sample_flow_integration.db", "DEV=$(LOC):$(SYS):SEL2,FLOWMETER
 
 ####PLC Diagnostics
 #Set up ADS interface
-adsAsynPortDriverConfigure("ADS_1","172.21.42.118","172.21.42.118.1.1",851,0, 0, 0)
+adsAsynPortDriverConfigure("ADS_1","172.21.42.118","5.35.66.22.1.1",851,1000,0,0,50,100,1000,0)
+#adsAsynPortDriverConfigure("ADS_1","172.21.42.118","5.35.66.22.1.1",851, 50, 0, 0)
 dbLoadRecords("db/TwincatAppInfo.db", "P=$(LOC):$(SYS):,PORT=ADS_1")
 dbLoadRecords("db/TwincatPlcTask.db", "P=$(LOC):$(SYS):,PORT=ADS_1")
 dbLoadRecords("db/TwincatTaskInfo.db", "P=$(LOC):$(SYS):,PORT=ADS_1")
 
-# Setup autosave
-save_restoreSet_status_prefix("$(EPICS_PV)" )
-save_restoreSet_IncompleteSetsOk( 1 )
-save_restoreSet_DatedBackupFiles( 1 )
+# # Setup autosave
+# save_restoreSet_status_prefix("$(EPICS_PV)" )
+# save_restoreSet_IncompleteSetsOk( 1 )
+# save_restoreSet_DatedBackupFiles( 1 )
 
-set_savefile_path( "$(IOC_DATA)/$(IOC)/autosave" )
-set_requestfile_path( "$(TOP)/autosave" )
+# set_savefile_path( "$(IOC_DATA)/$(IOC)/autosave" )
+# set_requestfile_path( "$(TOP)/autosave" )
 
-set_pass0_restoreFile( "$(IOC).sav" )
-set_pass1_restoreFile( "$(IOC).sav" )
-set_pass1_restoreFile( "sampleFlowAccumulators.sav")
+# set_pass0_restoreFile( "$(IOC).sav" )
+# set_pass1_restoreFile( "$(IOC).sav" )
+# set_pass1_restoreFile( "sampleFlowAccumulators.sav")
 
-#Access Security (for caPutLog)
-asSetFilename("$(TOP)/etc/default.acf")
+# #Access Security (for caPutLog)
+# asSetFilename("$(TOP)/etc/default.acf")
 
-#Setting the caPutLog file location
-caPutLogFile("$(IOC_DATA)/$(IOC)/logs/caPutLog.log")
-# Initialize the IOC and start processing records
-iocInit()
+# #Setting the caPutLog file location
+# caPutLogFile("$(IOC_DATA)/$(IOC)/logs/caPutLog.log")
+# # Initialize the IOC and start processing records
+# iocInit()
 
-#Start caPutLog
-#caPutLogInit "$(EPICS_IOC_LOG_INET):$(EPICS_IOC_LOG_PORT)"
-caPutLogInit "psloghost:$(EPICS_IOC_LOG_PORT)"
+# #Start caPutLog
+# #caPutLogInit "$(EPICS_IOC_LOG_INET):$(EPICS_IOC_LOG_PORT)"
+# caPutLogInit "psloghost:$(EPICS_IOC_LOG_PORT)"
 
-# Start autosave backups
-create_monitor_set( "$(IOC).req", 30, "LOC=$(LOC), SYS=$(SYS)" )
-create_monitor_set( "sampleFlowAccumulators.req", 1, "LOC=$(LOC),SYS=$(SYS)" )
+# # Start autosave backups
+# create_monitor_set( "$(IOC).req", 30, "LOC=$(LOC), SYS=$(SYS)" )
+# create_monitor_set( "sampleFlowAccumulators.req", 1, "LOC=$(LOC),SYS=$(SYS)" )
 
 
 # All IOCs should dump some common info after initial startup.

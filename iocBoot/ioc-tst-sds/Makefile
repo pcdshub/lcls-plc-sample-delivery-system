@@ -4,7 +4,7 @@
 
 TOP = ../..
 include $(TOP)/configure/CONFIG
-ARCH = linux-x86
+ARCH = rhel7-x86_64
 TARGETS = envPaths
 
 # Make sure these archive files are fully expanded

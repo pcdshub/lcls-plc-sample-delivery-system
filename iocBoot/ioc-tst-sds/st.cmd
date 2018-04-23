@@ -1,4 +1,4 @@
-#!../../bin/linux-x86/sampleDelivery
+#!../../bin/rhel7-x86_64/sampleDelivery
 
 < envPaths
 epicsEnvSet( "ENGINEER", "Alex Wallace (awallace)" )
@@ -28,7 +28,7 @@ epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES","2000000",1)
 
 ####### Load record instances
 dbLoadRecords( "db/iocAdmin.db",        "IOC=$(EPICS_PV)" )
-dbLoadRecords( "db/save_restoreStatus.db",  "IOC=$(EPICS_PV)" )
+dbLoadRecords( "db/save_restoreStatus.db",  "P=$(EPICS_PV)" )
 
 
 #PLC modbus file
@@ -50,10 +50,10 @@ dbLoadRecords("db/sample_flow_integration.db", "DEV=$(LOC):$(SYS):SEL2,FLOWMETER
 
 ####PLC Diagnostics
 #Set up ADS interface
-drvAsynAdsPortConfigure("ADS_1","172.21.42.118","172.21.42.118.1.1",851,0, 0, 0)
-dbLoadRecords("db/TwincatAppInfo.db", "P=$(LOC):$(SYS):")
-dbLoadRecords("db/TwincatPlcTask.db", "P=$(LOC):$(SYS):")
-dbLoadRecords("db/TwincatTaskInfo.db", "P=$(LOC):$(SYS):")
+adsAsynPortDriverConfigure("ADS_1","172.21.42.118","172.21.42.118.1.1",851,0, 0, 0)
+dbLoadRecords("db/TwincatAppInfo.db", "P=$(LOC):$(SYS):,PORT=ADS_1")
+dbLoadRecords("db/TwincatPlcTask.db", "P=$(LOC):$(SYS):,PORT=ADS_1")
+dbLoadRecords("db/TwincatTaskInfo.db", "P=$(LOC):$(SYS):,PORT=ADS_1")
 
 # Setup autosave
 save_restoreSet_status_prefix("$(EPICS_PV)" )

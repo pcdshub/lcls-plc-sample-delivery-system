@@ -74,7 +74,7 @@ dbLoadRecords("db/TwincatTaskInfo.db", "P=$(LOC):$(SYS):,PORT=ADS_1")
 # #Setting the caPutLog file location
 # caPutLogFile("$(IOC_DATA)/$(IOC)/logs/caPutLog.log")
 # # Initialize the IOC and start processing records
-# iocInit()
+iocInit()
 
 # #Start caPutLog
 # #caPutLogInit "$(EPICS_IOC_LOG_INET):$(EPICS_IOC_LOG_PORT)"

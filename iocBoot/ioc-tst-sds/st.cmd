@@ -51,7 +51,6 @@ dbLoadRecords("db/sample_flow_integration.db", "DEV=$(LOC):$(SYS):SEL2,FLOWMETER
 ####PLC Diagnostics
 #Set up ADS interface
 adsAsynPortDriverConfigure("ADS_1","172.21.42.118","5.35.66.22.1.1",851,1000,0,0,50,100,1000,0)
-#adsAsynPortDriverConfigure("ADS_1","172.21.42.118","5.35.66.22.1.1",851, 50, 0, 0)
 dbLoadRecords("db/TwincatAppInfo.db", "P=$(LOC):$(SYS):,PORT=ADS_1")
 dbLoadRecords("db/TwincatPlcTask.db", "P=$(LOC):$(SYS):,PORT=ADS_1")
 dbLoadRecords("db/TwincatTaskInfo.db", "P=$(LOC):$(SYS):,PORT=ADS_1")

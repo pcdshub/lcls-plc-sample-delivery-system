@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <GVL Name="GVL_IO" Id="{72fbb778-259d-42b9-8ccf-d5ffd47335bc}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	
+	iq_stM2SelectorA	:	ST_M2SelectorIO;
+	iq_stM2SelectorB	:	ST_M2SelectorIO;
+
+	iq_stM3SelectorA	:	ST_M3SelectorIO;
+	iq_stM3SelectorB	:	ST_M3SelectorIO;
+	
+	iq_stPressCtrlA		:	ST_M3PressCtrlIO;
+	iq_stPressCtrlB		:	ST_M3PressCtrlIO;
+
+	i_iFscEB1Ch0AI	AT	%I*	:	INT;
+	i_iFscEB1Ch1AI	AT	%I*	:	INT;
+	i_iFscEB1Ch2AI	AT	%I*	:	INT;
+	i_iFscEB1Ch3AI	AT	%I*	:	INT;
+	
+	iq_stM3GasManifold	:	ST_M3GasManifoldIO;
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="FB_PropValve" Id="{5d37ea8b-affd-40c7-9959-7bc359f6de15}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_PropValve
+VAR_INPUT
+	i_xExtIlk	:	BOOL;
+END_VAR
+VAR_OUTPUT
+	q_xError	:	BOOL;
+END_VAR
+VAR_IN_OUT
+	stPropValve	:	ST_PropValveMKS253;
+END_VAR
+VAR
+	xInterlock	:	BOOL;
+	
+	eState : E_PropValveFBState := E_PropValveFBState.Init;
+	stDiag	:	ST_fbDiagnostics;
+	
+	mcPower	:	MC_Power;
+	mcJog	:	MC_Jog;
+	mcReset	:	MC_Reset;
+	mcSmoothMover	:	MC_SmoothMover;
+	tofLLSFilter	:	TOF := (PT:=T#100MS);
+	tofHLSFilter	:	TOF := (PT:=T#100MS);
+	
+	fbPID	:	FB_PID_EXT;
+	
+	AnyError: BOOL;
+	xReady	:	BOOL;
+	rtReset: R_TRIG;
+	
+	UpperLimit : LREAL := 2000;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Provide the motor enable and limit switch functions for the MKS 253 valve *)
+
+xInterlock := stPropValve.xInterlock AND i_xExtIlk;
+stPropValve.xEnable R= NOT xInterlock;
+
+
+rtReset(CLK:=stPropValve.xEnable);
+
+(* The low limit switch was flakey, I added the filters *)
+tofLLSFilter(IN:=stPropValve.i_LLS);
+tofHLSFilter(IN:=stPropValve.i_HLS);
+mcPower.Enable_Positive := tofHLSFilter.Q;
+mcPower.Enable_Negative := tofLLSFilter.Q;
+mcPower.Enable := xInterlock AND stPropValve.xEnable;
+stPropValve.xEnabled := mcPower.Enable;
+(* Move the valve *)
+
+IF AnyError THEN
+	eState := E_PropValveFBState.Error;
+	stPropValve.ePVCtrlStateReq := HMI_PropValveCtrlState.Hold;
+ELSIF xReady THEN
+	CASE stPropValve.ePVCtrlStateReq OF
+		HMI_PropValveCtrlState.Hold:
+			eState := E_PropValveFBState.Hold;
+		HMI_PropValveCtrlState.Manual:
+			eState := E_PropValveFBState.Manual;
+		HMI_PropValveCtrlState.Pressure:
+			eState := E_PropValveFBState.Pressure;
+	END_CASE
+ELSE
+	eState := E_PropValveFBState.Init;
+END_IF
+
+CASE eState OF
+	E_PropValveFBState.Init:
+		//This state is reached at startup and after a reset
+		//It seeks the closed limit switch and moves to hold
+		stPropValve.ePVCtrlState := HMI_PropValveCtrlState.Hold;
+		fbPID.i_Reset := TRUE;
+		IF NOT tofLLSFilter.Q AND mcPower.Status THEN
+			stPropValve.ePVCtrlStateReq := HMI_PropValveCtrlState.Hold;
+			fbPID.i_Reset := TRUE;
+			xReady := TRUE;
+		END_IF
+	E_PropValveFBState.Hold:
+		stPropValve.ePVCtrlState := HMI_PropValveCtrlState.Hold;
+		mcJog.JogForward := FALSE;
+		mcJog.JogBackwards := FALSE;
+		fbPID.i_Hold := TRUE;
+		
+	E_PropValveFBState.Pressure:
+		stPropValve.ePVCtrlState := HMI_PropValveCtrlState.Pressure;
+		
+		fbPID.i_Hold := FALSE;
+		fbPID.i_Reset := FALSE;
+		
+		//If the PID output is positive, jog forward, velocity scaled by the PID output
+		//likewise for a negative PID output
+		mcJog.JogForward := fbPID.q_lrCtrlOutput > 0;
+		mcJog.JogBackwards := fbPID.q_lrCtrlOutput < 0;
+		mcJog.Velocity := ABS(fbPID.q_lrCtrlOutput) * stPropValve.lrMaxSpeed;
+		
+	E_PropValveFBState.Manual:
+		stPropValve.ePVCtrlState := HMI_PropValveCtrlState.Manual;
+		fbPID.i_Hold := TRUE;
+		mcSmoothMover.Enable := TRUE;
+		mcSmoothMover.ReqAbsPos := LIMIT(0, INT_TO_LREAL(stPropValve.i_iPercOpenSP), 100)/100*UpperLimit;
+		
+	E_PropValveFBState.Error:
+		//Purgatory
+		mcJog.JogBackwards := FALSE;
+		mcJog.JogForward  := FALSE;
+		fbPID.i_Hold := TRUE;
+		xReady	:= FALSE;
+END_CASE
+
+
+//Valve movement based on PID output
+fbPID(i_lrSetpoint := REAL_TO_LREAL(stPropValve.i_rPressSP),
+		i_lrActVal := REAL_TO_LREAL(stPropValve.i_rPressRB),
+		i_stPIDParams := stPropValve.stPIDParams);
+	
+	
+//MC blocks	
+mcPower(Axis:=stPropValve.stAxis);	
+mcReset(Axis:=stPropValve.stAxis);
+mcJog(Axis:=stPropValve.stAxis, Mode:=E_JogMode.MC_JOGMODE_CONTINOUS);
+mcSmoothMover(Axis:=stPropValve.stAxis, 
+		Velocity:=stPropValve.lrMaxSpeed); 
+
+AnyError := mcJog.Error OR mcPower.Error OR fbPID.q_Error OR mcSmoothMover.Error;
+
+(* EPICS display of perc open *)
+stPropValve.q_iPercOpen := LREAL_TO_INT(100*stPropValve.stAxis.NcToPlc.ActPos / UpperLimit);
+
+(* EPICS display of limits *)
+stPropValve.xHLS := NOT tofHLSFilter.Q;
+stPropValve.xLLS := NOT tofLLSFilter.Q;]]></ST>
+    </Implementation>
+    <LineIds Name="FB_PropValve">
+      <LineId Id="25" Count="0" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="181" Count="0" />
+      <LineId Id="161" Count="1" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="13" Count="1" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="103" Count="0" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="104" Count="1" />
+      <LineId Id="107" Count="0" />
+      <LineId Id="179" Count="0" />
+      <LineId Id="127" Count="1" />
+      <LineId Id="139" Count="0" />
+      <LineId Id="141" Count="4" />
+      <LineId Id="140" Count="0" />
+      <LineId Id="146" Count="1" />
+      <LineId Id="108" Count="0" />
+      <LineId Id="106" Count="0" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="91" Count="0" />
+      <LineId Id="112" Count="0" />
+      <LineId Id="129" Count="0" />
+      <LineId Id="189" Count="0" />
+      <LineId Id="155" Count="0" />
+      <LineId Id="149" Count="0" />
+      <LineId Id="148" Count="0" />
+      <LineId Id="156" Count="0" />
+      <LineId Id="180" Count="0" />
+      <LineId Id="150" Count="0" />
+      <LineId Id="94" Count="1" />
+      <LineId Id="138" Count="0" />
+      <LineId Id="131" Count="0" />
+      <LineId Id="151" Count="0" />
+      <LineId Id="132" Count="0" />
+      <LineId Id="96" Count="1" />
+      <LineId Id="119" Count="0" />
+      <LineId Id="154" Count="0" />
+      <LineId Id="188" Count="0" />
+      <LineId Id="153" Count="0" />
+      <LineId Id="120" Count="5" />
+      <LineId Id="98" Count="1" />
+      <LineId Id="152" Count="0" />
+      <LineId Id="170" Count="0" />
+      <LineId Id="176" Count="0" />
+      <LineId Id="171" Count="0" />
+      <LineId Id="100" Count="1" />
+      <LineId Id="157" Count="2" />
+      <LineId Id="165" Count="0" />
+      <LineId Id="92" Count="0" />
+      <LineId Id="77" Count="0" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="135" Count="2" />
+      <LineId Id="114" Count="1" />
+      <LineId Id="85" Count="1" />
+      <LineId Id="183" Count="0" />
+      <LineId Id="87" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="174" Count="0" />
+      <LineId Id="173" Count="0" />
+      <LineId Id="110" Count="1" />
+      <LineId Id="185" Count="0" />
+      <LineId Id="187" Count="0" />
+      <LineId Id="186" Count="0" />
+      <LineId Id="45" Count="2" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

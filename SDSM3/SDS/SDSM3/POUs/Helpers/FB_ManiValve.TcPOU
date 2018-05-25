@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
+  <POU Name="FB_ManiValve" Id="{960c77b9-da15-4d1d-9d99-120e91ef3098}">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_ManiValve
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR_IN_OUT
+	iq_valve	:	ST_ManifoldValve;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Basic valve control block *)
+IF NOT iq_valve.xILK THEN
+	iq_valve.xSW := FALSE;
+END_IF
+
+iq_valve.qxDO := iq_valve.xILK and iq_valve.xSW;]]></ST>
+    </Implementation>
+    <ObjectProperties />
+  </POU>
+</TcPlcObject>

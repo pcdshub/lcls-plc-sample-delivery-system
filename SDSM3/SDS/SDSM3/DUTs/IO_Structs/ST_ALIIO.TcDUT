@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <DUT Name="ST_ALIIO" Id="{4882ef88-4d39-45a1-bcad-049669e85bd0}">
+    <Declaration><![CDATA[TYPE ST_ALIIO EXTENDS ST_M3DeviceBaseIO :
+STRUCT
+	//EP7041
+	//EP7041
+	//EP7041
+	//EP5101
+	
+	//EP3174 Vacuum Gauges, misc analog
+	i_EP3174_Ch1	AT	%I*	:	INT;
+	i_EP3174_Ch2	AT	%I*	:	INT;
+	i_EP3174_Ch3	AT	%I*	:	INT;
+	i_EP3174_Ch4	AT	%I*	:	INT;
+	
+	//EP7041 - Prop valve
+	
+	//EP2338 Misc DIO
+	q_EP2338_Ch1	AT	%Q*	:	BOOL;
+	q_EP2338_Ch2	AT	%Q*	:	BOOL;
+	q_EP2338_Ch3	AT	%Q*	:	BOOL;
+	q_EP2338_Ch4	AT	%Q*	:	BOOL;
+	
+	i_EP2338_Ch5	AT	%I*	:	BOOL;
+	i_EP2338_Ch6	AT	%I*	:	BOOL;
+	i_EP2338_Ch7	AT	%I*	:	BOOL;
+	i_EP2338_Ch8	AT	%I*	:	BOOL;
+	
+	//EP4374 Pressure Control
+	i_EP4374_Ch1	AT	%I*	:	INT;
+	i_EP4374_Ch2	AT	%I*	:	INT;
+	q_EP4374_Ch3	AT	%Q*	:	INT;
+	q_EP4374_Ch4	AT	%Q*	:	INT;
+	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

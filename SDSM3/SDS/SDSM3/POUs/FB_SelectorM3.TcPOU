@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="FB_SelectorM3" Id="{a6869ee8-a1a6-4578-87e8-3c9673bf57ea}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SelectorM3
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR_IN_OUT
+	iq_stSelector	:	ST_SelectorM3;
+END_VAR
+VAR
+	fbSelectorSync	:	FB_SelectorSync;
+	
+	afbViciDriver : ARRAY [1..4] OF FB_ViciDriver;
+	
+	fbSensirionDriver	:	ARRAY [1..2] OF	FB_SensirionDriver;
+	
+
+	stStatus: STRING;
+	udCount: UDINT;
+
+	tofReset: TOF;
+
+	iIdOld	:	INT;
+	
+	viciIndex: INT := 1;
+	fmIndex: INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//Flowmeters
+//////////////////////////////////////
+Sensirion();
+
+//Valve control
+///////////////////////////////////
+	fbSelectorSync(iq_stSelector:=iq_stSelector);
+	iq_stSelector.stViciVlvCtrl[1].iReqPos := LIMIT(1, iq_stSelector.iVici1ReqPos, 12);
+	iq_stSelector.stViciVlvCtrl[2].iReqPos := LIMIT(1, iq_stSelector.iVici2ReqPos, 12);
+	ViciDrivers();
+
+	//for epics readback to be consistent
+	IF iq_stSelector.xResSyncd THEN iq_stSelector.iSyncResPos := iq_stSelector.stViciVlvStatus[1].iCurrPos; END_IF
+
+(* Shakers *)
+iq_stSelector.stShaker01.q_xPwrDO := iq_stSelector.stShaker01.i_xEpics;
+iq_stSelector.stShaker02.q_xPwrDO := iq_stSelector.stShaker02.i_xEpics;
+iq_stSelector.stShaker03.q_xPwrDO := iq_stSelector.stShaker03.i_xEpics;
+iq_stSelector.stShaker04.q_xPwrDO := iq_stSelector.stShaker04.i_xEpics;]]></ST>
+    </Implementation>
+    <Action Name="ViciDrivers" Id="{05c523af-4ae3-411a-b3b8-eed2754bd956}">
+      <Implementation>
+        <ST><![CDATA[afbViciDriver[viciIndex](
+	i_xExecute:= TRUE,
+	i_tTimeOut:= t#10s,
+	i_stControl:= stSelector.stViciVlvCtrl[viciIndex],
+	iq_stSerialRXBuffer:= SerialRXBuffer_SelVici,
+	iq_stSerialTXBuffer:= SerialTXBuffer_SelVici,
+	q_stStatus=>stSelector.stViciVlvStatus[viciIndex]);
+
+IF 	afbViciDriver[viciIndex].q_xDone OR
+	afbViciDriver[viciIndex].q_xError OR
+	afbViciDriver[viciIndex].q_xTimeout THEN
+	(* reset function for next time *)
+	afbViciDriver[viciIndex](i_xExecute:=FALSE, iq_stSerialRXBuffer:= SerialRXBuffer_SelVici, iq_stSerialTXBuffer:=  SerialTXBuffer_SelVici);
+	
+	viciIndex := viciIndex + 1;
+	IF viciIndex > 2 THEN viciIndex := 1; END_IF
+	
+END_IF]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="Sensirion" Id="{9f746844-7a59-4525-bff1-09e3ede82e12}">
+      <Implementation>
+        <ST><![CDATA[(* Sensirion Flowmeter driver encapsulation*)	
+
+(* Reinitialize flowmeter *)
+iq_stSelector.stSelFMControlSens.xReset := stSelector.xFMReset;
+iq_stSelector.stSelFMControlSens.xCalMode := stSelector.xFMModeReq;
+
+	
+iq_stSelector.fbSensirionDriver[fmIndex](
+	i_xExecute:= TRUE,
+	i_tTimeOut:= t#10s,
+	iq_stSerialRXBuffer:= SerialRXBuffer_SelFlwMtr,
+	iq_stSerialTXBuffer:= SerialTXBuffer_SelFlwMtr,
+	q_stStatus=>iq_stSelector.astSelFM[fmIndex].stat,
+	i_stControl:=iq_stSelector.astSelFM[fmIndex].ctrl);
+
+IF iq_stSelector.fbSensirionDriver[fmIndex].q_xDone OR
+	iq_stSelector.fbSensirionDriver[fmIndex].q_xError OR
+	iq_stSelector.fbSensirionDriver[fmIndex].q_xTimeout THEN
+
+	
+	IF fmIndex = 1 THEN 
+		//Legacy flow
+		//low flow maps to legacy readbacks
+		iq_stSelector.rFlow := iq_stSelector.astSelFM[fmIndex].stat.rFlow;
+		iq_stSelector.xFMOoR := iq_stSelector.astSelFM[fmIndex].stat.xOoR;
+		iq_stSelector.xFlowValid := iq_stSelector.astSelFM[fmIndex].stat.xFlowValid;
+		iq_stSelector.iFMState := iq_stSelector.astSelFM[fmIndex].stat.iState;
+		iq_stSelector.xFMModeRb := iq_stSelector.astSelFM[fmIndex].stat.xFMMode;
+		//M3 flows
+		iq_stSelector.rLowFlow := iq_stSelector.astSelFM[fmIndex].stat.rFlow;
+	ELSIF fmIndex = 2 THEN
+		iq_stSelector.rHighFlow := iq_stSelector.astSelFM[fmIndex].stat.rFlow;
+	END_IF
+
+	(* reset function for next time *)
+	iq_stSelector.fbSensirionDriver[fmIndex](i_xExecute:=FALSE, iq_stSerialRXBuffer:= SerialRXBuffer_SelFlwMtr, iq_stSerialTXBuffer:=  SerialTXBuffer_SelFlwMtr);
+
+	fmIndex := fmIndex + 1;
+	IF fmIndex > 2 THEN fmIndex := 1;	END_IF
+END_IF]]></ST>
+      </Implementation>
+    </Action>
+    <LineIds Name="FB_SelectorM3">
+      <LineId Id="3" Count="17" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SelectorM3.ViciDrivers">
+      <LineId Id="2" Count="16" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SelectorM3.Sensirion">
+      <LineId Id="2" Count="18" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="51" Count="1" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="45" Count="3" />
+      <LineId Id="53" Count="1" />
+      <LineId Id="49" Count="1" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="31" Count="5" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

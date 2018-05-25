@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <DUT Name="E_PropValveFBState" Id="{521dba89-2a1f-41b8-abe5-6b0fb8928b68}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_PropValveFBState :
+(
+	Init := 0,
+	Hold := 10,
+	Manual := 100,
+	Pressure := 200,
+	Error := 9000
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

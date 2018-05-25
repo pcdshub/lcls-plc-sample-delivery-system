@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <DUT Name="ST_M3DeviceBaseIO" Id="{a965bcb9-020d-4dab-964e-472f5ca351bc}">
+    <Declaration><![CDATA[TYPE ST_M3DeviceBaseIO :
+STRUCT
+	(* This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff *)
+	
+	//WC bit tells you if the sync unit is OK, which tells you if cluster is alive
+	i_SyncUnitWC	AT %I*	:	BOOL := TRUE;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

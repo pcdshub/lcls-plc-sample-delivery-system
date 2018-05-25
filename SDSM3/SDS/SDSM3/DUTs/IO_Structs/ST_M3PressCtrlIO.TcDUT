@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <DUT Name="ST_M3PressCtrlIO" Id="{bcb61481-a185-4559-9f0f-f02ed6fd842a}">
+    <Declaration><![CDATA[TYPE ST_M3PressCtrlIO EXTENDS ST_M3DeviceBaseIO:
+STRUCT
+	i_EP4374_Ch1	AT	%I*	:	INT;
+	i_EP4374_Ch2	AT	%I*	:	INT;
+	q_EP4374_Ch3	AT	%Q*	:	INT;
+	q_EP4374_Ch4	AT	%Q*	:	INT;
+	
+	i_EP3174_Ch1	AT	%I*	:	INT;
+	i_EP3174_Ch2	AT	%I*	:	INT;
+	i_EP3174_Ch3	AT	%I*	:	INT;
+	i_EP3174_Ch4	AT	%I*	:	INT;
+	
+	stComIn_EP6002P1		AT %I*	:	EL6inData22B (*KL6inData22B*);
+	stComOut_EP6002P1		AT %Q*	:	EL6outData22B (*KL6outData22B*);
+	
+	stComIn_EP6002P2		AT %I*	:	EL6inData22B (*KL6inData22B*);
+	stComOut_EP6002P2		AT %Q*	:	EL6outData22B (*KL6outData22B*);
+	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

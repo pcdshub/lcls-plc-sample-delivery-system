@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <DUT Name="ST_ManipAxis" Id="{8a2b69b2-0749-42c2-bd32-ad09794455d6}">
+    <Declaration><![CDATA[TYPE ST_ManipAxis :
+STRUCT
+
+(* Controls *)
+xEnable	:	BOOL := TRUE;
+rReqAbsPos	:	REAL;
+rReqRelPos	:	REAL;
+xStart	:	BOOL;
+xStop	:	BOOL;
+wMode	:	E_AxisMoveMode;
+//EPICS motor status
+uiMsta	:	UINT;
+//EPICS Position readback
+rActPos	:	REAL;
+//Axis enabled readback
+xEnabled	:	BOOL;
+//EPICS High Limit Switch (NO)
+xHLS	:	BOOL;
+//EPICS Low Limit Switch (NO)
+xLLS	:	BOOL;
+//EPICS MOVN
+xMovn	:	BOOL;
+//EPICS DMOV
+xDmov	:	BOOL;
+//EPICS Reset
+xReset	:	BOOL;
+	
+(* Axis motor *)
+stAxis	:	AXIS_REF;
+lrVelocity	:	LREAL	:=1; //mm/s
+
+eState	:	E_AxisMotionState;
+
+xHiLS	AT %I* :	BOOL;
+xLoLS	AT %I* :	BOOL;
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

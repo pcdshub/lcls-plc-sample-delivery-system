@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <DUT Name="E_AxisMoveMode" Id="{81b05d5e-e49f-4d25-9474-ff3f50f315a7}">
+    <Declaration><![CDATA[TYPE E_AxisMoveMode :
+(
+	Hold := 0,
+	MoveAbs	:= 1,
+	MoveRel	:= 2
+) WORD;
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

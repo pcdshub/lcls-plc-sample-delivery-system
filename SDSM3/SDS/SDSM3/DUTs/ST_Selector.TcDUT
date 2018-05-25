@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <DUT Name="ST_Selector" Id="{edea215a-6843-498f-9e8b-ebe30f5a62c3}">
+    <Declaration><![CDATA[TYPE ST_Selector :
+STRUCT
+
+	(* Meta info *)
+	iId	: INT;	// Used to ID the selector attached to the system
+	(* iId: Implemented to support switching selectors on the fly,
+	the ID tells us which flow meter code to use, as the M2
+	used several different flowmeters. *)
+
+	(* Flowmeter *)
+	(* Declare a structure for every possible FM *)
+	stSelFMStatusBh	:	ST_BhFMStatus;
+	stSelFMStatusSens	:	ST_SensirionFMStatus;
+	stSelFMControlBh	:	ST_BhFMControl;
+	stSelFMControlSens	:	ST_SensirionFMControl;
+		
+	
+	//Common parameters
+	iFlowMeterType	:	INT; //see below
+	(*  1 = Sensirion
+		2 = Bronkhorst
+	*)
+	
+	xFMReset : BOOL; // Pulse only.
+	rFlow : REAL; //uL/min
+	xFMOoR	:	BOOL; // Out of range (too high)
+	xFlowValid	:	BOOL; // driver completes successfully
+	xFMModeReq	:	BOOL; //for sensirion calibration range (request)
+	xFMModeRb	:	BOOL; //for sensirion calibration range (readback)
+	(*
+	field(ZRST, "OK")
+	field(ONST, "OoR>")
+	field(TWST, "<OoR")
+	field(THST, "Flow Invalid")
+	*)
+	iFMState	:	INT;
+
+	(* Selector controls *)
+	xResLock	:	BOOL; // request to lock the valves
+	xResUnlock	:	BOOL; // request to unlock the valves
+	xResLocked	:	BOOL; // valve movement is locked
+	xResSyncd	:	BOOL; // valves are on the same position
+	iSyncReqPos	:	INT;
+	iVici1ReqPos : INT;
+	iVici2ReqPos : INT;
+	stViciVlvCtrl	: ARRAY[1..2] OF	ST_ViciControl;
+	
+	
+	(* Selector Readbacks *)
+	iSyncResPos : INT;
+	stViciVlvStatus	: ARRAY[1..2] OF	ST_ViciStatus;
+	
+	(* Shakers *)
+	stShaker01	:	ST_Shaker;
+	stShaker02	:	ST_Shaker;
+	stShaker03	:	ST_Shaker;
+	stShaker04	:	ST_Shaker;
+	
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

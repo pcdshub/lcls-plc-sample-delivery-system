@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="p_Regulators" Id="{7fa22113-75a7-40de-8aa7-6bf32b41ae72}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM p_Regulators
+VAR
+
+fbRegProp1	:	FB_ProportionairRegulator;
+fbRegProp2	:	FB_ProportionairRegulator;
+fbRegProp3	:	FB_ProportionairRegulator;
+fbRegProp4	:	FB_ProportionairRegulator;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Proportionair regulators *)
+fbRegProp1(iq_stRegProp:=stRegProp1);
+fbRegProp2(iq_stRegProp:=stRegProp2);
+fbRegProp3(iq_stRegProp:=stRegProp3);
+fbRegProp4(iq_stRegProp:=stRegProp4);
+]]></ST>
+    </Implementation>
+    <LineIds Name="p_Regulators">
+      <LineId Id="3" Count="1" />
+      <LineId Id="15" Count="1" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

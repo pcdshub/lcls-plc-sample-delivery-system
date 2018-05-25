@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="p_StatusLights" Id="{614a6145-0e85-4695-9427-e36cd2542668}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM p_StatusLights
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[gxRedLight := xEnableRemoteControl;//Remote control in use
+gxGreenLight := NOT (gxRedLight OR gxYellowLight); (* attach system error or something here someday *)]]></ST>
+    </Implementation>
+    <LineIds Name="p_StatusLights">
+      <LineId Id="4" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

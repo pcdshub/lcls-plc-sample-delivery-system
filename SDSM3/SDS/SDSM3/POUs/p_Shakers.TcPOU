@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+  <POU Name="p_Shakers" Id="{017c063a-5f09-4d50-9c5d-ffc48aeba37a}" SpecialFunc="None">
+    <Declaration><![CDATA[ROGRAM p_Shakers
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

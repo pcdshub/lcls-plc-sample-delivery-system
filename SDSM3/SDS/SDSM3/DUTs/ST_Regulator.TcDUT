@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <DUT Name="ST_Regulator" Id="{8c56d614-f1d1-42f6-8f81-d222b92246e9}">
+    <Declaration><![CDATA[TYPE ST_Regulator :
+STRUCT
+
+(* Regulator enable *)
+xRegEnab	:	BOOL;
+	
+(* Regulator motor *)
+stRegulatorMotor	:	AXIS_REF;
+wPercentageOpen		:	WORD;
+lrVelocity	:	LREAL	:=360 ;
+lrUpperLimPos	:	LREAL	:= 2887; //init to 2887, legacy hardcoded value
+
+(* Deadband controls *)
+stDeadband	:	ST_RegDeadbandControls;
+
+(* Manual control *)
+xManual	:	BOOL;
+xPlus	:	BOOL;
+xMinus	:	BOOL;
+i_iMovePerc	:	INT;
+
+(* Knob controls *)
+i_iPercSP : UINT;
+
+(* Pressure transducer *)
+i_iRawInPress	: 	INT;
+wInPress 	:	WORD;
+i_iRawOutPress	: 	INT;
+wOutPress 	:	WORD;
+
+(* Pressure setpoint *)
+wPressSP	:	WORD;
+wPressSpHi	:	WORD	:= 2000;
+xPressSpWarn	:	BOOL;
+xSeeking	:	BOOL;
+
+xRegHiLS	AT %I* :	BOOL;
+xRegLoLS	AT %I* :	BOOL;
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

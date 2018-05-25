@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <POU Name="p_Autosave" Id="{3be987dc-e10b-4238-bbf1-6eb4331f319e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM p_Autosave
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* If first pass, copy all persistent variables (which should be intialized to old values) back into the operational variables *)
+IF g_xFirstPass THEN
+	
+	stRegProp1 := gp_stRegProp1;
+	stRegProp2 := gp_stRegProp2;
+	stRegProp3 := gp_stRegProp3;
+	stRegProp4 := gp_stRegProp4;
+	
+ELSE
+	gp_stRegProp1 := stRegProp1;
+	gp_stRegProp2 := stRegProp2;
+	gp_stRegProp3 := stRegProp3;
+	gp_stRegProp4 := stRegProp4;
+	
+END_IF
+ 
+
+
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
+  <POU Name="FB_SensirionDriver" Id="{488a4133-fd90-4650-a462-ed858576b004}">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SensirionDriver
+
+VAR_INPUT
+	i_xExecute				: BOOL;					(* rising edge execute *)
+	i_tTimeOut				: TIME := T#10S;  		(* Maximum wait time for reply *)
+	i_stControl				: ST_SensirionFMControl;
+END_VAR
+VAR_OUTPUT
+	q_xDone					: BOOL;
+	q_xError				: BOOL;
+	q_xWarning				: BOOL;					(* set in the event of an unexpected reply *)
+	q_xTimeout				: BOOL;
+	q_asResult				: ARRAY[1..60] OF STRING(255);
+	q_stStatus				: ST_SensirionFMStatus;
+	q_xInitComplete			:	BOOL;
+END_VAR
+VAR_IN_OUT
+	iq_stSerialRXBuffer 	: ComBuffer;
+	iq_stSerialTXBuffer 	: ComBuffer;
+END_VAR
+VAR
+	//Usual stuff
+	rtExecute				: R_TRIG;
+	rtReInit				:	R_TRIG;
+	iStep					: INT;
+	iResultIndex			:	INT := 1;
+	aiSteps	:	ARRAY[1..256] OF INT;
+	iStepIndex	:	INT;
+	fbSensirionTransaction		: FB_SensirionTransaction;
+	
+	//Device Specific Working Variables
+	tonDelay : TON;
+	bLen	:	BYTE;
+	abTxData	:	ARRAY[1..256] OF BYTE;
+	xInitComplete	:	BOOL;
+	abRxData	:	ARRAY[1..256] OF BYTE;
+	
+	iScale	:	INT;
+	iUnit	:	INT;
+	xType	:	BOOL;
+	xMode	:	BYTE;
+	xLinear	:	BOOL;
+	uiOffset	:	UINT;
+	iIdleAttempt : INT;
+	
+	//Command delays
+	tonCommandDelay : TON;
+xcatch : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* This function block performs serial communication with a Sensirion meter *)
+
+
+(* 2015-4-8
+The sensirion flow meter is direction agnostic. To make it work more like the Bronkhorst and other flowmeters
+I limited the readback to the appropriate ranges. Negative flow is discarded.
+*)
+
+(* rising edge trigger *)
+rtExecute(CLK:= i_xExecute);
+rtReInit(CLK:= i_stControl.xReset);
+IF rtReInit.Q THEN xInitComplete := FALSE; END_IF
+IF rtExecute.Q  THEN
+	q_xDone	:= FALSE;
+	q_xError := FALSE;
+	q_xWarning := FALSE;
+	q_xTimeout := FALSE;
+	q_asResult[iResultIndex]:= '';
+	fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+	IF xInitComplete THEN
+		iStep := 30;
+		(* Branch to reset device if reset bit is set here *)
+		IF rtReInit.Q  OR (i_stControl.xCalMode <> q_stStatus.xFMMode) THEN
+			iStep := 400;
+			xInitComplete := FALSE;
+			q_stStatus.xFlowValid := FALSE;
+			q_asResult[iResultIndex] := 'Reinitializing';
+			iResultIndex := iResultIndex +1;
+		END_IF
+	ELSIF i_stControl.xReset THEN
+		iStep := 400;
+		q_stStatus.xFlowValid := FALSE;
+		q_asResult[iResultIndex] := 'Reinitializing';
+		iResultIndex := iResultIndex +1;
+	ELSE
+		iStep := 9;
+	END_IF
+END_IF
+
+CASE iStep OF
+	0: (* idle *)
+		;
+
+	9: //Get cal mode
+	fbSensirionTransaction(
+		i_xExecute:= TRUE,
+		i_bAdr:= q_stStatus.bAdr,
+		i_bLen:= 0,
+		i_bCmd:= 16#43,
+		i_abTxData := abTxData,
+		i_tTimeOut:= i_tTimeOut,
+		iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+		iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+		);
+	IF fbSensirionTransaction.q_xError THEN
+		q_asResult[iResultIndex] := CONCAT('in Step 9 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+		iResultIndex := iResultIndex +1;
+		iStep := 9000;
+	ELSIF fbSensirionTransaction.q_xDone THEN	
+		//abRxdata := fbSensirionTransaction.q_baRxData;
+		IF UDINT_TO_BOOL(MEMCPY(destAddr:=ADR(xMode), srcAddr:=ADR(fbSensirionTransaction.q_baRxData), n:=1)) THEN
+			q_stStatus.xFMMode := BYTE_TO_BOOL(xMode);
+			fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+			q_asResult[iResultIndex] := CONCAT('Step 9 complete. Cal mode is set to: ', BYTE_TO_STRING(xMode));
+			iResultIndex := iResultIndex +1;
+		ELSE
+			iStep := 9000;
+			q_asResult[iResultIndex] := 'Memcpy in step 9 failed';
+			iResultIndex := iResultIndex +1;
+		END_IF
+		iStep := 10;
+	END_IF		
+		
+	10: // Set calibration
+	//calibration of 0 for precision mode, 250 nL/min - 5000 nL/min
+	// calibration of 1 for extended mode, 2000 nL/min - 20000 nL/min
+	IF q_stStatus.xFMMode <> i_stControl.xCalMode THEN
+		IF i_stControl.xCalMode THEN abTxData[1]:=1; ELSE abTxData[1]:=0; END_IF
+		fbSensirionTransaction(
+			i_xExecute:= TRUE,
+			i_bAdr:= q_stStatus.bAdr,
+			i_bLen:= 1,
+			i_bCmd:= 16#43,
+			i_abTxData := abTxData,
+			i_tTimeOut:= i_tTimeOut,
+			iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+			iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+			);
+		IF fbSensirionTransaction.q_xError THEN
+			q_asResult[iResultIndex] := CONCAT('in Step 10 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+			iResultIndex := iResultIndex +1;
+			iStep := 9000;
+		ELSIF fbSensirionTransaction.q_xDone THEN
+			tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#1S);
+			IF tonCommandDelay.Q THEN
+				(* No response, completed transaction confirmed by a response*)
+				q_asResult[iResultIndex] := 'Step 10 complete';
+				iResultIndex := iResultIndex +1;
+				iStep := 11;
+				fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+			END_IF
+		END_IF
+	ELSE
+		q_asResult[iResultIndex] := 'Calmode already set';
+		iResultIndex := iResultIndex +1;	
+		iStep := 11;
+	END_IF
+
+	11: //Get cal mode
+	fbSensirionTransaction(
+		i_xExecute:= TRUE,
+		i_bAdr:= q_stStatus.bAdr,
+		i_bLen:= 0,
+		i_bCmd:= 16#43,
+		i_abTxData := abTxData,
+		i_tTimeOut:= i_tTimeOut,
+		iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+		iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+		);
+	IF fbSensirionTransaction.q_xError THEN
+		q_asResult[iResultIndex] := CONCAT('in Step 11 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+		iResultIndex := iResultIndex +1;
+		iStep := 9000;
+	ELSIF fbSensirionTransaction.q_bState <> 0 THEN
+		q_asResult[iResultIndex] := CONCAT('in Step 11 serial transaction failed with error state: ', BYTE_TO_STRING(fbSensirionTransaction.q_bState));
+		iResultIndex := iResultIndex +1;
+		fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+		iStep := 9000;
+	ELSIF fbSensirionTransaction.q_xDone THEN	
+		tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#100MS);
+		IF tonCommandDelay.Q THEN
+			IF UDINT_TO_BOOL(MEMCPY(destAddr:=ADR(xMode), srcAddr:=ADR(fbSensirionTransaction.q_baRxData), n:=1)) THEN
+				q_stStatus.xFMMode := BYTE_TO_BOOL(xMode);
+				fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+				q_asResult[iResultIndex] := 'Step 11 complete';
+				iResultIndex := iResultIndex +1;
+				iStep := 12;
+			ELSE
+				iStep := 9000;
+				q_asResult[iResultIndex] := 'Memcpy in step 9 failed';
+				iResultIndex := iResultIndex +1;
+			END_IF
+		END_IF
+	END_IF		
+	
+	12: //Get scale factor
+	fbSensirionTransaction(
+		i_xExecute:= TRUE,
+		i_bAdr:= q_stStatus.bAdr,
+		i_bLen:= 0,
+		i_bCmd:= 16#53,
+		i_abTxData := abTxData,
+		i_tTimeOut:= i_tTimeOut,
+		iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+		iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+		);
+	IF fbSensirionTransaction.q_xError THEN
+		q_asResult[iResultIndex] := CONCAT('in Step 12 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+		iResultIndex := iResultIndex +1;
+		iStep := 9000;
+	ELSIF fbSensirionTransaction.q_bState <> 0 THEN
+		q_asResult[iResultIndex] := CONCAT('in Step 12 serial transaction failed with error state: ', BYTE_TO_STRING(fbSensirionTransaction.q_bState));
+		iResultIndex := iResultIndex +1;
+		fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+		iStep := 9000;
+	ELSIF fbSensirionTransaction.q_xDone THEN	
+		tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#100MS);
+		IF tonCommandDelay.Q THEN
+			IF UDINT_TO_BOOL(MEMCPY(destAddr:=ADR(iScale), srcAddr:=ADR(fbSensirionTransaction.q_baRxData), n:=2)) THEN //always 2 for the 16 bit wide integer
+				iScale := WORD_TO_INT(HOST_TO_BE16(INT_TO_WORD(iScale)));
+				fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+				q_asResult[iResultIndex] := 'Step 12 complete';
+				iResultIndex := iResultIndex +1;
+				iStep := 13;		
+			ELSE
+				iStep := 9000;
+				q_asResult[iResultIndex] := 'Memcpy in step 12 failed';
+				iResultIndex := iResultIndex +1;
+			END_IF
+		END_IF	
+	END_IF
+		
+	13: //Get flow unit
+	fbSensirionTransaction(
+		i_xExecute:= TRUE,
+		i_bAdr:= q_stStatus.bAdr,
+		i_bLen:= 0,
+		i_bCmd:= 16#52,
+		i_abTxData := abTxData,
+		i_tTimeOut:= i_tTimeOut,
+		iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+		iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+		);
+	IF fbSensirionTransaction.q_xError THEN
+		q_asResult[iResultIndex] := CONCAT('in Step 13 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+		iResultIndex := iResultIndex +1;
+		iStep := 9000;
+	ELSIF fbSensirionTransaction.q_bState <> 0 THEN
+		q_asResult[iResultIndex] := CONCAT('in Step 13 serial transaction failed with error state: ', BYTE_TO_STRING(fbSensirionTransaction.q_bState));
+		iResultIndex := iResultIndex +1;
+		fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+		iStep := 9000;
+	ELSIF fbSensirionTransaction.q_xDone THEN	
+		tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#100MS);
+		IF tonCommandDelay.Q THEN
+			IF UDINT_TO_BOOL(MEMCPY(destAddr:=ADR(iUnit), srcAddr:=ADR(fbSensirionTransaction.q_baRxData), n:=2)) THEN //always 2 for the 16 bit wide integer
+				iUnit := WORD_TO_INT(HOST_TO_BE16(INT_TO_WORD(iUnit)));
+				fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+				q_asResult[iResultIndex] := 'Step 13 complete';
+				iResultIndex := iResultIndex +1;
+				iStep := 14;
+			ELSE
+				iStep := 9000;
+				q_asResult[iResultIndex] := 'Memcpy in step 13 failed';
+				iResultIndex := iResultIndex +1;
+			END_IF
+		END_IF
+	END_IF
+
+	14: //Get measurement type
+	fbSensirionTransaction(
+		i_xExecute:= TRUE,
+		i_bAdr:= q_stStatus.bAdr,
+		i_bLen:= 0,
+		i_bCmd:= 16#55,
+		i_abTxData := abTxData,
+		i_tTimeOut:= i_tTimeOut,
+		iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+		iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+		);
+	IF fbSensirionTransaction.q_xError THEN
+		q_asResult[iResultIndex] := CONCAT('in Step 14 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+		iResultIndex := iResultIndex +1;
+		iStep := 9000;
+	ELSIF fbSensirionTransaction.q_bState <> 0 THEN
+		q_asResult[iResultIndex] := CONCAT('in Step 14 serial transaction failed with error state: ', BYTE_TO_STRING(fbSensirionTransaction.q_bState));
+		iResultIndex := iResultIndex +1;
+		fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+		iStep := 9000;
+	ELSIF fbSensirionTransaction.q_xDone THEN	
+		tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#100MS);
+		IF tonCommandDelay.Q THEN
+			xType := BYTE_TO_BOOL(fbSensirionTransaction.q_baRxData[1]);
+			q_asResult[iResultIndex] := 'Step 14 complete';
+			iResultIndex := iResultIndex +1;
+			iStep := 16;
+			fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+		END_IF
+	END_IF
+	
+	15: //Get offset
+	fbSensirionTransaction(
+		i_xExecute:= TRUE,
+		i_bAdr:= q_stStatus.bAdr,
+		i_bLen:= 0,
+		i_bCmd:= 16#56,
+		i_abTxData := abTxData,
+		i_tTimeOut:= i_tTimeOut,
+		iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+		iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+		);
+	IF fbSensirionTransaction.q_xError THEN
+		q_asResult[iResultIndex] := CONCAT('in Step 15 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+		iResultIndex := iResultIndex +1;
+		iStep := 9000;
+	ELSIF fbSensirionTransaction.q_bState <> 0 THEN
+		q_asResult[iResultIndex] := CONCAT('in Step 15 serial transaction failed with error state: ', BYTE_TO_STRING(fbSensirionTransaction.q_bState));
+		iResultIndex := iResultIndex +1;
+		fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+		iStep := 9000;
+	ELSIF fbSensirionTransaction.q_xDone THEN	
+		tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#100MS);
+		IF tonCommandDelay.Q THEN
+			IF UDINT_TO_BOOL(MEMCPY(destAddr:=ADR(uiOffset), srcAddr:=ADR(fbSensirionTransaction.q_baRxData), n:=2)) THEN //always 2 for the 16 bit wide integer
+				uiOffset := WORD_TO_UINT(HOST_TO_BE16(UINT_TO_WORD(uiOffset)));
+				A_ClearTransaction();  (* reset *)
+				q_asResult[iResultIndex] := CONCAT('Step 15 complete, offset is: ', UINT_TO_STRING(uiOffset));
+				iResultIndex := iResultIndex +1;
+				iStep := 16;		
+			ELSE
+				iStep := 9000;
+				q_asResult[iResultIndex] := 'Memcpy in step 15 failed';
+				iResultIndex := iResultIndex +1;
+			END_IF
+			A_ClearTransaction();  (* reset *)
+		END_IF
+	END_IF
+	
+	16: //Get linear mode
+	fbSensirionTransaction(
+		i_xExecute:= TRUE,
+		i_bAdr:= q_stStatus.bAdr,
+		i_bLen:= 0,
+		i_bCmd:= 16#45,
+		i_abTxData := abTxData,
+		i_tTimeOut:= i_tTimeOut,
+		iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+		iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+		);
+	IF fbSensirionTransaction.q_xError THEN
+		q_asResult[iResultIndex] := CONCAT('in Step 16 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+		iResultIndex := iResultIndex +1;
+		iStep := 9000;
+	ELSIF fbSensirionTransaction.q_bState <> 0 THEN
+		q_asResult[iResultIndex] := CONCAT('in Step 16 serial transaction failed with error state: ', BYTE_TO_STRING(fbSensirionTransaction.q_bState));
+		iResultIndex := iResultIndex +1;
+		fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+		iStep := 9000;
+	ELSIF fbSensirionTransaction.q_xDone THEN	
+		tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#100MS);
+		IF tonCommandDelay.Q THEN
+			xLinear := BYTE_TO_BOOL(fbSensirionTransaction.q_baRxData[1]); 
+			A_ClearTransaction();  (* reset *)
+			q_asResult[iResultIndex] := CONCAT('Step 16 complete, linear is: ', BOOL_TO_STRING(xLinear));
+			iResultIndex := iResultIndex +1;
+			iStep := 20;		
+		END_IF
+	END_IF
+	
+//////////////////////////////////////////////////////////////////
+// Reset sequence
+//////////////////////////////////////////////////////////////////
+(*
+1. Issue a stop command to halt continuous measurement
+2. Reset command
+3. Reset initcomplete bit, and xReset
+4. Move to done state
+*)
+
+	400: //Stop measurement
+	fbSensirionTransaction(
+		i_xExecute:= TRUE,
+		i_bAdr:= q_stStatus.bAdr,
+		i_bLen:= 0,
+		i_bCmd:= 16#34,
+		i_abTxData := abTxData,
+		i_tTimeOut:= i_tTimeOut,
+		iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+		iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+		);
+	IF fbSensirionTransaction.q_xError THEN
+		q_asResult[iResultIndex] := CONCAT('in Step 400 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+		iResultIndex := iResultIndex +1;
+		iStep := 9000;
+	ELSIF fbSensirionTransaction.q_xDone THEN
+		tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#250MS);
+		IF tonCommandDelay.Q THEN
+			q_asResult[iResultIndex] := 'Measurement stop command sent';
+			iResultIndex := iResultIndex +1;
+			iStep:=405;
+			fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+		END_IF
+	END_IF
+	
+	405: //Check sensor status
+	fbSensirionTransaction(
+		i_xExecute:= TRUE,
+		i_bAdr:= q_stStatus.bAdr,
+		i_bLen:= 0,
+		i_bCmd:= 16#30,
+		i_abTxData := abTxData,
+		i_tTimeOut:= i_tTimeOut,
+		iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+		iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+		);
+	IF fbSensirionTransaction.q_xError THEN
+		q_asResult[iResultIndex] := CONCAT('in Step 405 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+		iResultIndex := iResultIndex +1;
+		iStep := 9000;
+	ELSIF fbSensirionTransaction.q_xDone THEN
+		(* The status measurement is available at the rx data here *)
+		IF fbSensirionTransaction.q_iRxLen > 0 THEN
+			IF UDINT_TO_BOOL(MEMCPY(destAddr:=ADR(q_stStatus.bStatus), srcAddr:=ADR(fbSensirionTransaction.q_baRxData), n:=1)) THEN
+				IF q_stStatus.bStatus.0 = 0 THEN //lsb of bStatus is idle
+					iStep :=410;
+					q_asResult[iResultIndex] := 'Sensor is idle.';
+					iResultIndex := iResultIndex +1;
+					fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+				ELSE
+					iStep := 400;
+					iIdleAttempt := iIdleAttempt + 1;
+					q_asResult[iResultIndex +1] := CONCAT('Failed to move to idle state in step 405, attempt ' , CONCAT(INT_TO_STRING(iIdleAttempt) , ' of 3'));
+					IF iIdleAttempt = 3 THEN iStep := 9000; iIdleAttempt := 0; END_IF
+					fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+				END_IF
+			ELSE
+				iStep := 9000;
+				q_asResult[iResultIndex] := 'Memcpy in step 405 failed';
+				iResultIndex := iResultIndex +1;
+			END_IF
+		ELSE
+			q_asResult[iResultIndex] := 'No status data returned';
+			iResultIndex := iResultIndex +1;
+			iStep := 9000;
+		END_IF 		
+	END_IF
+
+	410: //Reset device
+	fbSensirionTransaction(
+		i_xExecute:= TRUE,
+		i_bAdr:= q_stStatus.bAdr,
+		i_bLen:= 0,
+		i_bCmd:= 16#65,
+		i_abTxData := abTxData,
+		i_tTimeOut:= i_tTimeOut,
+		iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+		iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+		);
+	IF fbSensirionTransaction.q_xError THEN
+		q_asResult[iResultIndex] := CONCAT('in Step 400 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+		iResultIndex := iResultIndex +1;
+		iStep := 9000;
+	ELSIF fbSensirionTransaction.q_xDone THEN
+		tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#200MS);
+		IF tonCommandDelay.Q THEN
+			q_asResult[iResultIndex] := 'Device reset command sent';
+			iResultIndex := iResultIndex +1;	
+			iStep:=8000;
+			xInitComplete := FALSE;
+			fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+		END_IF
+	END_IF	
+	
+	
+	20: //Start continuous measurement
+	abTxData[1]:=0;
+	abTxData[2]:=0;
+		fbSensirionTransaction(
+			i_xExecute:= TRUE,
+			i_bAdr:= q_stStatus.bAdr,
+			i_bLen:= 2,
+			i_bCmd:= 16#33,
+			i_abTxData := abTxData,
+			i_tTimeOut:= i_tTimeOut,
+			iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+			iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+			);
+		IF fbSensirionTransaction.q_xError THEN
+			q_asResult[iResultIndex] := CONCAT('in Step 20 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+			iResultIndex := iResultIndex +1;
+			iStep := 9000;
+		ELSIF fbSensirionTransaction.q_xDone THEN
+			tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#250MS);
+			IF tonCommandDelay.Q THEN	
+				(* No response, completed transaction confirmed by a response*)
+				iStep := 21;	
+				q_asResult[iResultIndex] := CONCAT('Sent start measurement command', fbSensirionTransaction.q_sResult);
+				iResultIndex := iResultIndex +1;
+				fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+			END_IF
+		END_IF
+		
+	21: //Check sensor status
+	fbSensirionTransaction(
+		i_xExecute:= TRUE,
+		i_bAdr:= q_stStatus.bAdr,
+		i_bLen:= 0,
+		i_bCmd:= 16#30,
+		i_abTxData := abTxData,
+		i_tTimeOut:= i_tTimeOut,
+		iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+		iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+		);
+	IF fbSensirionTransaction.q_xError THEN
+		q_asResult[iResultIndex] := CONCAT('in Step 21 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+		iResultIndex := iResultIndex +1;
+		iStep := 9000;
+	ELSIF fbSensirionTransaction.q_xDone THEN
+		(* The status measurement is available at the rx data here *)
+		IF fbSensirionTransaction.q_iRxLen > 0 THEN
+			IF UDINT_TO_BOOL(MEMCPY(destAddr:=ADR(q_stStatus.bStatus), srcAddr:=ADR(fbSensirionTransaction.q_baRxData), n:=1)) THEN
+				IF q_stStatus.bStatus.1 = 1 THEN
+					iStep :=30;
+					xInitComplete	:= TRUE;
+					q_asResult[iResultIndex] := 'Init success, sensor is measuring.';
+					iResultIndex := iResultIndex +1;
+					fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+				ELSIF q_stStatus.bStatus.0 = 1 THEN
+					iStep :=21; // if the sensor is busy, and not yet measuring, perhaps we try again
+					q_asResult[iResultIndex] := 'Sensor is busy...';
+					iResultIndex := iResultIndex +1;
+					fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)					
+				ELSE
+					iStep := 9000;
+					q_asResult[iResultIndex +1] := 'Failed to start cont. measurement in step 21';
+				END_IF
+			ELSE
+				iStep := 9000;
+				q_asResult[iResultIndex] := 'Memcpy in step 21 failed';
+				iResultIndex := iResultIndex +1;
+			END_IF
+		ELSE
+			q_asResult[iResultIndex] := 'No status data returned in step 21';
+			iResultIndex := iResultIndex +1;
+			iStep := 9000;
+		END_IF 		
+	END_IF
+	
+	30: //Get last measurement
+		tonDelay.IN:=TRUE;
+		fbSensirionTransaction(
+		i_xExecute:= tonDelay.Q,
+		i_bAdr:= q_stStatus.bAdr,
+		i_bLen:= 0,
+		i_bCmd:= 16#35,
+		i_abTxData := abTxData,
+		i_tTimeOut:= i_tTimeOut,
+		iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+		iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+		);
+	IF fbSensirionTransaction.q_xError THEN
+		q_asResult[iResultIndex] := CONCAT('in Step 30 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+		iResultIndex := iResultIndex +1;
+		iStep := 9000;
+	ELSIF fbSensirionTransaction.q_xDone THEN	
+		(* The flow measurement is available at the rx data here *)
+		IF fbSensirionTransaction.q_iRxLen > 0 THEN
+			IF UDINT_TO_BOOL(MEMCPY(destAddr:=ADR(q_stStatus.uiSensorOutput), srcAddr:=ADR(fbSensirionTransaction.q_baRxData), n:=2)) THEN //always 2 for the 16 bit wide integer
+				q_stStatus.uiSensorOutput := WORD_TO_UINT(HOST_TO_BE16(INT_TO_WORD(q_stStatus.uiSensorOutput))); //memcpy effs up an produces a little endian number, sensirion transmits be
+				IF (q_stStatus.uiSensorOutput AND 32768) = 32768 THEN
+					q_stStatus.iFlowTicks := UINT_TO_INT(-1*((q_stStatus.uiSensorOutput XOR 65535) + 1));
+				ELSE
+					q_stStatus.iFlowTicks := UINT_TO_INT(q_stStatus.uiSensorOutput);
+				END_IF
+				//Conversion from int to real value using the unit
+				IF ((INT_TO_WORD(iUnit) AND 16#000F)=16#0003) OR ((INT_TO_WORD(iUnit) AND 16#000F)=16#0004) THEN //lsb of iUnit is magnitude, should only be one thing
+					
+					q_stStatus.rFlow := ABS((INT_TO_REAL(q_stStatus.iFlowTicks)/INT_TO_REAL(iScale))*EXPT(10,-3)); //converting from nL to uL 
+					
+					(* Check flow readback against calibration range for OoR *)
+					//calibration of 0 for precision mode, 250 nL/min - 5000 nL/min
+					// calibration of 1 for extended mode, 2000 nL/min - 20000 nL/min
+					IF (q_stStatus.xFMMode =0 ) THEN
+						IF (ABS(q_stStatus.rFlow) < (250E-3)) THEN
+							q_stStatus.iState := 2; //<OoR
+						ELSIF (ABS(q_stStatus.rFlow) > (5000E-3)) THEN
+							q_stStatus.iState := 1; //OoR>
+						ELSE
+							q_stStatus.iState := 0; //OK
+						END_IF
+					ELSIF (q_stStatus.xFMMode =1 ) THEN
+						IF (ABS(q_stStatus.rFlow) < (2000E-3)) THEN
+							q_stStatus.iState := 2; //<OoR
+						ELSIF (ABS(q_stStatus.rFlow) > (20000E-3)) THEN
+							q_stStatus.iState := 1; //OoR>
+						ELSE
+							q_stStatus.iState := 0; // OK
+						END_IF
+					END_IF
+					
+					// Limit the measured flowrate based on the calmode, note this disregards negative flow
+					IF q_stStatus.xFMMode THEN
+						q_stStatus.rFlow := LIMIT(0, q_stStatus.rFlow, 20000E-3);
+					ELSE
+						q_stStatus.rFlow := LIMIT(0, q_stStatus.rFlow, 5000E-3);
+					END_IF
+					
+				ELSE
+					iStep := 9000;
+					q_asResult[iResultIndex] := 'iUnit not recognized in step 30';
+					iResultIndex := iResultIndex +1;
+				END_IF
+				(* Stuff worked, go to 8000 *)
+				iStep := 8000;
+				fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+				tonDelay.IN := FALSE;
+			ELSE
+				iStep := 9000;
+				q_asResult[iResultIndex] := 'Memcpy in step 30 failed';
+				iResultIndex := iResultIndex +1;
+			END_IF
+		ELSE
+			q_asResult[iResultIndex] := 'No flow data returned';
+			iResultIndex := iResultIndex +1;
+			iStep := 9000;
+		END_IF
+	END_IF
+			
+	8000: (* done *)
+		q_xDone := TRUE;
+		IF q_asResult[iResultIndex] = '' THEN
+			q_asResult[iResultIndex] := 'Success';
+			iResultIndex := iResultIndex +1;
+			
+		END_IF
+		IF  i_xExecute = FALSE THEN
+			q_xDone:= FALSE;
+			iStep := 0;
+		END_IF
+	
+	9000:
+		q_xTimeout := fbSensirionTransaction.q_xTimeout;
+		q_xError := TRUE;
+		// If we're having issues communicating we don't want to be left thinking there's a flow... even if we know it's not valid.
+		q_stStatus.xFlowValid := FALSE;
+		q_stStatus.iState := 3; // Flow invalid
+		q_stStatus.rFlow := 0;
+END_CASE
+
+tonDelay(PT:=T#500MS);
+
+//q_stStatus.rFlow := INT_TO_REAL(iFlow);
+iStepIndex := iStepIndex +1;
+aiSteps[iStepIndex]:=iStep;
+
+
+q_xInitComplete := xInitComplete;
+
+IF iStepIndex >256 THEN iStepIndex:=1; END_IF
+IF iResultIndex >60 THEN iResultIndex:=1; END_IF]]></ST>
+    </Implementation>
+    <Action Name="A_ClearTransaction" Id="{9624f8bf-c066-4c35-9c26-749bd9f5609e}">
+      <Implementation>
+        <ST><![CDATA[fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="Get" Id="{dea5207b-52af-448b-ac4c-1b930355ff5f}">
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Action>
+    <ObjectProperties />
+  </POU>
+</TcPlcObject>

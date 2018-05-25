@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <DUT Name="E_BHElFlowUnit" Id="{a59c4aca-98b8-4245-97be-7e7b16fb42bd}">
+    <Declaration><![CDATA[TYPE E_BHElFlowUnit :
+(
+	enum_member := 0
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

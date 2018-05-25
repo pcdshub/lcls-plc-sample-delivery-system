@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <DUT Name="HMI_PropValveCtrlState" Id="{63beb666-bbd0-4538-abc5-b8f4d67fd4de}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+(* Maps to an EPICS MBBI/O *)
+TYPE HMI_PropValveCtrlState :
+(
+	Manual := 0,
+	Pressure := 1,
+	Hold := 2
+) WORD;
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

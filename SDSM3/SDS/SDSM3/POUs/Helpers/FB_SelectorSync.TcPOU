@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="FB_SelectorSync" Id="{3c8e7f94-adbe-48fd-9d57-64a70797da6b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SelectorSync
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR_IN_OUT
+	iq_stSelector	:	ST_SELECTOR;
+END_VAR
+VAR
+	tofResSyncd : TOF;
+	rtResLocked	:	R_TRIG;
+	rsResLocked	:	RS;
+	
+	rtResLock : R_TRIG;
+	rtResUnlock : R_TRIG;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Selector valve sync FB for vici valves *)
+
+
+
+(* Check if both valves are in the same position *)
+(* Should probably add something to the driver to check if we are in motion*)
+tofResSyncd.IN := (iq_stSelector.stViciVlvStatus[1].iCurrPos = iq_stSelector.stViciVlvStatus[2].iCurrPos ) AND 
+			(iq_stSelector.stViciVlvStatus[1].xPosValid  ) AND (iq_stSelector.stViciVlvStatus[1].xPosValid); (* Check for valid position rb *)
+
+(* Delay the loss of ResSyncd so the valves can both be queried before overriding *)
+(* Using a tof, but you can also check that both valves have been queried *)
+tofResSyncd(PT:=T#10S);
+iq_stSelector.xResSyncd := tofResSyncd.Q;
+
+//Set, reset of valve lock
+rtResLock(CLK:=iq_stSelector.xResLock);
+rtResUnlock(CLK:=iq_stSelector.xResUnlock);
+rsResLocked(set:=rtResLock.Q OR g_xFirstPass, reset1:=rtResUnlock.Q OR NOT iq_stSelector.xResSyncd);
+iq_stSelector.xResLocked := rsResLocked.Q1;
+
+
+(* If valve lock just became active, set the SyncReqPos to current locked position *)
+rtResLocked(CLK:=iq_stSelector.xResLocked);
+(*
+IF rtResLocked.Q THEN 
+	iq_stSelector.iSyncReqPos := iq_stSelector.iVici1ReqPos;
+END_IF
+*)
+(* If valve lock active, match valve positions from the valve req that changes req number *)
+IF iq_stSelector.xResLocked AND iq_stSelector.xResSyncd THEN
+	IF iq_stSelector.iVici1ReqPos <> iq_stSelector.iSyncReqPos THEN
+		iq_stSelector.iSyncReqPos := iq_stSelector.iVici1ReqPos;
+		iq_stSelector.iVici2ReqPos := iq_stSelector.iVici1ReqPos;
+	ELSIF iq_stSelector.iVici2ReqPos <> iq_stselector.iSyncReqPos THEN
+		iq_stSelector.iSyncReqPos := iq_stSelector.iVici2ReqPos;
+		iq_stSelector.iVici1ReqPos := iq_stSelector.iVici2ReqPos;
+	END_IF
+END_IF
+
+iq_stSelector.xResLock := FALSE;
+iq_stSelector.xResUnlock := False;]]></ST>
+    </Implementation>
+    <LineIds Name="FB_SelectorSync">
+      <LineId Id="3" Count="36" />
+      <LineId Id="56" Count="1" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

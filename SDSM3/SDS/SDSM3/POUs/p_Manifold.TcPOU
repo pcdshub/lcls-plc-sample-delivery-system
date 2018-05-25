@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="p_Manifold" Id="{7c0ffa86-dfae-423e-93c2-5474c4362dd8}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM p_Manifold
+VAR
+	fbManiValve : FB_ManiValve;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Valve 1 *)
+stGasMani.stManiVlv1.xILK := stGasMani.xOnline;
+fbManiValve(iq_valve:=stGasMani.stManiVlv1);
+
+(* Valve 2 *)
+stGasMani.stManiVlv2.xILK := stGasMani.xOnline;
+fbManiValve(iq_valve:=stGasMani.stManiVlv2);
+
+(* Valve 3 *)
+stGasMani.stManiVlv3.xILK := stGasMani.xOnline;
+fbManiValve(iq_valve:=stGasMani.stManiVlv3);
+
+(* Valve 4 *)
+stGasMani.stManiVlv4.xILK := stGasMani.xOnline;
+fbManiValve(iq_valve:=stGasMani.stManiVlv4);
+
+(* Valve 5 *)
+stGasMani.stManiVlv5.xILK := stGasMani.xOnline;
+fbManiValve(iq_valve:=stGasMani.stManiVlv5);
+
+(* Valve 6 *)
+stGasMani.stManiVlv6.xILK := stGasMani.xOnline;
+fbManiValve(iq_valve:=stGasMani.stManiVlv6);
+
+(* Valve 7 *)
+stGasMani.stManiVlv7.xILK := stGasMani.xOnline;
+fbManiValve(iq_valve:=stGasMani.stManiVlv7);
+
+(* Valve 8 *)
+stGasMani.stManiVlv8.xILK := stGasMani.xOnline;
+fbManiValve(iq_valve:=stGasMani.stManiVlv8);
+]]></ST>
+    </Implementation>
+    <LineIds Name="p_Manifold">
+      <LineId Id="3" Count="30" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

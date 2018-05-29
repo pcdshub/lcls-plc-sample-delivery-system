@@ -12,10 +12,14 @@
     <Implicit_KindOfTask>{47d162ce-f9b8-4c26-9047-6f65cb297ca0}</Implicit_KindOfTask>
     <Implicit_Jitter_Distribution>{498b80f8-a13b-4627-959f-5ee470229dcb}</Implicit_Jitter_Distribution>
     <LibraryReferences>{0441c150-7a3e-4070-a9ae-ec1edb4fb9e5}</LibraryReferences>
-    <SccProjectName>Svn</SccProjectName>
-    <SccProvider>SubversionScc</SccProvider>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccLocalPath>Svn</SccLocalPath>
+    <SccProjectName>
+    </SccProjectName>
+    <SccProvider>
+    </SccProvider>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccLocalPath>
+    </SccLocalPath>
     <Company>Aperture Science</Company>
     <Title>SDS M2</Title>
     <Author>A. Wallace</Author>

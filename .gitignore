@@ -23,6 +23,7 @@ archive/
 
 _Boot
 _Libraries
+*.sln
 *.suo
 *~
 *.tpy

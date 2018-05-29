@@ -62,7 +62,7 @@
 			</Hides>
 		</DataType>
 	</DataTypes>
-	<Project SccProjectName="Svn" SccAuxPath="Svn" SccLocalPath="Svn" SccProvider="SubversionScc" ProjectGUID="{68A97FD5-8312-43E5-B70A-63B3D02786CB}" TargetNetId="5.25.251.230.1.1" ShowHideConfigurations="#x6">
+	<Project ProjectGUID="{DE842166-6761-493F-B37E-C77DDAD69808}" TargetNetId="5.25.251.230.1.1" ShowHideConfigurations="#x6">
 		<System>
 			<Licenses>
 				<Target BkhfOrder="VE2264534">
@@ -89,10 +89,11 @@
 		</Io>
 	</Project>
 	<Mappings>
-		<MappingInfo Identifier="{08502002-0020-0304-0020-500820000403}" Id="#x02030040" Watchdog="00000000000000000000000000000000"/>
-		<MappingInfo Identifier="{08502002-0010-0304-0020-500810000403}" Id="#x02030020" Watchdog="00000000000000000000000000000000"/>
+		<MappingInfo Identifier="{08502002-0030-0304-0020-500830000403}" Id="#x02030030" Watchdog="00000000000000000000000000000000"/>
 		<MappingInfo Identifier="{05000010-2002-0850-5000-040301205008}" Id="#x02030050" Watchdog="14000000040000000400000004000000"/>
 		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
-		<MappingInfo Identifier="{00000000-0020-0304-5000-040321000403}" Id="#x02030030"/>
+		<MappingInfo Identifier="{00000000-2002-0850-0120-500823000403}" Id="#x02030060"/>
+		<MappingInfo Identifier="{00000000-2002-0850-0120-500842000403}" Id="#x02030040"/>
+		<MappingInfo Identifier="{00000000-0030-0304-5000-040331000403}" Id="#x02030020"/>
 	</Mappings>
 </TcSmProject>

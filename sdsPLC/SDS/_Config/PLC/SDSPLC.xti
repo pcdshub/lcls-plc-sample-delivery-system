@@ -1,0 +1,2503 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.16" ClassName="CNestedPlcProjDef">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom" AutoDeleteType="true">EL6inData22B</Name>
+			<Comment>
+				<![CDATA[ This data type is corresponding to the
+   KL-6xxx data structure used in the
+   TwinCAT SystemManager
+   (KL-6xxx version using 5 data bytes / 
+    non-alternative (standard) output ) 
+]]>
+			</Comment>
+			<BitSize>192</BitSize>
+			<SubItem>
+				<Name>Status</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>D</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<ArrayInfo>
+					<LBound>0</LBound>
+					<Elements>22</Elements>
+				</ArrayInfo>
+				<BitSize>176</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom" AutoDeleteType="true">EL6outData22B</Name>
+			<Comment>
+				<![CDATA[ This data type is corresponding to the
+   KL-6xxx data structure used in the
+   TwinCAT SystemManager
+   (KL-6xxx version using 5 data bytes / 
+    non-alternative (standard) output ) 
+]]>
+			</Comment>
+			<BitSize>192</BitSize>
+			<SubItem>
+				<Name>Ctrl</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>D</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<ArrayInfo>
+					<LBound>0</LBound>
+					<Elements>22</Elements>
+				</ArrayInfo>
+				<BitSize>176</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+			<Format>
+				<Printf>%d.%d.%d.%d.%d.%d</Printf>
+				<Parameter>[0]</Parameter>
+				<Parameter>[1]</Parameter>
+				<Parameter>[2]</Parameter>
+				<Parameter>[3]</Parameter>
+				<Parameter>[4]</Parameter>
+				<Parameter>[5]</Parameter>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{4C3FC5AC-D5AA-44C6-AC5A-159774BA0F6D}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_STATE</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>Operational</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Homed</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>NotMoving</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>InPositionArea</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>InTargetPosition</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Protected</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ErrorPropagationDelayed</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>HasBeenStopped</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>HasJob</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PositiveDirection</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>NegativeDirection</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>10</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>HomingBusy</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>11</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ConstantVelocity</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>12</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Compensating</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>13</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ExtSetPointGenEnabled</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>14</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PhasingActive</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>15</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ExternalLatchValid</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>NewTargetPos</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>17</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ContinuousMotion</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>19</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ControlLoopClosed</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>20</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CamTableQueued</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>21</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CamDataQueued</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>22</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CamScalingPending</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>23</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CmdBuffered</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>24</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PTPmode</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>25</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SoftLimitMinExceeded</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>26</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SoftLimitMaxExceeded</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>27</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>DriveDeviceError</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>28</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>MotionCommandsLocked</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>29</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>IoDataInvalid</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>30</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Error</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>31</BitOffs>
+			</SubItem>
+			<Format Name="Short">
+				<Printf>%08x</Printf>
+			</Format>
+			<Format Name="Cpp">
+				<Printf>0x%08x</Printf>
+			</Format>
+			<Format Name="IEC">
+				<Printf>16#%08X</Printf>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{6EF49753-C72C-4F50-AA44-3C7498E76CFE}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_OPMODE</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>OpModePosAreaMonitoring</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeTargetPosMonitoring</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeLoop</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeMotionMonitoring</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModePEHTimeMonitoring</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeBacklashCompensation</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeDelayedErrorReaction</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeModulo</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeSimulationAxis</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModePosLagMonitoring</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeVeloLagMonitoring</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>17</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeSoftLimitMinMonitoring</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>18</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeSoftLimitMaxMonitoring</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>19</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModePosCorrection</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>20</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeAllowSlaveCommands</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>21</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeAllowExtSetAxisCommands</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>22</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ApplicationRequest</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>23</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{303D9411-849C-467F-8A4C-5C8CD0F3DD46}" Namespace="MC" TcBaseType="true" HideType="true">NCTOPLC_AXIS_REF_STATE2_FLAGS</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>AvoidingCollision</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<Format Name="Short">
+				<Printf>%08x</Printf>
+			</Format>
+			<Format Name="Cpp">
+				<Printf>0x%08x</Printf>
+			</Format>
+			<Format Name="IEC">
+				<Printf>16#%08X</Printf>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{669F3788-48FD-42CF-8A59-2DA946853FB6}" Namespace="MC" TcBaseType="true" HideType="true">NCTOPLC_AXIS_REF_STATE2</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>Value</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Flags</Name>
+				<Type GUID="{303D9411-849C-467F-8A4C-5C8CD0F3DD46}" Namespace="MC">NCTOPLC_AXIS_REF_STATE2_FLAGS</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<Format Name="Short">
+				<Printf>%08x</Printf>
+			</Format>
+			<Format Name="Cpp">
+				<Printf>0x%08x</Printf>
+			</Format>
+			<Format Name="IEC">
+				<Printf>16#%08X</Printf>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{BA9D9D0F-1A4A-4A27-A19F-3032626A8491}" Namespace="MC" TcBaseType="true" HideType="true">NCTOPLC_AXIS_REF_CAMCOUPLINGSTATE</Name>
+			<BitSize>8</BitSize>
+			<SubItem>
+				<Name>CamActivationPending</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CamDeactivationPending</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CamActive</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CamDataQueued</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CamScalingPending</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000000000039}" TcBaseType="true" HideType="true">UINTARR8</Name>
+			<BitSize>128</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>8</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC" TcBaseType="true">NCTOPLC_AXIS_REF</Name>
+			<BitSize>2048</BitSize>
+			<SubItem>
+				<Name>StateDWord</Name>
+				<Type GUID="{4C3FC5AC-D5AA-44C6-AC5A-159774BA0F6D}" Namespace="MC">NCTOPLC_AXIS_REF_STATE</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ErrorCode</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AxisState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<Comment>
+					<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+				</Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AxisModeConfirmation</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>HomingState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<Comment>
+					<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+				</Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CoupleState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<Comment>
+					<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+				</Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>160</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SvbEntries</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SafEntries</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>224</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AxisId</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>256</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeDWord</Name>
+				<Type GUID="{6EF49753-C72C-4F50-AA44-3C7498E76CFE}" Namespace="MC">NCTOPLC_AXIS_REF_OPMODE</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>288</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ActPos</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>320</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ModuloActPos</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>384</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ActiveControlLoopIndex</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>448</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ControlLoopIndex</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>464</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ModuloActTurns</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>480</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ActVelo</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>512</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PosDiff</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>576</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SetPos</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>640</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SetVelo</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>704</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SetAcc</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>768</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>TargetPos</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>832</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ModuloSetPos</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>896</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ModuloSetTurns</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>960</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CmdNo</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>992</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CmdState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>1008</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SetJerk</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1024</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SetTorque</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1088</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ActTorque</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1152</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>StateDWord2</Name>
+				<Type GUID="{669F3788-48FD-42CF-8A59-2DA946853FB6}" Namespace="MC">NCTOPLC_AXIS_REF_STATE2</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>1216</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>StateDWord3</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>1248</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>TouchProbeState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>1280</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>TouchProbeCounter</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>1312</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CamCouplingState</Name>
+				<Type GUID="{BA9D9D0F-1A4A-4A27-A19F-3032626A8491}" Namespace="MC">NCTOPLC_AXIS_REF_CAMCOUPLINGSTATE</Type>
+				<ArrayInfo>
+					<LBound>0</LBound>
+					<Elements>8</Elements>
+				</ArrayInfo>
+				<BitSize>64</BitSize>
+				<BitOffs>1344</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CamCouplingTableID</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000039}">UINTARR8</Type>
+				<BitSize>128</BitSize>
+				<BitOffs>1408</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ActTorqueDerivative</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1536</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SetTorqueDerivative</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1600</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ActPosWithoutPosCorrection</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1792</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ActAcc</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1856</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>DcTimeStamp</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>1920</BitOffs>
+			</SubItem>
+			<Properties>
+				<Property>
+					<Name>NcStructType</Name>
+					<Value>2</Value>
+				</Property>
+			</Properties>
+			<Relations>
+				<Relation Priority="100">
+					<Type GUID="{429B767E-373B-40AE-BFA5-E1C08B444DF3}">NCAXLESTRUCT_TOPLC</Type>
+				</Relation>
+				<Relation Priority="100">
+					<Type GUID="{E8DA524A-605F-4879-82E6-B86EF6986572}">NCAXLESTRUCT_TOPLC2</Type>
+				</Relation>
+				<Relation Priority="100">
+					<Type GUID="{B507963E-69F3-4B64-BB8C-2BD7A560976D}">NCAXLESTRUCT_TOPLC3</Type>
+				</Relation>
+				<Relation Priority="100">
+					<Type GUID="{F794B740-82D7-4637-848E-4F74A711D038}">NCAXLESTRUCT_TOPLC4</Type>
+				</Relation>
+				<Relation Priority="100">
+					<Type GUID="{40BD39B0-C3EA-4F74-9F4F-5F1982786F7C}"/>
+				</Relation>
+				<Relation Priority="100">
+					<Type GUID="{40BD39B2-C3EA-4F74-9F4F-5F1982786F7C}"/>
+				</Relation>
+				<Relation Priority="100">
+					<Type GUID="{8CDE0C45-AB9D-42DB-BC94-1CF7521AB268}"/>
+				</Relation>
+			</Relations>
+		</DataType>
+		<DataType>
+			<Name GUID="{875D2B22-B7EB-497E-B933-0C004593CCF3}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">PLCTONC_AXIS_REF_CTRL</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>Enable</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FeedEnablePlus</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FeedEnableMinus</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>HomingSensor</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AcceptBlockedDrive</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PlcDebugFlag</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>30</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>NcDebugFlag</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>31</BitOffs>
+			</SubItem>
+			<Format Name="Short">
+				<Printf>%08x</Printf>
+			</Format>
+			<Format Name="Cpp">
+				<Printf>0x%08x</Printf>
+			</Format>
+			<Format Name="IEC">
+				<Printf>16#%08X</Printf>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC" TcBaseType="true">PLCTONC_AXIS_REF</Name>
+			<BitSize>1024</BitSize>
+			<SubItem>
+				<Name>ControlDWord</Name>
+				<Type GUID="{875D2B22-B7EB-497E-B933-0C004593CCF3}" Namespace="MC">PLCTONC_AXIS_REF_CTRL</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Override</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AxisModeRequest</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AxisModeDWord</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AxisModeLReal</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PositionCorrection</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ExtSetPos</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>256</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ExtSetVelo</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>320</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ExtSetAcc</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>384</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ExtSetDirection</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>448</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ExtControllerOutput</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>512</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>GearRatio1</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>576</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>GearRatio2</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>640</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>GearRatio3</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>704</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>GearRatio4</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>768</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>MapState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>832</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PlcCycleControl</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>840</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PlcCycleCount</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>848</BitOffs>
+			</SubItem>
+			<Properties>
+				<Property>
+					<Name>NcStructType</Name>
+					<Value>1</Value>
+				</Property>
+			</Properties>
+			<Relations>
+				<Relation Priority="100">
+					<Type GUID="{60392271-8688-4F4C-B404-618DF106325D}">NCAXLESTRUCT_FROMPLC3</Type>
+				</Relation>
+			</Relations>
+		</DataType>
+	</DataTypes>
+	<Project GUID="{EABB4A47-2546-42B6-803F-4B29ABCF0F62}" Name="SDSPLC" PrjFilePath="..\..\SDSPLC\SDSPLC.plcProj" TmcFilePath="..\..\SDSPLC\SDSPLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="1" TmcPath="SDSPLC\SDSPLC.tmc">
+			<Name>SDSPLC Instance</Name>
+			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+			<Vars VarGrpType="1">
+				<Name>SerialComm Inputs</Name>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1</Name>
+					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2</Name>
+					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1</Name>
+					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2</Name>
+					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+			</Vars>
+			<Vars VarGrpType="2">
+				<Name>SerialComm Outputs</Name>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1</Name>
+					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2</Name>
+					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1</Name>
+					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2</Name>
+					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+			</Vars>
+			<Vars VarGrpType="1">
+				<Name>PlcTask Inputs</Name>
+				<Var>
+					<Name>GVL.g_aEcatMaster1</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				</Var>
+				<Var>
+					<Name>GVL.g_aEcatMaster2</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.i_iFscEB1Ch0AI</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.i_iFscEB1Ch1AI</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.i_iFscEB1Ch2AI</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.i_SyncUnitWC</Name>
+					<Comment>
+						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.i_EP3174_Ch1</Name>
+					<Comment>
+						<![CDATA[EP7041
+EP7041
+EP7041
+EP5101
+EP3174 Vacuum Gauges, misc analog]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.i_EP3174_Ch2</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.i_EP3174_Ch3</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.i_EP3174_Ch4</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.i_EP2338_Ch5</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.i_EP2338_Ch6</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.i_EP2338_Ch7</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.i_EP2338_Ch8</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.i_EP4374_Ch1</Name>
+					<Comment>
+						<![CDATA[EP4374 Pressure Control]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.i_EP4374_Ch2</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.axisX.stAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.axisX.xHiLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.axisX.xLoLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.axisY.stAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.axisY.xHiLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.axisY.xLoLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.axisZ.stAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.axisZ.xHiLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.axisZ.xLoLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.stPropVlv.stAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.stPropVlv.i_HLS</Name>
+					<Comment>
+						<![CDATA[Open]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.stPropVlv.i_LLS</Name>
+					<Comment>
+						<![CDATA[ Closed]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorA.i_SyncUnitWC</Name>
+					<Comment>
+						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorA.i_EP2338_Ch5</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorA.i_EP2338_Ch6</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorA.i_EP2338_Ch7</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorA.i_EP2338_Ch8</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorB.i_SyncUnitWC</Name>
+					<Comment>
+						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorB.i_EP2338_Ch5</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorB.i_EP2338_Ch6</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorB.i_EP2338_Ch7</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorB.i_EP2338_Ch8</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorA.i_SyncUnitWC</Name>
+					<Comment>
+						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorA.i_EP2338_Ch5</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorA.i_EP2338_Ch6</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorA.i_EP2338_Ch7</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorA.i_EP2338_Ch8</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1</Name>
+					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2</Name>
+					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorA.i_mfmFlow</Name>
+					<Type>REAL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorA.i_RawUnit</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorB.i_SyncUnitWC</Name>
+					<Comment>
+						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorB.i_EP2338_Ch5</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorB.i_EP2338_Ch6</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorB.i_EP2338_Ch7</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorB.i_EP2338_Ch8</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1</Name>
+					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2</Name>
+					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorB.i_mfmFlow</Name>
+					<Type>REAL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorB.i_RawUnit</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlA.i_SyncUnitWC</Name>
+					<Comment>
+						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlA.i_EP4374_Ch1</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlA.i_EP4374_Ch2</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlA.i_EP3174_Ch1</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlA.i_EP3174_Ch2</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlA.i_EP3174_Ch3</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlA.i_EP3174_Ch4</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1</Name>
+					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2</Name>
+					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlB.i_SyncUnitWC</Name>
+					<Comment>
+						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlB.i_EP4374_Ch1</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlB.i_EP4374_Ch2</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlB.i_EP3174_Ch1</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlB.i_EP3174_Ch2</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlB.i_EP3174_Ch3</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlB.i_EP3174_Ch4</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1</Name>
+					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2</Name>
+					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.i_iFscEB1Ch3AI</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.i_SyncUnitWC</Name>
+					<Comment>
+						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.i_EP2338_Ch1</Name>
+					<Comment>
+						<![CDATA[Discrete valve readbacks]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.i_EP2338_Ch2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.i_EP2338_Ch3</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.i_EP2338_Ch4</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.i_EP2338_Ch5</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.i_EP2338_Ch6</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.i_EP2338_Ch7</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.i_EP2338_Ch8</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.i_EP4374_Ch1</Name>
+					<Comment>
+						<![CDATA[Needle valve controls]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.i_EP4374_Ch2</Name>
+					<Type>INT</Type>
+				</Var>
+			</Vars>
+			<Vars VarGrpType="2">
+				<Name>PlcTask Outputs</Name>
+				<Var>
+					<Name>GVL_Devices.stALI.q_EP2338_Ch1</Name>
+					<Comment>
+						<![CDATA[EP7041 - Prop valve
+EP2338 Misc DIO]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.q_EP2338_Ch2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.q_EP2338_Ch3</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.q_EP2338_Ch4</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.q_EP4374_Ch3</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.q_EP4374_Ch4</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.axisX.stAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.axisY.stAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.axisZ.stAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.stALI.stPropVlv.stAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorA.q_EP2338_Ch1</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorA.q_EP2338_Ch2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorA.q_EP2338_Ch3</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorA.q_EP2338_Ch4</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorB.q_EP2338_Ch1</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorB.q_EP2338_Ch2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorB.q_EP2338_Ch3</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM2SelectorB.q_EP2338_Ch4</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorA.q_EP2338_Ch1</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorA.q_EP2338_Ch2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorA.q_EP2338_Ch3</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorA.q_EP2338_Ch4</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1</Name>
+					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2</Name>
+					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorB.q_EP2338_Ch1</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorB.q_EP2338_Ch2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorB.q_EP2338_Ch3</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorB.q_EP2338_Ch4</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1</Name>
+					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2</Name>
+					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlA.q_EP4374_Ch3</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlA.q_EP4374_Ch4</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1</Name>
+					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2</Name>
+					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlB.q_EP4374_Ch3</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlB.q_EP4374_Ch4</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1</Name>
+					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2</Name>
+					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.q_EP2338_Ch1</Name>
+					<Comment>
+						<![CDATA[Discrete valve controls]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.q_EP2338_Ch2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.q_EP2338_Ch3</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.q_EP2338_Ch4</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.q_EP2338_Ch5</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.q_EP2338_Ch6</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.q_EP2338_Ch7</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.q_EP2338_Ch8</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.q_EP4374_Ch3</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.iq_stM3GasManifold.q_EP4374_Ch4</Name>
+					<Type>INT</Type>
+				</Var>
+			</Vars>
+			<TaskPouOids>
+				<TaskPouOid Prio="1" OTCID="#x08502001"/>
+				<TaskPouOid Prio="20" OTCID="#x08502002"/>
+			</TaskPouOids>
+		</Instance>
+	</Project>
+	<Mappings>
+		<OwnerA Name="SDSPLC Instance">
+			<OwnerB Name="TIID^MAIN (EtherCAT)">
+				<Link VarA="PlcTask Inputs^GVL.g_aEcatMaster1" VarB="InfoData^AmsNetId"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorB.i_SyncUnitWC" VarB="SyncUnits^[M2 Selector B (EP1111)]^&lt;unreferenced&gt;^WcState^WcState"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_Gauges (EP3174-0002)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.i_EP3174_Ch1" VarB="AI Standard Channel 1^Value"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.i_EP3174_Ch2" VarB="AI Standard Channel 2^Value"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.i_EP3174_Ch3" VarB="AI Standard Channel 3^Value"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.i_EP3174_Ch4" VarB="AI Standard Channel 4^Value"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_PropValve (EP7041-0002)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.stPropVlv.i_HLS" VarB="STM Status^Status^Digital input 1"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.stPropVlv.i_LLS" VarB="STM Status^Status^Digital input 2"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_X (EP7041-0002)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisX.xHiLS" VarB="STM Status^Status^Digital input 2"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisX.xLoLS" VarB="STM Status^Status^Digital input 1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_Y (EP7041-0002)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisY.xHiLS" VarB="STM Status^Status^Digital input 2"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisY.xLoLS" VarB="STM Status^Status^Digital input 1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_Z (EP7041-0002)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisZ.xHiLS" VarB="STM Status^Status^Digital input 2"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisZ.xLoLS" VarB="STM Status^Status^Digital input 1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^Gas_Mani_NeedleValve (EP4374-0002)">
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_EP4374_Ch1" VarB="AI Inputs Channel 1^Value"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_EP4374_Ch2" VarB="AI Inputs Channel 2^Value"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3GasManifold.q_EP4374_Ch3" VarB="AO Outputs Channel 3^Analog output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3GasManifold.q_EP4374_Ch4" VarB="AO Outputs Channel 4^Analog output"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^Gas_Mani_ValveCtrl (EP2338-0001)">
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3GasManifold.q_EP2338_Ch1" VarB="Channel 9^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3GasManifold.q_EP2338_Ch2" VarB="Channel 10^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3GasManifold.q_EP2338_Ch3" VarB="Channel 11^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3GasManifold.q_EP2338_Ch4" VarB="Channel 12^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3GasManifold.q_EP2338_Ch5" VarB="Channel 13^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3GasManifold.q_EP2338_Ch6" VarB="Channel 14^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3GasManifold.q_EP2338_Ch7" VarB="Channel 15^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3GasManifold.q_EP2338_Ch8" VarB="Channel 16^Output"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^Gas_Mani_ValveRbk (EP2338-0001)">
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_EP2338_Ch1" VarB="Channel 1^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_EP2338_Ch2" VarB="Channel 2^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_EP2338_Ch3" VarB="Channel 3^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_EP2338_Ch4" VarB="Channel 4^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_EP2338_Ch5" VarB="Channel 5^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_EP2338_Ch6" VarB="Channel 6^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_EP2338_Ch7" VarB="Channel 7^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_EP2338_Ch8" VarB="Channel 8^Input"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M2 Selector A (EP2338-0001)">
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorA.i_EP2338_Ch5" VarB="Channel 5^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorA.i_EP2338_Ch6" VarB="Channel 6^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorA.i_EP2338_Ch7" VarB="Channel 7^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorA.i_EP2338_Ch8" VarB="Channel 8^Input"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM2SelectorA.q_EP2338_Ch1" VarB="Channel 9^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM2SelectorA.q_EP2338_Ch2" VarB="Channel 10^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM2SelectorA.q_EP2338_Ch3" VarB="Channel 11^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM2SelectorA.q_EP2338_Ch4" VarB="Channel 12^Output"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M2 Selector A (EP6002-0002)">
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[10]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[11]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[12]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 12"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[13]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 13"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[14]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 14"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[15]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 15"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[16]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 16"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[17]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 17"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[18]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 18"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[19]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 19"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[1]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[20]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 20"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[21]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 21"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[2]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 2"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[3]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 3"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[4]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 4"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[5]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 5"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[6]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 6"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[7]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 7"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[8]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 8"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[9]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 9"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^Status" VarB="COM TxPDO-Map Inputs Channel 1^Status"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[0]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 0"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[10]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 10"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[11]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 11"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[12]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 12"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[13]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 13"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[14]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 14"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[15]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 15"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[16]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 16"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[17]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 17"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[18]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 18"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[19]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 19"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[1]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 1"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[20]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 20"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[21]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 21"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[2]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 2"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[3]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 3"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[4]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 4"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[5]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 5"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[6]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 6"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[7]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 7"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[8]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 8"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^D[9]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 9"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2^Status" VarB="COM TxPDO-Map Inputs Channel 2^Status"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^Ctrl" VarB="COM RxPDO-Map Outputs Channel 1^Ctrl"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[0]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 0"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[10]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 10"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[11]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 11"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[12]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 12"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[13]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 13"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[14]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 14"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[15]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 15"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[16]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 16"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[17]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 17"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[18]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 18"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[19]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 19"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[1]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 1"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[20]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 20"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[21]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 21"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[2]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 2"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[3]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 3"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[4]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 4"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[5]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 5"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[6]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 6"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[7]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 7"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[8]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 8"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1^D[9]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 9"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^Ctrl" VarB="COM RxPDO-Map Outputs Channel 2^Ctrl"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[0]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 0"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[10]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 10"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[11]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 11"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[12]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 12"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[13]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 13"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[14]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 14"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[15]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 15"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[16]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 16"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[17]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 17"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[18]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 18"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[19]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 19"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[1]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 1"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[20]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 20"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[21]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 21"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[2]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 2"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[3]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 3"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[4]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 4"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[5]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 5"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[6]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 6"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[7]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 7"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[8]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 8"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[9]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 9"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M2 Selector B (EP2338-0001)">
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorB.i_EP2338_Ch5" VarB="Channel 5^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorB.i_EP2338_Ch6" VarB="Channel 6^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorB.i_EP2338_Ch7" VarB="Channel 7^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorB.i_EP2338_Ch8" VarB="Channel 8^Input"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM2SelectorB.q_EP2338_Ch1" VarB="Channel 9^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM2SelectorB.q_EP2338_Ch2" VarB="Channel 10^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM2SelectorB.q_EP2338_Ch3" VarB="Channel 11^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM2SelectorB.q_EP2338_Ch4" VarB="Channel 12^Output"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M2 Selector B (EP6002-0002)">
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[10]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[11]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[12]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 12"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[13]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 13"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[14]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 14"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[15]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 15"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[16]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 16"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[17]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 17"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[18]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 18"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[19]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 19"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[1]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[20]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 20"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[21]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 21"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[2]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 2"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[3]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 3"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[4]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 4"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[5]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 5"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[6]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 6"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[7]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 7"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[8]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 8"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[9]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 9"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^Status" VarB="COM TxPDO-Map Inputs Channel 1^Status"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[0]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 0"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[10]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 10"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[11]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 11"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[12]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 12"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[13]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 13"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[14]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 14"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[15]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 15"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[16]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 16"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[17]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 17"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[18]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 18"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[19]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 19"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[1]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 1"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[20]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 20"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[21]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 21"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[2]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 2"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[3]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 3"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[4]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 4"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[5]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 5"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[6]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 6"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[7]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 7"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[8]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 8"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^D[9]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 9"/>
+				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2^Status" VarB="COM TxPDO-Map Inputs Channel 2^Status"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^Ctrl" VarB="COM RxPDO-Map Outputs Channel 1^Ctrl"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[0]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 0"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[10]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 10"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[11]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 11"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[12]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 12"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[13]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 13"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[14]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 14"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[15]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 15"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[16]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 16"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[17]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 17"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[18]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 18"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[19]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 19"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[1]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 1"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[20]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 20"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[21]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 21"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[2]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 2"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[3]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 3"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[4]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 4"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[5]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 5"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[6]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 6"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[7]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 7"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[8]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 8"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1^D[9]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 9"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^Ctrl" VarB="COM RxPDO-Map Outputs Channel 2^Ctrl"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[0]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 0"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[10]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 10"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[11]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 11"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[12]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 12"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[13]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 13"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[14]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 14"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[15]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 15"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[16]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 16"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[17]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 17"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[18]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 18"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[19]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 19"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[1]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 1"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[20]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 20"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[21]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 21"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[2]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 2"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[3]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 3"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[4]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 4"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[5]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 5"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[6]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 6"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[7]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 7"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[8]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 8"/>
+				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[9]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 9"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector A Digital IO (EP2338-1001)">
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.i_EP2338_Ch5" VarB="Channel 5^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.i_EP2338_Ch6" VarB="Channel 6^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.i_EP2338_Ch7" VarB="Channel 7^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.i_EP2338_Ch8" VarB="Channel 8^Input"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.q_EP2338_Ch1" VarB="Channel 9^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.q_EP2338_Ch2" VarB="Channel 10^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.q_EP2338_Ch3" VarB="Channel 11^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.q_EP2338_Ch4" VarB="Channel 12^Output"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector A Mass Flow Meter (Mass Flow / Pressure Controller - Slave)">
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.i_RawUnit" VarB="TxPDO^Unit"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.i_mfmFlow" VarB="TxPDO^fMeasure"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector A Serial IO (EP6002-0002)">
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[10]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[11]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[12]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 12"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[13]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 13"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[14]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 14"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[15]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 15"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[16]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 16"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[17]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 17"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[18]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 18"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[19]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 19"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[1]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[20]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 20"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[21]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 21"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[2]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 2"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[3]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 3"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[4]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 4"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[5]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 5"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[6]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 6"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[7]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 7"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[8]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 8"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[9]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 9"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^Status" VarB="COM TxPDO-Map Inputs Channel 1^Status"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[0]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 0"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[10]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 10"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[11]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 11"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[12]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 12"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[13]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 13"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[14]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 14"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[15]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 15"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[16]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 16"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[17]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 17"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[18]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 18"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[19]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 19"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[1]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 1"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[20]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 20"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[21]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 21"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[2]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 2"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[3]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 3"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[4]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 4"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[5]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 5"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[6]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 6"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[7]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 7"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[8]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 8"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^D[9]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 9"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2^Status" VarB="COM TxPDO-Map Inputs Channel 2^Status"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^Ctrl" VarB="COM RxPDO-Map Outputs Channel 1^Ctrl"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[0]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 0"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[10]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 10"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[11]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 11"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[12]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 12"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[13]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 13"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[14]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 14"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[15]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 15"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[16]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 16"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[17]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 17"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[18]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 18"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[19]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 19"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[1]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 1"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[20]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 20"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[21]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 21"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[2]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 2"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[3]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 3"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[4]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 4"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[5]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 5"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[6]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 6"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[7]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 7"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[8]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 8"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1^D[9]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 9"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^Ctrl" VarB="COM RxPDO-Map Outputs Channel 2^Ctrl"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[0]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 0"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[10]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 10"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[11]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 11"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[12]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 12"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[13]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 13"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[14]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 14"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[15]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 15"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[16]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 16"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[17]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 17"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[18]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 18"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[19]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 19"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[1]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 1"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[20]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 20"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[21]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 21"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[2]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 2"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[3]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 3"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[4]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 4"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[5]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 5"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[6]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 6"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[7]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 7"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[8]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 8"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[9]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 9"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector B Digital IO (EP2338-1001)">
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.i_EP2338_Ch5" VarB="Channel 5^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.i_EP2338_Ch6" VarB="Channel 6^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.i_EP2338_Ch7" VarB="Channel 7^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.i_EP2338_Ch8" VarB="Channel 8^Input"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.q_EP2338_Ch1" VarB="Channel 9^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.q_EP2338_Ch2" VarB="Channel 10^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.q_EP2338_Ch3" VarB="Channel 11^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.q_EP2338_Ch4" VarB="Channel 12^Output"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector B Mass Flow Meter (Mass Flow / Pressure Controller - Slave)">
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.i_RawUnit" VarB="TxPDO^Unit"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.i_mfmFlow" VarB="TxPDO^fMeasure"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector B Serial IO (EP6002-0002)">
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[10]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[11]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[12]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 12"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[13]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 13"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[14]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 14"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[15]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 15"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[16]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 16"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[17]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 17"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[18]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 18"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[19]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 19"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[1]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[20]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 20"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[21]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 21"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[2]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 2"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[3]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 3"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[4]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 4"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[5]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 5"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[6]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 6"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[7]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 7"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[8]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 8"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[9]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 9"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^Status" VarB="COM TxPDO-Map Inputs Channel 1^Status"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[0]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 0"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[10]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 10"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[11]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 11"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[12]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 12"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[13]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 13"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[14]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 14"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[15]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 15"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[16]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 16"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[17]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 17"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[18]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 18"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[19]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 19"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[1]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 1"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[20]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 20"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[21]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 21"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[2]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 2"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[3]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 3"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[4]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 4"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[5]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 5"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[6]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 6"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[7]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 7"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[8]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 8"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^D[9]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 9"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2^Status" VarB="COM TxPDO-Map Inputs Channel 2^Status"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^Ctrl" VarB="COM RxPDO-Map Outputs Channel 1^Ctrl"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[0]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 0"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[10]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 10"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[11]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 11"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[12]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 12"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[13]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 13"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[14]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 14"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[15]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 15"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[16]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 16"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[17]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 17"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[18]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 18"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[19]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 19"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[1]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 1"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[20]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 20"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[21]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 21"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[2]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 2"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[3]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 3"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[4]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 4"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[5]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 5"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[6]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 6"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[7]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 7"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[8]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 8"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1^D[9]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 9"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^Ctrl" VarB="COM RxPDO-Map Outputs Channel 2^Ctrl"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[0]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 0"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[10]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 10"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[11]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 11"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[12]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 12"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[13]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 13"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[14]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 14"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[15]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 15"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[16]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 16"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[17]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 17"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[18]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 18"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[19]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 19"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[1]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 1"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[20]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 20"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[21]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 21"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[2]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 2"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[3]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 3"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[4]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 4"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[5]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 5"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[6]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 6"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[7]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 7"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[8]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 8"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[9]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 9"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^PCM A (EP3174-0002)">
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP3174_Ch1" VarB="AI Standard Channel 1^Value"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP3174_Ch2" VarB="AI Standard Channel 2^Value"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP3174_Ch3" VarB="AI Standard Channel 3^Value"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP3174_Ch4" VarB="AI Standard Channel 4^Value"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^PCM A (EP4374-0002)">
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP4374_Ch1" VarB="AI Inputs Channel 1^Value"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP4374_Ch2" VarB="AI Inputs Channel 2^Value"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.q_EP4374_Ch3" VarB="AO Outputs Channel 3^Analog output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.q_EP4374_Ch4" VarB="AO Outputs Channel 4^Analog output"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)">
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[10]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[11]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[12]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 12"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[13]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 13"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[14]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 14"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[15]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 15"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[16]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 16"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[17]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 17"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[18]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 18"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[19]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 19"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[1]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[20]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 20"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[21]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 21"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[2]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 2"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[3]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 3"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[4]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 4"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[5]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 5"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[6]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 6"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[7]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 7"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[8]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 8"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[9]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 9"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^Status" VarB="COM TxPDO-Map Inputs Channel 1^Status"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[0]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 0"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[10]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 10"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[11]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 11"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[12]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 12"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[13]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 13"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[14]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 14"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[15]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 15"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[16]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 16"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[17]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 17"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[18]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 18"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[19]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 19"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[1]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 1"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[20]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 20"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[21]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 21"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[2]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 2"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[3]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 3"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[4]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 4"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[5]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 5"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[6]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 6"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[7]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 7"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[8]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 8"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^D[9]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 9"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2^Status" VarB="COM TxPDO-Map Inputs Channel 2^Status"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^Ctrl" VarB="COM RxPDO-Map Outputs Channel 1^Ctrl"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[0]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 0"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[10]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 10"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[11]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 11"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[12]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 12"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[13]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 13"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[14]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 14"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[15]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 15"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[16]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 16"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[17]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 17"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[18]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 18"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[19]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 19"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[1]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 1"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[20]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 20"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[21]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 21"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[2]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 2"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[3]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 3"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[4]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 4"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[5]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 5"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[6]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 6"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[7]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 7"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[8]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 8"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1^D[9]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 9"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^Ctrl" VarB="COM RxPDO-Map Outputs Channel 2^Ctrl"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[0]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 0"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[10]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 10"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[11]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 11"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[12]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 12"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[13]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 13"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[14]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 14"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[15]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 15"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[16]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 16"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[17]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 17"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[18]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 18"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[19]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 19"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[1]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 1"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[20]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 20"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[21]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 21"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[2]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 2"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[3]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 3"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[4]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 4"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[5]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 5"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[6]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 6"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[7]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 7"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[8]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 8"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[9]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 9"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^PCM B (EP3174-0002)">
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.i_EP3174_Ch1" VarB="AI Standard Channel 1^Value"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.i_EP3174_Ch2" VarB="AI Standard Channel 2^Value"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.i_EP3174_Ch3" VarB="AI Standard Channel 3^Value"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.i_EP3174_Ch4" VarB="AI Standard Channel 4^Value"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)">
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.i_EP4374_Ch1" VarB="AI Inputs Channel 1^Value"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.i_EP4374_Ch2" VarB="AI Inputs Channel 2^Value"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.q_EP4374_Ch3" VarB="AO Outputs Channel 3^Analog output"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.q_EP4374_Ch4" VarB="AO Outputs Channel 4^Analog output"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)">
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[10]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[11]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[12]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 12"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[13]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 13"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[14]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 14"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[15]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 15"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[16]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 16"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[17]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 17"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[18]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 18"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[19]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 19"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[1]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[20]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 20"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[21]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 21"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[2]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 2"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[3]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 3"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[4]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 4"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[5]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 5"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[6]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 6"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[7]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 7"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[8]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 8"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[9]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 9"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^Status" VarB="COM TxPDO-Map Inputs Channel 1^Status"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[0]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 0"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[10]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 10"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[11]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 11"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[12]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 12"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[13]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 13"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[14]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 14"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[15]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 15"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[16]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 16"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[17]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 17"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[18]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 18"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[19]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 19"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[1]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 1"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[20]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 20"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[21]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 21"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[2]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 2"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[3]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 3"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[4]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 4"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[5]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 5"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[6]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 6"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[7]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 7"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[8]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 8"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^D[9]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 9"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2^Status" VarB="COM TxPDO-Map Inputs Channel 2^Status"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^Ctrl" VarB="COM RxPDO-Map Outputs Channel 1^Ctrl"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[0]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 0"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[10]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 10"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[11]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 11"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[12]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 12"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[13]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 13"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[14]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 14"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[15]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 15"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[16]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 16"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[17]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 17"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[18]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 18"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[19]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 19"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[1]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 1"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[20]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 20"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[21]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 21"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[2]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 2"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[3]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 3"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[4]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 4"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[5]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 5"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[6]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 6"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[7]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 7"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[8]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 8"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1^D[9]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 9"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^Ctrl" VarB="COM RxPDO-Map Outputs Channel 2^Ctrl"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[0]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 0"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[10]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 10"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[11]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 11"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[12]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 12"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[13]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 13"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[14]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 14"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[15]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 15"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[16]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 16"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[17]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 17"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[18]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 18"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[19]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 19"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[1]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 1"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[20]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 20"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[21]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 21"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[2]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 2"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[3]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 3"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[4]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 4"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[5]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 5"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[6]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 6"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[7]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 7"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[8]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 8"/>
+				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2^D[9]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 9"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^ALI_PropValve">
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.stPropVlv.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.stALI.stPropVlv.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^ALI_X">
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisX.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.stALI.axisX.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^ALI_Y">
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisY.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.stALI.axisY.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^ALI_Z">
+				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisZ.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.stALI.axisZ.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmItem>

@@ -19,3 +19,12 @@ auto_positions.sav*
 build.log
 autosave/
 archive/
+
+
+_Boot
+_Libraries
+*.suo
+*~
+*.tpy
+*.bak
+*.~u

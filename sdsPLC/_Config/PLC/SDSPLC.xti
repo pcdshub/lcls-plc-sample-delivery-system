@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.16" ClassName="CNestedPlcProjDef">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4020.39" ClassName="CNestedPlcProjDef">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom" AutoDeleteType="true">EL6inData22B</Name>
+			<Name GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom" AutoDeleteType="true">EL6inData22B</Name>
 			<Comment>
 				<![CDATA[ This data type is corresponding to the
    KL-6xxx data structure used in the
@@ -30,7 +30,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom" AutoDeleteType="true">EL6outData22B</Name>
+			<Name GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom" AutoDeleteType="true">EL6outData22B</Name>
 			<Comment>
 				<![CDATA[ This data type is corresponding to the
    KL-6xxx data structure used in the
@@ -953,50 +953,57 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Project GUID="{EABB4A47-2546-42B6-803F-4B29ABCF0F62}" Name="SDSPLC" PrjFilePath="..\..\SDSPLC\SDSPLC.plcProj" TmcFilePath="..\..\SDSPLC\SDSPLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="1" TmcPath="SDSPLC\SDSPLC.tmc">
+	<Project GUID="{EABB4A47-2546-42B6-803F-4B29ABCF0F62}" Name="SDSPLC" PrjFilePath="..\..\SDSPLC\SDSPLC.plcProj" TmcFilePath="..\..\SDSPLC\SDSPLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="1">
 			<Name>SDSPLC Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
 				<Name>SerialComm Inputs</Name>
 				<Var>
 					<Name>GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1</Name>
-					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stM2SelectorA.stComIn_EP6002P2</Name>
-					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1</Name>
-					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stM2SelectorB.stComIn_EP6002P2</Name>
-					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>SerialComm Outputs</Name>
 				<Var>
 					<Name>GVL_IO.iq_stM2SelectorA.stComOut_EP6002P1</Name>
-					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2</Name>
-					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stM2SelectorB.stComOut_EP6002P1</Name>
-					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2</Name>
-					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
+				<Var>
+					<Name>LCLSVacuumLib.Global_Variables.g_stSystem.g_aEcatMaster1</Name>
+					<Comment>
+						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
+					</Comment>
+					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				</Var>
 				<Var>
 					<Name>GVL.g_aEcatMaster1</Name>
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
@@ -1007,14 +1014,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>GVL_IO.i_iFscEB1Ch0AI</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IO.i_iFscEB1Ch1AI</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IO.i_iFscEB1Ch2AI</Name>
 					<Type>INT</Type>
 				</Var>
 				<Var>
@@ -1387,11 +1386,11 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1</Name>
-					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stM3SelectorA.stComIn_EP6002P2</Name>
-					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stM3SelectorA.i_mfmFlow</Name>
@@ -1428,11 +1427,11 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1</Name>
-					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stM3SelectorB.stComIn_EP6002P2</Name>
-					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stM3SelectorB.i_mfmFlow</Name>
@@ -1477,11 +1476,11 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1</Name>
-					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stPressCtrlA.stComIn_EP6002P2</Name>
-					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stPressCtrlB.i_SyncUnitWC</Name>
@@ -1518,11 +1517,19 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1</Name>
-					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stPressCtrlB.stComIn_EP6002P2</Name>
-					<Type GUID="{3324DB8E-1678-493B-9185-8EE479B47C72}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.i_iFscEB1Ch1AI</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IO.i_iFscEB1Ch2AI</Name>
+					<Type>INT</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.i_iFscEB1Ch3AI</Name>
@@ -1680,11 +1687,11 @@ EP2338 Misc DIO]]>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stM3SelectorA.stComOut_EP6002P1</Name>
-					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2</Name>
-					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stM3SelectorB.q_EP2338_Ch1</Name>
@@ -1704,11 +1711,11 @@ EP2338 Misc DIO]]>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stM3SelectorB.stComOut_EP6002P1</Name>
-					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2</Name>
-					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stPressCtrlA.q_EP4374_Ch3</Name>
@@ -1720,11 +1727,11 @@ EP2338 Misc DIO]]>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stPressCtrlA.stComOut_EP6002P1</Name>
-					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2</Name>
-					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stPressCtrlB.q_EP4374_Ch3</Name>
@@ -1736,11 +1743,11 @@ EP2338 Misc DIO]]>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stPressCtrlB.stComOut_EP6002P1</Name>
-					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stPressCtrlB.stComOut_EP6002P2</Name>
-					<Type GUID="{FD499104-6810-4822-A2AF-0910F7B27504}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IO.iq_stM3GasManifold.q_EP2338_Ch1</Name>

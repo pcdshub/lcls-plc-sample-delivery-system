@@ -23,7 +23,6 @@ archive/
 
 _Boot
 _Libraries
-_CompileInfo
 *.sln
 *.suo
 *~

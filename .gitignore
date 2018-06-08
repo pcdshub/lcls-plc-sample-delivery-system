@@ -22,7 +22,6 @@ archive/
 
 
 _Libraries
-*.sln
 *.suo
 *~
 *.tpy

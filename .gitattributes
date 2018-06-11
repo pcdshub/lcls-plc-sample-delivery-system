@@ -1,0 +1,3 @@
+#Line endings must be preserved in plc files
+*PLC/* text eol=crlf 
+*.compileinfo binary

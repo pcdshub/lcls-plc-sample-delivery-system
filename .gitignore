@@ -28,3 +28,4 @@ _Libraries
 *.bak
 *.~u
 _Boot
+_CompileInfo

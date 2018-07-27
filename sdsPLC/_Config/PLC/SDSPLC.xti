@@ -1801,46 +1801,39 @@ EP2338 Misc DIO]]>
 	</Project>
 	<Mappings>
 		<OwnerA Name="SDSPLC Instance">
-			<OwnerB Name="TIID^MAIN (EtherCAT)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)">
 				<Link VarA="PlcTask Inputs^GVL.g_aEcatMaster1" VarB="InfoData^AmsNetId"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.i_SyncUnitWC" VarB="SyncUnits^[ALI (EP1111)]^PlcTask^WcState^WcState"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorA.i_SyncUnitWC" VarB="SyncUnits^[M2 Selector A (EP1111)]^PlcTask^WcState^WcState"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorB.i_SyncUnitWC" VarB="SyncUnits^[M2 Selector B (EP1111)]^PlcTask^WcState^WcState"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_SyncUnitWC" VarB="SyncUnits^[Gas_Mani (EP1111)]^PlcTask^WcState^WcState"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.i_SyncUnitWC" VarB="SyncUnits^[M3 Selector A (EP1111)]^PlcTask^WcState^WcState"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.i_SyncUnitWC" VarB="SyncUnits^[M3 Selector B (EP1111)]^PlcTask^WcState^WcState"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_SyncUnitWC" VarB="SyncUnits^[PCM A (EP1111)]^&lt;unreferenced&gt;^WcState^WcState"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.i_SyncUnitWC" VarB="SyncUnits^[PCM B (EP1111)]^PlcTask^WcState^WcState"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_Gauges (EP3174-0002)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^ALI_Gauges (EP3174-0002)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.i_EP3174_Ch1" VarB="AI Standard Channel 1^Value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.i_EP3174_Ch2" VarB="AI Standard Channel 2^Value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.i_EP3174_Ch3" VarB="AI Standard Channel 3^Value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.i_EP3174_Ch4" VarB="AI Standard Channel 4^Value"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_PropValve (EP7041-0002)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^ALI_PropValve (EP7041-0002)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.stPropVlv.i_HLS" VarB="STM Status^Status^Digital input 1"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.stPropVlv.i_LLS" VarB="STM Status^Status^Digital input 2"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_X (EP7041-0002)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^ALI_X (EP7041-0002)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisX.xHiLS" VarB="STM Status^Status^Digital input 2"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisX.xLoLS" VarB="STM Status^Status^Digital input 1"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_Y (EP7041-0002)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^ALI_Y (EP7041-0002)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisY.xHiLS" VarB="STM Status^Status^Digital input 2"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisY.xLoLS" VarB="STM Status^Status^Digital input 1"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_Z (EP7041-0002)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^ALI_Z (EP7041-0002)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisZ.xHiLS" VarB="STM Status^Status^Digital input 2"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.axisZ.xLoLS" VarB="STM Status^Status^Digital input 1"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^Gas_Mani_NeedleValve (EP4374-0002)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^Gas_Mani_NeedleValve (EP4374-0002)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_EP4374_Ch1" VarB="AI Inputs Channel 1^Value"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_EP4374_Ch2" VarB="AI Inputs Channel 2^Value"/>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3GasManifold.q_EP4374_Ch3" VarB="AO Outputs Channel 3^Analog output"/>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3GasManifold.q_EP4374_Ch4" VarB="AO Outputs Channel 4^Analog output"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^Gas_Mani_ValveCtrl (EP2338-0001)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^Gas_Mani_ValveCtrl (EP2338-0001)">
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3GasManifold.q_EP2338_Ch1" VarB="Channel 9^Output"/>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3GasManifold.q_EP2338_Ch2" VarB="Channel 10^Output"/>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3GasManifold.q_EP2338_Ch3" VarB="Channel 11^Output"/>
@@ -1850,7 +1843,7 @@ EP2338 Misc DIO]]>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3GasManifold.q_EP2338_Ch7" VarB="Channel 15^Output"/>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3GasManifold.q_EP2338_Ch8" VarB="Channel 16^Output"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^Gas_Mani_ValveRbk (EP2338-0001)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^Gas_Mani_ValveRbk (EP2338-0001)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_EP2338_Ch1" VarB="Channel 1^Input"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_EP2338_Ch2" VarB="Channel 2^Input"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_EP2338_Ch3" VarB="Channel 3^Input"/>
@@ -1860,7 +1853,7 @@ EP2338 Misc DIO]]>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_EP2338_Ch7" VarB="Channel 7^Input"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_EP2338_Ch8" VarB="Channel 8^Input"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^M2 Selector A (EP2338-0001)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^M2 Selector A (EP2338-0001)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorA.i_EP2338_Ch5" VarB="Channel 5^Input"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorA.i_EP2338_Ch6" VarB="Channel 6^Input"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorA.i_EP2338_Ch7" VarB="Channel 7^Input"/>
@@ -1870,7 +1863,7 @@ EP2338 Misc DIO]]>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM2SelectorA.q_EP2338_Ch3" VarB="Channel 11^Output"/>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM2SelectorA.q_EP2338_Ch4" VarB="Channel 12^Output"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^M2 Selector A (EP6002-0002)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^M2 Selector A (EP6002-0002)">
 				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0"/>
 				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[10]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10"/>
 				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorA.stComIn_EP6002P1^D[11]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11"/>
@@ -1964,7 +1957,7 @@ EP2338 Misc DIO]]>
 				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[8]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 8"/>
 				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorA.stComOut_EP6002P2^D[9]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 9"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^M2 Selector B (EP2338-0001)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^M2 Selector B (EP2338-0001)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorB.i_EP2338_Ch5" VarB="Channel 5^Input"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorB.i_EP2338_Ch6" VarB="Channel 6^Input"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorB.i_EP2338_Ch7" VarB="Channel 7^Input"/>
@@ -1974,7 +1967,7 @@ EP2338 Misc DIO]]>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM2SelectorB.q_EP2338_Ch3" VarB="Channel 11^Output"/>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM2SelectorB.q_EP2338_Ch4" VarB="Channel 12^Output"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^M2 Selector B (EP6002-0002)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^M2 Selector B (EP6002-0002)">
 				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0"/>
 				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[10]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10"/>
 				<Link VarA="SerialComm Inputs^GVL_IO.iq_stM2SelectorB.stComIn_EP6002P1^D[11]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11"/>
@@ -2068,7 +2061,7 @@ EP2338 Misc DIO]]>
 				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[8]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 8"/>
 				<Link VarA="SerialComm Outputs^GVL_IO.iq_stM2SelectorB.stComOut_EP6002P2^D[9]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 9"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector A Digital IO (EP2338-1001)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^M3 Selector A Digital IO (EP2338-1001)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.i_EP2338_Ch5" VarB="Channel 5^Input"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.i_EP2338_Ch6" VarB="Channel 6^Input"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.i_EP2338_Ch7" VarB="Channel 7^Input"/>
@@ -2078,11 +2071,11 @@ EP2338 Misc DIO]]>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.q_EP2338_Ch3" VarB="Channel 11^Output"/>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.q_EP2338_Ch4" VarB="Channel 12^Output"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector A Mass Flow Meter (Mass Flow / Pressure Controller - Slave)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^M3 Selector A Mass Flow Meter (Mass Flow / Pressure Controller - Slave)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.i_RawUnit" VarB="TxPDO^Unit"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.i_mfmFlow" VarB="TxPDO^fMeasure"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector A Serial IO (EP6002-0002)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^M3 Selector A Serial IO (EP6002-0002)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[10]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.stComIn_EP6002P1^D[11]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11"/>
@@ -2176,7 +2169,7 @@ EP2338 Misc DIO]]>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[8]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 8"/>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorA.stComOut_EP6002P2^D[9]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 9"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector B Digital IO (EP2338-1001)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^M3 Selector B Digital IO (EP2338-1001)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.i_EP2338_Ch5" VarB="Channel 5^Input"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.i_EP2338_Ch6" VarB="Channel 6^Input"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.i_EP2338_Ch7" VarB="Channel 7^Input"/>
@@ -2186,11 +2179,11 @@ EP2338 Misc DIO]]>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.q_EP2338_Ch3" VarB="Channel 11^Output"/>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.q_EP2338_Ch4" VarB="Channel 12^Output"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector B Mass Flow Meter (Mass Flow / Pressure Controller - Slave)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^M3 Selector B Mass Flow Meter (Mass Flow / Pressure Controller - Slave)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.i_RawUnit" VarB="TxPDO^Unit"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.i_mfmFlow" VarB="TxPDO^fMeasure"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector B Serial IO (EP6002-0002)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^M3 Selector B Serial IO (EP6002-0002)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[10]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.stComIn_EP6002P1^D[11]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11"/>
@@ -2284,19 +2277,19 @@ EP2338 Misc DIO]]>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[8]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 8"/>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stM3SelectorB.stComOut_EP6002P2^D[9]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 9"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^PCM A (EP3174-0002)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^PCM A (EP3174-0002)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP3174_Ch1" VarB="AI Standard Channel 1^Value"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP3174_Ch2" VarB="AI Standard Channel 2^Value"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP3174_Ch3" VarB="AI Standard Channel 3^Value"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP3174_Ch4" VarB="AI Standard Channel 4^Value"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^PCM A (EP4374-0002)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^PCM A (EP4374-0002)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP4374_Ch1" VarB="AI Inputs Channel 1^Value"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_EP4374_Ch2" VarB="AI Inputs Channel 2^Value"/>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.q_EP4374_Ch3" VarB="AO Outputs Channel 3^Analog output"/>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.q_EP4374_Ch4" VarB="AO Outputs Channel 4^Analog output"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^PCM A (EP6002-0002)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[10]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.stComIn_EP6002P1^D[11]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11"/>
@@ -2390,19 +2383,19 @@ EP2338 Misc DIO]]>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[8]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 8"/>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlA.stComOut_EP6002P2^D[9]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 9"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^PCM B (EP3174-0002)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^PCM B (EP3174-0002)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.i_EP3174_Ch1" VarB="AI Standard Channel 1^Value"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.i_EP3174_Ch2" VarB="AI Standard Channel 2^Value"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.i_EP3174_Ch3" VarB="AI Standard Channel 3^Value"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.i_EP3174_Ch4" VarB="AI Standard Channel 4^Value"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^PCM B (EP4374-0002)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.i_EP4374_Ch1" VarB="AI Inputs Channel 1^Value"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.i_EP4374_Ch2" VarB="AI Inputs Channel 2^Value"/>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.q_EP4374_Ch3" VarB="AO Outputs Channel 3^Analog output"/>
 				<Link VarA="PlcTask Outputs^GVL_IO.iq_stPressCtrlB.q_EP4374_Ch4" VarB="AO Outputs Channel 4^Analog output"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)">
+			<OwnerB Name="TIID^MAIN  (EtherCAT)^PCM B (EP6002-0002)">
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[10]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.stComIn_EP6002P1^D[11]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11"/>

@@ -57,7 +57,7 @@ long subSampleIntegratorProcess(aSubRecord *pgsub)
 	accumulators[8] = *(double *)pgsub->i;
 	accumulators[9] = *(double *)pgsub->j;
 
-	//selector = (int)*(double *)pgsub->t - 1;
+	selector = (int)*(double *)pgsub->t;
 
 	/*
 	 * Increment the accumulator as selected by input T, by the current flow rate reading (which is averaged over the last update period)

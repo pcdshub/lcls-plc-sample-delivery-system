@@ -11,7 +11,7 @@
 # Set this when you only want to compile this application
 # for a subset of the cross-compiled target architectures
 # that Base is built for.
-#CROSS_COMPILER_TARGET_ARCHS = linux-x86
+CROSS_COMPILER_TARGET_ARCHS = linux-x86
 
 # If you do NOT want to build for the host architecture,
 # clear BUILD_FOR_HOST_ARCH

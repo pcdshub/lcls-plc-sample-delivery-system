@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4020.39" ClassName="CNestedPlcProjDef">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4020.56" ClassName="CNestedPlcProjDef">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom" AutoDeleteType="true">EL6inData22B</Name>
@@ -1803,14 +1803,7 @@ EP2338 Misc DIO]]>
 		<OwnerA Name="SDSPLC Instance">
 			<OwnerB Name="TIID^MAIN (EtherCAT)">
 				<Link VarA="PlcTask Inputs^GVL.g_aEcatMaster1" VarB="InfoData^AmsNetId"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.i_SyncUnitWC" VarB="SyncUnits^[ALI (EP1111)]^PlcTask^WcState^WcState"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorA.i_SyncUnitWC" VarB="SyncUnits^[M2 Selector A (EP1111)]^PlcTask^WcState^WcState"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM2SelectorB.i_SyncUnitWC" VarB="SyncUnits^[M2 Selector B (EP1111)]^PlcTask^WcState^WcState"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3GasManifold.i_SyncUnitWC" VarB="SyncUnits^[Gas_Mani (EP1111)]^PlcTask^WcState^WcState"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorA.i_SyncUnitWC" VarB="SyncUnits^[M3 Selector A (EP1111)]^PlcTask^WcState^WcState"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.iq_stM3SelectorB.i_SyncUnitWC" VarB="SyncUnits^[M3 Selector B (EP1111)]^PlcTask^WcState^WcState"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlA.i_SyncUnitWC" VarB="SyncUnits^[PCM A (EP1111)]^&lt;unreferenced&gt;^WcState^WcState"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.iq_stPressCtrlB.i_SyncUnitWC" VarB="SyncUnits^[PCM B (EP1111)]^PlcTask^WcState^WcState"/>
 			</OwnerB>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^ALI_Gauges (EP3174-0002)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.stALI.i_EP3174_Ch1" VarB="AI Standard Channel 1^Value"/>

@@ -23,9 +23,19 @@
     <Company>Aperture Science</Company>
     <Title>SDS M2</Title>
     <Author>A. Wallace</Author>
-    <Released>true</Released>
+    <Released>false</Released>
     <CombineIds>false</CombineIds>
-    <ProjectVersion>2.6.1</ProjectVersion>
+    <DeploymentEvents>
+      <Events xmlns="">
+        <Event>
+          <CommandType>Copy</CommandType>
+          <DeploymentType>ActivateConfiguration</DeploymentType>
+          <Command1 />
+          <Command2 />
+        </Event>
+      </Events>
+    </DeploymentEvents>
+    <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="DUTs\ALI\E_AxisMoveMode.TcDUT">
@@ -287,9 +297,6 @@
     <Compile Include="SerialComm.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Version\Global_Version.TcGVL">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="VISUs\Main.TcVIS">
       <SubType>Code</SubType>
       <DependentUpon>Visualization Manager.TcVMO</DependentUpon>
@@ -313,7 +320,6 @@
     <Folder Include="POUs\Regulators" />
     <Folder Include="POUs\VICI" />
     <Folder Include="POUs" />
-    <Folder Include="Version" />
     <Folder Include="VISUs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,11 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL_Devices" Id="{c147c728-648e-463f-984d-4f986cb4ad03}">
     <Declaration><![CDATA[VAR_GLOBAL
-	
-	(* Selector*)
-	stSelector	:	ST_Selector;
-	stSelector2	:	ST_Selector;
 	
 	(* Cooler shaker *)
 	stTECCtrl	: ARRAY[1..3] OF	ST_TECControl;

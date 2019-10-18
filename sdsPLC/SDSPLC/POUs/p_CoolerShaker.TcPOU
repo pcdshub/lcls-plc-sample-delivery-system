@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="p_CoolerShaker" Id="{0402abe6-bce2-4631-aa1a-091f67d33390}" SpecialFunc="None">
-    <Declaration><![CDATA[ROGRAM p_CoolerShaker
+    <Declaration><![CDATA[PROGRAM p_CoolerShaker
 VAR
 	
 afbTECDriver	:	ARRAY[1..3] OF FB_TECDriver;

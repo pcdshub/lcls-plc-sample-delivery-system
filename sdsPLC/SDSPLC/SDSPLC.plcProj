@@ -143,6 +143,10 @@
     <Compile Include="GVLs\GVL.TcGVL">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GVLs\GVL_1.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="GVLs\GVL_Autosave.TcGVL">
       <SubType>Code</SubType>
     </Compile>
@@ -186,9 +190,6 @@
     <Compile Include="POUs\Bronkhorst\FB_FlowBusTransaction.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_SelectorM3.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\Helpers\FB_EcatDiag.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -223,19 +224,7 @@
     <Compile Include="POUs\p_Manifold.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\p_ModbusRx.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\p_ModbusTx.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\p_Regulators.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\p_SampleSelector.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\p_SampleSelector2.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\p_Shakers.TcPOU">
@@ -255,6 +244,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Regulators\F_rPressure.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Selectors\FB_SelectorM2.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Selectors\FB_SelectorM3.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Sensirion\FB_SensirionDriver.TcPOU">
@@ -308,6 +303,7 @@
     <Folder Include="POUs\Helpers" />
     <Folder Include="POUs\ALI" />
     <Folder Include="POUs\Flowmeters" />
+    <Folder Include="POUs\Selectors" />
     <Folder Include="POUs\Sensirion" />
     <Folder Include="POUs\TEC" />
     <Folder Include="POUs\Regulators" />
@@ -370,16 +366,16 @@
   </ItemGroup>
   <ItemGroup>
     <PlaceholderResolution Include="LCLSVacuumLib">
-      <Resolution>LCLSVacuumLib, 1.11.1 (SLAC)</Resolution>
+      <Resolution>LCLSVacuumLib, * (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_Standard">
-      <Resolution>Tc2_Standard, 3.3.1.0 (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_Standard, * (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_System">
-      <Resolution>Tc2_System, 3.4.15.0 (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_System, * (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc3_Module">
-      <Resolution>Tc3_Module, 3.3.12.0 (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc3_Module, * (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
   </ItemGroup>
   <ProjectExtensions>

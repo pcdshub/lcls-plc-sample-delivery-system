@@ -1,19 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="MAIN" Id="{42c5d645-8f72-4a7d-9897-ab636f1cee6d}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
 	
-		fb_S_UPS	:	FB_S_UPS;
+		//fb_S_UPS	:	FB_S_UPS;
 		
 		fbEcatDiag1	:	FB_EcatDiag;
 		fbEcatDiag2 :	FB_EcatDiag;
-		
-		adsCntUp	:	CTU := (PV:=40000);
-		
-	
-		adsArcTanCalc: LREAL;
-		adsArcTanArg: LREAL;
 	
 END_VAR
 ]]></Declaration>
@@ -21,10 +15,7 @@ END_VAR
       <ST><![CDATA[
 
 //fb_S_UPS.iPLCPort := AMSPORT_R0_PLC_RTS2;
-fb_S_UPS(iPLCPort:=851);
-
-
-p_modbusRx();
+//fb_S_UPS(iPLCPort:=851);
 
 p_Autosave();
 
@@ -35,10 +26,6 @@ fbEcatDiag2(i_AMSNetId:=g_aEcatMaster2, i_xFirstPass:=g_xFirstPass, q_xAllStates
 
 p_SoftIO();
 
-//p_SelectorDetector();
-
-p_SampleSelector();
-p_SampleSelector2();
 p_Regulators();
 p_Manifold();
 p_ALI();
@@ -47,23 +34,10 @@ p_ALI();
 
 //p_CoolerShaker();
 
-p_ModbusTx();
-
 p_StatusLights();
 
 (* Following execution of all the programs, set the first pass false *)
-g_xFirstPass := FALSE;
-
-adsCntUp(CU:=TRUE);
-adsCntUp(CU:=FALSE);
-adsCntUp(Reset:=adsCntUp.Q);
-
-adsArcTanCalc := ATAN(adsArcTanArg);]]></ST>
+g_xFirstPass := FALSE;]]></ST>
     </Implementation>
-    <LineIds Name="MAIN">
-      <LineId Id="3" Count="33" />
-      <LineId Id="46" Count="5" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

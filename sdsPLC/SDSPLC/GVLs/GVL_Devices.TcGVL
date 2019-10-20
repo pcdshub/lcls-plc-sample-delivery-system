@@ -20,6 +20,8 @@
 
 M3SelA : FB_SelectorM3;
 
+PCMA : FB_PressureControlModule;
+
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

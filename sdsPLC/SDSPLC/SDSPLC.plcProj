@@ -77,9 +77,6 @@
     <Compile Include="DUTs\IO_Structs\ST_ALIIO.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\IO_Structs\ST_M2SelectorIO.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="DUTs\IO_Structs\ST_M3DeviceBaseIO.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -87,9 +84,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\IO_Structs\ST_M3PressCtrlIO.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\IO_Structs\ST_M3SelectorIO.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\IO_Structs\ST_SerialComm.TcDUT">
@@ -210,6 +204,9 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PCM\FB_PressureControlModule.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\p_ALI.TcPOU">
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
@@ -308,6 +305,7 @@
     <Folder Include="POUs\Helpers" />
     <Folder Include="POUs\ALI" />
     <Folder Include="POUs\Flowmeters" />
+    <Folder Include="POUs\PCM" />
     <Folder Include="POUs\Selectors" />
     <Folder Include="POUs\Sensirion" />
     <Folder Include="POUs\TEC" />

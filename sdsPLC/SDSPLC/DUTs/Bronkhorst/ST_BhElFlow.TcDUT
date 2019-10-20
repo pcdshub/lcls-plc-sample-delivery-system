@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <DUT Name="ST_BhElFlow" Id="{aa56882c-6739-4583-9306-a6edfd4b5ed1}">
     <Declaration><![CDATA[TYPE ST_BhElFlow :
 STRUCT
 	eFlowUnit	:	E_BHElFlowUnit;
 	i_udiUnit	:	UDINT;
 	i_rFlow	:	REAL;
+    
+    i_mfmFlow		AT	%I*	:	REAL;
+	i_RawUnit		AT %I*	:	UDINT;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

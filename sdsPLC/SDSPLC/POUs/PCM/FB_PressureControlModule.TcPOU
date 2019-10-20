@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_PressureControlModule" Id="{c66fc247-6863-4ff6-a2eb-349522b72e5e}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_PressureControlModule
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR_IN_OUT
+END_VAR
+VAR
+    io : ST_M3PressCtrlIO;
+    
+    stPropAir1 : ST_Proportionair;
+    stPropAir2 : ST_Proportionair;
+    
+    PropAir1 : FB_ProportionairRegulator;
+    PropAir2 : FB_ProportionairRegulator;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[PropAir1(iq_stRegProp:=stPropAir1);
+PropAir2(iq_stRegProp:=stPropAir2);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

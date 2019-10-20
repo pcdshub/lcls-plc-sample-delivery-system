@@ -8,8 +8,6 @@ VAR
 		
 		//fbEcatDiag1	:	FB_EcatDiag;
 		//fbEcatDiag2 :	FB_EcatDiag;
-        
-        fbSelector1 : FB_SelectorM3;
 	
 END_VAR
 ]]></Declaration>
@@ -33,7 +31,8 @@ END_VAR
 //p_ALI();
 //p_VacGaugeSup();
 
-fbSelector1();
+M3SelA();
+PCMA();
 
 
 //p_CoolerShaker();

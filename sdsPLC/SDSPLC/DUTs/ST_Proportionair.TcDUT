@@ -1,25 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <DUT Name="ST_Proportionair" Id="{1cb50253-0c45-4afc-8e14-284b1dbf64b6}">
     <Declaration><![CDATA[TYPE ST_Proportionair :
 STRUCT
 	
 (* Control *)
+{attribute 'pytmc' := '
+        pv: Enable
+        io: io
+     '}
 xEnable	:	BOOL;
+{attribute 'pytmc' := '
+        pv: Setpoint
+        io: io
+     '}
 iSetpoint	:	INT;
-iSetpointRaw	:	INT;
+{attribute 'pytmc' := '
+        pv: HighLimit
+        io: io
+     '}
 iHiLimit	:	INT;
+{attribute 'pytmc' := '
+        pv: LowLimit
+        io: io
+     '}
 iLoLimit	:	INT;
 
 (* Readback *)
-xStable	:	BOOL;//TTL signal from the proportionair controller that the pressure is stable
-iPressure	:	INT;
-iPressureRaw : INT;
+xStable	: BOOL;//TTL signal from the proportionair controller that the pressure is stable
+{attribute 'pytmc' := '
+        pv: Pressure
+        io: i
+     '}
+iPressure : INT;
 
+
+{attribute 'TcDisplayScale' := '0-10'}
+i_iPressRB AT %I* : INT;
+{attribute 'TcDisplayScale' := '0-10'}
+q_iPressCt AT %Q* : INT;
 
 END_STRUCT
 END_TYPE
 ]]></Declaration>
-    <ObjectProperties />
   </DUT>
 </TcPlcObject>

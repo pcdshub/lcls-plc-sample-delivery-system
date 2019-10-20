@@ -1,17 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.24">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <DUT Name="ST_Shaker" Id="{91397fcc-47b0-4fa6-90e4-4877149b614d}">
     <Declaration><![CDATA[TYPE ST_Shaker :
 STRUCT
-	
-q_xPwrDO	:	BOOL;
+
+{attribute 'pytmc' := '
+    pv : PowerOn
+    io : i
+    '}	
+q_xPwrDO AT %Q*	:	BOOL;
+
+{attribute 'pytmc' := '
+    pv : Ilk
+    io : i
+    '}
 xIlk		:	BOOL;
+
+
 i_xSwitch	:	BOOL;
+
+{attribute 'pytmc' := '
+    pv : Ctrl
+    io : o
+    '}
 i_xEpics	:	BOOL;
 
 END_STRUCT
 END_TYPE
 ]]></Declaration>
-    <ObjectProperties />
   </DUT>
 </TcPlcObject>

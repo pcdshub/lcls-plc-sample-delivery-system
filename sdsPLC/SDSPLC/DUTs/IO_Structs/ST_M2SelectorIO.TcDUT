@@ -1,25 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <DUT Name="ST_M2SelectorIO" Id="{8847cae4-58e8-4ecd-b246-7e3fca7dfce8}">
     <Declaration><![CDATA[TYPE ST_M2SelectorIO EXTENDS ST_M3DeviceBaseIO:
 STRUCT
 
-	q_EP2338_Ch1	AT	%Q*	:	BOOL;
-	q_EP2338_Ch2	AT	%Q*	:	BOOL;
-	q_EP2338_Ch3	AT	%Q*	:	BOOL;
-	q_EP2338_Ch4	AT	%Q*	:	BOOL;
-	
-	i_EP2338_Ch5	AT	%I*	:	BOOL;
-	i_EP2338_Ch6	AT	%I*	:	BOOL;
-	i_EP2338_Ch7	AT	%I*	:	BOOL;
-	i_EP2338_Ch8	AT	%I*	:	BOOL;
 
-
-	stComIn_EP6002P1		AT %I*	:	EL6inData22B (*KL6inData22B*);
-	stComOut_EP6002P1		AT %Q*	:	EL6outData22B (*KL6outData22B*);
-	
-	stComIn_EP6002P2		AT %I*	:	EL6inData22B (*KL6inData22B*);
-	stComOut_EP6002P2		AT %Q*	:	EL6outData22B (*KL6outData22B*);
 	
 END_STRUCT
 END_TYPE

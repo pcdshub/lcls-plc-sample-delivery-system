@@ -6,8 +6,10 @@ VAR
 	
 		//fb_S_UPS	:	FB_S_UPS;
 		
-		fbEcatDiag1	:	FB_EcatDiag;
-		fbEcatDiag2 :	FB_EcatDiag;
+		//fbEcatDiag1	:	FB_EcatDiag;
+		//fbEcatDiag2 :	FB_EcatDiag;
+        
+        fbSelector1 : FB_SelectorM3;
 	
 END_VAR
 ]]></Declaration>
@@ -17,24 +19,26 @@ END_VAR
 //fb_S_UPS.iPLCPort := AMSPORT_R0_PLC_RTS2;
 //fb_S_UPS(iPLCPort:=851);
 
-p_Autosave();
+//p_Autosave();
 
-p_ESTOP();
+//p_ESTOP();
 
-fbEcatDiag1(i_AMSNetId:=g_aEcatMaster1, i_xFirstPass:=g_xFirstPass, q_xAllStatesGood=>g_xIOState);
-fbEcatDiag2(i_AMSNetId:=g_aEcatMaster2, i_xFirstPass:=g_xFirstPass, q_xAllStatesGood=>g_xIOState);
+//fbEcatDiag1(i_AMSNetId:=g_aEcatMaster1, i_xFirstPass:=g_xFirstPass, q_xAllStatesGood=>g_xIOState);
+//fbEcatDiag2(i_AMSNetId:=g_aEcatMaster2, i_xFirstPass:=g_xFirstPass, q_xAllStatesGood=>g_xIOState);
 
-p_SoftIO();
+//p_SoftIO();
 
-p_Regulators();
-p_Manifold();
-p_ALI();
+//p_Regulators();
+//p_Manifold();
+//p_ALI();
 //p_VacGaugeSup();
+
+fbSelector1();
 
 
 //p_CoolerShaker();
 
-p_StatusLights();
+//p_StatusLights();
 
 (* Following execution of all the programs, set the first pass false *)
 g_xFirstPass := FALSE;]]></ST>

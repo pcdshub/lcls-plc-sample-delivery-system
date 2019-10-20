@@ -92,6 +92,12 @@
     <Compile Include="DUTs\IO_Structs\ST_M3SelectorIO.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\IO_Structs\ST_SerialComm.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Sensirion\ST_SensirionFM.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\Sensirion\ST_SensirionFMControl.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -119,9 +125,6 @@
     <Compile Include="DUTs\ST_SelectorM3.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\ST_SensirionFM.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="DUTs\ST_Shaker.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -143,24 +146,23 @@
     <Compile Include="GVLs\GVL.TcGVL">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GVLs\GVL_1.TcGVL">
-      <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
-    </Compile>
     <Compile Include="GVLs\GVL_Autosave.TcGVL">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GVLs\GVL_ComBuffers.TcGVL">
       <SubType>Code</SubType>
+      <ExcludeFromBuild>true</ExcludeFromBuild>
     </Compile>
     <Compile Include="GVLs\GVL_Devices.TcGVL">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GVLs\GVL_IO.TcGVL">
       <SubType>Code</SubType>
+      <ExcludeFromBuild>true</ExcludeFromBuild>
     </Compile>
     <Compile Include="GVLs\GVL_misc.TcGVL">
       <SubType>Code</SubType>
+      <ExcludeFromBuild>true</ExcludeFromBuild>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
@@ -197,6 +199,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Helpers\FB_SelectorSync.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Helpers\FB_SerialCommWrapper.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Helpers\FB_ShiftByteArray.TcPOU">
@@ -313,10 +318,6 @@
     <Folder Include="VISUs" />
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderReference Include="LCLSVacuumLib">
-      <DefaultResolution>LCLSVacuumLib, * (SLAC)</DefaultResolution>
-      <Namespace>LCLSVacuumLib</Namespace>
-    </PlaceholderReference>
     <PlaceholderReference Include="Tc2_Standard">
       <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_Standard</Namespace>
@@ -331,16 +332,13 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <LibraryReference Include="LCLS General,0.1.2,SLAC">
+    <LibraryReference Include="LCLS General,newest,SLAC">
       <Namespace>LCLS_General</Namespace>
     </LibraryReference>
-    <LibraryReference Include="Tc2_EtherCAT,3.3.7.0,Beckhoff Automation GmbH">
+    <LibraryReference Include="Tc2_EtherCAT,newest,Beckhoff Automation GmbH">
       <Namespace>Tc2_EtherCAT</Namespace>
     </LibraryReference>
-    <LibraryReference Include="Tc2_IoFunctions,3.3.8.0,Beckhoff Automation GmbH">
-      <Namespace>Tc2_IoFunctions</Namespace>
-    </LibraryReference>
-    <LibraryReference Include="Tc2_MC2,3.3.15.0,Beckhoff Automation GmbH">
+    <LibraryReference Include="Tc2_MC2,newest,Beckhoff Automation GmbH">
       <Namespace>Tc2_MC2</Namespace>
     </LibraryReference>
     <LibraryReference Include="Tc2_ModbusSrv,3.3.1.0,Beckhoff Automation GmbH">
@@ -349,10 +347,10 @@
     <LibraryReference Include="Tc2_SerialCom,3.3.6.0,Beckhoff Automation GmbH">
       <Namespace>Tc2_SerialCom</Namespace>
     </LibraryReference>
-    <LibraryReference Include="Tc2_SUPS,3.3.4.0,Beckhoff Automation GmbH">
+    <LibraryReference Include="Tc2_SUPS,newest,Beckhoff Automation GmbH">
       <Namespace>Tc2_SUPS</Namespace>
     </LibraryReference>
-    <LibraryReference Include="Tc2_Utilities,3.3.17.0,Beckhoff Automation GmbH">
+    <LibraryReference Include="Tc2_Utilities,newest,Beckhoff Automation GmbH">
       <Namespace>Tc2_Utilities</Namespace>
     </LibraryReference>
   </ItemGroup>
@@ -365,9 +363,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderResolution Include="LCLSVacuumLib">
-      <Resolution>LCLSVacuumLib, * (SLAC)</Resolution>
-    </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_Standard">
       <Resolution>Tc2_Standard, * (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>

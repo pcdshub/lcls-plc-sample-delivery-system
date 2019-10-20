@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_SerialCommWrapper" Id="{59717fc0-30b2-41eb-a42a-cd04af56121c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SerialCommWrapper
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+    
+END_VAR
+VAR_IN_Out
+    stSerialComm : ST_SerialComm;
+END_VAR
+VAR
+    fbSerialLineControl : SerialLineControl;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbSerialLineControl(
+	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
+	pComIn:= ADR(stSerialComm.stComIn),
+	pComOut:=ADR(stSerialComm.stComOut) ,
+	SizeComIn:= UINT_TO_INT(SIZEOF(stSerialComm.stComOut)),
+	TxBuffer:= stSerialComm.TxBuffer,
+	RxBuffer:= stSerialComm.RxBuffer,
+	Error=> ,
+	ErrorID=> );]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -90,6 +90,14 @@
 					<Name>GVL_Devices.M3SelA.stSensSerial.stComIn</Name>
 					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMA.stSerial1.stComIn</Name>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMA.stSerial2.stComIn</Name>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>SerialComm Outputs</Name>
@@ -99,6 +107,14 @@
 				</Var>
 				<Var>
 					<Name>GVL_Devices.M3SelA.stSensSerial.stComOut</Name>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMA.stSerial1.stComOut</Name>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMA.stSerial2.stComOut</Name>
 					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 			</Vars>

@@ -80,12 +80,6 @@
     <Compile Include="DUTs\IO_Structs\ST_M3DeviceBaseIO.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\IO_Structs\ST_M3GasManifoldIO.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\IO_Structs\ST_M3PressCtrlIO.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="DUTs\IO_Structs\ST_SerialComm.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -96,9 +90,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\Sensirion\ST_SensirionFMStatus.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\ST_M3GasManifold.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\ST_ManifoldValve.TcDUT">
@@ -186,10 +177,13 @@
     <Compile Include="POUs\Bronkhorst\FB_FlowBusTransaction.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Helpers\FB_EcatDiag.TcPOU">
+    <Compile Include="POUs\GasManifold\FB_GasManifold.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Helpers\FB_ManiValve.TcPOU">
+    <Compile Include="POUs\GasManifold\FB_ManiValve.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Helpers\FB_EcatDiag.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Helpers\FB_SelectorSync.TcPOU">
@@ -305,6 +299,7 @@
     <Folder Include="POUs\Helpers" />
     <Folder Include="POUs\ALI" />
     <Folder Include="POUs\Flowmeters" />
+    <Folder Include="POUs\GasManifold" />
     <Folder Include="POUs\PCM" />
     <Folder Include="POUs\Selectors" />
     <Folder Include="POUs\Sensirion" />

@@ -19,7 +19,9 @@ END_VAR
     <Implementation>
       <ST><![CDATA[
 
-M3SelA.SerialComm();]]></ST>
+M3SelA.SerialComm();
+
+PCMA.SerialComm();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

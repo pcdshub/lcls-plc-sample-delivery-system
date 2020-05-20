@@ -21,11 +21,17 @@ autosave/
 archive/
 
 
+_Boot
 _Libraries
+_CompileInfo
 *.suo
 *~
 *.tpy
 *.bak
 *.~u
-_Boot
-_CompileInfo
+*.csv
+*.dbg
+TrialLicense.tclrs
+*.library
+*.tmcRefac
+.pytmc_build

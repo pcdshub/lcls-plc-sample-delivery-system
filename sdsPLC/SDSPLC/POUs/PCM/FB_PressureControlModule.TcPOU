@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <POU Name="FB_PressureControlModule" Id="{c66fc247-6863-4ff6-a2eb-349522b72e5e}" SpecialFunc="None">
     <Declaration><![CDATA[// Encapsulation of a pressure control module.
 // A. Wallace, 2019-10-22
@@ -13,7 +13,7 @@ END_VAR
 VAR_IN_OUT
 END_VAR
 VAR
-    io : ST_M3PressCtrlIO;
+    //io : ST_M3PressCtrlIO;
     
     stSerial1 : ST_SerialComm;
     stSerial2 : ST_SerialComm;
@@ -37,5 +37,12 @@ PropAir2(iq_stRegProp:=stPropAir2);]]></ST>
         <ST><![CDATA[fbSerial1(stSerialComm := stSerial1);]]></ST>
       </Implementation>
     </Action>
+    <LineIds Name="FB_PressureControlModule">
+      <LineId Id="3" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_PressureControlModule.SerialComm">
+      <LineId Id="1" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

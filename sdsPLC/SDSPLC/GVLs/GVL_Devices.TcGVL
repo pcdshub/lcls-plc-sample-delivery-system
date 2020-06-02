@@ -1,20 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <GVL Name="GVL_Devices" Id="{c147c728-648e-463f-984d-4f986cb4ad03}">
     <Declaration><![CDATA[VAR_GLOBAL
 	
 	(* ALI *)
 //	stALI	:	ST_ALI;
+//{attribute 'pytmc' := '
+//    pv: $(P):PCM:A
+// '}
+//ALI : FB_ALI;
 
 {attribute 'pytmc' := '
-        pv: $(P):SEL:A
-     '}
-M3SelA : FB_SelectorM3;
+    pv: $(P):SEL:A
+ '}
+M3SelectorA : FB_SelectorM3;
 
 {attribute 'pytmc' := '
-        pv: $(P):PCM:A
-     '}
+    pv: $(P):PCM:A
+ '}
 PCMA : FB_PressureControlModule;
+
+{attribute 'pytmc' := '
+    pv: $(P):PCM:B
+ '}
+PCMB : FB_PressureControlModule;
+
+{attribute 'pytmc' := '
+    pv: $(P):PCM:C
+ '}
+PCMC : FB_PressureControlModule;
+
+{attribute 'pytmc' := '
+    pv: $(P):PCM:D
+ '}
+PCMD : FB_PressureControlModule;
+
+{attribute 'pytmc' := '
+    pv: $(P):MAN
+ '}
+GasMan : FB_GasManifold;
 
 END_VAR]]></Declaration>
   </GVL>

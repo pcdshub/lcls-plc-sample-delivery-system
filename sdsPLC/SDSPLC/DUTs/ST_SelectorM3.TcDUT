@@ -1,12 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <DUT Name="ST_SelectorM3" Id="{fa3c6e97-4043-47eb-be01-712b94ca71b0}">
     <Declaration><![CDATA[TYPE ST_SelectorM3 EXTENDS ST_Selector :
 STRUCT
-		
-		rLowFlow	:	REAL;
-		rHighFlow	:	REAL;
-		rGasFlow	:	REAL; //El-flow
+		{attribute 'pytmc' := '
+            pv: SampleFlow
+            io: i
+         '}
+		rLowFlow	:	REAL; //Sensirion Sample Flowrate
+        {attribute 'pytmc' := '
+            pv: LiquidSheathFlow
+            io: i
+         '}
+		rHighFlow	:	REAL; //Sensirion Sheath liquid flowrate
+        {attribute 'pytmc' := '
+            pv: GasSheathFlow
+            io: i
+         '}
+		rGasFlow	:	REAL; //Bronkhorst Gas Sheath mass-flowmeter
         
 END_STRUCT
 END_TYPE

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <POU Name="FB_SelectorM3" Id="{a6869ee8-a1a6-4578-87e8-3c9673bf57ea}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SelectorM3
 VAR CONSTANT
@@ -12,12 +12,20 @@ END_VAR
 VAR_IN_OUT
 END_VAR
 VAR
-    
+    {attribute 'pytmc' := '
+        pv:
+     '}
     stBaseIO : ST_M3DeviceBaseIO;
-
+    
+    {attribute 'pytmc' := '
+        pv:
+     '}
     stSelector	:	ST_SelectorM3;
     
     // Bronkhorst MFM
+        {attribute 'pytmc' := '
+            pv: MassFM
+         '}
         stMFM	:	ST_BhElFlow;
     
     // Shakers

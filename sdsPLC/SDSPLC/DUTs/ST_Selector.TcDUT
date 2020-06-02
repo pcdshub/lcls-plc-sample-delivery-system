@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <DUT Name="ST_Selector" Id="{edea215a-6843-498f-9e8b-ebe30f5a62c3}">
     <Declaration><![CDATA[TYPE ST_Selector :
 STRUCT
@@ -16,19 +16,57 @@ STRUCT
 	
 	//Common parameters
 
-	(* Selector controls *)
+	(* Selector EPICS controls *)
+    {attribute 'pytmc' := '
+        pv: ValvesLockRequest
+        io: io
+     '}
 	xResLock	:	BOOL; // request to lock the valves
+    {attribute 'pytmc' := '
+        pv: ValvesUnlockRequest
+        io: io
+     '}
 	xResUnlock	:	BOOL; // request to unlock the valves
+    {attribute 'pytmc' := '
+        pv: ValvesLocked
+        io: io
+     '}
 	xResLocked	:	BOOL; // valve movement is locked
+    {attribute 'pytmc' := '
+        pv: ValvesSynced
+        io: io
+     '}
 	xResSyncd	:	BOOL; // valves are on the same position
-	iSyncReqPos	:	INT;
-	iVici1ReqPos : INT;
-	iVici2ReqPos : INT;
+    {attribute 'pytmc' := '
+        pv: ValvesReqPos
+        io: io
+     '}
+	iSyncReqPos	:	INT;  // requested position when synced
+    {attribute 'pytmc' := '
+        pv: Valve1ReqPos
+        io: io
+     '}
+	iVici1ReqPos : INT;   // requested position for Vici 1
+    {attribute 'pytmc' := '
+        pv: Valve2ReqPos
+        io: io
+     '}
+	iVici2ReqPos : INT;   // requested position for Vici 2
+    
+    //Hardware control
 	stViciVlvCtrl	: ARRAY[1..2] OF	ST_ViciControl;
 	
-	
-	(* Selector Readbacks *)
+	(* Selector EPICS Readbacks *)
+    {attribute 'pytmc' := '
+        pv: ValvesPos
+        io: i
+     '}
 	iSyncResPos : INT;
+    
+    //Hardware readbacks
+    {attribute 'pytmc' := '
+        pv: ValveStatus
+    }
 	stViciVlvStatus	: ARRAY[1..2] OF	ST_ViciStatus;
 
 END_STRUCT

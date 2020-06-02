@@ -331,13 +331,16 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <LibraryReference Include="LCLS General,newest,SLAC">
+    <LibraryReference Include="L2SI Vacuum Library,1.1.1,SLAC">
+      <Namespace>L2SI_Vacuum_Library</Namespace>
+    </LibraryReference>
+    <LibraryReference Include="LCLS General,2.3.4,SLAC">
       <Namespace>LCLS_General</Namespace>
     </LibraryReference>
-    <LibraryReference Include="Tc2_EtherCAT,newest,Beckhoff Automation GmbH">
+    <LibraryReference Include="Tc2_EtherCAT,3.3.13.0,Beckhoff Automation GmbH">
       <Namespace>Tc2_EtherCAT</Namespace>
     </LibraryReference>
-    <LibraryReference Include="Tc2_MC2,newest,Beckhoff Automation GmbH">
+    <LibraryReference Include="Tc2_MC2,3.3.37.0,Beckhoff Automation GmbH">
       <Namespace>Tc2_MC2</Namespace>
     </LibraryReference>
     <LibraryReference Include="Tc2_ModbusSrv,3.3.1.0,Beckhoff Automation GmbH">
@@ -346,10 +349,10 @@
     <LibraryReference Include="Tc2_SerialCom,3.3.6.0,Beckhoff Automation GmbH">
       <Namespace>Tc2_SerialCom</Namespace>
     </LibraryReference>
-    <LibraryReference Include="Tc2_SUPS,newest,Beckhoff Automation GmbH">
+    <LibraryReference Include="Tc2_SUPS,3.3.6.0,Beckhoff Automation GmbH">
       <Namespace>Tc2_SUPS</Namespace>
     </LibraryReference>
-    <LibraryReference Include="Tc2_Utilities,newest,Beckhoff Automation GmbH">
+    <LibraryReference Include="Tc2_Utilities,3.3.35.0,Beckhoff Automation GmbH">
       <Namespace>Tc2_Utilities</Namespace>
     </LibraryReference>
   </ItemGroup>

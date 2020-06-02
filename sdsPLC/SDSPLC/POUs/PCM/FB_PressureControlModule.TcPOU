@@ -21,7 +21,13 @@ VAR
     fbSerial1 : FB_SerialCommWrapper;
     fbSerial2 : FB_SerialCommWrapper;
     
+    {attribute 'pytmc' := '
+        pv: PropAir1
+     '}
     stPropAir1 : ST_Proportionair;
+    {attribute 'pytmc' := '
+        pv: PropAir2
+     '}
     stPropAir2 : ST_Proportionair;
     
     PropAir1 : FB_ProportionairRegulator;
@@ -37,12 +43,5 @@ PropAir2(iq_stRegProp:=stPropAir2);]]></ST>
         <ST><![CDATA[fbSerial1(stSerialComm := stSerial1);]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="FB_PressureControlModule">
-      <LineId Id="3" Count="0" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_PressureControlModule.SerialComm">
-      <LineId Id="1" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

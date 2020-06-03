@@ -2,18 +2,44 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <GVL Name="GVL_Devices" Id="{c147c728-648e-463f-984d-4f986cb4ad03}">
     <Declaration><![CDATA[VAR_GLOBAL
-	
-	(* ALI *)
+
+(* ALI - rarely used, stages need to be redone in new format *)
 //	stALI	:	ST_ALI;
 //{attribute 'pytmc' := '
 //    pv: $(P):PCM:A
 // '}
 //ALI : FB_ALI;
 
+(* M2 Selectors - still facing code errors *)
+//{attribute 'pytmc' := '
+//    pv: $(P):SELM2:A
+// '}
+//M2SelectorA : FB_SelectorM2;
+
+//{attribute 'pytmc' := '
+//    pv: $(P):SELM2:B
+// '}
+//M2SelectorB : FB_SelectorM2;
+
 {attribute 'pytmc' := '
     pv: $(P):SEL:A
  '}
 M3SelectorA : FB_SelectorM3;
+
+{attribute 'pytmc' := '
+    pv: $(P):SEL:B
+ '}
+M3SelectorB : FB_SelectorM3;
+
+{attribute 'pytmc' := '
+    pv: $(P):SEL:C
+ '}
+M3SelectorC : FB_SelectorM3;
+
+{attribute 'pytmc' := '
+    pv: $(P):SEL:D
+ '}
+M3SelectorD : FB_SelectorM3;
 
 {attribute 'pytmc' := '
     pv: $(P):PCM:A

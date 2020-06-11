@@ -24,6 +24,15 @@
 {attribute 'pytmc' := '
     pv: $(P):SEL:A
  '}
+{attribute 'TcLinkTo' := '.stViciSerial.stComIn.Status := TIIB[M3 Selector A Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
+						  .stViciSerial.stComIn.D := TIIB[M3 Selector A Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^D;
+						  .stShaker01.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 9^Output;
+						  .stShaker02.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 10^Output;
+						  .stShaker03.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 11^Output;
+						  .stShaker04.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 12^Output;
+						  .stMFM.i_mfmFlow := TIIB[M3 Selector A Mass Flow Meter (Mass Flow / Pressure Controller - Slave)]^TxPDO^fMeasure
+						  .stMFM.i_RawUnit := TIIB[M3 Selector A Mass Flow Meter (Mass Flow / Pressure Controller - Slave)]^TxPDO^Unit
+'}
 M3SelectorA : FB_SelectorM3;
 
 {attribute 'pytmc' := '
@@ -44,28 +53,80 @@ M3SelectorD : FB_SelectorM3;
 {attribute 'pytmc' := '
     pv: $(P):PCM:A
  '}
+{attribute 'TcLinkTo' := '.stPropAir1.i_iPressRB := TIIB[PCM A (EP4374)]^AI Inputs Channel 1^Value;
+						  .stPropAir2.i_iPressRB := TIIB[PCM A (EP4374)]^AI Inputs Channel 2^Value;
+						  .stPropAir1.i_iPressCt := TIIB[PCM A (EP4374)]^AO Outputs Channel 3^Analog output
+						  .stPropAir2.i_iPressCt := TIIB[PCM A (EP4374)]^AO Outputs Channel 4^Analog output
+						  .stSerial1.stComIn.Status := TIIB[PCM A (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
+						  .stSerial1.stComIn.D := TIIB[PCM A (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^D;
+						  .stSerial2.stComIn.Status := TIIB[PCM A (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+						  .stSerial2.stComIn.D := TIIB[PCM A (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^D;
+'}
 PCMA : FB_PressureControlModule;
 
 {attribute 'pytmc' := '
     pv: $(P):PCM:B
  '}
+{attribute 'TcLinkTo' := '.stPropAir1.i_iPressRB := TIIB[PCM B (EP4374)]^AI Inputs Channel 1^Value;
+						  .stPropAir2.i_iPressRB := TIIB[PCM B (EP4374)]^AI Inputs Channel 2^Value;
+						  .stPropAir1.i_iPressCt := TIIB[PCM B (EP4374)]^AO Outputs Channel 3^Analog output
+						  .stPropAir2.i_iPressCt := TIIB[PCM B (EP4374)]^AO Outputs Channel 4^Analog output
+						  .stSerial1.stComIn.Status := TIIB[PCM B (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
+						  .stSerial1.stComIn.D := TIIB[PCM B (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^D;
+						  .stSerial2.stComIn.Status := TIIB[PCM B (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+						  .stSerial2.stComIn.D := TIIB[PCM B (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^D;
+'}
 PCMB : FB_PressureControlModule;
 
 {attribute 'pytmc' := '
     pv: $(P):PCM:C
  '}
+{attribute 'TcLinkTo' := '.stPropAir1.i_iPressRB := TIIB[PCM C (EP4374)]^AI Inputs Channel 1^Value;
+						  .stPropAir2.i_iPressRB := TIIB[PCM C (EP4374)]^AI Inputs Channel 2^Value;
+						  .stPropAir1.i_iPressCt := TIIB[PCM C (EP4374)]^AO Outputs Channel 3^Analog output
+						  .stPropAir2.i_iPressCt := TIIB[PCM C (EP4374)]^AO Outputs Channel 4^Analog output
+						  .stSerial1.stComIn.Status := TIIB[PCM C (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
+						  .stSerial1.stComIn.D := TIIB[PCM C (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^D;
+						  .stSerial2.stComIn.Status := TIIB[PCM C (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+						  .stSerial2.stComIn.D := TIIB[PCM C (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^D;
+'}
 PCMC : FB_PressureControlModule;
 
 {attribute 'pytmc' := '
     pv: $(P):PCM:D
  '}
+{attribute 'TcLinkTo' := '.stPropAir1.i_iPressRB := TIIB[PCM D (EP4374)]^AI Inputs Channel 1^Value;
+						  .stPropAir2.i_iPressRB := TIIB[PCM D (EP4374)]^AI Inputs Channel 2^Value;
+						  .stPropAir1.i_iPressCt := TIIB[PCM D (EP4374)]^AO Outputs Channel 3^Analog output
+						  .stPropAir2.i_iPressCt := TIIB[PCM D (EP4374)]^AO Outputs Channel 4^Analog output
+						  .stSerial1.stComIn.Status := TIIB[PCM D (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
+						  .stSerial1.stComIn.D := TIIB[PCM D (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^D;
+						  .stSerial2.stComIn.Status := TIIB[PCM D (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+						  .stSerial2.stComIn.D := TIIB[PCM D (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^D;
+'}
 PCMD : FB_PressureControlModule;
 
 {attribute 'pytmc' := '
     pv: $(P):MAN
  '}
+{attribute 'TcLinkTo' := '.stValve[1].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 9^Output;
+						  .stValve[1].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 1^Input;
+						  .stValve[2].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 10^Output;
+						  .stValve[2].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 2^Input;
+						  .stValve[3].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 11^Output;
+						  .stValve[3].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 3^Input;
+						  .stValve[4].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 12^Output;
+						  .stValve[4].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 4^Input;
+						  .stValve[5].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 13^Output;
+						  .stValve[5].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 5^Input;
+						  .stValve[6].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 14^Output;
+						  .stValve[6].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 6^Input;
+						  .stValve[7].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 15^Output;
+						  .stValve[7].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 7^Input;
+						  .stValve[8].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 16^Output;
+						  .stValve[8].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 8^Input;
+'}
 GasMan : FB_GasManifold;
-
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

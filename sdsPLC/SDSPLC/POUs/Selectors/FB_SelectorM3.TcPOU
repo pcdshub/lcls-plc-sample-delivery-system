@@ -65,7 +65,7 @@ VAR
      '}
 	stSheathFM : ST_SensirionFM;
     
-    astSelFM	: ARRAY[1..2] OF	ST_SensirionFM; //Address 1 is low flow, address 2 is high flow, low flow is mapped to M2 flow
+    stSelFM	: ARRAY[1..2] OF	ST_SensirionFM; //Address 1 is low flow, address 2 is high flow, low flow is mapped to M2 flow
 	fbSensirionDriver	:	ARRAY [1..2] OF	FB_SensirionDriver;
     
     fbSensSerial : FB_SerialCommWrapper;
@@ -184,5 +184,21 @@ IF 	afbViciDriver[viciIndex].q_xDone OR
 END_IF]]></ST>
       </Implementation>
     </Action>
+    <LineIds Name="FB_SelectorM3">
+      <LineId Id="3" Count="17" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SelectorM3.Sensirion">
+      <LineId Id="2" Count="38" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SelectorM3.SerialComm">
+      <LineId Id="2" Count="1" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SelectorM3.ViciDrivers">
+      <LineId Id="2" Count="18" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

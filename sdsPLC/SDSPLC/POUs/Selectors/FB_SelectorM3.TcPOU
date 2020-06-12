@@ -135,7 +135,7 @@ IF fbSensirionDriver[fmIndex].q_xDone OR
 		stSampleFM.rFlow := astSelFM[fmIndex].stat.rFlow;
 		stSampleFM.xFMOoR := astSelFM[fmIndex].stat.xOoR;
 		stSampleFM.xFlowValid := astSelFM[fmIndex].stat.xFlowValid;
-		stSampleFM.iFMState := astSelFM[fmIndex].stat.iState;
+		stSampleFM.eFMState := astSelFM[fmIndex].stat.iState;
 		stSampleFM.xFMModeRb := astSelFM[fmIndex].stat.xFMMode;
 		//M3 flows
 		stSelector.rLowFlow := astSelFM[fmIndex].stat.rFlow;
@@ -184,21 +184,5 @@ IF 	afbViciDriver[viciIndex].q_xDone OR
 END_IF]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="FB_SelectorM3">
-      <LineId Id="3" Count="17" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_SelectorM3.Sensirion">
-      <LineId Id="2" Count="38" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_SelectorM3.SerialComm">
-      <LineId Id="2" Count="1" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_SelectorM3.ViciDrivers">
-      <LineId Id="2" Count="18" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

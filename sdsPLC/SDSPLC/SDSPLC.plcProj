@@ -93,6 +93,9 @@
     <Compile Include="DUTs\IO_Structs\ST_SerialComm.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\Sensirion\E_SensirionFMMode.TcTLEO">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\Sensirion\ST_SensirionFM.TcDUT">
       <SubType>Code</SubType>
     </Compile>

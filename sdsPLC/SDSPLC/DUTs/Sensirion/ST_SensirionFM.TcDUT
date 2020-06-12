@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <DUT Name="ST_SensirionFM" Id="{a6b8d86f-c2b0-4a79-92ac-31fbf668167c}">
     <Declaration><![CDATA[TYPE ST_SensirionFM :
 STRUCT
@@ -30,20 +30,23 @@ STRUCT
      '}
 	xFlowValid	:	BOOL; // driver completes successfully
     
-    (*
-	field(ZRST, "OK")
-	field(ONST, "OoR>")
-	field(TWST, "<OoR")
-	field(THST, "Flow Invalid")
-	*)
+    
     {attribute 'pytmc' := '
         pv: State
         io: i
      '}
-	iFMState	:	INT;
+	eFMState	:	E_SensirionFMMode;
     
     
+	{attribute 'pytmc' := '
+        pv: Mode
+        io: o
+     '}
 	xFMModeReq	:	BOOL; //for sensirion calibration range (request)
+	{attribute 'pytmc' := '
+        pv: ModeRb
+        io: i
+     '}
 	xFMModeRb	:	BOOL; //for sensirion calibration range (readback
     
 END_STRUCT

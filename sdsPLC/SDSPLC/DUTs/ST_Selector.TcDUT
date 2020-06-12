@@ -38,17 +38,17 @@ STRUCT
      '}
 	xResSyncd	:	BOOL; // valves are on the same position
     {attribute 'pytmc' := '
-        pv: ValvesReqPos
+        pv: ValveSyncReqPos
         io: io
      '}
 	iSyncReqPos	:	INT;  // requested position when synced
     {attribute 'pytmc' := '
-        pv: Valve1ReqPos
+        pv: Valve:01:ReqPos
         io: io
      '}
 	iVici1ReqPos : INT;   // requested position for Vici 1
     {attribute 'pytmc' := '
-        pv: Valve2ReqPos
+        pv: Valve:02:ReqPos
         io: io
      '}
 	iVici2ReqPos : INT;   // requested position for Vici 2
@@ -65,7 +65,7 @@ STRUCT
     
     //Hardware readbacks
     {attribute 'pytmc' := '
-        pv: ValveStatus
+        pv: Valve
     }
 	stViciVlvStatus	: ARRAY[1..2] OF	ST_ViciStatus;
 

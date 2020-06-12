@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <POU Name="FB_SelectorM2" Id="{05d43e74-122b-4b5e-b804-d6d6b1455115}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SelectorM2
 VAR_INPUT
@@ -7,7 +7,9 @@ END_VAR
 VAR_OUTPUT
 END_VAR
 VAR
-    
+    {attribute 'pytmc' := '
+        pv:
+     '}
     stSelector	:	ST_Selector;
 
     fbSelectorSync	:	FB_SelectorSync;

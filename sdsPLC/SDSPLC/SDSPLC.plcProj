@@ -291,10 +291,6 @@
     <Compile Include="SerialComm.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="VISUs\Main.TcVIS">
-      <SubType>Code</SubType>
-      <DependentUpon>Visualization Manager.TcVMO</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />

@@ -158,10 +158,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]><
 					<Type>UDINT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorA.stComIn_EP6002P1</Name>
-					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Devices.M3SelectorB.stBaseIO.i_SyncUnitWC</Name>
 					<Comment><![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
 	Will stash stuff like ethercat diagnostics and other general purpose stuff 
@@ -182,10 +178,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]><
 				</Var>
 				<Var>
 					<Name>GVL_Devices.M3SelectorB.stSensSerial.stComIn</Name>
-					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorB.stComIn_EP6002P1</Name>
 					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
@@ -212,10 +204,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]><
 					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorC.stComIn_EP6002P1</Name>
-					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Devices.M3SelectorD.stBaseIO.i_SyncUnitWC</Name>
 					<Comment><![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
 	Will stash stuff like ethercat diagnostics and other general purpose stuff 
@@ -239,8 +227,11 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]><
 					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorD.stComIn_EP6002P1</Name>
-					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+					<Name>GVL_Devices.PCMA.stBaseIO.i_SyncUnitWC</Name>
+					<Comment><![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]></Comment>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_Devices.PCMA.stSerial2.stComIn</Name>
@@ -253,6 +244,13 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]><
 				<Var DisplayScale="#x2">
 					<Name>GVL_Devices.PCMA.stPropAir2.i_iPressRB</Name>
 					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMB.stBaseIO.i_SyncUnitWC</Name>
+					<Comment><![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]></Comment>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_Devices.PCMB.stSerial1.stComIn</Name>
@@ -271,6 +269,13 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]><
 					<Type>INT</Type>
 				</Var>
 				<Var>
+					<Name>GVL_Devices.PCMC.stBaseIO.i_SyncUnitWC</Name>
+					<Comment><![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Devices.PCMC.stSerial1.stComIn</Name>
 					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
@@ -285,6 +290,13 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]><
 				<Var DisplayScale="#x2">
 					<Name>GVL_Devices.PCMC.stPropAir2.i_iPressRB</Name>
 					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMD.stBaseIO.i_SyncUnitWC</Name>
+					<Comment><![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]></Comment>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_Devices.PCMD.stSerial1.stComIn</Name>
@@ -303,7 +315,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]><
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.GasMan.io.i_SyncUnitWC</Name>
+					<Name>GVL_Devices.GasMan.stBaseIO.i_SyncUnitWC</Name>
 					<Comment><![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
 	Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]></Comment>
@@ -385,10 +397,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]><
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorA.stComOut_EP6002P1</Name>
-					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Devices.M3SelectorB.stShaker01.q_xPwrDO</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -410,10 +418,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]><
 				</Var>
 				<Var>
 					<Name>GVL_Devices.M3SelectorB.stSensSerial.stComOut</Name>
-					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorB.stComOut_EP6002P1</Name>
 					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
@@ -441,10 +445,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]><
 					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorC.stComOut_EP6002P1</Name>
-					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Devices.M3SelectorD.stShaker01.q_xPwrDO</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -466,10 +466,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]><
 				</Var>
 				<Var>
 					<Name>GVL_Devices.M3SelectorD.stSensSerial.stComOut</Name>
-					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorD.stComOut_EP6002P1</Name>
 					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
@@ -1341,6 +1337,369 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]><
 		<OwnerA Name="SDSPLC Instance">
 			<OwnerB Name="TIID^MAIN (EtherCAT)">
 				<Link VarA="PlcTask Inputs^GVL.g_aEcatMaster1" VarB="InfoData^AmsNetId"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.GasMan.stBaseIO.i_SyncUnitWC" VarB="SyncUnits^[Gas_Mani (EP1111)]^&lt;unreferenced&gt;^WcState^WcState" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorA.stBaseIO.i_SyncUnitWC" VarB="SyncUnits^[M3 Selector A (EP1111)]^&lt;unreferenced&gt;^WcState^WcState" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stBaseIO.i_SyncUnitWC" VarB="SyncUnits^[M3 Selector B (EP1111)]^&lt;unreferenced&gt;^WcState^WcState" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stBaseIO.i_SyncUnitWC" VarB="SyncUnits^[M3 Selector C (EP1111)]^&lt;unreferenced&gt;^WcState^WcState" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stBaseIO.i_SyncUnitWC" VarB="SyncUnits^[M3 Selector D (EP1111)]^&lt;unreferenced&gt;^WcState^WcState" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stBaseIO.i_SyncUnitWC" VarB="SyncUnits^[PCM A (EP1111)]^&lt;unreferenced&gt;^WcState^WcState" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stBaseIO.i_SyncUnitWC" VarB="SyncUnits^[PCM B (EP1111)]^&lt;unreferenced&gt;^WcState^WcState" AutoLink="true" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^Gas_Mani_ValveCtrl (EP2338-0001)">
+				<Link VarA="PlcTask Outputs^GVL_Devices.GasMan.stValve[1].qxDO" VarB="Channel 9^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.GasMan.stValve[2].qxDO" VarB="Channel 10^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.GasMan.stValve[3].qxDO" VarB="Channel 11^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.GasMan.stValve[4].qxDO" VarB="Channel 12^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.GasMan.stValve[5].qxDO" VarB="Channel 13^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.GasMan.stValve[6].qxDO" VarB="Channel 14^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.GasMan.stValve[7].qxDO" VarB="Channel 15^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.GasMan.stValve[8].qxDO" VarB="Channel 16^Output" AutoLink="true" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^Gas_Mani_ValveRbk (EP2338-0001)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.GasMan.stValve[1].ixOPN" VarB="Channel 1^Input" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.GasMan.stValve[2].ixOPN" VarB="Channel 2^Input" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.GasMan.stValve[3].ixOPN" VarB="Channel 3^Input" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.GasMan.stValve[4].ixOPN" VarB="Channel 4^Input" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.GasMan.stValve[5].ixOPN" VarB="Channel 5^Input" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.GasMan.stValve[6].ixOPN" VarB="Channel 6^Input" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.GasMan.stValve[7].ixOPN" VarB="Channel 7^Input" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.GasMan.stValve[8].ixOPN" VarB="Channel 8^Input" AutoLink="true" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector A Digital IO (EP2338-1001)">
+				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorA.stShaker01.q_xPwrDO" VarB="Channel 9^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorA.stShaker02.q_xPwrDO" VarB="Channel 10^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorA.stShaker03.q_xPwrDO" VarB="Channel 11^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorA.stShaker04.q_xPwrDO" VarB="Channel 12^Output" AutoLink="true" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector A Mass Flow Meter">
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorA.stMFM.i_RawUnit" VarB="TxPDO^Unit" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorA.stMFM.i_mfmFlow" VarB="TxPDO^fMeasure" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector A Serial IO (EP6002-0002)">
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0" Size="8"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1" Size="8" OffsA="8"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10" Size="8" OffsA="80"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11" Size="8" OffsA="88"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 12" Size="8" OffsA="96"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 13" Size="8" OffsA="104"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 14" Size="8" OffsA="112"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 15" Size="8" OffsA="120"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 16" Size="8" OffsA="128"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 17" Size="8" OffsA="136"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 18" Size="8" OffsA="144"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 19" Size="8" OffsA="152"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 2" Size="8" OffsA="16"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 20" Size="8" OffsA="160"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 21" Size="8" OffsA="168"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 3" Size="8" OffsA="24"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 4" Size="8" OffsA="32"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 5" Size="8" OffsA="40"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 6" Size="8" OffsA="48"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 7" Size="8" OffsA="56"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 8" Size="8" OffsA="64"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 9" Size="8" OffsA="72"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 0" Size="8"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 1" Size="8" OffsA="8"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 10" Size="8" OffsA="80"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 11" Size="8" OffsA="88"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 12" Size="8" OffsA="96"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 13" Size="8" OffsA="104"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 14" Size="8" OffsA="112"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 15" Size="8" OffsA="120"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 16" Size="8" OffsA="128"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 17" Size="8" OffsA="136"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 18" Size="8" OffsA="144"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 19" Size="8" OffsA="152"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 2" Size="8" OffsA="16"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 20" Size="8" OffsA="160"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 21" Size="8" OffsA="168"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 3" Size="8" OffsA="24"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 4" Size="8" OffsA="32"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 5" Size="8" OffsA="40"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 6" Size="8" OffsA="48"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 7" Size="8" OffsA="56"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 8" Size="8" OffsA="64"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 9" Size="8" OffsA="72"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stViciSerial.stComIn^Status" VarB="COM TxPDO-Map Inputs Channel 1^Status" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector B Digital IO (EP2338-1001)">
+				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorB.stShaker01.q_xPwrDO" VarB="Channel 9^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorB.stShaker02.q_xPwrDO" VarB="Channel 10^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorB.stShaker03.q_xPwrDO" VarB="Channel 11^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorB.stShaker04.q_xPwrDO" VarB="Channel 12^Output" AutoLink="true" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector B Mass Flow Meter">
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stMFM.i_RawUnit" VarB="TxPDO^Unit" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stMFM.i_mfmFlow" VarB="TxPDO^fMeasure" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector B Serial IO (EP6002-0002)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0" Size="8"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1" Size="8" OffsA="8"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10" Size="8" OffsA="80"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11" Size="8" OffsA="88"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 12" Size="8" OffsA="96"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 13" Size="8" OffsA="104"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 14" Size="8" OffsA="112"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 15" Size="8" OffsA="120"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 16" Size="8" OffsA="128"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 17" Size="8" OffsA="136"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 18" Size="8" OffsA="144"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 19" Size="8" OffsA="152"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 2" Size="8" OffsA="16"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 20" Size="8" OffsA="160"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 21" Size="8" OffsA="168"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 3" Size="8" OffsA="24"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 4" Size="8" OffsA="32"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 5" Size="8" OffsA="40"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 6" Size="8" OffsA="48"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 7" Size="8" OffsA="56"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 8" Size="8" OffsA="64"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 9" Size="8" OffsA="72"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 0" Size="8"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 1" Size="8" OffsA="8"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 10" Size="8" OffsA="80"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 11" Size="8" OffsA="88"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 12" Size="8" OffsA="96"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 13" Size="8" OffsA="104"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 14" Size="8" OffsA="112"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 15" Size="8" OffsA="120"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 16" Size="8" OffsA="128"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 17" Size="8" OffsA="136"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 18" Size="8" OffsA="144"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 19" Size="8" OffsA="152"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 2" Size="8" OffsA="16"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 20" Size="8" OffsA="160"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 21" Size="8" OffsA="168"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 3" Size="8" OffsA="24"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 4" Size="8" OffsA="32"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 5" Size="8" OffsA="40"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 6" Size="8" OffsA="48"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 7" Size="8" OffsA="56"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 8" Size="8" OffsA="64"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 9" Size="8" OffsA="72"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stViciSerial.stComIn^Status" VarB="COM TxPDO-Map Inputs Channel 1^Status" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector C Digital IO (EP2338-1001)">
+				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorC.stShaker01.q_xPwrDO" VarB="Channel 9^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorC.stShaker02.q_xPwrDO" VarB="Channel 10^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorC.stShaker03.q_xPwrDO" VarB="Channel 11^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorC.stShaker04.q_xPwrDO" VarB="Channel 12^Output" AutoLink="true" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector C Mass Flow Meter">
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stMFM.i_RawUnit" VarB="TxPDO^Unit" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stMFM.i_mfmFlow" VarB="TxPDO^fMeasure" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector C Serial IO (EP6002-0002)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0" Size="8"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1" Size="8" OffsA="8"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10" Size="8" OffsA="80"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11" Size="8" OffsA="88"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 12" Size="8" OffsA="96"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 13" Size="8" OffsA="104"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 14" Size="8" OffsA="112"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 15" Size="8" OffsA="120"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 16" Size="8" OffsA="128"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 17" Size="8" OffsA="136"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 18" Size="8" OffsA="144"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 19" Size="8" OffsA="152"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 2" Size="8" OffsA="16"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 20" Size="8" OffsA="160"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 21" Size="8" OffsA="168"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 3" Size="8" OffsA="24"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 4" Size="8" OffsA="32"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 5" Size="8" OffsA="40"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 6" Size="8" OffsA="48"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 7" Size="8" OffsA="56"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 8" Size="8" OffsA="64"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 9" Size="8" OffsA="72"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 0" Size="8"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 1" Size="8" OffsA="8"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 10" Size="8" OffsA="80"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 11" Size="8" OffsA="88"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 12" Size="8" OffsA="96"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 13" Size="8" OffsA="104"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 14" Size="8" OffsA="112"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 15" Size="8" OffsA="120"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 16" Size="8" OffsA="128"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 17" Size="8" OffsA="136"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 18" Size="8" OffsA="144"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 19" Size="8" OffsA="152"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 2" Size="8" OffsA="16"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 20" Size="8" OffsA="160"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 21" Size="8" OffsA="168"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 3" Size="8" OffsA="24"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 4" Size="8" OffsA="32"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 5" Size="8" OffsA="40"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 6" Size="8" OffsA="48"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 7" Size="8" OffsA="56"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 8" Size="8" OffsA="64"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 9" Size="8" OffsA="72"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stViciSerial.stComIn^Status" VarB="COM TxPDO-Map Inputs Channel 1^Status" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector D Digital IO (EP2338-1001)">
+				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorD.stShaker01.q_xPwrDO" VarB="Channel 9^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorD.stShaker02.q_xPwrDO" VarB="Channel 10^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorD.stShaker03.q_xPwrDO" VarB="Channel 11^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorD.stShaker04.q_xPwrDO" VarB="Channel 12^Output" AutoLink="true" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector D Mass Flow Meter">
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stMFM.i_RawUnit" VarB="TxPDO^Unit" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stMFM.i_mfmFlow" VarB="TxPDO^fMeasure" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector D Serial IO (EP6002-0002)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0" Size="8"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1" Size="8" OffsA="8"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10" Size="8" OffsA="80"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11" Size="8" OffsA="88"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 12" Size="8" OffsA="96"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 13" Size="8" OffsA="104"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 14" Size="8" OffsA="112"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 15" Size="8" OffsA="120"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 16" Size="8" OffsA="128"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 17" Size="8" OffsA="136"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 18" Size="8" OffsA="144"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 19" Size="8" OffsA="152"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 2" Size="8" OffsA="16"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 20" Size="8" OffsA="160"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 21" Size="8" OffsA="168"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 3" Size="8" OffsA="24"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 4" Size="8" OffsA="32"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 5" Size="8" OffsA="40"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 6" Size="8" OffsA="48"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 7" Size="8" OffsA="56"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 8" Size="8" OffsA="64"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 9" Size="8" OffsA="72"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 0" Size="8"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 1" Size="8" OffsA="8"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 10" Size="8" OffsA="80"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 11" Size="8" OffsA="88"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 12" Size="8" OffsA="96"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 13" Size="8" OffsA="104"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 14" Size="8" OffsA="112"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 15" Size="8" OffsA="120"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 16" Size="8" OffsA="128"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 17" Size="8" OffsA="136"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 18" Size="8" OffsA="144"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 19" Size="8" OffsA="152"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 2" Size="8" OffsA="16"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 20" Size="8" OffsA="160"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 21" Size="8" OffsA="168"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 3" Size="8" OffsA="24"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 4" Size="8" OffsA="32"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 5" Size="8" OffsA="40"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 6" Size="8" OffsA="48"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 7" Size="8" OffsA="56"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 8" Size="8" OffsA="64"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 9" Size="8" OffsA="72"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stViciSerial.stComIn^Status" VarB="COM TxPDO-Map Inputs Channel 1^Status" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^PCM A (EP4374-0002)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stPropAir1.i_iPressRB" VarB="AI Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stPropAir2.i_iPressRB" VarB="AI Inputs Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.PCMA.stPropAir1.q_iPressCt" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.PCMA.stPropAir2.q_iPressCt" VarB="AO Outputs Channel 4^Analog output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 0" Size="8"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 1" Size="8" OffsA="8"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 10" Size="8" OffsA="80"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 11" Size="8" OffsA="88"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 12" Size="8" OffsA="96"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 13" Size="8" OffsA="104"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 14" Size="8" OffsA="112"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 15" Size="8" OffsA="120"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 16" Size="8" OffsA="128"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 17" Size="8" OffsA="136"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 18" Size="8" OffsA="144"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 19" Size="8" OffsA="152"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 2" Size="8" OffsA="16"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 20" Size="8" OffsA="160"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 21" Size="8" OffsA="168"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 3" Size="8" OffsA="24"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 4" Size="8" OffsA="32"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 5" Size="8" OffsA="40"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 6" Size="8" OffsA="48"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 7" Size="8" OffsA="56"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 8" Size="8" OffsA="64"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 9" Size="8" OffsA="72"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMA.stSerial2.stComIn^Status" VarB="COM TxPDO-Map Inputs Channel 2^Status" AutoLink="true"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0" Size="8"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1" Size="8" OffsA="8"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10" Size="8" OffsA="80"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11" Size="8" OffsA="88"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 12" Size="8" OffsA="96"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 13" Size="8" OffsA="104"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 14" Size="8" OffsA="112"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 15" Size="8" OffsA="120"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 16" Size="8" OffsA="128"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 17" Size="8" OffsA="136"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 18" Size="8" OffsA="144"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 19" Size="8" OffsA="152"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 2" Size="8" OffsA="16"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 20" Size="8" OffsA="160"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 21" Size="8" OffsA="168"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 3" Size="8" OffsA="24"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 4" Size="8" OffsA="32"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 5" Size="8" OffsA="40"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 6" Size="8" OffsA="48"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 7" Size="8" OffsA="56"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 8" Size="8" OffsA="64"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 9" Size="8" OffsA="72"/>
+				<Link VarA="SerialComm Inputs^GVL_Devices.PCMA.stSerial1.stComIn^Status" VarB="COM TxPDO-Map Inputs Channel 1^Status" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stPropAir1.i_iPressRB" VarB="AI Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stPropAir2.i_iPressRB" VarB="AI Inputs Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.PCMB.stPropAir1.q_iPressCt" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.PCMB.stPropAir2.q_iPressCt" VarB="AO Outputs Channel 4^Analog output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0" Size="8"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1" Size="8" OffsA="8"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10" Size="8" OffsA="80"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11" Size="8" OffsA="88"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 12" Size="8" OffsA="96"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 13" Size="8" OffsA="104"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 14" Size="8" OffsA="112"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 15" Size="8" OffsA="120"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 16" Size="8" OffsA="128"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 17" Size="8" OffsA="136"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 18" Size="8" OffsA="144"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 19" Size="8" OffsA="152"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 2" Size="8" OffsA="16"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 20" Size="8" OffsA="160"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 21" Size="8" OffsA="168"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 3" Size="8" OffsA="24"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 4" Size="8" OffsA="32"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 5" Size="8" OffsA="40"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 6" Size="8" OffsA="48"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 7" Size="8" OffsA="56"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 8" Size="8" OffsA="64"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 9" Size="8" OffsA="72"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial1.stComIn^Status" VarB="COM TxPDO-Map Inputs Channel 1^Status" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 0" Size="8"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 1" Size="8" OffsA="8"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 10" Size="8" OffsA="80"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 11" Size="8" OffsA="88"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 12" Size="8" OffsA="96"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 13" Size="8" OffsA="104"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 14" Size="8" OffsA="112"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 15" Size="8" OffsA="120"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 16" Size="8" OffsA="128"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 17" Size="8" OffsA="136"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 18" Size="8" OffsA="144"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 19" Size="8" OffsA="152"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 2" Size="8" OffsA="16"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 20" Size="8" OffsA="160"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 21" Size="8" OffsA="168"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 3" Size="8" OffsA="24"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 4" Size="8" OffsA="32"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 5" Size="8" OffsA="40"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 6" Size="8" OffsA="48"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 7" Size="8" OffsA="56"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 8" Size="8" OffsA="64"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 2^Data In 9" Size="8" OffsA="72"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.PCMB.stSerial2.stComIn^Status" VarB="COM TxPDO-Map Inputs Channel 2^Status" AutoLink="true"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

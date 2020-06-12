@@ -14,7 +14,12 @@ VAR_IN_OUT
 END_VAR
 VAR
     //io : ST_M3PressCtrlIO;
-    
+	
+    {attribute 'pytmc' := '
+        pv: IO
+     '}
+    stBaseIO : ST_M3DeviceBaseIO;
+	
     stSerial1 : ST_SerialComm;
     stSerial2 : ST_SerialComm;
     
@@ -43,5 +48,12 @@ PropAir2(iq_stRegProp:=stPropAir2);]]></ST>
         <ST><![CDATA[fbSerial1(stSerialComm := stSerial1);]]></ST>
       </Implementation>
     </Action>
+    <LineIds Name="FB_PressureControlModule">
+      <LineId Id="3" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_PressureControlModule.SerialComm">
+      <LineId Id="1" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

@@ -13,7 +13,7 @@ VAR_IN_OUT
 END_VAR
 VAR
     {attribute 'pytmc' := '
-        pv:
+        pv: IO
      '}
     stBaseIO : ST_M3DeviceBaseIO;
     
@@ -65,7 +65,7 @@ VAR
      '}
 	stSheathFM : ST_SensirionFM;
     
-    stSelFM	: ARRAY[1..2] OF	ST_SensirionFM; //Address 1 is low flow, address 2 is high flow, low flow is mapped to M2 flow
+    astSelFM	: ARRAY[1..2] OF	ST_SensirionFM; //Address 1 is low flow, address 2 is high flow, low flow is mapped to M2 flow
 	fbSensirionDriver	:	ARRAY [1..2] OF	FB_SensirionDriver;
     
     fbSensSerial : FB_SerialCommWrapper;
@@ -82,8 +82,8 @@ VAR
 	fmIndex: INT;
     
     
-    stComIn_EP6002P1		AT %I*	:	EL6inData22B (*KL6inData22B*);
-	stComOut_EP6002P1		AT %Q*	:	EL6outData22B (*KL6outData22B*);
+    //stComIn_EP6002P1		AT %I*	:	EL6inData22B (*KL6inData22B*);
+	//stComOut_EP6002P1		AT %Q*	:	EL6outData22B (*KL6outData22B*);
 
     
 END_VAR

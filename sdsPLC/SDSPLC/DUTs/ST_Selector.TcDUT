@@ -66,7 +66,7 @@ STRUCT
     //Hardware readbacks
     {attribute 'pytmc' := '
         pv: Valve
-    }
+     '}
 	stViciVlvStatus	: ARRAY[1..2] OF	ST_ViciStatus;
 
 END_STRUCT

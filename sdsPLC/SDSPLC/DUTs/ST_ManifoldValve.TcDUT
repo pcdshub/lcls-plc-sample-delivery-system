@@ -15,12 +15,14 @@ STRUCT
         io: i
      '}
 	qxDO AT %Q* : BOOL; //actual valve output
+	
 	(* Readbacks *)
     {attribute 'pytmc' := '
         pv: OpenSW
         io: i
      '}
 	ixOPN AT %I*: BOOL;
+	
 	(* Soft variables *)
     {attribute 'pytmc' := '
         pv: Ilk

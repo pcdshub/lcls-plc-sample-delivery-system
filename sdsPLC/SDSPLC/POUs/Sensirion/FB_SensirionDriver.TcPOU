@@ -4,7 +4,7 @@
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SensirionDriver
 
 VAR_INPUT
-	i_xExecute				: BOOL;					(* rising edge execute *)
+	i_xExecute				: BOOL := FALSE;		(* rising edge execute *)
 	i_tTimeOut				: TIME := T#10S;  		(* Maximum wait time for reply *)
 	i_stControl				: ST_SensirionFMControl;
 END_VAR
@@ -15,7 +15,7 @@ VAR_OUTPUT
 	q_xTimeout				: BOOL;
 	q_asResult				: ARRAY[1..60] OF STRING(255);
 	q_stStatus				: ST_SensirionFMStatus;
-	q_xInitComplete			:	BOOL;
+	q_xInitComplete			: BOOL;
 END_VAR
 VAR_IN_OUT
 	iq_stSerialRXBuffer 	: ComBuffer;

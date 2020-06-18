@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_SelectorM3" Id="{a6869ee8-a1a6-4578-87e8-3c9673bf57ea}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SelectorM3
 VAR CONSTANT
@@ -79,7 +79,7 @@ VAR
 	iIdOld	:	INT;
 	
 	viciIndex: INT := 1;
-	fmIndex: INT;
+	fmIndex: INT := 1;
     
     
     //stComIn_EP6002P1		AT %I*	:	EL6inData22B (*KL6inData22B*);

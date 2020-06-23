@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_PressureControlModule" Id="{c66fc247-6863-4ff6-a2eb-349522b72e5e}" SpecialFunc="None">
     <Declaration><![CDATA[// Encapsulation of a pressure control module.
 // A. Wallace, 2019-10-22
@@ -25,11 +25,11 @@ VAR
     fbSerial2 : FB_SerialCommWrapper;
     
     {attribute 'pytmc' := '
-        pv: PropAir1
+        pv: PropAir:01
      '}
     stPropAir1 : ST_Proportionair;
     {attribute 'pytmc' := '
-        pv: PropAir2
+        pv: PropAir:02
      '}
     stPropAir2 : ST_Proportionair;
     

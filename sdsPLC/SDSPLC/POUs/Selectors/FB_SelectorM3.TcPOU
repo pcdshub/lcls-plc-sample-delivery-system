@@ -30,19 +30,19 @@ VAR
     
     // Shakers
         {attribute 'pytmc' := '
-            pv: Shaker1
+            pv: Shaker:01
          '}
         stShaker01	:	ST_Shaker;
         {attribute 'pytmc' := '
-            pv: Shaker2
+            pv: Shaker:02
          '}
         stShaker02	:	ST_Shaker;
         {attribute 'pytmc' := '
-            pv: Shaker3
+            pv: Shaker:03
          '}
         stShaker03	:	ST_Shaker;
         {attribute 'pytmc' := '
-            pv: Shaker4
+            pv: Shaker:04
          '}
         stShaker04	:	ST_Shaker;
     

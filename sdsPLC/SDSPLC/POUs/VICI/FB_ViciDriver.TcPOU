@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_ViciDriver" Id="{0a9d4465-4ab2-4b83-97fa-f91b77d4959f}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ViciDriver
 FUNCTION_BLOCK FB_ViciDriver
@@ -97,19 +97,21 @@ CASE iStep OF
 			IF i_stControl.iReqPos > 12 OR i_stControl.iReqPos < 1 THEN
 				q_sResult := CONCAT('in step 5000 port range exceeded: ',FBViciTransaction.q_sResponseData);
 				i_stControl.iReqPos := LIMIT(1, i_stControl.iReqPos,12);
+				(* Mirror the "clock" value across the vertical axis of symmetry*)
+				i_stControl.iReqPos := 13 - i_stControl.iReqPos;
 			END_IF
 			IF q_stStatus.iCurrPos > i_stControl.iReqPos THEN
 				IF ABS(q_stStatus.iCurrPos - i_stControl.iReqPos) >= 6 THEN
-					sSendData := CONCAT('CW', INT_TO_STRING(i_stControl.iReqPos));
-				ELSE
 					sSendData := CONCAT('CC', INT_TO_STRING(i_stControl.iReqPos));
+				ELSE
+					sSendData := CONCAT('CW', INT_TO_STRING(i_stControl.iReqPos));
 				END_IF
 			END_IF
 			IF q_stStatus.iCurrPos < i_stControl.iReqPos THEN
 				IF ABS(q_stStatus.iCurrPos - i_stControl.iReqPos) >= 6 THEN
-					sSendData := CONCAT('CC', INT_TO_STRING(i_stControl.iReqPos));
-				ELSE
 					sSendData := CONCAT('CW', INT_TO_STRING(i_stControl.iReqPos));
+				ELSE
+					sSendData := CONCAT('CC', INT_TO_STRING(i_stControl.iReqPos));
 				END_IF
 			END_IF
 			FBViciTransaction(
@@ -165,6 +167,8 @@ q_sLastReceivedString := FBViciTransaction.q_sLastReceivedString;]]></ST>
     </Action>
     <LineIds Name="FB_ViciDriver">
       <LineId Id="3" Count="58" />
+      <LineId Id="205" Count="0" />
+      <LineId Id="208" Count="0" />
       <LineId Id="156" Count="0" />
       <LineId Id="62" Count="0" />
       <LineId Id="148" Count="0" />

@@ -151,71 +151,6 @@
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.GasMan.stBaseIO.i_SyncUnitWC</Name>
-					<Comment>
-						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
-WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.GasMan.stValve[1].ixOPN</Name>
-					<Comment>
-						<![CDATA[ Readbacks ]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.GasMan.stValve[2].ixOPN</Name>
-					<Comment>
-						<![CDATA[ Readbacks ]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.GasMan.stValve[3].ixOPN</Name>
-					<Comment>
-						<![CDATA[ Readbacks ]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.GasMan.stValve[4].ixOPN</Name>
-					<Comment>
-						<![CDATA[ Readbacks ]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.GasMan.stValve[5].ixOPN</Name>
-					<Comment>
-						<![CDATA[ Readbacks ]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.GasMan.stValve[6].ixOPN</Name>
-					<Comment>
-						<![CDATA[ Readbacks ]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.GasMan.stValve[7].ixOPN</Name>
-					<Comment>
-						<![CDATA[ Readbacks ]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.GasMan.stValve[8].ixOPN</Name>
-					<Comment>
-						<![CDATA[ Readbacks ]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Devices.M3SelectorA.stBaseIO.i_SyncUnitWC</Name>
 					<Comment>
 						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
@@ -280,6 +215,31 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 				</Var>
 				<Var>
 					<Name>GVL_Devices.M3SelectorC.stSensSerial.stComIn</Name>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorD.stBaseIO.i_SyncUnitWC</Name>
+					<Comment>
+						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorD.stMFM.i_mfmFlow</Name>
+					<Type>REAL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorD.stMFM.i_RawUnit</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorD.stViciSerial.stComIn</Name>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorD.stSensSerial.stComIn</Name>
 					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
@@ -379,7 +339,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorD.stBaseIO.i_SyncUnitWC</Name>
+					<Name>GVL_Devices.GasMan.stBaseIO.i_SyncUnitWC</Name>
 					<Comment>
 						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
 	Will stash stuff like ethercat diagnostics and other general purpose stuff 
@@ -388,20 +348,60 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorD.stMFM.i_mfmFlow</Name>
-					<Type>REAL</Type>
+					<Name>GVL_Devices.GasMan.stValve[1].ixOPN</Name>
+					<Comment>
+						<![CDATA[ Readbacks ]]>
+					</Comment>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorD.stMFM.i_RawUnit</Name>
-					<Type>UDINT</Type>
+					<Name>GVL_Devices.GasMan.stValve[2].ixOPN</Name>
+					<Comment>
+						<![CDATA[ Readbacks ]]>
+					</Comment>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorD.stViciSerial.stComIn</Name>
-					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+					<Name>GVL_Devices.GasMan.stValve[3].ixOPN</Name>
+					<Comment>
+						<![CDATA[ Readbacks ]]>
+					</Comment>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorD.stSensSerial.stComIn</Name>
-					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+					<Name>GVL_Devices.GasMan.stValve[4].ixOPN</Name>
+					<Comment>
+						<![CDATA[ Readbacks ]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.GasMan.stValve[5].ixOPN</Name>
+					<Comment>
+						<![CDATA[ Readbacks ]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.GasMan.stValve[6].ixOPN</Name>
+					<Comment>
+						<![CDATA[ Readbacks ]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.GasMan.stValve[7].ixOPN</Name>
+					<Comment>
+						<![CDATA[ Readbacks ]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.GasMan.stValve[8].ixOPN</Name>
+					<Comment>
+						<![CDATA[ Readbacks ]]>
+					</Comment>
+					<Type>BOOL</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
@@ -421,62 +421,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 				<Var DisplayScale="#x2">
 					<Name>GVL_Autosave.gp_stRegProp4.q_iPressCt</Name>
 					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.GasMan.stValve[1].qxDO</Name>
-					<Comment>
-						<![CDATA[actual valve output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.GasMan.stValve[2].qxDO</Name>
-					<Comment>
-						<![CDATA[actual valve output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.GasMan.stValve[3].qxDO</Name>
-					<Comment>
-						<![CDATA[actual valve output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.GasMan.stValve[4].qxDO</Name>
-					<Comment>
-						<![CDATA[actual valve output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.GasMan.stValve[5].qxDO</Name>
-					<Comment>
-						<![CDATA[actual valve output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.GasMan.stValve[6].qxDO</Name>
-					<Comment>
-						<![CDATA[actual valve output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.GasMan.stValve[7].qxDO</Name>
-					<Comment>
-						<![CDATA[actual valve output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.GasMan.stValve[8].qxDO</Name>
-					<Comment>
-						<![CDATA[actual valve output]]>
-					</Comment>
-					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_Devices.M3SelectorA.stShaker01.q_xPwrDO</Name>
@@ -543,6 +487,30 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
+					<Name>GVL_Devices.M3SelectorD.stShaker01.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorD.stShaker02.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorD.stShaker03.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorD.stShaker04.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorD.stViciSerial.stComOut</Name>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorD.stSensSerial.stComOut</Name>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Devices.PCMA.stSerial2.stComOut</Name>
 					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
@@ -603,28 +571,60 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorD.stShaker01.q_xPwrDO</Name>
+					<Name>GVL_Devices.GasMan.stValve[1].qxDO</Name>
+					<Comment>
+						<![CDATA[actual valve output]]>
+					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorD.stShaker02.q_xPwrDO</Name>
+					<Name>GVL_Devices.GasMan.stValve[2].qxDO</Name>
+					<Comment>
+						<![CDATA[actual valve output]]>
+					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorD.stShaker03.q_xPwrDO</Name>
+					<Name>GVL_Devices.GasMan.stValve[3].qxDO</Name>
+					<Comment>
+						<![CDATA[actual valve output]]>
+					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorD.stShaker04.q_xPwrDO</Name>
+					<Name>GVL_Devices.GasMan.stValve[4].qxDO</Name>
+					<Comment>
+						<![CDATA[actual valve output]]>
+					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorD.stViciSerial.stComOut</Name>
-					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+					<Name>GVL_Devices.GasMan.stValve[5].qxDO</Name>
+					<Comment>
+						<![CDATA[actual valve output]]>
+					</Comment>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorD.stSensSerial.stComOut</Name>
-					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+					<Name>GVL_Devices.GasMan.stValve[6].qxDO</Name>
+					<Comment>
+						<![CDATA[actual valve output]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.GasMan.stValve[7].qxDO</Name>
+					<Comment>
+						<![CDATA[actual valve output]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.GasMan.stValve[8].qxDO</Name>
+					<Comment>
+						<![CDATA[actual valve output]]>
+					</Comment>
+					<Type>BOOL</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="8">

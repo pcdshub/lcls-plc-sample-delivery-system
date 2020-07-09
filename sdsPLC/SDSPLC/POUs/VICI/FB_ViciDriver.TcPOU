@@ -97,9 +97,9 @@ CASE iStep OF
 			IF i_stControl.iReqPos > 12 OR i_stControl.iReqPos < 1 THEN
 				q_sResult := CONCAT('in step 5000 port range exceeded: ',FBViciTransaction.q_sResponseData);
 				i_stControl.iReqPos := LIMIT(1, i_stControl.iReqPos,12);
-				(* Mirror the "clock" value across the vertical axis of symmetry*)
-				i_stControl.iReqPos := 13 - i_stControl.iReqPos;
 			END_IF
+			(* Mirror the "clock" value across the vertical axis of symmetry*)
+			i_stControl.iReqPos := 13 - i_stControl.iReqPos;
 			IF q_stStatus.iCurrPos > i_stControl.iReqPos THEN
 				IF ABS(q_stStatus.iCurrPos - i_stControl.iReqPos) >= 6 THEN
 					sSendData := CONCAT('CC', INT_TO_STRING(i_stControl.iReqPos));

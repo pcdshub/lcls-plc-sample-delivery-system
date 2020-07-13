@@ -49,7 +49,7 @@ VAR
     // Vici valves
         fbSelectorSync	:	FB_SelectorSync;
         
-        afbViciDriver : ARRAY [1..4] OF FB_ViciDriver;
+        afbViciDriver : ARRAY [1..2] OF FB_ViciDriver;
         
         fbViciSerial  :   FB_SerialCommWrapper;
         stViciSerial  :   ST_SerialComm;
@@ -162,7 +162,9 @@ fbViciSerial(stSerialComm := stViciSerial);]]></ST>
     </Action>
     <Action Name="ViciDrivers" Id="{05c523af-4ae3-411a-b3b8-eed2754bd956}">
       <Implementation>
-        <ST><![CDATA[afbViciDriver[viciIndex](
+        <ST><![CDATA[stSelector.stViciVlvCtrl[viciIndex].iAddress := viciIndex;
+
+afbViciDriver[viciIndex](
 	i_xExecute:= TRUE,
 	i_tTimeOut:= t#10s,
 	i_stControl:= stSelector.stViciVlvCtrl[viciIndex],

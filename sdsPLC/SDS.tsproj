@@ -1,38 +1,28 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4022.30">
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.4">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{85DC3E7A-8ADA-435B-9479-25573909A7DB}" Namespace="AX5000" TcBaseType="true">E_AX5000_P_0275_ActiveFeedbackAndMemory</Name>
 			<BitSize>8</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
 			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_MEMORY_NONE]]>
-				</Text>
+				<Text><![CDATA[EAX5000_P_0275_MEMORY_NONE]]></Text>
 				<Enum>0</Enum>
 			</EnumInfo>
 			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_ENCODER]]>
-				</Text>
+				<Text><![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_ENCODER]]></Text>
 				<Enum>1</Enum>
 			</EnumInfo>
 			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_DRIVE]]>
-				</Text>
+				<Text><![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_DRIVE]]></Text>
 				<Enum>2</Enum>
 			</EnumInfo>
 			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_ENCODER]]>
-				</Text>
+				<Text><![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_ENCODER]]></Text>
 				<Enum>8</Enum>
 			</EnumInfo>
 			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_DRIVE]]>
-				</Text>
+				<Text><![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_DRIVE]]></Text>
 				<Enum>16</Enum>
 			</EnumInfo>
 			<Hides>
@@ -89,10 +79,9 @@
 		</Io>
 	</Project>
 	<Mappings>
-		<MappingInfo Identifier="{08502002-0010-0304-0020-500810000403}" Id="#x02030020" Watchdog="00000000000000000000000000000000"/>
-		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
-		<MappingInfo Identifier="{00000000-2002-0850-0120-500823000403}" Id="#x02030050"/>
-		<MappingInfo Identifier="{00000000-2002-0850-0120-500842000403}" Id="#x02030040"/>
 		<MappingInfo Identifier="{00000000-0030-0304-5000-040331000403}" Id="#x02030030"/>
+		<MappingInfo Identifier="{00000000-2002-0850-0120-500842000403}" Id="#x02030040"/>
+		<MappingInfo Identifier="{00000000-2002-0850-0120-500823000403}" Id="#x02030050"/>
+		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
 	</Mappings>
 </TcSmProject>

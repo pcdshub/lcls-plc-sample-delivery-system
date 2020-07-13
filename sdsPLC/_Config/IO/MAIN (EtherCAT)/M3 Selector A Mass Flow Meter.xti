@@ -1,9 +1,9 @@
-<?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.4" ClassName="CFlbTermDef" SubType="9099">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CFlbTermDef" SubType="9099">
 	<ImageDatas>
 		<ImageData Id="1000">424df60000000000000076000000280000001000000010000000010004000000000080000000c40e0000c40e000000000000000000000000000000008000008000000080800080000000800080008080000080808000c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00ffff0000ffffff00fffffffffffffffff7f77877777888777787787777878877fff877777788887fff777777777777ffff0111110f7887ffff1099991f7887ffff1919991f7887ffff1909991f7888ffff1991991fffffffff1991991fffffffff1999191fffffffff19991917ffffffff19999017ffffffff1999990fffffffffffffffffffffff</ImageData>
 	</ImageDatas>
-	<Box Id="38" BoxType="9099">
+	<Box Id="38" Disabled="true" BoxType="9099">
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
 		<EtherCAT SlaveType="2" PdiType="#x0005" MboxDataLinkLayer="true" CycleMBoxPolling="true" CoeType="15" VendorId="#x0000056b" ProductCode="#x00000007" RevisionNo="#x00000008" InfoDataAddr="true" WdDivider0400="25000" EnableWdDivider0400="true" EnableWdTime0410="true" EnableWdTime0420="true" PortPhys="17" IdentificationAdo="4096" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="Mass Flow / Pressure Controller - Slave" Desc="Mass Flow / Pressure Controller - Slave">

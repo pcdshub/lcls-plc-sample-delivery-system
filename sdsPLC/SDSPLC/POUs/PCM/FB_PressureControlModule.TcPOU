@@ -43,7 +43,8 @@ PropAir2(iq_stRegProp:=stPropAir2);]]></ST>
     </Implementation>
     <Action Name="SerialComm" Id="{01e9db49-79b3-4610-beef-975f106afee2}">
       <Implementation>
-        <ST><![CDATA[fbSerial1(stSerialComm := stSerial1);]]></ST>
+        <ST><![CDATA[fbSerial1(stSerialComm := stSerial1);
+fbSerial2(stSerialComm := stSerial2);]]></ST>
       </Implementation>
     </Action>
   </POU>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="SerialTxRx" Id="{8ce33525-cb60-4010-bca4-10eb26b43a58}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM SerialTxRx
 VAR
@@ -20,8 +20,14 @@ END_VAR
       <ST><![CDATA[
 
 M3SelectorA.SerialComm();
+M3SelectorB.SerialComm();
+M3SelectorC.SerialComm();
+M3SelectorD.SerialComm();
 
-PCMA.SerialComm();]]></ST>
+PCMA.SerialComm();
+PCMB.SerialComm();
+PCMC.SerialComm();
+PCMD.SerialComm();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

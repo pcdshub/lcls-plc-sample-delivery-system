@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.4" ClassName="CFlbTermDef" SubType="9099">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CFlbTermDef" SubType="9099">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-002000000001}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BIT</Name>
@@ -41,25 +41,35 @@
 				<ExcludePdo>#x1a01</ExcludePdo>
 				<Entry Name="Status__Underrange" Index="#x6000" Sub="#x01">
 					<Type>BIT</Type>
-					<Comment><![CDATA[Underrange event active]]></Comment>
+					<Comment>
+						<![CDATA[Underrange event active]]>
+					</Comment>
 				</Entry>
 				<Entry Name="Status__Overrange" Index="#x6000" Sub="#x02">
 					<Type>BIT</Type>
-					<Comment><![CDATA[Overrange event active]]></Comment>
+					<Comment>
+						<![CDATA[Overrange event active]]>
+					</Comment>
 				</Entry>
 				<Entry Name="Status__Limit 1" Index="#x6000" Sub="#x03">
 					<Type>BIT2</Type>
-					<Comment><![CDATA[Bit0: Value is less than or equal to limit 1
-Bit1: Value is greater than or equal to limit 1]]></Comment>
+					<Comment>
+						<![CDATA[Bit0: Value is less than or equal to limit 1
+Bit1: Value is greater than or equal to limit 1]]>
+					</Comment>
 				</Entry>
 				<Entry Name="Status__Limit 2" Index="#x6000" Sub="#x05">
 					<Type>BIT2</Type>
-					<Comment><![CDATA[Bit0: Value is less than or equal to limit 2
-Bit1: Value is greater than or equal to limit 2]]></Comment>
+					<Comment>
+						<![CDATA[Bit0: Value is less than or equal to limit 2
+Bit1: Value is greater than or equal to limit 2]]>
+					</Comment>
 				</Entry>
 				<Entry Name="Status__Error" Index="#x6000" Sub="#x07">
 					<Type>BIT</Type>
-					<Comment><![CDATA[Bit set when Over- or Underrange]]></Comment>
+					<Comment>
+						<![CDATA[Bit set when Over- or Underrange]]>
+					</Comment>
 				</Entry>
 				<Entry Name="Status__Gap">
 					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
@@ -90,25 +100,35 @@ Bit1: Value is greater than or equal to limit 2]]></Comment>
 				<ExcludePdo>#x1a03</ExcludePdo>
 				<Entry Name="Status__Underrange" Index="#x6010" Sub="#x01">
 					<Type>BIT</Type>
-					<Comment><![CDATA[Underrange event active]]></Comment>
+					<Comment>
+						<![CDATA[Underrange event active]]>
+					</Comment>
 				</Entry>
 				<Entry Name="Status__Overrange" Index="#x6010" Sub="#x02">
 					<Type>BIT</Type>
-					<Comment><![CDATA[Overrange event active]]></Comment>
+					<Comment>
+						<![CDATA[Overrange event active]]>
+					</Comment>
 				</Entry>
 				<Entry Name="Status__Limit 1" Index="#x6010" Sub="#x03">
 					<Type>BIT2</Type>
-					<Comment><![CDATA[Bit0: Value is less than or equal to limit 1
-Bit1: Value is greater than or equal to limit 1]]></Comment>
+					<Comment>
+						<![CDATA[Bit0: Value is less than or equal to limit 1
+Bit1: Value is greater than or equal to limit 1]]>
+					</Comment>
 				</Entry>
 				<Entry Name="Status__Limit 2" Index="#x6010" Sub="#x05">
 					<Type>BIT2</Type>
-					<Comment><![CDATA[Bit0: Value is less than or equal to limit 2
-Bit1: Value is greater than or equal to limit 2]]></Comment>
+					<Comment>
+						<![CDATA[Bit0: Value is less than or equal to limit 2
+Bit1: Value is greater than or equal to limit 2]]>
+					</Comment>
 				</Entry>
 				<Entry Name="Status__Error" Index="#x6010" Sub="#x07">
 					<Type>BIT</Type>
-					<Comment><![CDATA[Bit set when Over- or Underrange]]></Comment>
+					<Comment>
+						<![CDATA[Bit set when Over- or Underrange]]>
+					</Comment>
 				</Entry>
 				<Entry Name="Status__Gap">
 					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>

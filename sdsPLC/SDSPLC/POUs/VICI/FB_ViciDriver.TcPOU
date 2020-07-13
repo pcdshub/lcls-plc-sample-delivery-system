@@ -83,7 +83,7 @@ CASE iStep OF
 			(* else then grab the right two characters and convert to INT *)
 			ELSE
 			sWorking := RIGHT(q_stStatus.sViciReply, 2);
-			q_stStatus.iCurrPos (* pass that INT to the q_stStatus.iCurrPos *) := STRING_TO_INT(sWorking);
+			q_stStatus.iCurrPos (* pass that INT to the q_stStatus.iCurrPos *) := 13 - STRING_TO_INT(sWorking);
 			q_stStatus.xPosValid := TRUE;
 			FBViciTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer, i_CmdFlag :=FALSE);  (* reset *)
 			iStep := 5000;
@@ -102,16 +102,16 @@ CASE iStep OF
 			i_stControl.iReqPos := 13 - i_stControl.iReqPos;
 			IF q_stStatus.iCurrPos > i_stControl.iReqPos THEN
 				IF ABS(q_stStatus.iCurrPos - i_stControl.iReqPos) >= 6 THEN
-					sSendData := CONCAT('CC', INT_TO_STRING(i_stControl.iReqPos));
-				ELSE
 					sSendData := CONCAT('CW', INT_TO_STRING(i_stControl.iReqPos));
+				ELSE
+					sSendData := CONCAT('CC', INT_TO_STRING(i_stControl.iReqPos));
 				END_IF
 			END_IF
 			IF q_stStatus.iCurrPos < i_stControl.iReqPos THEN
 				IF ABS(q_stStatus.iCurrPos - i_stControl.iReqPos) >= 6 THEN
-					sSendData := CONCAT('CW', INT_TO_STRING(i_stControl.iReqPos));
-				ELSE
 					sSendData := CONCAT('CC', INT_TO_STRING(i_stControl.iReqPos));
+				ELSE
+					sSendData := CONCAT('CW', INT_TO_STRING(i_stControl.iReqPos));
 				END_IF
 			END_IF
 			FBViciTransaction(
@@ -165,28 +165,5 @@ q_sLastReceivedString := FBViciTransaction.q_sLastReceivedString;]]></ST>
         <ST><![CDATA[q_stStatus.sViciReply := '';]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="FB_ViciDriver">
-      <LineId Id="3" Count="58" />
-      <LineId Id="205" Count="0" />
-      <LineId Id="208" Count="0" />
-      <LineId Id="156" Count="0" />
-      <LineId Id="62" Count="0" />
-      <LineId Id="148" Count="0" />
-      <LineId Id="63" Count="0" />
-      <LineId Id="151" Count="1" />
-      <LineId Id="159" Count="0" />
-      <LineId Id="157" Count="0" />
-      <LineId Id="150" Count="0" />
-      <LineId Id="154" Count="0" />
-      <LineId Id="153" Count="0" />
-      <LineId Id="155" Count="0" />
-      <LineId Id="65" Count="0" />
-      <LineId Id="160" Count="0" />
-      <LineId Id="66" Count="44" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_ViciDriver._A_ClearStatus">
-      <LineId Id="1" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

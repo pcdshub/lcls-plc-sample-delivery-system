@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <DUT Name="ST_SerialComm" Id="{fed95a95-3650-44fe-8adb-d3d5141c49e1}">
+    <Declaration><![CDATA[// Generic serial comm necessities
+TYPE ST_SerialComm :
+STRUCT
+    RxBuffer    :   ComBuffer;
+    TxBuffer    :   ComBuffer;
+    
+    stComIn		AT %I*	:	EL6inData22B (*KL6inData22B*);
+	stComOut	AT %Q*	:	EL6outData22B (*KL6outData22B*);
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

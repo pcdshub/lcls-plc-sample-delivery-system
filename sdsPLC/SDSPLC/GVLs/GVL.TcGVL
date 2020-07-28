@@ -1,22 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL" Id="{f639b635-2ac5-4d16-9ee0-ff8224cf5b4c}">
     <Declaration><![CDATA[VAR_GLOBAL
- mb_Input_Coils   : ARRAY [0..255] OF BOOL;
- mb_Output_Coils : ARRAY [0..255] OF BOOL;
- mb_Input_Registers : ARRAY [0..255] OF WORD;
- mb_Output_Registers : ARRAY [0..255] OF WORD;
- 
- mb_PLC_Memory	AT	%MW0	:	ARRAY[0..1000] OF WORD;
- 
  	g_xFirstPass: BOOL := TRUE;
 	g_xIOState	:	BOOL := FALSE;
 	g_aEcatMaster1 AT %I* : AMSNETID;
 	g_aEcatMaster2 AT %I* : AMSNETID;
-	
-
- 
 END_VAR]]></Declaration>
-    <ObjectProperties />
   </GVL>
 </TcPlcObject>

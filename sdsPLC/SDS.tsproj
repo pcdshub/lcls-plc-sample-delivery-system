@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4020.56" TcVersionFixed="true">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4022.30">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{85DC3E7A-8ADA-435B-9479-25573909A7DB}" Namespace="AX5000" TcBaseType="true">E_AX5000_P_0275_ActiveFeedbackAndMemory</Name>
@@ -62,10 +62,11 @@
 			</Hides>
 		</DataType>
 	</DataTypes>
-	<Project ProjectGUID="{574C3AF5-5DC4-4D84-B011-CFFCF149D9D2}" TargetNetId="5.38.142.254.1.1" RelativeTargetNetId="true" RelativeIpAddresses="true" ShowHideConfigurations="#x6">
+	<Project ProjectGUID="{574C3AF5-5DC4-4D84-B011-CFFCF149D9D2}" TargetNetId="172.21.148.118.1.1" RelativeTargetNetId="true" RelativeIpAddresses="true" ShowHideConfigurations="#x6">
 		<System>
 			<Licenses>
 				<Target BkhfOrder="VE2130408">
+					<ManualSelect>{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</ManualSelect>
 					<ManualSelect>{6952449D-F68C-49A2-ADE4-8639D85B33A4}</ManualSelect>
 				</Target>
 			</Licenses>
@@ -89,11 +90,9 @@
 		</Io>
 	</Project>
 	<Mappings>
-		<MappingInfo Identifier="{08502002-0030-0304-0020-500830000403}" Id="#x02030030" Watchdog="00000000000000000000000000000000"/>
-		<MappingInfo Identifier="{05000010-2002-0850-5000-040300205008}" Id="#x02030060" Watchdog="14000000040000000400000004000000"/>
 		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
-		<MappingInfo Identifier="{00000000-2002-0850-0020-500820000403}" Id="#x02030050"/>
-		<MappingInfo Identifier="{00000000-2002-0850-0020-500840000403}" Id="#x02030040"/>
-		<MappingInfo Identifier="{00000000-0030-0304-5000-040330000403}" Id="#x02030020"/>
+		<MappingInfo Identifier="{00000000-2002-0850-0120-500823000403}" Id="#x02030040"/>
+		<MappingInfo Identifier="{00000000-2002-0850-0120-500842000403}" Id="#x02030030"/>
+		<MappingInfo Identifier="{00000000-0030-0304-5000-040331000403}" Id="#x02030020"/>
 	</Mappings>
 </TcSmProject>

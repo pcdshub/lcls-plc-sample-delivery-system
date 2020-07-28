@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
-  <POU Name="FB_SensirionDriver" Id="{488a4133-fd90-4650-a462-ed858576b004}">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_SensirionDriver" Id="{488a4133-fd90-4650-a462-ed858576b004}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SensirionDriver
 
 VAR_INPUT
-	i_xExecute				: BOOL;					(* rising edge execute *)
+	i_xExecute				: BOOL := FALSE;		(* rising edge execute *)
 	i_tTimeOut				: TIME := T#10S;  		(* Maximum wait time for reply *)
 	i_stControl				: ST_SensirionFMControl;
 END_VAR
@@ -15,7 +15,7 @@ VAR_OUTPUT
 	q_xTimeout				: BOOL;
 	q_asResult				: ARRAY[1..60] OF STRING(255);
 	q_stStatus				: ST_SensirionFMStatus;
-	q_xInitComplete			:	BOOL;
+	q_xInitComplete			: BOOL;
 END_VAR
 VAR_IN_OUT
 	iq_stSerialRXBuffer 	: ComBuffer;
@@ -673,6 +673,18 @@ IF iResultIndex >60 THEN iResultIndex:=1; END_IF]]></ST>
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Action>
-    <ObjectProperties />
+    <Method Name="Reset" Id="{92a7a0af-2f71-4cf3-9ceb-afc8e6ce0827}">
+      <Declaration><![CDATA[METHOD Reset
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[// If this works....
+
+THIS^(i_xExecute := False,
+    iq_stSerialRXBuffer := THIS^.iq_stSerialRXBuffer,
+    iq_stSerialTXBuffer := THIS^.iq_stSerialTXBuffer,);]]></ST>
+      </Implementation>
+    </Method>
   </POU>
 </TcPlcObject>

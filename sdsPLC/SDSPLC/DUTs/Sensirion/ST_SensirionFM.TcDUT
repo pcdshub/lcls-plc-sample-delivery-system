@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+  <DUT Name="ST_SensirionFM" Id="{a6b8d86f-c2b0-4a79-92ac-31fbf668167c}">
+    <Declaration><![CDATA[TYPE ST_SensirionFM :
+STRUCT
+	Ctrl	:	ST_SensirionFMControl;
+	Stat	:	ST_SensirionFMStatus;
+    
+    {attribute 'pytmc' := '
+        pv: Reset
+        io: o
+     '}
+    xFMReset : BOOL; // Reset on rising edge
+    
+    {attribute 'pytmc' := '
+        pv: Flow
+        io: i
+     '}
+	rFlow : REAL; //uL/min
+    
+    {attribute 'pytmc' := '
+        pv: OoR
+        io: i
+     '}
+	xFMOoR	:	BOOL; // Out of range (too high)
+    
+    {attribute 'pytmc' := '
+        pv: FlowValid
+        io: i
+     '}
+	xFlowValid	:	BOOL; // driver completes successfully
+    
+    
+    {attribute 'pytmc' := '
+        pv: State
+        io: i
+     '}
+	eFMState	:	E_SensirionFMMode;
+    
+    
+	{attribute 'pytmc' := '
+        pv: Mode
+        io: o
+     '}
+	xFMModeReq	:	BOOL; //for sensirion calibration range (request)
+	{attribute 'pytmc' := '
+        pv: ModeRb
+        io: i
+     '}
+	xFMModeRb	:	BOOL; //for sensirion calibration range (readback
+    
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <POU Name="FB_ALI" Id="{04310620-f9dd-4995-a4e2-9924022b4884}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ALI
 VAR_IN_OUT
@@ -10,8 +10,8 @@ END_VAR
 VAR_OUTPUT
 END_VAR
 VAR
-	fb925ALINB1 : FB_925;
-	fb925ALINB2 : FB_925;
+	fb925ALINB1 : FB_9XX;
+	fb925ALINB2 : FB_9XX;
 	fb722ALINB3 : FB_GCM;
 	
 	fbManipX	:	FB_ManipAxis;
@@ -52,22 +52,5 @@ F_AxisRef_To_MSTA(stManipAxis:=iq_Injector.axisX, MSTA=>iq_Injector.axisX.uiMsta
 F_AxisRef_To_MSTA(stManipAxis:=iq_Injector.axisY, MSTA=>iq_Injector.axisY.uiMsta);
 F_AxisRef_To_MSTA(stManipAxis:=iq_Injector.axisZ, MSTA=>iq_Injector.axisZ.uiMsta);]]></ST>
     </Implementation>
-    <LineIds Name="FB_ALI">
-      <LineId Id="97" Count="0" />
-      <LineId Id="95" Count="1" />
-      <LineId Id="44" Count="0" />
-      <LineId Id="17" Count="0" />
-      <LineId Id="45" Count="0" />
-      <LineId Id="18" Count="4" />
-      <LineId Id="69" Count="1" />
-      <LineId Id="121" Count="0" />
-      <LineId Id="145" Count="0" />
-      <LineId Id="71" Count="0" />
-      <LineId Id="23" Count="0" />
-      <LineId Id="65" Count="0" />
-      <LineId Id="24" Count="2" />
-      <LineId Id="66" Count="2" />
-      <LineId Id="9" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

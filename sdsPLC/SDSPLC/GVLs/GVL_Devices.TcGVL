@@ -1,33 +1,177 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL_Devices" Id="{c147c728-648e-463f-984d-4f986cb4ad03}">
     <Declaration><![CDATA[VAR_GLOBAL
-	
-	(* Selector*)
-	stSelector	:	ST_Selector;
-	stSelector2	:	ST_Selector;
-	
-	(* Cooler shaker *)
-	stTECCtrl	: ARRAY[1..3] OF	ST_TECControl;
-	stTECStatus	: ARRAY[1..3] OF	ST_TECStatus;
-	
-	stRegProp1	:	ST_Proportionair;
-	stRegProp2	:	ST_Proportionair;
-	stRegProp3	:	ST_Proportionair;
-	stRegProp4	:	ST_Proportionair;
-	
-	(* Shakers *)
-	stShaker01	:	ST_Shaker;
-	stShaker02	:	ST_Shaker;
-	stShaker03	:	ST_Shaker;
-	stShaker04	:	ST_Shaker;
-	
-	(* Minitti Manifold *)
-	stGasMani	:	ST_M3GasManifold;
-	
-	(* ALI *)
-	stALI	:	ST_ALI;
 
+(* ALI - rarely used, stages need to be redone in new format *)
+//	stALI	:	ST_ALI;
+//{attribute 'pytmc' := '
+//    pv: @(P):PCM:A
+// '}
+//ALI : FB_ALI;
+
+(* M2 Selectors - still facing code errors *)
+//{attribute 'pytmc' := '
+//    pv: @(P):SELM2:A
+// '}
+//M2SelectorA : FB_SelectorM2;
+
+//{attribute 'pytmc' := '
+//    pv: @(P):SELM2:B
+// '}
+//M2SelectorB : FB_SelectorM2;
+
+{attribute 'pytmc' := '
+    pv: @(P):SEL:A
+ '}
+{attribute 'TcLinkTo' := '.stSensSerial.stComIn.Status := TIIB[M3 Selector A Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
+						  .stViciSerial.stComIn.Status := TIIB[M3 Selector A Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+						  .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector A Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+						  .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector A Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+						  .stShaker01.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 9^Output;
+						  .stShaker02.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 10^Output;
+						  .stShaker03.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 11^Output;
+						  .stShaker04.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 12^Output;
+						  .stMFM.i_mfmFlow := TIID^MAIN (EtherCAT)^M3 Selector A Mass Flow Meter^TxPDO^fMeasure;
+						  .stMFM.i_RawUnit := TIID^MAIN (EtherCAT)^M3 Selector A Mass Flow Meter^TxPDO^Unit;
+						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector A (EP1111)^WcState^WcState;
+'}
+M3SelectorA : FB_SelectorM3;
+
+{attribute 'pytmc' := '
+    pv: @(P):SEL:B
+ '}
+{attribute 'TcLinkTo' := '.stSensSerial.stComIn.Status := TIIB[M3 Selector B Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
+						  .stViciSerial.stComIn.Status := TIIB[M3 Selector B Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+						  .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector B Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+						  .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector B Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+						  .stShaker01.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 9^Output;
+						  .stShaker02.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 10^Output;
+						  .stShaker03.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 11^Output;
+						  .stShaker04.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 12^Output;
+						  .stMFM.i_mfmFlow := TIID^MAIN (EtherCAT)^M3 Selector B Mass Flow Meter^TxPDO^fMeasure;
+						  .stMFM.i_RawUnit := TIID^MAIN (EtherCAT)^M3 Selector B Mass Flow Meter^TxPDO^Unit;
+						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector B (EP1111)^WcState^WcState
+'}
+M3SelectorB : FB_SelectorM3;
+
+{attribute 'pytmc' := '
+    pv: @(P):SEL:C
+ '}
+{attribute 'TcLinkTo' := '.stSensSerial.stComIn.Status := TIIB[M3 Selector C Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
+						  .stViciSerial.stComIn.Status := TIIB[M3 Selector C Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+						  .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector C Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+						  .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector C Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+						  .stShaker01.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 9^Output;
+						  .stShaker02.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 10^Output;
+						  .stShaker03.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 11^Output;
+						  .stShaker04.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 12^Output;
+						  .stMFM.i_mfmFlow := TIID^MAIN (EtherCAT)^M3 Selector C Mass Flow Meter^TxPDO^fMeasure;
+						  .stMFM.i_RawUnit := TIID^MAIN (EtherCAT)^M3 Selector C Mass Flow Meter^TxPDO^Unit;
+						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector C (EP1111)^WcState^WcState
+'}
+M3SelectorC : FB_SelectorM3;
+
+{attribute 'pytmc' := '
+    pv: @(P):SEL:D
+ '}
+{attribute 'TcLinkTo' := '.stSensSerial.stComIn.Status := TIIB[M3 Selector D Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
+						  .stViciSerial.stComIn.Status := TIIB[M3 Selector D Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+						  .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector D Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+						  .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector D Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+						  .stShaker01.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 9^Output;
+						  .stShaker02.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 10^Output;
+						  .stShaker03.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 11^Output;
+						  .stShaker04.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 12^Output;
+						  .stMFM.i_mfmFlow := TIID^MAIN (EtherCAT)^M3 Selector D Mass Flow Meter^TxPDO^fMeasure;
+						  .stMFM.i_RawUnit := TIID^MAIN (EtherCAT)^M3 Selector D Mass Flow Meter^TxPDO^Unit;
+						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector D (EP1111)^WcState^WcState
+'}
+M3SelectorD : FB_SelectorM3;
+
+{attribute 'pytmc' := '
+    pv: @(P):PCM:A
+ '}
+{attribute 'TcLinkTo' := '.stPropAir1.i_iPressRB := TIID^MAIN (EtherCAT)^PCM A (EP4374-0002)^AI Inputs Channel 1^Value;
+						  .stPropAir2.i_iPressRB := TIID^MAIN (EtherCAT)^PCM A (EP4374-0002)^AI Inputs Channel 2^Value;
+						  .stPropAir1.q_iPressCt := TIID^MAIN (EtherCAT)^PCM A (EP4374-0002)^AO Outputs Channel 3^Analog output;
+						  .stPropAir2.q_iPressCt := TIID^MAIN (EtherCAT)^PCM A (EP4374-0002)^AO Outputs Channel 4^Analog output;
+						  .stSerial1.stComIn.Status := TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)^COM TxPDO-Map Inputs Channel 1^Status;
+						  .stSerial2.stComIn.Status := TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)^COM TxPDO-Map Inputs Channel 2^Status;
+						  .stSerial1.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+						  .stSerial2.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^PCM A (EP1111)^WcState^WcState;
+'}
+PCMA : FB_PressureControlModule;
+
+{attribute 'pytmc' := '
+    pv: @(P):PCM:B
+ '}
+{attribute 'TcLinkTo' := '.stPropAir1.i_iPressRB := TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)^AI Inputs Channel 1^Value;
+						  .stPropAir2.i_iPressRB := TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)^AI Inputs Channel 2^Value;
+						  .stPropAir1.q_iPressCt := TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)^AO Outputs Channel 3^Analog output;
+						  .stPropAir2.q_iPressCt := TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)^AO Outputs Channel 4^Analog output;
+						  .stSerial1.stComIn.Status := TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)^COM TxPDO-Map Inputs Channel 1^Status;
+						  .stSerial2.stComIn.Status := TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)^COM TxPDO-Map Inputs Channel 2^Status;
+						  .stSerial1.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+						  .stSerial2.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^PCM B (EP1111)^WcState^WcState;
+
+'}
+PCMB : FB_PressureControlModule;
+
+{attribute 'pytmc' := '
+    pv: @(P):PCM:C
+ '}
+{attribute 'TcLinkTo' := '.stPropAir1.i_iPressRB := TIID^MAIN (EtherCAT)^PCM C (EP4374-0002)^AI Inputs Channel 1^Value;
+						  .stPropAir2.i_iPressRB := TIID^MAIN (EtherCAT)^PCM C (EP4374-0002)^AI Inputs Channel 2^Value;
+						  .stPropAir1.q_iPressCt := TIID^MAIN (EtherCAT)^PCM C (EP4374-0002)^AO Outputs Channel 3^Analog output;
+						  .stPropAir2.q_iPressCt := TIID^MAIN (EtherCAT)^PCM C (EP4374-0002)^AO Outputs Channel 4^Analog output;
+						  .stSerial1.stComIn.Status := TIID^MAIN (EtherCAT)^PCM C (EP6002-0002)^COM TxPDO-Map Inputs Channel 1^Status;
+						  .stSerial2.stComIn.Status := TIID^MAIN (EtherCAT)^PCM C (EP6002-0002)^COM TxPDO-Map Inputs Channel 2^Status;
+						  .stSerial1.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM C (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+						  .stSerial2.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM C (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^PCM C (EP1111)^WcState^WcState;
+'}
+PCMC : FB_PressureControlModule;
+
+{attribute 'pytmc' := '
+    pv: @(P):PCM:D
+ '}
+{attribute 'TcLinkTo' := '.stPropAir1.i_iPressRB := TIID^MAIN (EtherCAT)^PCM D (EP4374-0002)^AI Inputs Channel 1^Value;
+						  .stPropAir2.i_iPressRB := TIID^MAIN (EtherCAT)^PCM D (EP4374-0002)^AI Inputs Channel 2^Value;
+						  .stPropAir1.q_iPressCt := TIID^MAIN (EtherCAT)^PCM D (EP4374-0002)^AO Outputs Channel 3^Analog output;
+						  .stPropAir2.q_iPressCt := TIID^MAIN (EtherCAT)^PCM D (EP4374-0002)^AO Outputs Channel 4^Analog output;
+						  .stSerial1.stComIn.Status := TIID^MAIN (EtherCAT)^PCM D (EP6002-0002)^COM TxPDO-Map Inputs Channel 1^Status;
+						  .stSerial2.stComIn.Status := TIID^MAIN (EtherCAT)^PCM D (EP6002-0002)^COM TxPDO-Map Inputs Channel 2^Status;
+						  .stSerial1.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM D (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+						  .stSerial2.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM D (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^PCM D (EP1111)^WcState^WcState;
+'}
+PCMD : FB_PressureControlModule;
+
+{attribute 'pytmc' := '
+    pv: @(P):MAN
+ '}
+{attribute 'TcLinkTo' := '.stValve[1].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 9^Output;
+						  .stValve[1].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 1^Input;
+						  .stValve[2].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 10^Output;
+						  .stValve[2].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 2^Input;
+						  .stValve[3].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 11^Output;
+						  .stValve[3].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 3^Input;
+						  .stValve[4].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 12^Output;
+						  .stValve[4].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 4^Input;
+						  .stValve[5].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 13^Output;
+						  .stValve[5].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 5^Input;
+						  .stValve[6].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 14^Output;
+						  .stValve[6].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 6^Input;
+						  .stValve[7].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 15^Output;
+						  .stValve[7].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 7^Input;
+						  .stValve[8].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 16^Output;
+						  .stValve[8].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 8^Input;
+						  .stBaseIO.i_SyncUnitWC :=	TIID^MAIN (EtherCAT)^Gas_Mani (EP1111)^WcState^WcState;
+'}
+GasMan : FB_GasManifold;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

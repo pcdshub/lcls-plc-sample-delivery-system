@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="p_AutoWash" Id="{eeb4ee5f-aab1-4444-bdaf-78e7ac6c9f3d}" SpecialFunc="None">
-    <Declaration><![CDATA[ROGRAM p_AutoWash
+    <Declaration><![CDATA[PROGRAM p_AutoWash
 VAR
 
 	

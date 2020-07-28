@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="SerialTxRx" Id="{8ce33525-cb60-4010-bca4-10eb26b43a58}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM SerialTxRx
 VAR
-	
+(*	
 	fbSerialLineControl_M2SelAVici: SerialLineControl;
 	fbSerialLineControl_M2SelBVici: SerialLineControl;
 	fbSerialLineControl_M2SelAFM: SerialLineControl;
@@ -13,52 +13,21 @@ VAR
 	fbSerialLineControl_M3SelAFM: SerialLineControl;
 	fbSerialLineControl_M3SelBVici: SerialLineControl;
 	fbSerialLineControl_M3SelBFM: SerialLineControl;
-
+*)
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
 
-fbSerialLineControl_M2SelAVici(
-	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
-	pComIn:= ADR(iq_stM2SelectorA.stComIn_EP6002P2),
-	pComOut:=ADR(iq_stM2SelectorA.stComOut_EP6002P2) ,
-	SizeComIn:= SIZEOF(iq_stM2SelectorA.stComIn_EP6002P2),
-	TxBuffer:= SerialTXBuffer_SelVici,
-	RxBuffer:= SerialRXBuffer_SelVici,
-	Error=> ,
-	ErrorID=> );
-	
-	(* Optional expansion for extra selector box *)
-fbSerialLineControl_M2SelBVici(
-	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
-	pComIn:= ADR(iq_stM2SelectorB.stComIn_EP6002P2),
-	pComOut:=ADR(iq_stM2SelectorB.stComOut_EP6002P2) ,
-	SizeComIn:= SIZEOF(iq_stM2SelectorB.stComIn_EP6002P2),
-	TxBuffer:= SerialTXBuffer_Sel2Vici,
-	RxBuffer:= SerialRXBuffer_Sel2Vici,
-	Error=> ,
-	ErrorID=> );
-	
-	fbSerialLineControl_M2SelAFM(
-	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
-	pComIn:= ADR(iq_stM2SelectorA.stComIn_EP6002P1),
-	pComOut:=ADR(iq_stM2SelectorA.stComOut_EP6002P1) ,
-	SizeComIn:= SIZEOF(iq_stM2SelectorA.stComIn_EP6002P1),
-	TxBuffer:= SerialTXBuffer_SelFlwMtr,
-	RxBuffer:= SerialRXBuffer_SelFlwMtr,
-	Error=> ,
-	ErrorID=> );
-	
-fbSerialLineControl_M2SelBFM(
-	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
-	pComIn:= ADR(iq_stM2SelectorB.stComIn_EP6002P1),
-	pComOut:=ADR(iq_stM2SelectorB.stComOut_EP6002P1) ,
-	SizeComIn:= SIZEOF(iq_stM2SelectorB.stComIn_EP6002P1),
-	TxBuffer:= SerialTXBuffer_Sel2FlwMtr,
-	RxBuffer:= SerialRXBuffer_Sel2FlwMtr,
-	Error=> ,
-	ErrorID=> );]]></ST>
+M3SelectorA.SerialComm();
+M3SelectorB.SerialComm();
+M3SelectorC.SerialComm();
+M3SelectorD.SerialComm();
+
+PCMA.SerialComm();
+PCMB.SerialComm();
+PCMC.SerialComm();
+PCMD.SerialComm();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

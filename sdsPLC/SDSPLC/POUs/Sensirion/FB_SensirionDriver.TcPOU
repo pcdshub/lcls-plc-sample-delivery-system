@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <POU Name="FB_SensirionDriver" Id="{488a4133-fd90-4650-a462-ed858576b004}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SensirionDriver
 
@@ -600,6 +600,7 @@ CASE iStep OF
 						ELSE
 							q_stStatus.iState := 0; // OK
 						END_IF
+						q_stStatus.xFlowValid := (q_stStatus.iState = 0); // Flow valid if OK
 					END_IF
 					
 					// Limit the measured flowrate based on the calmode, note this disregards negative flow

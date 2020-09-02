@@ -48,18 +48,12 @@ VAR
         fbViciSerial  :   FB_SerialCommWrapper;
         stViciSerial  :   ST_SerialComm;
     
-    //Sensirion flow meters
+
     {attribute 'pytmc' := '
-        pv: SampleFM
+        pv: Sensirion
      '}
-	stSampleFM : ST_SensirionFM;
-    
-    {attribute 'pytmc' := '
-        pv: SheathFM
-     '}
-	stSheathFM : ST_SensirionFM;
-    
     astSelFM	: ARRAY[1..2] OF	ST_SensirionFM; //Address 1 is low flow, address 2 is high flow, low flow is mapped to M2 flow
+
 	fbSensirionDriver	:	ARRAY [1..2] OF	FB_SensirionDriver;
     
     fbSensSerial : FB_SerialCommWrapper;
@@ -108,39 +102,39 @@ stShaker04.q_xPwrDO := stShaker04.i_xEpics;]]></ST>
 
 (* M3 selector has two flow meters. Sample and sheath. Sample is "low flow."*)
 
+astSelFM[fmIndex].stCtrl.xReset := astSelFM[fmIndex].xFMReset;
+astSelFM[fmIndex].stCtrl.xCalMode := astSelFM[fmIndex].xFMModeReq;
 	
 fbSensirionDriver[fmIndex](
 	i_xExecute:= TRUE,
 	i_tTimeOut:= t#1s,
 	iq_stSerialRXBuffer:= stSensSerial.RxBuffer,
 	iq_stSerialTXBuffer:= stSensSerial.TxBuffer,
-	q_stStatus=>astSelFM[fmIndex].stat,
-	i_stControl:=astSelFM[fmIndex].ctrl);
+	q_stStatus=>astSelFM[fmIndex].stStat,
+	i_stControl:=astSelFM[fmIndex].stCtrl);
 
 IF fbSensirionDriver[fmIndex].q_xDone OR
 	fbSensirionDriver[fmIndex].q_xError OR
 	fbSensirionDriver[fmIndex].q_xTimeout THEN
 
+	astSelFM[fmIndex].rFlow := astSelFM[fmIndex].stStat.rFlow;
+	astSelFM[fmIndex].xFMOoR := astSelFM[fmIndex].stStat.xOoR;
+	astSelFM[fmIndex].xFlowValid := astSelFM[fmIndex].stStat.xFlowValid;
+	astSelFM[fmIndex].eFMState := astSelFM[fmIndex].stStat.iState;
+	astSelFM[fmIndex].xFMModeRb := astSelFM[fmIndex].stStat.xFMMode;
 	
-	IF fmIndex = 1 THEN 
-		//Legacy flow
-		//low flow maps to legacy readbacks
-		stSampleFM.rFlow := astSelFM[fmIndex].stat.rFlow;
-		stSampleFM.xFMOoR := astSelFM[fmIndex].stat.xOoR;
-		stSampleFM.xFlowValid := astSelFM[fmIndex].stat.xFlowValid;
-		stSampleFM.eFMState := astSelFM[fmIndex].stat.iState;
-		stSampleFM.xFMModeRb := astSelFM[fmIndex].stat.xFMMode;
-		//M3 flows
-		stSelector.rLowFlow := astSelFM[fmIndex].stat.rFlow;
+	//M3 flows
+	IF fmIndex = 1 THEN
+		stSelector.rLowFlow := astSelFM[fmIndex].stStat.rFlow;
 	ELSIF fmIndex = 2 THEN
-		stSelector.rHighFlow := astSelFM[fmIndex].stat.rFlow;
+		stSelector.rHighFlow := astSelFM[fmIndex].stStat.rFlow;
 	END_IF
 
 	(* reset function for next time *)
 	fbSensirionDriver[fmIndex].Reset();
 
 	fmIndex := fmIndex + 1;
-	IF fmIndex > 2 THEN fmIndex := 1;	END_IF
+	IF fmIndex > 1 THEN fmIndex := 1;	END_IF
 END_IF
 
 ]]></ST>

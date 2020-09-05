@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_SensirionDriver" Id="{488a4133-fd90-4650-a462-ed858576b004}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SensirionDriver
 
@@ -98,7 +98,7 @@ CASE iStep OF
 	9: //Get cal mode
 	fbSensirionTransaction(
 		i_xExecute:= TRUE,
-		i_bAdr:= q_stStatus.bAdr,
+		i_bAdr:= i_stControl.bAdr,
 		i_bLen:= 0,
 		i_bCmd:= 16#43,
 		i_abTxData := abTxData,
@@ -132,7 +132,7 @@ CASE iStep OF
 		IF i_stControl.xCalMode THEN abTxData[1]:=1; ELSE abTxData[1]:=0; END_IF
 		fbSensirionTransaction(
 			i_xExecute:= TRUE,
-			i_bAdr:= q_stStatus.bAdr,
+			i_bAdr:= i_stControl.bAdr,
 			i_bLen:= 1,
 			i_bCmd:= 16#43,
 			i_abTxData := abTxData,
@@ -163,7 +163,7 @@ CASE iStep OF
 	11: //Get cal mode
 	fbSensirionTransaction(
 		i_xExecute:= TRUE,
-		i_bAdr:= q_stStatus.bAdr,
+		i_bAdr:= i_stControl.bAdr,
 		i_bLen:= 0,
 		i_bCmd:= 16#43,
 		i_abTxData := abTxData,
@@ -200,7 +200,7 @@ CASE iStep OF
 	12: //Get scale factor
 	fbSensirionTransaction(
 		i_xExecute:= TRUE,
-		i_bAdr:= q_stStatus.bAdr,
+		i_bAdr:= i_stControl.bAdr,
 		i_bLen:= 0,
 		i_bCmd:= 16#53,
 		i_abTxData := abTxData,
@@ -237,7 +237,7 @@ CASE iStep OF
 	13: //Get flow unit
 	fbSensirionTransaction(
 		i_xExecute:= TRUE,
-		i_bAdr:= q_stStatus.bAdr,
+		i_bAdr:= i_stControl.bAdr,
 		i_bLen:= 0,
 		i_bCmd:= 16#52,
 		i_abTxData := abTxData,
@@ -274,7 +274,7 @@ CASE iStep OF
 	14: //Get measurement type
 	fbSensirionTransaction(
 		i_xExecute:= TRUE,
-		i_bAdr:= q_stStatus.bAdr,
+		i_bAdr:= i_stControl.bAdr,
 		i_bLen:= 0,
 		i_bCmd:= 16#55,
 		i_abTxData := abTxData,
@@ -305,7 +305,7 @@ CASE iStep OF
 	15: //Get offset
 	fbSensirionTransaction(
 		i_xExecute:= TRUE,
-		i_bAdr:= q_stStatus.bAdr,
+		i_bAdr:= i_stControl.bAdr,
 		i_bLen:= 0,
 		i_bCmd:= 16#56,
 		i_abTxData := abTxData,
@@ -343,7 +343,7 @@ CASE iStep OF
 	16: //Get linear mode
 	fbSensirionTransaction(
 		i_xExecute:= TRUE,
-		i_bAdr:= q_stStatus.bAdr,
+		i_bAdr:= i_stControl.bAdr,
 		i_bLen:= 0,
 		i_bCmd:= 16#45,
 		i_abTxData := abTxData,
@@ -384,7 +384,7 @@ CASE iStep OF
 	400: //Stop measurement
 	fbSensirionTransaction(
 		i_xExecute:= TRUE,
-		i_bAdr:= q_stStatus.bAdr,
+		i_bAdr:= i_stControl.bAdr,
 		i_bLen:= 0,
 		i_bCmd:= 16#34,
 		i_abTxData := abTxData,
@@ -409,7 +409,7 @@ CASE iStep OF
 	405: //Check sensor status
 	fbSensirionTransaction(
 		i_xExecute:= TRUE,
-		i_bAdr:= q_stStatus.bAdr,
+		i_bAdr:= i_stControl.bAdr,
 		i_bLen:= 0,
 		i_bCmd:= 16#30,
 		i_abTxData := abTxData,
@@ -452,7 +452,7 @@ CASE iStep OF
 	410: //Reset device
 	fbSensirionTransaction(
 		i_xExecute:= TRUE,
-		i_bAdr:= q_stStatus.bAdr,
+		i_bAdr:= i_stControl.bAdr,
 		i_bLen:= 0,
 		i_bCmd:= 16#65,
 		i_abTxData := abTxData,
@@ -481,7 +481,7 @@ CASE iStep OF
 	abTxData[2]:=0;
 		fbSensirionTransaction(
 			i_xExecute:= TRUE,
-			i_bAdr:= q_stStatus.bAdr,
+			i_bAdr:= i_stControl.bAdr,
 			i_bLen:= 2,
 			i_bCmd:= 16#33,
 			i_abTxData := abTxData,
@@ -507,7 +507,7 @@ CASE iStep OF
 	21: //Check sensor status
 	fbSensirionTransaction(
 		i_xExecute:= TRUE,
-		i_bAdr:= q_stStatus.bAdr,
+		i_bAdr:= i_stControl.bAdr,
 		i_bLen:= 0,
 		i_bCmd:= 16#30,
 		i_abTxData := abTxData,
@@ -554,7 +554,7 @@ CASE iStep OF
 		tonDelay.IN:=TRUE;
 		fbSensirionTransaction(
 		i_xExecute:= tonDelay.Q,
-		i_bAdr:= q_stStatus.bAdr,
+		i_bAdr:= i_stControl.bAdr,
 		i_bLen:= 0,
 		i_bCmd:= 16#35,
 		i_abTxData := abTxData,

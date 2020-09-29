@@ -1,23 +1,78 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <DUT Name="ST_SelectorM3" Id="{fa3c6e97-4043-47eb-be01-712b94ca71b0}">
-    <Declaration><![CDATA[TYPE ST_SelectorM3 EXTENDS ST_Selector :
+    <Declaration><![CDATA[TYPE ST_SelectorM3 :
 STRUCT
-		{attribute 'pytmc' := '
-            pv: SampleFlow
-            io: i
-         '}
-		rLowFlow	:	REAL; //Sensirion Sample Flowrate
-        {attribute 'pytmc' := '
-            pv: LiquidSheathFlow
-            io: i
-         '}
-		rHighFlow	:	REAL; //Sensirion Sheath liquid flowrate
-        {attribute 'pytmc' := '
-            pv: GasSheathFlow
-            io: i
-         '}
-		rGasFlow	:	REAL; //Bronkhorst Gas Sheath mass-flowmeter
+	(* Selector EPICS controls *)
+    {attribute 'pytmc' := '
+        pv: ValvesLockRequest
+        io: io
+     '}
+	xResLock	:	BOOL; // request to lock the valves
+    {attribute 'pytmc' := '
+        pv: ValvesUnlockRequest
+        io: io
+     '}
+	xResUnlock	:	BOOL; // request to unlock the valves
+    {attribute 'pytmc' := '
+        pv: ValveSyncReqPos
+        io: io
+     '}
+	iSyncReqPos	:	INT;  // requested position when synced
+    {attribute 'pytmc' := '
+        pv: Valve:01:ReqPos
+        io: io
+     '}
+	iVici1ReqPos : INT;   // requested position for Vici 1
+    {attribute 'pytmc' := '
+        pv: Valve:02:ReqPos
+        io: io
+     '}
+	iVici2ReqPos : INT;   // requested position for Vici 2
+    
+    //Hardware control
+	stViciVlvCtrl	: ARRAY[1..2] OF	ST_ViciControl;
+	
+	(* Selector EPICS Readbacks *)
+	{attribute 'pytmc' := '
+        pv: ValvesLocked
+        io: i
+     '}
+	xResLocked	:	BOOL; // valve movement is locked
+    {attribute 'pytmc' := '
+        pv: ValvesSynced
+        io: i
+     '}
+	xResSyncd	:	BOOL; // valves are on the same position
+    {attribute 'pytmc' := '
+        pv: ValveSyncCurrentPos
+        io: i
+     '}
+	iSyncResPos : INT;
+    
+    //Hardware readbacks
+    {attribute 'pytmc' := '
+        pv: Valve
+     '}
+	stViciVlvStatus	: ARRAY[1..2] OF	ST_ViciStatus;
+
+	
+	// M3 flow rates
+	{attribute 'pytmc' := '
+		pv: SampleFlow
+		io: i
+	 '}
+	rLowFlow	:	REAL; //Sensirion Sample Flowrate
+	{attribute 'pytmc' := '
+		pv: LiquidSheathFlow
+		io: i
+	 '}
+	rHighFlow	:	REAL; //Sensirion Sheath liquid flowrate
+	{attribute 'pytmc' := '
+		pv: GasSheathFlow
+		io: i
+	 '}
+	rGasFlow	:	REAL; //Bronkhorst Gas Sheath mass-flowmeter
         
 END_STRUCT
 END_TYPE

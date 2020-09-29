@@ -323,6 +323,82 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Type>UDINT</Type>
 				</Var>
 				<Var>
+					<Name>GVL.g_aEcatMaster1</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				</Var>
+				<Var>
+					<Name>GVL.g_aEcatMaster2</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorA.stBaseIO.i_SyncUnitWC</Name>
+					<Comment>
+						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorA.stMFM.i_mfmFlow</Name>
+					<Type>REAL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorA.stMFM.i_RawUnit</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorB.stBaseIO.i_SyncUnitWC</Name>
+					<Comment>
+						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorB.stMFM.i_mfmFlow</Name>
+					<Type>REAL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorB.stMFM.i_RawUnit</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorC.stBaseIO.i_SyncUnitWC</Name>
+					<Comment>
+						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorC.stMFM.i_mfmFlow</Name>
+					<Type>REAL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorC.stMFM.i_RawUnit</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorD.stBaseIO.i_SyncUnitWC</Name>
+					<Comment>
+						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorD.stMFM.i_mfmFlow</Name>
+					<Type>REAL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorD.stMFM.i_RawUnit</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Devices.PCMA.stBaseIO.i_SyncUnitWC</Name>
 					<Comment>
 						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
@@ -458,22 +534,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
-				<Var DisplayScale="#x2">
-					<Name>GVL_Autosave.gp_stRegProp1.q_iPressCt</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var DisplayScale="#x2">
-					<Name>GVL_Autosave.gp_stRegProp2.q_iPressCt</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var DisplayScale="#x2">
-					<Name>GVL_Autosave.gp_stRegProp3.q_iPressCt</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var DisplayScale="#x2">
-					<Name>GVL_Autosave.gp_stRegProp4.q_iPressCt</Name>
-					<Type>INT</Type>
-				</Var>
 				<Var>
 					<Name>GVL_Devices.M3SelectorA.stShaker01.q_xPwrDO</Name>
 					<Type>BOOL</Type>

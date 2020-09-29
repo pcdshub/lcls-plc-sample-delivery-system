@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_SelectorSync" Id="{3c8e7f94-adbe-48fd-9d57-64a70797da6b}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SelectorSync
 VAR_INPUT
@@ -7,7 +7,7 @@ END_VAR
 VAR_OUTPUT
 END_VAR
 VAR_IN_OUT
-	iq_stSelector	:	ST_SELECTOR;
+	iq_stSelector	:	ST_SelectorM3;
 END_VAR
 VAR
 	tofResSyncd : TOF;

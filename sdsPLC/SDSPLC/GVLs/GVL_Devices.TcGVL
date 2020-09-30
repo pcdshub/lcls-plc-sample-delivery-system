@@ -10,16 +10,6 @@
 // '}
 //ALI : FB_ALI;
 
-(* M2 Selectors - still facing code errors *)
-//{attribute 'pytmc' := '
-//    pv: @(P):SELM2:A
-// '}
-//M2SelectorA : FB_SelectorM2;
-
-//{attribute 'pytmc' := '
-//    pv: @(P):SELM2:B
-// '}
-//M2SelectorB : FB_SelectorM2;
 
 {attribute 'pytmc' := '
     pv: @(P):SEL:A

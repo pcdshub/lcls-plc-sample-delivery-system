@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{B786B156-16B7-58C8-0587-32DE91D02936}" GeneratedBy="TwinCAT XAE Plc"><DataTypes><DataType><Name>ST_M3DeviceBaseIO</Name><BitSize>8</BitSize><SubItem><Name>i_SyncUnitWC</Name><Type>BOOL</Type><Comment><![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
+﻿<?xml version="1.0" encoding="utf-8"?><TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{8A995DA9-955D-E0FB-D3E1-C03A588323C8}" GeneratedBy="TwinCAT XAE Plc"><DataTypes><DataType><Name>ST_M3DeviceBaseIO</Name><BitSize>8</BitSize><SubItem><Name>i_SyncUnitWC</Name><Type>BOOL</Type><Comment><![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
 	Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]></Comment><BitSize>8</BitSize><BitOffs>0</BitOffs><Default><Value>1</Value></Default><Properties><Property><Name>pytmc</Name><Value>
         pv: SyncUnitOK
@@ -381,16 +381,7 @@ fbSplit					: FB_Split255;]]></Comment><BitSize>40960</BitSize><BitOffs>164544</
 {attribute 'pytmc' := '
     pv: @(P):PCM:A
  '}
-ALI : FB_ALI;
- M2 Selectors - still facing code errors 
-{attribute 'pytmc' := '
-    pv: @(P):SELM2:A
- '}
-M2SelectorA : FB_SelectorM2;
-{attribute 'pytmc' := '
-    pv: @(P):SELM2:B
- '}
-M2SelectorB : FB_SelectorM2;]]></Comment><BitSize>1529120</BitSize><BaseType>FB_SelectorM3</BaseType><Properties><Property><Name>pytmc</Name><Value>
+ALI : FB_ALI;]]></Comment><BitSize>1529120</BitSize><BaseType>FB_SelectorM3</BaseType><Properties><Property><Name>pytmc</Name><Value>
     pv: @(P):SEL:A
  </Value></Property><Property><Name>TcLinkTo</Name><Value>.stSensSerial.stComIn.Status := TIIB[M3 Selector A Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
 						  .stViciSerial.stComIn.Status := TIIB[M3 Selector A Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
@@ -763,4 +754,4 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]><
     </Value></Property><Property><Name>TcVarGlobal</Name></Property></Properties><BitOffs>3072000</BitOffs></Symbol><Symbol><Name>PMPS_GVL.AccumulatedFF</Name><Comment><![CDATA[ Any time a FF occurs]]></Comment><BitSize>32</BitSize><BaseType>UDINT</BaseType><Properties><Property><Name>pytmc</Name><Value>
         pv: @(PREFIX)AccumulatedFastFaults
         io: i
-    </Value></Property><Property><Name>TcVarGlobal</Name></Property></Properties><BitOffs>3072032</BitOffs></Symbol></DataArea></DataAreas><Deployment /><EventClasses><EventClass><Type GUID="{97CF8247-B59C-4E2C-B4B0-7350D0471457}">LCLSGeneralEventClass</Type></EventClass></EventClasses><Properties><Property><Name>ApplicationName</Name><Value>Port_851</Value></Property><Property><Name>ChangeDate</Name><Value>2021-04-23T01:59:03</Value></Property><Property><Name>GeneratedCodeSize</Name><Value>512000</Value></Property><Property><Name>GlobalDataSize</Name><Value>79728640</Value></Property></Properties></Module></Modules></TcModuleClass>
+    </Value></Property><Property><Name>TcVarGlobal</Name></Property></Properties><BitOffs>3072032</BitOffs></Symbol></DataArea></DataAreas><Deployment /><EventClasses><EventClass><Type GUID="{97CF8247-B59C-4E2C-B4B0-7350D0471457}">LCLSGeneralEventClass</Type></EventClass></EventClasses><Properties><Property><Name>ApplicationName</Name><Value>Port_851</Value></Property><Property><Name>ChangeDate</Name><Value>2021-04-23T02:01:56</Value></Property><Property><Name>GeneratedCodeSize</Name><Value>512000</Value></Property><Property><Name>GlobalDataSize</Name><Value>79728640</Value></Property></Properties></Module></Modules></TcModuleClass>

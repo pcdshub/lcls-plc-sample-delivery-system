@@ -94,24 +94,6 @@
 		<Box File="ALI_DIO (EP2338-0001).xti" Id="48">
 			<EtherCAT PortABoxInfo="#x0100002f"/>
 		</Box>
-		<Box File="M2 Selector A (EP1111).xti" Id="8">
-			<EtherCAT PortABoxInfo="#xffffffff"/>
-		</Box>
-		<Box File="M2 Selector A (EP6002-0002).xti" Id="9">
-			<EtherCAT PortABoxInfo="#x01000008"/>
-		</Box>
-		<Box File="M2 Selector A (EP2338-0001).xti" Id="1">
-			<EtherCAT PortABoxInfo="#x01000009"/>
-		</Box>
-		<Box File="M2 Selector B (EP1111).xti" Id="16">
-			<EtherCAT PortABoxInfo="#xffffffff"/>
-		</Box>
-		<Box File="M2 Selector B (EP6002-0002).xti" Id="36">
-			<EtherCAT PortABoxInfo="#x01000010"/>
-		</Box>
-		<Box File="M2 Selector B (EP2338-0001).xti" Id="35">
-			<EtherCAT PortABoxInfo="#x01000024"/>
-		</Box>
 		<Box File="M3 Selector A (EP1111).xti" Id="4">
 			<EtherCAT PortABoxInfo="#xffffffff"/>
 		</Box>
@@ -223,8 +205,6 @@
 		<EtherCAT>
 			<SyncUnit Name="[ALI (EP1111)]" HcName="ALI (EP1111)"/>
 			<SyncUnit Name="[Gas_Mani (EP1111)]" HcName="Gas_Mani (EP1111)"/>
-			<SyncUnit Name="[M2 Selector A (EP1111)]" HcName="M2 Selector A (EP1111)"/>
-			<SyncUnit Name="[M2 Selector B (EP1111)]" HcName="M2 Selector B (EP1111)"/>
 			<SyncUnit Name="[M3 Selector A (EP1111)]" HcName="M3 Selector A (EP1111)"/>
 			<SyncUnit Name="[M3 Selector B (EP1111)]" HcName="M3 Selector B (EP1111)"/>
 			<SyncUnit Name="[M3 Selector C (EP1111)]" HcName="M3 Selector C (EP1111)"/>

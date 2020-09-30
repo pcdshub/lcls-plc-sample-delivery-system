@@ -22,13 +22,6 @@ VAR
      '}
     stSelector	:	ST_SelectorM3;
     
-    // Bronkhorst MFM
-        {attribute 'pytmc' := '
-            pv: MassFM
-         '}
-        stMFM	:	ST_BhElFlow;
-		fbL01Driver :   FB_L01Driver;
-    
     // Shakers
         {attribute 'pytmc' := '
             pv: Shaker:01
@@ -109,36 +102,6 @@ stShaker02.q_xPwrDO := stShaker02.i_xEpics;
 stShaker03.q_xPwrDO := stShaker03.i_xEpics;
 stShaker04.q_xPwrDO := stShaker04.i_xEpics;]]></ST>
     </Implementation>
-    <Action Name="Bronkhorst" Id="{bb6c2b06-4396-401a-8a49-3ed99c4fe69e}">
-      <Implementation>
-        <ST><![CDATA[(* Bronkhorst Flowmeter driver encapsulation *)
-
-(* Reinitialize flowmeter *)
-//Note, the bronkhorst does not have any initialization process.
-//stSelector.stSelFMControlBh.xReset := stSelector.xFMReset;
-		
-fbL01Driver(
-	i_xExecute:= TRUE,
-	i_tTimeOut:= t#10s,
-	iq_stSerialRXBuffer:= SerialRXBuffer_Sel2FlwMtr,
-	iq_stSerialTXBuffer:= SerialTXBuffer_Sel2FlwMtr,
-	q_stStatus=>stSelector.stSelFMStatusBh,
-	i_stControl:=stSelector.stSelFMControlBh);
-
-IF fbL01Driver.q_xDone OR
-	fbL01Driver.q_xError OR
-	fbL01Driver.q_xTimeout THEN
-		
-		stSelector.rFlow := stSelector.stSelFMStatusBh.rFlow;
-		stSelector.xFMOoR := stSelector.stSelFMStatusBh.xOoR;
-		stSelector.xFlowValid := stSelector.stSelFMStatusBh.xFlowValid;
-		stSelector.iFMState	:= stSelector.stSelFMStatusBh.iState;
-	
-	(* reset function for next time *)
-	fbL01Driver(i_xExecute:=FALSE, iq_stSerialRXBuffer:= SerialRXBuffer_Sel2FlwMtr, iq_stSerialTXBuffer:=  SerialTXBuffer_Sel2FlwMtr);	
-END_IF]]></ST>
-      </Implementation>
-    </Action>
     <Action Name="Sensirion" Id="{9f746844-7a59-4525-bff1-09e3ede82e12}">
       <Implementation>
         <ST><![CDATA[(* Sensirion Flowmeter driver encapsulation*)

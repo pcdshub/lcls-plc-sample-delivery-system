@@ -32,8 +32,6 @@
 						  .stShaker02.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 10^Output;
 						  .stShaker03.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 11^Output;
 						  .stShaker04.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 12^Output;
-						  .stMFM.i_mfmFlow := TIID^MAIN (EtherCAT)^M3 Selector A Mass Flow Meter^TxPDO^fMeasure;
-						  .stMFM.i_RawUnit := TIID^MAIN (EtherCAT)^M3 Selector A Mass Flow Meter^TxPDO^Unit;
 						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector A (EP1111)^WcState^WcState;
 '}
 M3SelectorA : FB_SelectorM3;
@@ -49,8 +47,6 @@ M3SelectorA : FB_SelectorM3;
 						  .stShaker02.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 10^Output;
 						  .stShaker03.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 11^Output;
 						  .stShaker04.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 12^Output;
-						  .stMFM.i_mfmFlow := TIID^MAIN (EtherCAT)^M3 Selector B Mass Flow Meter^TxPDO^fMeasure;
-						  .stMFM.i_RawUnit := TIID^MAIN (EtherCAT)^M3 Selector B Mass Flow Meter^TxPDO^Unit;
 						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector B (EP1111)^WcState^WcState
 '}
 M3SelectorB : FB_SelectorM3;
@@ -66,8 +62,6 @@ M3SelectorB : FB_SelectorM3;
 						  .stShaker02.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 10^Output;
 						  .stShaker03.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 11^Output;
 						  .stShaker04.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 12^Output;
-						  .stMFM.i_mfmFlow := TIID^MAIN (EtherCAT)^M3 Selector C Mass Flow Meter^TxPDO^fMeasure;
-						  .stMFM.i_RawUnit := TIID^MAIN (EtherCAT)^M3 Selector C Mass Flow Meter^TxPDO^Unit;
 						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector C (EP1111)^WcState^WcState
 '}
 M3SelectorC : FB_SelectorM3;
@@ -83,8 +77,6 @@ M3SelectorC : FB_SelectorM3;
 						  .stShaker02.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 10^Output;
 						  .stShaker03.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 11^Output;
 						  .stShaker04.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 12^Output;
-						  .stMFM.i_mfmFlow := TIID^MAIN (EtherCAT)^M3 Selector D Mass Flow Meter^TxPDO^fMeasure;
-						  .stMFM.i_RawUnit := TIID^MAIN (EtherCAT)^M3 Selector D Mass Flow Meter^TxPDO^Unit;
 						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector D (EP1111)^WcState^WcState
 '}
 M3SelectorD : FB_SelectorM3;
@@ -172,6 +164,15 @@ PCMD : FB_PressureControlModule;
 						  .stBaseIO.i_SyncUnitWC :=	TIID^MAIN (EtherCAT)^Gas_Mani (EP1111)^WcState^WcState;
 '}
 GasMan : FB_GasManifold;
+
+{attribute 'pytmc' := '
+    pv: @(P):MFM:A
+ '}
+{attribute 'TcLinkTo' := '.stMFM.i_mfmFlow := TIID^MAIN (EtherCAT)^M3 Selector A Mass Flow Meter^TxPDO^fMeasure;
+						  .stMFM.i_RawUnit := TIID^MAIN (EtherCAT)^M3 Selector A Mass Flow Meter^TxPDO^Unit;
+'}
+BronkhorstA : FB_BronkhorstMFM;
+
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

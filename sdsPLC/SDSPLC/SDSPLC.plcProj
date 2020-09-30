@@ -181,6 +181,9 @@
     <Compile Include="POUs\ALI\FB_PropValve.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Bronkhorst\FB_BronkhorstMFM.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Bronkhorst\FB_L01Driver.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -367,11 +370,6 @@
     <PlaceholderResolution Include="Tc3_Module">
       <Resolution>Tc3_Module, * (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
-  </ItemGroup>
-  <ItemGroup>
-    <SubObject Include="FB_SelectorM3.Bronkhorst">
-      <ExcludeFromBuild>true</ExcludeFromBuild>
-    </SubObject>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

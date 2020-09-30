@@ -68,11 +68,6 @@ STRUCT
 		io: i
 	 '}
 	rHighFlow	:	REAL; //Sensirion Sheath liquid flowrate
-	{attribute 'pytmc' := '
-		pv: GasSheathFlow
-		io: i
-	 '}
-	rGasFlow	:	REAL; //Bronkhorst Gas Sheath mass-flowmeter
         
 END_STRUCT
 END_TYPE

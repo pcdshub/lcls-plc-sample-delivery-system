@@ -340,14 +340,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorA.stMFM.i_mfmFlow</Name>
-					<Type>REAL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorA.stMFM.i_RawUnit</Name>
-					<Type>UDINT</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Devices.M3SelectorB.stBaseIO.i_SyncUnitWC</Name>
 					<Comment>
 						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
@@ -355,14 +347,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					</Comment>
 					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorB.stMFM.i_mfmFlow</Name>
-					<Type>REAL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorB.stMFM.i_RawUnit</Name>
-					<Type>UDINT</Type>
 				</Var>
 				<Var>
 					<Name>GVL_Devices.M3SelectorC.stBaseIO.i_SyncUnitWC</Name>
@@ -374,14 +358,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorC.stMFM.i_mfmFlow</Name>
-					<Type>REAL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorC.stMFM.i_RawUnit</Name>
-					<Type>UDINT</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Devices.M3SelectorD.stBaseIO.i_SyncUnitWC</Name>
 					<Comment>
 						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
@@ -389,14 +365,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					</Comment>
 					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorD.stMFM.i_mfmFlow</Name>
-					<Type>REAL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorD.stMFM.i_RawUnit</Name>
-					<Type>UDINT</Type>
 				</Var>
 				<Var>
 					<Name>GVL_Devices.PCMA.stBaseIO.i_SyncUnitWC</Name>
@@ -530,6 +498,14 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 						<![CDATA[ Readbacks ]]>
 					</Comment>
 					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.BronkhorstA.stMFM.i_mfmFlow</Name>
+					<Type>REAL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.BronkhorstA.stMFM.i_RawUnit</Name>
+					<Type>UDINT</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
@@ -1449,6 +1425,26 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2020-09-29T19:21:45">
+				<OwnerA Name="InputDst" Prefix="TIPC^SDSPLC^SDSPLC Instance" Type="1">
+					<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector A Mass Flow Meter">
+						<Link VarA="GVL_Devices.M3SelectorA.stMFM.i_RawUnit" TypeA="UDINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000008}" VarB="TxPDO^Unit" AutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL_Devices.M3SelectorA.stMFM.i_mfmFlow" TypeA="REAL" InOutA="0" GuidA="{18071995-0000-0000-0000-00000000000D}" VarB="TxPDO^fMeasure" AutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector B Mass Flow Meter">
+						<Link VarA="GVL_Devices.M3SelectorB.stMFM.i_RawUnit" TypeA="UDINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000008}" VarB="TxPDO^Unit" AutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL_Devices.M3SelectorB.stMFM.i_mfmFlow" TypeA="REAL" InOutA="0" GuidA="{18071995-0000-0000-0000-00000000000D}" VarB="TxPDO^fMeasure" AutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector C Mass Flow Meter">
+						<Link VarA="GVL_Devices.M3SelectorC.stMFM.i_RawUnit" TypeA="UDINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000008}" VarB="TxPDO^Unit" AutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL_Devices.M3SelectorC.stMFM.i_mfmFlow" TypeA="REAL" InOutA="0" GuidA="{18071995-0000-0000-0000-00000000000D}" VarB="TxPDO^fMeasure" AutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector D Mass Flow Meter">
+						<Link VarA="GVL_Devices.M3SelectorD.stMFM.i_RawUnit" TypeA="UDINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000008}" VarB="TxPDO^Unit" AutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL_Devices.M3SelectorD.stMFM.i_mfmFlow" TypeA="REAL" InOutA="0" GuidA="{18071995-0000-0000-0000-00000000000D}" VarB="TxPDO^fMeasure" AutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
 			<TaskPouOids>
 				<TaskPouOid Prio="1" OTCID="#x08502001"/>
 				<TaskPouOid Prio="20" OTCID="#x08502002"/>
@@ -1493,8 +1489,8 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorA.stShaker04.q_xPwrDO" VarB="Channel 12^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector A Mass Flow Meter">
-				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorA.stMFM.i_RawUnit" VarB="TxPDO^Unit" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorA.stMFM.i_mfmFlow" VarB="TxPDO^fMeasure" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.BronkhorstA.stMFM.i_RawUnit" VarB="TxPDO^Unit" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.BronkhorstA.stMFM.i_mfmFlow" VarB="TxPDO^fMeasure" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector A Serial IO (EP6002-0002)">
 				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0"/>
@@ -1599,10 +1595,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorB.stShaker03.q_xPwrDO" VarB="Channel 11^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorB.stShaker04.q_xPwrDO" VarB="Channel 12^Output" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector B Mass Flow Meter">
-				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stMFM.i_RawUnit" VarB="TxPDO^Unit" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorB.stMFM.i_mfmFlow" VarB="TxPDO^fMeasure" AutoLink="true"/>
-			</OwnerB>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector B Serial IO (EP6002-0002)">
 				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0"/>
 				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorB.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1" Size="8" OffsA="8"/>
@@ -1706,10 +1698,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorC.stShaker03.q_xPwrDO" VarB="Channel 11^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorC.stShaker04.q_xPwrDO" VarB="Channel 12^Output" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector C Mass Flow Meter">
-				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stMFM.i_RawUnit" VarB="TxPDO^Unit" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorC.stMFM.i_mfmFlow" VarB="TxPDO^fMeasure" AutoLink="true"/>
-			</OwnerB>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector C Serial IO (EP6002-0002)">
 				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0"/>
 				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorC.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1" Size="8" OffsA="8"/>
@@ -1812,10 +1800,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorD.stShaker02.q_xPwrDO" VarB="Channel 10^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorD.stShaker03.q_xPwrDO" VarB="Channel 11^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorD.stShaker04.q_xPwrDO" VarB="Channel 12^Output" AutoLink="true"/>
-			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector D Mass Flow Meter">
-				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stMFM.i_RawUnit" VarB="TxPDO^Unit" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.M3SelectorD.stMFM.i_mfmFlow" VarB="TxPDO^fMeasure" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector D Serial IO (EP6002-0002)">
 				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorD.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0"/>

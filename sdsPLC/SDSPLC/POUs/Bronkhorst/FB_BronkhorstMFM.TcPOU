@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_BronkhorstMFM" Id="{6583b79d-8f50-416f-b9a8-da0bf6f716a8}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_BronkhorstMFM
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+        {attribute 'pytmc' := '
+            pv: Bronkhorst
+         '}
+        stMFM	:	ST_BhElFlow;
+		
+		stSelFMStatusBh : ST_BhFMStatus;
+		
+		stSelFMControlBh : ST_BhFMControl;
+		
+		fbL01Driver :   FB_L01Driver;
+		
+		{attribute 'pytmc' := '
+		    pv: GasSheathFlow
+		    io: i
+	     '}
+	    rFlow	:	REAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Reinitialize flowmeter *)
+//Note, the bronkhorst does not have any initialization process.
+//stSelector.stSelFMControlBh.xReset := stSelector.xFMReset;
+		
+fbL01Driver(
+	i_xExecute:= TRUE,
+	i_tTimeOut:= t#10s,
+	iq_stSerialRXBuffer:= SerialRXBuffer_Sel2FlwMtr,
+	iq_stSerialTXBuffer:= SerialTXBuffer_Sel2FlwMtr,
+	q_stStatus=>stSelFMStatusBh,
+	i_stControl:=stSelFMControlBh);
+
+IF fbL01Driver.q_xDone OR
+	fbL01Driver.q_xError OR
+	fbL01Driver.q_xTimeout THEN
+	
+	(* reset function for next time *)
+	fbL01Driver(i_xExecute:=FALSE, iq_stSerialRXBuffer:= SerialRXBuffer_Sel2FlwMtr, iq_stSerialTXBuffer:=  SerialTXBuffer_Sel2FlwMtr);	
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

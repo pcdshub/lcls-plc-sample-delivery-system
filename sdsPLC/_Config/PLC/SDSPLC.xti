@@ -1456,6 +1456,10 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 			<OwnerB Name="TIID^MAIN (EtherCAT)">
 				<Link VarA="PlcTask Inputs^GVL.g_aEcatMaster1" VarB="InfoData^AmsNetId"/>
 			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^Bronkhorst MFM A">
+				<Link VarA="PlcTask Inputs^GVL_Devices.BronkhorstA.stMFM.i_RawUnit" VarB="TxPDO^Unit" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.BronkhorstA.stMFM.i_mfmFlow" VarB="TxPDO^fMeasure" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^Gas_Mani (EP1111)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.GasMan.stBaseIO.i_SyncUnitWC" VarB="WcState^WcState" AutoLink="true"/>
 			</OwnerB>
@@ -1487,10 +1491,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorA.stShaker02.q_xPwrDO" VarB="Channel 10^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorA.stShaker03.q_xPwrDO" VarB="Channel 11^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Devices.M3SelectorA.stShaker04.q_xPwrDO" VarB="Channel 12^Output" AutoLink="true"/>
-			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector A Mass Flow Meter">
-				<Link VarA="PlcTask Inputs^GVL_Devices.BronkhorstA.stMFM.i_RawUnit" VarB="TxPDO^Unit" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.BronkhorstA.stMFM.i_mfmFlow" VarB="TxPDO^fMeasure" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^M3 Selector A Serial IO (EP6002-0002)">
 				<Link VarA="SerialComm Inputs^GVL_Devices.M3SelectorA.stSensSerial.stComIn^D" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0"/>

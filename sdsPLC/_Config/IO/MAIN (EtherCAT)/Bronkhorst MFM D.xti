@@ -6,7 +6,7 @@
 	<Box Id="54" BoxType="9099">
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
-		<EtherCAT SlaveType="2" PdiType="#x0005" MboxDataLinkLayer="true" CycleMBoxPolling="true" CoeType="15" VendorId="#x0000056b" ProductCode="#x00000007" RevisionNo="#x00000008" InfoDataAddr="true" WdDivider0400="25000" EnableWdDivider0400="true" EnableWdTime0410="true" EnableWdTime0420="true" PortPhys="17" IdentificationAdo="4096" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="Mass Flow / Pressure Controller - Slave" Desc="Mass Flow / Pressure Controller - Slave">
+		<EtherCAT SlaveType="2" PdiType="#x0005" MboxDataLinkLayer="true" CycleMBoxPolling="true" CoeType="15" VendorId="#x0000056b" ProductCode="#x00000007" RevisionNo="#x00000008" InfoDataAddr="true" WdDivider0400="25000" EnableWdDivider0400="true" EnableWdTime0410="true" EnableWdTime0420="true" PortPhys="17" IdentificationAdo="4096" IdentificationValue="353" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="Mass Flow / Pressure Controller - Slave" Desc="Mass Flow / Pressure Controller - Slave">
 			<SyncMan>001080002600010001000000000000008000001026010000</SyncMan>
 			<SyncMan>001280002200010002000000000000008000001222010000</SyncMan>
 			<SyncMan>001403006400010003000000000000000000001464010000</SyncMan>
@@ -14,6 +14,7 @@
 			<Fmmu>0000000000000000001400020100000001000000000000000000000000000000</Fmmu>
 			<Fmmu>0000000000000000001600010100000002000000000000000000000000000000</Fmmu>
 			<DcMode>44634f66660000000000000000000000444320756e757365640000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000</DcMode>
+			<HcData>0100000008000000020000000000000000000000000000000000000000000000</HcData>
 			<Pdo Name="CO TxPDO" Index="#x1a01" Flags="#x0011" SyncMan="3">
 				<Entry Name="CO Effective controller output Y" Index="#x6410" Sub="#x01">
 					<Type>UINT</Type>

@@ -158,8 +158,8 @@ GasMan : FB_GasManifold;
 {attribute 'pytmc' := '
     pv: @(P):MFM:A
  '}
-{attribute 'TcLinkTo' := '.stMFM.i_mfmFlow := TIID^MAIN (EtherCAT)^M3 Selector A Mass Flow Meter^TxPDO^fMeasure;
-						  .stMFM.i_RawUnit := TIID^MAIN (EtherCAT)^M3 Selector A Mass Flow Meter^TxPDO^Unit;
+{attribute 'TcLinkTo' := '.stMFM.i_mfmFlow := TIID^MAIN (EtherCAT)^Bronkhorst MFM A^TxPDO^fMeasure;
+						  .stMFM.i_RawUnit := TIID^MAIN (EtherCAT)^Bronkhorst MFM A^TxPDO^Unit;
 '}
 BronkhorstA : FB_BronkhorstMFM;
 

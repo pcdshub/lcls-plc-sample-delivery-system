@@ -1,4 +1,0 @@
-#Template for autosaving settings of SDS valves 
-$(DEV):SYNC_REQ_POS.VAL
-$(DEV):REQ_CHK.VAL
-

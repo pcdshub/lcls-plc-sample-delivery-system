@@ -1,2 +1,0 @@
-$(LOCSYS):FLO:01:LastMeasGet	10	monitor
-$(LOCSYS):FLO:01:MeasAccu		10	monitor

@@ -1,8 +1,0 @@
-# Limits the regulator pressure setpoint based on the current supply pressure
-
-record(ao, "$(DEV):PressSPLimiter"){
-	field(OMSL, "closed_loop")
-	field(DOL, "$(DEV):UP_PRESS CP")
-	field(OUT, "$(DEV):PRESS_SP.DRVH")
-	field(LINR, "NO CONVERSION")
-}

@@ -83,38 +83,6 @@
 			<Vars VarGrpType="1">
 				<Name>SerialComm Inputs</Name>
 				<Var>
-					<Name>GVL_Devices.PCMA.stSerial1.stComIn</Name>
-					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.PCMA.stSerial2.stComIn</Name>
-					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.PCMB.stSerial1.stComIn</Name>
-					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.PCMB.stSerial2.stComIn</Name>
-					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.PCMC.stSerial1.stComIn</Name>
-					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.PCMC.stSerial2.stComIn</Name>
-					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.PCMD.stSerial1.stComIn</Name>
-					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.PCMD.stSerial2.stComIn</Name>
-					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Devices.M3SelectorA.stViciSerial.stComIn</Name>
 					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
@@ -146,41 +114,41 @@
 					<Name>GVL_Devices.M3SelectorD.stSensSerial.stComIn</Name>
 					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMA.stSerial1.stComIn</Name>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMA.stSerial2.stComIn</Name>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMB.stSerial1.stComIn</Name>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMB.stSerial2.stComIn</Name>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMC.stSerial1.stComIn</Name>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMC.stSerial2.stComIn</Name>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMD.stSerial1.stComIn</Name>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMD.stSerial2.stComIn</Name>
+					<Type GUID="{F20E279B-A46D-49D5-9C78-4FFDED32F4EF}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>SerialComm Outputs</Name>
-				<Var>
-					<Name>GVL_Devices.PCMA.stSerial1.stComOut</Name>
-					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.PCMA.stSerial2.stComOut</Name>
-					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.PCMB.stSerial1.stComOut</Name>
-					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.PCMB.stSerial2.stComOut</Name>
-					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.PCMC.stSerial1.stComOut</Name>
-					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.PCMC.stSerial2.stComOut</Name>
-					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.PCMD.stSerial1.stComOut</Name>
-					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.PCMD.stSerial2.stComOut</Name>
-					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
 				<Var>
 					<Name>GVL_Devices.M3SelectorA.stViciSerial.stComOut</Name>
 					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
@@ -213,6 +181,38 @@
 					<Name>GVL_Devices.M3SelectorD.stSensSerial.stComOut</Name>
 					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMA.stSerial1.stComOut</Name>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMA.stSerial2.stComOut</Name>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMB.stSerial1.stComOut</Name>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMB.stSerial2.stComOut</Name>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMC.stSerial1.stComOut</Name>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMC.stSerial2.stComOut</Name>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMD.stSerial1.stComOut</Name>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.PCMD.stSerial2.stComOut</Name>
+					<Type GUID="{2514F7EB-4582-40DF-9C0F-C075F954E2C5}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
@@ -224,93 +224,10 @@
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
-					<Name>L2SI_Vacuum_Library.LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
-					<Comment>
-						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
-					</Comment>
-					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
-				</Var>
-				<Var>
 					<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
 					<Comment>
 						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
 					</Comment>
-					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorA.stBaseIO.i_SyncUnitWC</Name>
-					<Comment>
-						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
-WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorA.stMFM.i_mfmFlow</Name>
-					<Type>REAL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorA.stMFM.i_RawUnit</Name>
-					<Type>UDINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorB.stBaseIO.i_SyncUnitWC</Name>
-					<Comment>
-						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
-WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorB.stMFM.i_mfmFlow</Name>
-					<Type>REAL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorB.stMFM.i_RawUnit</Name>
-					<Type>UDINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorC.stBaseIO.i_SyncUnitWC</Name>
-					<Comment>
-						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
-WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorC.stMFM.i_mfmFlow</Name>
-					<Type>REAL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorC.stMFM.i_RawUnit</Name>
-					<Type>UDINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorD.stBaseIO.i_SyncUnitWC</Name>
-					<Comment>
-						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
-WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorD.stMFM.i_mfmFlow</Name>
-					<Type>REAL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorD.stMFM.i_RawUnit</Name>
-					<Type>UDINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL.g_aEcatMaster1</Name>
-					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
-				</Var>
-				<Var>
-					<Name>GVL.g_aEcatMaster2</Name>
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
@@ -491,76 +408,80 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Type>UDINT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorA.stBaseIO.i_SyncUnitWC</Name>
-					<Comment>
-						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
-WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
-					</Comment>
-					<Type>BOOL</Type>
+					<Name>GVL.g_aEcatMaster1</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.M3SelectorA.stMFM.i_mfmFlow</Name>
-					<Type>REAL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorA.stMFM.i_RawUnit</Name>
-					<Type>UDINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorB.stBaseIO.i_SyncUnitWC</Name>
-					<Comment>
-						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
-WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorB.stMFM.i_mfmFlow</Name>
-					<Type>REAL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorB.stMFM.i_RawUnit</Name>
-					<Type>UDINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorC.stBaseIO.i_SyncUnitWC</Name>
-					<Comment>
-						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
-WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorC.stMFM.i_mfmFlow</Name>
-					<Type>REAL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorC.stMFM.i_RawUnit</Name>
-					<Type>UDINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorD.stBaseIO.i_SyncUnitWC</Name>
-					<Comment>
-						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
-WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorD.stMFM.i_mfmFlow</Name>
-					<Type>REAL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorD.stMFM.i_RawUnit</Name>
-					<Type>UDINT</Type>
+					<Name>GVL.g_aEcatMaster2</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
+				<Var>
+					<Name>GVL_Devices.M3SelectorA.stShaker01.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorA.stShaker02.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorA.stShaker03.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorA.stShaker04.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorB.stShaker01.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorB.stShaker02.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorB.stShaker03.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorB.stShaker04.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorC.stShaker01.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorC.stShaker02.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorC.stShaker03.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorC.stShaker04.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorD.stShaker01.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorD.stShaker02.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorD.stShaker03.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.M3SelectorD.stShaker04.q_xPwrDO</Name>
+					<Type>BOOL</Type>
+				</Var>
 				<Var DisplayScale="#x2">
 					<Name>GVL_Devices.PCMA.stPropAir1.q_iPressCt</Name>
 					<Type>INT</Type>
@@ -647,86 +568,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Comment>
 						<![CDATA[actual valve output]]>
 					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var DisplayScale="#x2">
-					<Name>GVL_Autosave.gp_stRegProp1.q_iPressCt</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var DisplayScale="#x2">
-					<Name>GVL_Autosave.gp_stRegProp2.q_iPressCt</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var DisplayScale="#x2">
-					<Name>GVL_Autosave.gp_stRegProp3.q_iPressCt</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var DisplayScale="#x2">
-					<Name>GVL_Autosave.gp_stRegProp4.q_iPressCt</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorA.stShaker01.q_xPwrDO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorA.stShaker02.q_xPwrDO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorA.stShaker03.q_xPwrDO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorA.stShaker04.q_xPwrDO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorB.stShaker01.q_xPwrDO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorB.stShaker02.q_xPwrDO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorB.stShaker03.q_xPwrDO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorB.stShaker04.q_xPwrDO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorC.stShaker01.q_xPwrDO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorC.stShaker02.q_xPwrDO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorC.stShaker03.q_xPwrDO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorC.stShaker04.q_xPwrDO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorD.stShaker01.q_xPwrDO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorD.stShaker02.q_xPwrDO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorD.stShaker03.q_xPwrDO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.M3SelectorD.stShaker04.q_xPwrDO</Name>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>

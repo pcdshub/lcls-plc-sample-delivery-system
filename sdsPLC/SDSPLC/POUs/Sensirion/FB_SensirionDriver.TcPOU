@@ -570,7 +570,7 @@ CASE iStep OF
 		(* The flow measurement is available at the rx data here *)
 		IF fbSensirionTransaction.q_iRxLen > 0 THEN
 			IF UDINT_TO_BOOL(MEMCPY(destAddr:=ADR(q_stStatus.uiSensorOutput), srcAddr:=ADR(fbSensirionTransaction.q_baRxData), n:=2)) THEN //always 2 for the 16 bit wide integer
-				q_stStatus.uiSensorOutput := WORD_TO_UINT(HOST_TO_BE16(INT_TO_WORD(q_stStatus.uiSensorOutput))); //memcpy effs up an produces a little endian number, sensirion transmits be
+				q_stStatus.uiSensorOutput := WORD_TO_UINT(HOST_TO_BE16(UINT_TO_WORD(q_stStatus.uiSensorOutput))); //memcpy effs up an produces a little endian number, sensirion transmits be
 				IF (q_stStatus.uiSensorOutput AND 32768) = 32768 THEN
 					q_stStatus.iFlowTicks := UINT_TO_INT(-1*((q_stStatus.uiSensorOutput XOR 65535) + 1));
 				ELSE

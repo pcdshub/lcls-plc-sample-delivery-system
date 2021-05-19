@@ -217,17 +217,18 @@
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
 				<Var>
-					<Name>L2SI_Vacuum_Library.Global_Variables.g_stSystem.I_EcatMaster1</Name>
+					<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
 					<Comment>
 						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
 					</Comment>
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
-					<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
-					<Comment>
-						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
-					</Comment>
+					<Name>GVL.g_aEcatMaster1</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				</Var>
+				<Var>
+					<Name>GVL.g_aEcatMaster2</Name>
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
@@ -407,14 +408,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Name>GVL_Devices.BronkhorstA.stMFM.i_RawUnit</Name>
 					<Type>UDINT</Type>
 				</Var>
-				<Var>
-					<Name>GVL.g_aEcatMaster1</Name>
-					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
-				</Var>
-				<Var>
-					<Name>GVL.g_aEcatMaster2</Name>
-					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
-				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
@@ -569,25 +562,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 						<![CDATA[actual valve output]]>
 					</Comment>
 					<Type>BOOL</Type>
-				</Var>
-			</Vars>
-			<Vars VarGrpType="8">
-				<Name>PlcTask Retains</Name>
-				<Var>
-					<Name>PMPS_GVL.SuccessfulPreemption</Name>
-					<Comment>
-						<![CDATA[ Any time BPTM applies a new BP request which is confirmed]]>
-					</Comment>
-					<Type>UDINT</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>PMPS_GVL.AccumulatedFF</Name>
-					<Comment>
-						<![CDATA[ Any time a FF occurs]]>
-					</Comment>
-					<Type>UDINT</Type>
-					<InOut>7</InOut>
 				</Var>
 			</Vars>
 			<UnrestoredVarLinks ImportTime="2019-10-20T09:02:27">

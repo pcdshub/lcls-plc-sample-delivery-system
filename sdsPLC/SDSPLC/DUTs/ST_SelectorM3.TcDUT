@@ -3,72 +3,72 @@
   <DUT Name="ST_SelectorM3" Id="{fa3c6e97-4043-47eb-be01-712b94ca71b0}">
     <Declaration><![CDATA[TYPE ST_SelectorM3 :
 STRUCT
-	(* Selector EPICS controls *)
+    (* Selector EPICS controls *)
     {attribute 'pytmc' := '
         pv: ValvesLockRequest
         io: io
      '}
-	xResLock	:	BOOL; // request to lock the valves
+    xResLock	:	BOOL; // request to lock the valves
     {attribute 'pytmc' := '
         pv: ValvesUnlockRequest
         io: io
      '}
-	xResUnlock	:	BOOL; // request to unlock the valves
+    xResUnlock	:	BOOL; // request to unlock the valves
     {attribute 'pytmc' := '
         pv: ValveSyncReqPos
         io: io
      '}
-	iSyncReqPos	:	INT;  // requested position when synced
+    iSyncReqPos	:	INT;  // requested position when synced
     {attribute 'pytmc' := '
         pv: Valve:01:ReqPos
         io: io
      '}
-	iVici1ReqPos : INT;   // requested position for Vici 1
+    iVici1ReqPos : INT;   // requested position for Vici 1
     {attribute 'pytmc' := '
         pv: Valve:02:ReqPos
         io: io
      '}
-	iVici2ReqPos : INT;   // requested position for Vici 2
-    
+    iVici2ReqPos : INT;   // requested position for Vici 2
+
     //Hardware control
-	stViciVlvCtrl	: ARRAY[1..2] OF	ST_ViciControl;
-	
-	(* Selector EPICS Readbacks *)
-	{attribute 'pytmc' := '
+    astViciVlvCtrl	: ARRAY[1..2] OF	ST_ViciControl;
+
+    (* Selector EPICS Readbacks *)
+    {attribute 'pytmc' := '
         pv: ValvesLocked
         io: i
      '}
-	xResLocked	:	BOOL; // valve movement is locked
+    xResLocked	:	BOOL; // valve movement is locked
     {attribute 'pytmc' := '
         pv: ValvesSynced
         io: i
      '}
-	xResSyncd	:	BOOL; // valves are on the same position
+    xResSyncd	:	BOOL; // valves are on the same position
     {attribute 'pytmc' := '
         pv: ValveSyncCurrentPos
         io: i
      '}
-	iSyncResPos : INT;
-    
+    iSyncResPos : INT;
+
     //Hardware readbacks
     {attribute 'pytmc' := '
         pv: Valve
      '}
-	stViciVlvStatus	: ARRAY[1..2] OF	ST_ViciStatus;
+    astViciVlvStatus	: ARRAY[1..2] OF	ST_ViciStatus;
 
-	
-	// M3 flow rates
-	{attribute 'pytmc' := '
-		pv: SampleFlow
-		io: i
-	 '}
-	rLowFlow	:	REAL; //Sensirion Sample Flowrate
-	{attribute 'pytmc' := '
-		pv: LiquidSheathFlow
-		io: i
-	 '}
-	rHighFlow	:	REAL; //Sensirion Sheath liquid flowrate
-        
+
+    // M3 flow rates
+    {attribute 'pytmc' := '
+        pv: SampleFlow
+        io: i
+     '}
+    rLowFlow	:	REAL; //Sensirion Sample Flowrate
+    {attribute 'pytmc' := '
+        pv: LiquidSheathFlow
+        io: i
+     '}
+    rHighFlow	:	REAL; //Sensirion Sheath liquid flowrate
+
 END_STRUCT
 END_TYPE
 ]]></Declaration>

@@ -3,7 +3,7 @@
   <POU Name="FB_SelectorM3" Id="{a6869ee8-a1a6-4578-87e8-3c9673bf57ea}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SelectorM3
 VAR CONSTANT
-    
+
 END_VAR
 VAR_INPUT
 END_VAR
@@ -16,12 +16,12 @@ VAR
         pv: IO
      '}
     stBaseIO : ST_M3DeviceBaseIO;
-    
+
     {attribute 'pytmc' := '
         pv:
      '}
     stSelector	:	ST_SelectorM3;
-    
+
     // Shakers
         {attribute 'pytmc' := '
             pv: Shaker:01
@@ -39,38 +39,38 @@ VAR
             pv: Shaker:04
          '}
         stShaker04	:	ST_Shaker;
-    
+
     // Vici valves
         fbSelectorSync	:	FB_SelectorSync;
-        
+
         afbViciDriver : ARRAY [1..2] OF FB_ViciDriver;
-        
+
         fbViciSerial  :   FB_SerialCommWrapper;
         stViciSerial  :   ST_SerialComm;
-    
+
 
     {attribute 'pytmc' := '
         pv: Sensirion
      '}
     astSelFM	: ARRAY[1..2] OF	ST_SensirionFM; //Address 1 is low flow, address 2 is high flow, low flow is mapped to M2 flow
 
-	fbSensirionDriver	:	ARRAY [1..2] OF	FB_SensirionDriver;
-    
+    afbSensirionDriver	:	ARRAY [1..2] OF	FB_SensirionDriver;
+
     fbSensSerial : FB_SerialCommWrapper;
     stSensSerial : ST_SerialComm;
 
-	stStatus: STRING;
-	udCount: UDINT;
+    stStatus: STRING;
+    udCount: UDINT;
 
-	tofReset: TOF;
+    tofReset: TOF;
 
-	iIdOld	:	INT;
-	
-	viciIndex: INT := 1;
-	fmIndex: INT := 1;
-    
+    iIdOld	:	INT;
+
+    viciIndex: INT := 1;
+    fmIndex: INT := 1;
+
     //stComIn_EP6002P1		AT %I*	:	EL6inData22B (*KL6inData22B*);
-	//stComOut_EP6002P1		AT %Q*	:	EL6outData22B (*KL6outData22B*);
+    //stComOut_EP6002P1		AT %Q*	:	EL6outData22B (*KL6outData22B*);
 
 END_VAR
 ]]></Declaration>
@@ -82,13 +82,13 @@ Sensirion();
 
 //Valve control
 ///////////////////////////////////
-	fbSelectorSync(iq_stSelector:=stSelector);
-	stSelector.stViciVlvCtrl[1].iReqPos := LIMIT(1, stSelector.iVici1ReqPos, 12);
-	stSelector.stViciVlvCtrl[2].iReqPos := LIMIT(1, stSelector.iVici2ReqPos, 12);
-	ViciDrivers();
+    fbSelectorSync(iq_stSelector:=stSelector);
+    stSelector.astViciVlvCtrl[1].iReqPos := LIMIT(1, stSelector.iVici1ReqPos, 12);
+    stSelector.astViciVlvCtrl[2].iReqPos := LIMIT(1, stSelector.iVici2ReqPos, 12);
+    ViciDrivers();
 
-	//for epics readback to be consistent
-	IF stSelector.xResSyncd THEN stSelector.iSyncResPos := stSelector.stViciVlvStatus[1].iCurrPos; END_IF
+    //for epics readback to be consistent
+    IF stSelector.xResSyncd THEN stSelector.iSyncResPos := stSelector.astViciVlvStatus[1].iCurrPos; END_IF
 
 (* Shakers *)
 stShaker01.q_xPwrDO := stShaker01.i_xEpics;
@@ -104,37 +104,38 @@ stShaker04.q_xPwrDO := stShaker04.i_xEpics;]]></ST>
 
 astSelFM[fmIndex].stCtrl.xReset := astSelFM[fmIndex].xFMReset;
 astSelFM[fmIndex].stCtrl.xCalMode := astSelFM[fmIndex].xFMModeReq;
-	
-fbSensirionDriver[fmIndex](
-	i_xExecute:= TRUE,
-	i_tTimeOut:= t#1s,
-	iq_stSerialRXBuffer:= stSensSerial.RxBuffer,
-	iq_stSerialTXBuffer:= stSensSerial.TxBuffer,
-	q_stStatus=>astSelFM[fmIndex].stStat,
-	i_stControl:=astSelFM[fmIndex].stCtrl);
+astSelFM[fmIndex].stCtrl.bAdr := INT_TO_BYTE(fmIndex-1);
 
-IF fbSensirionDriver[fmIndex].q_xDone OR
-	fbSensirionDriver[fmIndex].q_xError OR
-	fbSensirionDriver[fmIndex].q_xTimeout THEN
+afbSensirionDriver[fmIndex](
+    i_xExecute:= TRUE,
+    i_tTimeOut:= t#1s,
+    iq_stSerialRXBuffer:= stSensSerial.RxBuffer,
+    iq_stSerialTXBuffer:= stSensSerial.TxBuffer,
+    q_stStatus=>astSelFM[fmIndex].stStat,
+    i_stControl:=astSelFM[fmIndex].stCtrl);
 
-	astSelFM[fmIndex].rFlow := astSelFM[fmIndex].stStat.rFlow;
-	astSelFM[fmIndex].xFMOoR := astSelFM[fmIndex].stStat.xOoR;
-	astSelFM[fmIndex].xFlowValid := astSelFM[fmIndex].stStat.xFlowValid;
-	astSelFM[fmIndex].eFMState := astSelFM[fmIndex].stStat.iState;
-	astSelFM[fmIndex].xFMModeRb := astSelFM[fmIndex].stStat.xFMMode;
-	
-	//M3 flows
-	IF fmIndex = 1 THEN
-		stSelector.rLowFlow := astSelFM[fmIndex].stStat.rFlow;
-	ELSIF fmIndex = 2 THEN
-		stSelector.rHighFlow := astSelFM[fmIndex].stStat.rFlow;
-	END_IF
+IF afbSensirionDriver[fmIndex].q_xDone OR
+    afbSensirionDriver[fmIndex].q_xError OR
+    afbSensirionDriver[fmIndex].q_xTimeout THEN
 
-	(* reset function for next time *)
-	fbSensirionDriver[fmIndex].Reset();
+    astSelFM[fmIndex].rFlow := astSelFM[fmIndex].stStat.rFlow;
+    astSelFM[fmIndex].xFMOoR := astSelFM[fmIndex].stStat.xOoR;
+    astSelFM[fmIndex].xFlowValid := astSelFM[fmIndex].stStat.xFlowValid;
+    astSelFM[fmIndex].eFMState := astSelFM[fmIndex].stStat.iState;
+    astSelFM[fmIndex].xFMModeRb := astSelFM[fmIndex].stStat.xFMMode;
 
-	fmIndex := fmIndex + 1;
-	IF fmIndex > 1 THEN fmIndex := 1;	END_IF
+    //M3 flows
+    IF fmIndex = 1 THEN
+        stSelector.rLowFlow := astSelFM[fmIndex].stStat.rFlow;
+    ELSIF fmIndex = 2 THEN
+        stSelector.rHighFlow := astSelFM[fmIndex].stStat.rFlow;
+    END_IF
+
+    (* reset function for next time *)
+    afbSensirionDriver[fmIndex].Reset();
+
+    fmIndex := fmIndex + 1;
+    IF fmIndex > 1 THEN fmIndex := 1;	END_IF
 END_IF
 
 ]]></ST>
@@ -143,33 +144,33 @@ END_IF
     <Action Name="SerialComm" Id="{8e089361-fe69-4121-a86d-063809c21db5}">
       <Implementation>
         <ST><![CDATA[fbSensSerial(stSerialComm := stSensSerial);
-    
+
 fbViciSerial(stSerialComm := stViciSerial);]]></ST>
       </Implementation>
     </Action>
     <Action Name="ViciDrivers" Id="{05c523af-4ae3-411a-b3b8-eed2754bd956}">
       <Implementation>
-        <ST><![CDATA[stSelector.stViciVlvCtrl[viciIndex].iAddress := viciIndex;
+        <ST><![CDATA[stSelector.astViciVlvCtrl[viciIndex].iAddress := viciIndex;
 
 afbViciDriver[viciIndex](
-	i_xExecute:= TRUE,
-	i_tTimeOut:= t#10s,
-	i_stControl:= stSelector.stViciVlvCtrl[viciIndex],
-	iq_stSerialRXBuffer:= stViciSerial.RxBuffer,
-	iq_stSerialTXBuffer:= stViciSerial.TxBuffer,
-	q_stStatus=>stSelector.stViciVlvStatus[viciIndex]);
+    i_xExecute:= TRUE,
+    i_tTimeOut:= t#10s,
+    i_stControl:= stSelector.astViciVlvCtrl[viciIndex],
+    iq_stSerialRXBuffer:= stViciSerial.RxBuffer,
+    iq_stSerialTXBuffer:= stViciSerial.TxBuffer,
+    q_stStatus=>stSelector.astViciVlvStatus[viciIndex]);
 
 IF 	afbViciDriver[viciIndex].q_xDone OR
-	afbViciDriver[viciIndex].q_xError OR
-	afbViciDriver[viciIndex].q_xTimeout THEN
-	(* reset function for next time *)
-	afbViciDriver[viciIndex](i_xExecute:=FALSE, 
-        iq_stSerialRXBuffer:= stViciSerial.RxBuffer, 
+    afbViciDriver[viciIndex].q_xError OR
+    afbViciDriver[viciIndex].q_xTimeout THEN
+    (* reset function for next time *)
+    afbViciDriver[viciIndex](i_xExecute:=FALSE,
+        iq_stSerialRXBuffer:= stViciSerial.RxBuffer,
         iq_stSerialTXBuffer:= stViciSerial.TxBuffer);
-	
-	viciIndex := viciIndex + 1;
-	IF viciIndex > 2 THEN viciIndex := 1; END_IF
-	
+
+    viciIndex := viciIndex + 1;
+    IF viciIndex > 2 THEN viciIndex := 1; END_IF
+
 END_IF]]></ST>
       </Implementation>
     </Action>

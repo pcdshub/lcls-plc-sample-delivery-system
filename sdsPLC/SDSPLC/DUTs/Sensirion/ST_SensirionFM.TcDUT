@@ -3,52 +3,52 @@
   <DUT Name="ST_SensirionFM" Id="{a6b8d86f-c2b0-4a79-92ac-31fbf668167c}">
     <Declaration><![CDATA[TYPE ST_SensirionFM :
 STRUCT
-	stCtrl	:	ST_SensirionFMControl;
-	stStat	:	ST_SensirionFMStatus;
-    
+    stCtrl	:	ST_SensirionFMControl;
+    stStat	:	ST_SensirionFMStatus;
+
     {attribute 'pytmc' := '
         pv: Reset
         io: o
      '}
     xFMReset : BOOL; // Reset on rising edge
-    
+
     {attribute 'pytmc' := '
         pv: Flow
         io: i
      '}
-	rFlow : REAL; //uL/min
-    
+    rFlow : REAL; // uL/min
+
     {attribute 'pytmc' := '
         pv: OoR
         io: i
      '}
-	xFMOoR	:	BOOL; // Out of range (too high)
-    
+    xFMOoR	:	BOOL; // Out of range
+
     {attribute 'pytmc' := '
         pv: FlowValid
         io: i
      '}
-	xFlowValid	:	BOOL; // driver completes successfully
-    
-    
+    xFlowValid	:	BOOL; // driver completes successfully
+
+
     {attribute 'pytmc' := '
         pv: State
         io: i
      '}
-	eFMState	:	E_SensirionFMMode;
-    
-    
-	{attribute 'pytmc' := '
+    eFMState	:	E_SensirionFMMode;
+
+
+    {attribute 'pytmc' := '
         pv: Mode
         io: o
      '}
-	xFMModeReq	:	BOOL; //for sensirion calibration range (request)
-	{attribute 'pytmc' := '
+    xFMModeReq	:	BOOL; //for sensirion calibration range (request)
+    {attribute 'pytmc' := '
         pv: ModeRb
         io: i
      '}
-	xFMModeRb	:	BOOL; //for sensirion calibration range (readback)
-    
+    xFMModeRb	:	BOOL; //for sensirion calibration range (readback)
+
 END_STRUCT
 END_TYPE
 ]]></Declaration>

@@ -1,19 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <DUT Name="ST_SensirionFMStatus" Id="{167d0110-ce48-475a-b7ba-7b29f3e90a1e}">
     <Declaration><![CDATA[TYPE ST_SensirionFMStatus :
 STRUCT
-	
 
 	iFlowTicks	:	INT;
 	uiSensorOutput	: UINT;
 	iState	:	INT;
 	rFlow	:	REAL; // units of uL/min
 	xOoR	:	BOOL; // Out of range
-	xFMMode :	BOOL; // calib mode 0 = prec, 1 = extended
+	xFMMode :	BOOL; // calib mode readback 0 = prec, 1 = extended
 	xFlowValid	:	BOOL; // driver completes successfully
 	abReply	:	ARRAY[1..500] OF BYTE;
-	bAdr	:	BYTE; //Device address
 	bStatus	:	BYTE; //Sensor status
 (* Bit 0: 0: Sensor idle
 		1: Sensor Busy

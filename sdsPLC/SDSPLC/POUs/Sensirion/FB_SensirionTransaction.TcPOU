@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.26">
-  <POU Name="FB_SensirionTransaction" Id="{8e8df19b-a4b0-41c3-b925-62273ee34de0}">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_SensirionTransaction" Id="{8e8df19b-a4b0-41c3-b925-62273ee34de0}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SensirionTransaction
 VAR CONSTANT
 	c_ArraySize : INT := 600;
@@ -108,7 +108,7 @@ CASE iStep OF
 		
 		//Calc the framewidth, a useful number
 		// start + adr + cmd + len + tx data (len) + chk + stop
-		udiTxLen:=(4+BYTE_TO_INT(i_bLen)+1);
+		udiTxLen:=(4+BYTE_TO_UDINT(i_bLen)+1);
 		(* Byte stuffing
 		If any special bytes are found in the message, they must be replaced with a special pair of bytes *)
 		(* Seek through the byte array for any of the special bytes
@@ -143,7 +143,7 @@ CASE iStep OF
 		
 		fbSendData(TXbuffer:= iq_stSerialTXBuffer,pSendData:=ADR(baTxData), Length:=udiTxLen);
 		//For debugging: 
-		MEMCPY(destAddr:=ADR(q_abLastTxData[iDataTx,1]), srcAddr:=ADR(baTxData), n:=c_ArraySize);
+		MEMCPY(destAddr:=ADR(q_abLastTxData[iDataTx,1]), srcAddr:=ADR(baTxData), n:=INT_TO_UDINT(c_ArraySize));
 		IF iDataTx = c_DebugArraySize THEN iDataTx := 1; ELSE iDataTx := iDataTx +1; END_IF
 		
 		if i_bCmd = bCatch THEN xCatch := TRUE; END_IF
@@ -214,7 +214,7 @@ CASE iStep OF
 				q_bState := baRxData[4];
 				q_iRxLen := BYTE_TO_INT(bRxLen);
 				//Memcpy ze' data, check if memcpy is successful (returns other than zero) or bRxLen is zero (which causes memcpy to return zero)
-				IF UDINT_TO_BOOL(MEMCPY(srcAddr:=(ADR(baRxData)+5), destAddr:=ADR(q_baRxData), n:=BYTE_TO_INT(bRxLen))) OR (bRxLen=0) THEN
+				IF UDINT_TO_BOOL(MEMCPY(srcAddr:=(ADR(baRxData)+5), destAddr:=ADR(q_baRxData), n:=BYTE_TO_UINT(bRxLen))) OR (bRxLen=0) THEN
 					q_sResult := 'Success';
 					iStep:=100;
 					//For debugging
@@ -240,6 +240,5 @@ CASE iStep OF
 		q_xError := TRUE;
 END_CASE]]></ST>
     </Implementation>
-    <ObjectProperties />
   </POU>
 </TcPlcObject>

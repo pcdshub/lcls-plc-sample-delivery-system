@@ -94,24 +94,6 @@
 		<Box File="ALI_DIO (EP2338-0001).xti" Id="48">
 			<EtherCAT PortABoxInfo="#x0100002f"/>
 		</Box>
-		<Box File="M2 Selector A (EP1111).xti" Id="8">
-			<EtherCAT PortABoxInfo="#xffffffff"/>
-		</Box>
-		<Box File="M2 Selector A (EP6002-0002).xti" Id="9">
-			<EtherCAT PortABoxInfo="#x01000008"/>
-		</Box>
-		<Box File="M2 Selector A (EP2338-0001).xti" Id="1">
-			<EtherCAT PortABoxInfo="#x01000009"/>
-		</Box>
-		<Box File="M2 Selector B (EP1111).xti" Id="16">
-			<EtherCAT PortABoxInfo="#xffffffff"/>
-		</Box>
-		<Box File="M2 Selector B (EP6002-0002).xti" Id="36">
-			<EtherCAT PortABoxInfo="#x01000010"/>
-		</Box>
-		<Box File="M2 Selector B (EP2338-0001).xti" Id="35">
-			<EtherCAT PortABoxInfo="#x01000024"/>
-		</Box>
 		<Box File="M3 Selector A (EP1111).xti" Id="4">
 			<EtherCAT PortABoxInfo="#xffffffff"/>
 		</Box>
@@ -121,9 +103,6 @@
 		<Box File="M3 Selector A Serial IO (EP6002-0002).xti" Id="37">
 			<EtherCAT PortABoxInfo="#x01000022"/>
 		</Box>
-		<Box File="M3 Selector A Mass Flow Meter.xti" Id="38">
-			<EtherCAT PortABoxInfo="#x01000025"/>
-		</Box>
 		<Box File="M3 Selector B (EP1111).xti" Id="39">
 			<EtherCAT PortABoxInfo="#xffffffff"/>
 		</Box>
@@ -132,9 +111,6 @@
 		</Box>
 		<Box File="M3 Selector B Serial IO (EP6002-0002).xti" Id="41">
 			<EtherCAT PortABoxInfo="#x01000028"/>
-		</Box>
-		<Box File="M3 Selector B Mass Flow Meter.xti" Id="42">
-			<EtherCAT PortABoxInfo="#x01000029"/>
 		</Box>
 		<Box File="PCM A (EP1111).xti" Id="2">
 			<EtherCAT PortABoxInfo="#xffffffff"/>
@@ -181,9 +157,6 @@
 		<Box File="M3 Selector C Serial IO (EP6002-0002).xti" Id="29">
 			<EtherCAT PortABoxInfo="#x01000015"/>
 		</Box>
-		<Box File="M3 Selector C Mass Flow Meter.xti" Id="30">
-			<EtherCAT PortABoxInfo="#x0100001d"/>
-		</Box>
 		<Box File="M3 Selector D (EP1111).xti" Id="32">
 			<EtherCAT PortABoxInfo="#xffffffff"/>
 		</Box>
@@ -192,9 +165,6 @@
 		</Box>
 		<Box File="M3 Selector D Serial IO (EP6002-0002).xti" Id="53">
 			<EtherCAT PortABoxInfo="#x01000021"/>
-		</Box>
-		<Box File="M3 Selector D Mass Flow Meter.xti" Id="54">
-			<EtherCAT PortABoxInfo="#x01000035"/>
 		</Box>
 		<Box File="PCM C (EP1111).xti" Id="55">
 			<EtherCAT PortABoxInfo="#xffffffff"/>
@@ -220,11 +190,25 @@
 		<Box File="PCM D (EP6002-0002).xti" Id="62">
 			<EtherCAT PortABoxInfo="#x0100003d"/>
 		</Box>
+		<Box File="Bronkhorst MFM A.xti" Id="38">
+			<EtherCAT PortABoxInfo="#xffffffff"/>
+		</Box>
+		<Box File="Bronkhorst MFM B.xti" Id="42">
+			<EtherCAT PortABoxInfo="#xffffffff"/>
+		</Box>
+		<Box File="Bronkhorst MFM C.xti" Id="30">
+			<EtherCAT PortABoxInfo="#xffffffff"/>
+		</Box>
+		<Box File="Bronkhorst MFM D.xti" Id="54">
+			<EtherCAT PortABoxInfo="#xffffffff"/>
+		</Box>
 		<EtherCAT>
 			<SyncUnit Name="[ALI (EP1111)]" HcName="ALI (EP1111)"/>
+			<SyncUnit Name="[Bronkhorst MFM A]" HcName="Bronkhorst MFM A"/>
+			<SyncUnit Name="[Bronkhorst MFM B]" HcName="Bronkhorst MFM B"/>
+			<SyncUnit Name="[Bronkhorst MFM C]" HcName="Bronkhorst MFM C"/>
+			<SyncUnit Name="[Bronkhorst MFM D]" HcName="Bronkhorst MFM D"/>
 			<SyncUnit Name="[Gas_Mani (EP1111)]" HcName="Gas_Mani (EP1111)"/>
-			<SyncUnit Name="[M2 Selector A (EP1111)]" HcName="M2 Selector A (EP1111)"/>
-			<SyncUnit Name="[M2 Selector B (EP1111)]" HcName="M2 Selector B (EP1111)"/>
 			<SyncUnit Name="[M3 Selector A (EP1111)]" HcName="M3 Selector A (EP1111)"/>
 			<SyncUnit Name="[M3 Selector B (EP1111)]" HcName="M3 Selector B (EP1111)"/>
 			<SyncUnit Name="[M3 Selector C (EP1111)]" HcName="M3 Selector C (EP1111)"/>

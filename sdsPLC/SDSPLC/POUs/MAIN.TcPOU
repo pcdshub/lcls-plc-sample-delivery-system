@@ -31,9 +31,6 @@ END_VAR
 //p_ALI();
 //p_VacGaugeSup();
 
-//M2SelectorA();
-//M2SelectorB();
-
 M3SelectorA();
 M3SelectorB();
 M3SelectorC();
@@ -43,6 +40,7 @@ PCMB();
 PCMC();
 PCMD();
 GasMan();
+BronkhorstA();
 
 //p_CoolerShaker();
 

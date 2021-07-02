@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{303D23A1-E91C-3A23-F47D-6C945D8DAEE6}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{FCD2CE7F-3796-E696-80C5-5BF408CAF125}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name>ST_M3DeviceBaseIO</Name>
@@ -29,1232 +29,6 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
           </Property>
         </Properties>
       </SubItem>
-    </DataType>
-    <DataType>
-      <Name Namespace="Tc2_SerialCom">ComBuffer</Name>
-      <Comment> This data type will be used as a software character buffer
-   between serial line I/O and user functions as ReceiveByte
-   or SendByte.
-</Comment>
-      <BitSize>2512</BitSize>
-      <SubItem>
-        <Name>Buffer</Name>
-        <Type>BYTE</Type>
-        <ArrayInfo>
-          <LBound>0</LBound>
-          <Elements>301</Elements>
-        </ArrayInfo>
-        <Comment> ringbuffer </Comment>
-        <BitSize>2408</BitSize>
-        <BitOffs>0</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>RdIdx</Name>
-        <Type>UINT</Type>
-        <Comment> first valid byte in ringbuffer </Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>2416</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>WrIdx</Name>
-        <Type>UINT</Type>
-        <Comment> first invalid byte in ringbuffer </Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>2432</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>Count</Name>
-        <Type>UINT</Type>
-        <Comment> number of bytes in ringbuffer </Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>2448</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>FreeByte</Name>
-        <Type>UINT</Type>
-        <Comment> number of free bytes in ringbuffer </Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>2464</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>Error</Name>
-        <Type>UINT</Type>
-        <Comment> error code of serial line interface </Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>2480</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>blocked</Name>
-        <Type>BOOL</Type>
-        <Comment> semaphore for task synchronization </Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>2496</BitOffs>
-      </SubItem>
-    </DataType>
-    <DataType>
-      <Name Namespace="Tc2_SerialCom">EL6inData22B</Name>
-      <Comment> This data type is corresponding to the
-   KL-6xxx data structure used in the
-   TwinCAT SystemManager
-   (KL-6xxx version using 5 data bytes / 
-    non-alternative (standard) output ) 
-</Comment>
-      <BitSize>192</BitSize>
-      <SubItem>
-        <Name>Status</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>0</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>D</Name>
-        <Type>BYTE</Type>
-        <ArrayInfo>
-          <LBound>0</LBound>
-          <Elements>22</Elements>
-        </ArrayInfo>
-        <BitSize>176</BitSize>
-        <BitOffs>16</BitOffs>
-      </SubItem>
-    </DataType>
-    <DataType>
-      <Name Namespace="Tc2_SerialCom">EL6outData22B</Name>
-      <Comment> This data type is corresponding to the
-   KL-6xxx data structure used in the
-   TwinCAT SystemManager
-   (KL-6xxx version using 5 data bytes / 
-    non-alternative (standard) output ) 
-</Comment>
-      <BitSize>192</BitSize>
-      <SubItem>
-        <Name>Ctrl</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>0</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>D</Name>
-        <Type>BYTE</Type>
-        <ArrayInfo>
-          <LBound>0</LBound>
-          <Elements>22</Elements>
-        </ArrayInfo>
-        <BitSize>176</BitSize>
-        <BitOffs>16</BitOffs>
-      </SubItem>
-    </DataType>
-    <DataType>
-      <Name>ST_SerialComm</Name>
-      <Comment> Generic serial comm necessities</Comment>
-      <BitSize>5408</BitSize>
-      <SubItem>
-        <Name>RxBuffer</Name>
-        <Type Namespace="Tc2_SerialCom">ComBuffer</Type>
-        <BitSize>2512</BitSize>
-        <BitOffs>0</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>TxBuffer</Name>
-        <Type Namespace="Tc2_SerialCom">ComBuffer</Type>
-        <BitSize>2512</BitSize>
-        <BitOffs>2512</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>stComIn</Name>
-        <Type Namespace="Tc2_SerialCom">EL6inData22B</Type>
-        <BitSize>192</BitSize>
-        <BitOffs>5024</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stComOut</Name>
-        <Type Namespace="Tc2_SerialCom">EL6outData22B</Type>
-        <BitSize>192</BitSize>
-        <BitOffs>5216</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-    </DataType>
-    <DataType>
-      <Name Namespace="Tc2_SerialCom">ComSerialLineMode_t</Name>
-      <BitSize>16</BitSize>
-      <BaseType>INT</BaseType>
-      <EnumInfo>
-        <Text>SERIALLINEMODE_DEFAULT</Text>
-        <Enum>0</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>SERIALLINEMODE_KL6_3B_ALTERNATIVE</Text>
-        <Enum>1</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>SERIALLINEMODE_KL6_5B_STANDARD</Text>
-        <Enum>2</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>SERIALLINEMODE_KL6_22B_STANDARD</Text>
-        <Enum>3</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>SERIALLINEMODE_PC_COM_PORT</Text>
-        <Enum>4</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>SERIALLINEMODE_EL6_22B</Text>
-        <Enum>5</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>SERIALLINEMODE_IE6_11B</Text>
-        <Enum>6</Enum>
-      </EnumInfo>
-    </DataType>
-    <DataType>
-      <Name Namespace="Tc2_SerialCom">ComError_t</Name>
-      <BitSize>16</BitSize>
-      <BaseType>INT</BaseType>
-      <EnumInfo>
-        <Text>COMERROR_NOERROR</Text>
-        <Enum>0</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_PARAMETERCHANGED</Text>
-        <Enum>1</Enum>
-        <Comment> input parameters changed during reception </Comment>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_TXBUFFOVERRUN</Text>
-        <Enum>2</Enum>
-        <Comment> string &gt; transmit buffer </Comment>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_STRINGOVERRUN</Text>
-        <Enum>10</Enum>
-        <Comment> end of string </Comment>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_ZEROCHARINVALID</Text>
-        <Enum>11</Enum>
-        <Comment> string cannot receive zero characters </Comment>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_INVALIDPOINTER</Text>
-        <Enum>20</Enum>
-        <Comment> invalid data pointer, e. g. zero </Comment>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_INVALIDRXPOINTER</Text>
-        <Enum>21</Enum>
-        <Comment> invalid data pointer for ReceiveData </Comment>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_INVALIDRXLENGTH</Text>
-        <Enum>22</Enum>
-        <Comment> invalid length for ReceiveData, e. g. zero </Comment>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_DATASIZEOVERRUN</Text>
-        <Enum>23</Enum>
-        <Comment> end of data block </Comment>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_INVALIDPROCESSDATASIZE</Text>
-        <Enum>24</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_MODENOTSUPPORTED</Text>
-        <Enum>257</Enum>
-        <Comment> mode not supported (3-Byte Terminals connectd to bus controllers) </Comment>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_INVALIDCHANNELNUMBER</Text>
-        <Enum>258</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_INVALIDBAUDRATE</Text>
-        <Enum>4097</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_INVALIDNUMDATABITS</Text>
-        <Enum>4098</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_INVALIDNUMSTOPBITS</Text>
-        <Enum>4099</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_INVALIDPARITY</Text>
-        <Enum>4100</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_INVALIDHANDSHAKE</Text>
-        <Enum>4101</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_INVALIDNUMREGISTERS</Text>
-        <Enum>4102</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_INVALIDREGISTER</Text>
-        <Enum>4103</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>COMERROR_TIMEOUT</Text>
-        <Enum>4104</Enum>
-      </EnumInfo>
-    </DataType>
-    <DataType>
-      <Name Namespace="Tc2_SerialCom">ComDebugBuffer</Name>
-      <BitSize>9648</BitSize>
-      <SubItem>
-        <Name>Buffer</Name>
-        <Type>INT</Type>
-        <ArrayInfo>
-          <LBound>0</LBound>
-          <Elements>301</Elements>
-        </ArrayInfo>
-        <BitSize>4816</BitSize>
-        <BitOffs>0</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>Status</Name>
-        <Type>INT</Type>
-        <ArrayInfo>
-          <LBound>0</LBound>
-          <Elements>301</Elements>
-        </ArrayInfo>
-        <BitSize>4816</BitSize>
-        <BitOffs>4816</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>Idx</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>9632</BitOffs>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>hide</Name>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name Namespace="Tc2_SerialCom">SerialLineControl</Name>
-      <Comment> =============================================================
- *	Modul:	Serial line interface controller for background communication
- *			supports multiple interface types like 
- *			KL6xxx 3 byte alternative mode
- *			KL6xxx 5 byte standard mode
- *			KL6xxx 22 byte standard mode with extended process data interface
- *			KL6xxx 64 byte PC COM port
- *			EL6xxx 22 byte 
- *			IP6xxx 11 byte
- *			communication between a serial line hardware device and 
- *			PLC communication buffers (RxBuffer, TxBuffer)
- *
- *	Date: 	21.12.2004
- * ============================================================= </Comment>
-      <BitSize>10432</BitSize>
-      <SubItem>
-        <Name>Mode</Name>
-        <Type Namespace="Tc2_SerialCom">ComSerialLineMode_t</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>32</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>pComIn</Name>
-        <Type>BYTE</Type>
-        <ArrayInfo PointerTo="1">
-          <LBound>0</LBound>
-          <Elements>66</Elements>
-        </ArrayInfo>
-        <Comment> must meet the maximum size of a hardware related data structure </Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>64</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>pComOut</Name>
-        <Type>BYTE</Type>
-        <ArrayInfo PointerTo="1">
-          <LBound>0</LBound>
-          <Elements>66</Elements>
-        </ArrayInfo>
-        <Comment> must meet the maximum size of a hardware related data structure </Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>96</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>SizeComIn</Name>
-        <Type>INT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>128</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>Error</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>144</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>ErrorID</Name>
-        <Type Namespace="Tc2_SerialCom">ComError_t</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>160</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>TxBuffer</Name>
-        <Type Namespace="Tc2_SerialCom" ReferenceTo="true">ComBuffer</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>192</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>InOut</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>RxBuffer</Name>
-        <Type Namespace="Tc2_SerialCom" ReferenceTo="true">ComBuffer</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>224</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>InOut</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>nBlockedCounter_TxBuffer</Name>
-        <Type>UDINT</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>256</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>nBlockedCounter_RxBuffer</Name>
-        <Type>UDINT</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>288</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>ComPortDebugBuffer</Name>
-        <Type Namespace="Tc2_SerialCom">ComDebugBuffer</Type>
-        <BitSize>9648</BitSize>
-        <BitOffs>320</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>InvalidDataExchangeMode</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>9968</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>RegisterMode</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>9984</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>pCTRL</Name>
-        <Type PointerTo="1">WORD</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>10016</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>pSTATUS</Name>
-        <Type PointerTo="1">WORD</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>10048</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>wCtrl</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10080</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>wStatus</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10096</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>RxCount</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10112</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>TxCount</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10128</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>DataIndex</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10144</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>DataCountMask</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10160</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>DataCountShift</Name>
-        <Type>BYTE</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>10176</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>ReceiveHandshakeBit</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10192</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>TransmitHandshakeBit</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10208</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>TransmitBufferSentBit</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10224</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>ContinousModeStartBit</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10240</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>ReceiveBufferFullBit</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10256</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>ResetBit</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10272</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>RR</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10288</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>RA</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10304</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>TR</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10320</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>TA</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10336</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>IA</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10352</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>BUF_F</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10368</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>noTAcounter</Name>
-        <Type>BYTE</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>10384</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>initialized</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>10392</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>TransmitDataSent</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>10400</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>i</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>10416</BitOffs>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>FB_SerialCommWrapper</Name>
-      <BitSize>10496</BitSize>
-      <SubItem>
-        <Name>stSerialComm</Name>
-        <Type ReferenceTo="true">ST_SerialComm</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>32</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>InOut</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbSerialLineControl</Name>
-        <Type Namespace="Tc2_SerialCom">SerialLineControl</Type>
-        <BitSize>10432</BitSize>
-        <BitOffs>64</BitOffs>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>ST_Proportionair</Name>
-      <BitSize>128</BitSize>
-      <SubItem>
-        <Name>xEnable</Name>
-        <Type>BOOL</Type>
-        <Comment> Control </Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>0</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Enable
-        io: io
-     </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>iSetpoint</Name>
-        <Type>INT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>16</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Setpoint
-        io: io
-     </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>iHiLimit</Name>
-        <Type>INT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>32</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: HighLimit
-        io: io
-     </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>iLoLimit</Name>
-        <Type>INT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>48</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: LowLimit
-        io: io
-     </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>xStable</Name>
-        <Type>BOOL</Type>
-        <Comment>TTL signal from the proportionair controller that the pressure is stable</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>64</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>iPressure</Name>
-        <Type>INT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>80</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Pressure
-        io: i
-     </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_iPressRB</Name>
-        <Type>INT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>96</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcDisplayScale</Name>
-            <Value>0-10</Value>
-          </Property>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>q_iPressCt</Name>
-        <Type>INT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>112</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcDisplayScale</Name>
-            <Value>0-10</Value>
-          </Property>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-    </DataType>
-    <DataType>
-      <Name>FB_ProportionairRegulator</Name>
-      <BitSize>64</BitSize>
-      <SubItem>
-        <Name>iq_stRegProp</Name>
-        <Type ReferenceTo="true">ST_Proportionair</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>32</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>InOut</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>FB_PressureControlModule</Name>
-      <Comment> Encapsulation of a pressure control module.
- A. Wallace, 2019-10-22
- Support for 2 proportionairs, 4 generic analog inputs (usually a pressure gauge
- and two shimadzu ports.</Comment>
-      <BitSize>32256</BitSize>
-      <SubItem>
-        <Name>stBaseIO</Name>
-        <Type>ST_M3DeviceBaseIO</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>32</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: IO
-     </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stSerial1</Name>
-        <Type>ST_SerialComm</Type>
-        <BitSize>5408</BitSize>
-        <BitOffs>48</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>stSerial2</Name>
-        <Type>ST_SerialComm</Type>
-        <BitSize>5408</BitSize>
-        <BitOffs>5456</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fbSerial1</Name>
-        <Type>FB_SerialCommWrapper</Type>
-        <BitSize>10496</BitSize>
-        <BitOffs>10880</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fbSerial2</Name>
-        <Type>FB_SerialCommWrapper</Type>
-        <BitSize>10496</BitSize>
-        <BitOffs>21376</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>stPropAir1</Name>
-        <Type>ST_Proportionair</Type>
-        <BitSize>128</BitSize>
-        <BitOffs>31872</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: PropAir:01
-     </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stPropAir2</Name>
-        <Type>ST_Proportionair</Type>
-        <BitSize>128</BitSize>
-        <BitOffs>32000</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: PropAir:02
-     </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>PropAir1</Name>
-        <Type>FB_ProportionairRegulator</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>32128</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>PropAir2</Name>
-        <Type>FB_ProportionairRegulator</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>32192</BitOffs>
-      </SubItem>
-      <Action>
-        <Name>SerialComm</Name>
-      </Action>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name GUID="{5C8FF47F-7F83-4493-8D21-F1FF8A08F75A}" Namespace="PLC" TcBaseType="true">PlcAppSystemInfo</Name>
-      <BitSize>2048</BitSize>
-      <SubItem>
-        <Name>ObjId</Name>
-        <Type GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>0</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>TaskCnt</Name>
-        <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>32</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>OnlineChangeCnt</Name>
-        <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>64</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>Flags</Name>
-        <Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>96</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>AdsPort</Name>
-        <Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>128</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>BootDataLoaded</Name>
-        <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>144</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>OldBootData</Name>
-        <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>152</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>AppTimestamp</Name>
-        <Type GUID="{18071995-0000-0000-0000-00000000004C}">DT</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>160</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>KeepOutputsOnBP</Name>
-        <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>192</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>ShutdownInProgress</Name>
-        <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>200</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>LicensesPending</Name>
-        <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>208</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>BSODOccured</Name>
-        <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>216</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>LoggedIn</Name>
-        <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>224</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>TComSrvPtr</Name>
-        <Type GUID="{00000030-0000-0000-E000-000000000064}">ITComObjectServer</Type>
-        <BitSize X64="64">32</BitSize>
-        <BitOffs>256</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcComInterface</Name>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>AppName</Name>
-        <Type GUID="{18071995-0000-0000-0000-00010000003F}">STRING(63)</Type>
-        <BitSize>512</BitSize>
-        <BitOffs>512</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>ProjectName</Name>
-        <Type GUID="{18071995-0000-0000-0000-00010000003F}">STRING(63)</Type>
-        <BitSize>512</BitSize>
-        <BitOffs>1024</BitOffs>
-      </SubItem>
-      <Hides>
-        <Hide GUID="{D91E046A-A488-4D27-8D43-0F3C40ED5081}"/>
-        <Hide GUID="{5DCEB2BC-E196-43AD-80B7-EBACF31A430B}"/>
-        <Hide GUID="{1B9FDDE4-B3B7-4F0F-AB14-24EDC2F643E7}"/>
-        <Hide GUID="{C1C52E30-BC0B-44CA-BF39-E2FE7F2D145C}"/>
-      </Hides>
-    </DataType>
-    <DataType>
-      <Name>_Implicit_KindOfTask</Name>
-      <BitSize>16</BitSize>
-      <BaseType>INT</BaseType>
-      <EnumInfo>
-        <Text>_implicit_cyclic</Text>
-        <Enum>0</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>_implicit_event</Text>
-        <Enum>1</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>_implicit_external</Text>
-        <Enum>2</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>_implicit_freewheeling</Text>
-        <Enum>3</Enum>
-      </EnumInfo>
-    </DataType>
-    <DataType>
-      <Name>_Implicit_Jitter_Distribution</Name>
-      <BitSize>48</BitSize>
-      <SubItem>
-        <Name>wRangeMax</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>0</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>wCountJitterNeg</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>16</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>wCountJitterPos</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>32</BitOffs>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>hide</Name>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>_Implicit_Task_Info</Name>
-      <BitSize>704</BitSize>
-      <SubItem>
-        <Name>dwVersion</Name>
-        <Type>DWORD</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>0</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>pszName</Name>
-        <Type PointerTo="1">STRING(80)</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>32</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>nPriority</Name>
-        <Type>INT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>64</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>KindOf</Name>
-        <Type>_Implicit_KindOfTask</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>80</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bWatchdog</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>96</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bProfilingTask</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>104</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>dwEventFunctionPointer</Name>
-        <Type PointerTo="1">BYTE</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>128</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>pszExternalEvent</Name>
-        <Type PointerTo="1">STRING(80)</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>160</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>dwTaskEntryFunctionPointer</Name>
-        <Type PointerTo="1">BYTE</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>192</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>dwWatchdogSensitivity</Name>
-        <Type>DWORD</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>224</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>dwInterval</Name>
-        <Type>DWORD</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>256</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>dwWatchdogTime</Name>
-        <Type>DWORD</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>288</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>dwLastCycleTime</Name>
-        <Type>DWORD</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>320</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>dwAverageCycleTime</Name>
-        <Type>DWORD</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>352</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>dwMaxCycleTime</Name>
-        <Type>DWORD</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>384</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>dwMinCycleTime</Name>
-        <Type>DWORD</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>416</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>diJitter</Name>
-        <Type>DINT</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>448</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>diJitterMin</Name>
-        <Type>DINT</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>480</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>diJitterMax</Name>
-        <Type>DINT</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>512</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>dwCycleCount</Name>
-        <Type>DWORD</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>544</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>wTaskStatus</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>576</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>wNumOfJitterDistributions</Name>
-        <Type>WORD</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>592</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>pJitterDistribution</Name>
-        <Type PointerTo="1">_Implicit_Jitter_Distribution</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>608</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bWithinSPSTimeSlicing</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>640</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>byDummy</Name>
-        <Type>BYTE</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>648</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bShouldBlock</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>656</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bActive</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>664</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>dwIECCycleCount</Name>
-        <Type>DWORD</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>672</BitOffs>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>hide</Name>
-        </Property>
-      </Properties>
     </DataType>
     <DataType>
       <Name>ST_ViciControl</Name>
@@ -1807,6 +581,67 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
       </Properties>
     </DataType>
     <DataType>
+      <Name Namespace="Tc2_SerialCom">ComBuffer</Name>
+      <Comment> This data type will be used as a software character buffer
+   between serial line I/O and user functions as ReceiveByte
+   or SendByte.
+</Comment>
+      <BitSize>2512</BitSize>
+      <SubItem>
+        <Name>Buffer</Name>
+        <Type>BYTE</Type>
+        <ArrayInfo>
+          <LBound>0</LBound>
+          <Elements>301</Elements>
+        </ArrayInfo>
+        <Comment> ringbuffer </Comment>
+        <BitSize>2408</BitSize>
+        <BitOffs>0</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>RdIdx</Name>
+        <Type>UINT</Type>
+        <Comment> first valid byte in ringbuffer </Comment>
+        <BitSize>16</BitSize>
+        <BitOffs>2416</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>WrIdx</Name>
+        <Type>UINT</Type>
+        <Comment> first invalid byte in ringbuffer </Comment>
+        <BitSize>16</BitSize>
+        <BitOffs>2432</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>Count</Name>
+        <Type>UINT</Type>
+        <Comment> number of bytes in ringbuffer </Comment>
+        <BitSize>16</BitSize>
+        <BitOffs>2448</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>FreeByte</Name>
+        <Type>UINT</Type>
+        <Comment> number of free bytes in ringbuffer </Comment>
+        <BitSize>16</BitSize>
+        <BitOffs>2464</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>Error</Name>
+        <Type>UINT</Type>
+        <Comment> error code of serial line interface </Comment>
+        <BitSize>16</BitSize>
+        <BitOffs>2480</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>blocked</Name>
+        <Type>BOOL</Type>
+        <Comment> semaphore for task synchronization </Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>2496</BitOffs>
+      </SubItem>
+    </DataType>
+    <DataType>
       <Name Namespace="Tc2_SerialCom">ClearComBuffer</Name>
       <Comment>=================================================================
  *	
@@ -1849,6 +684,100 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
           <Value>FunctionBlock</Value>
         </Property>
       </Properties>
+    </DataType>
+    <DataType>
+      <Name Namespace="Tc2_SerialCom">ComError_t</Name>
+      <BitSize>16</BitSize>
+      <BaseType>INT</BaseType>
+      <EnumInfo>
+        <Text>COMERROR_NOERROR</Text>
+        <Enum>0</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_PARAMETERCHANGED</Text>
+        <Enum>1</Enum>
+        <Comment> input parameters changed during reception </Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_TXBUFFOVERRUN</Text>
+        <Enum>2</Enum>
+        <Comment> string &gt; transmit buffer </Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_STRINGOVERRUN</Text>
+        <Enum>10</Enum>
+        <Comment> end of string </Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_ZEROCHARINVALID</Text>
+        <Enum>11</Enum>
+        <Comment> string cannot receive zero characters </Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_INVALIDPOINTER</Text>
+        <Enum>20</Enum>
+        <Comment> invalid data pointer, e. g. zero </Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_INVALIDRXPOINTER</Text>
+        <Enum>21</Enum>
+        <Comment> invalid data pointer for ReceiveData </Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_INVALIDRXLENGTH</Text>
+        <Enum>22</Enum>
+        <Comment> invalid length for ReceiveData, e. g. zero </Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_DATASIZEOVERRUN</Text>
+        <Enum>23</Enum>
+        <Comment> end of data block </Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_INVALIDPROCESSDATASIZE</Text>
+        <Enum>24</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_MODENOTSUPPORTED</Text>
+        <Enum>257</Enum>
+        <Comment> mode not supported (3-Byte Terminals connectd to bus controllers) </Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_INVALIDCHANNELNUMBER</Text>
+        <Enum>258</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_INVALIDBAUDRATE</Text>
+        <Enum>4097</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_INVALIDNUMDATABITS</Text>
+        <Enum>4098</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_INVALIDNUMSTOPBITS</Text>
+        <Enum>4099</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_INVALIDPARITY</Text>
+        <Enum>4100</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_INVALIDHANDSHAKE</Text>
+        <Enum>4101</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_INVALIDNUMREGISTERS</Text>
+        <Enum>4102</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_INVALIDREGISTER</Text>
+        <Enum>4103</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>COMERROR_TIMEOUT</Text>
+        <Enum>4104</Enum>
+      </EnumInfo>
     </DataType>
     <DataType>
       <Name Namespace="Tc2_SerialCom">SendByte</Name>
@@ -3132,6 +2061,505 @@ fbSplit					: FB_Split255;</Comment>
       <Action>
         <Name>_A_ClearStatus</Name>
       </Action>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name Namespace="Tc2_SerialCom">EL6inData22B</Name>
+      <Comment> This data type is corresponding to the
+   KL-6xxx data structure used in the
+   TwinCAT SystemManager
+   (KL-6xxx version using 5 data bytes / 
+    non-alternative (standard) output ) 
+</Comment>
+      <BitSize>192</BitSize>
+      <SubItem>
+        <Name>Status</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>0</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>D</Name>
+        <Type>BYTE</Type>
+        <ArrayInfo>
+          <LBound>0</LBound>
+          <Elements>22</Elements>
+        </ArrayInfo>
+        <BitSize>176</BitSize>
+        <BitOffs>16</BitOffs>
+      </SubItem>
+    </DataType>
+    <DataType>
+      <Name Namespace="Tc2_SerialCom">EL6outData22B</Name>
+      <Comment> This data type is corresponding to the
+   KL-6xxx data structure used in the
+   TwinCAT SystemManager
+   (KL-6xxx version using 5 data bytes / 
+    non-alternative (standard) output ) 
+</Comment>
+      <BitSize>192</BitSize>
+      <SubItem>
+        <Name>Ctrl</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>0</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>D</Name>
+        <Type>BYTE</Type>
+        <ArrayInfo>
+          <LBound>0</LBound>
+          <Elements>22</Elements>
+        </ArrayInfo>
+        <BitSize>176</BitSize>
+        <BitOffs>16</BitOffs>
+      </SubItem>
+    </DataType>
+    <DataType>
+      <Name>ST_SerialComm</Name>
+      <Comment> Generic serial comm necessities</Comment>
+      <BitSize>5408</BitSize>
+      <SubItem>
+        <Name>RxBuffer</Name>
+        <Type Namespace="Tc2_SerialCom">ComBuffer</Type>
+        <BitSize>2512</BitSize>
+        <BitOffs>0</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>TxBuffer</Name>
+        <Type Namespace="Tc2_SerialCom">ComBuffer</Type>
+        <BitSize>2512</BitSize>
+        <BitOffs>2512</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>stComIn</Name>
+        <Type Namespace="Tc2_SerialCom">EL6inData22B</Type>
+        <BitSize>192</BitSize>
+        <BitOffs>5024</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stComOut</Name>
+        <Type Namespace="Tc2_SerialCom">EL6outData22B</Type>
+        <BitSize>192</BitSize>
+        <BitOffs>5216</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+    </DataType>
+    <DataType>
+      <Name Namespace="Tc2_SerialCom">ComSerialLineMode_t</Name>
+      <BitSize>16</BitSize>
+      <BaseType>INT</BaseType>
+      <EnumInfo>
+        <Text>SERIALLINEMODE_DEFAULT</Text>
+        <Enum>0</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>SERIALLINEMODE_KL6_3B_ALTERNATIVE</Text>
+        <Enum>1</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>SERIALLINEMODE_KL6_5B_STANDARD</Text>
+        <Enum>2</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>SERIALLINEMODE_KL6_22B_STANDARD</Text>
+        <Enum>3</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>SERIALLINEMODE_PC_COM_PORT</Text>
+        <Enum>4</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>SERIALLINEMODE_EL6_22B</Text>
+        <Enum>5</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>SERIALLINEMODE_IE6_11B</Text>
+        <Enum>6</Enum>
+      </EnumInfo>
+    </DataType>
+    <DataType>
+      <Name Namespace="Tc2_SerialCom">ComDebugBuffer</Name>
+      <BitSize>9648</BitSize>
+      <SubItem>
+        <Name>Buffer</Name>
+        <Type>INT</Type>
+        <ArrayInfo>
+          <LBound>0</LBound>
+          <Elements>301</Elements>
+        </ArrayInfo>
+        <BitSize>4816</BitSize>
+        <BitOffs>0</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>Status</Name>
+        <Type>INT</Type>
+        <ArrayInfo>
+          <LBound>0</LBound>
+          <Elements>301</Elements>
+        </ArrayInfo>
+        <BitSize>4816</BitSize>
+        <BitOffs>4816</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>Idx</Name>
+        <Type>UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>9632</BitOffs>
+      </SubItem>
+      <Properties>
+        <Property>
+          <Name>hide</Name>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name Namespace="Tc2_SerialCom">SerialLineControl</Name>
+      <Comment> =============================================================
+ *	Modul:	Serial line interface controller for background communication
+ *			supports multiple interface types like 
+ *			KL6xxx 3 byte alternative mode
+ *			KL6xxx 5 byte standard mode
+ *			KL6xxx 22 byte standard mode with extended process data interface
+ *			KL6xxx 64 byte PC COM port
+ *			EL6xxx 22 byte 
+ *			IP6xxx 11 byte
+ *			communication between a serial line hardware device and 
+ *			PLC communication buffers (RxBuffer, TxBuffer)
+ *
+ *	Date: 	21.12.2004
+ * ============================================================= </Comment>
+      <BitSize>10432</BitSize>
+      <SubItem>
+        <Name>Mode</Name>
+        <Type Namespace="Tc2_SerialCom">ComSerialLineMode_t</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>32</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>pComIn</Name>
+        <Type>BYTE</Type>
+        <ArrayInfo PointerTo="1">
+          <LBound>0</LBound>
+          <Elements>66</Elements>
+        </ArrayInfo>
+        <Comment> must meet the maximum size of a hardware related data structure </Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>64</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>pComOut</Name>
+        <Type>BYTE</Type>
+        <ArrayInfo PointerTo="1">
+          <LBound>0</LBound>
+          <Elements>66</Elements>
+        </ArrayInfo>
+        <Comment> must meet the maximum size of a hardware related data structure </Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>96</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>SizeComIn</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>128</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>Error</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>144</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>ErrorID</Name>
+        <Type Namespace="Tc2_SerialCom">ComError_t</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>160</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>TxBuffer</Name>
+        <Type Namespace="Tc2_SerialCom" ReferenceTo="true">ComBuffer</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>192</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>InOut</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>RxBuffer</Name>
+        <Type Namespace="Tc2_SerialCom" ReferenceTo="true">ComBuffer</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>224</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>InOut</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>nBlockedCounter_TxBuffer</Name>
+        <Type>UDINT</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>256</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>nBlockedCounter_RxBuffer</Name>
+        <Type>UDINT</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>288</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>ComPortDebugBuffer</Name>
+        <Type Namespace="Tc2_SerialCom">ComDebugBuffer</Type>
+        <BitSize>9648</BitSize>
+        <BitOffs>320</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>InvalidDataExchangeMode</Name>
+        <Type>UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>9968</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>RegisterMode</Name>
+        <Type>UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>9984</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>pCTRL</Name>
+        <Type PointerTo="1">WORD</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>10016</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>pSTATUS</Name>
+        <Type PointerTo="1">WORD</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>10048</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>wCtrl</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10080</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>wStatus</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10096</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>RxCount</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10112</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>TxCount</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10128</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>DataIndex</Name>
+        <Type>UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10144</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>DataCountMask</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10160</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>DataCountShift</Name>
+        <Type>BYTE</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>10176</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>ReceiveHandshakeBit</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10192</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>TransmitHandshakeBit</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10208</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>TransmitBufferSentBit</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10224</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>ContinousModeStartBit</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10240</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>ReceiveBufferFullBit</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10256</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>ResetBit</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10272</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>RR</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10288</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>RA</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10304</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>TR</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10320</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>TA</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10336</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>IA</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10352</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>BUF_F</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10368</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>noTAcounter</Name>
+        <Type>BYTE</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>10384</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>initialized</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>10392</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>TransmitDataSent</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>10400</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>i</Name>
+        <Type>UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>10416</BitOffs>
+      </SubItem>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name>FB_SerialCommWrapper</Name>
+      <BitSize>10496</BitSize>
+      <SubItem>
+        <Name>stSerialComm</Name>
+        <Type ReferenceTo="true">ST_SerialComm</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>32</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>InOut</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbSerialLineControl</Name>
+        <Type Namespace="Tc2_SerialCom">SerialLineControl</Type>
+        <BitSize>10432</BitSize>
+        <BitOffs>64</BitOffs>
+      </SubItem>
       <Properties>
         <Property>
           <Name>PouType</Name>
@@ -4764,6 +4192,578 @@ fbSplit					: FB_Split255;</Comment>
         <Property>
           <Name>PouType</Name>
           <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name>ST_Proportionair</Name>
+      <BitSize>128</BitSize>
+      <SubItem>
+        <Name>xEnable</Name>
+        <Type>BOOL</Type>
+        <Comment> Control </Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>0</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Enable
+        io: io
+     </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>iSetpoint</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>16</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Setpoint
+        io: io
+     </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>iHiLimit</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>32</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: HighLimit
+        io: io
+     </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>iLoLimit</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>48</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: LowLimit
+        io: io
+     </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>xStable</Name>
+        <Type>BOOL</Type>
+        <Comment>TTL signal from the proportionair controller that the pressure is stable</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>64</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>iPressure</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>80</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Pressure
+        io: i
+     </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_iPressRB</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>96</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcDisplayScale</Name>
+            <Value>0-10</Value>
+          </Property>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>q_iPressCt</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>112</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcDisplayScale</Name>
+            <Value>0-10</Value>
+          </Property>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+    </DataType>
+    <DataType>
+      <Name>FB_ProportionairRegulator</Name>
+      <BitSize>64</BitSize>
+      <SubItem>
+        <Name>iq_stRegProp</Name>
+        <Type ReferenceTo="true">ST_Proportionair</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>32</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>InOut</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name>FB_PressureControlModule</Name>
+      <Comment> Encapsulation of a pressure control module.
+ A. Wallace, 2019-10-22
+ Support for 2 proportionairs, 4 generic analog inputs (usually a pressure gauge
+ and two shimadzu ports.</Comment>
+      <BitSize>32256</BitSize>
+      <SubItem>
+        <Name>stBaseIO</Name>
+        <Type>ST_M3DeviceBaseIO</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>32</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: IO
+     </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stSerial1</Name>
+        <Type>ST_SerialComm</Type>
+        <BitSize>5408</BitSize>
+        <BitOffs>48</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>stSerial2</Name>
+        <Type>ST_SerialComm</Type>
+        <BitSize>5408</BitSize>
+        <BitOffs>5456</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fbSerial1</Name>
+        <Type>FB_SerialCommWrapper</Type>
+        <BitSize>10496</BitSize>
+        <BitOffs>10880</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fbSerial2</Name>
+        <Type>FB_SerialCommWrapper</Type>
+        <BitSize>10496</BitSize>
+        <BitOffs>21376</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>stPropAir1</Name>
+        <Type>ST_Proportionair</Type>
+        <BitSize>128</BitSize>
+        <BitOffs>31872</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: PropAir:01
+     </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stPropAir2</Name>
+        <Type>ST_Proportionair</Type>
+        <BitSize>128</BitSize>
+        <BitOffs>32000</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: PropAir:02
+     </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>PropAir1</Name>
+        <Type>FB_ProportionairRegulator</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>32128</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>PropAir2</Name>
+        <Type>FB_ProportionairRegulator</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>32192</BitOffs>
+      </SubItem>
+      <Action>
+        <Name>SerialComm</Name>
+      </Action>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name GUID="{5C8FF47F-7F83-4493-8D21-F1FF8A08F75A}" Namespace="PLC" TcBaseType="true">PlcAppSystemInfo</Name>
+      <BitSize>2048</BitSize>
+      <SubItem>
+        <Name>ObjId</Name>
+        <Type GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>0</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>TaskCnt</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>32</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>OnlineChangeCnt</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>64</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>Flags</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>96</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>AdsPort</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>128</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>BootDataLoaded</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>144</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>OldBootData</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>152</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>AppTimestamp</Name>
+        <Type GUID="{18071995-0000-0000-0000-00000000004C}">DT</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>160</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>KeepOutputsOnBP</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>192</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>ShutdownInProgress</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>200</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>LicensesPending</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>208</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>BSODOccured</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>216</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>LoggedIn</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>224</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>TComSrvPtr</Name>
+        <Type GUID="{00000030-0000-0000-E000-000000000064}">ITComObjectServer</Type>
+        <BitSize X64="64">32</BitSize>
+        <BitOffs>256</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcComInterface</Name>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>AppName</Name>
+        <Type GUID="{18071995-0000-0000-0000-00010000003F}">STRING(63)</Type>
+        <BitSize>512</BitSize>
+        <BitOffs>512</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>ProjectName</Name>
+        <Type GUID="{18071995-0000-0000-0000-00010000003F}">STRING(63)</Type>
+        <BitSize>512</BitSize>
+        <BitOffs>1024</BitOffs>
+      </SubItem>
+      <Hides>
+        <Hide GUID="{D91E046A-A488-4D27-8D43-0F3C40ED5081}"/>
+        <Hide GUID="{5DCEB2BC-E196-43AD-80B7-EBACF31A430B}"/>
+        <Hide GUID="{1B9FDDE4-B3B7-4F0F-AB14-24EDC2F643E7}"/>
+        <Hide GUID="{C1C52E30-BC0B-44CA-BF39-E2FE7F2D145C}"/>
+      </Hides>
+    </DataType>
+    <DataType>
+      <Name>_Implicit_KindOfTask</Name>
+      <BitSize>16</BitSize>
+      <BaseType>INT</BaseType>
+      <EnumInfo>
+        <Text>_implicit_cyclic</Text>
+        <Enum>0</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>_implicit_event</Text>
+        <Enum>1</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>_implicit_external</Text>
+        <Enum>2</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>_implicit_freewheeling</Text>
+        <Enum>3</Enum>
+      </EnumInfo>
+    </DataType>
+    <DataType>
+      <Name>_Implicit_Jitter_Distribution</Name>
+      <BitSize>48</BitSize>
+      <SubItem>
+        <Name>wRangeMax</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>0</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>wCountJitterNeg</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>16</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>wCountJitterPos</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>32</BitOffs>
+      </SubItem>
+      <Properties>
+        <Property>
+          <Name>hide</Name>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name>_Implicit_Task_Info</Name>
+      <BitSize>704</BitSize>
+      <SubItem>
+        <Name>dwVersion</Name>
+        <Type>DWORD</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>0</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>pszName</Name>
+        <Type PointerTo="1">STRING(80)</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>32</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>nPriority</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>64</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>KindOf</Name>
+        <Type>_Implicit_KindOfTask</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>80</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bWatchdog</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>96</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bProfilingTask</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>104</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>dwEventFunctionPointer</Name>
+        <Type PointerTo="1">BYTE</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>128</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>pszExternalEvent</Name>
+        <Type PointerTo="1">STRING(80)</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>160</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>dwTaskEntryFunctionPointer</Name>
+        <Type PointerTo="1">BYTE</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>192</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>dwWatchdogSensitivity</Name>
+        <Type>DWORD</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>224</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>dwInterval</Name>
+        <Type>DWORD</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>256</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>dwWatchdogTime</Name>
+        <Type>DWORD</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>288</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>dwLastCycleTime</Name>
+        <Type>DWORD</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>320</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>dwAverageCycleTime</Name>
+        <Type>DWORD</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>352</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>dwMaxCycleTime</Name>
+        <Type>DWORD</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>384</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>dwMinCycleTime</Name>
+        <Type>DWORD</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>416</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>diJitter</Name>
+        <Type>DINT</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>448</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>diJitterMin</Name>
+        <Type>DINT</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>480</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>diJitterMax</Name>
+        <Type>DINT</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>512</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>dwCycleCount</Name>
+        <Type>DWORD</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>544</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>wTaskStatus</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>576</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>wNumOfJitterDistributions</Name>
+        <Type>WORD</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>592</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>pJitterDistribution</Name>
+        <Type PointerTo="1">_Implicit_Jitter_Distribution</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>608</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bWithinSPSTimeSlicing</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>640</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>byDummy</Name>
+        <Type>BYTE</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>648</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bShouldBlock</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>656</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bActive</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>664</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>dwIECCycleCount</Name>
+        <Type>DWORD</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>672</BitOffs>
+      </SubItem>
+      <Properties>
+        <Property>
+          <Name>hide</Name>
         </Property>
       </Properties>
     </DataType>
@@ -10849,6 +10849,11 @@ fbSplit					: FB_Split255;</Comment>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_BOOL</Name>
@@ -10981,6 +10986,11 @@ fbSplit					: FB_Split255;</Comment>
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -11140,6 +11150,11 @@ fbSplit					: FB_Split255;</Comment>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>GetNumberOfSuccessfulTests</Name>
@@ -11246,6 +11261,11 @@ fbSplit					: FB_Split255;</Comment>
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -11379,6 +11399,11 @@ fbSplit					: FB_Split255;</Comment>
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -11859,6 +11884,11 @@ fbSplit					: FB_Split255;</Comment>
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -12627,6 +12657,11 @@ fbSplit					: FB_Split255;</Comment>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_TIME</Name>
@@ -13018,6 +13053,11 @@ fbSplit					: FB_Split255;</Comment>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_INT</Name>
@@ -13109,6 +13149,11 @@ fbSplit					: FB_Split255;</Comment>
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -13236,6 +13281,11 @@ fbSplit					: FB_Split255;</Comment>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_LWORD</Name>
@@ -13337,6 +13387,11 @@ fbSplit					: FB_Split255;</Comment>
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -13653,6 +13708,11 @@ fbSplit					: FB_Split255;</Comment>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AreAllTestsFinished</Name>
@@ -13817,6 +13877,11 @@ fbSplit					: FB_Split255;</Comment>
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -14001,6 +14066,11 @@ fbSplit					: FB_Split255;</Comment>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_LREAL</Name>
@@ -14098,6 +14168,11 @@ fbSplit					: FB_Split255;</Comment>
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -15673,7 +15748,103 @@ fbSplit					: FB_Split255;</Comment>
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>SerialComm Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>3145728</ByteSize>
+          <ByteSize>2293760</ByteSize>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorA.stViciSerial.stComIn</Name>
+            <BitSize>192</BitSize>
+            <BaseType Namespace="Tc2_SerialCom">EL6inData22B</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>8989888</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorA.stSensSerial.stComIn</Name>
+            <BitSize>192</BitSize>
+            <BaseType Namespace="Tc2_SerialCom">EL6inData22B</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>10106272</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorB.stViciSerial.stComIn</Name>
+            <BitSize>192</BitSize>
+            <BaseType Namespace="Tc2_SerialCom">EL6inData22B</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>10510240</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorB.stSensSerial.stComIn</Name>
+            <BitSize>192</BitSize>
+            <BaseType Namespace="Tc2_SerialCom">EL6inData22B</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>11626624</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorC.stViciSerial.stComIn</Name>
+            <BitSize>192</BitSize>
+            <BaseType Namespace="Tc2_SerialCom">EL6inData22B</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>12030592</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorC.stSensSerial.stComIn</Name>
+            <BitSize>192</BitSize>
+            <BaseType Namespace="Tc2_SerialCom">EL6inData22B</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>13146976</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorD.stViciSerial.stComIn</Name>
+            <BitSize>192</BitSize>
+            <BaseType Namespace="Tc2_SerialCom">EL6inData22B</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>13550944</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorD.stSensSerial.stComIn</Name>
+            <BitSize>192</BitSize>
+            <BaseType Namespace="Tc2_SerialCom">EL6inData22B</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>14667328</BitOffs>
+          </Symbol>
           <Symbol>
             <Name>GVL_Devices.PCMA.stSerial1.stComIn</Name>
             <BitSize>192</BitSize>
@@ -15770,108 +15941,108 @@ fbSplit					: FB_Split255;</Comment>
             </Properties>
             <BitOffs>14775952</BitOffs>
           </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorA.stViciSerial.stComIn</Name>
-            <BitSize>192</BitSize>
-            <BaseType Namespace="Tc2_SerialCom">EL6inData22B</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>18680480</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorA.stSensSerial.stComIn</Name>
-            <BitSize>192</BitSize>
-            <BaseType Namespace="Tc2_SerialCom">EL6inData22B</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>19796864</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorB.stViciSerial.stComIn</Name>
-            <BitSize>192</BitSize>
-            <BaseType Namespace="Tc2_SerialCom">EL6inData22B</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>20200832</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorB.stSensSerial.stComIn</Name>
-            <BitSize>192</BitSize>
-            <BaseType Namespace="Tc2_SerialCom">EL6inData22B</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>21317216</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorC.stViciSerial.stComIn</Name>
-            <BitSize>192</BitSize>
-            <BaseType Namespace="Tc2_SerialCom">EL6inData22B</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>21721184</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorC.stSensSerial.stComIn</Name>
-            <BitSize>192</BitSize>
-            <BaseType Namespace="Tc2_SerialCom">EL6inData22B</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>22837568</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorD.stViciSerial.stComIn</Name>
-            <BitSize>192</BitSize>
-            <BaseType Namespace="Tc2_SerialCom">EL6inData22B</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>23722968</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorD.stSensSerial.stComIn</Name>
-            <BitSize>192</BitSize>
-            <BaseType Namespace="Tc2_SerialCom">EL6inData22B</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>24839352</BitOffs>
-          </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>SerialComm Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>3145728</ByteSize>
+          <ByteSize>2293760</ByteSize>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorA.stViciSerial.stComOut</Name>
+            <BitSize>192</BitSize>
+            <BaseType Namespace="Tc2_SerialCom">EL6outData22B</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>8990080</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorA.stSensSerial.stComOut</Name>
+            <BitSize>192</BitSize>
+            <BaseType Namespace="Tc2_SerialCom">EL6outData22B</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>10106464</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorB.stViciSerial.stComOut</Name>
+            <BitSize>192</BitSize>
+            <BaseType Namespace="Tc2_SerialCom">EL6outData22B</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>10510432</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorB.stSensSerial.stComOut</Name>
+            <BitSize>192</BitSize>
+            <BaseType Namespace="Tc2_SerialCom">EL6outData22B</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>11626816</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorC.stViciSerial.stComOut</Name>
+            <BitSize>192</BitSize>
+            <BaseType Namespace="Tc2_SerialCom">EL6outData22B</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>12030784</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorC.stSensSerial.stComOut</Name>
+            <BitSize>192</BitSize>
+            <BaseType Namespace="Tc2_SerialCom">EL6outData22B</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>13147168</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorD.stViciSerial.stComOut</Name>
+            <BitSize>192</BitSize>
+            <BaseType Namespace="Tc2_SerialCom">EL6outData22B</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>13551136</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorD.stSensSerial.stComOut</Name>
+            <BitSize>192</BitSize>
+            <BaseType Namespace="Tc2_SerialCom">EL6outData22B</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>14667520</BitOffs>
+          </Symbol>
           <Symbol>
             <Name>GVL_Devices.PCMA.stSerial1.stComOut</Name>
             <BitSize>192</BitSize>
@@ -15968,108 +16139,138 @@ fbSplit					: FB_Split255;</Comment>
             </Properties>
             <BitOffs>14776144</BitOffs>
           </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorA.stViciSerial.stComOut</Name>
-            <BitSize>192</BitSize>
-            <BaseType Namespace="Tc2_SerialCom">EL6outData22B</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>18680672</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorA.stSensSerial.stComOut</Name>
-            <BitSize>192</BitSize>
-            <BaseType Namespace="Tc2_SerialCom">EL6outData22B</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>19797056</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorB.stViciSerial.stComOut</Name>
-            <BitSize>192</BitSize>
-            <BaseType Namespace="Tc2_SerialCom">EL6outData22B</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>20201024</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorB.stSensSerial.stComOut</Name>
-            <BitSize>192</BitSize>
-            <BaseType Namespace="Tc2_SerialCom">EL6outData22B</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>21317408</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorC.stViciSerial.stComOut</Name>
-            <BitSize>192</BitSize>
-            <BaseType Namespace="Tc2_SerialCom">EL6outData22B</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>21721376</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorC.stSensSerial.stComOut</Name>
-            <BitSize>192</BitSize>
-            <BaseType Namespace="Tc2_SerialCom">EL6outData22B</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>22837760</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorD.stViciSerial.stComOut</Name>
-            <BitSize>192</BitSize>
-            <BaseType Namespace="Tc2_SerialCom">EL6outData22B</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>23723160</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorD.stSensSerial.stComOut</Name>
-            <BitSize>192</BitSize>
-            <BaseType Namespace="Tc2_SerialCom">EL6outData22B</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>24839544</BitOffs>
-          </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>SerialComm Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>3145728</ByteSize>
+          <ByteSize>2293760</ByteSize>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorA</Name>
+            <Comment> ALI - rarely used, stages need to be redone in new format 
+    stALI	:	ST_ALI;
+{attribute 'pytmc' := '
+    pv: @(P):PCM:A
+ '}
+ALI : FB_ALI;</Comment>
+            <BitSize>1520352</BitSize>
+            <BaseType>FB_SelectorM3</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: @(P):SEL:A
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.stSensSerial.stComIn.Status := TIIB[M3 Selector A Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
+                          .stViciSerial.stComIn.Status := TIIB[M3 Selector A Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+                          .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector A Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                          .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector A Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                          .stShaker01.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 9^Output;
+                          .stShaker02.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 10^Output;
+                          .stShaker03.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 11^Output;
+                          .stShaker04.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 12^Output;
+                          .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector A (EP1111)^WcState^WcState;
+</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>8587296</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorB</Name>
+            <BitSize>1520352</BitSize>
+            <BaseType>FB_SelectorM3</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: @(P):SEL:B
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.stSensSerial.stComIn.Status := TIIB[M3 Selector B Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
+                          .stViciSerial.stComIn.Status := TIIB[M3 Selector B Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+                          .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector B Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                          .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector B Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                          .stShaker01.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 9^Output;
+                          .stShaker02.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 10^Output;
+                          .stShaker03.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 11^Output;
+                          .stShaker04.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 12^Output;
+                          .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector B (EP1111)^WcState^WcState
+</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>10107648</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorC</Name>
+            <BitSize>1520352</BitSize>
+            <BaseType>FB_SelectorM3</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: @(P):SEL:C
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.stSensSerial.stComIn.Status := TIIB[M3 Selector C Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
+                          .stViciSerial.stComIn.Status := TIIB[M3 Selector C Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+                          .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector C Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                          .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector C Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                          .stShaker01.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 9^Output;
+                          .stShaker02.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 10^Output;
+                          .stShaker03.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 11^Output;
+                          .stShaker04.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 12^Output;
+                          .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector C (EP1111)^WcState^WcState
+</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>11628000</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorD</Name>
+            <BitSize>1520352</BitSize>
+            <BaseType>FB_SelectorM3</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: @(P):SEL:D
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.stSensSerial.stComIn.Status := TIIB[M3 Selector D Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
+                          .stViciSerial.stComIn.Status := TIIB[M3 Selector D Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+                          .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector D Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                          .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector D Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                          .stShaker01.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 9^Output;
+                          .stShaker02.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 10^Output;
+                          .stShaker03.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 11^Output;
+                          .stShaker04.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 12^Output;
+                          .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector D (EP1111)^WcState^WcState
+</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>13148352</BitOffs>
+          </Symbol>
           <Symbol>
             <Name>GVL_Devices.PCMA</Name>
             <BitSize>32256</BitSize>
@@ -16254,138 +16455,12 @@ fbSplit					: FB_Split255;</Comment>
             </Properties>
             <BitOffs>15012032</BitOffs>
           </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorA</Name>
-            <Comment> ALI - rarely used, stages need to be redone in new format 
-    stALI	:	ST_ALI;
-{attribute 'pytmc' := '
-    pv: @(P):PCM:A
- '}
-ALI : FB_ALI;</Comment>
-            <BitSize>1520352</BitSize>
-            <BaseType>FB_SelectorM3</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: @(P):SEL:A
- </Value>
-              </Property>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>.stSensSerial.stComIn.Status := TIIB[M3 Selector A Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
-                          .stViciSerial.stComIn.Status := TIIB[M3 Selector A Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
-                          .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector A Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
-                          .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector A Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
-                          .stShaker01.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 9^Output;
-                          .stShaker02.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 10^Output;
-                          .stShaker03.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 11^Output;
-                          .stShaker04.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 12^Output;
-                          .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector A (EP1111)^WcState^WcState;
-</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>18277888</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorB</Name>
-            <BitSize>1520352</BitSize>
-            <BaseType>FB_SelectorM3</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: @(P):SEL:B
- </Value>
-              </Property>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>.stSensSerial.stComIn.Status := TIIB[M3 Selector B Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
-                          .stViciSerial.stComIn.Status := TIIB[M3 Selector B Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
-                          .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector B Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
-                          .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector B Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
-                          .stShaker01.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 9^Output;
-                          .stShaker02.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 10^Output;
-                          .stShaker03.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 11^Output;
-                          .stShaker04.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 12^Output;
-                          .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector B (EP1111)^WcState^WcState
-</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>19798240</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorC</Name>
-            <BitSize>1520352</BitSize>
-            <BaseType>FB_SelectorM3</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: @(P):SEL:C
- </Value>
-              </Property>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>.stSensSerial.stComIn.Status := TIIB[M3 Selector C Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
-                          .stViciSerial.stComIn.Status := TIIB[M3 Selector C Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
-                          .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector C Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
-                          .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector C Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
-                          .stShaker01.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 9^Output;
-                          .stShaker02.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 10^Output;
-                          .stShaker03.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 11^Output;
-                          .stShaker04.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 12^Output;
-                          .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector C (EP1111)^WcState^WcState
-</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>21318592</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorD</Name>
-            <BitSize>1520352</BitSize>
-            <BaseType>FB_SelectorM3</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: @(P):SEL:D
- </Value>
-              </Property>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>.stSensSerial.stComIn.Status := TIIB[M3 Selector D Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
-                          .stViciSerial.stComIn.Status := TIIB[M3 Selector D Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
-                          .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector D Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
-                          .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector D Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
-                          .stShaker01.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 9^Output;
-                          .stShaker02.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 10^Output;
-                          .stShaker03.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 11^Output;
-                          .stShaker04.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 12^Output;
-                          .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector D (EP1111)^WcState^WcState
-</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>23320376</BitOffs>
-          </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="InputDst" CreateSymbols="true">16</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>1</ContextId>
-          <ByteSize>3145728</ByteSize>
+          <ByteSize>2293760</ByteSize>
           <Symbol>
             <Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
             <Comment> AMS Net ID used for FB_EcatDiag, among others </Comment>
@@ -16432,6 +16507,106 @@ ALI : FB_ALI;</Comment>
               </Property>
             </Properties>
             <BitOffs>8562104</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorA.stBaseIO.i_SyncUnitWC</Name>
+            <Comment> This structure should be used as a basis for M3 arch. IO clusters.
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: SyncUnitOK
+        io: i
+     </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>8587328</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorB.stBaseIO.i_SyncUnitWC</Name>
+            <Comment> This structure should be used as a basis for M3 arch. IO clusters.
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: SyncUnitOK
+        io: i
+     </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>10107680</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorC.stBaseIO.i_SyncUnitWC</Name>
+            <Comment> This structure should be used as a basis for M3 arch. IO clusters.
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: SyncUnitOK
+        io: i
+     </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>11628032</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorD.stBaseIO.i_SyncUnitWC</Name>
+            <Comment> This structure should be used as a basis for M3 arch. IO clusters.
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
+WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: SyncUnitOK
+        io: i
+     </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>13148384</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Devices.PCMA.stBaseIO.i_SyncUnitWC</Name>
@@ -16870,112 +17045,316 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
             </Properties>
             <BitOffs>14798752</BitOffs>
           </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorA.stBaseIO.i_SyncUnitWC</Name>
-            <Comment> This structure should be used as a basis for M3 arch. IO clusters.
-    Will stash stuff like ethercat diagnostics and other general purpose stuff 
-WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Default>
-              <Value>1</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: SyncUnitOK
-        io: i
-     </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>18277920</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorB.stBaseIO.i_SyncUnitWC</Name>
-            <Comment> This structure should be used as a basis for M3 arch. IO clusters.
-    Will stash stuff like ethercat diagnostics and other general purpose stuff 
-WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Default>
-              <Value>1</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: SyncUnitOK
-        io: i
-     </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>19798272</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorC.stBaseIO.i_SyncUnitWC</Name>
-            <Comment> This structure should be used as a basis for M3 arch. IO clusters.
-    Will stash stuff like ethercat diagnostics and other general purpose stuff 
-WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Default>
-              <Value>1</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: SyncUnitOK
-        io: i
-     </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>21318624</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorD.stBaseIO.i_SyncUnitWC</Name>
-            <Comment> This structure should be used as a basis for M3 arch. IO clusters.
-    Will stash stuff like ethercat diagnostics and other general purpose stuff 
-WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Default>
-              <Value>1</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: SyncUnitOK
-        io: i
-     </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>23320408</BitOffs>
-          </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">17</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>1</ContextId>
-          <ByteSize>3145728</ByteSize>
+          <ByteSize>2293760</ByteSize>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorA.stShaker01.q_xPwrDO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: PowerOn
+    io: i
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>8591616</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorA.stShaker02.q_xPwrDO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: PowerOn
+    io: i
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>8591648</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorA.stShaker03.q_xPwrDO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: PowerOn
+    io: i
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>8591680</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorA.stShaker04.q_xPwrDO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: PowerOn
+    io: i
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>8591712</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorB.stShaker01.q_xPwrDO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: PowerOn
+    io: i
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>10111968</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorB.stShaker02.q_xPwrDO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: PowerOn
+    io: i
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>10112000</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorB.stShaker03.q_xPwrDO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: PowerOn
+    io: i
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>10112032</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorB.stShaker04.q_xPwrDO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: PowerOn
+    io: i
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>10112064</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorC.stShaker01.q_xPwrDO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: PowerOn
+    io: i
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>11632320</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorC.stShaker02.q_xPwrDO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: PowerOn
+    io: i
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>11632352</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorC.stShaker03.q_xPwrDO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: PowerOn
+    io: i
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>11632384</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorC.stShaker04.q_xPwrDO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: PowerOn
+    io: i
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>11632416</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorD.stShaker01.q_xPwrDO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: PowerOn
+    io: i
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>13152672</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorD.stShaker02.q_xPwrDO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: PowerOn
+    io: i
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>13152704</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorD.stShaker03.q_xPwrDO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: PowerOn
+    io: i
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>13152736</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Devices.M3SelectorD.stShaker04.q_xPwrDO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+    pv: PowerOn
+    io: i
+ </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>13152768</BitOffs>
+          </Symbol>
           <Symbol>
             <Name>GVL_Devices.PCMA.stPropAir1.q_iPressCt</Name>
             <BitSize>16</BitSize>
@@ -17264,316 +17643,12 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
             </Properties>
             <BitOffs>14798000</BitOffs>
           </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorA.stShaker01.q_xPwrDO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: PowerOn
-    io: i
- </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>18282208</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorA.stShaker02.q_xPwrDO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: PowerOn
-    io: i
- </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>18282240</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorA.stShaker03.q_xPwrDO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: PowerOn
-    io: i
- </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>18282272</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorA.stShaker04.q_xPwrDO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: PowerOn
-    io: i
- </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>18282304</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorB.stShaker01.q_xPwrDO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: PowerOn
-    io: i
- </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>19802560</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorB.stShaker02.q_xPwrDO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: PowerOn
-    io: i
- </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>19802592</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorB.stShaker03.q_xPwrDO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: PowerOn
-    io: i
- </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>19802624</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorB.stShaker04.q_xPwrDO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: PowerOn
-    io: i
- </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>19802656</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorC.stShaker01.q_xPwrDO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: PowerOn
-    io: i
- </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>21322912</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorC.stShaker02.q_xPwrDO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: PowerOn
-    io: i
- </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>21322944</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorC.stShaker03.q_xPwrDO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: PowerOn
-    io: i
- </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>21322976</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorC.stShaker04.q_xPwrDO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: PowerOn
-    io: i
- </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>21323008</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorD.stShaker01.q_xPwrDO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: PowerOn
-    io: i
- </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>23324696</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorD.stShaker02.q_xPwrDO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: PowerOn
-    io: i
- </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>23324728</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorD.stShaker03.q_xPwrDO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: PowerOn
-    io: i
- </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>23324760</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Devices.M3SelectorD.stShaker04.q_xPwrDO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    pv: PowerOn
-    io: i
- </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>23324792</BitOffs>
-          </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="Internal" CreateSymbols="true">19</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>1</ContextId>
-          <ByteSize>3145728</ByteSize>
+          <ByteSize>2293760</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -23318,7 +23393,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2021-05-22T02:16:48</Value>
+          <Value>2021-07-02T16:09:07</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>

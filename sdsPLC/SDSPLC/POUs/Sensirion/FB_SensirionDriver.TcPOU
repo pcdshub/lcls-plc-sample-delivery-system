@@ -55,11 +55,6 @@ END_VAR
       <ST><![CDATA[(* This function block performs serial communication with a Sensirion meter *)
 
 
-(* 2015-4-8
-The sensirion flow meter is direction agnostic. To make it work more like the Bronkhorst and other flowmeters
-I limited the readback to the appropriate ranges. Negative flow is discarded.
-*)
-
 (* rising edge trigger *)
 rtExecute(CLK:= i_xExecute);
 rtReInit(CLK:= i_stControl.xReset);
@@ -580,7 +575,7 @@ CASE iStep OF
                 //Conversion from int to real value using the unit
                 IF ((INT_TO_WORD(iUnit) AND 16#000F)=16#0003) OR ((INT_TO_WORD(iUnit) AND 16#000F)=16#0004) THEN //lsb of iUnit is magnitude, should only be one thing
 
-                    q_stStatus.rFlow := ABS((INT_TO_REAL(q_stStatus.iFlowTicks)/INT_TO_REAL(iScale))*EXPT(10,-3)); //converting from nL to uL
+                    q_stStatus.rFlow := (INT_TO_REAL(q_stStatus.iFlowTicks)/INT_TO_REAL(iScale))*EXPT(10,-3); //converting from nL to uL
 
                     (* Check flow readback against calibration range for OoR *)
                     //calibration of 0 for precision mode, 250 nL/min - 5000 nL/min
@@ -604,11 +599,11 @@ CASE iStep OF
                     END_IF
                     q_stStatus.xFlowValid := (q_stStatus.iState = 0); // Flow valid if OK
 
-                    // Limit the measured flowrate based on the calmode, note this disregards negative flow
+                    // Limit the measured flowrate based on the calmode
                     IF q_stStatus.xFMMode THEN
-                        q_stStatus.rFlow := LIMIT(0, q_stStatus.rFlow, 20000E-3);
+                        q_stStatus.rFlow := LIMIT(-20000E-3, q_stStatus.rFlow, 20000E-3);
                     ELSE
-                        q_stStatus.rFlow := LIMIT(0, q_stStatus.rFlow, 5000E-3);
+                        q_stStatus.rFlow := LIMIT(-5000E-3, q_stStatus.rFlow, 5000E-3);
                     END_IF
 
                 ELSE

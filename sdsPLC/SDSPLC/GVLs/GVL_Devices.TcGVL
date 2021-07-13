@@ -163,6 +163,30 @@ GasMan : FB_GasManifold;
 '}
 BronkhorstA : FB_BronkhorstMFM;
 
+{attribute 'pytmc' := '
+    pv: @(P):MFM:B
+ '}
+{attribute 'TcLinkTo' := '.stMFM.i_mfmFlow := TIID^MAIN (EtherCAT)^Bronkhorst MFM B^TxPDO^fMeasure;
+						  .stMFM.i_RawUnit := TIID^MAIN (EtherCAT)^Bronkhorst MFM B^TxPDO^Unit;
+'}
+BronkhorstB : FB_BronkhorstMFM;
+
+{attribute 'pytmc' := '
+    pv: @(P):MFM:C
+ '}
+{attribute 'TcLinkTo' := '.stMFM.i_mfmFlow := TIID^MAIN (EtherCAT)^Bronkhorst MFM C^TxPDO^fMeasure;
+						  .stMFM.i_RawUnit := TIID^MAIN (EtherCAT)^Bronkhorst MFM C^TxPDO^Unit;
+'}
+BronkhorstC : FB_BronkhorstMFM;
+
+{attribute 'pytmc' := '
+    pv: @(P):MFM:D
+ '}
+{attribute 'TcLinkTo' := '.stMFM.i_mfmFlow := TIID^MAIN (EtherCAT)^Bronkhorst MFM D^TxPDO^fMeasure;
+						  .stMFM.i_RawUnit := TIID^MAIN (EtherCAT)^Bronkhorst MFM D^TxPDO^Unit;
+'}
+BronkhorstD : FB_BronkhorstMFM;
+
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

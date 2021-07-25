@@ -9,26 +9,22 @@ STRUCT
         pv: Unit
         io: i
      '}
+	i_sUnit			AT %I*	:	STRING;
+	 
 	i_udiUnit	:	UDINT;
+	
     {attribute 'pytmc' := '
         pv: Flow
         io: i
      '}
-	i_rFlow	:	REAL;
-    
-    i_mfmFlow		AT %I*	:	REAL;
-	i_RawUnit		AT %I*	:	UDINT;
-	
-	i_rCapacity :	REAL := 1000; //change to default
-	
+	i_rFlow			AT %I*	:	REAL;
 	
 	{attribute 'pytmc' := '
         pv: Setpoint
         io: o
      '}
-	q_rSetpoint :	REAL;
+	q_rSetpoint 	AT %Q*	:	REAL;
 	
-	q_mfmSetpoint	AT %Q*	:	REAL;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

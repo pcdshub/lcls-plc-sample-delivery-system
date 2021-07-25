@@ -14,7 +14,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//stMFM.i_rFlow = Output;]]></ST>
+      <ST><![CDATA[]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

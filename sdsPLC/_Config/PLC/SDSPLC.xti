@@ -401,36 +401,36 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.BronkhorstA.stMFM.i_mfmFlow</Name>
+					<Name>GVL_Devices.BronkhorstA.stMFM.i_sUnit</Name>
+					<Type>STRING(80)</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.BronkhorstA.stMFM.i_rFlow</Name>
 					<Type>REAL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.BronkhorstA.stMFM.i_RawUnit</Name>
-					<Type>UDINT</Type>
+					<Name>GVL_Devices.BronkhorstB.stMFM.i_sUnit</Name>
+					<Type>STRING(80)</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.BronkhorstB.stMFM.i_mfmFlow</Name>
+					<Name>GVL_Devices.BronkhorstB.stMFM.i_rFlow</Name>
 					<Type>REAL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.BronkhorstB.stMFM.i_RawUnit</Name>
-					<Type>UDINT</Type>
+					<Name>GVL_Devices.BronkhorstC.stMFM.i_sUnit</Name>
+					<Type>STRING(80)</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.BronkhorstC.stMFM.i_mfmFlow</Name>
+					<Name>GVL_Devices.BronkhorstC.stMFM.i_rFlow</Name>
 					<Type>REAL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.BronkhorstC.stMFM.i_RawUnit</Name>
-					<Type>UDINT</Type>
+					<Name>GVL_Devices.BronkhorstD.stMFM.i_sUnit</Name>
+					<Type>STRING(80)</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.BronkhorstD.stMFM.i_mfmFlow</Name>
+					<Name>GVL_Devices.BronkhorstD.stMFM.i_rFlow</Name>
 					<Type>REAL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.BronkhorstD.stMFM.i_RawUnit</Name>
-					<Type>UDINT</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
@@ -588,19 +588,19 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.BronkhorstA.stMFM.q_mfmSetpoint</Name>
+					<Name>GVL_Devices.BronkhorstA.stMFM.q_rSetpoint</Name>
 					<Type>REAL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.BronkhorstB.stMFM.q_mfmSetpoint</Name>
+					<Name>GVL_Devices.BronkhorstB.stMFM.q_rSetpoint</Name>
 					<Type>REAL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.BronkhorstC.stMFM.q_mfmSetpoint</Name>
+					<Name>GVL_Devices.BronkhorstC.stMFM.q_rSetpoint</Name>
 					<Type>REAL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.BronkhorstD.stMFM.q_mfmSetpoint</Name>
+					<Name>GVL_Devices.BronkhorstD.stMFM.q_rSetpoint</Name>
 					<Type>REAL</Type>
 				</Var>
 			</Vars>
@@ -1377,6 +1377,18 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 		<OwnerA Name="SDSPLC Instance">
 			<OwnerB Name="TIID^MAIN (EtherCAT)">
 				<Link VarA="PlcTask Inputs^GVL.g_aEcatMaster1" VarB="InfoData^AmsNetId"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^Bronkhorst MFM A">
+				<Link VarA="PlcTask Inputs^GVL_Devices.BronkhorstA.stMFM.i_rFlow" VarB="TxPDO Map^fMeasure" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.BronkhorstA.stMFM.q_rSetpoint" VarB="RxPDO Map^fSetpoint" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^Bronkhorst MFM B">
+				<Link VarA="PlcTask Inputs^GVL_Devices.BronkhorstB.stMFM.i_rFlow" VarB="TxPDO Map^fMeasure" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.BronkhorstB.stMFM.q_rSetpoint" VarB="RxPDO Map^fSetpoint" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^MAIN (EtherCAT)^Bronkhorst MFM C">
+				<Link VarA="PlcTask Inputs^GVL_Devices.BronkhorstC.stMFM.i_rFlow" VarB="TxPDO Map^fMeasure" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.BronkhorstC.stMFM.q_rSetpoint" VarB="RxPDO Map^fSetpoint" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^Gas_Mani (EP1111)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.GasMan.stBaseIO.i_SyncUnitWC" VarB="WcState^WcState" AutoLink="true"/>

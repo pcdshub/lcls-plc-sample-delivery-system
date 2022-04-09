@@ -178,6 +178,9 @@
     <Compile Include="POUs\Bronkhorst\FB_BronkhorstMFM.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\DigitalOutput\FB_SolenoidPair.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\GasManifold\FB_GasManifold.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -287,6 +290,7 @@
     <Folder Include="DUTs\Sensirion" />
     <Folder Include="GVLs" />
     <Folder Include="POUs\Bronkhorst" />
+    <Folder Include="POUs\DigitalOutput" />
     <Folder Include="POUs\Helpers" />
     <Folder Include="POUs\ALI" />
     <Folder Include="POUs\Flowmeters" />

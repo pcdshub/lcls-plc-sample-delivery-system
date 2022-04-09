@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_SolenoidPair" Id="{23ddf2e7-415d-4237-9e6d-fcc92e4bc96b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SolenoidPair
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR_IN_OUT
+END_VAR
+VAR
+	{attribute 'pytmc' := '
+        pv: Valve:01:Open
+		io: io
+     '}
+	q_xDO1 AT %Q*	:	BOOL;
+	{attribute 'pytmc' := '
+        pv: Valve:02:Open
+		io: io
+     '}
+	q_xDO2 AT %Q*	:	BOOL;
+	
+	{attribute 'pytmc' := '
+        pv: Switch
+		io: o
+     '}
+	i_xEpics AT %I* : BOOL; // open A when False, open B when True
+	
+	{attribute 'pytmc' := '
+        pv: Debug
+		io: o
+     '}
+	i_xDebug AT %I* : BOOL; // if True, do not set valves according to i_xEpics
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Basic valve control block, no interlock *)
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

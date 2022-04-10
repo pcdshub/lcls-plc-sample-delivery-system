@@ -11,7 +11,7 @@ STRUCT
      '}
 	xSW : BOOL; //epics control
     {attribute 'pytmc' := '
-        pv: OpenDO
+        pv: CloseDO
         io: i
      '}
 	qxDO AT %Q* : BOOL; //actual valve output

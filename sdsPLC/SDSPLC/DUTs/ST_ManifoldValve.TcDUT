@@ -30,6 +30,12 @@ STRUCT
      '}
 	xILK :	BOOL; // permissive bit
 
+	{attribute 'pytmc' := '
+        pv: Name
+        io: i
+    '}
+    sName: STRING;
+
 END_STRUCT
 END_TYPE
 ]]></Declaration>

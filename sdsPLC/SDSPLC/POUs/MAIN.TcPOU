@@ -3,35 +3,10 @@
   <POU Name="MAIN" Id="{42c5d645-8f72-4a7d-9897-ab636f1cee6d}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	
-		//fb_S_UPS	:	FB_S_UPS;
-		
-		//fbEcatDiag1	:	FB_EcatDiag;
-		//fbEcatDiag2 :	FB_EcatDiag;
-	
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
-
-//fb_S_UPS.iPLCPort := AMSPORT_R0_PLC_RTS2;
-//fb_S_UPS(iPLCPort:=851);
-
-//p_Autosave();
-
-//p_ESTOP();
-
-//fbEcatDiag1(i_AMSNetId:=g_aEcatMaster1, i_xFirstPass:=g_xFirstPass, q_xAllStatesGood=>g_xIOState);
-//fbEcatDiag2(i_AMSNetId:=g_aEcatMaster2, i_xFirstPass:=g_xFirstPass, q_xAllStatesGood=>g_xIOState);
-
-//p_SoftIO();
-
-//p_Regulators();
-//p_Manifold();
-//p_ALI();
-//p_VacGaugeSup();
-
-M3SelectorA();
+      <ST><![CDATA[M3SelectorA();
 M3SelectorB();
 M3SelectorC();
 M3SelectorD();
@@ -41,10 +16,10 @@ PCMC();
 PCMD();
 GasMan();
 BronkhorstA();
-
-//p_CoolerShaker();
-
-//p_StatusLights();
+BronkhorstB();
+BronkhorstC();
+BronkhorstD();
+SolenoidPairA();
 
 (* Following execution of all the programs, set the first pass false *)
 g_xFirstPass := FALSE;]]></ST>

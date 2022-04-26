@@ -34,8 +34,11 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(* Basic valve control block, no interlock *)
-]]></ST>
+      <ST><![CDATA[(* If debug, set independently. Else, only open one valve according to i_xEpics *)
+IF NOT i_xDebug THEN
+	q_xDO1 := NOT i_xEpics;
+	q_xDO2 := i_xEpics;
+END_IF]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

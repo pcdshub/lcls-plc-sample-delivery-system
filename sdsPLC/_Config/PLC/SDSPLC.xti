@@ -2261,7 +2261,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 			</OwnerB>
 			<OwnerB Name="TIID^MAIN (EtherCAT)^Solenoid Pair A Digital IO (EP2338-1001)">
 				<Link VarA="PlcTask Outputs^GVL_Devices.SolenoidPairA.q_xDO1" VarB="Channel 9^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Devices.SolenoidPairA.q_xDO2" VarB="Channel 10^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.SolenoidPairA.q_xDO2" VarB="Channel 10^Output" AutoLink="true"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

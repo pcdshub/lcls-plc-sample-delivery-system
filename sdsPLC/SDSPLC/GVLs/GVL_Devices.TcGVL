@@ -189,7 +189,7 @@ BronkhorstD : FB_BronkhorstMFM;
     pv: @(P):SPR:A
  '}
 {attribute 'TcLinkTo' := '.q_xDO1 := TIIB[Solenoid Pair A Digital IO (EP2338-1001)]^Channel 9^Output;
-						 '.q_xDO2 := TIIB[Solenoid Pair A Digital IO (EP2338-1001)]^Channel 10^Output;
+						  .q_xDO2 := TIIB[Solenoid Pair A Digital IO (EP2338-1001)]^Channel 10^Output;
 '}
 SolenoidPairA : FB_SolenoidPair;
 

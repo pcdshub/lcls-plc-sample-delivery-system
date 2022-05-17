@@ -2259,7 +2259,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 				<Link VarA="SerialComm Outputs^GVL_Devices.PCMD.stSerial2.stComOut^D" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 8" Size="8" OffsA="64"/>
 				<Link VarA="SerialComm Outputs^GVL_Devices.PCMD.stSerial2.stComOut^D" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 9" Size="8" OffsA="72"/>
 			</OwnerB>
-			<OwnerB Name="TIID^MAIN (EtherCAT)^Solenoid Pair A Digital IO (EP2338-1001)">
+			<OwnerB Name="TIID^MAIN (EtherCAT)^Solenoid Pair A Digital IO (EP2338-0001)">
 				<Link VarA="PlcTask Outputs^GVL_Devices.SolenoidPairA.q_xDO1" VarB="Channel 9^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Devices.SolenoidPairA.q_xDO2" VarB="Channel 10^Output" AutoLink="true"/>
 			</OwnerB>

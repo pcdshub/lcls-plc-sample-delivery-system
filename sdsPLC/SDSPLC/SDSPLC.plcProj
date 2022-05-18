@@ -74,12 +74,6 @@
     <Compile Include="DUTs\Bronkhorst\ST_BhElFlow.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\Bronkhorst\ST_BhFMControl.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\Bronkhorst\ST_BhFMStatus.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="DUTs\E_AxisMotionState.TcDUT">
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
@@ -182,12 +176,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Bronkhorst\FB_BronkhorstMFM.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Bronkhorst\FB_L01Driver.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Bronkhorst\FB_FlowBusTransaction.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\GasManifold\FB_GasManifold.TcPOU">
@@ -400,6 +388,9 @@
     <PlaceholderResolution Include="TcUnit">
       <Resolution>TcUnit, 1.0.1.0 (www.tcunit.org)</Resolution>
     </PlaceholderResolution>
+  </ItemGroup>
+  <ItemGroup>
+    <PinnedGlobalDataType Include="ST_String7" />
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

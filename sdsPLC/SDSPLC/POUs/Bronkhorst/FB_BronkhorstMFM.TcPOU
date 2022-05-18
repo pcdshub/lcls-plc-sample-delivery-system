@@ -8,43 +8,13 @@ VAR_OUTPUT
 END_VAR
 VAR
         {attribute 'pytmc' := '
-            pv: Bronkhorst
+            pv:
          '}
         stMFM	:	ST_BhElFlow;
-		
-		stSelFMStatusBh : ST_BhFMStatus;
-		
-		stSelFMControlBh : ST_BhFMControl;
-		
-		fbL01Driver :   FB_L01Driver;
-		
-		{attribute 'pytmc' := '
-		    pv: GasSheathFlow
-		    io: i
-	     '}
-	    rFlow	:	REAL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(* Reinitialize flowmeter *)
-//Note, the bronkhorst does not have any initialization process.
-//stSelector.stSelFMControlBh.xReset := stSelector.xFMReset;
-		
-fbL01Driver(
-	i_xExecute:= TRUE,
-	i_tTimeOut:= t#10s,
-	iq_stSerialRXBuffer:= SerialRXBuffer_Sel2FlwMtr,
-	iq_stSerialTXBuffer:= SerialTXBuffer_Sel2FlwMtr,
-	q_stStatus=>stSelFMStatusBh,
-	i_stControl:=stSelFMControlBh);
-
-IF fbL01Driver.q_xDone OR
-	fbL01Driver.q_xError OR
-	fbL01Driver.q_xTimeout THEN
-	
-	(* reset function for next time *)
-	fbL01Driver(i_xExecute:=FALSE, iq_stSerialRXBuffer:= SerialRXBuffer_Sel2FlwMtr, iq_stSerialTXBuffer:=  SerialTXBuffer_Sel2FlwMtr);	
-END_IF]]></ST>
+      <ST><![CDATA[]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

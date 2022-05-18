@@ -45,9 +45,6 @@
 		<Image Id="3" AddrType="10" ImageType="3">
 			<Name>Image-2</Name>
 		</Image>
-		<Image Id="4" AddrType="10" ImageType="3">
-			<Name>Image-3</Name>
-		</Image>
 		<Box BoxType="9099" Id="13">
 			<Name>Term 1 (EK1200)</Name>
 			<ImageId>1000</ImageId>

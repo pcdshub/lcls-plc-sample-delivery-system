@@ -158,10 +158,34 @@ GasMan : FB_GasManifold;
 {attribute 'pytmc' := '
     pv: @(P):MFM:A
  '}
-{attribute 'TcLinkTo' := '.stMFM.i_mfmFlow := TIID^MAIN (EtherCAT)^Bronkhorst MFM A^TxPDO^fMeasure;
-						  .stMFM.i_RawUnit := TIID^MAIN (EtherCAT)^Bronkhorst MFM A^TxPDO^Unit;
+{attribute 'TcLinkTo' := '.stMFM.i_rFlow := TIID^MAIN (EtherCAT)^Bronkhorst MFM A^TxPDO Map^fMeasure;
+						  .stMFM.q_rSetpoint := TIID^MAIN (EtherCAT)^Bronkhorst MFM A^RxPDO Map^fSetpoint;
 '}
 BronkhorstA : FB_BronkhorstMFM;
+
+{attribute 'pytmc' := '
+    pv: @(P):MFM:B
+ '}
+{attribute 'TcLinkTo' := '.stMFM.i_rFlow := TIID^MAIN (EtherCAT)^Bronkhorst MFM B^TxPDO Map^fMeasure;
+						  .stMFM.q_rSetpoint := TIID^MAIN (EtherCAT)^Bronkhorst MFM B^RxPDO Map^fSetpoint;
+'}
+BronkhorstB : FB_BronkhorstMFM;
+
+{attribute 'pytmc' := '
+    pv: @(P):MFM:C
+ '}
+{attribute 'TcLinkTo' := '.stMFM.i_rFlow := TIID^MAIN (EtherCAT)^Bronkhorst MFM C^TxPDO Map^fMeasure;
+						  .stMFM.q_rSetpoint := TIID^MAIN (EtherCAT)^Bronkhorst MFM C^RxPDO Map^fSetpoint;
+'}
+BronkhorstC : FB_BronkhorstMFM;
+
+{attribute 'pytmc' := '
+    pv: @(P):MFM:D
+ '}
+{attribute 'TcLinkTo' := '.stMFM.i_rFlow := TIID^MAIN (EtherCAT)^Bronkhorst MFM D^TxPDO Map^fMeasure;
+						  .stMFM.q_rSetpoint := TIID^MAIN (EtherCAT)^Bronkhorst MFM D^RxPDO Map^fSetpoint;
+'}
+BronkhorstD : FB_BronkhorstMFM;
 
 END_VAR]]></Declaration>
   </GVL>

@@ -120,6 +120,9 @@
     <Compile Include="DUTs\ST_ShakerControls.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\ST_Strings.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\TEC\ST_TECControl.TcDUT">
       <SubType>Code</SubType>
     </Compile>

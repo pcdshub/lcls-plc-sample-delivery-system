@@ -74,7 +74,7 @@ STRUCT
         pv: SampleNames
         io: i
     '}
-    asSampleNames	:	ARRAY[1..12] OF STRING;
+    stSampleNames	:	ST_Strings;
 
 END_STRUCT
 END_TYPE

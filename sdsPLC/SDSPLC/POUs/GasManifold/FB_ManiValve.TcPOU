@@ -18,7 +18,7 @@ IF NOT iq_valve.xILK THEN
 	iq_valve.xSW := FALSE;
 END_IF
 
-iq_valve.qxDO := iq_valve.xILK and iq_valve.xSW;]]></ST>
+iq_valve.qxDO := NOT (iq_valve.xILK and iq_valve.xSW); // These are normally open valves, qxDO closes the valve]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

@@ -11,7 +11,7 @@ STRUCT
      '}
 	xSW : BOOL; //epics control
     {attribute 'pytmc' := '
-        pv: OpenDO
+        pv: CloseDO
         io: i
      '}
 	qxDO AT %Q* : BOOL; //actual valve output
@@ -29,6 +29,12 @@ STRUCT
         io: i
      '}
 	xILK :	BOOL; // permissive bit
+
+	{attribute 'pytmc' := '
+        pv: Name
+        io: i
+    '}
+    sName: STRING;
 
 END_STRUCT
 END_TYPE

@@ -149,8 +149,6 @@ PCMD : FB_PressureControlModule;
 						  .stValve[6].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 6^Input;
 						  .stValve[7].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 15^Output;
 						  .stValve[7].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 7^Input;
-						  .stValve[8].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 16^Output;
-						  .stValve[8].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 8^Input;
 						  .stBaseIO.i_SyncUnitWC :=	TIID^MAIN (EtherCAT)^Gas_Mani (EP1111)^WcState^WcState;
 '}
 GasMan : FB_GasManifold;
@@ -186,6 +184,14 @@ BronkhorstC : FB_BronkhorstMFM;
 						  .stMFM.q_rSetpoint := TIID^MAIN (EtherCAT)^Bronkhorst MFM D^RxPDO Map^fSetpoint;
 '}
 BronkhorstD : FB_BronkhorstMFM;
+
+{attribute 'pytmc' := '
+    pv: @(P):SPR:A
+ '}
+{attribute 'TcLinkTo' := '.q_xDO1 := TIIB[Solenoid Pair A Digital IO (EP2338-0001)]^Channel 9^Output;
+						  .q_xDO2 := TIIB[Solenoid Pair A Digital IO (EP2338-0001)]^Channel 10^Output;
+'}
+SolenoidPairA : FB_SolenoidPair;
 
 END_VAR]]></Declaration>
   </GVL>

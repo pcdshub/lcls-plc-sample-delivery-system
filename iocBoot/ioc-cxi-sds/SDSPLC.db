@@ -1,0 +1,5262 @@
+record(ai, "$(P):MFM:A:Flow_RBV") {
+  field(DESC, "GVL_Devices.BronkhorstA.stMFM.i_rFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.BronkhorstA.stMFM.i_rFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):MFM:A:Unit_RBV") {
+  field(DESC, "GVL_Devices.BronkhorstA.stMFM.i_sUnit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.BronkhorstA.stMFM.i_sUnit?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):MFM:A:Setpoint_RBV") {
+  # GVL_Devices.BronkhorstA.stMFM.q_rSetpoint
+  field(DESC, "GVL_Devices.Bronkhor...stMFM.q_rSetpoint")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.BronkhorstA.stMFM.q_rSetpoint?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "$(P):MFM:A:Setpoint") {
+  # GVL_Devices.BronkhorstA.stMFM.q_rSetpoint
+  field(DESC, "GVL_Devices.Bronkhor...stMFM.q_rSetpoint")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.BronkhorstA.stMFM.q_rSetpoint=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):MFM:B:Flow_RBV") {
+  field(DESC, "GVL_Devices.BronkhorstB.stMFM.i_rFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.BronkhorstB.stMFM.i_rFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):MFM:B:Unit_RBV") {
+  field(DESC, "GVL_Devices.BronkhorstB.stMFM.i_sUnit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.BronkhorstB.stMFM.i_sUnit?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):MFM:B:Setpoint_RBV") {
+  # GVL_Devices.BronkhorstB.stMFM.q_rSetpoint
+  field(DESC, "GVL_Devices.Bronkhor...stMFM.q_rSetpoint")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.BronkhorstB.stMFM.q_rSetpoint?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "$(P):MFM:B:Setpoint") {
+  # GVL_Devices.BronkhorstB.stMFM.q_rSetpoint
+  field(DESC, "GVL_Devices.Bronkhor...stMFM.q_rSetpoint")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.BronkhorstB.stMFM.q_rSetpoint=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):MFM:C:Flow_RBV") {
+  field(DESC, "GVL_Devices.BronkhorstC.stMFM.i_rFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.BronkhorstC.stMFM.i_rFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):MFM:C:Unit_RBV") {
+  field(DESC, "GVL_Devices.BronkhorstC.stMFM.i_sUnit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.BronkhorstC.stMFM.i_sUnit?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):MFM:C:Setpoint_RBV") {
+  # GVL_Devices.BronkhorstC.stMFM.q_rSetpoint
+  field(DESC, "GVL_Devices.Bronkhor...stMFM.q_rSetpoint")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.BronkhorstC.stMFM.q_rSetpoint?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "$(P):MFM:C:Setpoint") {
+  # GVL_Devices.BronkhorstC.stMFM.q_rSetpoint
+  field(DESC, "GVL_Devices.Bronkhor...stMFM.q_rSetpoint")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.BronkhorstC.stMFM.q_rSetpoint=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):MFM:D:Flow_RBV") {
+  field(DESC, "GVL_Devices.BronkhorstD.stMFM.i_rFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.BronkhorstD.stMFM.i_rFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):MFM:D:Unit_RBV") {
+  field(DESC, "GVL_Devices.BronkhorstD.stMFM.i_sUnit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.BronkhorstD.stMFM.i_sUnit?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):MFM:D:Setpoint_RBV") {
+  # GVL_Devices.BronkhorstD.stMFM.q_rSetpoint
+  field(DESC, "GVL_Devices.Bronkhor...stMFM.q_rSetpoint")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.BronkhorstD.stMFM.q_rSetpoint?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "$(P):MFM:D:Setpoint") {
+  # GVL_Devices.BronkhorstD.stMFM.q_rSetpoint
+  field(DESC, "GVL_Devices.Bronkhor...stMFM.q_rSetpoint")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.BronkhorstD.stMFM.q_rSetpoint=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:IO:SyncUnitOK_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stBaseIO.i_SyncUnitWC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stBaseIO.i_SyncUnitWC?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:01:OpenSW_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[1].ixOPN")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[1].ixOPN?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:01:CloseDO_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[1].qxDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[1].qxDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):MAN:Valve:01:Name_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[1].sName")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[1].sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:01:Ilk_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[1].xILK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[1].xILK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:01:Open_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[1].xSW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[1].xSW?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):MAN:Valve:01:Open") {
+  field(DESC, "GVL_Devices.GasMan.stValve[1].xSW")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.GasMan.stValve[1].xSW=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:02:OpenSW_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[2].ixOPN")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[2].ixOPN?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:02:CloseDO_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[2].qxDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[2].qxDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):MAN:Valve:02:Name_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[2].sName")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[2].sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:02:Ilk_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[2].xILK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[2].xILK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:02:Open_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[2].xSW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[2].xSW?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):MAN:Valve:02:Open") {
+  field(DESC, "GVL_Devices.GasMan.stValve[2].xSW")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.GasMan.stValve[2].xSW=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:03:OpenSW_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[3].ixOPN")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[3].ixOPN?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:03:CloseDO_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[3].qxDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[3].qxDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):MAN:Valve:03:Name_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[3].sName")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[3].sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:03:Ilk_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[3].xILK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[3].xILK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:03:Open_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[3].xSW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[3].xSW?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):MAN:Valve:03:Open") {
+  field(DESC, "GVL_Devices.GasMan.stValve[3].xSW")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.GasMan.stValve[3].xSW=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:04:OpenSW_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[4].ixOPN")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[4].ixOPN?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:04:CloseDO_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[4].qxDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[4].qxDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):MAN:Valve:04:Name_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[4].sName")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[4].sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:04:Ilk_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[4].xILK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[4].xILK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:04:Open_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[4].xSW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[4].xSW?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):MAN:Valve:04:Open") {
+  field(DESC, "GVL_Devices.GasMan.stValve[4].xSW")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.GasMan.stValve[4].xSW=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:05:OpenSW_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[5].ixOPN")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[5].ixOPN?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:05:CloseDO_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[5].qxDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[5].qxDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):MAN:Valve:05:Name_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[5].sName")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[5].sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:05:Ilk_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[5].xILK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[5].xILK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:05:Open_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[5].xSW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[5].xSW?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):MAN:Valve:05:Open") {
+  field(DESC, "GVL_Devices.GasMan.stValve[5].xSW")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.GasMan.stValve[5].xSW=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:06:OpenSW_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[6].ixOPN")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[6].ixOPN?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:06:CloseDO_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[6].qxDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[6].qxDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):MAN:Valve:06:Name_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[6].sName")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[6].sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:06:Ilk_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[6].xILK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[6].xILK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:06:Open_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[6].xSW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[6].xSW?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):MAN:Valve:06:Open") {
+  field(DESC, "GVL_Devices.GasMan.stValve[6].xSW")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.GasMan.stValve[6].xSW=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:07:OpenSW_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[7].ixOPN")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[7].ixOPN?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:07:CloseDO_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[7].qxDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[7].qxDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):MAN:Valve:07:Name_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[7].sName")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[7].sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:07:Ilk_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[7].xILK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[7].xILK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):MAN:Valve:07:Open_RBV") {
+  field(DESC, "GVL_Devices.GasMan.stValve[7].xSW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.GasMan.stValve[7].xSW?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):MAN:Valve:07:Open") {
+  field(DESC, "GVL_Devices.GasMan.stValve[7].xSW")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.GasMan.stValve[7].xSW=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "$(P):SEL:A:Sensirion:01:State_RBV") {
+  # GVL_Devices.M3SelectorA.astSelFM[1].eFMState
+  field(DESC, "GVL_Devices.M3Select...SelFM[1].eFMState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.astSelFM[1].eFMState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(ZRST, "OK")
+  field(ONST, "OverRange")
+  field(TWST, "UnderRange")
+  field(THST, "FlowInvalid")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):SEL:A:Sensirion:01:Flow_RBV") {
+  # GVL_Devices.M3SelectorA.astSelFM[1].rFlow
+  field(DESC, "GVL_Devices.M3Select...astSelFM[1].rFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.astSelFM[1].rFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Sensirion:01:ModeRb_RBV") {
+  # GVL_Devices.M3SelectorA.astSelFM[1].xFMModeRb
+  field(DESC, "GVL_Devices.M3Select...elFM[1].xFMModeRb")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.astSelFM[1].xFMModeRb?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Sensirion:01:Mode_RBV") {
+  # GVL_Devices.M3SelectorA.astSelFM[1].xFMModeReq
+  field(DESC, "GVL_Devices.M3Select...lFM[1].xFMModeReq")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.astSelFM[1].xFMModeReq?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:A:Sensirion:01:Mode") {
+  # GVL_Devices.M3SelectorA.astSelFM[1].xFMModeReq
+  field(DESC, "GVL_Devices.M3Select...lFM[1].xFMModeReq")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.astSelFM[1].xFMModeReq=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Sensirion:01:OoR_RBV") {
+  # GVL_Devices.M3SelectorA.astSelFM[1].xFMOoR
+  field(DESC, "GVL_Devices.M3Select...stSelFM[1].xFMOoR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.astSelFM[1].xFMOoR?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Sensirion:01:Reset_RBV") {
+  # GVL_Devices.M3SelectorA.astSelFM[1].xFMReset
+  field(DESC, "GVL_Devices.M3Select...SelFM[1].xFMReset")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.astSelFM[1].xFMReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:A:Sensirion:01:Reset") {
+  # GVL_Devices.M3SelectorA.astSelFM[1].xFMReset
+  field(DESC, "GVL_Devices.M3Select...SelFM[1].xFMReset")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.astSelFM[1].xFMReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Sensirion:01:FlowValid_RBV") {
+  # GVL_Devices.M3SelectorA.astSelFM[1].xFlowValid
+  field(DESC, "GVL_Devices.M3Select...lFM[1].xFlowValid")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.astSelFM[1].xFlowValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "$(P):SEL:A:Sensirion:02:State_RBV") {
+  # GVL_Devices.M3SelectorA.astSelFM[2].eFMState
+  field(DESC, "GVL_Devices.M3Select...SelFM[2].eFMState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.astSelFM[2].eFMState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(ZRST, "OK")
+  field(ONST, "OverRange")
+  field(TWST, "UnderRange")
+  field(THST, "FlowInvalid")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):SEL:A:Sensirion:02:Flow_RBV") {
+  # GVL_Devices.M3SelectorA.astSelFM[2].rFlow
+  field(DESC, "GVL_Devices.M3Select...astSelFM[2].rFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.astSelFM[2].rFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Sensirion:02:ModeRb_RBV") {
+  # GVL_Devices.M3SelectorA.astSelFM[2].xFMModeRb
+  field(DESC, "GVL_Devices.M3Select...elFM[2].xFMModeRb")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.astSelFM[2].xFMModeRb?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Sensirion:02:Mode_RBV") {
+  # GVL_Devices.M3SelectorA.astSelFM[2].xFMModeReq
+  field(DESC, "GVL_Devices.M3Select...lFM[2].xFMModeReq")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.astSelFM[2].xFMModeReq?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:A:Sensirion:02:Mode") {
+  # GVL_Devices.M3SelectorA.astSelFM[2].xFMModeReq
+  field(DESC, "GVL_Devices.M3Select...lFM[2].xFMModeReq")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.astSelFM[2].xFMModeReq=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Sensirion:02:OoR_RBV") {
+  # GVL_Devices.M3SelectorA.astSelFM[2].xFMOoR
+  field(DESC, "GVL_Devices.M3Select...stSelFM[2].xFMOoR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.astSelFM[2].xFMOoR?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Sensirion:02:Reset_RBV") {
+  # GVL_Devices.M3SelectorA.astSelFM[2].xFMReset
+  field(DESC, "GVL_Devices.M3Select...SelFM[2].xFMReset")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.astSelFM[2].xFMReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:A:Sensirion:02:Reset") {
+  # GVL_Devices.M3SelectorA.astSelFM[2].xFMReset
+  field(DESC, "GVL_Devices.M3Select...SelFM[2].xFMReset")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.astSelFM[2].xFMReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Sensirion:02:FlowValid_RBV") {
+  # GVL_Devices.M3SelectorA.astSelFM[2].xFlowValid
+  field(DESC, "GVL_Devices.M3Select...lFM[2].xFlowValid")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.astSelFM[2].xFlowValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:IO:SyncUnitOK_RBV") {
+  # GVL_Devices.M3SelectorA.stBaseIO.i_SyncUnitWC
+  field(DESC, "GVL_Devices.M3Select...seIO.i_SyncUnitWC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stBaseIO.i_SyncUnitWC?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:A:Valve:01:CurrentPos_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.astViciVlvStatus[1].iCurrPos
+  field(DESC, "GVL_Devices.M3Select...tatus[1].iCurrPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.astViciVlvStatus[1].iCurrPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:A:Valve:02:CurrentPos_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.astViciVlvStatus[2].iCurrPos
+  field(DESC, "GVL_Devices.M3Select...tatus[2].iCurrPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.astViciVlvStatus[2].iCurrPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:A:ValveSyncReqPos_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.iSyncReqPos
+  field(DESC, "GVL_Devices.M3Select...ector.iSyncReqPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.iSyncReqPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):SEL:A:ValveSyncReqPos") {
+  # GVL_Devices.M3SelectorA.stSelector.iSyncReqPos
+  field(DESC, "GVL_Devices.M3Select...ector.iSyncReqPos")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stSelector.iSyncReqPos=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:A:ValveSyncCurrentPos_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.iSyncResPos
+  field(DESC, "GVL_Devices.M3Select...ector.iSyncResPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.iSyncResPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:A:Valve:01:ReqPos_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.iVici1ReqPos
+  field(DESC, "GVL_Devices.M3Select...ctor.iVici1ReqPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.iVici1ReqPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):SEL:A:Valve:01:ReqPos") {
+  # GVL_Devices.M3SelectorA.stSelector.iVici1ReqPos
+  field(DESC, "GVL_Devices.M3Select...ctor.iVici1ReqPos")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stSelector.iVici1ReqPos=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:A:Valve:02:ReqPos_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.iVici2ReqPos
+  field(DESC, "GVL_Devices.M3Select...ctor.iVici2ReqPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.iVici2ReqPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):SEL:A:Valve:02:ReqPos") {
+  # GVL_Devices.M3SelectorA.stSelector.iVici2ReqPos
+  field(DESC, "GVL_Devices.M3Select...ctor.iVici2ReqPos")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stSelector.iVici2ReqPos=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):SEL:A:LiquidSheathFlow_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.rHighFlow
+  field(DESC, "GVL_Devices.M3Select...elector.rHighFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.rHighFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):SEL:A:SampleFlow_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.rLowFlow
+  field(DESC, "GVL_Devices.M3Select...Selector.rLowFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.rLowFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:A:SampleNames:01_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s1
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s1")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s1?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:A:SampleNames:10_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s10
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s10")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s10?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:A:SampleNames:11_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s11
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s11")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s11?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:A:SampleNames:12_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s12
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s12")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s12?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:A:SampleNames:02_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s2
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s2")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s2?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:A:SampleNames:03_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s3
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s3")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s3?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:A:SampleNames:04_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s4
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s4")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s4?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:A:SampleNames:05_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s5
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s5")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s5?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:A:SampleNames:06_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s6
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s6")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s6?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:A:SampleNames:07_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s7
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s7")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s7?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:A:SampleNames:08_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s8
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s8")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s8?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:A:SampleNames:09_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s9
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s9")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s9?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:ValvesLockRequest_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.xResLock
+  field(DESC, "GVL_Devices.M3Select...Selector.xResLock")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.xResLock?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:A:ValvesLockRequest") {
+  # GVL_Devices.M3SelectorA.stSelector.xResLock
+  field(DESC, "GVL_Devices.M3Select...Selector.xResLock")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stSelector.xResLock=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:ValvesLocked_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.xResLocked
+  field(DESC, "GVL_Devices.M3Select...lector.xResLocked")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.xResLocked?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:ValvesSynced_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.xResSyncd
+  field(DESC, "GVL_Devices.M3Select...elector.xResSyncd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.xResSyncd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:ValvesUnlockRequest_RBV") {
+  # GVL_Devices.M3SelectorA.stSelector.xResUnlock
+  field(DESC, "GVL_Devices.M3Select...lector.xResUnlock")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stSelector.xResUnlock?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:A:ValvesUnlockRequest") {
+  # GVL_Devices.M3SelectorA.stSelector.xResUnlock
+  field(DESC, "GVL_Devices.M3Select...lector.xResUnlock")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stSelector.xResUnlock=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Shaker:01:Ctrl_RBV") {
+  # GVL_Devices.M3SelectorA.stShaker01.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker01.i_xEpics")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stShaker01.i_xEpics?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:A:Shaker:01:Ctrl") {
+  # GVL_Devices.M3SelectorA.stShaker01.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker01.i_xEpics")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stShaker01.i_xEpics=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Shaker:01:PowerOn_RBV") {
+  # GVL_Devices.M3SelectorA.stShaker01.q_xPwrDO
+  field(DESC, "GVL_Devices.M3Select...Shaker01.q_xPwrDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stShaker01.q_xPwrDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Shaker:01:Ilk_RBV") {
+  field(DESC, "GVL_Devices.M3SelectorA.stShaker01.xIlk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stShaker01.xIlk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Shaker:02:Ctrl_RBV") {
+  # GVL_Devices.M3SelectorA.stShaker02.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker02.i_xEpics")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stShaker02.i_xEpics?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:A:Shaker:02:Ctrl") {
+  # GVL_Devices.M3SelectorA.stShaker02.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker02.i_xEpics")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stShaker02.i_xEpics=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Shaker:02:PowerOn_RBV") {
+  # GVL_Devices.M3SelectorA.stShaker02.q_xPwrDO
+  field(DESC, "GVL_Devices.M3Select...Shaker02.q_xPwrDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stShaker02.q_xPwrDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Shaker:02:Ilk_RBV") {
+  field(DESC, "GVL_Devices.M3SelectorA.stShaker02.xIlk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stShaker02.xIlk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Shaker:03:Ctrl_RBV") {
+  # GVL_Devices.M3SelectorA.stShaker03.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker03.i_xEpics")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stShaker03.i_xEpics?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:A:Shaker:03:Ctrl") {
+  # GVL_Devices.M3SelectorA.stShaker03.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker03.i_xEpics")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stShaker03.i_xEpics=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Shaker:03:PowerOn_RBV") {
+  # GVL_Devices.M3SelectorA.stShaker03.q_xPwrDO
+  field(DESC, "GVL_Devices.M3Select...Shaker03.q_xPwrDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stShaker03.q_xPwrDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Shaker:03:Ilk_RBV") {
+  field(DESC, "GVL_Devices.M3SelectorA.stShaker03.xIlk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stShaker03.xIlk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Shaker:04:Ctrl_RBV") {
+  # GVL_Devices.M3SelectorA.stShaker04.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker04.i_xEpics")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stShaker04.i_xEpics?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:A:Shaker:04:Ctrl") {
+  # GVL_Devices.M3SelectorA.stShaker04.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker04.i_xEpics")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stShaker04.i_xEpics=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Shaker:04:PowerOn_RBV") {
+  # GVL_Devices.M3SelectorA.stShaker04.q_xPwrDO
+  field(DESC, "GVL_Devices.M3Select...Shaker04.q_xPwrDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stShaker04.q_xPwrDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:A:Shaker:04:Ilk_RBV") {
+  field(DESC, "GVL_Devices.M3SelectorA.stShaker04.xIlk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorA.stShaker04.xIlk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "$(P):SEL:B:Sensirion:01:State_RBV") {
+  # GVL_Devices.M3SelectorB.astSelFM[1].eFMState
+  field(DESC, "GVL_Devices.M3Select...SelFM[1].eFMState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.astSelFM[1].eFMState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(ZRST, "OK")
+  field(ONST, "OverRange")
+  field(TWST, "UnderRange")
+  field(THST, "FlowInvalid")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):SEL:B:Sensirion:01:Flow_RBV") {
+  # GVL_Devices.M3SelectorB.astSelFM[1].rFlow
+  field(DESC, "GVL_Devices.M3Select...astSelFM[1].rFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.astSelFM[1].rFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Sensirion:01:ModeRb_RBV") {
+  # GVL_Devices.M3SelectorB.astSelFM[1].xFMModeRb
+  field(DESC, "GVL_Devices.M3Select...elFM[1].xFMModeRb")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.astSelFM[1].xFMModeRb?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Sensirion:01:Mode_RBV") {
+  # GVL_Devices.M3SelectorB.astSelFM[1].xFMModeReq
+  field(DESC, "GVL_Devices.M3Select...lFM[1].xFMModeReq")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.astSelFM[1].xFMModeReq?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:B:Sensirion:01:Mode") {
+  # GVL_Devices.M3SelectorB.astSelFM[1].xFMModeReq
+  field(DESC, "GVL_Devices.M3Select...lFM[1].xFMModeReq")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.astSelFM[1].xFMModeReq=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Sensirion:01:OoR_RBV") {
+  # GVL_Devices.M3SelectorB.astSelFM[1].xFMOoR
+  field(DESC, "GVL_Devices.M3Select...stSelFM[1].xFMOoR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.astSelFM[1].xFMOoR?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Sensirion:01:Reset_RBV") {
+  # GVL_Devices.M3SelectorB.astSelFM[1].xFMReset
+  field(DESC, "GVL_Devices.M3Select...SelFM[1].xFMReset")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.astSelFM[1].xFMReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:B:Sensirion:01:Reset") {
+  # GVL_Devices.M3SelectorB.astSelFM[1].xFMReset
+  field(DESC, "GVL_Devices.M3Select...SelFM[1].xFMReset")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.astSelFM[1].xFMReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Sensirion:01:FlowValid_RBV") {
+  # GVL_Devices.M3SelectorB.astSelFM[1].xFlowValid
+  field(DESC, "GVL_Devices.M3Select...lFM[1].xFlowValid")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.astSelFM[1].xFlowValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "$(P):SEL:B:Sensirion:02:State_RBV") {
+  # GVL_Devices.M3SelectorB.astSelFM[2].eFMState
+  field(DESC, "GVL_Devices.M3Select...SelFM[2].eFMState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.astSelFM[2].eFMState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(ZRST, "OK")
+  field(ONST, "OverRange")
+  field(TWST, "UnderRange")
+  field(THST, "FlowInvalid")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):SEL:B:Sensirion:02:Flow_RBV") {
+  # GVL_Devices.M3SelectorB.astSelFM[2].rFlow
+  field(DESC, "GVL_Devices.M3Select...astSelFM[2].rFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.astSelFM[2].rFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Sensirion:02:ModeRb_RBV") {
+  # GVL_Devices.M3SelectorB.astSelFM[2].xFMModeRb
+  field(DESC, "GVL_Devices.M3Select...elFM[2].xFMModeRb")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.astSelFM[2].xFMModeRb?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Sensirion:02:Mode_RBV") {
+  # GVL_Devices.M3SelectorB.astSelFM[2].xFMModeReq
+  field(DESC, "GVL_Devices.M3Select...lFM[2].xFMModeReq")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.astSelFM[2].xFMModeReq?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:B:Sensirion:02:Mode") {
+  # GVL_Devices.M3SelectorB.astSelFM[2].xFMModeReq
+  field(DESC, "GVL_Devices.M3Select...lFM[2].xFMModeReq")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.astSelFM[2].xFMModeReq=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Sensirion:02:OoR_RBV") {
+  # GVL_Devices.M3SelectorB.astSelFM[2].xFMOoR
+  field(DESC, "GVL_Devices.M3Select...stSelFM[2].xFMOoR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.astSelFM[2].xFMOoR?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Sensirion:02:Reset_RBV") {
+  # GVL_Devices.M3SelectorB.astSelFM[2].xFMReset
+  field(DESC, "GVL_Devices.M3Select...SelFM[2].xFMReset")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.astSelFM[2].xFMReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:B:Sensirion:02:Reset") {
+  # GVL_Devices.M3SelectorB.astSelFM[2].xFMReset
+  field(DESC, "GVL_Devices.M3Select...SelFM[2].xFMReset")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.astSelFM[2].xFMReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Sensirion:02:FlowValid_RBV") {
+  # GVL_Devices.M3SelectorB.astSelFM[2].xFlowValid
+  field(DESC, "GVL_Devices.M3Select...lFM[2].xFlowValid")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.astSelFM[2].xFlowValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:IO:SyncUnitOK_RBV") {
+  # GVL_Devices.M3SelectorB.stBaseIO.i_SyncUnitWC
+  field(DESC, "GVL_Devices.M3Select...seIO.i_SyncUnitWC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stBaseIO.i_SyncUnitWC?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:B:Valve:01:CurrentPos_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.astViciVlvStatus[1].iCurrPos
+  field(DESC, "GVL_Devices.M3Select...tatus[1].iCurrPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.astViciVlvStatus[1].iCurrPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:B:Valve:02:CurrentPos_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.astViciVlvStatus[2].iCurrPos
+  field(DESC, "GVL_Devices.M3Select...tatus[2].iCurrPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.astViciVlvStatus[2].iCurrPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:B:ValveSyncReqPos_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.iSyncReqPos
+  field(DESC, "GVL_Devices.M3Select...ector.iSyncReqPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.iSyncReqPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):SEL:B:ValveSyncReqPos") {
+  # GVL_Devices.M3SelectorB.stSelector.iSyncReqPos
+  field(DESC, "GVL_Devices.M3Select...ector.iSyncReqPos")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stSelector.iSyncReqPos=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:B:ValveSyncCurrentPos_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.iSyncResPos
+  field(DESC, "GVL_Devices.M3Select...ector.iSyncResPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.iSyncResPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:B:Valve:01:ReqPos_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.iVici1ReqPos
+  field(DESC, "GVL_Devices.M3Select...ctor.iVici1ReqPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.iVici1ReqPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):SEL:B:Valve:01:ReqPos") {
+  # GVL_Devices.M3SelectorB.stSelector.iVici1ReqPos
+  field(DESC, "GVL_Devices.M3Select...ctor.iVici1ReqPos")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stSelector.iVici1ReqPos=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:B:Valve:02:ReqPos_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.iVici2ReqPos
+  field(DESC, "GVL_Devices.M3Select...ctor.iVici2ReqPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.iVici2ReqPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):SEL:B:Valve:02:ReqPos") {
+  # GVL_Devices.M3SelectorB.stSelector.iVici2ReqPos
+  field(DESC, "GVL_Devices.M3Select...ctor.iVici2ReqPos")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stSelector.iVici2ReqPos=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):SEL:B:LiquidSheathFlow_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.rHighFlow
+  field(DESC, "GVL_Devices.M3Select...elector.rHighFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.rHighFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):SEL:B:SampleFlow_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.rLowFlow
+  field(DESC, "GVL_Devices.M3Select...Selector.rLowFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.rLowFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:B:SampleNames:01_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s1
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s1")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s1?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:B:SampleNames:10_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s10
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s10")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s10?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:B:SampleNames:11_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s11
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s11")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s11?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:B:SampleNames:12_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s12
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s12")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s12?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:B:SampleNames:02_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s2
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s2")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s2?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:B:SampleNames:03_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s3
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s3")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s3?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:B:SampleNames:04_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s4
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s4")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s4?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:B:SampleNames:05_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s5
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s5")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s5?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:B:SampleNames:06_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s6
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s6")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s6?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:B:SampleNames:07_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s7
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s7")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s7?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:B:SampleNames:08_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s8
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s8")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s8?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:B:SampleNames:09_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s9
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s9")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s9?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:ValvesLockRequest_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.xResLock
+  field(DESC, "GVL_Devices.M3Select...Selector.xResLock")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.xResLock?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:B:ValvesLockRequest") {
+  # GVL_Devices.M3SelectorB.stSelector.xResLock
+  field(DESC, "GVL_Devices.M3Select...Selector.xResLock")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stSelector.xResLock=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:ValvesLocked_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.xResLocked
+  field(DESC, "GVL_Devices.M3Select...lector.xResLocked")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.xResLocked?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:ValvesSynced_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.xResSyncd
+  field(DESC, "GVL_Devices.M3Select...elector.xResSyncd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.xResSyncd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:ValvesUnlockRequest_RBV") {
+  # GVL_Devices.M3SelectorB.stSelector.xResUnlock
+  field(DESC, "GVL_Devices.M3Select...lector.xResUnlock")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stSelector.xResUnlock?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:B:ValvesUnlockRequest") {
+  # GVL_Devices.M3SelectorB.stSelector.xResUnlock
+  field(DESC, "GVL_Devices.M3Select...lector.xResUnlock")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stSelector.xResUnlock=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Shaker:01:Ctrl_RBV") {
+  # GVL_Devices.M3SelectorB.stShaker01.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker01.i_xEpics")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stShaker01.i_xEpics?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:B:Shaker:01:Ctrl") {
+  # GVL_Devices.M3SelectorB.stShaker01.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker01.i_xEpics")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stShaker01.i_xEpics=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Shaker:01:PowerOn_RBV") {
+  # GVL_Devices.M3SelectorB.stShaker01.q_xPwrDO
+  field(DESC, "GVL_Devices.M3Select...Shaker01.q_xPwrDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stShaker01.q_xPwrDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Shaker:01:Ilk_RBV") {
+  field(DESC, "GVL_Devices.M3SelectorB.stShaker01.xIlk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stShaker01.xIlk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Shaker:02:Ctrl_RBV") {
+  # GVL_Devices.M3SelectorB.stShaker02.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker02.i_xEpics")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stShaker02.i_xEpics?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:B:Shaker:02:Ctrl") {
+  # GVL_Devices.M3SelectorB.stShaker02.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker02.i_xEpics")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stShaker02.i_xEpics=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Shaker:02:PowerOn_RBV") {
+  # GVL_Devices.M3SelectorB.stShaker02.q_xPwrDO
+  field(DESC, "GVL_Devices.M3Select...Shaker02.q_xPwrDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stShaker02.q_xPwrDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Shaker:02:Ilk_RBV") {
+  field(DESC, "GVL_Devices.M3SelectorB.stShaker02.xIlk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stShaker02.xIlk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Shaker:03:Ctrl_RBV") {
+  # GVL_Devices.M3SelectorB.stShaker03.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker03.i_xEpics")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stShaker03.i_xEpics?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:B:Shaker:03:Ctrl") {
+  # GVL_Devices.M3SelectorB.stShaker03.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker03.i_xEpics")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stShaker03.i_xEpics=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Shaker:03:PowerOn_RBV") {
+  # GVL_Devices.M3SelectorB.stShaker03.q_xPwrDO
+  field(DESC, "GVL_Devices.M3Select...Shaker03.q_xPwrDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stShaker03.q_xPwrDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Shaker:03:Ilk_RBV") {
+  field(DESC, "GVL_Devices.M3SelectorB.stShaker03.xIlk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stShaker03.xIlk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Shaker:04:Ctrl_RBV") {
+  # GVL_Devices.M3SelectorB.stShaker04.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker04.i_xEpics")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stShaker04.i_xEpics?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:B:Shaker:04:Ctrl") {
+  # GVL_Devices.M3SelectorB.stShaker04.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker04.i_xEpics")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stShaker04.i_xEpics=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Shaker:04:PowerOn_RBV") {
+  # GVL_Devices.M3SelectorB.stShaker04.q_xPwrDO
+  field(DESC, "GVL_Devices.M3Select...Shaker04.q_xPwrDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stShaker04.q_xPwrDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:B:Shaker:04:Ilk_RBV") {
+  field(DESC, "GVL_Devices.M3SelectorB.stShaker04.xIlk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorB.stShaker04.xIlk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "$(P):SEL:C:Sensirion:01:State_RBV") {
+  # GVL_Devices.M3SelectorC.astSelFM[1].eFMState
+  field(DESC, "GVL_Devices.M3Select...SelFM[1].eFMState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.astSelFM[1].eFMState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(ZRST, "OK")
+  field(ONST, "OverRange")
+  field(TWST, "UnderRange")
+  field(THST, "FlowInvalid")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):SEL:C:Sensirion:01:Flow_RBV") {
+  # GVL_Devices.M3SelectorC.astSelFM[1].rFlow
+  field(DESC, "GVL_Devices.M3Select...astSelFM[1].rFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.astSelFM[1].rFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Sensirion:01:ModeRb_RBV") {
+  # GVL_Devices.M3SelectorC.astSelFM[1].xFMModeRb
+  field(DESC, "GVL_Devices.M3Select...elFM[1].xFMModeRb")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.astSelFM[1].xFMModeRb?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Sensirion:01:Mode_RBV") {
+  # GVL_Devices.M3SelectorC.astSelFM[1].xFMModeReq
+  field(DESC, "GVL_Devices.M3Select...lFM[1].xFMModeReq")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.astSelFM[1].xFMModeReq?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:C:Sensirion:01:Mode") {
+  # GVL_Devices.M3SelectorC.astSelFM[1].xFMModeReq
+  field(DESC, "GVL_Devices.M3Select...lFM[1].xFMModeReq")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.astSelFM[1].xFMModeReq=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Sensirion:01:OoR_RBV") {
+  # GVL_Devices.M3SelectorC.astSelFM[1].xFMOoR
+  field(DESC, "GVL_Devices.M3Select...stSelFM[1].xFMOoR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.astSelFM[1].xFMOoR?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Sensirion:01:Reset_RBV") {
+  # GVL_Devices.M3SelectorC.astSelFM[1].xFMReset
+  field(DESC, "GVL_Devices.M3Select...SelFM[1].xFMReset")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.astSelFM[1].xFMReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:C:Sensirion:01:Reset") {
+  # GVL_Devices.M3SelectorC.astSelFM[1].xFMReset
+  field(DESC, "GVL_Devices.M3Select...SelFM[1].xFMReset")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.astSelFM[1].xFMReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Sensirion:01:FlowValid_RBV") {
+  # GVL_Devices.M3SelectorC.astSelFM[1].xFlowValid
+  field(DESC, "GVL_Devices.M3Select...lFM[1].xFlowValid")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.astSelFM[1].xFlowValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "$(P):SEL:C:Sensirion:02:State_RBV") {
+  # GVL_Devices.M3SelectorC.astSelFM[2].eFMState
+  field(DESC, "GVL_Devices.M3Select...SelFM[2].eFMState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.astSelFM[2].eFMState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(ZRST, "OK")
+  field(ONST, "OverRange")
+  field(TWST, "UnderRange")
+  field(THST, "FlowInvalid")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):SEL:C:Sensirion:02:Flow_RBV") {
+  # GVL_Devices.M3SelectorC.astSelFM[2].rFlow
+  field(DESC, "GVL_Devices.M3Select...astSelFM[2].rFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.astSelFM[2].rFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Sensirion:02:ModeRb_RBV") {
+  # GVL_Devices.M3SelectorC.astSelFM[2].xFMModeRb
+  field(DESC, "GVL_Devices.M3Select...elFM[2].xFMModeRb")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.astSelFM[2].xFMModeRb?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Sensirion:02:Mode_RBV") {
+  # GVL_Devices.M3SelectorC.astSelFM[2].xFMModeReq
+  field(DESC, "GVL_Devices.M3Select...lFM[2].xFMModeReq")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.astSelFM[2].xFMModeReq?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:C:Sensirion:02:Mode") {
+  # GVL_Devices.M3SelectorC.astSelFM[2].xFMModeReq
+  field(DESC, "GVL_Devices.M3Select...lFM[2].xFMModeReq")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.astSelFM[2].xFMModeReq=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Sensirion:02:OoR_RBV") {
+  # GVL_Devices.M3SelectorC.astSelFM[2].xFMOoR
+  field(DESC, "GVL_Devices.M3Select...stSelFM[2].xFMOoR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.astSelFM[2].xFMOoR?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Sensirion:02:Reset_RBV") {
+  # GVL_Devices.M3SelectorC.astSelFM[2].xFMReset
+  field(DESC, "GVL_Devices.M3Select...SelFM[2].xFMReset")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.astSelFM[2].xFMReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:C:Sensirion:02:Reset") {
+  # GVL_Devices.M3SelectorC.astSelFM[2].xFMReset
+  field(DESC, "GVL_Devices.M3Select...SelFM[2].xFMReset")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.astSelFM[2].xFMReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Sensirion:02:FlowValid_RBV") {
+  # GVL_Devices.M3SelectorC.astSelFM[2].xFlowValid
+  field(DESC, "GVL_Devices.M3Select...lFM[2].xFlowValid")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.astSelFM[2].xFlowValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:IO:SyncUnitOK_RBV") {
+  # GVL_Devices.M3SelectorC.stBaseIO.i_SyncUnitWC
+  field(DESC, "GVL_Devices.M3Select...seIO.i_SyncUnitWC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stBaseIO.i_SyncUnitWC?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:C:Valve:01:CurrentPos_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.astViciVlvStatus[1].iCurrPos
+  field(DESC, "GVL_Devices.M3Select...tatus[1].iCurrPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.astViciVlvStatus[1].iCurrPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:C:Valve:02:CurrentPos_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.astViciVlvStatus[2].iCurrPos
+  field(DESC, "GVL_Devices.M3Select...tatus[2].iCurrPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.astViciVlvStatus[2].iCurrPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:C:ValveSyncReqPos_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.iSyncReqPos
+  field(DESC, "GVL_Devices.M3Select...ector.iSyncReqPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.iSyncReqPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):SEL:C:ValveSyncReqPos") {
+  # GVL_Devices.M3SelectorC.stSelector.iSyncReqPos
+  field(DESC, "GVL_Devices.M3Select...ector.iSyncReqPos")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stSelector.iSyncReqPos=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:C:ValveSyncCurrentPos_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.iSyncResPos
+  field(DESC, "GVL_Devices.M3Select...ector.iSyncResPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.iSyncResPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:C:Valve:01:ReqPos_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.iVici1ReqPos
+  field(DESC, "GVL_Devices.M3Select...ctor.iVici1ReqPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.iVici1ReqPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):SEL:C:Valve:01:ReqPos") {
+  # GVL_Devices.M3SelectorC.stSelector.iVici1ReqPos
+  field(DESC, "GVL_Devices.M3Select...ctor.iVici1ReqPos")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stSelector.iVici1ReqPos=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:C:Valve:02:ReqPos_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.iVici2ReqPos
+  field(DESC, "GVL_Devices.M3Select...ctor.iVici2ReqPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.iVici2ReqPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):SEL:C:Valve:02:ReqPos") {
+  # GVL_Devices.M3SelectorC.stSelector.iVici2ReqPos
+  field(DESC, "GVL_Devices.M3Select...ctor.iVici2ReqPos")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stSelector.iVici2ReqPos=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):SEL:C:LiquidSheathFlow_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.rHighFlow
+  field(DESC, "GVL_Devices.M3Select...elector.rHighFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.rHighFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):SEL:C:SampleFlow_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.rLowFlow
+  field(DESC, "GVL_Devices.M3Select...Selector.rLowFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.rLowFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:C:SampleNames:01_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s1
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s1")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s1?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:C:SampleNames:10_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s10
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s10")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s10?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:C:SampleNames:11_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s11
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s11")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s11?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:C:SampleNames:12_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s12
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s12")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s12?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:C:SampleNames:02_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s2
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s2")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s2?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:C:SampleNames:03_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s3
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s3")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s3?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:C:SampleNames:04_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s4
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s4")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s4?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:C:SampleNames:05_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s5
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s5")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s5?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:C:SampleNames:06_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s6
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s6")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s6?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:C:SampleNames:07_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s7
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s7")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s7?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:C:SampleNames:08_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s8
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s8")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s8?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:C:SampleNames:09_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s9
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s9")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s9?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:ValvesLockRequest_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.xResLock
+  field(DESC, "GVL_Devices.M3Select...Selector.xResLock")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.xResLock?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:C:ValvesLockRequest") {
+  # GVL_Devices.M3SelectorC.stSelector.xResLock
+  field(DESC, "GVL_Devices.M3Select...Selector.xResLock")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stSelector.xResLock=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:ValvesLocked_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.xResLocked
+  field(DESC, "GVL_Devices.M3Select...lector.xResLocked")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.xResLocked?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:ValvesSynced_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.xResSyncd
+  field(DESC, "GVL_Devices.M3Select...elector.xResSyncd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.xResSyncd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:ValvesUnlockRequest_RBV") {
+  # GVL_Devices.M3SelectorC.stSelector.xResUnlock
+  field(DESC, "GVL_Devices.M3Select...lector.xResUnlock")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stSelector.xResUnlock?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:C:ValvesUnlockRequest") {
+  # GVL_Devices.M3SelectorC.stSelector.xResUnlock
+  field(DESC, "GVL_Devices.M3Select...lector.xResUnlock")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stSelector.xResUnlock=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Shaker:01:Ctrl_RBV") {
+  # GVL_Devices.M3SelectorC.stShaker01.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker01.i_xEpics")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stShaker01.i_xEpics?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:C:Shaker:01:Ctrl") {
+  # GVL_Devices.M3SelectorC.stShaker01.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker01.i_xEpics")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stShaker01.i_xEpics=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Shaker:01:PowerOn_RBV") {
+  # GVL_Devices.M3SelectorC.stShaker01.q_xPwrDO
+  field(DESC, "GVL_Devices.M3Select...Shaker01.q_xPwrDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stShaker01.q_xPwrDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Shaker:01:Ilk_RBV") {
+  field(DESC, "GVL_Devices.M3SelectorC.stShaker01.xIlk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stShaker01.xIlk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Shaker:02:Ctrl_RBV") {
+  # GVL_Devices.M3SelectorC.stShaker02.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker02.i_xEpics")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stShaker02.i_xEpics?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:C:Shaker:02:Ctrl") {
+  # GVL_Devices.M3SelectorC.stShaker02.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker02.i_xEpics")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stShaker02.i_xEpics=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Shaker:02:PowerOn_RBV") {
+  # GVL_Devices.M3SelectorC.stShaker02.q_xPwrDO
+  field(DESC, "GVL_Devices.M3Select...Shaker02.q_xPwrDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stShaker02.q_xPwrDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Shaker:02:Ilk_RBV") {
+  field(DESC, "GVL_Devices.M3SelectorC.stShaker02.xIlk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stShaker02.xIlk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Shaker:03:Ctrl_RBV") {
+  # GVL_Devices.M3SelectorC.stShaker03.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker03.i_xEpics")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stShaker03.i_xEpics?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:C:Shaker:03:Ctrl") {
+  # GVL_Devices.M3SelectorC.stShaker03.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker03.i_xEpics")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stShaker03.i_xEpics=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Shaker:03:PowerOn_RBV") {
+  # GVL_Devices.M3SelectorC.stShaker03.q_xPwrDO
+  field(DESC, "GVL_Devices.M3Select...Shaker03.q_xPwrDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stShaker03.q_xPwrDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Shaker:03:Ilk_RBV") {
+  field(DESC, "GVL_Devices.M3SelectorC.stShaker03.xIlk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stShaker03.xIlk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Shaker:04:Ctrl_RBV") {
+  # GVL_Devices.M3SelectorC.stShaker04.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker04.i_xEpics")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stShaker04.i_xEpics?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:C:Shaker:04:Ctrl") {
+  # GVL_Devices.M3SelectorC.stShaker04.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker04.i_xEpics")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stShaker04.i_xEpics=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Shaker:04:PowerOn_RBV") {
+  # GVL_Devices.M3SelectorC.stShaker04.q_xPwrDO
+  field(DESC, "GVL_Devices.M3Select...Shaker04.q_xPwrDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stShaker04.q_xPwrDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:C:Shaker:04:Ilk_RBV") {
+  field(DESC, "GVL_Devices.M3SelectorC.stShaker04.xIlk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorC.stShaker04.xIlk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "$(P):SEL:D:Sensirion:01:State_RBV") {
+  # GVL_Devices.M3SelectorD.astSelFM[1].eFMState
+  field(DESC, "GVL_Devices.M3Select...SelFM[1].eFMState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.astSelFM[1].eFMState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(ZRST, "OK")
+  field(ONST, "OverRange")
+  field(TWST, "UnderRange")
+  field(THST, "FlowInvalid")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):SEL:D:Sensirion:01:Flow_RBV") {
+  # GVL_Devices.M3SelectorD.astSelFM[1].rFlow
+  field(DESC, "GVL_Devices.M3Select...astSelFM[1].rFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.astSelFM[1].rFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Sensirion:01:ModeRb_RBV") {
+  # GVL_Devices.M3SelectorD.astSelFM[1].xFMModeRb
+  field(DESC, "GVL_Devices.M3Select...elFM[1].xFMModeRb")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.astSelFM[1].xFMModeRb?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Sensirion:01:Mode_RBV") {
+  # GVL_Devices.M3SelectorD.astSelFM[1].xFMModeReq
+  field(DESC, "GVL_Devices.M3Select...lFM[1].xFMModeReq")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.astSelFM[1].xFMModeReq?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:D:Sensirion:01:Mode") {
+  # GVL_Devices.M3SelectorD.astSelFM[1].xFMModeReq
+  field(DESC, "GVL_Devices.M3Select...lFM[1].xFMModeReq")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.astSelFM[1].xFMModeReq=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Sensirion:01:OoR_RBV") {
+  # GVL_Devices.M3SelectorD.astSelFM[1].xFMOoR
+  field(DESC, "GVL_Devices.M3Select...stSelFM[1].xFMOoR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.astSelFM[1].xFMOoR?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Sensirion:01:Reset_RBV") {
+  # GVL_Devices.M3SelectorD.astSelFM[1].xFMReset
+  field(DESC, "GVL_Devices.M3Select...SelFM[1].xFMReset")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.astSelFM[1].xFMReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:D:Sensirion:01:Reset") {
+  # GVL_Devices.M3SelectorD.astSelFM[1].xFMReset
+  field(DESC, "GVL_Devices.M3Select...SelFM[1].xFMReset")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.astSelFM[1].xFMReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Sensirion:01:FlowValid_RBV") {
+  # GVL_Devices.M3SelectorD.astSelFM[1].xFlowValid
+  field(DESC, "GVL_Devices.M3Select...lFM[1].xFlowValid")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.astSelFM[1].xFlowValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "$(P):SEL:D:Sensirion:02:State_RBV") {
+  # GVL_Devices.M3SelectorD.astSelFM[2].eFMState
+  field(DESC, "GVL_Devices.M3Select...SelFM[2].eFMState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.astSelFM[2].eFMState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(ZRST, "OK")
+  field(ONST, "OverRange")
+  field(TWST, "UnderRange")
+  field(THST, "FlowInvalid")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):SEL:D:Sensirion:02:Flow_RBV") {
+  # GVL_Devices.M3SelectorD.astSelFM[2].rFlow
+  field(DESC, "GVL_Devices.M3Select...astSelFM[2].rFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.astSelFM[2].rFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Sensirion:02:ModeRb_RBV") {
+  # GVL_Devices.M3SelectorD.astSelFM[2].xFMModeRb
+  field(DESC, "GVL_Devices.M3Select...elFM[2].xFMModeRb")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.astSelFM[2].xFMModeRb?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Sensirion:02:Mode_RBV") {
+  # GVL_Devices.M3SelectorD.astSelFM[2].xFMModeReq
+  field(DESC, "GVL_Devices.M3Select...lFM[2].xFMModeReq")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.astSelFM[2].xFMModeReq?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:D:Sensirion:02:Mode") {
+  # GVL_Devices.M3SelectorD.astSelFM[2].xFMModeReq
+  field(DESC, "GVL_Devices.M3Select...lFM[2].xFMModeReq")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.astSelFM[2].xFMModeReq=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Sensirion:02:OoR_RBV") {
+  # GVL_Devices.M3SelectorD.astSelFM[2].xFMOoR
+  field(DESC, "GVL_Devices.M3Select...stSelFM[2].xFMOoR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.astSelFM[2].xFMOoR?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Sensirion:02:Reset_RBV") {
+  # GVL_Devices.M3SelectorD.astSelFM[2].xFMReset
+  field(DESC, "GVL_Devices.M3Select...SelFM[2].xFMReset")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.astSelFM[2].xFMReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:D:Sensirion:02:Reset") {
+  # GVL_Devices.M3SelectorD.astSelFM[2].xFMReset
+  field(DESC, "GVL_Devices.M3Select...SelFM[2].xFMReset")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.astSelFM[2].xFMReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Sensirion:02:FlowValid_RBV") {
+  # GVL_Devices.M3SelectorD.astSelFM[2].xFlowValid
+  field(DESC, "GVL_Devices.M3Select...lFM[2].xFlowValid")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.astSelFM[2].xFlowValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:IO:SyncUnitOK_RBV") {
+  # GVL_Devices.M3SelectorD.stBaseIO.i_SyncUnitWC
+  field(DESC, "GVL_Devices.M3Select...seIO.i_SyncUnitWC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stBaseIO.i_SyncUnitWC?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:D:Valve:01:CurrentPos_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.astViciVlvStatus[1].iCurrPos
+  field(DESC, "GVL_Devices.M3Select...tatus[1].iCurrPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.astViciVlvStatus[1].iCurrPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:D:Valve:02:CurrentPos_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.astViciVlvStatus[2].iCurrPos
+  field(DESC, "GVL_Devices.M3Select...tatus[2].iCurrPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.astViciVlvStatus[2].iCurrPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:D:ValveSyncReqPos_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.iSyncReqPos
+  field(DESC, "GVL_Devices.M3Select...ector.iSyncReqPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.iSyncReqPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):SEL:D:ValveSyncReqPos") {
+  # GVL_Devices.M3SelectorD.stSelector.iSyncReqPos
+  field(DESC, "GVL_Devices.M3Select...ector.iSyncReqPos")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stSelector.iSyncReqPos=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:D:ValveSyncCurrentPos_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.iSyncResPos
+  field(DESC, "GVL_Devices.M3Select...ector.iSyncResPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.iSyncResPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:D:Valve:01:ReqPos_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.iVici1ReqPos
+  field(DESC, "GVL_Devices.M3Select...ctor.iVici1ReqPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.iVici1ReqPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):SEL:D:Valve:01:ReqPos") {
+  # GVL_Devices.M3SelectorD.stSelector.iVici1ReqPos
+  field(DESC, "GVL_Devices.M3Select...ctor.iVici1ReqPos")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stSelector.iVici1ReqPos=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):SEL:D:Valve:02:ReqPos_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.iVici2ReqPos
+  field(DESC, "GVL_Devices.M3Select...ctor.iVici2ReqPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.iVici2ReqPos?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):SEL:D:Valve:02:ReqPos") {
+  # GVL_Devices.M3SelectorD.stSelector.iVici2ReqPos
+  field(DESC, "GVL_Devices.M3Select...ctor.iVici2ReqPos")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stSelector.iVici2ReqPos=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):SEL:D:LiquidSheathFlow_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.rHighFlow
+  field(DESC, "GVL_Devices.M3Select...elector.rHighFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.rHighFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ai, "$(P):SEL:D:SampleFlow_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.rLowFlow
+  field(DESC, "GVL_Devices.M3Select...Selector.rLowFlow")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.rLowFlow?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:D:SampleNames:01_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s1
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s1")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s1?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:D:SampleNames:10_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s10
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s10")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s10?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:D:SampleNames:11_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s11
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s11")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s11?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:D:SampleNames:12_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s12
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s12")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s12?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:D:SampleNames:02_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s2
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s2")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s2?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:D:SampleNames:03_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s3
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s3")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s3?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:D:SampleNames:04_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s4
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s4")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s4?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:D:SampleNames:05_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s5
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s5")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s5?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:D:SampleNames:06_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s6
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s6")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s6?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:D:SampleNames:07_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s7
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s7")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s7?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:D:SampleNames:08_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s8
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s8")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s8?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:D:SampleNames:09_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s9
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s9")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s9?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:ValvesLockRequest_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.xResLock
+  field(DESC, "GVL_Devices.M3Select...Selector.xResLock")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.xResLock?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:D:ValvesLockRequest") {
+  # GVL_Devices.M3SelectorD.stSelector.xResLock
+  field(DESC, "GVL_Devices.M3Select...Selector.xResLock")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stSelector.xResLock=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:ValvesLocked_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.xResLocked
+  field(DESC, "GVL_Devices.M3Select...lector.xResLocked")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.xResLocked?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:ValvesSynced_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.xResSyncd
+  field(DESC, "GVL_Devices.M3Select...elector.xResSyncd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.xResSyncd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:ValvesUnlockRequest_RBV") {
+  # GVL_Devices.M3SelectorD.stSelector.xResUnlock
+  field(DESC, "GVL_Devices.M3Select...lector.xResUnlock")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stSelector.xResUnlock?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:D:ValvesUnlockRequest") {
+  # GVL_Devices.M3SelectorD.stSelector.xResUnlock
+  field(DESC, "GVL_Devices.M3Select...lector.xResUnlock")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stSelector.xResUnlock=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Shaker:01:Ctrl_RBV") {
+  # GVL_Devices.M3SelectorD.stShaker01.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker01.i_xEpics")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stShaker01.i_xEpics?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:D:Shaker:01:Ctrl") {
+  # GVL_Devices.M3SelectorD.stShaker01.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker01.i_xEpics")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stShaker01.i_xEpics=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Shaker:01:PowerOn_RBV") {
+  # GVL_Devices.M3SelectorD.stShaker01.q_xPwrDO
+  field(DESC, "GVL_Devices.M3Select...Shaker01.q_xPwrDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stShaker01.q_xPwrDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Shaker:01:Ilk_RBV") {
+  field(DESC, "GVL_Devices.M3SelectorD.stShaker01.xIlk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stShaker01.xIlk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Shaker:02:Ctrl_RBV") {
+  # GVL_Devices.M3SelectorD.stShaker02.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker02.i_xEpics")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stShaker02.i_xEpics?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:D:Shaker:02:Ctrl") {
+  # GVL_Devices.M3SelectorD.stShaker02.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker02.i_xEpics")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stShaker02.i_xEpics=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Shaker:02:PowerOn_RBV") {
+  # GVL_Devices.M3SelectorD.stShaker02.q_xPwrDO
+  field(DESC, "GVL_Devices.M3Select...Shaker02.q_xPwrDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stShaker02.q_xPwrDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Shaker:02:Ilk_RBV") {
+  field(DESC, "GVL_Devices.M3SelectorD.stShaker02.xIlk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stShaker02.xIlk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Shaker:03:Ctrl_RBV") {
+  # GVL_Devices.M3SelectorD.stShaker03.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker03.i_xEpics")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stShaker03.i_xEpics?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:D:Shaker:03:Ctrl") {
+  # GVL_Devices.M3SelectorD.stShaker03.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker03.i_xEpics")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stShaker03.i_xEpics=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Shaker:03:PowerOn_RBV") {
+  # GVL_Devices.M3SelectorD.stShaker03.q_xPwrDO
+  field(DESC, "GVL_Devices.M3Select...Shaker03.q_xPwrDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stShaker03.q_xPwrDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Shaker:03:Ilk_RBV") {
+  field(DESC, "GVL_Devices.M3SelectorD.stShaker03.xIlk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stShaker03.xIlk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Shaker:04:Ctrl_RBV") {
+  # GVL_Devices.M3SelectorD.stShaker04.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker04.i_xEpics")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stShaker04.i_xEpics?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SEL:D:Shaker:04:Ctrl") {
+  # GVL_Devices.M3SelectorD.stShaker04.i_xEpics
+  field(DESC, "GVL_Devices.M3Select...Shaker04.i_xEpics")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stShaker04.i_xEpics=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Shaker:04:PowerOn_RBV") {
+  # GVL_Devices.M3SelectorD.stShaker04.q_xPwrDO
+  field(DESC, "GVL_Devices.M3Select...Shaker04.q_xPwrDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stShaker04.q_xPwrDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SEL:D:Shaker:04:Ilk_RBV") {
+  field(DESC, "GVL_Devices.M3SelectorD.stShaker04.xIlk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.M3SelectorD.stShaker04.xIlk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):PCM:A:IO:SyncUnitOK_RBV") {
+  field(DESC, "GVL_Devices.PCMA.stBaseIO.i_SyncUnitWC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMA.stBaseIO.i_SyncUnitWC?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:A:PropAir:01:HighLimit_RBV") {
+  field(DESC, "GVL_Devices.PCMA.stPropAir1.iHiLimit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMA.stPropAir1.iHiLimit?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:A:PropAir:01:HighLimit") {
+  field(DESC, "GVL_Devices.PCMA.stPropAir1.iHiLimit")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMA.stPropAir1.iHiLimit=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:A:PropAir:01:LowLimit_RBV") {
+  field(DESC, "GVL_Devices.PCMA.stPropAir1.iLoLimit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMA.stPropAir1.iLoLimit?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:A:PropAir:01:LowLimit") {
+  field(DESC, "GVL_Devices.PCMA.stPropAir1.iLoLimit")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMA.stPropAir1.iLoLimit=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:A:PropAir:01:Pressure_RBV") {
+  field(DESC, "GVL_Devices.PCMA.stPropAir1.iPressure")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMA.stPropAir1.iPressure?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:A:PropAir:01:Setpoint_RBV") {
+  field(DESC, "GVL_Devices.PCMA.stPropAir1.iSetpoint")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMA.stPropAir1.iSetpoint?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:A:PropAir:01:Setpoint") {
+  field(DESC, "GVL_Devices.PCMA.stPropAir1.iSetpoint")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMA.stPropAir1.iSetpoint=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):PCM:A:PropAir:01:Enable_RBV") {
+  field(DESC, "GVL_Devices.PCMA.stPropAir1.xEnable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMA.stPropAir1.xEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):PCM:A:PropAir:01:Enable") {
+  field(DESC, "GVL_Devices.PCMA.stPropAir1.xEnable")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMA.stPropAir1.xEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:A:PropAir:02:HighLimit_RBV") {
+  field(DESC, "GVL_Devices.PCMA.stPropAir2.iHiLimit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMA.stPropAir2.iHiLimit?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:A:PropAir:02:HighLimit") {
+  field(DESC, "GVL_Devices.PCMA.stPropAir2.iHiLimit")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMA.stPropAir2.iHiLimit=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:A:PropAir:02:LowLimit_RBV") {
+  field(DESC, "GVL_Devices.PCMA.stPropAir2.iLoLimit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMA.stPropAir2.iLoLimit?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:A:PropAir:02:LowLimit") {
+  field(DESC, "GVL_Devices.PCMA.stPropAir2.iLoLimit")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMA.stPropAir2.iLoLimit=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:A:PropAir:02:Pressure_RBV") {
+  field(DESC, "GVL_Devices.PCMA.stPropAir2.iPressure")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMA.stPropAir2.iPressure?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:A:PropAir:02:Setpoint_RBV") {
+  field(DESC, "GVL_Devices.PCMA.stPropAir2.iSetpoint")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMA.stPropAir2.iSetpoint?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:A:PropAir:02:Setpoint") {
+  field(DESC, "GVL_Devices.PCMA.stPropAir2.iSetpoint")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMA.stPropAir2.iSetpoint=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):PCM:A:PropAir:02:Enable_RBV") {
+  field(DESC, "GVL_Devices.PCMA.stPropAir2.xEnable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMA.stPropAir2.xEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):PCM:A:PropAir:02:Enable") {
+  field(DESC, "GVL_Devices.PCMA.stPropAir2.xEnable")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMA.stPropAir2.xEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):PCM:B:IO:SyncUnitOK_RBV") {
+  field(DESC, "GVL_Devices.PCMB.stBaseIO.i_SyncUnitWC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMB.stBaseIO.i_SyncUnitWC?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:B:PropAir:01:HighLimit_RBV") {
+  field(DESC, "GVL_Devices.PCMB.stPropAir1.iHiLimit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMB.stPropAir1.iHiLimit?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:B:PropAir:01:HighLimit") {
+  field(DESC, "GVL_Devices.PCMB.stPropAir1.iHiLimit")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMB.stPropAir1.iHiLimit=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:B:PropAir:01:LowLimit_RBV") {
+  field(DESC, "GVL_Devices.PCMB.stPropAir1.iLoLimit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMB.stPropAir1.iLoLimit?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:B:PropAir:01:LowLimit") {
+  field(DESC, "GVL_Devices.PCMB.stPropAir1.iLoLimit")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMB.stPropAir1.iLoLimit=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:B:PropAir:01:Pressure_RBV") {
+  field(DESC, "GVL_Devices.PCMB.stPropAir1.iPressure")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMB.stPropAir1.iPressure?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:B:PropAir:01:Setpoint_RBV") {
+  field(DESC, "GVL_Devices.PCMB.stPropAir1.iSetpoint")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMB.stPropAir1.iSetpoint?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:B:PropAir:01:Setpoint") {
+  field(DESC, "GVL_Devices.PCMB.stPropAir1.iSetpoint")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMB.stPropAir1.iSetpoint=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):PCM:B:PropAir:01:Enable_RBV") {
+  field(DESC, "GVL_Devices.PCMB.stPropAir1.xEnable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMB.stPropAir1.xEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):PCM:B:PropAir:01:Enable") {
+  field(DESC, "GVL_Devices.PCMB.stPropAir1.xEnable")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMB.stPropAir1.xEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:B:PropAir:02:HighLimit_RBV") {
+  field(DESC, "GVL_Devices.PCMB.stPropAir2.iHiLimit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMB.stPropAir2.iHiLimit?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:B:PropAir:02:HighLimit") {
+  field(DESC, "GVL_Devices.PCMB.stPropAir2.iHiLimit")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMB.stPropAir2.iHiLimit=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:B:PropAir:02:LowLimit_RBV") {
+  field(DESC, "GVL_Devices.PCMB.stPropAir2.iLoLimit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMB.stPropAir2.iLoLimit?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:B:PropAir:02:LowLimit") {
+  field(DESC, "GVL_Devices.PCMB.stPropAir2.iLoLimit")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMB.stPropAir2.iLoLimit=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:B:PropAir:02:Pressure_RBV") {
+  field(DESC, "GVL_Devices.PCMB.stPropAir2.iPressure")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMB.stPropAir2.iPressure?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:B:PropAir:02:Setpoint_RBV") {
+  field(DESC, "GVL_Devices.PCMB.stPropAir2.iSetpoint")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMB.stPropAir2.iSetpoint?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:B:PropAir:02:Setpoint") {
+  field(DESC, "GVL_Devices.PCMB.stPropAir2.iSetpoint")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMB.stPropAir2.iSetpoint=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):PCM:B:PropAir:02:Enable_RBV") {
+  field(DESC, "GVL_Devices.PCMB.stPropAir2.xEnable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMB.stPropAir2.xEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):PCM:B:PropAir:02:Enable") {
+  field(DESC, "GVL_Devices.PCMB.stPropAir2.xEnable")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMB.stPropAir2.xEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):PCM:C:IO:SyncUnitOK_RBV") {
+  field(DESC, "GVL_Devices.PCMC.stBaseIO.i_SyncUnitWC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMC.stBaseIO.i_SyncUnitWC?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:C:PropAir:01:HighLimit_RBV") {
+  field(DESC, "GVL_Devices.PCMC.stPropAir1.iHiLimit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMC.stPropAir1.iHiLimit?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:C:PropAir:01:HighLimit") {
+  field(DESC, "GVL_Devices.PCMC.stPropAir1.iHiLimit")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMC.stPropAir1.iHiLimit=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:C:PropAir:01:LowLimit_RBV") {
+  field(DESC, "GVL_Devices.PCMC.stPropAir1.iLoLimit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMC.stPropAir1.iLoLimit?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:C:PropAir:01:LowLimit") {
+  field(DESC, "GVL_Devices.PCMC.stPropAir1.iLoLimit")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMC.stPropAir1.iLoLimit=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:C:PropAir:01:Pressure_RBV") {
+  field(DESC, "GVL_Devices.PCMC.stPropAir1.iPressure")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMC.stPropAir1.iPressure?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:C:PropAir:01:Setpoint_RBV") {
+  field(DESC, "GVL_Devices.PCMC.stPropAir1.iSetpoint")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMC.stPropAir1.iSetpoint?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:C:PropAir:01:Setpoint") {
+  field(DESC, "GVL_Devices.PCMC.stPropAir1.iSetpoint")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMC.stPropAir1.iSetpoint=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):PCM:C:PropAir:01:Enable_RBV") {
+  field(DESC, "GVL_Devices.PCMC.stPropAir1.xEnable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMC.stPropAir1.xEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):PCM:C:PropAir:01:Enable") {
+  field(DESC, "GVL_Devices.PCMC.stPropAir1.xEnable")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMC.stPropAir1.xEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:C:PropAir:02:HighLimit_RBV") {
+  field(DESC, "GVL_Devices.PCMC.stPropAir2.iHiLimit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMC.stPropAir2.iHiLimit?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:C:PropAir:02:HighLimit") {
+  field(DESC, "GVL_Devices.PCMC.stPropAir2.iHiLimit")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMC.stPropAir2.iHiLimit=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:C:PropAir:02:LowLimit_RBV") {
+  field(DESC, "GVL_Devices.PCMC.stPropAir2.iLoLimit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMC.stPropAir2.iLoLimit?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:C:PropAir:02:LowLimit") {
+  field(DESC, "GVL_Devices.PCMC.stPropAir2.iLoLimit")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMC.stPropAir2.iLoLimit=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:C:PropAir:02:Pressure_RBV") {
+  field(DESC, "GVL_Devices.PCMC.stPropAir2.iPressure")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMC.stPropAir2.iPressure?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:C:PropAir:02:Setpoint_RBV") {
+  field(DESC, "GVL_Devices.PCMC.stPropAir2.iSetpoint")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMC.stPropAir2.iSetpoint?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:C:PropAir:02:Setpoint") {
+  field(DESC, "GVL_Devices.PCMC.stPropAir2.iSetpoint")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMC.stPropAir2.iSetpoint=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):PCM:C:PropAir:02:Enable_RBV") {
+  field(DESC, "GVL_Devices.PCMC.stPropAir2.xEnable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMC.stPropAir2.xEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):PCM:C:PropAir:02:Enable") {
+  field(DESC, "GVL_Devices.PCMC.stPropAir2.xEnable")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMC.stPropAir2.xEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):PCM:D:IO:SyncUnitOK_RBV") {
+  field(DESC, "GVL_Devices.PCMD.stBaseIO.i_SyncUnitWC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMD.stBaseIO.i_SyncUnitWC?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:D:PropAir:01:HighLimit_RBV") {
+  field(DESC, "GVL_Devices.PCMD.stPropAir1.iHiLimit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMD.stPropAir1.iHiLimit?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:D:PropAir:01:HighLimit") {
+  field(DESC, "GVL_Devices.PCMD.stPropAir1.iHiLimit")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMD.stPropAir1.iHiLimit=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:D:PropAir:01:LowLimit_RBV") {
+  field(DESC, "GVL_Devices.PCMD.stPropAir1.iLoLimit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMD.stPropAir1.iLoLimit?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:D:PropAir:01:LowLimit") {
+  field(DESC, "GVL_Devices.PCMD.stPropAir1.iLoLimit")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMD.stPropAir1.iLoLimit=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:D:PropAir:01:Pressure_RBV") {
+  field(DESC, "GVL_Devices.PCMD.stPropAir1.iPressure")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMD.stPropAir1.iPressure?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:D:PropAir:01:Setpoint_RBV") {
+  field(DESC, "GVL_Devices.PCMD.stPropAir1.iSetpoint")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMD.stPropAir1.iSetpoint?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:D:PropAir:01:Setpoint") {
+  field(DESC, "GVL_Devices.PCMD.stPropAir1.iSetpoint")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMD.stPropAir1.iSetpoint=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):PCM:D:PropAir:01:Enable_RBV") {
+  field(DESC, "GVL_Devices.PCMD.stPropAir1.xEnable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMD.stPropAir1.xEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):PCM:D:PropAir:01:Enable") {
+  field(DESC, "GVL_Devices.PCMD.stPropAir1.xEnable")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMD.stPropAir1.xEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:D:PropAir:02:HighLimit_RBV") {
+  field(DESC, "GVL_Devices.PCMD.stPropAir2.iHiLimit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMD.stPropAir2.iHiLimit?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:D:PropAir:02:HighLimit") {
+  field(DESC, "GVL_Devices.PCMD.stPropAir2.iHiLimit")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMD.stPropAir2.iHiLimit=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:D:PropAir:02:LowLimit_RBV") {
+  field(DESC, "GVL_Devices.PCMD.stPropAir2.iLoLimit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMD.stPropAir2.iLoLimit?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:D:PropAir:02:LowLimit") {
+  field(DESC, "GVL_Devices.PCMD.stPropAir2.iLoLimit")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMD.stPropAir2.iLoLimit=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:D:PropAir:02:Pressure_RBV") {
+  field(DESC, "GVL_Devices.PCMD.stPropAir2.iPressure")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMD.stPropAir2.iPressure?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "$(P):PCM:D:PropAir:02:Setpoint_RBV") {
+  field(DESC, "GVL_Devices.PCMD.stPropAir2.iSetpoint")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMD.stPropAir2.iSetpoint?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(P):PCM:D:PropAir:02:Setpoint") {
+  field(DESC, "GVL_Devices.PCMD.stPropAir2.iSetpoint")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMD.stPropAir2.iSetpoint=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):PCM:D:PropAir:02:Enable_RBV") {
+  field(DESC, "GVL_Devices.PCMD.stPropAir2.xEnable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.PCMD.stPropAir2.xEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):PCM:D:PropAir:02:Enable") {
+  field(DESC, "GVL_Devices.PCMD.stPropAir2.xEnable")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.PCMD.stPropAir2.xEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SPR:A:Debug_RBV") {
+  field(DESC, "GVL_Devices.SolenoidPairA.i_xDebug")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.SolenoidPairA.i_xDebug?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SPR:A:Debug") {
+  field(DESC, "GVL_Devices.SolenoidPairA.i_xDebug")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.SolenoidPairA.i_xDebug=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SPR:A:Switch_RBV") {
+  field(DESC, "GVL_Devices.SolenoidPairA.i_xEpics")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.SolenoidPairA.i_xEpics?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SPR:A:Switch") {
+  field(DESC, "GVL_Devices.SolenoidPairA.i_xEpics")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.SolenoidPairA.i_xEpics=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SPR:A:Valve:01:Open_RBV") {
+  field(DESC, "GVL_Devices.SolenoidPairA.q_xDO1")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.SolenoidPairA.q_xDO1?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SPR:A:Valve:01:Open") {
+  field(DESC, "GVL_Devices.SolenoidPairA.q_xDO1")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.SolenoidPairA.q_xDO1=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(P):SPR:A:Valve:02:Open_RBV") {
+  field(DESC, "GVL_Devices.SolenoidPairA.q_xDO2")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.SolenoidPairA.q_xDO2?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "$(P):SPR:A:Valve:02:Open") {
+  field(DESC, "GVL_Devices.SolenoidPairA.q_xDO2")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.SolenoidPairA.q_xDO2=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "$(PREFIX)LCLSGeneral:GlobalLogTrickleTrip_RBV") {
+  field(DESC, "Tripped by overall log count")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Logger.bTrickleTripped?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(PREFIX)LCLSGeneral:LogHost_RBV") {
+  field(DESC, "The log host IP address")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Logger.cLogHost?")
+  field(FTVL, "CHAR")
+  field(NELM, "15")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(PREFIX)LCLSGeneral:LogHost") {
+  field(DESC, "The log host IP address")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Logger.cLogHost=")
+  field(FTVL, "CHAR")
+  field(NELM, "15")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(PREFIX)LCLSGeneral:LogPort_RBV") {
+  field(DESC, "The log host UDP port")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Logger.iLogPort?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "$(PREFIX)LCLSGeneral:LogPort") {
+  field(DESC, "The log host UDP port")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Logger.iLogPort=")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(PREFIX)LCLSGeneral:LogMessageCount_RBV") {
+  field(DESC, "Total log messages on the last cycle")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Logger.nGlobAccEvents?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}

@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<?xml version='1.0' encoding='UTF-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
     <SchemaVersion>2.0</SchemaVersion>
@@ -30,18 +30,20 @@
         <Event>
           <CommandType>Copy</CommandType>
           <DeploymentType>ActivateConfiguration</DeploymentType>
-          <Command1 />
-          <Command2 />
+          <Command1/>
+          <Command2/>
         </Event>
       </Events>
     </DeploymentEvents>
-    <ProjectVersion>0.0.0</ProjectVersion>
+    <ProjectVersion>1.1.1</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="DUTs\ALI\E_AxisMoveMode.TcDUT">
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
-    </Compile>
+    </Compile><Compile Include="Version\Global_Version.TcGVL">
+            <SubType>Code</SubType>
+        </Compile>
     <Compile Include="DUTs\ALI\E_CTRL_MODE.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -284,28 +286,28 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DUTs" />
-    <Folder Include="DUTs\ALI" />
-    <Folder Include="DUTs\IO_Structs" />
-    <Folder Include="DUTs\Bronkhorst" />
-    <Folder Include="DUTs\Vici" />
-    <Folder Include="DUTs\TEC" />
-    <Folder Include="DUTs\Sensirion" />
-    <Folder Include="GVLs" />
-    <Folder Include="POUs\Bronkhorst" />
-    <Folder Include="POUs\DigitalOutput" />
-    <Folder Include="POUs\Helpers" />
-    <Folder Include="POUs\ALI" />
-    <Folder Include="POUs\Flowmeters" />
-    <Folder Include="POUs\GasManifold" />
-    <Folder Include="POUs\PCM" />
-    <Folder Include="POUs\Selectors" />
-    <Folder Include="POUs\Sensirion" />
-    <Folder Include="POUs\TEC" />
-    <Folder Include="POUs\Regulators" />
-    <Folder Include="POUs\VICI" />
-    <Folder Include="POUs" />
-    <Folder Include="VISUs" />
+    <Folder Include="DUTs"/><Folder Include="Version"/>
+    <Folder Include="DUTs\ALI"/>
+    <Folder Include="DUTs\IO_Structs"/>
+    <Folder Include="DUTs\Bronkhorst"/>
+    <Folder Include="DUTs\Vici"/>
+    <Folder Include="DUTs\TEC"/>
+    <Folder Include="DUTs\Sensirion"/>
+    <Folder Include="GVLs"/>
+    <Folder Include="POUs\Bronkhorst"/>
+    <Folder Include="POUs\DigitalOutput"/>
+    <Folder Include="POUs\Helpers"/>
+    <Folder Include="POUs\ALI"/>
+    <Folder Include="POUs\Flowmeters"/>
+    <Folder Include="POUs\GasManifold"/>
+    <Folder Include="POUs\PCM"/>
+    <Folder Include="POUs\Selectors"/>
+    <Folder Include="POUs\Sensirion"/>
+    <Folder Include="POUs\TEC"/>
+    <Folder Include="POUs\Regulators"/>
+    <Folder Include="POUs\VICI"/>
+    <Folder Include="POUs"/>
+    <Folder Include="VISUs"/>
   </ItemGroup>
   <ItemGroup>
     <PlaceholderReference Include="Tc2_Standard">
@@ -397,7 +399,7 @@
     </PlaceholderResolution>
   </ItemGroup>
   <ItemGroup>
-    <PinnedGlobalDataType Include="ST_String7" />
+    <PinnedGlobalDataType Include="ST_String7"/>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
@@ -409,7 +411,7 @@
         <v>{FE9F63D4-9E34-43ce-9322-D46747A00F33}</v>
         <o>
           <v n="Name">"{FE9F63D4-9E34-43ce-9322-D46747A00F33}"</v>
-          <d n="SubKeys" t="Hashtable" />
+          <d n="SubKeys" t="Hashtable"/>
           <d n="Values" t="Hashtable" ckt="String">
             <v>SourceDownloadContent</v>
             <v>1</v>
@@ -422,8 +424,8 @@
         <v>{8F99A816-E488-41E4-9FA3-846536012284}</v>
         <o>
           <v n="Name">"{8F99A816-E488-41E4-9FA3-846536012284}"</v>
-          <d n="SubKeys" t="Hashtable" />
-          <d n="Values" t="Hashtable" />
+          <d n="SubKeys" t="Hashtable"/>
+          <d n="Values" t="Hashtable"/>
         </o>
         <v>{29BD8D0C-3586-4548-BB48-497B9A01693F}</v>
         <o>
@@ -432,16 +434,16 @@
             <v>Rules</v>
             <o>
               <v n="Name">"Rules"</v>
-              <d n="SubKeys" t="Hashtable" />
-              <d n="Values" t="Hashtable" />
+              <d n="SubKeys" t="Hashtable"/>
+              <d n="Values" t="Hashtable"/>
             </o>
           </d>
-          <d n="Values" t="Hashtable" />
+          <d n="Values" t="Hashtable"/>
         </o>
         <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>
         <o>
           <v n="Name">"{40450F57-0AA3-4216-96F3-5444ECB29763}"</v>
-          <d n="SubKeys" t="Hashtable" />
+          <d n="SubKeys" t="Hashtable"/>
           <d n="Values" t="Hashtable" ckt="String">
             <v>ActiveVisuExtensionsLength</v>
             <v>0</v>
@@ -452,13 +454,13 @@
         <v>{A3BBA713-63D7-4de6-BEC2-E3BAAD8789F8}</v>
         <o>
           <v n="Name">"{A3BBA713-63D7-4de6-BEC2-E3BAAD8789F8}"</v>
-          <d n="SubKeys" t="Hashtable" />
-          <d n="Values" t="Hashtable" />
+          <d n="SubKeys" t="Hashtable"/>
+          <d n="Values" t="Hashtable"/>
         </o>
         <v>{C70B7845-2722-4a9b-A0EA-88C877A4B36F}</v>
         <o>
           <v n="Name">"{C70B7845-2722-4a9b-A0EA-88C877A4B36F}"</v>
-          <d n="SubKeys" t="Hashtable" />
+          <d n="SubKeys" t="Hashtable"/>
           <d n="Values" t="Hashtable" ckt="String">
             <v>MaxAuthenticationTrials</v>
             <v>3</v>
@@ -490,7 +492,7 @@
                   <l n="UserMembers" t="ArrayList" cet="Guid">
                     <v>35650b27-7c73-457e-8971-983959af0c7e</v>
                   </l>
-                  <l n="GroupMembers" t="ArrayList" />
+                  <l n="GroupMembers" t="ArrayList"/>
                 </o>
                 <o>
                   <v n="Id">{ea484caf-b741-414b-9f10-772f9e8b0ebe}</v>
@@ -501,7 +503,7 @@
                   <l n="UserMembers" t="ArrayList" cet="Guid">
                     <v>35650b27-7c73-457e-8971-983959af0c7e</v>
                   </l>
-                  <l n="GroupMembers" t="ArrayList" />
+                  <l n="GroupMembers" t="ArrayList"/>
                 </o>
               </a>
             </o>
@@ -519,26 +521,26 @@
         <v>{192FAD59-8248-4824-A8DE-9177C94C195A}</v>
         <o>
           <v n="Name">"{192FAD59-8248-4824-A8DE-9177C94C195A}"</v>
-          <d n="SubKeys" t="Hashtable" />
-          <d n="Values" t="Hashtable" />
+          <d n="SubKeys" t="Hashtable"/>
+          <d n="Values" t="Hashtable"/>
         </o>
         <v>{F66C7017-BDD8-4114-926C-81D6D687E35F}</v>
         <o>
           <v n="Name">"{F66C7017-BDD8-4114-926C-81D6D687E35F}"</v>
-          <d n="SubKeys" t="Hashtable" />
-          <d n="Values" t="Hashtable" />
+          <d n="SubKeys" t="Hashtable"/>
+          <d n="Values" t="Hashtable"/>
         </o>
         <v>{246001F4-279D-43AC-B241-948EB31120E1}</v>
         <o>
           <v n="Name">"{246001F4-279D-43AC-B241-948EB31120E1}"</v>
-          <d n="SubKeys" t="Hashtable" />
+          <d n="SubKeys" t="Hashtable"/>
           <d n="Values" t="Hashtable" ckt="String" cvt="String">
             <v>GlobalVisuImageFilePath</v>
             <v>%APPLICATIONPATH%</v>
           </d>
         </o>
       </d>
-      <d n="Values" t="Hashtable" />
+      <d n="Values" t="Hashtable"/>
     </o>
         </Data>
         <TypeList>

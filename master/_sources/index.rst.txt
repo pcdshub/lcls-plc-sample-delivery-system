@@ -1,0 +1,30 @@
+sdsPLC
+------
+
+.. toctree::
+    :maxdepth: 2
+    :caption: SDS
+
+    SDS_pragmas
+    SDS_nc
+    SDS_ethercat
+    SDS_boxes
+    SDS_links
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: SDSPLC
+
+    SDS_SDSPLC_summary
+    SDS_SDSPLC_epics
+    SDS_SDSPLC_source
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

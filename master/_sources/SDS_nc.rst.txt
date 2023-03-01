@@ -1,0 +1,119 @@
+
+NC Settings
+-----------
+
+.. csv-table::
+    :header: Axis ID, Name
+    :align: center
+
+        3, ALI_X
+        4, ALI_Y
+        5, ALI_Z
+        6, ALI_PropValve
+
+
+
+Axis 3: ALI_X
+^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 3
+    Name, ALI_X
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 100
+    Dynamic:AccelerationMaximum, 300
+    Dynamic:Deceleration, 100
+    Dynamic:DecelerationMaximum, 300
+    Enc:EncType, 4
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #x0000ffff
+    Enc:ScaleFactorNumerator, 0.001
+    Id, 3
+    OtherSettings:AllowMotionCmdToSlave, true
+    PositionAreaControl:Range, 0.005
+    PositionAreaControl:RefSync, 0.005
+    TargetPosControl:Range, 0.0001
+    Velo:Maximum, 5
+
+
+
+Axis 4: ALI_Y
+^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 4
+    Name, ALI_Y
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:DelayTime, 0.08
+    Enc:EncType, 4
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #x0000ffff
+    Enc:ScaleFactorNumerator, 0.001
+    Enc:SoftEndMinControl:Range, 3
+    Id, 4
+    OtherSettings:AllowMotionCmdToSlave, true
+    PositionAreaControl:Range, 0.005
+    PositionAreaControl:RefSync, 0.005
+    TargetPosControl:Range, 0.0001
+    Velo:Maximum, 5
+
+
+
+Axis 5: ALI_Z
+^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 5
+    Name, ALI_Z
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 10
+    Dynamic:AccelerationMaximum, 1000
+    Dynamic:Deceleration, 10
+    Dynamic:DecelerationMaximum, 1000
+    Dynamic:DelayTime, 0.08
+    Dynamic:Jerk, 100
+    Enc:EncType, 4
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #x0000ffff
+    Enc:ScaleFactorNumerator, 3.96875e-005
+    Id, 5
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 1
+
+
+
+Axis 6: ALI_PropValve
+^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 6
+    Name, ALI_PropValve
+    AxisType, 1
+    CreateSymbols, true
+    Enc:EncType, 4
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #x0000ffff
+    Enc:ScaleFactorNumerator, 0.028125
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 2900
+    Enc:SoftEndMinControl:Enable, true
+    General:UnitName, °
+    Id, 6
+    OtherSettings:AllowMotionCmdToSlave, true
+
+

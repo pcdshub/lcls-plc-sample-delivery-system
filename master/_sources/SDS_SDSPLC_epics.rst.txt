@@ -1,0 +1,3924 @@
+
+Data Types
+----------
+
+
+   
+FB_BronkhorstMFM
+^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):Flow_RBV
+      - ai
+      - $(SYMBOL).stMFM.i_rFlow
+      - | io: input
+
+
+    * - $(PREFIX):Setpoint
+      - ao
+      - $(SYMBOL).stMFM.q_rSetpoint
+      - | io: output
+
+
+    * - $(PREFIX):Setpoint_RBV
+      - ai
+      - $(SYMBOL).stMFM.q_rSetpoint
+      - | io: output
+
+
+    * - $(PREFIX):Unit_RBV
+      - waveform
+      - $(SYMBOL).stMFM.i_sUnit
+      - | io: input
+
+
+ 
+FB_GasManifold
+^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):IO:SyncUnitOK_RBV
+      - bi
+      - $(SYMBOL).stBaseIO.i_SyncUnitWC
+      - | io: input
+
+
+    * - $(PREFIX):Valve:01:CloseDO_RBV
+      - bi
+      - $(SYMBOL).stValve[1].qxDO
+      - | io: input
+
+
+    * - $(PREFIX):Valve:01:Ilk_RBV
+      - bi
+      - $(SYMBOL).stValve[1].xILK
+      - | io: input
+
+
+    * - $(PREFIX):Valve:01:Name_RBV
+      - waveform
+      - $(SYMBOL).stValve[1].sName
+      - | io: input
+
+
+    * - $(PREFIX):Valve:01:Open
+      - bo
+      - $(SYMBOL).stValve[1].xSW
+      - | io: output
+
+
+    * - $(PREFIX):Valve:01:Open_RBV
+      - bi
+      - $(SYMBOL).stValve[1].xSW
+      - | io: output
+
+
+    * - $(PREFIX):Valve:01:OpenSW_RBV
+      - bi
+      - $(SYMBOL).stValve[1].ixOPN
+      - | io: input
+
+
+    * - $(PREFIX):Valve:02:CloseDO_RBV
+      - bi
+      - $(SYMBOL).stValve[2].qxDO
+      - | io: input
+
+
+    * - $(PREFIX):Valve:02:Ilk_RBV
+      - bi
+      - $(SYMBOL).stValve[2].xILK
+      - | io: input
+
+
+    * - $(PREFIX):Valve:02:Name_RBV
+      - waveform
+      - $(SYMBOL).stValve[2].sName
+      - | io: input
+
+
+    * - $(PREFIX):Valve:02:Open
+      - bo
+      - $(SYMBOL).stValve[2].xSW
+      - | io: output
+
+
+    * - $(PREFIX):Valve:02:Open_RBV
+      - bi
+      - $(SYMBOL).stValve[2].xSW
+      - | io: output
+
+
+    * - $(PREFIX):Valve:02:OpenSW_RBV
+      - bi
+      - $(SYMBOL).stValve[2].ixOPN
+      - | io: input
+
+
+    * - $(PREFIX):Valve:03:CloseDO_RBV
+      - bi
+      - $(SYMBOL).stValve[3].qxDO
+      - | io: input
+
+
+    * - $(PREFIX):Valve:03:Ilk_RBV
+      - bi
+      - $(SYMBOL).stValve[3].xILK
+      - | io: input
+
+
+    * - $(PREFIX):Valve:03:Name_RBV
+      - waveform
+      - $(SYMBOL).stValve[3].sName
+      - | io: input
+
+
+    * - $(PREFIX):Valve:03:Open
+      - bo
+      - $(SYMBOL).stValve[3].xSW
+      - | io: output
+
+
+    * - $(PREFIX):Valve:03:Open_RBV
+      - bi
+      - $(SYMBOL).stValve[3].xSW
+      - | io: output
+
+
+    * - $(PREFIX):Valve:03:OpenSW_RBV
+      - bi
+      - $(SYMBOL).stValve[3].ixOPN
+      - | io: input
+
+
+    * - $(PREFIX):Valve:04:CloseDO_RBV
+      - bi
+      - $(SYMBOL).stValve[4].qxDO
+      - | io: input
+
+
+    * - $(PREFIX):Valve:04:Ilk_RBV
+      - bi
+      - $(SYMBOL).stValve[4].xILK
+      - | io: input
+
+
+    * - $(PREFIX):Valve:04:Name_RBV
+      - waveform
+      - $(SYMBOL).stValve[4].sName
+      - | io: input
+
+
+    * - $(PREFIX):Valve:04:Open
+      - bo
+      - $(SYMBOL).stValve[4].xSW
+      - | io: output
+
+
+    * - $(PREFIX):Valve:04:Open_RBV
+      - bi
+      - $(SYMBOL).stValve[4].xSW
+      - | io: output
+
+
+    * - $(PREFIX):Valve:04:OpenSW_RBV
+      - bi
+      - $(SYMBOL).stValve[4].ixOPN
+      - | io: input
+
+
+    * - $(PREFIX):Valve:05:CloseDO_RBV
+      - bi
+      - $(SYMBOL).stValve[5].qxDO
+      - | io: input
+
+
+    * - $(PREFIX):Valve:05:Ilk_RBV
+      - bi
+      - $(SYMBOL).stValve[5].xILK
+      - | io: input
+
+
+    * - $(PREFIX):Valve:05:Name_RBV
+      - waveform
+      - $(SYMBOL).stValve[5].sName
+      - | io: input
+
+
+    * - $(PREFIX):Valve:05:Open
+      - bo
+      - $(SYMBOL).stValve[5].xSW
+      - | io: output
+
+
+    * - $(PREFIX):Valve:05:Open_RBV
+      - bi
+      - $(SYMBOL).stValve[5].xSW
+      - | io: output
+
+
+    * - $(PREFIX):Valve:05:OpenSW_RBV
+      - bi
+      - $(SYMBOL).stValve[5].ixOPN
+      - | io: input
+
+
+    * - $(PREFIX):Valve:06:CloseDO_RBV
+      - bi
+      - $(SYMBOL).stValve[6].qxDO
+      - | io: input
+
+
+    * - $(PREFIX):Valve:06:Ilk_RBV
+      - bi
+      - $(SYMBOL).stValve[6].xILK
+      - | io: input
+
+
+    * - $(PREFIX):Valve:06:Name_RBV
+      - waveform
+      - $(SYMBOL).stValve[6].sName
+      - | io: input
+
+
+    * - $(PREFIX):Valve:06:Open
+      - bo
+      - $(SYMBOL).stValve[6].xSW
+      - | io: output
+
+
+    * - $(PREFIX):Valve:06:Open_RBV
+      - bi
+      - $(SYMBOL).stValve[6].xSW
+      - | io: output
+
+
+    * - $(PREFIX):Valve:06:OpenSW_RBV
+      - bi
+      - $(SYMBOL).stValve[6].ixOPN
+      - | io: input
+
+
+    * - $(PREFIX):Valve:07:CloseDO_RBV
+      - bi
+      - $(SYMBOL).stValve[7].qxDO
+      - | io: input
+
+
+    * - $(PREFIX):Valve:07:Ilk_RBV
+      - bi
+      - $(SYMBOL).stValve[7].xILK
+      - | io: input
+
+
+    * - $(PREFIX):Valve:07:Name_RBV
+      - waveform
+      - $(SYMBOL).stValve[7].sName
+      - | io: input
+
+
+    * - $(PREFIX):Valve:07:Open
+      - bo
+      - $(SYMBOL).stValve[7].xSW
+      - | io: output
+
+
+    * - $(PREFIX):Valve:07:Open_RBV
+      - bi
+      - $(SYMBOL).stValve[7].xSW
+      - | io: output
+
+
+    * - $(PREFIX):Valve:07:OpenSW_RBV
+      - bi
+      - $(SYMBOL).stValve[7].ixOPN
+      - | io: input
+
+
+  
+FB_PressureControlModule
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):IO:SyncUnitOK_RBV
+      - bi
+      - $(SYMBOL).stBaseIO.i_SyncUnitWC
+      - | io: input
+
+
+    * - $(PREFIX):PropAir:01:Enable
+      - bo
+      - $(SYMBOL).stPropAir1.xEnable
+      - | io: output
+
+
+    * - $(PREFIX):PropAir:01:Enable_RBV
+      - bi
+      - $(SYMBOL).stPropAir1.xEnable
+      - | io: output
+
+
+    * - $(PREFIX):PropAir:01:HighLimit
+      - longout
+      - $(SYMBOL).stPropAir1.iHiLimit
+      - | io: output
+
+
+    * - $(PREFIX):PropAir:01:HighLimit_RBV
+      - longin
+      - $(SYMBOL).stPropAir1.iHiLimit
+      - | io: output
+
+
+    * - $(PREFIX):PropAir:01:LowLimit
+      - longout
+      - $(SYMBOL).stPropAir1.iLoLimit
+      - | io: output
+
+
+    * - $(PREFIX):PropAir:01:LowLimit_RBV
+      - longin
+      - $(SYMBOL).stPropAir1.iLoLimit
+      - | io: output
+
+
+    * - $(PREFIX):PropAir:01:Pressure_RBV
+      - longin
+      - $(SYMBOL).stPropAir1.iPressure
+      - | io: input
+
+
+    * - $(PREFIX):PropAir:01:Setpoint
+      - longout
+      - $(SYMBOL).stPropAir1.iSetpoint
+      - | io: output
+
+
+    * - $(PREFIX):PropAir:01:Setpoint_RBV
+      - longin
+      - $(SYMBOL).stPropAir1.iSetpoint
+      - | io: output
+
+
+    * - $(PREFIX):PropAir:02:Enable
+      - bo
+      - $(SYMBOL).stPropAir2.xEnable
+      - | io: output
+
+
+    * - $(PREFIX):PropAir:02:Enable_RBV
+      - bi
+      - $(SYMBOL).stPropAir2.xEnable
+      - | io: output
+
+
+    * - $(PREFIX):PropAir:02:HighLimit
+      - longout
+      - $(SYMBOL).stPropAir2.iHiLimit
+      - | io: output
+
+
+    * - $(PREFIX):PropAir:02:HighLimit_RBV
+      - longin
+      - $(SYMBOL).stPropAir2.iHiLimit
+      - | io: output
+
+
+    * - $(PREFIX):PropAir:02:LowLimit
+      - longout
+      - $(SYMBOL).stPropAir2.iLoLimit
+      - | io: output
+
+
+    * - $(PREFIX):PropAir:02:LowLimit_RBV
+      - longin
+      - $(SYMBOL).stPropAir2.iLoLimit
+      - | io: output
+
+
+    * - $(PREFIX):PropAir:02:Pressure_RBV
+      - longin
+      - $(SYMBOL).stPropAir2.iPressure
+      - | io: input
+
+
+    * - $(PREFIX):PropAir:02:Setpoint
+      - longout
+      - $(SYMBOL).stPropAir2.iSetpoint
+      - | io: output
+
+
+    * - $(PREFIX):PropAir:02:Setpoint_RBV
+      - longin
+      - $(SYMBOL).stPropAir2.iSetpoint
+      - | io: output
+
+
+  
+FB_SelectorM3
+^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):IO:SyncUnitOK_RBV
+      - bi
+      - $(SYMBOL).stBaseIO.i_SyncUnitWC
+      - | io: input
+
+
+    * - $(PREFIX):LiquidSheathFlow_RBV
+      - ai
+      - $(SYMBOL).stSelector.rHighFlow
+      - | io: input
+
+
+    * - $(PREFIX):SampleFlow_RBV
+      - ai
+      - $(SYMBOL).stSelector.rLowFlow
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:01_RBV
+      - waveform
+      - $(SYMBOL).stSelector.stSampleNames.s1
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:02_RBV
+      - waveform
+      - $(SYMBOL).stSelector.stSampleNames.s2
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:03_RBV
+      - waveform
+      - $(SYMBOL).stSelector.stSampleNames.s3
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:04_RBV
+      - waveform
+      - $(SYMBOL).stSelector.stSampleNames.s4
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:05_RBV
+      - waveform
+      - $(SYMBOL).stSelector.stSampleNames.s5
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:06_RBV
+      - waveform
+      - $(SYMBOL).stSelector.stSampleNames.s6
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:07_RBV
+      - waveform
+      - $(SYMBOL).stSelector.stSampleNames.s7
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:08_RBV
+      - waveform
+      - $(SYMBOL).stSelector.stSampleNames.s8
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:09_RBV
+      - waveform
+      - $(SYMBOL).stSelector.stSampleNames.s9
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:10_RBV
+      - waveform
+      - $(SYMBOL).stSelector.stSampleNames.s10
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:11_RBV
+      - waveform
+      - $(SYMBOL).stSelector.stSampleNames.s11
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:12_RBV
+      - waveform
+      - $(SYMBOL).stSelector.stSampleNames.s12
+      - | io: input
+
+
+    * - $(PREFIX):Sensirion:01:Flow_RBV
+      - ai
+      - $(SYMBOL).astSelFM[1].rFlow
+      - | io: input
+
+
+    * - $(PREFIX):Sensirion:01:FlowValid_RBV
+      - bi
+      - $(SYMBOL).astSelFM[1].xFlowValid
+      - | io: input
+
+
+    * - $(PREFIX):Sensirion:01:Mode
+      - bo
+      - $(SYMBOL).astSelFM[1].xFMModeReq
+      - | io: output
+
+
+    * - $(PREFIX):Sensirion:01:Mode_RBV
+      - bi
+      - $(SYMBOL).astSelFM[1].xFMModeReq
+      - | io: output
+
+
+    * - $(PREFIX):Sensirion:01:ModeRb_RBV
+      - bi
+      - $(SYMBOL).astSelFM[1].xFMModeRb
+      - | io: input
+
+
+    * - $(PREFIX):Sensirion:01:OoR_RBV
+      - bi
+      - $(SYMBOL).astSelFM[1].xFMOoR
+      - | io: input
+
+
+    * - $(PREFIX):Sensirion:01:Reset
+      - bo
+      - $(SYMBOL).astSelFM[1].xFMReset
+      - | io: output
+
+
+    * - $(PREFIX):Sensirion:01:Reset_RBV
+      - bi
+      - $(SYMBOL).astSelFM[1].xFMReset
+      - | io: output
+
+
+    * - $(PREFIX):Sensirion:01:State_RBV
+      - mbbi
+      - $(SYMBOL).astSelFM[1].eFMState
+      - | io: input
+
+
+    * - $(PREFIX):Sensirion:02:Flow_RBV
+      - ai
+      - $(SYMBOL).astSelFM[2].rFlow
+      - | io: input
+
+
+    * - $(PREFIX):Sensirion:02:FlowValid_RBV
+      - bi
+      - $(SYMBOL).astSelFM[2].xFlowValid
+      - | io: input
+
+
+    * - $(PREFIX):Sensirion:02:Mode
+      - bo
+      - $(SYMBOL).astSelFM[2].xFMModeReq
+      - | io: output
+
+
+    * - $(PREFIX):Sensirion:02:Mode_RBV
+      - bi
+      - $(SYMBOL).astSelFM[2].xFMModeReq
+      - | io: output
+
+
+    * - $(PREFIX):Sensirion:02:ModeRb_RBV
+      - bi
+      - $(SYMBOL).astSelFM[2].xFMModeRb
+      - | io: input
+
+
+    * - $(PREFIX):Sensirion:02:OoR_RBV
+      - bi
+      - $(SYMBOL).astSelFM[2].xFMOoR
+      - | io: input
+
+
+    * - $(PREFIX):Sensirion:02:Reset
+      - bo
+      - $(SYMBOL).astSelFM[2].xFMReset
+      - | io: output
+
+
+    * - $(PREFIX):Sensirion:02:Reset_RBV
+      - bi
+      - $(SYMBOL).astSelFM[2].xFMReset
+      - | io: output
+
+
+    * - $(PREFIX):Sensirion:02:State_RBV
+      - mbbi
+      - $(SYMBOL).astSelFM[2].eFMState
+      - | io: input
+
+
+    * - $(PREFIX):Shaker:01:Ctrl
+      - bo
+      - $(SYMBOL).stShaker01.i_xEpics
+      - | io: output
+
+
+    * - $(PREFIX):Shaker:01:Ctrl_RBV
+      - bi
+      - $(SYMBOL).stShaker01.i_xEpics
+      - | io: output
+
+
+    * - $(PREFIX):Shaker:01:Ilk_RBV
+      - bi
+      - $(SYMBOL).stShaker01.xIlk
+      - | io: input
+
+
+    * - $(PREFIX):Shaker:01:PowerOn_RBV
+      - bi
+      - $(SYMBOL).stShaker01.q_xPwrDO
+      - | io: input
+
+
+    * - $(PREFIX):Shaker:02:Ctrl
+      - bo
+      - $(SYMBOL).stShaker02.i_xEpics
+      - | io: output
+
+
+    * - $(PREFIX):Shaker:02:Ctrl_RBV
+      - bi
+      - $(SYMBOL).stShaker02.i_xEpics
+      - | io: output
+
+
+    * - $(PREFIX):Shaker:02:Ilk_RBV
+      - bi
+      - $(SYMBOL).stShaker02.xIlk
+      - | io: input
+
+
+    * - $(PREFIX):Shaker:02:PowerOn_RBV
+      - bi
+      - $(SYMBOL).stShaker02.q_xPwrDO
+      - | io: input
+
+
+    * - $(PREFIX):Shaker:03:Ctrl
+      - bo
+      - $(SYMBOL).stShaker03.i_xEpics
+      - | io: output
+
+
+    * - $(PREFIX):Shaker:03:Ctrl_RBV
+      - bi
+      - $(SYMBOL).stShaker03.i_xEpics
+      - | io: output
+
+
+    * - $(PREFIX):Shaker:03:Ilk_RBV
+      - bi
+      - $(SYMBOL).stShaker03.xIlk
+      - | io: input
+
+
+    * - $(PREFIX):Shaker:03:PowerOn_RBV
+      - bi
+      - $(SYMBOL).stShaker03.q_xPwrDO
+      - | io: input
+
+
+    * - $(PREFIX):Shaker:04:Ctrl
+      - bo
+      - $(SYMBOL).stShaker04.i_xEpics
+      - | io: output
+
+
+    * - $(PREFIX):Shaker:04:Ctrl_RBV
+      - bi
+      - $(SYMBOL).stShaker04.i_xEpics
+      - | io: output
+
+
+    * - $(PREFIX):Shaker:04:Ilk_RBV
+      - bi
+      - $(SYMBOL).stShaker04.xIlk
+      - | io: input
+
+
+    * - $(PREFIX):Shaker:04:PowerOn_RBV
+      - bi
+      - $(SYMBOL).stShaker04.q_xPwrDO
+      - | io: input
+
+
+    * - $(PREFIX):Valve:01:CurrentPos_RBV
+      - longin
+      - $(SYMBOL).stSelector.astViciVlvStatus[1].iCurrPos
+      - | io: input
+
+
+    * - $(PREFIX):Valve:01:ReqPos
+      - longout
+      - $(SYMBOL).stSelector.iVici1ReqPos
+      - | io: output
+
+
+    * - $(PREFIX):Valve:01:ReqPos_RBV
+      - longin
+      - $(SYMBOL).stSelector.iVici1ReqPos
+      - | io: output
+
+
+    * - $(PREFIX):Valve:02:CurrentPos_RBV
+      - longin
+      - $(SYMBOL).stSelector.astViciVlvStatus[2].iCurrPos
+      - | io: input
+
+
+    * - $(PREFIX):Valve:02:ReqPos
+      - longout
+      - $(SYMBOL).stSelector.iVici2ReqPos
+      - | io: output
+
+
+    * - $(PREFIX):Valve:02:ReqPos_RBV
+      - longin
+      - $(SYMBOL).stSelector.iVici2ReqPos
+      - | io: output
+
+
+    * - $(PREFIX):ValvesLocked_RBV
+      - bi
+      - $(SYMBOL).stSelector.xResLocked
+      - | io: input
+
+
+    * - $(PREFIX):ValvesLockRequest
+      - bo
+      - $(SYMBOL).stSelector.xResLock
+      - | io: output
+
+
+    * - $(PREFIX):ValvesLockRequest_RBV
+      - bi
+      - $(SYMBOL).stSelector.xResLock
+      - | io: output
+
+
+    * - $(PREFIX):ValvesSynced_RBV
+      - bi
+      - $(SYMBOL).stSelector.xResSyncd
+      - | io: input
+
+
+    * - $(PREFIX):ValvesUnlockRequest
+      - bo
+      - $(SYMBOL).stSelector.xResUnlock
+      - | io: output
+
+
+    * - $(PREFIX):ValvesUnlockRequest_RBV
+      - bi
+      - $(SYMBOL).stSelector.xResUnlock
+      - | io: output
+
+
+    * - $(PREFIX):ValveSyncCurrentPos_RBV
+      - longin
+      - $(SYMBOL).stSelector.iSyncResPos
+      - | io: input
+
+
+    * - $(PREFIX):ValveSyncReqPos
+      - longout
+      - $(SYMBOL).stSelector.iSyncReqPos
+      - | io: output
+
+
+    * - $(PREFIX):ValveSyncReqPos_RBV
+      - longin
+      - $(SYMBOL).stSelector.iSyncReqPos
+      - | io: output
+
+
+      
+FB_SolenoidPair
+^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):Debug
+      - bo
+      - $(SYMBOL).i_xDebug
+      - | io: output
+
+
+    * - $(PREFIX):Debug_RBV
+      - bi
+      - $(SYMBOL).i_xDebug
+      - | io: output
+
+
+    * - $(PREFIX):Switch
+      - bo
+      - $(SYMBOL).i_xEpics
+      - | io: output
+
+
+    * - $(PREFIX):Switch_RBV
+      - bi
+      - $(SYMBOL).i_xEpics
+      - | io: output
+
+
+    * - $(PREFIX):Valve:01:Open
+      - bo
+      - $(SYMBOL).q_xDO1
+      - | io: output
+
+
+    * - $(PREFIX):Valve:01:Open_RBV
+      - bi
+      - $(SYMBOL).q_xDO1
+      - | io: output
+
+
+    * - $(PREFIX):Valve:02:Open
+      - bo
+      - $(SYMBOL).q_xDO2
+      - | io: output
+
+
+    * - $(PREFIX):Valve:02:Open_RBV
+      - bi
+      - $(SYMBOL).q_xDO2
+      - | io: output
+
+
+    
+LCLS_General.FB_LogMessage
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):Reset
+      - bo
+      - Rising-edge reset of trip
+      - | io: output
+
+
+    * - $(PREFIX):Reset_RBV
+      - bi
+      - Rising-edge reset of trip
+      - | io: output
+
+
+    * - $(PREFIX):Tripped_RBV
+      - bi
+      - Log message FB tripped
+      - | io: input
+
+
+                                 
+ST_BhElFlow
+^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):Flow_RBV
+      - ai
+      - $(SYMBOL).i_rFlow
+      - | io: input
+
+
+    * - $(PREFIX):Setpoint
+      - ao
+      - $(SYMBOL).q_rSetpoint
+      - | io: output
+
+
+    * - $(PREFIX):Setpoint_RBV
+      - ai
+      - $(SYMBOL).q_rSetpoint
+      - | io: output
+
+
+    * - $(PREFIX):Unit_RBV
+      - waveform
+      - $(SYMBOL).i_sUnit
+      - | io: input
+
+
+  
+ST_M3DeviceBaseIO
+^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):SyncUnitOK_RBV
+      - bi
+      - $(SYMBOL).i_SyncUnitWC
+      - | io: input
+
+
+ 
+ST_ManifoldValve
+^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):CloseDO_RBV
+      - bi
+      - $(SYMBOL).qxDO
+      - | io: input
+
+
+    * - $(PREFIX):Ilk_RBV
+      - bi
+      - $(SYMBOL).xILK
+      - | io: input
+
+
+    * - $(PREFIX):Name_RBV
+      - waveform
+      - $(SYMBOL).sName
+      - | io: input
+
+
+    * - $(PREFIX):Open
+      - bo
+      - $(SYMBOL).xSW
+      - | io: output
+
+
+    * - $(PREFIX):Open_RBV
+      - bi
+      - $(SYMBOL).xSW
+      - | io: output
+
+
+    * - $(PREFIX):OpenSW_RBV
+      - bi
+      - $(SYMBOL).ixOPN
+      - | io: input
+
+
+ 
+ST_Proportionair
+^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):Enable
+      - bo
+      - $(SYMBOL).xEnable
+      - | io: output
+
+
+    * - $(PREFIX):Enable_RBV
+      - bi
+      - $(SYMBOL).xEnable
+      - | io: output
+
+
+    * - $(PREFIX):HighLimit
+      - longout
+      - $(SYMBOL).iHiLimit
+      - | io: output
+
+
+    * - $(PREFIX):HighLimit_RBV
+      - longin
+      - $(SYMBOL).iHiLimit
+      - | io: output
+
+
+    * - $(PREFIX):LowLimit
+      - longout
+      - $(SYMBOL).iLoLimit
+      - | io: output
+
+
+    * - $(PREFIX):LowLimit_RBV
+      - longin
+      - $(SYMBOL).iLoLimit
+      - | io: output
+
+
+    * - $(PREFIX):Pressure_RBV
+      - longin
+      - $(SYMBOL).iPressure
+      - | io: input
+
+
+    * - $(PREFIX):Setpoint
+      - longout
+      - $(SYMBOL).iSetpoint
+      - | io: output
+
+
+    * - $(PREFIX):Setpoint_RBV
+      - longin
+      - $(SYMBOL).iSetpoint
+      - | io: output
+
+
+ 
+ST_SelectorM3
+^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):LiquidSheathFlow_RBV
+      - ai
+      - $(SYMBOL).rHighFlow
+      - | io: input
+
+
+    * - $(PREFIX):SampleFlow_RBV
+      - ai
+      - $(SYMBOL).rLowFlow
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:01_RBV
+      - waveform
+      - $(SYMBOL).stSampleNames.s1
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:02_RBV
+      - waveform
+      - $(SYMBOL).stSampleNames.s2
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:03_RBV
+      - waveform
+      - $(SYMBOL).stSampleNames.s3
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:04_RBV
+      - waveform
+      - $(SYMBOL).stSampleNames.s4
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:05_RBV
+      - waveform
+      - $(SYMBOL).stSampleNames.s5
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:06_RBV
+      - waveform
+      - $(SYMBOL).stSampleNames.s6
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:07_RBV
+      - waveform
+      - $(SYMBOL).stSampleNames.s7
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:08_RBV
+      - waveform
+      - $(SYMBOL).stSampleNames.s8
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:09_RBV
+      - waveform
+      - $(SYMBOL).stSampleNames.s9
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:10_RBV
+      - waveform
+      - $(SYMBOL).stSampleNames.s10
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:11_RBV
+      - waveform
+      - $(SYMBOL).stSampleNames.s11
+      - | io: input
+
+
+    * - $(PREFIX):SampleNames:12_RBV
+      - waveform
+      - $(SYMBOL).stSampleNames.s12
+      - | io: input
+
+
+    * - $(PREFIX):Valve:01:CurrentPos_RBV
+      - longin
+      - $(SYMBOL).astViciVlvStatus[1].iCurrPos
+      - | io: input
+
+
+    * - $(PREFIX):Valve:01:ReqPos
+      - longout
+      - $(SYMBOL).iVici1ReqPos
+      - | io: output
+
+
+    * - $(PREFIX):Valve:01:ReqPos_RBV
+      - longin
+      - $(SYMBOL).iVici1ReqPos
+      - | io: output
+
+
+    * - $(PREFIX):Valve:02:CurrentPos_RBV
+      - longin
+      - $(SYMBOL).astViciVlvStatus[2].iCurrPos
+      - | io: input
+
+
+    * - $(PREFIX):Valve:02:ReqPos
+      - longout
+      - $(SYMBOL).iVici2ReqPos
+      - | io: output
+
+
+    * - $(PREFIX):Valve:02:ReqPos_RBV
+      - longin
+      - $(SYMBOL).iVici2ReqPos
+      - | io: output
+
+
+    * - $(PREFIX):ValvesLocked_RBV
+      - bi
+      - $(SYMBOL).xResLocked
+      - | io: input
+
+
+    * - $(PREFIX):ValvesLockRequest
+      - bo
+      - $(SYMBOL).xResLock
+      - | io: output
+
+
+    * - $(PREFIX):ValvesLockRequest_RBV
+      - bi
+      - $(SYMBOL).xResLock
+      - | io: output
+
+
+    * - $(PREFIX):ValvesSynced_RBV
+      - bi
+      - $(SYMBOL).xResSyncd
+      - | io: input
+
+
+    * - $(PREFIX):ValvesUnlockRequest
+      - bo
+      - $(SYMBOL).xResUnlock
+      - | io: output
+
+
+    * - $(PREFIX):ValvesUnlockRequest_RBV
+      - bi
+      - $(SYMBOL).xResUnlock
+      - | io: output
+
+
+    * - $(PREFIX):ValveSyncCurrentPos_RBV
+      - longin
+      - $(SYMBOL).iSyncResPos
+      - | io: input
+
+
+    * - $(PREFIX):ValveSyncReqPos
+      - longout
+      - $(SYMBOL).iSyncReqPos
+      - | io: output
+
+
+    * - $(PREFIX):ValveSyncReqPos_RBV
+      - longin
+      - $(SYMBOL).iSyncReqPos
+      - | io: output
+
+
+ 
+ST_SensirionFM
+^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):Flow_RBV
+      - ai
+      - $(SYMBOL).rFlow
+      - | io: input
+
+
+    * - $(PREFIX):FlowValid_RBV
+      - bi
+      - $(SYMBOL).xFlowValid
+      - | io: input
+
+
+    * - $(PREFIX):Mode
+      - bo
+      - $(SYMBOL).xFMModeReq
+      - | io: output
+
+
+    * - $(PREFIX):Mode_RBV
+      - bi
+      - $(SYMBOL).xFMModeReq
+      - | io: output
+
+
+    * - $(PREFIX):ModeRb_RBV
+      - bi
+      - $(SYMBOL).xFMModeRb
+      - | io: input
+
+
+    * - $(PREFIX):OoR_RBV
+      - bi
+      - $(SYMBOL).xFMOoR
+      - | io: input
+
+
+    * - $(PREFIX):Reset
+      - bo
+      - $(SYMBOL).xFMReset
+      - | io: output
+
+
+    * - $(PREFIX):Reset_RBV
+      - bi
+      - $(SYMBOL).xFMReset
+      - | io: output
+
+
+    * - $(PREFIX):State_RBV
+      - mbbi
+      - $(SYMBOL).eFMState
+      - | io: input
+
+
+    
+ST_Shaker
+^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):Ctrl
+      - bo
+      - $(SYMBOL).i_xEpics
+      - | io: output
+
+
+    * - $(PREFIX):Ctrl_RBV
+      - bi
+      - $(SYMBOL).i_xEpics
+      - | io: output
+
+
+    * - $(PREFIX):Ilk_RBV
+      - bi
+      - $(SYMBOL).xIlk
+      - | io: input
+
+
+    * - $(PREFIX):PowerOn_RBV
+      - bi
+      - $(SYMBOL).q_xPwrDO
+      - | io: input
+
+
+ 
+ST_Strings
+^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):01_RBV
+      - waveform
+      - $(SYMBOL).s1
+      - | io: input
+
+
+    * - $(PREFIX):02_RBV
+      - waveform
+      - $(SYMBOL).s2
+      - | io: input
+
+
+    * - $(PREFIX):03_RBV
+      - waveform
+      - $(SYMBOL).s3
+      - | io: input
+
+
+    * - $(PREFIX):04_RBV
+      - waveform
+      - $(SYMBOL).s4
+      - | io: input
+
+
+    * - $(PREFIX):05_RBV
+      - waveform
+      - $(SYMBOL).s5
+      - | io: input
+
+
+    * - $(PREFIX):06_RBV
+      - waveform
+      - $(SYMBOL).s6
+      - | io: input
+
+
+    * - $(PREFIX):07_RBV
+      - waveform
+      - $(SYMBOL).s7
+      - | io: input
+
+
+    * - $(PREFIX):08_RBV
+      - waveform
+      - $(SYMBOL).s8
+      - | io: input
+
+
+    * - $(PREFIX):09_RBV
+      - waveform
+      - $(SYMBOL).s9
+      - | io: input
+
+
+    * - $(PREFIX):10_RBV
+      - waveform
+      - $(SYMBOL).s10
+      - | io: input
+
+
+    * - $(PREFIX):11_RBV
+      - waveform
+      - $(SYMBOL).s11
+      - | io: input
+
+
+    * - $(PREFIX):12_RBV
+      - waveform
+      - $(SYMBOL).s12
+      - | io: input
+
+
+  
+ST_ViciStatus
+^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):CurrentPos_RBV
+      - longin
+      - $(SYMBOL).iCurrPos
+      - | io: input
+
+
+                                 
+Database Records
+----------------
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(P):MFM:A:Flow_RBV
+      - ai
+      - GVL_Devices.BronkhorstA.stMFM.i_rFlow
+      - | io: input
+
+
+    * - $(P):MFM:A:Unit_RBV
+      - waveform
+      - GVL_Devices.BronkhorstA.stMFM.i_sUnit
+      - | io: input
+
+
+    * - $(P):MFM:A:Setpoint_RBV
+      - ai
+      - GVL_Devices.BronkhorstA.stMFM.q_rSetpoint
+      - | io: output
+
+
+    * - $(P):MFM:A:Setpoint
+      - ao
+      - GVL_Devices.BronkhorstA.stMFM.q_rSetpoint
+      - | io: output
+
+
+    * - $(P):MFM:B:Flow_RBV
+      - ai
+      - GVL_Devices.BronkhorstB.stMFM.i_rFlow
+      - | io: input
+
+
+    * - $(P):MFM:B:Unit_RBV
+      - waveform
+      - GVL_Devices.BronkhorstB.stMFM.i_sUnit
+      - | io: input
+
+
+    * - $(P):MFM:B:Setpoint_RBV
+      - ai
+      - GVL_Devices.BronkhorstB.stMFM.q_rSetpoint
+      - | io: output
+
+
+    * - $(P):MFM:B:Setpoint
+      - ao
+      - GVL_Devices.BronkhorstB.stMFM.q_rSetpoint
+      - | io: output
+
+
+    * - $(P):MFM:C:Flow_RBV
+      - ai
+      - GVL_Devices.BronkhorstC.stMFM.i_rFlow
+      - | io: input
+
+
+    * - $(P):MFM:C:Unit_RBV
+      - waveform
+      - GVL_Devices.BronkhorstC.stMFM.i_sUnit
+      - | io: input
+
+
+    * - $(P):MFM:C:Setpoint_RBV
+      - ai
+      - GVL_Devices.BronkhorstC.stMFM.q_rSetpoint
+      - | io: output
+
+
+    * - $(P):MFM:C:Setpoint
+      - ao
+      - GVL_Devices.BronkhorstC.stMFM.q_rSetpoint
+      - | io: output
+
+
+    * - $(P):MFM:D:Flow_RBV
+      - ai
+      - GVL_Devices.BronkhorstD.stMFM.i_rFlow
+      - | io: input
+
+
+    * - $(P):MFM:D:Unit_RBV
+      - waveform
+      - GVL_Devices.BronkhorstD.stMFM.i_sUnit
+      - | io: input
+
+
+    * - $(P):MFM:D:Setpoint_RBV
+      - ai
+      - GVL_Devices.BronkhorstD.stMFM.q_rSetpoint
+      - | io: output
+
+
+    * - $(P):MFM:D:Setpoint
+      - ao
+      - GVL_Devices.BronkhorstD.stMFM.q_rSetpoint
+      - | io: output
+
+
+    * - $(P):MAN:IO:SyncUnitOK_RBV
+      - bi
+      - GVL_Devices.GasMan.stBaseIO.i_SyncUnitWC
+      - | io: input
+
+
+    * - $(P):MAN:Valve:01:OpenSW_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[1].ixOPN
+      - | io: input
+
+
+    * - $(P):MAN:Valve:01:CloseDO_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[1].qxDO
+      - | io: input
+
+
+    * - $(P):MAN:Valve:01:Name_RBV
+      - waveform
+      - GVL_Devices.GasMan.stValve[1].sName
+      - | io: input
+
+
+    * - $(P):MAN:Valve:01:Ilk_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[1].xILK
+      - | io: input
+
+
+    * - $(P):MAN:Valve:01:Open_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[1].xSW
+      - | io: output
+
+
+    * - $(P):MAN:Valve:01:Open
+      - bo
+      - GVL_Devices.GasMan.stValve[1].xSW
+      - | io: output
+
+
+    * - $(P):MAN:Valve:02:OpenSW_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[2].ixOPN
+      - | io: input
+
+
+    * - $(P):MAN:Valve:02:CloseDO_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[2].qxDO
+      - | io: input
+
+
+    * - $(P):MAN:Valve:02:Name_RBV
+      - waveform
+      - GVL_Devices.GasMan.stValve[2].sName
+      - | io: input
+
+
+    * - $(P):MAN:Valve:02:Ilk_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[2].xILK
+      - | io: input
+
+
+    * - $(P):MAN:Valve:02:Open_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[2].xSW
+      - | io: output
+
+
+    * - $(P):MAN:Valve:02:Open
+      - bo
+      - GVL_Devices.GasMan.stValve[2].xSW
+      - | io: output
+
+
+    * - $(P):MAN:Valve:03:OpenSW_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[3].ixOPN
+      - | io: input
+
+
+    * - $(P):MAN:Valve:03:CloseDO_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[3].qxDO
+      - | io: input
+
+
+    * - $(P):MAN:Valve:03:Name_RBV
+      - waveform
+      - GVL_Devices.GasMan.stValve[3].sName
+      - | io: input
+
+
+    * - $(P):MAN:Valve:03:Ilk_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[3].xILK
+      - | io: input
+
+
+    * - $(P):MAN:Valve:03:Open_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[3].xSW
+      - | io: output
+
+
+    * - $(P):MAN:Valve:03:Open
+      - bo
+      - GVL_Devices.GasMan.stValve[3].xSW
+      - | io: output
+
+
+    * - $(P):MAN:Valve:04:OpenSW_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[4].ixOPN
+      - | io: input
+
+
+    * - $(P):MAN:Valve:04:CloseDO_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[4].qxDO
+      - | io: input
+
+
+    * - $(P):MAN:Valve:04:Name_RBV
+      - waveform
+      - GVL_Devices.GasMan.stValve[4].sName
+      - | io: input
+
+
+    * - $(P):MAN:Valve:04:Ilk_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[4].xILK
+      - | io: input
+
+
+    * - $(P):MAN:Valve:04:Open_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[4].xSW
+      - | io: output
+
+
+    * - $(P):MAN:Valve:04:Open
+      - bo
+      - GVL_Devices.GasMan.stValve[4].xSW
+      - | io: output
+
+
+    * - $(P):MAN:Valve:05:OpenSW_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[5].ixOPN
+      - | io: input
+
+
+    * - $(P):MAN:Valve:05:CloseDO_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[5].qxDO
+      - | io: input
+
+
+    * - $(P):MAN:Valve:05:Name_RBV
+      - waveform
+      - GVL_Devices.GasMan.stValve[5].sName
+      - | io: input
+
+
+    * - $(P):MAN:Valve:05:Ilk_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[5].xILK
+      - | io: input
+
+
+    * - $(P):MAN:Valve:05:Open_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[5].xSW
+      - | io: output
+
+
+    * - $(P):MAN:Valve:05:Open
+      - bo
+      - GVL_Devices.GasMan.stValve[5].xSW
+      - | io: output
+
+
+    * - $(P):MAN:Valve:06:OpenSW_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[6].ixOPN
+      - | io: input
+
+
+    * - $(P):MAN:Valve:06:CloseDO_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[6].qxDO
+      - | io: input
+
+
+    * - $(P):MAN:Valve:06:Name_RBV
+      - waveform
+      - GVL_Devices.GasMan.stValve[6].sName
+      - | io: input
+
+
+    * - $(P):MAN:Valve:06:Ilk_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[6].xILK
+      - | io: input
+
+
+    * - $(P):MAN:Valve:06:Open_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[6].xSW
+      - | io: output
+
+
+    * - $(P):MAN:Valve:06:Open
+      - bo
+      - GVL_Devices.GasMan.stValve[6].xSW
+      - | io: output
+
+
+    * - $(P):MAN:Valve:07:OpenSW_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[7].ixOPN
+      - | io: input
+
+
+    * - $(P):MAN:Valve:07:CloseDO_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[7].qxDO
+      - | io: input
+
+
+    * - $(P):MAN:Valve:07:Name_RBV
+      - waveform
+      - GVL_Devices.GasMan.stValve[7].sName
+      - | io: input
+
+
+    * - $(P):MAN:Valve:07:Ilk_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[7].xILK
+      - | io: input
+
+
+    * - $(P):MAN:Valve:07:Open_RBV
+      - bi
+      - GVL_Devices.GasMan.stValve[7].xSW
+      - | io: output
+
+
+    * - $(P):MAN:Valve:07:Open
+      - bo
+      - GVL_Devices.GasMan.stValve[7].xSW
+      - | io: output
+
+
+    * - $(P):SEL:A:Sensirion:01:State_RBV
+      - mbbi
+      - GVL_Devices.M3SelectorA.astSelFM[1].eFMState
+      - | io: input
+
+
+    * - $(P):SEL:A:Sensirion:01:Flow_RBV
+      - ai
+      - GVL_Devices.M3SelectorA.astSelFM[1].rFlow
+      - | io: input
+
+
+    * - $(P):SEL:A:Sensirion:01:ModeRb_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.astSelFM[1].xFMModeRb
+      - | io: input
+
+
+    * - $(P):SEL:A:Sensirion:01:Mode_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.astSelFM[1].xFMModeReq
+      - | io: output
+
+
+    * - $(P):SEL:A:Sensirion:01:Mode
+      - bo
+      - GVL_Devices.M3SelectorA.astSelFM[1].xFMModeReq
+      - | io: output
+
+
+    * - $(P):SEL:A:Sensirion:01:OoR_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.astSelFM[1].xFMOoR
+      - | io: input
+
+
+    * - $(P):SEL:A:Sensirion:01:Reset_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.astSelFM[1].xFMReset
+      - | io: output
+
+
+    * - $(P):SEL:A:Sensirion:01:Reset
+      - bo
+      - GVL_Devices.M3SelectorA.astSelFM[1].xFMReset
+      - | io: output
+
+
+    * - $(P):SEL:A:Sensirion:01:FlowValid_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.astSelFM[1].xFlowValid
+      - | io: input
+
+
+    * - $(P):SEL:A:Sensirion:02:State_RBV
+      - mbbi
+      - GVL_Devices.M3SelectorA.astSelFM[2].eFMState
+      - | io: input
+
+
+    * - $(P):SEL:A:Sensirion:02:Flow_RBV
+      - ai
+      - GVL_Devices.M3SelectorA.astSelFM[2].rFlow
+      - | io: input
+
+
+    * - $(P):SEL:A:Sensirion:02:ModeRb_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.astSelFM[2].xFMModeRb
+      - | io: input
+
+
+    * - $(P):SEL:A:Sensirion:02:Mode_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.astSelFM[2].xFMModeReq
+      - | io: output
+
+
+    * - $(P):SEL:A:Sensirion:02:Mode
+      - bo
+      - GVL_Devices.M3SelectorA.astSelFM[2].xFMModeReq
+      - | io: output
+
+
+    * - $(P):SEL:A:Sensirion:02:OoR_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.astSelFM[2].xFMOoR
+      - | io: input
+
+
+    * - $(P):SEL:A:Sensirion:02:Reset_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.astSelFM[2].xFMReset
+      - | io: output
+
+
+    * - $(P):SEL:A:Sensirion:02:Reset
+      - bo
+      - GVL_Devices.M3SelectorA.astSelFM[2].xFMReset
+      - | io: output
+
+
+    * - $(P):SEL:A:Sensirion:02:FlowValid_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.astSelFM[2].xFlowValid
+      - | io: input
+
+
+    * - $(P):SEL:A:IO:SyncUnitOK_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.stBaseIO.i_SyncUnitWC
+      - | io: input
+
+
+    * - $(P):SEL:A:Valve:01:CurrentPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorA.stSelector.astViciVlvStatus[1].iCurrPos
+      - | io: input
+
+
+    * - $(P):SEL:A:Valve:02:CurrentPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorA.stSelector.astViciVlvStatus[2].iCurrPos
+      - | io: input
+
+
+    * - $(P):SEL:A:ValveSyncReqPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorA.stSelector.iSyncReqPos
+      - | io: output
+
+
+    * - $(P):SEL:A:ValveSyncReqPos
+      - longout
+      - GVL_Devices.M3SelectorA.stSelector.iSyncReqPos
+      - | io: output
+
+
+    * - $(P):SEL:A:ValveSyncCurrentPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorA.stSelector.iSyncResPos
+      - | io: input
+
+
+    * - $(P):SEL:A:Valve:01:ReqPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorA.stSelector.iVici1ReqPos
+      - | io: output
+
+
+    * - $(P):SEL:A:Valve:01:ReqPos
+      - longout
+      - GVL_Devices.M3SelectorA.stSelector.iVici1ReqPos
+      - | io: output
+
+
+    * - $(P):SEL:A:Valve:02:ReqPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorA.stSelector.iVici2ReqPos
+      - | io: output
+
+
+    * - $(P):SEL:A:Valve:02:ReqPos
+      - longout
+      - GVL_Devices.M3SelectorA.stSelector.iVici2ReqPos
+      - | io: output
+
+
+    * - $(P):SEL:A:LiquidSheathFlow_RBV
+      - ai
+      - GVL_Devices.M3SelectorA.stSelector.rHighFlow
+      - | io: input
+
+
+    * - $(P):SEL:A:SampleFlow_RBV
+      - ai
+      - GVL_Devices.M3SelectorA.stSelector.rLowFlow
+      - | io: input
+
+
+    * - $(P):SEL:A:SampleNames:01_RBV
+      - waveform
+      - GVL_Devices.M3SelectorA.stSelector.stSampleNames.s1
+      - | io: input
+
+
+    * - $(P):SEL:A:SampleNames:10_RBV
+      - waveform
+      - GVL_Devices.M3SelectorA.stSelector.stSampleNames.s10
+      - | io: input
+
+
+    * - $(P):SEL:A:SampleNames:11_RBV
+      - waveform
+      - GVL_Devices.M3SelectorA.stSelector.stSampleNames.s11
+      - | io: input
+
+
+    * - $(P):SEL:A:SampleNames:12_RBV
+      - waveform
+      - GVL_Devices.M3SelectorA.stSelector.stSampleNames.s12
+      - | io: input
+
+
+    * - $(P):SEL:A:SampleNames:02_RBV
+      - waveform
+      - GVL_Devices.M3SelectorA.stSelector.stSampleNames.s2
+      - | io: input
+
+
+    * - $(P):SEL:A:SampleNames:03_RBV
+      - waveform
+      - GVL_Devices.M3SelectorA.stSelector.stSampleNames.s3
+      - | io: input
+
+
+    * - $(P):SEL:A:SampleNames:04_RBV
+      - waveform
+      - GVL_Devices.M3SelectorA.stSelector.stSampleNames.s4
+      - | io: input
+
+
+    * - $(P):SEL:A:SampleNames:05_RBV
+      - waveform
+      - GVL_Devices.M3SelectorA.stSelector.stSampleNames.s5
+      - | io: input
+
+
+    * - $(P):SEL:A:SampleNames:06_RBV
+      - waveform
+      - GVL_Devices.M3SelectorA.stSelector.stSampleNames.s6
+      - | io: input
+
+
+    * - $(P):SEL:A:SampleNames:07_RBV
+      - waveform
+      - GVL_Devices.M3SelectorA.stSelector.stSampleNames.s7
+      - | io: input
+
+
+    * - $(P):SEL:A:SampleNames:08_RBV
+      - waveform
+      - GVL_Devices.M3SelectorA.stSelector.stSampleNames.s8
+      - | io: input
+
+
+    * - $(P):SEL:A:SampleNames:09_RBV
+      - waveform
+      - GVL_Devices.M3SelectorA.stSelector.stSampleNames.s9
+      - | io: input
+
+
+    * - $(P):SEL:A:ValvesLockRequest_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.stSelector.xResLock
+      - | io: output
+
+
+    * - $(P):SEL:A:ValvesLockRequest
+      - bo
+      - GVL_Devices.M3SelectorA.stSelector.xResLock
+      - | io: output
+
+
+    * - $(P):SEL:A:ValvesLocked_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.stSelector.xResLocked
+      - | io: input
+
+
+    * - $(P):SEL:A:ValvesSynced_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.stSelector.xResSyncd
+      - | io: input
+
+
+    * - $(P):SEL:A:ValvesUnlockRequest_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.stSelector.xResUnlock
+      - | io: output
+
+
+    * - $(P):SEL:A:ValvesUnlockRequest
+      - bo
+      - GVL_Devices.M3SelectorA.stSelector.xResUnlock
+      - | io: output
+
+
+    * - $(P):SEL:A:Shaker:01:Ctrl_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.stShaker01.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:A:Shaker:01:Ctrl
+      - bo
+      - GVL_Devices.M3SelectorA.stShaker01.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:A:Shaker:01:PowerOn_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.stShaker01.q_xPwrDO
+      - | io: input
+
+
+    * - $(P):SEL:A:Shaker:01:Ilk_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.stShaker01.xIlk
+      - | io: input
+
+
+    * - $(P):SEL:A:Shaker:02:Ctrl_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.stShaker02.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:A:Shaker:02:Ctrl
+      - bo
+      - GVL_Devices.M3SelectorA.stShaker02.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:A:Shaker:02:PowerOn_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.stShaker02.q_xPwrDO
+      - | io: input
+
+
+    * - $(P):SEL:A:Shaker:02:Ilk_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.stShaker02.xIlk
+      - | io: input
+
+
+    * - $(P):SEL:A:Shaker:03:Ctrl_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.stShaker03.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:A:Shaker:03:Ctrl
+      - bo
+      - GVL_Devices.M3SelectorA.stShaker03.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:A:Shaker:03:PowerOn_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.stShaker03.q_xPwrDO
+      - | io: input
+
+
+    * - $(P):SEL:A:Shaker:03:Ilk_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.stShaker03.xIlk
+      - | io: input
+
+
+    * - $(P):SEL:A:Shaker:04:Ctrl_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.stShaker04.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:A:Shaker:04:Ctrl
+      - bo
+      - GVL_Devices.M3SelectorA.stShaker04.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:A:Shaker:04:PowerOn_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.stShaker04.q_xPwrDO
+      - | io: input
+
+
+    * - $(P):SEL:A:Shaker:04:Ilk_RBV
+      - bi
+      - GVL_Devices.M3SelectorA.stShaker04.xIlk
+      - | io: input
+
+
+    * - $(P):SEL:B:Sensirion:01:State_RBV
+      - mbbi
+      - GVL_Devices.M3SelectorB.astSelFM[1].eFMState
+      - | io: input
+
+
+    * - $(P):SEL:B:Sensirion:01:Flow_RBV
+      - ai
+      - GVL_Devices.M3SelectorB.astSelFM[1].rFlow
+      - | io: input
+
+
+    * - $(P):SEL:B:Sensirion:01:ModeRb_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.astSelFM[1].xFMModeRb
+      - | io: input
+
+
+    * - $(P):SEL:B:Sensirion:01:Mode_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.astSelFM[1].xFMModeReq
+      - | io: output
+
+
+    * - $(P):SEL:B:Sensirion:01:Mode
+      - bo
+      - GVL_Devices.M3SelectorB.astSelFM[1].xFMModeReq
+      - | io: output
+
+
+    * - $(P):SEL:B:Sensirion:01:OoR_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.astSelFM[1].xFMOoR
+      - | io: input
+
+
+    * - $(P):SEL:B:Sensirion:01:Reset_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.astSelFM[1].xFMReset
+      - | io: output
+
+
+    * - $(P):SEL:B:Sensirion:01:Reset
+      - bo
+      - GVL_Devices.M3SelectorB.astSelFM[1].xFMReset
+      - | io: output
+
+
+    * - $(P):SEL:B:Sensirion:01:FlowValid_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.astSelFM[1].xFlowValid
+      - | io: input
+
+
+    * - $(P):SEL:B:Sensirion:02:State_RBV
+      - mbbi
+      - GVL_Devices.M3SelectorB.astSelFM[2].eFMState
+      - | io: input
+
+
+    * - $(P):SEL:B:Sensirion:02:Flow_RBV
+      - ai
+      - GVL_Devices.M3SelectorB.astSelFM[2].rFlow
+      - | io: input
+
+
+    * - $(P):SEL:B:Sensirion:02:ModeRb_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.astSelFM[2].xFMModeRb
+      - | io: input
+
+
+    * - $(P):SEL:B:Sensirion:02:Mode_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.astSelFM[2].xFMModeReq
+      - | io: output
+
+
+    * - $(P):SEL:B:Sensirion:02:Mode
+      - bo
+      - GVL_Devices.M3SelectorB.astSelFM[2].xFMModeReq
+      - | io: output
+
+
+    * - $(P):SEL:B:Sensirion:02:OoR_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.astSelFM[2].xFMOoR
+      - | io: input
+
+
+    * - $(P):SEL:B:Sensirion:02:Reset_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.astSelFM[2].xFMReset
+      - | io: output
+
+
+    * - $(P):SEL:B:Sensirion:02:Reset
+      - bo
+      - GVL_Devices.M3SelectorB.astSelFM[2].xFMReset
+      - | io: output
+
+
+    * - $(P):SEL:B:Sensirion:02:FlowValid_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.astSelFM[2].xFlowValid
+      - | io: input
+
+
+    * - $(P):SEL:B:IO:SyncUnitOK_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.stBaseIO.i_SyncUnitWC
+      - | io: input
+
+
+    * - $(P):SEL:B:Valve:01:CurrentPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorB.stSelector.astViciVlvStatus[1].iCurrPos
+      - | io: input
+
+
+    * - $(P):SEL:B:Valve:02:CurrentPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorB.stSelector.astViciVlvStatus[2].iCurrPos
+      - | io: input
+
+
+    * - $(P):SEL:B:ValveSyncReqPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorB.stSelector.iSyncReqPos
+      - | io: output
+
+
+    * - $(P):SEL:B:ValveSyncReqPos
+      - longout
+      - GVL_Devices.M3SelectorB.stSelector.iSyncReqPos
+      - | io: output
+
+
+    * - $(P):SEL:B:ValveSyncCurrentPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorB.stSelector.iSyncResPos
+      - | io: input
+
+
+    * - $(P):SEL:B:Valve:01:ReqPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorB.stSelector.iVici1ReqPos
+      - | io: output
+
+
+    * - $(P):SEL:B:Valve:01:ReqPos
+      - longout
+      - GVL_Devices.M3SelectorB.stSelector.iVici1ReqPos
+      - | io: output
+
+
+    * - $(P):SEL:B:Valve:02:ReqPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorB.stSelector.iVici2ReqPos
+      - | io: output
+
+
+    * - $(P):SEL:B:Valve:02:ReqPos
+      - longout
+      - GVL_Devices.M3SelectorB.stSelector.iVici2ReqPos
+      - | io: output
+
+
+    * - $(P):SEL:B:LiquidSheathFlow_RBV
+      - ai
+      - GVL_Devices.M3SelectorB.stSelector.rHighFlow
+      - | io: input
+
+
+    * - $(P):SEL:B:SampleFlow_RBV
+      - ai
+      - GVL_Devices.M3SelectorB.stSelector.rLowFlow
+      - | io: input
+
+
+    * - $(P):SEL:B:SampleNames:01_RBV
+      - waveform
+      - GVL_Devices.M3SelectorB.stSelector.stSampleNames.s1
+      - | io: input
+
+
+    * - $(P):SEL:B:SampleNames:10_RBV
+      - waveform
+      - GVL_Devices.M3SelectorB.stSelector.stSampleNames.s10
+      - | io: input
+
+
+    * - $(P):SEL:B:SampleNames:11_RBV
+      - waveform
+      - GVL_Devices.M3SelectorB.stSelector.stSampleNames.s11
+      - | io: input
+
+
+    * - $(P):SEL:B:SampleNames:12_RBV
+      - waveform
+      - GVL_Devices.M3SelectorB.stSelector.stSampleNames.s12
+      - | io: input
+
+
+    * - $(P):SEL:B:SampleNames:02_RBV
+      - waveform
+      - GVL_Devices.M3SelectorB.stSelector.stSampleNames.s2
+      - | io: input
+
+
+    * - $(P):SEL:B:SampleNames:03_RBV
+      - waveform
+      - GVL_Devices.M3SelectorB.stSelector.stSampleNames.s3
+      - | io: input
+
+
+    * - $(P):SEL:B:SampleNames:04_RBV
+      - waveform
+      - GVL_Devices.M3SelectorB.stSelector.stSampleNames.s4
+      - | io: input
+
+
+    * - $(P):SEL:B:SampleNames:05_RBV
+      - waveform
+      - GVL_Devices.M3SelectorB.stSelector.stSampleNames.s5
+      - | io: input
+
+
+    * - $(P):SEL:B:SampleNames:06_RBV
+      - waveform
+      - GVL_Devices.M3SelectorB.stSelector.stSampleNames.s6
+      - | io: input
+
+
+    * - $(P):SEL:B:SampleNames:07_RBV
+      - waveform
+      - GVL_Devices.M3SelectorB.stSelector.stSampleNames.s7
+      - | io: input
+
+
+    * - $(P):SEL:B:SampleNames:08_RBV
+      - waveform
+      - GVL_Devices.M3SelectorB.stSelector.stSampleNames.s8
+      - | io: input
+
+
+    * - $(P):SEL:B:SampleNames:09_RBV
+      - waveform
+      - GVL_Devices.M3SelectorB.stSelector.stSampleNames.s9
+      - | io: input
+
+
+    * - $(P):SEL:B:ValvesLockRequest_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.stSelector.xResLock
+      - | io: output
+
+
+    * - $(P):SEL:B:ValvesLockRequest
+      - bo
+      - GVL_Devices.M3SelectorB.stSelector.xResLock
+      - | io: output
+
+
+    * - $(P):SEL:B:ValvesLocked_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.stSelector.xResLocked
+      - | io: input
+
+
+    * - $(P):SEL:B:ValvesSynced_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.stSelector.xResSyncd
+      - | io: input
+
+
+    * - $(P):SEL:B:ValvesUnlockRequest_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.stSelector.xResUnlock
+      - | io: output
+
+
+    * - $(P):SEL:B:ValvesUnlockRequest
+      - bo
+      - GVL_Devices.M3SelectorB.stSelector.xResUnlock
+      - | io: output
+
+
+    * - $(P):SEL:B:Shaker:01:Ctrl_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.stShaker01.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:B:Shaker:01:Ctrl
+      - bo
+      - GVL_Devices.M3SelectorB.stShaker01.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:B:Shaker:01:PowerOn_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.stShaker01.q_xPwrDO
+      - | io: input
+
+
+    * - $(P):SEL:B:Shaker:01:Ilk_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.stShaker01.xIlk
+      - | io: input
+
+
+    * - $(P):SEL:B:Shaker:02:Ctrl_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.stShaker02.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:B:Shaker:02:Ctrl
+      - bo
+      - GVL_Devices.M3SelectorB.stShaker02.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:B:Shaker:02:PowerOn_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.stShaker02.q_xPwrDO
+      - | io: input
+
+
+    * - $(P):SEL:B:Shaker:02:Ilk_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.stShaker02.xIlk
+      - | io: input
+
+
+    * - $(P):SEL:B:Shaker:03:Ctrl_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.stShaker03.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:B:Shaker:03:Ctrl
+      - bo
+      - GVL_Devices.M3SelectorB.stShaker03.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:B:Shaker:03:PowerOn_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.stShaker03.q_xPwrDO
+      - | io: input
+
+
+    * - $(P):SEL:B:Shaker:03:Ilk_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.stShaker03.xIlk
+      - | io: input
+
+
+    * - $(P):SEL:B:Shaker:04:Ctrl_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.stShaker04.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:B:Shaker:04:Ctrl
+      - bo
+      - GVL_Devices.M3SelectorB.stShaker04.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:B:Shaker:04:PowerOn_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.stShaker04.q_xPwrDO
+      - | io: input
+
+
+    * - $(P):SEL:B:Shaker:04:Ilk_RBV
+      - bi
+      - GVL_Devices.M3SelectorB.stShaker04.xIlk
+      - | io: input
+
+
+    * - $(P):SEL:C:Sensirion:01:State_RBV
+      - mbbi
+      - GVL_Devices.M3SelectorC.astSelFM[1].eFMState
+      - | io: input
+
+
+    * - $(P):SEL:C:Sensirion:01:Flow_RBV
+      - ai
+      - GVL_Devices.M3SelectorC.astSelFM[1].rFlow
+      - | io: input
+
+
+    * - $(P):SEL:C:Sensirion:01:ModeRb_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.astSelFM[1].xFMModeRb
+      - | io: input
+
+
+    * - $(P):SEL:C:Sensirion:01:Mode_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.astSelFM[1].xFMModeReq
+      - | io: output
+
+
+    * - $(P):SEL:C:Sensirion:01:Mode
+      - bo
+      - GVL_Devices.M3SelectorC.astSelFM[1].xFMModeReq
+      - | io: output
+
+
+    * - $(P):SEL:C:Sensirion:01:OoR_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.astSelFM[1].xFMOoR
+      - | io: input
+
+
+    * - $(P):SEL:C:Sensirion:01:Reset_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.astSelFM[1].xFMReset
+      - | io: output
+
+
+    * - $(P):SEL:C:Sensirion:01:Reset
+      - bo
+      - GVL_Devices.M3SelectorC.astSelFM[1].xFMReset
+      - | io: output
+
+
+    * - $(P):SEL:C:Sensirion:01:FlowValid_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.astSelFM[1].xFlowValid
+      - | io: input
+
+
+    * - $(P):SEL:C:Sensirion:02:State_RBV
+      - mbbi
+      - GVL_Devices.M3SelectorC.astSelFM[2].eFMState
+      - | io: input
+
+
+    * - $(P):SEL:C:Sensirion:02:Flow_RBV
+      - ai
+      - GVL_Devices.M3SelectorC.astSelFM[2].rFlow
+      - | io: input
+
+
+    * - $(P):SEL:C:Sensirion:02:ModeRb_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.astSelFM[2].xFMModeRb
+      - | io: input
+
+
+    * - $(P):SEL:C:Sensirion:02:Mode_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.astSelFM[2].xFMModeReq
+      - | io: output
+
+
+    * - $(P):SEL:C:Sensirion:02:Mode
+      - bo
+      - GVL_Devices.M3SelectorC.astSelFM[2].xFMModeReq
+      - | io: output
+
+
+    * - $(P):SEL:C:Sensirion:02:OoR_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.astSelFM[2].xFMOoR
+      - | io: input
+
+
+    * - $(P):SEL:C:Sensirion:02:Reset_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.astSelFM[2].xFMReset
+      - | io: output
+
+
+    * - $(P):SEL:C:Sensirion:02:Reset
+      - bo
+      - GVL_Devices.M3SelectorC.astSelFM[2].xFMReset
+      - | io: output
+
+
+    * - $(P):SEL:C:Sensirion:02:FlowValid_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.astSelFM[2].xFlowValid
+      - | io: input
+
+
+    * - $(P):SEL:C:IO:SyncUnitOK_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.stBaseIO.i_SyncUnitWC
+      - | io: input
+
+
+    * - $(P):SEL:C:Valve:01:CurrentPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorC.stSelector.astViciVlvStatus[1].iCurrPos
+      - | io: input
+
+
+    * - $(P):SEL:C:Valve:02:CurrentPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorC.stSelector.astViciVlvStatus[2].iCurrPos
+      - | io: input
+
+
+    * - $(P):SEL:C:ValveSyncReqPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorC.stSelector.iSyncReqPos
+      - | io: output
+
+
+    * - $(P):SEL:C:ValveSyncReqPos
+      - longout
+      - GVL_Devices.M3SelectorC.stSelector.iSyncReqPos
+      - | io: output
+
+
+    * - $(P):SEL:C:ValveSyncCurrentPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorC.stSelector.iSyncResPos
+      - | io: input
+
+
+    * - $(P):SEL:C:Valve:01:ReqPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorC.stSelector.iVici1ReqPos
+      - | io: output
+
+
+    * - $(P):SEL:C:Valve:01:ReqPos
+      - longout
+      - GVL_Devices.M3SelectorC.stSelector.iVici1ReqPos
+      - | io: output
+
+
+    * - $(P):SEL:C:Valve:02:ReqPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorC.stSelector.iVici2ReqPos
+      - | io: output
+
+
+    * - $(P):SEL:C:Valve:02:ReqPos
+      - longout
+      - GVL_Devices.M3SelectorC.stSelector.iVici2ReqPos
+      - | io: output
+
+
+    * - $(P):SEL:C:LiquidSheathFlow_RBV
+      - ai
+      - GVL_Devices.M3SelectorC.stSelector.rHighFlow
+      - | io: input
+
+
+    * - $(P):SEL:C:SampleFlow_RBV
+      - ai
+      - GVL_Devices.M3SelectorC.stSelector.rLowFlow
+      - | io: input
+
+
+    * - $(P):SEL:C:SampleNames:01_RBV
+      - waveform
+      - GVL_Devices.M3SelectorC.stSelector.stSampleNames.s1
+      - | io: input
+
+
+    * - $(P):SEL:C:SampleNames:10_RBV
+      - waveform
+      - GVL_Devices.M3SelectorC.stSelector.stSampleNames.s10
+      - | io: input
+
+
+    * - $(P):SEL:C:SampleNames:11_RBV
+      - waveform
+      - GVL_Devices.M3SelectorC.stSelector.stSampleNames.s11
+      - | io: input
+
+
+    * - $(P):SEL:C:SampleNames:12_RBV
+      - waveform
+      - GVL_Devices.M3SelectorC.stSelector.stSampleNames.s12
+      - | io: input
+
+
+    * - $(P):SEL:C:SampleNames:02_RBV
+      - waveform
+      - GVL_Devices.M3SelectorC.stSelector.stSampleNames.s2
+      - | io: input
+
+
+    * - $(P):SEL:C:SampleNames:03_RBV
+      - waveform
+      - GVL_Devices.M3SelectorC.stSelector.stSampleNames.s3
+      - | io: input
+
+
+    * - $(P):SEL:C:SampleNames:04_RBV
+      - waveform
+      - GVL_Devices.M3SelectorC.stSelector.stSampleNames.s4
+      - | io: input
+
+
+    * - $(P):SEL:C:SampleNames:05_RBV
+      - waveform
+      - GVL_Devices.M3SelectorC.stSelector.stSampleNames.s5
+      - | io: input
+
+
+    * - $(P):SEL:C:SampleNames:06_RBV
+      - waveform
+      - GVL_Devices.M3SelectorC.stSelector.stSampleNames.s6
+      - | io: input
+
+
+    * - $(P):SEL:C:SampleNames:07_RBV
+      - waveform
+      - GVL_Devices.M3SelectorC.stSelector.stSampleNames.s7
+      - | io: input
+
+
+    * - $(P):SEL:C:SampleNames:08_RBV
+      - waveform
+      - GVL_Devices.M3SelectorC.stSelector.stSampleNames.s8
+      - | io: input
+
+
+    * - $(P):SEL:C:SampleNames:09_RBV
+      - waveform
+      - GVL_Devices.M3SelectorC.stSelector.stSampleNames.s9
+      - | io: input
+
+
+    * - $(P):SEL:C:ValvesLockRequest_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.stSelector.xResLock
+      - | io: output
+
+
+    * - $(P):SEL:C:ValvesLockRequest
+      - bo
+      - GVL_Devices.M3SelectorC.stSelector.xResLock
+      - | io: output
+
+
+    * - $(P):SEL:C:ValvesLocked_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.stSelector.xResLocked
+      - | io: input
+
+
+    * - $(P):SEL:C:ValvesSynced_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.stSelector.xResSyncd
+      - | io: input
+
+
+    * - $(P):SEL:C:ValvesUnlockRequest_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.stSelector.xResUnlock
+      - | io: output
+
+
+    * - $(P):SEL:C:ValvesUnlockRequest
+      - bo
+      - GVL_Devices.M3SelectorC.stSelector.xResUnlock
+      - | io: output
+
+
+    * - $(P):SEL:C:Shaker:01:Ctrl_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.stShaker01.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:C:Shaker:01:Ctrl
+      - bo
+      - GVL_Devices.M3SelectorC.stShaker01.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:C:Shaker:01:PowerOn_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.stShaker01.q_xPwrDO
+      - | io: input
+
+
+    * - $(P):SEL:C:Shaker:01:Ilk_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.stShaker01.xIlk
+      - | io: input
+
+
+    * - $(P):SEL:C:Shaker:02:Ctrl_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.stShaker02.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:C:Shaker:02:Ctrl
+      - bo
+      - GVL_Devices.M3SelectorC.stShaker02.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:C:Shaker:02:PowerOn_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.stShaker02.q_xPwrDO
+      - | io: input
+
+
+    * - $(P):SEL:C:Shaker:02:Ilk_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.stShaker02.xIlk
+      - | io: input
+
+
+    * - $(P):SEL:C:Shaker:03:Ctrl_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.stShaker03.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:C:Shaker:03:Ctrl
+      - bo
+      - GVL_Devices.M3SelectorC.stShaker03.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:C:Shaker:03:PowerOn_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.stShaker03.q_xPwrDO
+      - | io: input
+
+
+    * - $(P):SEL:C:Shaker:03:Ilk_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.stShaker03.xIlk
+      - | io: input
+
+
+    * - $(P):SEL:C:Shaker:04:Ctrl_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.stShaker04.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:C:Shaker:04:Ctrl
+      - bo
+      - GVL_Devices.M3SelectorC.stShaker04.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:C:Shaker:04:PowerOn_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.stShaker04.q_xPwrDO
+      - | io: input
+
+
+    * - $(P):SEL:C:Shaker:04:Ilk_RBV
+      - bi
+      - GVL_Devices.M3SelectorC.stShaker04.xIlk
+      - | io: input
+
+
+    * - $(P):SEL:D:Sensirion:01:State_RBV
+      - mbbi
+      - GVL_Devices.M3SelectorD.astSelFM[1].eFMState
+      - | io: input
+
+
+    * - $(P):SEL:D:Sensirion:01:Flow_RBV
+      - ai
+      - GVL_Devices.M3SelectorD.astSelFM[1].rFlow
+      - | io: input
+
+
+    * - $(P):SEL:D:Sensirion:01:ModeRb_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.astSelFM[1].xFMModeRb
+      - | io: input
+
+
+    * - $(P):SEL:D:Sensirion:01:Mode_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.astSelFM[1].xFMModeReq
+      - | io: output
+
+
+    * - $(P):SEL:D:Sensirion:01:Mode
+      - bo
+      - GVL_Devices.M3SelectorD.astSelFM[1].xFMModeReq
+      - | io: output
+
+
+    * - $(P):SEL:D:Sensirion:01:OoR_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.astSelFM[1].xFMOoR
+      - | io: input
+
+
+    * - $(P):SEL:D:Sensirion:01:Reset_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.astSelFM[1].xFMReset
+      - | io: output
+
+
+    * - $(P):SEL:D:Sensirion:01:Reset
+      - bo
+      - GVL_Devices.M3SelectorD.astSelFM[1].xFMReset
+      - | io: output
+
+
+    * - $(P):SEL:D:Sensirion:01:FlowValid_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.astSelFM[1].xFlowValid
+      - | io: input
+
+
+    * - $(P):SEL:D:Sensirion:02:State_RBV
+      - mbbi
+      - GVL_Devices.M3SelectorD.astSelFM[2].eFMState
+      - | io: input
+
+
+    * - $(P):SEL:D:Sensirion:02:Flow_RBV
+      - ai
+      - GVL_Devices.M3SelectorD.astSelFM[2].rFlow
+      - | io: input
+
+
+    * - $(P):SEL:D:Sensirion:02:ModeRb_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.astSelFM[2].xFMModeRb
+      - | io: input
+
+
+    * - $(P):SEL:D:Sensirion:02:Mode_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.astSelFM[2].xFMModeReq
+      - | io: output
+
+
+    * - $(P):SEL:D:Sensirion:02:Mode
+      - bo
+      - GVL_Devices.M3SelectorD.astSelFM[2].xFMModeReq
+      - | io: output
+
+
+    * - $(P):SEL:D:Sensirion:02:OoR_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.astSelFM[2].xFMOoR
+      - | io: input
+
+
+    * - $(P):SEL:D:Sensirion:02:Reset_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.astSelFM[2].xFMReset
+      - | io: output
+
+
+    * - $(P):SEL:D:Sensirion:02:Reset
+      - bo
+      - GVL_Devices.M3SelectorD.astSelFM[2].xFMReset
+      - | io: output
+
+
+    * - $(P):SEL:D:Sensirion:02:FlowValid_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.astSelFM[2].xFlowValid
+      - | io: input
+
+
+    * - $(P):SEL:D:IO:SyncUnitOK_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.stBaseIO.i_SyncUnitWC
+      - | io: input
+
+
+    * - $(P):SEL:D:Valve:01:CurrentPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorD.stSelector.astViciVlvStatus[1].iCurrPos
+      - | io: input
+
+
+    * - $(P):SEL:D:Valve:02:CurrentPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorD.stSelector.astViciVlvStatus[2].iCurrPos
+      - | io: input
+
+
+    * - $(P):SEL:D:ValveSyncReqPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorD.stSelector.iSyncReqPos
+      - | io: output
+
+
+    * - $(P):SEL:D:ValveSyncReqPos
+      - longout
+      - GVL_Devices.M3SelectorD.stSelector.iSyncReqPos
+      - | io: output
+
+
+    * - $(P):SEL:D:ValveSyncCurrentPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorD.stSelector.iSyncResPos
+      - | io: input
+
+
+    * - $(P):SEL:D:Valve:01:ReqPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorD.stSelector.iVici1ReqPos
+      - | io: output
+
+
+    * - $(P):SEL:D:Valve:01:ReqPos
+      - longout
+      - GVL_Devices.M3SelectorD.stSelector.iVici1ReqPos
+      - | io: output
+
+
+    * - $(P):SEL:D:Valve:02:ReqPos_RBV
+      - longin
+      - GVL_Devices.M3SelectorD.stSelector.iVici2ReqPos
+      - | io: output
+
+
+    * - $(P):SEL:D:Valve:02:ReqPos
+      - longout
+      - GVL_Devices.M3SelectorD.stSelector.iVici2ReqPos
+      - | io: output
+
+
+    * - $(P):SEL:D:LiquidSheathFlow_RBV
+      - ai
+      - GVL_Devices.M3SelectorD.stSelector.rHighFlow
+      - | io: input
+
+
+    * - $(P):SEL:D:SampleFlow_RBV
+      - ai
+      - GVL_Devices.M3SelectorD.stSelector.rLowFlow
+      - | io: input
+
+
+    * - $(P):SEL:D:SampleNames:01_RBV
+      - waveform
+      - GVL_Devices.M3SelectorD.stSelector.stSampleNames.s1
+      - | io: input
+
+
+    * - $(P):SEL:D:SampleNames:10_RBV
+      - waveform
+      - GVL_Devices.M3SelectorD.stSelector.stSampleNames.s10
+      - | io: input
+
+
+    * - $(P):SEL:D:SampleNames:11_RBV
+      - waveform
+      - GVL_Devices.M3SelectorD.stSelector.stSampleNames.s11
+      - | io: input
+
+
+    * - $(P):SEL:D:SampleNames:12_RBV
+      - waveform
+      - GVL_Devices.M3SelectorD.stSelector.stSampleNames.s12
+      - | io: input
+
+
+    * - $(P):SEL:D:SampleNames:02_RBV
+      - waveform
+      - GVL_Devices.M3SelectorD.stSelector.stSampleNames.s2
+      - | io: input
+
+
+    * - $(P):SEL:D:SampleNames:03_RBV
+      - waveform
+      - GVL_Devices.M3SelectorD.stSelector.stSampleNames.s3
+      - | io: input
+
+
+    * - $(P):SEL:D:SampleNames:04_RBV
+      - waveform
+      - GVL_Devices.M3SelectorD.stSelector.stSampleNames.s4
+      - | io: input
+
+
+    * - $(P):SEL:D:SampleNames:05_RBV
+      - waveform
+      - GVL_Devices.M3SelectorD.stSelector.stSampleNames.s5
+      - | io: input
+
+
+    * - $(P):SEL:D:SampleNames:06_RBV
+      - waveform
+      - GVL_Devices.M3SelectorD.stSelector.stSampleNames.s6
+      - | io: input
+
+
+    * - $(P):SEL:D:SampleNames:07_RBV
+      - waveform
+      - GVL_Devices.M3SelectorD.stSelector.stSampleNames.s7
+      - | io: input
+
+
+    * - $(P):SEL:D:SampleNames:08_RBV
+      - waveform
+      - GVL_Devices.M3SelectorD.stSelector.stSampleNames.s8
+      - | io: input
+
+
+    * - $(P):SEL:D:SampleNames:09_RBV
+      - waveform
+      - GVL_Devices.M3SelectorD.stSelector.stSampleNames.s9
+      - | io: input
+
+
+    * - $(P):SEL:D:ValvesLockRequest_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.stSelector.xResLock
+      - | io: output
+
+
+    * - $(P):SEL:D:ValvesLockRequest
+      - bo
+      - GVL_Devices.M3SelectorD.stSelector.xResLock
+      - | io: output
+
+
+    * - $(P):SEL:D:ValvesLocked_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.stSelector.xResLocked
+      - | io: input
+
+
+    * - $(P):SEL:D:ValvesSynced_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.stSelector.xResSyncd
+      - | io: input
+
+
+    * - $(P):SEL:D:ValvesUnlockRequest_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.stSelector.xResUnlock
+      - | io: output
+
+
+    * - $(P):SEL:D:ValvesUnlockRequest
+      - bo
+      - GVL_Devices.M3SelectorD.stSelector.xResUnlock
+      - | io: output
+
+
+    * - $(P):SEL:D:Shaker:01:Ctrl_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.stShaker01.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:D:Shaker:01:Ctrl
+      - bo
+      - GVL_Devices.M3SelectorD.stShaker01.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:D:Shaker:01:PowerOn_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.stShaker01.q_xPwrDO
+      - | io: input
+
+
+    * - $(P):SEL:D:Shaker:01:Ilk_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.stShaker01.xIlk
+      - | io: input
+
+
+    * - $(P):SEL:D:Shaker:02:Ctrl_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.stShaker02.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:D:Shaker:02:Ctrl
+      - bo
+      - GVL_Devices.M3SelectorD.stShaker02.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:D:Shaker:02:PowerOn_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.stShaker02.q_xPwrDO
+      - | io: input
+
+
+    * - $(P):SEL:D:Shaker:02:Ilk_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.stShaker02.xIlk
+      - | io: input
+
+
+    * - $(P):SEL:D:Shaker:03:Ctrl_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.stShaker03.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:D:Shaker:03:Ctrl
+      - bo
+      - GVL_Devices.M3SelectorD.stShaker03.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:D:Shaker:03:PowerOn_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.stShaker03.q_xPwrDO
+      - | io: input
+
+
+    * - $(P):SEL:D:Shaker:03:Ilk_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.stShaker03.xIlk
+      - | io: input
+
+
+    * - $(P):SEL:D:Shaker:04:Ctrl_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.stShaker04.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:D:Shaker:04:Ctrl
+      - bo
+      - GVL_Devices.M3SelectorD.stShaker04.i_xEpics
+      - | io: output
+
+
+    * - $(P):SEL:D:Shaker:04:PowerOn_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.stShaker04.q_xPwrDO
+      - | io: input
+
+
+    * - $(P):SEL:D:Shaker:04:Ilk_RBV
+      - bi
+      - GVL_Devices.M3SelectorD.stShaker04.xIlk
+      - | io: input
+
+
+    * - $(P):PCM:A:IO:SyncUnitOK_RBV
+      - bi
+      - GVL_Devices.PCMA.stBaseIO.i_SyncUnitWC
+      - | io: input
+
+
+    * - $(P):PCM:A:PropAir:01:HighLimit_RBV
+      - longin
+      - GVL_Devices.PCMA.stPropAir1.iHiLimit
+      - | io: output
+
+
+    * - $(P):PCM:A:PropAir:01:HighLimit
+      - longout
+      - GVL_Devices.PCMA.stPropAir1.iHiLimit
+      - | io: output
+
+
+    * - $(P):PCM:A:PropAir:01:LowLimit_RBV
+      - longin
+      - GVL_Devices.PCMA.stPropAir1.iLoLimit
+      - | io: output
+
+
+    * - $(P):PCM:A:PropAir:01:LowLimit
+      - longout
+      - GVL_Devices.PCMA.stPropAir1.iLoLimit
+      - | io: output
+
+
+    * - $(P):PCM:A:PropAir:01:Pressure_RBV
+      - longin
+      - GVL_Devices.PCMA.stPropAir1.iPressure
+      - | io: input
+
+
+    * - $(P):PCM:A:PropAir:01:Setpoint_RBV
+      - longin
+      - GVL_Devices.PCMA.stPropAir1.iSetpoint
+      - | io: output
+
+
+    * - $(P):PCM:A:PropAir:01:Setpoint
+      - longout
+      - GVL_Devices.PCMA.stPropAir1.iSetpoint
+      - | io: output
+
+
+    * - $(P):PCM:A:PropAir:01:Enable_RBV
+      - bi
+      - GVL_Devices.PCMA.stPropAir1.xEnable
+      - | io: output
+
+
+    * - $(P):PCM:A:PropAir:01:Enable
+      - bo
+      - GVL_Devices.PCMA.stPropAir1.xEnable
+      - | io: output
+
+
+    * - $(P):PCM:A:PropAir:02:HighLimit_RBV
+      - longin
+      - GVL_Devices.PCMA.stPropAir2.iHiLimit
+      - | io: output
+
+
+    * - $(P):PCM:A:PropAir:02:HighLimit
+      - longout
+      - GVL_Devices.PCMA.stPropAir2.iHiLimit
+      - | io: output
+
+
+    * - $(P):PCM:A:PropAir:02:LowLimit_RBV
+      - longin
+      - GVL_Devices.PCMA.stPropAir2.iLoLimit
+      - | io: output
+
+
+    * - $(P):PCM:A:PropAir:02:LowLimit
+      - longout
+      - GVL_Devices.PCMA.stPropAir2.iLoLimit
+      - | io: output
+
+
+    * - $(P):PCM:A:PropAir:02:Pressure_RBV
+      - longin
+      - GVL_Devices.PCMA.stPropAir2.iPressure
+      - | io: input
+
+
+    * - $(P):PCM:A:PropAir:02:Setpoint_RBV
+      - longin
+      - GVL_Devices.PCMA.stPropAir2.iSetpoint
+      - | io: output
+
+
+    * - $(P):PCM:A:PropAir:02:Setpoint
+      - longout
+      - GVL_Devices.PCMA.stPropAir2.iSetpoint
+      - | io: output
+
+
+    * - $(P):PCM:A:PropAir:02:Enable_RBV
+      - bi
+      - GVL_Devices.PCMA.stPropAir2.xEnable
+      - | io: output
+
+
+    * - $(P):PCM:A:PropAir:02:Enable
+      - bo
+      - GVL_Devices.PCMA.stPropAir2.xEnable
+      - | io: output
+
+
+    * - $(P):PCM:B:IO:SyncUnitOK_RBV
+      - bi
+      - GVL_Devices.PCMB.stBaseIO.i_SyncUnitWC
+      - | io: input
+
+
+    * - $(P):PCM:B:PropAir:01:HighLimit_RBV
+      - longin
+      - GVL_Devices.PCMB.stPropAir1.iHiLimit
+      - | io: output
+
+
+    * - $(P):PCM:B:PropAir:01:HighLimit
+      - longout
+      - GVL_Devices.PCMB.stPropAir1.iHiLimit
+      - | io: output
+
+
+    * - $(P):PCM:B:PropAir:01:LowLimit_RBV
+      - longin
+      - GVL_Devices.PCMB.stPropAir1.iLoLimit
+      - | io: output
+
+
+    * - $(P):PCM:B:PropAir:01:LowLimit
+      - longout
+      - GVL_Devices.PCMB.stPropAir1.iLoLimit
+      - | io: output
+
+
+    * - $(P):PCM:B:PropAir:01:Pressure_RBV
+      - longin
+      - GVL_Devices.PCMB.stPropAir1.iPressure
+      - | io: input
+
+
+    * - $(P):PCM:B:PropAir:01:Setpoint_RBV
+      - longin
+      - GVL_Devices.PCMB.stPropAir1.iSetpoint
+      - | io: output
+
+
+    * - $(P):PCM:B:PropAir:01:Setpoint
+      - longout
+      - GVL_Devices.PCMB.stPropAir1.iSetpoint
+      - | io: output
+
+
+    * - $(P):PCM:B:PropAir:01:Enable_RBV
+      - bi
+      - GVL_Devices.PCMB.stPropAir1.xEnable
+      - | io: output
+
+
+    * - $(P):PCM:B:PropAir:01:Enable
+      - bo
+      - GVL_Devices.PCMB.stPropAir1.xEnable
+      - | io: output
+
+
+    * - $(P):PCM:B:PropAir:02:HighLimit_RBV
+      - longin
+      - GVL_Devices.PCMB.stPropAir2.iHiLimit
+      - | io: output
+
+
+    * - $(P):PCM:B:PropAir:02:HighLimit
+      - longout
+      - GVL_Devices.PCMB.stPropAir2.iHiLimit
+      - | io: output
+
+
+    * - $(P):PCM:B:PropAir:02:LowLimit_RBV
+      - longin
+      - GVL_Devices.PCMB.stPropAir2.iLoLimit
+      - | io: output
+
+
+    * - $(P):PCM:B:PropAir:02:LowLimit
+      - longout
+      - GVL_Devices.PCMB.stPropAir2.iLoLimit
+      - | io: output
+
+
+    * - $(P):PCM:B:PropAir:02:Pressure_RBV
+      - longin
+      - GVL_Devices.PCMB.stPropAir2.iPressure
+      - | io: input
+
+
+    * - $(P):PCM:B:PropAir:02:Setpoint_RBV
+      - longin
+      - GVL_Devices.PCMB.stPropAir2.iSetpoint
+      - | io: output
+
+
+    * - $(P):PCM:B:PropAir:02:Setpoint
+      - longout
+      - GVL_Devices.PCMB.stPropAir2.iSetpoint
+      - | io: output
+
+
+    * - $(P):PCM:B:PropAir:02:Enable_RBV
+      - bi
+      - GVL_Devices.PCMB.stPropAir2.xEnable
+      - | io: output
+
+
+    * - $(P):PCM:B:PropAir:02:Enable
+      - bo
+      - GVL_Devices.PCMB.stPropAir2.xEnable
+      - | io: output
+
+
+    * - $(P):PCM:C:IO:SyncUnitOK_RBV
+      - bi
+      - GVL_Devices.PCMC.stBaseIO.i_SyncUnitWC
+      - | io: input
+
+
+    * - $(P):PCM:C:PropAir:01:HighLimit_RBV
+      - longin
+      - GVL_Devices.PCMC.stPropAir1.iHiLimit
+      - | io: output
+
+
+    * - $(P):PCM:C:PropAir:01:HighLimit
+      - longout
+      - GVL_Devices.PCMC.stPropAir1.iHiLimit
+      - | io: output
+
+
+    * - $(P):PCM:C:PropAir:01:LowLimit_RBV
+      - longin
+      - GVL_Devices.PCMC.stPropAir1.iLoLimit
+      - | io: output
+
+
+    * - $(P):PCM:C:PropAir:01:LowLimit
+      - longout
+      - GVL_Devices.PCMC.stPropAir1.iLoLimit
+      - | io: output
+
+
+    * - $(P):PCM:C:PropAir:01:Pressure_RBV
+      - longin
+      - GVL_Devices.PCMC.stPropAir1.iPressure
+      - | io: input
+
+
+    * - $(P):PCM:C:PropAir:01:Setpoint_RBV
+      - longin
+      - GVL_Devices.PCMC.stPropAir1.iSetpoint
+      - | io: output
+
+
+    * - $(P):PCM:C:PropAir:01:Setpoint
+      - longout
+      - GVL_Devices.PCMC.stPropAir1.iSetpoint
+      - | io: output
+
+
+    * - $(P):PCM:C:PropAir:01:Enable_RBV
+      - bi
+      - GVL_Devices.PCMC.stPropAir1.xEnable
+      - | io: output
+
+
+    * - $(P):PCM:C:PropAir:01:Enable
+      - bo
+      - GVL_Devices.PCMC.stPropAir1.xEnable
+      - | io: output
+
+
+    * - $(P):PCM:C:PropAir:02:HighLimit_RBV
+      - longin
+      - GVL_Devices.PCMC.stPropAir2.iHiLimit
+      - | io: output
+
+
+    * - $(P):PCM:C:PropAir:02:HighLimit
+      - longout
+      - GVL_Devices.PCMC.stPropAir2.iHiLimit
+      - | io: output
+
+
+    * - $(P):PCM:C:PropAir:02:LowLimit_RBV
+      - longin
+      - GVL_Devices.PCMC.stPropAir2.iLoLimit
+      - | io: output
+
+
+    * - $(P):PCM:C:PropAir:02:LowLimit
+      - longout
+      - GVL_Devices.PCMC.stPropAir2.iLoLimit
+      - | io: output
+
+
+    * - $(P):PCM:C:PropAir:02:Pressure_RBV
+      - longin
+      - GVL_Devices.PCMC.stPropAir2.iPressure
+      - | io: input
+
+
+    * - $(P):PCM:C:PropAir:02:Setpoint_RBV
+      - longin
+      - GVL_Devices.PCMC.stPropAir2.iSetpoint
+      - | io: output
+
+
+    * - $(P):PCM:C:PropAir:02:Setpoint
+      - longout
+      - GVL_Devices.PCMC.stPropAir2.iSetpoint
+      - | io: output
+
+
+    * - $(P):PCM:C:PropAir:02:Enable_RBV
+      - bi
+      - GVL_Devices.PCMC.stPropAir2.xEnable
+      - | io: output
+
+
+    * - $(P):PCM:C:PropAir:02:Enable
+      - bo
+      - GVL_Devices.PCMC.stPropAir2.xEnable
+      - | io: output
+
+
+    * - $(P):PCM:D:IO:SyncUnitOK_RBV
+      - bi
+      - GVL_Devices.PCMD.stBaseIO.i_SyncUnitWC
+      - | io: input
+
+
+    * - $(P):PCM:D:PropAir:01:HighLimit_RBV
+      - longin
+      - GVL_Devices.PCMD.stPropAir1.iHiLimit
+      - | io: output
+
+
+    * - $(P):PCM:D:PropAir:01:HighLimit
+      - longout
+      - GVL_Devices.PCMD.stPropAir1.iHiLimit
+      - | io: output
+
+
+    * - $(P):PCM:D:PropAir:01:LowLimit_RBV
+      - longin
+      - GVL_Devices.PCMD.stPropAir1.iLoLimit
+      - | io: output
+
+
+    * - $(P):PCM:D:PropAir:01:LowLimit
+      - longout
+      - GVL_Devices.PCMD.stPropAir1.iLoLimit
+      - | io: output
+
+
+    * - $(P):PCM:D:PropAir:01:Pressure_RBV
+      - longin
+      - GVL_Devices.PCMD.stPropAir1.iPressure
+      - | io: input
+
+
+    * - $(P):PCM:D:PropAir:01:Setpoint_RBV
+      - longin
+      - GVL_Devices.PCMD.stPropAir1.iSetpoint
+      - | io: output
+
+
+    * - $(P):PCM:D:PropAir:01:Setpoint
+      - longout
+      - GVL_Devices.PCMD.stPropAir1.iSetpoint
+      - | io: output
+
+
+    * - $(P):PCM:D:PropAir:01:Enable_RBV
+      - bi
+      - GVL_Devices.PCMD.stPropAir1.xEnable
+      - | io: output
+
+
+    * - $(P):PCM:D:PropAir:01:Enable
+      - bo
+      - GVL_Devices.PCMD.stPropAir1.xEnable
+      - | io: output
+
+
+    * - $(P):PCM:D:PropAir:02:HighLimit_RBV
+      - longin
+      - GVL_Devices.PCMD.stPropAir2.iHiLimit
+      - | io: output
+
+
+    * - $(P):PCM:D:PropAir:02:HighLimit
+      - longout
+      - GVL_Devices.PCMD.stPropAir2.iHiLimit
+      - | io: output
+
+
+    * - $(P):PCM:D:PropAir:02:LowLimit_RBV
+      - longin
+      - GVL_Devices.PCMD.stPropAir2.iLoLimit
+      - | io: output
+
+
+    * - $(P):PCM:D:PropAir:02:LowLimit
+      - longout
+      - GVL_Devices.PCMD.stPropAir2.iLoLimit
+      - | io: output
+
+
+    * - $(P):PCM:D:PropAir:02:Pressure_RBV
+      - longin
+      - GVL_Devices.PCMD.stPropAir2.iPressure
+      - | io: input
+
+
+    * - $(P):PCM:D:PropAir:02:Setpoint_RBV
+      - longin
+      - GVL_Devices.PCMD.stPropAir2.iSetpoint
+      - | io: output
+
+
+    * - $(P):PCM:D:PropAir:02:Setpoint
+      - longout
+      - GVL_Devices.PCMD.stPropAir2.iSetpoint
+      - | io: output
+
+
+    * - $(P):PCM:D:PropAir:02:Enable_RBV
+      - bi
+      - GVL_Devices.PCMD.stPropAir2.xEnable
+      - | io: output
+
+
+    * - $(P):PCM:D:PropAir:02:Enable
+      - bo
+      - GVL_Devices.PCMD.stPropAir2.xEnable
+      - | io: output
+
+
+    * - $(P):SPR:A:Debug_RBV
+      - bi
+      - GVL_Devices.SolenoidPairA.i_xDebug
+      - | io: output
+
+
+    * - $(P):SPR:A:Debug
+      - bo
+      - GVL_Devices.SolenoidPairA.i_xDebug
+      - | io: output
+
+
+    * - $(P):SPR:A:Switch_RBV
+      - bi
+      - GVL_Devices.SolenoidPairA.i_xEpics
+      - | io: output
+
+
+    * - $(P):SPR:A:Switch
+      - bo
+      - GVL_Devices.SolenoidPairA.i_xEpics
+      - | io: output
+
+
+    * - $(P):SPR:A:Valve:01:Open_RBV
+      - bi
+      - GVL_Devices.SolenoidPairA.q_xDO1
+      - | io: output
+
+
+    * - $(P):SPR:A:Valve:01:Open
+      - bo
+      - GVL_Devices.SolenoidPairA.q_xDO1
+      - | io: output
+
+
+    * - $(P):SPR:A:Valve:02:Open_RBV
+      - bi
+      - GVL_Devices.SolenoidPairA.q_xDO2
+      - | io: output
+
+
+    * - $(P):SPR:A:Valve:02:Open
+      - bo
+      - GVL_Devices.SolenoidPairA.q_xDO2
+      - | io: output
+
+
+    * - $(PREFIX)LCLSGeneral:GlobalLogTrickleTrip_RBV
+      - bi
+      - Tripped by overall log count
+      - | io: input
+
+
+    * - $(PREFIX)LCLSGeneral:LogHost_RBV
+      - waveform
+      - The log host IP address
+      - | io: output
+
+
+    * - $(PREFIX)LCLSGeneral:LogHost
+      - waveform
+      - The log host IP address
+      - | io: output
+
+
+    * - $(PREFIX)LCLSGeneral:LogPort_RBV
+      - longin
+      - The log host UDP port
+      - | io: output
+
+
+    * - $(PREFIX)LCLSGeneral:LogPort
+      - longout
+      - The log host UDP port
+      - | io: output
+
+
+    * - $(PREFIX)LCLSGeneral:LogMessageCount_RBV
+      - longin
+      - Total log messages on the last cycle
+      - | io: input
+
+
+

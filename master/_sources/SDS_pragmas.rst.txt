@@ -1,0 +1,36 @@
+
+Pragmas
+-------
+
+.. csv-table::
+    :header: PLC Name, Total Pragmas, Errors
+    :align: center
+
+    :ref:`SDSPLC <SDSPLC_overview_pragmas>`, 104, 1
+
+
+.. _SDSPLC_overview_pragmas:
+
+
+SDSPLC
+^^^^^^
+
+Total pragmas found: 104
+Total linter errors: 1
+
+GVLs/GVL_Devices.TcGVL
+^^^^^^^^^^^^^^^^^^^^^^
+
+#. Line 5 (LinterError)
+
+::
+
+    No configuration line(s) detected in a pragma.
+
+    Full pragma:
+
+    {attribute 'pytmc' := '
+//    pv: @(P):PCM:A
+// '}
+
+

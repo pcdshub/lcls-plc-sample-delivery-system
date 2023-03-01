@@ -1,0 +1,5337 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Types &mdash; pcdshub/lcls-plc-sample-delivery-system  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
+      <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="DUTs" href="SDS_SDSPLC_source.html" />
+    <link rel="prev" title="Settings" href="SDS_SDSPLC_summary.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pcdshub/lcls-plc-sample-delivery-system
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">SDS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="SDS_pragmas.html">Pragmas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDS_nc.html">NC Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDS_ethercat.html">EtherCAT Terminals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDS_boxes.html">Boxes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDS_links.html">Links</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">SDSPLC</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="SDS_SDSPLC_summary.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDS_SDSPLC_summary.html#pragmas">Pragmas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDS_SDSPLC_summary.html#libraries">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDS_SDSPLC_summary.html#symbols">Symbols</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data Types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fb-bronkhorstmfm">FB_BronkhorstMFM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fb-gasmanifold">FB_GasManifold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fb-pressurecontrolmodule">FB_PressureControlModule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fb-selectorm3">FB_SelectorM3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fb-solenoidpair">FB_SolenoidPair</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lcls-general-fb-logmessage">LCLS_General.FB_LogMessage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#st-bhelflow">ST_BhElFlow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#st-m3devicebaseio">ST_M3DeviceBaseIO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#st-manifoldvalve">ST_ManifoldValve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#st-proportionair">ST_Proportionair</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#st-selectorm3">ST_SelectorM3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#st-sensirionfm">ST_SensirionFM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#st-shaker">ST_Shaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#st-strings">ST_Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#st-vicistatus">ST_ViciStatus</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#database-records">Database Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDS_SDSPLC_source.html">DUTs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDS_SDSPLC_source.html#gvls">GVLs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDS_SDSPLC_source.html#pous">POUs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pcdshub/lcls-plc-sample-delivery-system</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Data Types</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/SDS_SDSPLC_epics.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="data-types">
+<h1>Data Types<a class="headerlink" href="#data-types" title="Link to this heading"></a></h1>
+<section id="fb-bronkhorstmfm">
+<h2>FB_BronkhorstMFM<a class="headerlink" href="#fb-bronkhorstmfm" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):Flow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).stMFM.i_rFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Setpoint</p></td>
+<td><p>ao</p></td>
+<td><p>$(SYMBOL).stMFM.q_rSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Setpoint_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).stMFM.q_rSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Unit_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stMFM.i_sUnit</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fb-gasmanifold">
+<h2>FB_GasManifold<a class="headerlink" href="#fb-gasmanifold" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):IO:SyncUnitOK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stBaseIO.i_SyncUnitWC</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:01:CloseDO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[1].qxDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:01:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[1].xILK</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:01:Name_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stValve[1].sName</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:01:Open</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).stValve[1].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:01:Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[1].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:01:OpenSW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[1].ixOPN</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:02:CloseDO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[2].qxDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:02:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[2].xILK</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:02:Name_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stValve[2].sName</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:02:Open</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).stValve[2].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:02:Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[2].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:02:OpenSW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[2].ixOPN</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:03:CloseDO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[3].qxDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:03:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[3].xILK</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:03:Name_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stValve[3].sName</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:03:Open</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).stValve[3].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:03:Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[3].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:03:OpenSW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[3].ixOPN</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:04:CloseDO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[4].qxDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:04:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[4].xILK</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:04:Name_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stValve[4].sName</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:04:Open</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).stValve[4].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:04:Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[4].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:04:OpenSW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[4].ixOPN</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:05:CloseDO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[5].qxDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:05:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[5].xILK</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:05:Name_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stValve[5].sName</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:05:Open</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).stValve[5].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:05:Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[5].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:05:OpenSW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[5].ixOPN</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:06:CloseDO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[6].qxDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:06:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[6].xILK</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:06:Name_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stValve[6].sName</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:06:Open</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).stValve[6].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:06:Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[6].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:06:OpenSW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[6].ixOPN</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:07:CloseDO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[7].qxDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:07:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[7].xILK</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:07:Name_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stValve[7].sName</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:07:Open</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).stValve[7].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:07:Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[7].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:07:OpenSW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stValve[7].ixOPN</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fb-pressurecontrolmodule">
+<h2>FB_PressureControlModule<a class="headerlink" href="#fb-pressurecontrolmodule" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):IO:SyncUnitOK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stBaseIO.i_SyncUnitWC</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):PropAir:01:Enable</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).stPropAir1.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):PropAir:01:Enable_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stPropAir1.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):PropAir:01:HighLimit</p></td>
+<td><p>longout</p></td>
+<td><p>$(SYMBOL).stPropAir1.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):PropAir:01:HighLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).stPropAir1.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):PropAir:01:LowLimit</p></td>
+<td><p>longout</p></td>
+<td><p>$(SYMBOL).stPropAir1.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):PropAir:01:LowLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).stPropAir1.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):PropAir:01:Pressure_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).stPropAir1.iPressure</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):PropAir:01:Setpoint</p></td>
+<td><p>longout</p></td>
+<td><p>$(SYMBOL).stPropAir1.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):PropAir:01:Setpoint_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).stPropAir1.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):PropAir:02:Enable</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).stPropAir2.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):PropAir:02:Enable_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stPropAir2.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):PropAir:02:HighLimit</p></td>
+<td><p>longout</p></td>
+<td><p>$(SYMBOL).stPropAir2.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):PropAir:02:HighLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).stPropAir2.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):PropAir:02:LowLimit</p></td>
+<td><p>longout</p></td>
+<td><p>$(SYMBOL).stPropAir2.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):PropAir:02:LowLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).stPropAir2.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):PropAir:02:Pressure_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).stPropAir2.iPressure</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):PropAir:02:Setpoint</p></td>
+<td><p>longout</p></td>
+<td><p>$(SYMBOL).stPropAir2.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):PropAir:02:Setpoint_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).stPropAir2.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fb-selectorm3">
+<h2>FB_SelectorM3<a class="headerlink" href="#fb-selectorm3" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):IO:SyncUnitOK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stBaseIO.i_SyncUnitWC</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):LiquidSheathFlow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).stSelector.rHighFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):SampleFlow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).stSelector.rLowFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):SampleNames:01_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSelector.stSampleNames.s1</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):SampleNames:02_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSelector.stSampleNames.s2</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):SampleNames:03_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSelector.stSampleNames.s3</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):SampleNames:04_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSelector.stSampleNames.s4</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):SampleNames:05_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSelector.stSampleNames.s5</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):SampleNames:06_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSelector.stSampleNames.s6</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):SampleNames:07_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSelector.stSampleNames.s7</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):SampleNames:08_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSelector.stSampleNames.s8</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):SampleNames:09_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSelector.stSampleNames.s9</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):SampleNames:10_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSelector.stSampleNames.s10</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):SampleNames:11_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSelector.stSampleNames.s11</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):SampleNames:12_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSelector.stSampleNames.s12</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Sensirion:01:Flow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).astSelFM[1].rFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Sensirion:01:FlowValid_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).astSelFM[1].xFlowValid</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Sensirion:01:Mode</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).astSelFM[1].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Sensirion:01:Mode_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).astSelFM[1].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Sensirion:01:ModeRb_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).astSelFM[1].xFMModeRb</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Sensirion:01:OoR_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).astSelFM[1].xFMOoR</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Sensirion:01:Reset</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).astSelFM[1].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Sensirion:01:Reset_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).astSelFM[1].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Sensirion:01:State_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>$(SYMBOL).astSelFM[1].eFMState</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Sensirion:02:Flow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).astSelFM[2].rFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Sensirion:02:FlowValid_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).astSelFM[2].xFlowValid</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Sensirion:02:Mode</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).astSelFM[2].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Sensirion:02:Mode_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).astSelFM[2].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Sensirion:02:ModeRb_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).astSelFM[2].xFMModeRb</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Sensirion:02:OoR_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).astSelFM[2].xFMOoR</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Sensirion:02:Reset</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).astSelFM[2].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Sensirion:02:Reset_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).astSelFM[2].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Sensirion:02:State_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>$(SYMBOL).astSelFM[2].eFMState</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Shaker:01:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).stShaker01.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Shaker:01:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stShaker01.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Shaker:01:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stShaker01.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Shaker:01:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stShaker01.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Shaker:02:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).stShaker02.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Shaker:02:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stShaker02.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Shaker:02:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stShaker02.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Shaker:02:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stShaker02.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Shaker:03:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).stShaker03.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Shaker:03:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stShaker03.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Shaker:03:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stShaker03.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Shaker:03:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stShaker03.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Shaker:04:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).stShaker04.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Shaker:04:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stShaker04.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Shaker:04:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stShaker04.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Shaker:04:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stShaker04.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:01:CurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).stSelector.astViciVlvStatus[1].iCurrPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:01:ReqPos</p></td>
+<td><p>longout</p></td>
+<td><p>$(SYMBOL).stSelector.iVici1ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:01:ReqPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).stSelector.iVici1ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:02:CurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).stSelector.astViciVlvStatus[2].iCurrPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:02:ReqPos</p></td>
+<td><p>longout</p></td>
+<td><p>$(SYMBOL).stSelector.iVici2ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:02:ReqPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).stSelector.iVici2ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):ValvesLocked_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stSelector.xResLocked</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):ValvesLockRequest</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).stSelector.xResLock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):ValvesLockRequest_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stSelector.xResLock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):ValvesSynced_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stSelector.xResSyncd</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):ValvesUnlockRequest</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).stSelector.xResUnlock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):ValvesUnlockRequest_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).stSelector.xResUnlock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):ValveSyncCurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).stSelector.iSyncResPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):ValveSyncReqPos</p></td>
+<td><p>longout</p></td>
+<td><p>$(SYMBOL).stSelector.iSyncReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):ValveSyncReqPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).stSelector.iSyncReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fb-solenoidpair">
+<h2>FB_SolenoidPair<a class="headerlink" href="#fb-solenoidpair" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):Debug</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).i_xDebug</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Debug_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).i_xDebug</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Switch</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Switch_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:01:Open</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).q_xDO1</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:01:Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).q_xDO1</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:02:Open</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).q_xDO2</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:02:Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).q_xDO2</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lcls-general-fb-logmessage">
+<h2>LCLS_General.FB_LogMessage<a class="headerlink" href="#lcls-general-fb-logmessage" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):Reset</p></td>
+<td><p>bo</p></td>
+<td><p>Rising-edge reset of trip</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Reset_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>Rising-edge reset of trip</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Tripped_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>Log message FB tripped</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="st-bhelflow">
+<h2>ST_BhElFlow<a class="headerlink" href="#st-bhelflow" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):Flow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).i_rFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Setpoint</p></td>
+<td><p>ao</p></td>
+<td><p>$(SYMBOL).q_rSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Setpoint_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).q_rSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Unit_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).i_sUnit</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="st-m3devicebaseio">
+<h2>ST_M3DeviceBaseIO<a class="headerlink" href="#st-m3devicebaseio" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):SyncUnitOK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).i_SyncUnitWC</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="st-manifoldvalve">
+<h2>ST_ManifoldValve<a class="headerlink" href="#st-manifoldvalve" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):CloseDO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).qxDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).xILK</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Name_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).sName</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Open</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):OpenSW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).ixOPN</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="st-proportionair">
+<h2>ST_Proportionair<a class="headerlink" href="#st-proportionair" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):Enable</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Enable_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):HighLimit</p></td>
+<td><p>longout</p></td>
+<td><p>$(SYMBOL).iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):HighLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):LowLimit</p></td>
+<td><p>longout</p></td>
+<td><p>$(SYMBOL).iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):LowLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Pressure_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).iPressure</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Setpoint</p></td>
+<td><p>longout</p></td>
+<td><p>$(SYMBOL).iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Setpoint_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="st-selectorm3">
+<h2>ST_SelectorM3<a class="headerlink" href="#st-selectorm3" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):LiquidSheathFlow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).rHighFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):SampleFlow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).rLowFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):SampleNames:01_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSampleNames.s1</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):SampleNames:02_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSampleNames.s2</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):SampleNames:03_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSampleNames.s3</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):SampleNames:04_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSampleNames.s4</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):SampleNames:05_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSampleNames.s5</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):SampleNames:06_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSampleNames.s6</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):SampleNames:07_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSampleNames.s7</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):SampleNames:08_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSampleNames.s8</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):SampleNames:09_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSampleNames.s9</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):SampleNames:10_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSampleNames.s10</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):SampleNames:11_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSampleNames.s11</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):SampleNames:12_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).stSampleNames.s12</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:01:CurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).astViciVlvStatus[1].iCurrPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:01:ReqPos</p></td>
+<td><p>longout</p></td>
+<td><p>$(SYMBOL).iVici1ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:01:ReqPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).iVici1ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:02:CurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).astViciVlvStatus[2].iCurrPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Valve:02:ReqPos</p></td>
+<td><p>longout</p></td>
+<td><p>$(SYMBOL).iVici2ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Valve:02:ReqPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).iVici2ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):ValvesLocked_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).xResLocked</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):ValvesLockRequest</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).xResLock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):ValvesLockRequest_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).xResLock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):ValvesSynced_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).xResSyncd</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):ValvesUnlockRequest</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).xResUnlock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):ValvesUnlockRequest_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).xResUnlock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):ValveSyncCurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).iSyncResPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):ValveSyncReqPos</p></td>
+<td><p>longout</p></td>
+<td><p>$(SYMBOL).iSyncReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):ValveSyncReqPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).iSyncReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="st-sensirionfm">
+<h2>ST_SensirionFM<a class="headerlink" href="#st-sensirionfm" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):Flow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).rFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):FlowValid_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).xFlowValid</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Mode</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Mode_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):ModeRb_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).xFMModeRb</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):OoR_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).xFMOoR</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Reset</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Reset_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):State_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>$(SYMBOL).eFMState</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="st-shaker">
+<h2>ST_Shaker<a class="headerlink" href="#st-shaker" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="st-strings">
+<h2>ST_Strings<a class="headerlink" href="#st-strings" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):01_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).s1</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):02_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).s2</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):03_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).s3</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):04_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).s4</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):05_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).s5</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):06_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).s6</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):07_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).s7</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):08_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).s8</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):09_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).s9</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):10_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).s10</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):11_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).s11</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):12_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).s12</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="st-vicistatus">
+<h2>ST_ViciStatus<a class="headerlink" href="#st-vicistatus" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):CurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).iCurrPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="database-records">
+<h1>Database Records<a class="headerlink" href="#database-records" title="Link to this heading"></a></h1>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(P):MFM:A:Flow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.BronkhorstA.stMFM.i_rFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MFM:A:Unit_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.BronkhorstA.stMFM.i_sUnit</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MFM:A:Setpoint_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.BronkhorstA.stMFM.q_rSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MFM:A:Setpoint</p></td>
+<td><p>ao</p></td>
+<td><p>GVL_Devices.BronkhorstA.stMFM.q_rSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MFM:B:Flow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.BronkhorstB.stMFM.i_rFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MFM:B:Unit_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.BronkhorstB.stMFM.i_sUnit</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MFM:B:Setpoint_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.BronkhorstB.stMFM.q_rSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MFM:B:Setpoint</p></td>
+<td><p>ao</p></td>
+<td><p>GVL_Devices.BronkhorstB.stMFM.q_rSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MFM:C:Flow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.BronkhorstC.stMFM.i_rFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MFM:C:Unit_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.BronkhorstC.stMFM.i_sUnit</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MFM:C:Setpoint_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.BronkhorstC.stMFM.q_rSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MFM:C:Setpoint</p></td>
+<td><p>ao</p></td>
+<td><p>GVL_Devices.BronkhorstC.stMFM.q_rSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MFM:D:Flow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.BronkhorstD.stMFM.i_rFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MFM:D:Unit_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.BronkhorstD.stMFM.i_sUnit</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MFM:D:Setpoint_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.BronkhorstD.stMFM.q_rSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MFM:D:Setpoint</p></td>
+<td><p>ao</p></td>
+<td><p>GVL_Devices.BronkhorstD.stMFM.q_rSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:IO:SyncUnitOK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stBaseIO.i_SyncUnitWC</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:01:OpenSW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[1].ixOPN</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:01:CloseDO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[1].qxDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:01:Name_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.GasMan.stValve[1].sName</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:01:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[1].xILK</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:01:Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[1].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:01:Open</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.GasMan.stValve[1].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:02:OpenSW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[2].ixOPN</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:02:CloseDO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[2].qxDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:02:Name_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.GasMan.stValve[2].sName</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:02:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[2].xILK</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:02:Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[2].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:02:Open</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.GasMan.stValve[2].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:03:OpenSW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[3].ixOPN</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:03:CloseDO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[3].qxDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:03:Name_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.GasMan.stValve[3].sName</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:03:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[3].xILK</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:03:Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[3].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:03:Open</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.GasMan.stValve[3].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:04:OpenSW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[4].ixOPN</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:04:CloseDO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[4].qxDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:04:Name_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.GasMan.stValve[4].sName</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:04:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[4].xILK</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:04:Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[4].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:04:Open</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.GasMan.stValve[4].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:05:OpenSW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[5].ixOPN</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:05:CloseDO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[5].qxDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:05:Name_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.GasMan.stValve[5].sName</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:05:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[5].xILK</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:05:Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[5].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:05:Open</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.GasMan.stValve[5].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:06:OpenSW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[6].ixOPN</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:06:CloseDO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[6].qxDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:06:Name_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.GasMan.stValve[6].sName</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:06:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[6].xILK</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:06:Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[6].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:06:Open</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.GasMan.stValve[6].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:07:OpenSW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[7].ixOPN</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:07:CloseDO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[7].qxDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:07:Name_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.GasMan.stValve[7].sName</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:07:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[7].xILK</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):MAN:Valve:07:Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.GasMan.stValve[7].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):MAN:Valve:07:Open</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.GasMan.stValve[7].xSW</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Sensirion:01:State_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>GVL_Devices.M3SelectorA.astSelFM[1].eFMState</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Sensirion:01:Flow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.M3SelectorA.astSelFM[1].rFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Sensirion:01:ModeRb_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.astSelFM[1].xFMModeRb</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Sensirion:01:Mode_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.astSelFM[1].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Sensirion:01:Mode</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorA.astSelFM[1].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Sensirion:01:OoR_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.astSelFM[1].xFMOoR</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Sensirion:01:Reset_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.astSelFM[1].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Sensirion:01:Reset</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorA.astSelFM[1].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Sensirion:01:FlowValid_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.astSelFM[1].xFlowValid</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Sensirion:02:State_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>GVL_Devices.M3SelectorA.astSelFM[2].eFMState</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Sensirion:02:Flow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.M3SelectorA.astSelFM[2].rFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Sensirion:02:ModeRb_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.astSelFM[2].xFMModeRb</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Sensirion:02:Mode_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.astSelFM[2].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Sensirion:02:Mode</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorA.astSelFM[2].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Sensirion:02:OoR_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.astSelFM[2].xFMOoR</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Sensirion:02:Reset_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.astSelFM[2].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Sensirion:02:Reset</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorA.astSelFM[2].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Sensirion:02:FlowValid_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.astSelFM[2].xFlowValid</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:IO:SyncUnitOK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.stBaseIO.i_SyncUnitWC</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Valve:01:CurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.astViciVlvStatus[1].iCurrPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Valve:02:CurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.astViciVlvStatus[2].iCurrPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:ValveSyncReqPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.iSyncReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:ValveSyncReqPos</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.iSyncReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:ValveSyncCurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.iSyncResPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Valve:01:ReqPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.iVici1ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Valve:01:ReqPos</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.iVici1ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Valve:02:ReqPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.iVici2ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Valve:02:ReqPos</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.iVici2ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:LiquidSheathFlow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.rHighFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:SampleFlow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.rLowFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:SampleNames:01_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.stSampleNames.s1</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:SampleNames:10_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.stSampleNames.s10</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:SampleNames:11_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.stSampleNames.s11</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:SampleNames:12_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.stSampleNames.s12</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:SampleNames:02_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.stSampleNames.s2</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:SampleNames:03_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.stSampleNames.s3</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:SampleNames:04_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.stSampleNames.s4</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:SampleNames:05_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.stSampleNames.s5</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:SampleNames:06_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.stSampleNames.s6</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:SampleNames:07_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.stSampleNames.s7</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:SampleNames:08_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.stSampleNames.s8</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:SampleNames:09_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.stSampleNames.s9</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:ValvesLockRequest_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.xResLock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:ValvesLockRequest</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.xResLock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:ValvesLocked_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.xResLocked</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:ValvesSynced_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.xResSyncd</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:ValvesUnlockRequest_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.xResUnlock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:ValvesUnlockRequest</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorA.stSelector.xResUnlock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Shaker:01:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.stShaker01.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Shaker:01:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorA.stShaker01.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Shaker:01:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.stShaker01.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Shaker:01:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.stShaker01.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Shaker:02:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.stShaker02.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Shaker:02:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorA.stShaker02.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Shaker:02:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.stShaker02.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Shaker:02:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.stShaker02.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Shaker:03:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.stShaker03.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Shaker:03:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorA.stShaker03.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Shaker:03:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.stShaker03.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Shaker:03:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.stShaker03.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Shaker:04:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.stShaker04.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Shaker:04:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorA.stShaker04.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:A:Shaker:04:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.stShaker04.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:A:Shaker:04:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorA.stShaker04.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Sensirion:01:State_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>GVL_Devices.M3SelectorB.astSelFM[1].eFMState</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Sensirion:01:Flow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.M3SelectorB.astSelFM[1].rFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Sensirion:01:ModeRb_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.astSelFM[1].xFMModeRb</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Sensirion:01:Mode_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.astSelFM[1].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Sensirion:01:Mode</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorB.astSelFM[1].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Sensirion:01:OoR_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.astSelFM[1].xFMOoR</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Sensirion:01:Reset_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.astSelFM[1].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Sensirion:01:Reset</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorB.astSelFM[1].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Sensirion:01:FlowValid_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.astSelFM[1].xFlowValid</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Sensirion:02:State_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>GVL_Devices.M3SelectorB.astSelFM[2].eFMState</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Sensirion:02:Flow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.M3SelectorB.astSelFM[2].rFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Sensirion:02:ModeRb_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.astSelFM[2].xFMModeRb</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Sensirion:02:Mode_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.astSelFM[2].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Sensirion:02:Mode</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorB.astSelFM[2].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Sensirion:02:OoR_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.astSelFM[2].xFMOoR</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Sensirion:02:Reset_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.astSelFM[2].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Sensirion:02:Reset</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorB.astSelFM[2].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Sensirion:02:FlowValid_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.astSelFM[2].xFlowValid</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:IO:SyncUnitOK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.stBaseIO.i_SyncUnitWC</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Valve:01:CurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.astViciVlvStatus[1].iCurrPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Valve:02:CurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.astViciVlvStatus[2].iCurrPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:ValveSyncReqPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.iSyncReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:ValveSyncReqPos</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.iSyncReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:ValveSyncCurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.iSyncResPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Valve:01:ReqPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.iVici1ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Valve:01:ReqPos</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.iVici1ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Valve:02:ReqPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.iVici2ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Valve:02:ReqPos</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.iVici2ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:LiquidSheathFlow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.rHighFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:SampleFlow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.rLowFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:SampleNames:01_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.stSampleNames.s1</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:SampleNames:10_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.stSampleNames.s10</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:SampleNames:11_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.stSampleNames.s11</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:SampleNames:12_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.stSampleNames.s12</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:SampleNames:02_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.stSampleNames.s2</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:SampleNames:03_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.stSampleNames.s3</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:SampleNames:04_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.stSampleNames.s4</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:SampleNames:05_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.stSampleNames.s5</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:SampleNames:06_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.stSampleNames.s6</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:SampleNames:07_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.stSampleNames.s7</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:SampleNames:08_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.stSampleNames.s8</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:SampleNames:09_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.stSampleNames.s9</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:ValvesLockRequest_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.xResLock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:ValvesLockRequest</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.xResLock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:ValvesLocked_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.xResLocked</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:ValvesSynced_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.xResSyncd</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:ValvesUnlockRequest_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.xResUnlock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:ValvesUnlockRequest</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorB.stSelector.xResUnlock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Shaker:01:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.stShaker01.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Shaker:01:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorB.stShaker01.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Shaker:01:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.stShaker01.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Shaker:01:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.stShaker01.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Shaker:02:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.stShaker02.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Shaker:02:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorB.stShaker02.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Shaker:02:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.stShaker02.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Shaker:02:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.stShaker02.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Shaker:03:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.stShaker03.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Shaker:03:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorB.stShaker03.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Shaker:03:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.stShaker03.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Shaker:03:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.stShaker03.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Shaker:04:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.stShaker04.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Shaker:04:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorB.stShaker04.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:B:Shaker:04:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.stShaker04.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:B:Shaker:04:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorB.stShaker04.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Sensirion:01:State_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>GVL_Devices.M3SelectorC.astSelFM[1].eFMState</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Sensirion:01:Flow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.M3SelectorC.astSelFM[1].rFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Sensirion:01:ModeRb_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.astSelFM[1].xFMModeRb</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Sensirion:01:Mode_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.astSelFM[1].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Sensirion:01:Mode</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorC.astSelFM[1].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Sensirion:01:OoR_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.astSelFM[1].xFMOoR</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Sensirion:01:Reset_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.astSelFM[1].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Sensirion:01:Reset</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorC.astSelFM[1].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Sensirion:01:FlowValid_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.astSelFM[1].xFlowValid</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Sensirion:02:State_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>GVL_Devices.M3SelectorC.astSelFM[2].eFMState</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Sensirion:02:Flow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.M3SelectorC.astSelFM[2].rFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Sensirion:02:ModeRb_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.astSelFM[2].xFMModeRb</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Sensirion:02:Mode_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.astSelFM[2].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Sensirion:02:Mode</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorC.astSelFM[2].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Sensirion:02:OoR_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.astSelFM[2].xFMOoR</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Sensirion:02:Reset_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.astSelFM[2].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Sensirion:02:Reset</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorC.astSelFM[2].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Sensirion:02:FlowValid_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.astSelFM[2].xFlowValid</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:IO:SyncUnitOK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.stBaseIO.i_SyncUnitWC</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Valve:01:CurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.astViciVlvStatus[1].iCurrPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Valve:02:CurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.astViciVlvStatus[2].iCurrPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:ValveSyncReqPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.iSyncReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:ValveSyncReqPos</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.iSyncReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:ValveSyncCurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.iSyncResPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Valve:01:ReqPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.iVici1ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Valve:01:ReqPos</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.iVici1ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Valve:02:ReqPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.iVici2ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Valve:02:ReqPos</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.iVici2ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:LiquidSheathFlow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.rHighFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:SampleFlow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.rLowFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:SampleNames:01_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.stSampleNames.s1</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:SampleNames:10_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.stSampleNames.s10</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:SampleNames:11_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.stSampleNames.s11</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:SampleNames:12_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.stSampleNames.s12</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:SampleNames:02_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.stSampleNames.s2</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:SampleNames:03_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.stSampleNames.s3</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:SampleNames:04_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.stSampleNames.s4</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:SampleNames:05_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.stSampleNames.s5</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:SampleNames:06_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.stSampleNames.s6</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:SampleNames:07_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.stSampleNames.s7</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:SampleNames:08_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.stSampleNames.s8</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:SampleNames:09_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.stSampleNames.s9</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:ValvesLockRequest_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.xResLock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:ValvesLockRequest</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.xResLock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:ValvesLocked_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.xResLocked</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:ValvesSynced_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.xResSyncd</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:ValvesUnlockRequest_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.xResUnlock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:ValvesUnlockRequest</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorC.stSelector.xResUnlock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Shaker:01:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.stShaker01.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Shaker:01:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorC.stShaker01.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Shaker:01:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.stShaker01.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Shaker:01:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.stShaker01.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Shaker:02:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.stShaker02.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Shaker:02:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorC.stShaker02.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Shaker:02:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.stShaker02.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Shaker:02:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.stShaker02.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Shaker:03:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.stShaker03.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Shaker:03:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorC.stShaker03.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Shaker:03:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.stShaker03.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Shaker:03:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.stShaker03.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Shaker:04:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.stShaker04.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Shaker:04:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorC.stShaker04.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:C:Shaker:04:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.stShaker04.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:C:Shaker:04:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorC.stShaker04.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Sensirion:01:State_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>GVL_Devices.M3SelectorD.astSelFM[1].eFMState</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Sensirion:01:Flow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.M3SelectorD.astSelFM[1].rFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Sensirion:01:ModeRb_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.astSelFM[1].xFMModeRb</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Sensirion:01:Mode_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.astSelFM[1].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Sensirion:01:Mode</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorD.astSelFM[1].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Sensirion:01:OoR_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.astSelFM[1].xFMOoR</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Sensirion:01:Reset_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.astSelFM[1].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Sensirion:01:Reset</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorD.astSelFM[1].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Sensirion:01:FlowValid_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.astSelFM[1].xFlowValid</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Sensirion:02:State_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>GVL_Devices.M3SelectorD.astSelFM[2].eFMState</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Sensirion:02:Flow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.M3SelectorD.astSelFM[2].rFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Sensirion:02:ModeRb_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.astSelFM[2].xFMModeRb</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Sensirion:02:Mode_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.astSelFM[2].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Sensirion:02:Mode</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorD.astSelFM[2].xFMModeReq</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Sensirion:02:OoR_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.astSelFM[2].xFMOoR</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Sensirion:02:Reset_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.astSelFM[2].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Sensirion:02:Reset</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorD.astSelFM[2].xFMReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Sensirion:02:FlowValid_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.astSelFM[2].xFlowValid</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:IO:SyncUnitOK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.stBaseIO.i_SyncUnitWC</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Valve:01:CurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.astViciVlvStatus[1].iCurrPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Valve:02:CurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.astViciVlvStatus[2].iCurrPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:ValveSyncReqPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.iSyncReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:ValveSyncReqPos</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.iSyncReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:ValveSyncCurrentPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.iSyncResPos</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Valve:01:ReqPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.iVici1ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Valve:01:ReqPos</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.iVici1ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Valve:02:ReqPos_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.iVici2ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Valve:02:ReqPos</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.iVici2ReqPos</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:LiquidSheathFlow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.rHighFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:SampleFlow_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.rLowFlow</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:SampleNames:01_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.stSampleNames.s1</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:SampleNames:10_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.stSampleNames.s10</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:SampleNames:11_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.stSampleNames.s11</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:SampleNames:12_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.stSampleNames.s12</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:SampleNames:02_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.stSampleNames.s2</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:SampleNames:03_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.stSampleNames.s3</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:SampleNames:04_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.stSampleNames.s4</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:SampleNames:05_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.stSampleNames.s5</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:SampleNames:06_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.stSampleNames.s6</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:SampleNames:07_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.stSampleNames.s7</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:SampleNames:08_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.stSampleNames.s8</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:SampleNames:09_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.stSampleNames.s9</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:ValvesLockRequest_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.xResLock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:ValvesLockRequest</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.xResLock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:ValvesLocked_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.xResLocked</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:ValvesSynced_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.xResSyncd</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:ValvesUnlockRequest_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.xResUnlock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:ValvesUnlockRequest</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorD.stSelector.xResUnlock</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Shaker:01:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.stShaker01.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Shaker:01:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorD.stShaker01.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Shaker:01:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.stShaker01.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Shaker:01:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.stShaker01.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Shaker:02:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.stShaker02.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Shaker:02:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorD.stShaker02.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Shaker:02:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.stShaker02.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Shaker:02:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.stShaker02.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Shaker:03:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.stShaker03.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Shaker:03:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorD.stShaker03.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Shaker:03:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.stShaker03.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Shaker:03:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.stShaker03.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Shaker:04:Ctrl_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.stShaker04.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Shaker:04:Ctrl</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.M3SelectorD.stShaker04.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SEL:D:Shaker:04:PowerOn_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.stShaker04.q_xPwrDO</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SEL:D:Shaker:04:Ilk_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.M3SelectorD.stShaker04.xIlk</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:A:IO:SyncUnitOK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.PCMA.stBaseIO.i_SyncUnitWC</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:A:PropAir:01:HighLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMA.stPropAir1.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:A:PropAir:01:HighLimit</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMA.stPropAir1.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:A:PropAir:01:LowLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMA.stPropAir1.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:A:PropAir:01:LowLimit</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMA.stPropAir1.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:A:PropAir:01:Pressure_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMA.stPropAir1.iPressure</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:A:PropAir:01:Setpoint_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMA.stPropAir1.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:A:PropAir:01:Setpoint</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMA.stPropAir1.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:A:PropAir:01:Enable_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.PCMA.stPropAir1.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:A:PropAir:01:Enable</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.PCMA.stPropAir1.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:A:PropAir:02:HighLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMA.stPropAir2.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:A:PropAir:02:HighLimit</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMA.stPropAir2.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:A:PropAir:02:LowLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMA.stPropAir2.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:A:PropAir:02:LowLimit</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMA.stPropAir2.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:A:PropAir:02:Pressure_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMA.stPropAir2.iPressure</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:A:PropAir:02:Setpoint_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMA.stPropAir2.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:A:PropAir:02:Setpoint</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMA.stPropAir2.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:A:PropAir:02:Enable_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.PCMA.stPropAir2.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:A:PropAir:02:Enable</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.PCMA.stPropAir2.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:B:IO:SyncUnitOK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.PCMB.stBaseIO.i_SyncUnitWC</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:B:PropAir:01:HighLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMB.stPropAir1.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:B:PropAir:01:HighLimit</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMB.stPropAir1.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:B:PropAir:01:LowLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMB.stPropAir1.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:B:PropAir:01:LowLimit</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMB.stPropAir1.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:B:PropAir:01:Pressure_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMB.stPropAir1.iPressure</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:B:PropAir:01:Setpoint_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMB.stPropAir1.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:B:PropAir:01:Setpoint</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMB.stPropAir1.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:B:PropAir:01:Enable_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.PCMB.stPropAir1.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:B:PropAir:01:Enable</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.PCMB.stPropAir1.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:B:PropAir:02:HighLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMB.stPropAir2.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:B:PropAir:02:HighLimit</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMB.stPropAir2.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:B:PropAir:02:LowLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMB.stPropAir2.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:B:PropAir:02:LowLimit</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMB.stPropAir2.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:B:PropAir:02:Pressure_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMB.stPropAir2.iPressure</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:B:PropAir:02:Setpoint_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMB.stPropAir2.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:B:PropAir:02:Setpoint</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMB.stPropAir2.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:B:PropAir:02:Enable_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.PCMB.stPropAir2.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:B:PropAir:02:Enable</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.PCMB.stPropAir2.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:C:IO:SyncUnitOK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.PCMC.stBaseIO.i_SyncUnitWC</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:C:PropAir:01:HighLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMC.stPropAir1.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:C:PropAir:01:HighLimit</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMC.stPropAir1.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:C:PropAir:01:LowLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMC.stPropAir1.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:C:PropAir:01:LowLimit</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMC.stPropAir1.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:C:PropAir:01:Pressure_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMC.stPropAir1.iPressure</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:C:PropAir:01:Setpoint_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMC.stPropAir1.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:C:PropAir:01:Setpoint</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMC.stPropAir1.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:C:PropAir:01:Enable_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.PCMC.stPropAir1.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:C:PropAir:01:Enable</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.PCMC.stPropAir1.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:C:PropAir:02:HighLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMC.stPropAir2.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:C:PropAir:02:HighLimit</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMC.stPropAir2.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:C:PropAir:02:LowLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMC.stPropAir2.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:C:PropAir:02:LowLimit</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMC.stPropAir2.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:C:PropAir:02:Pressure_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMC.stPropAir2.iPressure</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:C:PropAir:02:Setpoint_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMC.stPropAir2.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:C:PropAir:02:Setpoint</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMC.stPropAir2.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:C:PropAir:02:Enable_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.PCMC.stPropAir2.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:C:PropAir:02:Enable</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.PCMC.stPropAir2.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:D:IO:SyncUnitOK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.PCMD.stBaseIO.i_SyncUnitWC</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:D:PropAir:01:HighLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMD.stPropAir1.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:D:PropAir:01:HighLimit</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMD.stPropAir1.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:D:PropAir:01:LowLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMD.stPropAir1.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:D:PropAir:01:LowLimit</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMD.stPropAir1.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:D:PropAir:01:Pressure_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMD.stPropAir1.iPressure</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:D:PropAir:01:Setpoint_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMD.stPropAir1.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:D:PropAir:01:Setpoint</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMD.stPropAir1.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:D:PropAir:01:Enable_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.PCMD.stPropAir1.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:D:PropAir:01:Enable</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.PCMD.stPropAir1.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:D:PropAir:02:HighLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMD.stPropAir2.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:D:PropAir:02:HighLimit</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMD.stPropAir2.iHiLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:D:PropAir:02:LowLimit_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMD.stPropAir2.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:D:PropAir:02:LowLimit</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMD.stPropAir2.iLoLimit</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:D:PropAir:02:Pressure_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMD.stPropAir2.iPressure</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:D:PropAir:02:Setpoint_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Devices.PCMD.stPropAir2.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:D:PropAir:02:Setpoint</p></td>
+<td><p>longout</p></td>
+<td><p>GVL_Devices.PCMD.stPropAir2.iSetpoint</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):PCM:D:PropAir:02:Enable_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.PCMD.stPropAir2.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):PCM:D:PropAir:02:Enable</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.PCMD.stPropAir2.xEnable</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SPR:A:Debug_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.SolenoidPairA.i_xDebug</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SPR:A:Debug</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.SolenoidPairA.i_xDebug</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SPR:A:Switch_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.SolenoidPairA.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SPR:A:Switch</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.SolenoidPairA.i_xEpics</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SPR:A:Valve:01:Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.SolenoidPairA.q_xDO1</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SPR:A:Valve:01:Open</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.SolenoidPairA.q_xDO1</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P):SPR:A:Valve:02:Open_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Devices.SolenoidPairA.q_xDO2</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P):SPR:A:Valve:02:Open</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Devices.SolenoidPairA.q_xDO2</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX)LCLSGeneral:GlobalLogTrickleTrip_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>Tripped by overall log count</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX)LCLSGeneral:LogHost_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>The log host IP address</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX)LCLSGeneral:LogHost</p></td>
+<td><p>waveform</p></td>
+<td><p>The log host IP address</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX)LCLSGeneral:LogPort_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>The log host UDP port</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX)LCLSGeneral:LogPort</p></td>
+<td><p>longout</p></td>
+<td><p>The log host UDP port</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX)LCLSGeneral:LogMessageCount_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>Total log messages on the last cycle</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="SDS_SDSPLC_summary.html" class="btn btn-neutral float-left" title="Settings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="SDS_SDSPLC_source.html" class="btn btn-neutral float-right" title="DUTs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, SLAC National Accelerator Laboratory.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

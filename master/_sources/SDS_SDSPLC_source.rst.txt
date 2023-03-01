@@ -1,0 +1,4906 @@
+
+
+DUTs
+----
+
+
+E_AxisMotionState
+^^^^^^^^^^^^^^^^^
+
+::
+
+    TYPE E_AxisMotionState :
+    (
+        Init := 10,
+        MoveEnabled := 3000,
+        Error := 9000
+    );
+    END_TYPE
+
+
+Related:
+    * `E_AxisMotionState`_
+
+
+E_AxisMoveMode
+^^^^^^^^^^^^^^
+
+::
+
+    TYPE E_AxisMoveMode :
+    (
+        Hold := 0,
+        MoveAbs	:= 1,
+        MoveRel	:= 2
+    ) WORD;
+    END_TYPE
+
+
+
+
+E_BHElFlowUnit
+^^^^^^^^^^^^^^
+
+::
+
+    TYPE E_BHElFlowUnit :
+    (
+        enum_member := 0
+    );
+    END_TYPE
+
+
+
+
+E_CTRL_MODE
+^^^^^^^^^^^
+
+::
+
+    {attribute 'qualified_only'}
+    {attribute 'strict'}
+    TYPE E_CTRL_MODE :
+    (
+        Init := 0,
+        Run	:= 10,
+        Hold	:= 20,
+        Error	:= 9000
+    );
+    END_TYPE
+
+
+
+
+E_PropValveFBState
+^^^^^^^^^^^^^^^^^^
+
+::
+
+    {attribute 'qualified_only'}
+    {attribute 'strict'}
+    TYPE E_PropValveFBState :
+    (
+        Init := 0,
+        Hold := 10,
+        Manual := 100,
+        Pressure := 200,
+        Error := 9000
+    );
+    END_TYPE
+
+
+
+
+HMI_PropValveCtrlState
+^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    {attribute 'qualified_only'}
+    (* Maps to an EPICS MBBI/O *)
+    TYPE HMI_PropValveCtrlState :
+    (
+        Manual := 0,
+        Pressure := 1,
+        Hold := 2
+    ) WORD;
+    END_TYPE
+
+
+
+
+ST_ALI
+^^^^^^
+
+::
+
+    TYPE ST_ALI EXTENDS ST_ALIIO:
+    STRUCT
+        (* Aerodynamic Lens Injector *)
+
+        (* Manipulator *)
+        axisX	:	ST_ManipAxis;
+        axisY	:	ST_ManipAxis;
+        axisZ	:	ST_ManipAxis;
+
+        (* Vacuum gauges *)
+        //925
+        stNozzleBoxVG	: ST_VG;
+        //925
+        stSkimmerVG	: ST_VG;
+        //722
+        stRelaxVG	: ST_VG := (rFULL_SCALE:=10);
+
+        (* Butterfly valve pressure controller *)
+        stPropVlv	:	ST_PropValveMKS253;
+
+        (* PropValve Pressure Controller *)
+        //stPressCtrl	:	ST_PressureController;
+
+
+    END_STRUCT
+    END_TYPE
+
+
+Related:
+    * `ST_ALIIO`_
+    * `ST_ManipAxis`_
+    * `ST_PressureController`_
+    * `ST_PropValveMKS253`_
+
+
+ST_ALIIO
+^^^^^^^^
+
+::
+
+    TYPE ST_ALIIO EXTENDS ST_M3DeviceBaseIO :
+    STRUCT
+        //EP7041
+        //EP7041
+        //EP7041
+        //EP5101
+
+        //EP3174 Vacuum Gauges, misc analog
+        i_EP3174_Ch1	AT	%I*	:	INT;
+        i_EP3174_Ch2	AT	%I*	:	INT;
+        i_EP3174_Ch3	AT	%I*	:	INT;
+        i_EP3174_Ch4	AT	%I*	:	INT;
+
+        //EP7041 - Prop valve
+
+        //EP2338 Misc DIO
+        q_EP2338_Ch1	AT	%Q*	:	BOOL;
+        q_EP2338_Ch2	AT	%Q*	:	BOOL;
+        q_EP2338_Ch3	AT	%Q*	:	BOOL;
+        q_EP2338_Ch4	AT	%Q*	:	BOOL;
+
+        i_EP2338_Ch5	AT	%I*	:	BOOL;
+        i_EP2338_Ch6	AT	%I*	:	BOOL;
+        i_EP2338_Ch7	AT	%I*	:	BOOL;
+        i_EP2338_Ch8	AT	%I*	:	BOOL;
+
+        //EP4374 Pressure Control
+        i_EP4374_Ch1	AT	%I*	:	INT;
+        i_EP4374_Ch2	AT	%I*	:	INT;
+        q_EP4374_Ch3	AT	%Q*	:	INT;
+        q_EP4374_Ch4	AT	%Q*	:	INT;
+
+    END_STRUCT
+    END_TYPE
+
+
+Related:
+    * `ST_M3DeviceBaseIO`_
+
+
+ST_BhElFlow
+^^^^^^^^^^^
+
+::
+
+    TYPE ST_BhElFlow :
+    STRUCT
+        eFlowUnit	:	E_BHElFlowUnit;
+
+        {attribute 'pytmc' := '
+            pv: Unit
+            io: i
+         '}
+        i_sUnit			AT %I*	:	STRING;
+
+        i_udiUnit	:	UDINT;
+
+        {attribute 'pytmc' := '
+            pv: Flow
+            io: i
+         '}
+        i_rFlow			AT %I*	:	REAL;
+
+        {attribute 'pytmc' := '
+            pv: Setpoint
+            io: o
+         '}
+        q_rSetpoint 	AT %Q*	:	REAL;
+
+    END_STRUCT
+    END_TYPE
+
+
+Related:
+    * `E_BHElFlowUnit`_
+
+
+ST_M3DeviceBaseIO
+^^^^^^^^^^^^^^^^^
+
+::
+
+    TYPE ST_M3DeviceBaseIO :
+    STRUCT
+        (* This structure should be used as a basis for M3 arch. IO clusters.
+        Will stash stuff like ethercat diagnostics and other general purpose stuff *)
+
+        //WC bit tells you if the sync unit is OK, which tells you if cluster is alive
+        {attribute 'pytmc' := '
+            pv: SyncUnitOK
+            io: i
+         '}
+        i_SyncUnitWC	AT %I*	:	BOOL := TRUE;
+    END_STRUCT
+    END_TYPE
+
+
+
+
+ST_ManifoldValve
+^^^^^^^^^^^^^^^^
+
+::
+
+    TYPE ST_ManifoldValve :
+    STRUCT
+
+        (* Controls *)
+        {attribute 'pytmc' := '
+            pv: Open
+            io: o
+         '}
+        xSW : BOOL; //epics control
+        {attribute 'pytmc' := '
+            pv: CloseDO
+            io: i
+         '}
+        qxDO AT %Q* : BOOL; //actual valve output
+
+        (* Readbacks *)
+        {attribute 'pytmc' := '
+            pv: OpenSW
+            io: i
+         '}
+        ixOPN AT %I*: BOOL;
+
+        (* Soft variables *)
+        {attribute 'pytmc' := '
+            pv: Ilk
+            io: i
+         '}
+        xILK :	BOOL; // permissive bit
+
+        {attribute 'pytmc' := '
+            pv: Name
+            io: i
+        '}
+        sName: STRING;
+
+    END_STRUCT
+    END_TYPE
+
+
+
+
+ST_ManipAxis
+^^^^^^^^^^^^
+
+::
+
+    TYPE ST_ManipAxis :
+    STRUCT
+
+    (* Controls *)
+    xEnable	:	BOOL := TRUE;
+    rReqAbsPos	:	REAL;
+    rReqRelPos	:	REAL;
+    xStart	:	BOOL;
+    xStop	:	BOOL;
+    wMode	:	E_AxisMoveMode;
+    //EPICS motor status
+    uiMsta	:	UINT;
+    //EPICS Position readback
+    rActPos	:	REAL;
+    //Axis enabled readback
+    xEnabled	:	BOOL;
+    //EPICS High Limit Switch (NO)
+    xHLS	:	BOOL;
+    //EPICS Low Limit Switch (NO)
+    xLLS	:	BOOL;
+    //EPICS MOVN
+    xMovn	:	BOOL;
+    //EPICS DMOV
+    xDmov	:	BOOL;
+    //EPICS Reset
+    xReset	:	BOOL;
+
+    (* Axis motor *)
+    stAxis	:	AXIS_REF;
+    lrVelocity	:	LREAL	:=1; //mm/s
+
+    eState	:	E_AxisMotionState;
+
+    xHiLS	AT %I* :	BOOL;
+    xLoLS	AT %I* :	BOOL;
+
+    END_STRUCT
+    END_TYPE
+
+
+Related:
+    * `E_AxisMotionState`_
+    * `E_AxisMoveMode`_
+
+
+ST_PIDParams
+^^^^^^^^^^^^
+
+::
+
+    TYPE ST_PIDParams :
+    STRUCT
+        fCtrlCycleTime : LREAL; (* controller cycle time in seconds [s] *)
+        fKp            : LREAL; (* proportional gain Kp (P) *)
+        fTn            : LREAL; (* integral gain Tn (I) [s] *)
+        fTv            : LREAL; (* derivative gain Tv (D-T1) [s] *)
+        fTd            : LREAL; (* derivative damping time Td (D-T1) [s] *)
+        fUpperLim		: 	LREAL; (* upper controller output range limit of PID block *)
+        fLowerLim		:	LREAL; (* lower controller output range limit of PID block *)
+    END_STRUCT
+    END_TYPE
+
+
+
+
+ST_PressureController
+^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    TYPE ST_PressureController :
+    STRUCT
+        (* Intent of this structure is to provide generic variables
+        for a pressure controller. It is meant to be extended by
+        the hardware IO variables into a specific structure. *)
+
+        //Controls
+        //Pressure setpoint
+        i_rPressSP	:	REAL;
+        //Pressure readback
+        i_rPressRB	:	REAL;
+        //Controller deadband
+        rDeadband	:	REAL;
+        //Actuator percentage open setpoint 0-100%
+        i_iPercOpenSP	:	INT;
+        //Acuator percentage open readback
+        q_iPercOpen	:	INT;
+        //Controller Mode
+        i_eCntlMode	:	E_CTRL_MODE;
+        //PID Parameters
+        stPIDParams :	ST_PIDParams := (
+            fKp := 1,
+            fTn := 1,
+            fUpperLim := 1,
+            fLowerLim := -1,
+            fCtrlCycleTime := 0.01
+        );
+
+    END_STRUCT
+    END_TYPE
+
+
+Related:
+    * `E_CTRL_MODE`_
+    * `ST_PIDParams`_
+
+
+ST_Proportionair
+^^^^^^^^^^^^^^^^
+
+::
+
+    TYPE ST_Proportionair :
+    STRUCT
+
+    (* Control *)
+    {attribute 'pytmc' := '
+            pv: Enable
+            io: io
+         '}
+    xEnable	:	BOOL;
+    {attribute 'pytmc' := '
+            pv: Setpoint
+            io: io
+         '}
+    iSetpoint	:	INT;
+    {attribute 'pytmc' := '
+            pv: HighLimit
+            io: io
+         '}
+    iHiLimit	:	INT;
+    {attribute 'pytmc' := '
+            pv: LowLimit
+            io: io
+         '}
+    iLoLimit	:	INT;
+
+    (* Readback *)
+    xStable	: BOOL;//TTL signal from the proportionair controller that the pressure is stable
+    {attribute 'pytmc' := '
+            pv: Pressure
+            io: i
+         '}
+    iPressure : INT;
+
+
+    {attribute 'TcDisplayScale' := '0-10'}
+    i_iPressRB AT %I* : INT;
+    {attribute 'TcDisplayScale' := '0-10'}
+    q_iPressCt AT %Q* : INT;
+
+    END_STRUCT
+    END_TYPE
+
+
+
+
+ST_PropValveMKS253
+^^^^^^^^^^^^^^^^^^
+
+::
+
+    TYPE ST_PropValveMKS253 EXTENDS ST_PressureController:
+    STRUCT
+
+        (* Prop valve structure, open is considered to be the higher axis position *)
+        (* Note: The wiring (if using the dongle from the ALI schematic is such that the
+        stepper driver must be inverted to make the increasing counter value correspond to a more open valve. *)
+
+        //EPICS Enable Switch
+        xEnable	:	BOOL;
+        //EPICS Enable Control;
+        xEnabled	:	BOOL;
+        //Valve interlock
+        xInterlock	:	BOOL;
+        //PropValve Control State Control
+        ePVCtrlStateReq : HMI_PropValveCtrlState;
+        //PropValve Control State Readback
+        ePVCtrlState : HMI_PropValveCtrlState;
+        //NC Axis Ref
+        stAxis	:	AXIS_REF;
+        //Physical limit switches
+        i_HLS	AT %I*	:	BOOL; //Open
+        i_LLS	AT %I*	:	BOOL; // Closed
+        //Open EPICS LS
+        xHLS	:	BOOL;
+        //Close EPICS LS
+        xLLS	:	BOOL;
+        //Top speed for the valve
+        lrMaxSpeed	:	LREAL := 100; //deg/sec
+    END_STRUCT
+    END_TYPE
+
+
+Related:
+    * `HMI_PropValveCtrlState`_
+    * `ST_PressureController`_
+
+
+ST_RegDeadbandControls
+^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    TYPE ST_RegDeadbandControls :
+    STRUCT
+        (* Deadband controls *)
+    iDeadband	:	INT;
+    iMaxSpeed	:	INT; // degrees per second
+    END_STRUCT
+    END_TYPE
+
+
+
+
+ST_Regulator
+^^^^^^^^^^^^
+
+::
+
+    TYPE ST_Regulator :
+    STRUCT
+
+    (* Regulator enable *)
+    xRegEnab	:	BOOL;
+
+    (* Regulator motor *)
+    stRegulatorMotor	:	AXIS_REF;
+    wPercentageOpen		:	WORD;
+    lrVelocity	:	LREAL	:=360 ;
+    lrUpperLimPos	:	LREAL	:= 2887; //init to 2887, legacy hardcoded value
+
+    (* Deadband controls *)
+    stDeadband	:	ST_RegDeadbandControls;
+
+    (* Manual control *)
+    xManual	:	BOOL;
+    xPlus	:	BOOL;
+    xMinus	:	BOOL;
+    i_iMovePerc	:	INT;
+
+    (* Knob controls *)
+    i_iPercSP : UINT;
+
+    (* Pressure transducer *)
+    i_iRawInPress	: 	INT;
+    wInPress 	:	WORD;
+    i_iRawOutPress	: 	INT;
+    wOutPress 	:	WORD;
+
+    (* Pressure setpoint *)
+    wPressSP	:	WORD;
+    wPressSpHi	:	WORD	:= 2000;
+    xPressSpWarn	:	BOOL;
+    xSeeking	:	BOOL;
+
+    xRegHiLS	AT %I* :	BOOL;
+    xRegLoLS	AT %I* :	BOOL;
+
+    END_STRUCT
+    END_TYPE
+
+
+Related:
+    * `ST_RegDeadbandControls`_
+
+
+ST_SelectorM3
+^^^^^^^^^^^^^
+
+::
+
+    TYPE ST_SelectorM3 :
+    STRUCT
+        (* Selector EPICS controls *)
+        {attribute 'pytmc' := '
+            pv: ValvesLockRequest
+            io: io
+         '}
+        xResLock	:	BOOL; // request to lock the valves
+        {attribute 'pytmc' := '
+            pv: ValvesUnlockRequest
+            io: io
+         '}
+        xResUnlock	:	BOOL; // request to unlock the valves
+        {attribute 'pytmc' := '
+            pv: ValveSyncReqPos
+            io: io
+         '}
+        iSyncReqPos	:	INT;  // requested position when synced
+        {attribute 'pytmc' := '
+            pv: Valve:01:ReqPos
+            io: io
+         '}
+        iVici1ReqPos : INT;   // requested position for Vici 1
+        {attribute 'pytmc' := '
+            pv: Valve:02:ReqPos
+            io: io
+         '}
+        iVici2ReqPos : INT;   // requested position for Vici 2
+
+        //Hardware control
+        astViciVlvCtrl	: ARRAY[1..2] OF	ST_ViciControl;
+
+        (* Selector EPICS Readbacks *)
+        {attribute 'pytmc' := '
+            pv: ValvesLocked
+            io: i
+         '}
+        xResLocked	:	BOOL; // valve movement is locked
+        {attribute 'pytmc' := '
+            pv: ValvesSynced
+            io: i
+         '}
+        xResSyncd	:	BOOL; // valves are on the same position
+        {attribute 'pytmc' := '
+            pv: ValveSyncCurrentPos
+            io: i
+         '}
+        iSyncResPos : INT;
+
+        //Hardware readbacks
+        {attribute 'pytmc' := '
+            pv: Valve
+         '}
+        astViciVlvStatus	:	ARRAY[1..2] OF	ST_ViciStatus;
+
+
+        // M3 flow rates
+        {attribute 'pytmc' := '
+            pv: SampleFlow
+            io: i
+         '}
+        rLowFlow	:	REAL; //Sensirion Sample Flowrate
+        {attribute 'pytmc' := '
+            pv: LiquidSheathFlow
+            io: i
+         '}
+        rHighFlow	:	REAL; //Sensirion Sheath liquid flowrate
+
+        // Sample Names
+        {attribute 'pytmc' := '
+            pv: SampleNames
+            io: i
+        '}
+        stSampleNames	:	ST_Strings;
+
+    END_STRUCT
+    END_TYPE
+
+
+Related:
+    * `ST_Strings`_
+    * `ST_ViciControl`_
+    * `ST_ViciStatus`_
+
+
+ST_SensirionFM
+^^^^^^^^^^^^^^
+
+::
+
+    TYPE ST_SensirionFM :
+    STRUCT
+        stCtrl	:	ST_SensirionFMControl;
+        stStat	:	ST_SensirionFMStatus;
+
+        {attribute 'pytmc' := '
+            pv: Reset
+            io: o
+         '}
+        xFMReset : BOOL; // Reset on rising edge
+
+        {attribute 'pytmc' := '
+            pv: Flow
+            io: i
+         '}
+        rFlow : REAL; // uL/min
+
+        {attribute 'pytmc' := '
+            pv: OoR
+            io: i
+         '}
+        xFMOoR	:	BOOL; // Out of range
+
+        {attribute 'pytmc' := '
+            pv: FlowValid
+            io: i
+         '}
+        xFlowValid	:	BOOL; // driver completes successfully
+
+
+        {attribute 'pytmc' := '
+            pv: State
+            io: i
+         '}
+        eFMState	:	E_SensirionFMMode;
+
+
+        {attribute 'pytmc' := '
+            pv: Mode
+            io: o
+         '}
+        xFMModeReq	:	BOOL; //for sensirion calibration range (request)
+        {attribute 'pytmc' := '
+            pv: ModeRb
+            io: i
+         '}
+        xFMModeRb	:	BOOL; //for sensirion calibration range (readback)
+
+    END_STRUCT
+    END_TYPE
+
+
+Related:
+    * `ST_SensirionFMControl`_
+    * `ST_SensirionFMStatus`_
+
+
+ST_SensirionFMControl
+^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    TYPE ST_SensirionFMControl :
+    STRUCT
+
+    xCalMode	:	BOOL; // calib mode request 0 = prec, 1 = extended
+
+    xReset		:	BOOL; // reset request
+
+    bAdr		:	BYTE; // device address
+
+    END_STRUCT
+    END_TYPE
+
+
+
+
+ST_SensirionFMStatus
+^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    TYPE ST_SensirionFMStatus :
+    STRUCT
+
+        iFlowTicks	:	INT;
+        uiSensorOutput	: UINT;
+        iState	:	INT;
+        rFlow	:	REAL; // units of uL/min
+        xOoR	:	BOOL; // Out of range
+        xFMMode :	BOOL; // calib mode readback 0 = prec, 1 = extended
+        xFlowValid	:	BOOL; // driver completes successfully
+        abReply	:	ARRAY[1..500] OF BYTE;
+        bStatus	:	BYTE; //Sensor status
+    (* Bit 0: 0: Sensor idle
+            1: Sensor Busy
+    Bit 1: 	0: Continuous Measurement disabled
+            1: Continuous Measurement enabled
+    Bit 2: (for Firmware . 1.3)
+            0: Auto detection Measurement disabled
+            1: Auto detection Measurement enabled
+    Bit 3: (for Firmware . 1.3)
+            0: No Auto Measurement since last read out Status
+            1: Auto Measurement finished since last read out Status, is set back to 0 after read out *)
+
+    END_STRUCT
+    END_TYPE
+
+
+
+
+ST_SerialComm
+^^^^^^^^^^^^^
+
+::
+
+    // Generic serial comm necessities
+    TYPE ST_SerialComm :
+    STRUCT
+        RxBuffer    :   ComBuffer;
+        TxBuffer    :   ComBuffer;
+
+        stComIn		AT %I*	:	EL6inData22B (*KL6inData22B*);
+        stComOut	AT %Q*	:	EL6outData22B (*KL6outData22B*);
+    END_STRUCT
+    END_TYPE
+
+
+
+
+ST_Shaker
+^^^^^^^^^
+
+::
+
+    TYPE ST_Shaker :
+    STRUCT
+
+    {attribute 'pytmc' := '
+        pv: PowerOn
+        io: i
+     '}
+    q_xPwrDO AT %Q*	:	BOOL;
+
+    {attribute 'pytmc' := '
+        pv: Ilk
+        io: i
+     '}
+    xIlk		:	BOOL;
+
+
+    i_xSwitch	:	BOOL;
+
+    {attribute 'pytmc' := '
+        pv: Ctrl
+        io: o
+     '}
+    i_xEpics	:	BOOL;
+
+    END_STRUCT
+    END_TYPE
+
+
+
+
+ST_ShakerControls
+^^^^^^^^^^^^^^^^^
+
+::
+
+    TYPE ST_ShakerControls :
+    STRUCT
+
+    xShaker1On	:	BOOL;
+    xShaker2On	:	BOOL;
+    xShaker3On	:	BOOL;
+    xShaker4On	:	BOOL;
+    xShaker5On	:	BOOL;
+    xShaker6On	:	BOOL;
+    xShaker7On	:	BOOL;
+    xShaker8On	:	BOOL;
+
+    END_STRUCT
+    END_TYPE
+
+
+
+
+ST_Strings
+^^^^^^^^^^
+
+::
+
+    TYPE ST_Strings :
+    STRUCT
+        (* Twelve strings used to store sample names *)
+        {attribute 'pytmc' := '
+            pv: 01
+            io: i
+         '}
+         s1 : STRING;
+         {attribute 'pytmc' := '
+            pv: 02
+            io: i
+         '}
+         s2 : STRING;
+         {attribute 'pytmc' := '
+            pv: 03
+            io: i
+         '}
+         s3 : STRING;
+         {attribute 'pytmc' := '
+            pv: 04
+            io: i
+         '}
+         s4 : STRING;
+         {attribute 'pytmc' := '
+            pv: 05
+            io: i
+         '}
+         s5 : STRING;
+         {attribute 'pytmc' := '
+            pv: 06
+            io: i
+         '}
+         s6 : STRING;
+         {attribute 'pytmc' := '
+            pv: 07
+            io: i
+         '}
+         s7 : STRING;
+         {attribute 'pytmc' := '
+            pv: 08
+            io: i
+         '}
+         s8 : STRING;
+         {attribute 'pytmc' := '
+            pv: 09
+            io: i
+         '}
+         s9 : STRING;
+         {attribute 'pytmc' := '
+            pv: 10
+            io: i
+         '}
+         s10 : STRING;
+         {attribute 'pytmc' := '
+            pv: 11
+            io: i
+         '}
+         s11 : STRING;
+         {attribute 'pytmc' := '
+            pv: 12
+            io: i
+         '}
+         s12 : STRING;
+    END_STRUCT
+    END_TYPE
+
+
+
+
+ST_TECControl
+^^^^^^^^^^^^^
+
+::
+
+    TYPE ST_TECControl :
+    STRUCT
+
+    sAddress	:	STRING(2);
+    diTempSetpoint	:	DINT;
+    xOutputOn	:	BOOL;
+
+
+    END_STRUCT
+    END_TYPE
+
+
+
+
+ST_TECStatus
+^^^^^^^^^^^^
+
+::
+
+    TYPE ST_TECStatus :
+    STRUCT
+        //Parameters
+        diTemp1	:	DINT;
+        diSetPoint	:	DINT;
+        diPercentOut	:	DINT;
+        diCurrent	:	DINT;
+        xOutputOn	:	BOOL;
+
+        //Alarms
+        xHiTemp	:	BOOL;
+        xLoTemp	:	BOOL;
+        xCompCtrlAlrm	:	BOOL;
+        xOverCurrent	:	BOOL;
+        xOpenInput1		:	BOOL;
+        xOpenInput2		:	BOOL;
+        xDriverLowVoltage	:	BOOL;
+
+
+        //Interface Diagnosis
+    xStatusValid	:	BOOL;
+    sReply	:	STRING;
+
+    END_STRUCT
+    END_TYPE
+
+
+
+
+ST_ViciControl
+^^^^^^^^^^^^^^
+
+::
+
+    TYPE ST_ViciControl :
+    STRUCT
+        sViciReply			: STRING;
+        iReqPos				: INT;
+        xDirection			: BOOL;
+        iAddress			: INT;
+    END_STRUCT
+    END_TYPE
+
+
+
+
+ST_ViciStatus
+^^^^^^^^^^^^^
+
+::
+
+    TYPE ST_ViciStatus :
+    STRUCT
+        sViciReq			: STRING;
+        sViciReply		:STRING;
+        {attribute 'pytmc' := '
+            pv: CurrentPos
+            io: i
+         '}
+        iCurrPos				: INT;
+        iReqPos		:	INT;
+        xPosValid	:	BOOL;
+        (*iAddress				:INT;*)
+        (* Do not use this address. If you do, the driver
+        will overwrite this address with zero each time
+        it runs, as the status is an input, not in_out *)
+    END_STRUCT
+    END_TYPE
+
+
+
+
+GVLs
+----
+
+
+GVL
+^^^
+
+::
+
+    VAR_GLOBAL
+         g_xFirstPass: BOOL := TRUE;
+        g_xIOState	:	BOOL := FALSE;
+        g_aEcatMaster1 AT %I* : AMSNETID;
+        g_aEcatMaster2 AT %I* : AMSNETID;
+    END_VAR
+
+
+
+
+GVL_Autosave
+^^^^^^^^^^^^
+
+::
+
+    VAR_GLOBAL PERSISTENT
+
+        gp_stWaterRegDeadband	:	ST_RegDeadbandControls;
+        gp_stSheathRegDeadband	:	ST_RegDeadbandControls;
+
+        gp_stSelector	:	ST_Selector;
+        gp_stSelector2	:	ST_Selector;
+
+        gp_stRegProp1	:	ST_Proportionair;
+        gp_stRegProp2	:	ST_Proportionair;
+        gp_stRegProp3	:	ST_Proportionair;
+        gp_stRegProp4	:	ST_Proportionair;
+
+    END_VAR
+
+
+Related:
+    * `ST_Proportionair`_
+    * `ST_RegDeadbandControls`_
+
+
+GVL_ComBuffers
+^^^^^^^^^^^^^^
+
+::
+
+    VAR_GLOBAL
+
+        SerialRXBuffer_SelVici : ComBuffer;
+        SerialTXBuffer_SelVici : ComBuffer;
+
+        SerialRXBuffer_SelFlwMtr : ComBuffer;
+        SerialTXBuffer_SelFlwMtr : ComBuffer;
+
+        SerialRXBuffer_Sel2FlwMtr : ComBuffer;
+        SerialTXBuffer_Sel2FlwMtr : ComBuffer;
+
+        SerialRXBuffer_Sel2Vici : ComBuffer;
+        SerialTXBuffer_Sel2Vici : ComBuffer;
+
+        SerialRXBuffer_CoolerShakerTEC : ComBuffer;
+        SerialTXBuffer_CoolerShakerTEC : ComBuffer;
+
+    END_VAR
+
+
+
+
+GVL_Devices
+^^^^^^^^^^^
+
+::
+
+    VAR_GLOBAL
+
+    (* ALI - rarely used, stages need to be redone in new format *)
+    //	stALI	:	ST_ALI;
+    //{attribute 'pytmc' := '
+    //    pv: @(P):PCM:A
+    // '}
+    //ALI : FB_ALI;
+
+
+    {attribute 'pytmc' := '
+        pv: @(P):SEL:A
+     '}
+    {attribute 'TcLinkTo' := '.stSensSerial.stComIn.Status := TIIB[M3 Selector A Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
+                              .stViciSerial.stComIn.Status := TIIB[M3 Selector A Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+                              .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector A Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                              .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector A Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                              .stShaker01.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 9^Output;
+                              .stShaker02.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 10^Output;
+                              .stShaker03.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 11^Output;
+                              .stShaker04.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 12^Output;
+                              .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector A (EP1111)^WcState^WcState;
+    '}
+    M3SelectorA : FB_SelectorM3;
+
+    {attribute 'pytmc' := '
+        pv: @(P):SEL:B
+     '}
+    {attribute 'TcLinkTo' := '.stSensSerial.stComIn.Status := TIIB[M3 Selector B Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
+                              .stViciSerial.stComIn.Status := TIIB[M3 Selector B Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+                              .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector B Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                              .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector B Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                              .stShaker01.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 9^Output;
+                              .stShaker02.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 10^Output;
+                              .stShaker03.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 11^Output;
+                              .stShaker04.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 12^Output;
+                              .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector B (EP1111)^WcState^WcState
+    '}
+    M3SelectorB : FB_SelectorM3;
+
+    {attribute 'pytmc' := '
+        pv: @(P):SEL:C
+     '}
+    {attribute 'TcLinkTo' := '.stSensSerial.stComIn.Status := TIIB[M3 Selector C Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
+                              .stViciSerial.stComIn.Status := TIIB[M3 Selector C Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+                              .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector C Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                              .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector C Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                              .stShaker01.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 9^Output;
+                              .stShaker02.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 10^Output;
+                              .stShaker03.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 11^Output;
+                              .stShaker04.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 12^Output;
+                              .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector C (EP1111)^WcState^WcState
+    '}
+    M3SelectorC : FB_SelectorM3;
+
+    {attribute 'pytmc' := '
+        pv: @(P):SEL:D
+     '}
+    {attribute 'TcLinkTo' := '.stSensSerial.stComIn.Status := TIIB[M3 Selector D Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
+                              .stViciSerial.stComIn.Status := TIIB[M3 Selector D Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+                              .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector D Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                              .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector D Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                              .stShaker01.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 9^Output;
+                              .stShaker02.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 10^Output;
+                              .stShaker03.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 11^Output;
+                              .stShaker04.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 12^Output;
+                              .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector D (EP1111)^WcState^WcState
+    '}
+    M3SelectorD : FB_SelectorM3;
+
+    {attribute 'pytmc' := '
+        pv: @(P):PCM:A
+     '}
+    {attribute 'TcLinkTo' := '.stPropAir1.i_iPressRB := TIID^MAIN (EtherCAT)^PCM A (EP4374-0002)^AI Inputs Channel 1^Value;
+                              .stPropAir2.i_iPressRB := TIID^MAIN (EtherCAT)^PCM A (EP4374-0002)^AI Inputs Channel 2^Value;
+                              .stPropAir1.q_iPressCt := TIID^MAIN (EtherCAT)^PCM A (EP4374-0002)^AO Outputs Channel 3^Analog output;
+                              .stPropAir2.q_iPressCt := TIID^MAIN (EtherCAT)^PCM A (EP4374-0002)^AO Outputs Channel 4^Analog output;
+                              .stSerial1.stComIn.Status := TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)^COM TxPDO-Map Inputs Channel 1^Status;
+                              .stSerial2.stComIn.Status := TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)^COM TxPDO-Map Inputs Channel 2^Status;
+                              .stSerial1.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                              .stSerial2.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                              .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^PCM A (EP1111)^WcState^WcState;
+    '}
+    PCMA : FB_PressureControlModule;
+
+    {attribute 'pytmc' := '
+        pv: @(P):PCM:B
+     '}
+    {attribute 'TcLinkTo' := '.stPropAir1.i_iPressRB := TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)^AI Inputs Channel 1^Value;
+                              .stPropAir2.i_iPressRB := TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)^AI Inputs Channel 2^Value;
+                              .stPropAir1.q_iPressCt := TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)^AO Outputs Channel 3^Analog output;
+                              .stPropAir2.q_iPressCt := TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)^AO Outputs Channel 4^Analog output;
+                              .stSerial1.stComIn.Status := TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)^COM TxPDO-Map Inputs Channel 1^Status;
+                              .stSerial2.stComIn.Status := TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)^COM TxPDO-Map Inputs Channel 2^Status;
+                              .stSerial1.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                              .stSerial2.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                              .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^PCM B (EP1111)^WcState^WcState;
+
+    '}
+    PCMB : FB_PressureControlModule;
+
+    {attribute 'pytmc' := '
+        pv: @(P):PCM:C
+     '}
+    {attribute 'TcLinkTo' := '.stPropAir1.i_iPressRB := TIID^MAIN (EtherCAT)^PCM C (EP4374-0002)^AI Inputs Channel 1^Value;
+                              .stPropAir2.i_iPressRB := TIID^MAIN (EtherCAT)^PCM C (EP4374-0002)^AI Inputs Channel 2^Value;
+                              .stPropAir1.q_iPressCt := TIID^MAIN (EtherCAT)^PCM C (EP4374-0002)^AO Outputs Channel 3^Analog output;
+                              .stPropAir2.q_iPressCt := TIID^MAIN (EtherCAT)^PCM C (EP4374-0002)^AO Outputs Channel 4^Analog output;
+                              .stSerial1.stComIn.Status := TIID^MAIN (EtherCAT)^PCM C (EP6002-0002)^COM TxPDO-Map Inputs Channel 1^Status;
+                              .stSerial2.stComIn.Status := TIID^MAIN (EtherCAT)^PCM C (EP6002-0002)^COM TxPDO-Map Inputs Channel 2^Status;
+                              .stSerial1.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM C (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                              .stSerial2.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM C (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                              .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^PCM C (EP1111)^WcState^WcState;
+    '}
+    PCMC : FB_PressureControlModule;
+
+    {attribute 'pytmc' := '
+        pv: @(P):PCM:D
+     '}
+    {attribute 'TcLinkTo' := '.stPropAir1.i_iPressRB := TIID^MAIN (EtherCAT)^PCM D (EP4374-0002)^AI Inputs Channel 1^Value;
+                              .stPropAir2.i_iPressRB := TIID^MAIN (EtherCAT)^PCM D (EP4374-0002)^AI Inputs Channel 2^Value;
+                              .stPropAir1.q_iPressCt := TIID^MAIN (EtherCAT)^PCM D (EP4374-0002)^AO Outputs Channel 3^Analog output;
+                              .stPropAir2.q_iPressCt := TIID^MAIN (EtherCAT)^PCM D (EP4374-0002)^AO Outputs Channel 4^Analog output;
+                              .stSerial1.stComIn.Status := TIID^MAIN (EtherCAT)^PCM D (EP6002-0002)^COM TxPDO-Map Inputs Channel 1^Status;
+                              .stSerial2.stComIn.Status := TIID^MAIN (EtherCAT)^PCM D (EP6002-0002)^COM TxPDO-Map Inputs Channel 2^Status;
+                              .stSerial1.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM D (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                              .stSerial2.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM D (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                              .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^PCM D (EP1111)^WcState^WcState;
+    '}
+    PCMD : FB_PressureControlModule;
+
+    {attribute 'pytmc' := '
+        pv: @(P):MAN
+     '}
+    {attribute 'TcLinkTo' := '.stValve[1].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 9^Output;
+                              .stValve[1].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 1^Input;
+                              .stValve[2].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 10^Output;
+                              .stValve[2].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 2^Input;
+                              .stValve[3].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 11^Output;
+                              .stValve[3].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 3^Input;
+                              .stValve[4].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 12^Output;
+                              .stValve[4].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 4^Input;
+                              .stValve[5].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 13^Output;
+                              .stValve[5].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 5^Input;
+                              .stValve[6].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 14^Output;
+                              .stValve[6].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 6^Input;
+                              .stValve[7].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 15^Output;
+                              .stValve[7].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 7^Input;
+                              .stBaseIO.i_SyncUnitWC :=	TIID^MAIN (EtherCAT)^Gas_Mani (EP1111)^WcState^WcState;
+    '}
+    GasMan : FB_GasManifold;
+
+    {attribute 'pytmc' := '
+        pv: @(P):MFM:A
+     '}
+    {attribute 'TcLinkTo' := '.stMFM.i_rFlow := TIID^MAIN (EtherCAT)^Bronkhorst MFM A^TxPDO Map^fMeasure;
+                              .stMFM.q_rSetpoint := TIID^MAIN (EtherCAT)^Bronkhorst MFM A^RxPDO Map^fSetpoint;
+    '}
+    BronkhorstA : FB_BronkhorstMFM;
+
+    {attribute 'pytmc' := '
+        pv: @(P):MFM:B
+     '}
+    {attribute 'TcLinkTo' := '.stMFM.i_rFlow := TIID^MAIN (EtherCAT)^Bronkhorst MFM B^TxPDO Map^fMeasure;
+                              .stMFM.q_rSetpoint := TIID^MAIN (EtherCAT)^Bronkhorst MFM B^RxPDO Map^fSetpoint;
+    '}
+    BronkhorstB : FB_BronkhorstMFM;
+
+    {attribute 'pytmc' := '
+        pv: @(P):MFM:C
+     '}
+    {attribute 'TcLinkTo' := '.stMFM.i_rFlow := TIID^MAIN (EtherCAT)^Bronkhorst MFM C^TxPDO Map^fMeasure;
+                              .stMFM.q_rSetpoint := TIID^MAIN (EtherCAT)^Bronkhorst MFM C^RxPDO Map^fSetpoint;
+    '}
+    BronkhorstC : FB_BronkhorstMFM;
+
+    {attribute 'pytmc' := '
+        pv: @(P):MFM:D
+     '}
+    {attribute 'TcLinkTo' := '.stMFM.i_rFlow := TIID^MAIN (EtherCAT)^Bronkhorst MFM D^TxPDO Map^fMeasure;
+                              .stMFM.q_rSetpoint := TIID^MAIN (EtherCAT)^Bronkhorst MFM D^RxPDO Map^fSetpoint;
+    '}
+    BronkhorstD : FB_BronkhorstMFM;
+
+    {attribute 'pytmc' := '
+        pv: @(P):SPR:A
+     '}
+    {attribute 'TcLinkTo' := '.q_xDO1 := TIIB[Solenoid Pair A Digital IO (EP2338-0001)]^Channel 9^Output;
+                              .q_xDO2 := TIIB[Solenoid Pair A Digital IO (EP2338-0001)]^Channel 10^Output;
+    '}
+    SolenoidPairA : FB_SolenoidPair;
+
+    END_VAR
+
+
+Related:
+    * `FB_ALI`_
+    * `FB_BronkhorstMFM`_
+    * `FB_GasManifold`_
+    * `FB_PressureControlModule`_
+    * `FB_SelectorM3`_
+    * `FB_SolenoidPair`_
+    * `MAIN`_
+    * `ST_ALI`_
+
+
+GVL_IO
+^^^^^^
+
+::
+
+    {attribute 'qualified_only'}
+    VAR_GLOBAL
+
+        iq_stM2SelectorA	:	ST_M2SelectorIO;
+        iq_stM2SelectorB	:	ST_M2SelectorIO;
+
+        iq_stM3SelectorA	:	ST_M3SelectorIO;
+        iq_stM3SelectorB	:	ST_M3SelectorIO;
+
+        iq_stPressCtrlA		:	ST_M3PressCtrlIO;
+        iq_stPressCtrlB		:	ST_M3PressCtrlIO;
+
+        i_iFscEB1Ch0AI	AT	%I*	:	INT;
+        i_iFscEB1Ch1AI	AT	%I*	:	INT;
+        i_iFscEB1Ch2AI	AT	%I*	:	INT;
+        i_iFscEB1Ch3AI	AT	%I*	:	INT;
+
+        iq_stM3GasManifold	:	ST_M3GasManifoldIO;
+
+    END_VAR
+
+
+
+
+GVL_misc
+^^^^^^^^
+
+::
+
+    VAR_GLOBAL
+
+        (* Overall system controls *)
+        xN2Purge :	BOOL;
+        g_xEstop	:	BOOL;
+
+
+
+        (* Shakers *)
+        st_Shakers : ST_ShakerControls;
+
+        xEnableRemoteControl : BOOL := TRUE;
+        xSystemPressurized : BOOL := TRUE;
+
+        gxRedLight : BOOL;
+        gxYellowLight : BOOL;
+        gxGreenLight : BOOL;
+
+    END_VAR
+
+
+Related:
+    * `ST_ShakerControls`_
+
+
+POUs
+----
+
+
+F_AxisRef_To_MSTA
+^^^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION F_AxisRef_To_MSTA	: UINT
+    VAR_INPUT
+        stManipAxis	:	ST_ManipAxis;
+    END_VAR
+    VAR_OUTPUT
+        MSTA	:	UINT;
+    END_VAR
+    VAR
+    END_VAR
+    (* This block translates the axis ref status to an EPICS psuedo MSTA value *)
+    (* A. Wallace, 17/8/17 *)
+
+    MSTA.1 := stManipAxis.stAxis.Status.Error;
+    MSTA.0 := stManipAxis.xEnabled;
+
+    END_FUNCTION
+
+
+Related:
+    * `ST_ManipAxis`_
+
+
+F_rPressure
+^^^^^^^^^^^
+
+::
+
+    FUNCTION F_rPressure : WORD
+    VAR_INPUT
+        iRawVoltage : INT;
+    END_VAR
+    VAR
+    END_VAR
+    (* Transducer voltage to pressure *)
+    (* Add formula in here *)
+    F_rPressure := INT_TO_WORD((iRawVoltage*3000)/32767);
+
+    END_FUNCTION
+
+
+
+
+FB_ALI
+^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_ALI
+    VAR_IN_OUT
+        iq_Injector	:	ST_ALI;
+    END_VAR
+    VAR_INPUT
+    END_VAR
+    VAR_OUTPUT
+    END_VAR
+    VAR
+        fb925ALINB1 : FB_9XX;
+        fb925ALINB2 : FB_9XX;
+        fb722ALINB3 : FB_GCM;
+
+        fbManipX	:	FB_ManipAxis;
+        fbManipY	:	FB_ManipAxis;
+        fbManipZ	:	FB_ManipAxis;
+
+
+
+        fbPropValve		:	FB_PropValve;
+
+        ftHotPlug	:	F_TRIG;
+    END_VAR
+    //When the system is plugged in, WC goes to zero, so reset motion control and other stuff
+    ftHotPlug(CLK:=iq_Injector.i_SyncUnitWC);
+
+    (* Soft IO *)
+    iq_Injector.stNozzleBoxVG.iPRESS_R :=iq_Injector.i_EP3174_Ch1;
+    iq_Injector.stSkimmerVG.iPRESS_R := iq_Injector.i_EP3174_Ch2;
+    iq_Injector.stRelaxVG.iPRESS_R := iq_Injector.i_EP3174_Ch3;
+
+    (* Vacuum Gauge Supervisor *)
+    fb925ALINB1(VG:=iq_Injector.stNozzleBoxVG);
+    fb925ALINB2(VG:=iq_Injector.stSkimmerVG);
+    fb722ALINB3(VG:=iq_Injector.stRelaxVG);
+
+    (* Butterfly valve *)
+    iq_Injector.stPropVlv.xInterlock := TRUE;
+    iq_Injector.stPropVlv.i_rPressRB := iq_Injector.stSkimmerVG.rPRESS;
+    fbPropValve(stPropValve:=iq_Injector.stPropVlv, i_xExtIlk := TRUE);
+
+    (* Manipulator *)
+    fbManipX(iq_ManipAxis:=iq_Injector.axisX, i_xHotPlug:=ftHotPlug.Q);
+    fbManipY(iq_ManipAxis:=iq_Injector.axisY, i_xHotPlug:=ftHotPlug.Q);
+    fbManipZ(iq_ManipAxis:=iq_Injector.axisZ, i_xHotPlug:=ftHotPlug.Q);
+    F_AxisRef_To_MSTA(stManipAxis:=iq_Injector.axisX, MSTA=>iq_Injector.axisX.uiMsta);
+    F_AxisRef_To_MSTA(stManipAxis:=iq_Injector.axisY, MSTA=>iq_Injector.axisY.uiMsta);
+    F_AxisRef_To_MSTA(stManipAxis:=iq_Injector.axisZ, MSTA=>iq_Injector.axisZ.uiMsta);
+
+    END_FUNCTION_BLOCK
+
+
+Related:
+    * `FB_ManipAxis`_
+    * `FB_PropValve`_
+    * `F_AxisRef_To_MSTA`_
+    * `ST_ALI`_
+
+
+FB_BronkhorstMFM
+^^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_BronkhorstMFM
+    VAR_INPUT
+    END_VAR
+    VAR_OUTPUT
+    END_VAR
+    VAR
+            {attribute 'pytmc' := '
+                pv:
+             '}
+            stMFM	:	ST_BhElFlow;
+    END_VAR
+
+
+    END_FUNCTION_BLOCK
+
+
+Related:
+    * `ST_BhElFlow`_
+
+
+FB_EcatDiag
+^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_EcatDiag
+    VAR_INPUT
+        i_AMSNetId	:	AMSNETID; //Connect this to an AMSNETID structure as a PLC input. Then link the input to the AMSNETID name in the master info.
+        i_xFirstPass	:	BOOL;
+    END_VAR
+    VAR_OUTPUT
+        q_xAllStatesGood	:	BOOL;
+    END_VAR
+    VAR
+        sNetId : T_AmsNetId;
+        astTermStates : ARRAY[1..256] OF ST_EcSlaveState;
+
+        fbGetAllSlaveStates     : FB_EcGetAllSlaveStates;
+        ftReset	: F_TRIG;
+
+        iterator: INT;
+    END_VAR
+    //Create the net ID string
+    sNetID := F_CreateAmsNetId(i_AMSNetId);
+
+    //Query the state of all terminals, collect in astTermStates
+    ftReset(CLK:=fbGetAllSlaveStates.bBusy OR i_xFirstPass);
+    fbGetAllSlaveStates.bExecute := ftReset.Q;
+    fbGetAllSlaveStates(sNetId:=sNetId, pStateBuf := ADR(astTermStates), cbBufLen:=SIZEOF(astTermStates));
+    //Keep checking...
+
+    //Cycle through each entry in the array and check if we have anyone not in OP and that the link state is good.
+    // If so, then set our global IO bad boolean.
+    IF fbGetAllSlaveStates.nSlaves > 0 THEN
+        q_xAllStatesGood := TRUE;
+    FOR iterator := 1 TO (fbGetAllSlaveStates.nSlaves -1) BY 1
+        DO
+        IF NOT( (astTermStates[iterator].deviceState = EC_DEVICE_STATE_OP) AND (astTermStates[iterator].linkState = EC_LINK_STATE_OK)) THEN
+            q_xAllStatesGood := FALSE;
+        END_IF
+    END_FOR
+    END_IF
+
+    END_FUNCTION_BLOCK
+
+
+
+
+FB_GasManifold
+^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_GasManifold
+    VAR_INPUT
+    END_VAR
+    VAR_OUTPUT
+    END_VAR
+    VAR
+        {attribute 'pytmc' := '
+            pv: IO
+         '}
+        stBaseIO : ST_M3DeviceBaseIO;
+
+
+        {attribute 'pytmc' := '
+            pv: Valve
+         '}
+        stValve : ARRAY [1..MANIFOLD_VALVES] OF ST_ManifoldValve;
+        fbValve : ARRAY [1..MANIFOLD_VALVES] OF FB_ManiValve;
+        idx : int;
+    END_VAR
+    VAR CONSTANT
+        MANIFOLD_VALVES : INT := 7;
+    END_VAR
+    FOR idx := 1 to MANIFOLD_VALVES DO
+        stValve[idx].xILK := TRUE; // these valves have no interlock
+        fbValve[idx](iq_valve := stValve[idx]);
+    END_FOR
+
+    END_FUNCTION_BLOCK
+
+
+Related:
+    * `FB_ManiValve`_
+    * `ST_M3DeviceBaseIO`_
+    * `ST_ManifoldValve`_
+
+
+FB_ManipAxis
+^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_ManipAxis
+    VAR_INPUT
+        i_xHotPlug	:	BOOL;
+    END_VAR
+    VAR_OUTPUT
+        q_asResult: ARRAY [1..20] OF STRING;
+        q_xError	:	BOOL;
+    END_VAR
+    VAR_IN_OUT
+        iq_ManipAxis	:	ST_ManipAxis;
+    END_VAR
+    VAR
+
+        mcPower	:	MC_Power;
+        mcReset	:	MC_Reset;
+        mcMoveAbsolute : ARRAY[1..2] OF MC_MoveAbsolute;
+        mcHalt	:	MC_Halt;
+        mcSmoothMover	:	MC_SmoothMover;
+        //Error Stuff
+        indexResult: INT := 1;
+        fbFormatString	:	FB_FormatString;
+
+        xInitComplete	:	BOOL := FALSE;
+
+        imcBlockIndex: INT;
+
+        rtEnable : R_TRIG;
+        ftEnable : F_TRIG;
+        rtStop	:	R_TRIG;
+        rtStart	:	R_TRIG;
+        rReqAbsPosOld: REAL := 0;
+        rReqAbsPosPrevious: REAL;
+        iI: INT;
+    END_VAR
+    (* Manipulator Axis Function Block
+    Alex Wallace, 2016-8-8
+
+    This block works by jumping between two absolute move blocks and buffering
+    the motion between them.
+    *)
+
+
+    rtEnable(CLK:=iq_ManipAxis.xEnable);
+    ftEnable(CLK:=iq_ManipAxis.xEnable);
+
+    //Update status
+    iq_ManipAxis.stAxis();
+
+    IF rtEnable.Q OR ftEnable.Q THEN
+        xInitComplete := FALSE;
+        iq_ManipAxis.eState := Init;
+    ELSIF xInitComplete THEN
+        iq_ManipAxis.eState := MoveEnabled;
+    END_IF
+
+    //For EPICS, because the modbus map was made for 32 bit..
+    iq_ManipAxis.rActPos := LREAL_TO_REAL(iq_ManipAxis.stAxis.NcToPlc.ActPos);
+
+
+    CASE iq_ManipAxis.eState OF
+        0: iq_ManipAxis.eState := Init;
+        Init:
+        (* Start by initializing the motor axis *)
+        mcPower.Enable := iq_ManipAxis.xEnable;
+        iq_ManipAxis.rReqAbsPos := iq_ManipAxis.rActPos; //do this when the PLC comes up so we don't just lose the position if we tweak
+        IF mcPower.Status THEN //success
+            xInitComplete := TRUE;
+            q_asResult[indexResult] := 'Motor init success';
+            indexResult := indexResult + 1;
+            iq_ManipAxis.eState := MoveEnabled;
+        ELSIF mcPower.Error THEN
+            mcPower.Enable := FALSE;
+            fbFormatString(sFormat:='Init mcPower Error: %s', arg1:=F_UDINT(mcPower.ErrorID));
+            ActError();
+        END_IF
+
+        MoveEnabled:
+            mcSmoothMover.Enable := iq_ManipAxis.xEnable;
+            mcSmoothMover.ReqAbsPos := LIMIT(-100, REAL_TO_LREAL(iq_ManipAxis.rReqAbsPos), 100);
+            mcSmoothMover.Execute := iq_ManipAxis.xStart;
+            (*We've already captured the rising edge of start (if there was one, so
+            go ahead and reset it.*)
+            iq_ManipAxis.xStart := FALSE;
+
+            //Halt
+            mcHalt.Execute S= iq_ManipAxis.xStop;
+            mcHalt.Execute R= mcHalt.Busy;
+            iq_ManipAxis.xStop R= mcHalt.Busy;
+            IF mcPower.Error OR mcSmoothMover.Error THEN
+                iq_ManipAxis.eState:=Error;
+            END_IF
+
+
+
+    END_CASE
+
+
+    mcReset.Execute := rtEnable.Q OR i_xHotPlug OR iq_ManipAxis.xReset;
+    //Reset the reset controls for the next reset
+    IF mcReset.Done THEN
+        mcReset.Execute := FALSE;
+        iq_ManipAxis.xReset := FALSE;
+        iq_ManipAxis.eState:=Init;
+    END_IF
+    //Set function block state once axis is happy again
+    IF NOT iq_ManipAxis.stAxis.Status.Error THEN
+        q_xError := FALSE;
+    END_IF
+
+
+    (* Run the mc blocks *)
+    ActPower();
+    mcReset(Axis:=iq_ManipAxis.stAxis);
+    mcSmoothMover(Axis:=iq_ManipAxis.stAxis,
+        Velocity:=iq_ManipAxis.lrVelocity);
+    mcHalt(Axis:=iq_ManipAxis.stAxis);
+
+    iq_ManipAxis.xDmov := mcHalt.Done OR mcSmoothMover.Done;
+    iq_ManipAxis.xMovn := mcHalt.Busy OR mcSmoothMover.Busy;
+
+    //For display, this logic is not for safety
+    iq_ManipAxis.xHLS := NOT iq_ManipAxis.xHiLS;
+    iq_ManipAxis.xLLS := NOT iq_ManipAxis.xLoLS;
+
+    END_FUNCTION_BLOCK
+
+    ACTION ActPower:
+
+    END_ACTION
+
+    ACTION ActError:
+    (* Error action
+    *)
+
+    //Reset the debugging index
+    IF indexResult > 20 THEN indexResult := 1; END_IF
+
+    iq_ManipAxis.eState := Error;
+    q_xError	:=	TRUE;
+    q_asResult[indexResult] := fbFormatString.sOut;
+    indexResult := indexResult +1;
+    END_ACTION
+
+
+Related:
+    * `MC_SmoothMover`_
+    * `ST_ManipAxis`_
+
+
+FB_ManiValve
+^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_ManiValve
+    VAR_INPUT
+    END_VAR
+    VAR_OUTPUT
+    END_VAR
+    VAR_IN_OUT
+        iq_valve	:	ST_ManifoldValve;
+    END_VAR
+    VAR
+    END_VAR
+    (* Basic valve control block *)
+    IF NOT iq_valve.xILK THEN
+        iq_valve.xSW := FALSE;
+    END_IF
+
+    iq_valve.qxDO := NOT (iq_valve.xILK and iq_valve.xSW); // These are normally open valves, qxDO closes the valve
+
+    END_FUNCTION_BLOCK
+
+
+Related:
+    * `ST_ManifoldValve`_
+
+
+FB_PID_EXT
+^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_PID_EXT
+    VAR_INPUT
+        i_lrSetpoint	:	LREAL;
+        i_lrActVal	:	LREAL;
+        i_stPIDParams	:	ST_PIDParams;
+        //Hold the output and pause the block
+        i_Hold	:	BOOL;
+        i_Reset	:	BOOL;
+    END_VAR
+    VAR_OUTPUT
+        q_lrCtrlOutput	:	LREAL;
+        q_Error	:	BOOL;
+        q_Limited	:	BOOL;
+    END_VAR
+    VAR
+        fbPID	:	FB_BasicPID;
+        eState	:	E_CTRL_MODE;
+        xInitialized	:	BOOL := FALSE;
+        lrSetpoint	:	LREAL;
+        lrActVal	:	LREAL;
+        bReset: BOOL;
+        lrCtrlOutput: LREAL;
+        xFirstPass: BOOL;
+        stDiag	:	ST_fbDiagnostics;
+    END_VAR
+    (*
+
+    NOTE: If the PID block is having issues check the cycle time, it might be wrong.
+    *)
+    IF fbPID.nErrorStatus <> 0 THEN
+        eState := E_CTRL_MODE.Error;
+    ELSIF fbPID.nErrorStatus = 0 AND xInitialized THEN
+        q_Error := FALSE;
+        IF i_Hold THEN
+            eState := E_CTRL_MODE.Hold;
+        ELSE
+            eState := E_CTRL_MODE.Run;
+        END_IF
+    END_IF
+
+    CASE eState OF
+        E_CTRL_MODE.Init:
+            //Complete 1 pass through this FB to check PID block for errors
+            IF xFirstPass THEN
+                xInitialized := FALSE;//pass
+            ELSE
+                xInitialized := TRUE;
+            END_IF
+        E_CTRL_MODE.Run:
+            lrSetpoint := i_lrSetpoint;
+            lrCtrlOutput := fbPID.fCtrlOutput;
+            lrActVal := i_lrActVal;
+            bReset := FALSE;
+        E_CTRL_MODE.Hold:
+        (* While holding, the setpoint value is set to the actual
+        value and the execution of the PID block is paused *)
+            lrSetpoint := lrActVal;
+            lrCtrlOutput := lrCtrlOutput;
+            bReset := TRUE;
+        E_CTRL_MODE.Error:
+            q_Error := TRUE;
+            lrSetpoint := 0;
+            lrCtrlOutput := 0;
+    END_CASE
+
+    fbPID(fSetpointValue := lrSetpoint,
+        fActualValue := lrActVal,
+        bReset := bReset,
+        fCtrlCycleTime :=i_stPIDParams.fCtrlCycleTime,
+        fKp := i_stPIDParams.fKp,
+        fTn := i_stPIDParams.fTn,
+        fTv := i_stPIDParams.fTv,
+        fTd := i_stPIDParams.fTd
+        );
+
+    //Hold everything until fb is initialized
+    IF xInitialized AND NOT q_Error THEN
+        //Indicate that the output is being limited
+        q_Limited := lrCtrlOutput > i_stPIDParams.fUpperLim OR lrCtrlOutput < i_stPIDParams.fLowerLim;
+        q_lrCtrlOutput := LIMIT(i_stPIDParams.fLowerLim, lrCtrlOutput, i_stPIDParams.fUpperLim);
+    ELSE
+        q_lrCtrlOutput := 0;
+        q_Limited := FALSE;
+    END_IF
+
+    xFirstPass := False;
+
+    END_FUNCTION_BLOCK
+
+
+Related:
+    * `E_CTRL_MODE`_
+    * `ST_PIDParams`_
+
+
+FB_PressureControlModule
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    // Encapsulation of a pressure control module.
+    // A. Wallace, 2019-10-22
+    // Support for 2 proportionairs, 4 generic analog inputs (usually a pressure gauge
+    // and two shimadzu ports.
+    FUNCTION_BLOCK FB_PressureControlModule
+    VAR_INPUT
+    END_VAR
+    VAR_OUTPUT
+    END_VAR
+    VAR_IN_OUT
+    END_VAR
+    VAR
+        {attribute 'pytmc' := '
+            pv: IO
+         '}
+        stBaseIO : ST_M3DeviceBaseIO;
+
+        stSerial1 : ST_SerialComm;
+        stSerial2 : ST_SerialComm;
+
+        fbSerial1 : FB_SerialCommWrapper;
+        fbSerial2 : FB_SerialCommWrapper;
+
+        {attribute 'pytmc' := '
+            pv: PropAir:01
+         '}
+        stPropAir1 : ST_Proportionair;
+        {attribute 'pytmc' := '
+            pv: PropAir:02
+         '}
+        stPropAir2 : ST_Proportionair;
+
+        PropAir1 : FB_ProportionairRegulator;
+        PropAir2 : FB_ProportionairRegulator;
+    END_VAR
+    PropAir1(iq_stRegProp:=stPropAir1);
+    PropAir2(iq_stRegProp:=stPropAir2);
+
+    END_FUNCTION_BLOCK
+
+    ACTION SerialComm:
+    fbSerial1(stSerialComm := stSerial1);
+    fbSerial2(stSerialComm := stSerial2);
+    END_ACTION
+
+
+Related:
+    * `FB_ProportionairRegulator`_
+    * `FB_SerialCommWrapper`_
+    * `ST_M3DeviceBaseIO`_
+    * `ST_Proportionair`_
+    * `ST_SerialComm`_
+
+
+FB_ProportionairRegulator
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_ProportionairRegulator
+    VAR_INPUT
+    END_VAR
+    VAR_OUTPUT
+    END_VAR
+    VAR_IN_OUT
+        iq_stRegProp	:	ST_Proportionair;
+    END_VAR
+    VAR
+
+    END_VAR
+    (* A. Wallace 2015-10-7
+    Proportionair regulator control *)
+
+    (* Pressure signal conversion, max pressure out 1000 (I think...) *)
+    iq_stRegProp.iPressure := REAL_TO_INT(1000 * (MAX(0,INT_TO_REAL(iq_stRegProp.i_iPressRB)) / 32767));
+
+    iq_stRegProp.iSetpoint := LIMIT(iq_stRegProp.iLoLimit, iq_stRegProp.iSetpoint, iq_stRegProp.iHiLimit);
+
+    iq_stRegProp.q_iPressCt := REAL_TO_INT( (INT_TO_REAL(iq_stRegProp.iSetpoint)/1000)*32767);
+
+    END_FUNCTION_BLOCK
+
+
+Related:
+    * `ST_Proportionair`_
+
+
+FB_PropValve
+^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_PropValve
+    VAR_INPUT
+        i_xExtIlk	:	BOOL;
+    END_VAR
+    VAR_OUTPUT
+        q_xError	:	BOOL;
+    END_VAR
+    VAR_IN_OUT
+        stPropValve	:	ST_PropValveMKS253;
+    END_VAR
+    VAR
+        xInterlock	:	BOOL;
+
+        eState : E_PropValveFBState := E_PropValveFBState.Init;
+        stDiag	:	ST_fbDiagnostics;
+
+        mcPower	:	MC_Power;
+        mcJog	:	MC_Jog;
+        mcReset	:	MC_Reset;
+        mcSmoothMover	:	MC_SmoothMover;
+        tofLLSFilter	:	TOF := (PT:=T#100MS);
+        tofHLSFilter	:	TOF := (PT:=T#100MS);
+
+        fbPID	:	FB_PID_EXT;
+
+        AnyError: BOOL;
+        xReady	:	BOOL;
+        rtReset: R_TRIG;
+
+        UpperLimit : LREAL := 2000;
+    END_VAR
+    (* Provide the motor enable and limit switch functions for the MKS 253 valve *)
+
+    xInterlock := stPropValve.xInterlock AND i_xExtIlk;
+    stPropValve.xEnable R= NOT xInterlock;
+
+
+    rtReset(CLK:=stPropValve.xEnable);
+
+    (* The low limit switch was flakey, I added the filters *)
+    tofLLSFilter(IN:=stPropValve.i_LLS);
+    tofHLSFilter(IN:=stPropValve.i_HLS);
+    mcPower.Enable_Positive := tofHLSFilter.Q;
+    mcPower.Enable_Negative := tofLLSFilter.Q;
+    mcPower.Enable := xInterlock AND stPropValve.xEnable;
+    stPropValve.xEnabled := mcPower.Enable;
+    (* Move the valve *)
+
+    IF AnyError THEN
+        eState := E_PropValveFBState.Error;
+        stPropValve.ePVCtrlStateReq := HMI_PropValveCtrlState.Hold;
+    ELSIF xReady THEN
+        CASE stPropValve.ePVCtrlStateReq OF
+            HMI_PropValveCtrlState.Hold:
+                eState := E_PropValveFBState.Hold;
+            HMI_PropValveCtrlState.Manual:
+                eState := E_PropValveFBState.Manual;
+            HMI_PropValveCtrlState.Pressure:
+                eState := E_PropValveFBState.Pressure;
+        END_CASE
+    ELSE
+        eState := E_PropValveFBState.Init;
+    END_IF
+
+    CASE eState OF
+        E_PropValveFBState.Init:
+            //This state is reached at startup and after a reset
+            //It seeks the closed limit switch and moves to hold
+            stPropValve.ePVCtrlState := HMI_PropValveCtrlState.Hold;
+            fbPID.i_Reset := TRUE;
+            IF NOT tofLLSFilter.Q AND mcPower.Status THEN
+                stPropValve.ePVCtrlStateReq := HMI_PropValveCtrlState.Hold;
+                fbPID.i_Reset := TRUE;
+                xReady := TRUE;
+            END_IF
+        E_PropValveFBState.Hold:
+            stPropValve.ePVCtrlState := HMI_PropValveCtrlState.Hold;
+            mcJog.JogForward := FALSE;
+            mcJog.JogBackwards := FALSE;
+            fbPID.i_Hold := TRUE;
+
+        E_PropValveFBState.Pressure:
+            stPropValve.ePVCtrlState := HMI_PropValveCtrlState.Pressure;
+
+            fbPID.i_Hold := FALSE;
+            fbPID.i_Reset := FALSE;
+
+            //If the PID output is positive, jog forward, velocity scaled by the PID output
+            //likewise for a negative PID output
+            mcJog.JogForward := fbPID.q_lrCtrlOutput > 0;
+            mcJog.JogBackwards := fbPID.q_lrCtrlOutput < 0;
+            mcJog.Velocity := ABS(fbPID.q_lrCtrlOutput) * stPropValve.lrMaxSpeed;
+
+        E_PropValveFBState.Manual:
+            stPropValve.ePVCtrlState := HMI_PropValveCtrlState.Manual;
+            fbPID.i_Hold := TRUE;
+            mcSmoothMover.Enable := TRUE;
+            mcSmoothMover.ReqAbsPos := LIMIT(0, INT_TO_LREAL(stPropValve.i_iPercOpenSP), 100)/100*UpperLimit;
+
+        E_PropValveFBState.Error:
+            //Purgatory
+            mcJog.JogBackwards := FALSE;
+            mcJog.JogForward  := FALSE;
+            fbPID.i_Hold := TRUE;
+            xReady	:= FALSE;
+    END_CASE
+
+
+    //Valve movement based on PID output
+    fbPID(i_lrSetpoint := REAL_TO_LREAL(stPropValve.i_rPressSP),
+            i_lrActVal := REAL_TO_LREAL(stPropValve.i_rPressRB),
+            i_stPIDParams := stPropValve.stPIDParams);
+
+
+    //MC blocks
+    mcPower(Axis:=stPropValve.stAxis);
+    mcReset(Axis:=stPropValve.stAxis);
+    mcJog(Axis:=stPropValve.stAxis, Mode:=E_JogMode.MC_JOGMODE_CONTINOUS);
+    mcSmoothMover(Axis:=stPropValve.stAxis,
+            Velocity:=stPropValve.lrMaxSpeed);
+
+    AnyError := mcJog.Error OR mcPower.Error OR fbPID.q_Error OR mcSmoothMover.Error;
+
+    (* EPICS display of perc open *)
+    stPropValve.q_iPercOpen := LREAL_TO_INT(100*stPropValve.stAxis.NcToPlc.ActPos / UpperLimit);
+
+    (* EPICS display of limits *)
+    stPropValve.xHLS := NOT tofHLSFilter.Q;
+    stPropValve.xLLS := NOT tofLLSFilter.Q;
+
+    END_FUNCTION_BLOCK
+
+
+Related:
+    * `E_PropValveFBState`_
+    * `FB_PID_EXT`_
+    * `HMI_PropValveCtrlState`_
+    * `MC_SmoothMover`_
+    * `ST_PropValveMKS253`_
+
+
+FB_Regulator
+^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_Regulator
+    VAR_INPUT
+        iI: INT;
+        lrVelocity	:	LREAL := 360;
+    END_VAR
+    VAR_OUTPUT
+    q_asResult: ARRAY [1..20] OF STRING;
+    q_xError	:	BOOL;
+    END_VAR
+    VAR_IN_OUT
+        iq_stRegulator	:	ST_Regulator;
+    END_VAR
+    VAR
+
+
+    mcPower	:	MC_Power;
+    mcSetHome	:	MC_SetPosition;
+    mcReset	:	MC_Reset;
+    mcMoveAbsolute : ARRAY[1..2] OF MC_MoveAbsolute;
+    mcStatus : MC_ReadStatus;
+
+    mcHalt	:	MC_Halt;
+
+        iPressDiff: INT;
+        iTolerance: INT := 50;
+        xMoveOK: BOOL;
+        iStep: INT;
+
+        indexResult: INT := 1;
+
+        xInitComplete	:	BOOL := FALSE;
+
+        ftBackToAuto	:	F_TRIG;
+        iPercSPOld: UINT;
+        imcBlockIndex: INT;
+        imcBlockIndexPrev : INT;
+
+        rtEnable : R_TRIG;
+    END_VAR
+    (* Regulator Function Block *)
+    (* Alex Wallace, 2014-10-16 *)
+    (* Modified in 2.5.3 to remove all pressure SP  based code *)
+
+    rtEnable(CLK:=iq_stRegulator.xRegEnab);
+
+    (* Regulator Pressure Calculation *)
+    iq_stRegulator.wInPress := LIMIT(0, F_rPressure(iRawVoltage := iq_stRegulator.i_iRawInPress), 10000);
+    iq_stRegulator.wOutPress := LIMIT(0, F_rPressure(iRawVoltage := iq_stRegulator.i_iRawOutPress), 10000);
+
+
+    (* Basic regulator interlocking *)
+
+
+    (* Check for regulator enable *)
+    xMoveOK := iq_stRegulator.xRegEnab;
+    IF NOT xMoveOK THEN
+        (*iq_stRegulator.wPressSP := 0; not preferred *)
+        iq_stRegulator.xRegEnab := FALSE;
+        (* add motor error here *)
+    END_IF
+
+    IF q_xError THEN
+        iStep := 9000;
+    ELSIF rtEnable.Q THEN
+        xInitComplete := FALSE;
+        iStep := 10;
+    ELSIF xInitComplete THEN
+        iStep := 3000;
+    END_IF
+
+
+    CASE iStep OF
+        0: iStep := 10;
+        10:
+        (* Start by initializing the motor axis *)
+        mcPower.Enable := TRUE;
+        iq_stRegulator.lrUpperLimPos := 2887;
+        IF mcPower.Status THEN
+            xInitComplete := TRUE;
+            q_asResult[indexResult] := 'Motor init success';
+            indexResult := indexResult + 1;
+            iStep := 3000;
+        ELSIF mcPower.Error THEN
+            mcPower.Enable := FALSE;
+            iStep := 9000;
+            q_xError	:=	TRUE;
+            q_asResult[indexResult] := CONCAT('Initilizing regulator motor in step 10 failed with error code: ', UDINT_TO_STRING(mcPower.ErrorID));
+            indexResult := indexResult +1;
+        END_IF
+
+        //Knob controls
+        3000:
+
+        IF iq_stRegulator.i_iPercSP <> iPercSPOld  AND xMoveOK THEN
+            mcMoveAbsolute[imcBlockIndex].Execute := FALSE;
+            imcBlockIndex := imcBlockIndex + 1;
+            IF imcBlockIndex >2 THEN imcBlockIndex := 1; END_IF
+            mcMoveAbsolute[imcBlockIndex].Position := LIMIT(0, UINT_TO_LREAL(iq_stRegulator.i_iPercSP) * iq_stRegulator.lrUpperLimPos/65535, MAX(iq_stRegulator.lrUpperLimPos,1));
+            mcMoveAbsolute[imcBlockIndex].Execute := TRUE;
+            iPercSPOld := iq_stRegulator.i_iPercSP;
+        ELSIF mcMoveAbsolute[imcBlockIndex].Done or mcMoveAbsolute[imcBlockIndex].CommandAborted or mcMoveAbsolute[imcBlockIndex].Busy or mcMoveAbsolute[imcBlockIndex].Error THEN
+            mcMoveAbsolute[imcBlockIndex].Execute := FALSE;
+        END_IF
+
+        9000:
+        (* Error *)
+        mcReset.Execute := iq_stRegulator.xRegEnab;
+        IF mcReset.Done THEN
+            q_xError := FALSE;
+            mcReset.Execute := FALSE;
+            iStep:=10;
+        END_IF
+
+    END_CASE
+
+    //Reset the debugging index
+    IF indexResult > 20 THEN indexResult := 1; END_IF
+
+    (* Regulator Percentage Open *)
+    (* Calculate the regulator percentage open, based on 6.5 turns to fully open *)
+
+    iq_stRegulator.wPercentageOpen := LREAL_TO_WORD( (iq_stRegulator.stRegulatorMotor.NcToPlc.ActPos / MAX(iq_stRegulator.lrUpperLimPos,1))*100);
+
+    (* Run the mc blocks *)
+    iq_stRegulator.stRegulatorMotor();
+    ActPower();
+
+    mcSetHome(Execute:=NOT(iq_stRegulator.xRegLoLS) AND iq_stRegulator.stRegulatorMotor.Status.StandStill, Axis:=iq_stRegulator.stRegulatorMotor, Position:=0, Mode:=FALSE);
+    IF NOT iq_stRegulator.xRegHiLS THEN iq_stRegulator.lrUpperLimPos := iq_stRegulator.stRegulatorMotor.NcToPlc.ActPos; END_IF
+    mcReset(Axis:=iq_stRegulator.stRegulatorMotor);
+
+    FOR iI := 1 TO 2 DO
+    mcMoveAbsolute[iI](Axis := iq_stRegulator.stRegulatorMotor, Velocity:=iq_stRegulator.lrVelocity, BufferMode:=MC_Aborting);
+    END_FOR
+
+    IF mcMoveAbsolute[1].Error OR mcMoveAbsolute[2].Error THEN
+        q_xError	:=	TRUE;
+        mcMoveAbsolute[1].Execute := FALSE;
+        mcMoveAbsolute[2].Execute := FALSE;
+        q_asResult[indexResult] := 'Error occured with motion blocks';
+        indexResult := indexResult +1;
+    ELSIF mcPower.Error THEN
+        q_xError := TRUE;
+        q_asResult[indexResult] := concat('mcPower block error: ', UDINT_TO_STRING(mcPower.ErrorID));
+    END_IF
+
+    END_FUNCTION_BLOCK
+
+    ACTION ActPower:
+
+    END_ACTION
+
+
+Related:
+    * `F_rPressure`_
+    * `ST_Regulator`_
+
+
+FB_SelectorM3
+^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_SelectorM3
+    VAR CONSTANT
+
+    END_VAR
+    VAR_INPUT
+    END_VAR
+    VAR_OUTPUT
+    END_VAR
+    VAR_IN_OUT
+    END_VAR
+    VAR
+        {attribute 'pytmc' := '
+            pv: IO
+         '}
+        stBaseIO : ST_M3DeviceBaseIO;
+
+        {attribute 'pytmc' := '
+            pv:
+         '}
+        stSelector	:	ST_SelectorM3;
+
+        // Shakers
+            {attribute 'pytmc' := '
+                pv: Shaker:01
+             '}
+            stShaker01	:	ST_Shaker;
+            {attribute 'pytmc' := '
+                pv: Shaker:02
+             '}
+            stShaker02	:	ST_Shaker;
+            {attribute 'pytmc' := '
+                pv: Shaker:03
+             '}
+            stShaker03	:	ST_Shaker;
+            {attribute 'pytmc' := '
+                pv: Shaker:04
+             '}
+            stShaker04	:	ST_Shaker;
+
+        // Vici valves
+            fbSelectorSync	:	FB_SelectorSync;
+
+            afbViciDriver : ARRAY [1..2] OF FB_ViciDriver;
+
+            fbViciSerial  :   FB_SerialCommWrapper;
+            stViciSerial  :   ST_SerialComm;
+
+
+        {attribute 'pytmc' := '
+            pv: Sensirion
+         '}
+        astSelFM	: ARRAY[1..2] OF	ST_SensirionFM; //Address 1 is low flow, address 2 is high flow, low flow is mapped to M2 flow
+
+        afbSensirionDriver	:	ARRAY [1..2] OF	FB_SensirionDriver;
+
+        fbSensSerial : FB_SerialCommWrapper;
+        stSensSerial : ST_SerialComm;
+
+        stStatus: STRING;
+        udCount: UDINT;
+
+        tofReset: TOF;
+
+        iIdOld	:	INT;
+
+        viciIndex: INT := 1;
+        fmIndex: INT := 1;
+
+        //stComIn_EP6002P1		AT %I*	:	EL6inData22B (*KL6inData22B*);
+        //stComOut_EP6002P1		AT %Q*	:	EL6outData22B (*KL6outData22B*);
+
+    END_VAR
+    //Flowmeters
+    //////////////////////////////////////
+    Sensirion();
+    //Bronkhorst();
+
+    //Valve control
+    ///////////////////////////////////
+        fbSelectorSync(iq_stSelector:=stSelector);
+        stSelector.astViciVlvCtrl[1].iReqPos := LIMIT(1, stSelector.iVici1ReqPos, 12);
+        stSelector.astViciVlvCtrl[2].iReqPos := LIMIT(1, stSelector.iVici2ReqPos, 12);
+        ViciDrivers();
+
+        //for epics readback to be consistent
+        IF stSelector.xResSyncd THEN stSelector.iSyncResPos := stSelector.astViciVlvStatus[1].iCurrPos; END_IF
+
+    (* Shakers *)
+    stShaker01.q_xPwrDO := stShaker01.i_xEpics;
+    stShaker02.q_xPwrDO := stShaker02.i_xEpics;
+    stShaker03.q_xPwrDO := stShaker03.i_xEpics;
+    stShaker04.q_xPwrDO := stShaker04.i_xEpics;
+
+    END_FUNCTION_BLOCK
+
+    ACTION Sensirion:
+    (* Sensirion Flowmeter driver encapsulation*)
+
+    (* M3 selector has two flow meters. Sample and sheath. Sample is "low flow."*)
+
+    astSelFM[fmIndex].stCtrl.xReset := astSelFM[fmIndex].xFMReset;
+    astSelFM[fmIndex].stCtrl.xCalMode := astSelFM[fmIndex].xFMModeReq;
+    astSelFM[fmIndex].stCtrl.bAdr := INT_TO_BYTE(fmIndex-1);
+
+    afbSensirionDriver[fmIndex](
+        i_xExecute:= TRUE,
+        i_tTimeOut:= t#1s,
+        iq_stSerialRXBuffer:= stSensSerial.RxBuffer,
+        iq_stSerialTXBuffer:= stSensSerial.TxBuffer,
+        q_stStatus=>astSelFM[fmIndex].stStat,
+        i_stControl:=astSelFM[fmIndex].stCtrl);
+
+    IF afbSensirionDriver[fmIndex].q_xDone OR
+        afbSensirionDriver[fmIndex].q_xError OR
+        afbSensirionDriver[fmIndex].q_xTimeout THEN
+
+        astSelFM[fmIndex].rFlow := astSelFM[fmIndex].stStat.rFlow;
+        astSelFM[fmIndex].xFMOoR := astSelFM[fmIndex].stStat.xOoR;
+        astSelFM[fmIndex].xFlowValid := astSelFM[fmIndex].stStat.xFlowValid;
+        astSelFM[fmIndex].eFMState := astSelFM[fmIndex].stStat.iState;
+        astSelFM[fmIndex].xFMModeRb := astSelFM[fmIndex].stStat.xFMMode;
+
+        //M3 flows
+        IF fmIndex = 1 THEN
+            stSelector.rLowFlow := astSelFM[fmIndex].stStat.rFlow;
+        ELSIF fmIndex = 2 THEN
+            stSelector.rHighFlow := astSelFM[fmIndex].stStat.rFlow;
+        END_IF
+
+        (* reset function for next time *)
+        afbSensirionDriver[fmIndex].Reset();
+
+        fmIndex := fmIndex + 1;
+        IF fmIndex > 1 THEN fmIndex := 1;	END_IF
+    END_IF
+    END_ACTION
+
+    ACTION SerialComm:
+    fbSensSerial(stSerialComm := stSensSerial);
+
+    fbViciSerial(stSerialComm := stViciSerial);
+    END_ACTION
+
+    ACTION ViciDrivers:
+    stSelector.astViciVlvCtrl[viciIndex].iAddress := viciIndex;
+
+    afbViciDriver[viciIndex](
+        i_xExecute:= TRUE,
+        i_tTimeOut:= t#10s,
+        i_stControl:= stSelector.astViciVlvCtrl[viciIndex],
+        iq_stSerialRXBuffer:= stViciSerial.RxBuffer,
+        iq_stSerialTXBuffer:= stViciSerial.TxBuffer,
+        q_stStatus=>stSelector.astViciVlvStatus[viciIndex]);
+
+    IF 	afbViciDriver[viciIndex].q_xDone OR
+        afbViciDriver[viciIndex].q_xError OR
+        afbViciDriver[viciIndex].q_xTimeout THEN
+        (* reset function for next time *)
+        afbViciDriver[viciIndex](i_xExecute:=FALSE,
+            iq_stSerialRXBuffer:= stViciSerial.RxBuffer,
+            iq_stSerialTXBuffer:= stViciSerial.TxBuffer);
+
+        viciIndex := viciIndex + 1;
+        IF viciIndex > 2 THEN viciIndex := 1; END_IF
+
+    END_IF
+    END_ACTION
+
+
+Related:
+    * `FB_SelectorSync`_
+    * `FB_SensirionDriver`_
+    * `FB_SerialCommWrapper`_
+    * `FB_ViciDriver`_
+    * `ST_M3DeviceBaseIO`_
+    * `ST_SelectorM3`_
+    * `ST_SensirionFM`_
+    * `ST_SerialComm`_
+    * `ST_Shaker`_
+
+
+FB_SelectorSync
+^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_SelectorSync
+    VAR_INPUT
+    END_VAR
+    VAR_OUTPUT
+    END_VAR
+    VAR_IN_OUT
+        iq_stSelector	:	ST_SelectorM3;
+    END_VAR
+    VAR
+        tofResSyncd : TOF;
+        rtResLocked	:	R_TRIG;
+        rsResLocked	:	RS;
+
+        rtResLock : R_TRIG;
+        rtResUnlock : R_TRIG;
+    END_VAR
+    (* Selector valve sync FB for vici valves *)
+
+
+
+    (* Check if both valves are in the same position *)
+    (* Should probably add something to the driver to check if we are in motion*)
+    tofResSyncd.IN := (iq_stSelector.astViciVlvStatus[1].iCurrPos = iq_stSelector.astViciVlvStatus[2].iCurrPos ) AND
+                (iq_stSelector.astViciVlvStatus[1].xPosValid  ) AND (iq_stSelector.astViciVlvStatus[1].xPosValid); (* Check for valid position rb *)
+
+    (* Delay the loss of ResSyncd so the valves can both be queried before overriding *)
+    (* Using a tof, but you can also check that both valves have been queried *)
+    tofResSyncd(PT:=T#10S);
+    iq_stSelector.xResSyncd := tofResSyncd.Q;
+
+    //Set, reset of valve lock
+    rtResLock(CLK:=iq_stSelector.xResLock);
+    rtResUnlock(CLK:=iq_stSelector.xResUnlock);
+    rsResLocked(set:=rtResLock.Q OR g_xFirstPass, reset1:=rtResUnlock.Q OR NOT iq_stSelector.xResSyncd);
+    iq_stSelector.xResLocked := rsResLocked.Q1;
+
+
+    (* If valve lock just became active, set the SyncReqPos to current locked position *)
+    rtResLocked(CLK:=iq_stSelector.xResLocked);
+    (*
+    IF rtResLocked.Q THEN
+        iq_stSelector.iSyncReqPos := iq_stSelector.iVici1ReqPos;
+    END_IF
+    *)
+    (* If valve lock active, match valve positions from the valve req that changes req number *)
+    (* This logic permits synchronized requests from EITHER valve in EPICS, ie. once sync and locked,
+    commanding either valve will move both. *)
+    IF iq_stSelector.xResLocked AND iq_stSelector.xResSyncd THEN
+        IF iq_stSelector.iVici1ReqPos <> iq_stSelector.iSyncReqPos THEN
+            iq_stSelector.iSyncReqPos := iq_stSelector.iVici1ReqPos;
+            iq_stSelector.iVici2ReqPos := iq_stSelector.iVici1ReqPos;
+        ELSIF iq_stSelector.iVici2ReqPos <> iq_stselector.iSyncReqPos THEN
+            iq_stSelector.iSyncReqPos := iq_stSelector.iVici2ReqPos;
+            iq_stSelector.iVici1ReqPos := iq_stSelector.iVici2ReqPos;
+        END_IF
+    END_IF
+
+    iq_stSelector.xResLock := FALSE;
+    iq_stSelector.xResUnlock := False;
+
+    END_FUNCTION_BLOCK
+
+
+Related:
+    * `ST_SelectorM3`_
+
+
+FB_SensirionDriver
+^^^^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_SensirionDriver
+
+    VAR_INPUT
+        i_xExecute				: BOOL := FALSE;		(* rising edge execute *)
+        i_tTimeOut				: TIME := T#10S;  		(* Maximum wait time for reply *)
+        i_stControl				: ST_SensirionFMControl;
+    END_VAR
+    VAR_OUTPUT
+        q_xDone					: BOOL;
+        q_xError				: BOOL;
+        q_xWarning				: BOOL;					(* set in the event of an unexpected reply *)
+        q_xTimeout				: BOOL;
+        q_asResult				: ARRAY[1..60] OF STRING(255);
+        q_stStatus				: ST_SensirionFMStatus;
+        q_xInitComplete			: BOOL;
+    END_VAR
+    VAR_IN_OUT
+        iq_stSerialRXBuffer 	: ComBuffer;
+        iq_stSerialTXBuffer 	: ComBuffer;
+    END_VAR
+    VAR
+        //Usual stuff
+        rtExecute				: R_TRIG;
+        rtReInit				:	R_TRIG;
+        iStep					: INT;
+        iResultIndex			:	INT := 1;
+        aiSteps	:	ARRAY[1..256] OF INT;
+        iStepIndex	:	INT;
+        fbSensirionTransaction		: FB_SensirionTransaction;
+
+        //Device Specific Working Variables
+        tonDelay : TON;
+        bLen	:	BYTE;
+        abTxData	:	ARRAY[1..256] OF BYTE;
+        xInitComplete	:	BOOL;
+        abRxData	:	ARRAY[1..256] OF BYTE;
+
+        iScale	:	INT;
+        iUnit	:	INT;
+        xType	:	BOOL;
+        xMode	:	BYTE;
+        xLinear	:	BOOL;
+        uiOffset	:	UINT;
+        iIdleAttempt : INT;
+
+        //Command delays
+        tonCommandDelay : TON;
+    xcatch : BOOL;
+    END_VAR
+    (* This function block performs serial communication with a Sensirion meter *)
+
+
+    (* rising edge trigger *)
+    rtExecute(CLK:= i_xExecute);
+    rtReInit(CLK:= i_stControl.xReset);
+    IF rtReInit.Q THEN xInitComplete := FALSE; END_IF
+    IF rtExecute.Q  THEN
+        q_xDone	:= FALSE;
+        q_xError := FALSE;
+        q_xWarning := FALSE;
+        q_xTimeout := FALSE;
+        q_asResult[iResultIndex]:= '';
+        fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+        IF xInitComplete THEN
+            iStep := 30;
+            (* Branch to reset device if reset bit is set here *)
+            IF rtReInit.Q  OR (i_stControl.xCalMode <> q_stStatus.xFMMode) THEN
+                iStep := 400;
+                xInitComplete := FALSE;
+                q_stStatus.xFlowValid := FALSE;
+                q_asResult[iResultIndex] := 'Reinitializing';
+                iResultIndex := iResultIndex +1;
+            END_IF
+        ELSIF i_stControl.xReset THEN
+            iStep := 400;
+            q_stStatus.xFlowValid := FALSE;
+            q_asResult[iResultIndex] := 'Reinitializing';
+            iResultIndex := iResultIndex +1;
+        ELSE
+            iStep := 9;
+        END_IF
+    END_IF
+
+    CASE iStep OF
+        0: (* idle *)
+            ;
+
+        9: //Get cal mode
+        fbSensirionTransaction(
+            i_xExecute:= TRUE,
+            i_bAdr:= i_stControl.bAdr,
+            i_bLen:= 0,
+            i_bCmd:= 16#43,
+            i_abTxData := abTxData,
+            i_tTimeOut:= i_tTimeOut,
+            iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+            iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+            );
+        IF fbSensirionTransaction.q_xError THEN
+            q_asResult[iResultIndex] := CONCAT('in Step 9 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+            iResultIndex := iResultIndex +1;
+            iStep := 9000;
+        ELSIF fbSensirionTransaction.q_xDone THEN
+            //abRxdata := fbSensirionTransaction.q_baRxData;
+            IF UDINT_TO_BOOL(MEMCPY(destAddr:=ADR(xMode), srcAddr:=ADR(fbSensirionTransaction.q_baRxData), n:=1)) THEN
+                q_stStatus.xFMMode := BYTE_TO_BOOL(xMode);
+                fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+                q_asResult[iResultIndex] := CONCAT('Step 9 complete. Cal mode is set to: ', BYTE_TO_STRING(xMode));
+                iResultIndex := iResultIndex +1;
+            ELSE
+                iStep := 9000;
+                q_asResult[iResultIndex] := 'Memcpy in step 9 failed';
+                iResultIndex := iResultIndex +1;
+            END_IF
+            iStep := 10;
+        END_IF
+
+        10: // Set calibration
+        //calibration of 0 for precision mode, 250 nL/min - 5000 nL/min
+        // calibration of 1 for extended mode, 2000 nL/min - 20000 nL/min
+        IF q_stStatus.xFMMode <> i_stControl.xCalMode THEN
+            IF i_stControl.xCalMode THEN abTxData[1]:=1; ELSE abTxData[1]:=0; END_IF
+            fbSensirionTransaction(
+                i_xExecute:= TRUE,
+                i_bAdr:= i_stControl.bAdr,
+                i_bLen:= 1,
+                i_bCmd:= 16#43,
+                i_abTxData := abTxData,
+                i_tTimeOut:= i_tTimeOut,
+                iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+                iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+                );
+            IF fbSensirionTransaction.q_xError THEN
+                q_asResult[iResultIndex] := CONCAT('in Step 10 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+                iResultIndex := iResultIndex +1;
+                iStep := 9000;
+            ELSIF fbSensirionTransaction.q_xDone THEN
+                tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#1S);
+                IF tonCommandDelay.Q THEN
+                    (* No response, completed transaction confirmed by a response*)
+                    q_asResult[iResultIndex] := 'Step 10 complete';
+                    iResultIndex := iResultIndex +1;
+                    iStep := 11;
+                    fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+                END_IF
+            END_IF
+        ELSE
+            q_asResult[iResultIndex] := 'Calmode already set';
+            iResultIndex := iResultIndex +1;
+            iStep := 11;
+        END_IF
+
+        11: //Get cal mode
+        fbSensirionTransaction(
+            i_xExecute:= TRUE,
+            i_bAdr:= i_stControl.bAdr,
+            i_bLen:= 0,
+            i_bCmd:= 16#43,
+            i_abTxData := abTxData,
+            i_tTimeOut:= i_tTimeOut,
+            iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+            iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+            );
+        IF fbSensirionTransaction.q_xError THEN
+            q_asResult[iResultIndex] := CONCAT('in Step 11 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+            iResultIndex := iResultIndex +1;
+            iStep := 9000;
+        ELSIF fbSensirionTransaction.q_bState <> 0 THEN
+            q_asResult[iResultIndex] := CONCAT('in Step 11 serial transaction failed with error state: ', BYTE_TO_STRING(fbSensirionTransaction.q_bState));
+            iResultIndex := iResultIndex +1;
+            fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+            iStep := 9000;
+        ELSIF fbSensirionTransaction.q_xDone THEN
+            tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#100MS);
+            IF tonCommandDelay.Q THEN
+                IF UDINT_TO_BOOL(MEMCPY(destAddr:=ADR(xMode), srcAddr:=ADR(fbSensirionTransaction.q_baRxData), n:=1)) THEN
+                    q_stStatus.xFMMode := BYTE_TO_BOOL(xMode);
+                    fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+                    q_asResult[iResultIndex] := 'Step 11 complete';
+                    iResultIndex := iResultIndex +1;
+                    iStep := 12;
+                ELSE
+                    iStep := 9000;
+                    q_asResult[iResultIndex] := 'Memcpy in step 9 failed';
+                    iResultIndex := iResultIndex +1;
+                END_IF
+            END_IF
+        END_IF
+
+        12: //Get scale factor
+        fbSensirionTransaction(
+            i_xExecute:= TRUE,
+            i_bAdr:= i_stControl.bAdr,
+            i_bLen:= 0,
+            i_bCmd:= 16#53,
+            i_abTxData := abTxData,
+            i_tTimeOut:= i_tTimeOut,
+            iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+            iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+            );
+        IF fbSensirionTransaction.q_xError THEN
+            q_asResult[iResultIndex] := CONCAT('in Step 12 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+            iResultIndex := iResultIndex +1;
+            iStep := 9000;
+        ELSIF fbSensirionTransaction.q_bState <> 0 THEN
+            q_asResult[iResultIndex] := CONCAT('in Step 12 serial transaction failed with error state: ', BYTE_TO_STRING(fbSensirionTransaction.q_bState));
+            iResultIndex := iResultIndex +1;
+            fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+            iStep := 9000;
+        ELSIF fbSensirionTransaction.q_xDone THEN
+            tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#100MS);
+            IF tonCommandDelay.Q THEN
+                IF UDINT_TO_BOOL(MEMCPY(destAddr:=ADR(iScale), srcAddr:=ADR(fbSensirionTransaction.q_baRxData), n:=2)) THEN //always 2 for the 16 bit wide integer
+                    iScale := WORD_TO_INT(HOST_TO_BE16(INT_TO_WORD(iScale)));
+                    fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+                    q_asResult[iResultIndex] := 'Step 12 complete';
+                    iResultIndex := iResultIndex +1;
+                    iStep := 13;
+                ELSE
+                    iStep := 9000;
+                    q_asResult[iResultIndex] := 'Memcpy in step 12 failed';
+                    iResultIndex := iResultIndex +1;
+                END_IF
+            END_IF
+        END_IF
+
+        13: //Get flow unit
+        fbSensirionTransaction(
+            i_xExecute:= TRUE,
+            i_bAdr:= i_stControl.bAdr,
+            i_bLen:= 0,
+            i_bCmd:= 16#52,
+            i_abTxData := abTxData,
+            i_tTimeOut:= i_tTimeOut,
+            iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+            iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+            );
+        IF fbSensirionTransaction.q_xError THEN
+            q_asResult[iResultIndex] := CONCAT('in Step 13 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+            iResultIndex := iResultIndex +1;
+            iStep := 9000;
+        ELSIF fbSensirionTransaction.q_bState <> 0 THEN
+            q_asResult[iResultIndex] := CONCAT('in Step 13 serial transaction failed with error state: ', BYTE_TO_STRING(fbSensirionTransaction.q_bState));
+            iResultIndex := iResultIndex +1;
+            fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+            iStep := 9000;
+        ELSIF fbSensirionTransaction.q_xDone THEN
+            tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#100MS);
+            IF tonCommandDelay.Q THEN
+                IF UDINT_TO_BOOL(MEMCPY(destAddr:=ADR(iUnit), srcAddr:=ADR(fbSensirionTransaction.q_baRxData), n:=2)) THEN //always 2 for the 16 bit wide integer
+                    iUnit := WORD_TO_INT(HOST_TO_BE16(INT_TO_WORD(iUnit)));
+                    fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+                    q_asResult[iResultIndex] := 'Step 13 complete';
+                    iResultIndex := iResultIndex +1;
+                    iStep := 14;
+                ELSE
+                    iStep := 9000;
+                    q_asResult[iResultIndex] := 'Memcpy in step 13 failed';
+                    iResultIndex := iResultIndex +1;
+                END_IF
+            END_IF
+        END_IF
+
+        14: //Get measurement type
+        fbSensirionTransaction(
+            i_xExecute:= TRUE,
+            i_bAdr:= i_stControl.bAdr,
+            i_bLen:= 0,
+            i_bCmd:= 16#55,
+            i_abTxData := abTxData,
+            i_tTimeOut:= i_tTimeOut,
+            iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+            iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+            );
+        IF fbSensirionTransaction.q_xError THEN
+            q_asResult[iResultIndex] := CONCAT('in Step 14 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+            iResultIndex := iResultIndex +1;
+            iStep := 9000;
+        ELSIF fbSensirionTransaction.q_bState <> 0 THEN
+            q_asResult[iResultIndex] := CONCAT('in Step 14 serial transaction failed with error state: ', BYTE_TO_STRING(fbSensirionTransaction.q_bState));
+            iResultIndex := iResultIndex +1;
+            fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+            iStep := 9000;
+        ELSIF fbSensirionTransaction.q_xDone THEN
+            tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#100MS);
+            IF tonCommandDelay.Q THEN
+                xType := BYTE_TO_BOOL(fbSensirionTransaction.q_baRxData[1]);
+                q_asResult[iResultIndex] := 'Step 14 complete';
+                iResultIndex := iResultIndex +1;
+                iStep := 16;
+                fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+            END_IF
+        END_IF
+
+        15: //Get offset
+        fbSensirionTransaction(
+            i_xExecute:= TRUE,
+            i_bAdr:= i_stControl.bAdr,
+            i_bLen:= 0,
+            i_bCmd:= 16#56,
+            i_abTxData := abTxData,
+            i_tTimeOut:= i_tTimeOut,
+            iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+            iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+            );
+        IF fbSensirionTransaction.q_xError THEN
+            q_asResult[iResultIndex] := CONCAT('in Step 15 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+            iResultIndex := iResultIndex +1;
+            iStep := 9000;
+        ELSIF fbSensirionTransaction.q_bState <> 0 THEN
+            q_asResult[iResultIndex] := CONCAT('in Step 15 serial transaction failed with error state: ', BYTE_TO_STRING(fbSensirionTransaction.q_bState));
+            iResultIndex := iResultIndex +1;
+            fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+            iStep := 9000;
+        ELSIF fbSensirionTransaction.q_xDone THEN
+            tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#100MS);
+            IF tonCommandDelay.Q THEN
+                IF UDINT_TO_BOOL(MEMCPY(destAddr:=ADR(uiOffset), srcAddr:=ADR(fbSensirionTransaction.q_baRxData), n:=2)) THEN //always 2 for the 16 bit wide integer
+                    uiOffset := WORD_TO_UINT(HOST_TO_BE16(UINT_TO_WORD(uiOffset)));
+                    A_ClearTransaction();  (* reset *)
+                    q_asResult[iResultIndex] := CONCAT('Step 15 complete, offset is: ', UINT_TO_STRING(uiOffset));
+                    iResultIndex := iResultIndex +1;
+                    iStep := 16;
+                ELSE
+                    iStep := 9000;
+                    q_asResult[iResultIndex] := 'Memcpy in step 15 failed';
+                    iResultIndex := iResultIndex +1;
+                END_IF
+                A_ClearTransaction();  (* reset *)
+            END_IF
+        END_IF
+
+        16: //Get linear mode
+        fbSensirionTransaction(
+            i_xExecute:= TRUE,
+            i_bAdr:= i_stControl.bAdr,
+            i_bLen:= 0,
+            i_bCmd:= 16#45,
+            i_abTxData := abTxData,
+            i_tTimeOut:= i_tTimeOut,
+            iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+            iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+            );
+        IF fbSensirionTransaction.q_xError THEN
+            q_asResult[iResultIndex] := CONCAT('in Step 16 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+            iResultIndex := iResultIndex +1;
+            iStep := 9000;
+        ELSIF fbSensirionTransaction.q_bState <> 0 THEN
+            q_asResult[iResultIndex] := CONCAT('in Step 16 serial transaction failed with error state: ', BYTE_TO_STRING(fbSensirionTransaction.q_bState));
+            iResultIndex := iResultIndex +1;
+            fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+            iStep := 9000;
+        ELSIF fbSensirionTransaction.q_xDone THEN
+            tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#100MS);
+            IF tonCommandDelay.Q THEN
+                xLinear := BYTE_TO_BOOL(fbSensirionTransaction.q_baRxData[1]);
+                A_ClearTransaction();  (* reset *)
+                q_asResult[iResultIndex] := CONCAT('Step 16 complete, linear is: ', BOOL_TO_STRING(xLinear));
+                iResultIndex := iResultIndex +1;
+                iStep := 20;
+            END_IF
+        END_IF
+
+    //////////////////////////////////////////////////////////////////
+    // Reset sequence
+    //////////////////////////////////////////////////////////////////
+    (*
+    1. Issue a stop command to halt continuous measurement
+    2. Reset command
+    3. Reset initcomplete bit, and xReset
+    4. Move to done state
+    *)
+
+        400: //Stop measurement
+        fbSensirionTransaction(
+            i_xExecute:= TRUE,
+            i_bAdr:= i_stControl.bAdr,
+            i_bLen:= 0,
+            i_bCmd:= 16#34,
+            i_abTxData := abTxData,
+            i_tTimeOut:= i_tTimeOut,
+            iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+            iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+            );
+        IF fbSensirionTransaction.q_xError THEN
+            q_asResult[iResultIndex] := CONCAT('in Step 400 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+            iResultIndex := iResultIndex +1;
+            iStep := 9000;
+        ELSIF fbSensirionTransaction.q_xDone THEN
+            tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#250MS);
+            IF tonCommandDelay.Q THEN
+                q_asResult[iResultIndex] := 'Measurement stop command sent';
+                iResultIndex := iResultIndex +1;
+                iStep:=405;
+                fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+            END_IF
+        END_IF
+
+        405: //Check sensor status
+        fbSensirionTransaction(
+            i_xExecute:= TRUE,
+            i_bAdr:= i_stControl.bAdr,
+            i_bLen:= 0,
+            i_bCmd:= 16#30,
+            i_abTxData := abTxData,
+            i_tTimeOut:= i_tTimeOut,
+            iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+            iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+            );
+        IF fbSensirionTransaction.q_xError THEN
+            q_asResult[iResultIndex] := CONCAT('in Step 405 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+            iResultIndex := iResultIndex +1;
+            iStep := 9000;
+        ELSIF fbSensirionTransaction.q_xDone THEN
+            (* The status measurement is available at the rx data here *)
+            IF fbSensirionTransaction.q_iRxLen > 0 THEN
+                IF UDINT_TO_BOOL(MEMCPY(destAddr:=ADR(q_stStatus.bStatus), srcAddr:=ADR(fbSensirionTransaction.q_baRxData), n:=1)) THEN
+                    IF q_stStatus.bStatus.0 = 0 THEN //lsb of bStatus is idle
+                        iStep :=410;
+                        q_asResult[iResultIndex] := 'Sensor is idle.';
+                        iResultIndex := iResultIndex +1;
+                        fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+                    ELSE
+                        iStep := 400;
+                        iIdleAttempt := iIdleAttempt + 1;
+                        q_asResult[iResultIndex +1] := CONCAT('Failed to move to idle state in step 405, attempt ' , CONCAT(INT_TO_STRING(iIdleAttempt) , ' of 3'));
+                        IF iIdleAttempt = 3 THEN iStep := 9000; iIdleAttempt := 0; END_IF
+                        fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+                    END_IF
+                ELSE
+                    iStep := 9000;
+                    q_asResult[iResultIndex] := 'Memcpy in step 405 failed';
+                    iResultIndex := iResultIndex +1;
+                END_IF
+            ELSE
+                q_asResult[iResultIndex] := 'No status data returned';
+                iResultIndex := iResultIndex +1;
+                iStep := 9000;
+            END_IF
+        END_IF
+
+        410: //Reset device
+        fbSensirionTransaction(
+            i_xExecute:= TRUE,
+            i_bAdr:= i_stControl.bAdr,
+            i_bLen:= 0,
+            i_bCmd:= 16#65,
+            i_abTxData := abTxData,
+            i_tTimeOut:= i_tTimeOut,
+            iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+            iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+            );
+        IF fbSensirionTransaction.q_xError THEN
+            q_asResult[iResultIndex] := CONCAT('in Step 400 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+            iResultIndex := iResultIndex +1;
+            iStep := 9000;
+        ELSIF fbSensirionTransaction.q_xDone THEN
+            tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#200MS);
+            IF tonCommandDelay.Q THEN
+                q_asResult[iResultIndex] := 'Device reset command sent';
+                iResultIndex := iResultIndex +1;
+                iStep:=8000;
+                xInitComplete := FALSE;
+                fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+            END_IF
+        END_IF
+
+
+        20: //Start continuous measurement
+        abTxData[1]:=0;
+        abTxData[2]:=0;
+            fbSensirionTransaction(
+                i_xExecute:= TRUE,
+                i_bAdr:= i_stControl.bAdr,
+                i_bLen:= 2,
+                i_bCmd:= 16#33,
+                i_abTxData := abTxData,
+                i_tTimeOut:= i_tTimeOut,
+                iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+                iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+                );
+            IF fbSensirionTransaction.q_xError THEN
+                q_asResult[iResultIndex] := CONCAT('in Step 20 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+                iResultIndex := iResultIndex +1;
+                iStep := 9000;
+            ELSIF fbSensirionTransaction.q_xDone THEN
+                tonCommandDelay(IN:=fbSensirionTransaction.q_xDone, PT:=T#250MS);
+                IF tonCommandDelay.Q THEN
+                    (* No response, completed transaction confirmed by a response*)
+                    iStep := 21;
+                    q_asResult[iResultIndex] := CONCAT('Sent start measurement command', fbSensirionTransaction.q_sResult);
+                    iResultIndex := iResultIndex +1;
+                    fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+                END_IF
+            END_IF
+
+        21: //Check sensor status
+        fbSensirionTransaction(
+            i_xExecute:= TRUE,
+            i_bAdr:= i_stControl.bAdr,
+            i_bLen:= 0,
+            i_bCmd:= 16#30,
+            i_abTxData := abTxData,
+            i_tTimeOut:= i_tTimeOut,
+            iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+            iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+            );
+        IF fbSensirionTransaction.q_xError THEN
+            q_asResult[iResultIndex] := CONCAT('in Step 21 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+            iResultIndex := iResultIndex +1;
+            iStep := 9000;
+        ELSIF fbSensirionTransaction.q_xDone THEN
+            (* The status measurement is available at the rx data here *)
+            IF fbSensirionTransaction.q_iRxLen > 0 THEN
+                IF UDINT_TO_BOOL(MEMCPY(destAddr:=ADR(q_stStatus.bStatus), srcAddr:=ADR(fbSensirionTransaction.q_baRxData), n:=1)) THEN
+                    IF q_stStatus.bStatus.1 = 1 THEN
+                        iStep :=30;
+                        xInitComplete	:= TRUE;
+                        q_asResult[iResultIndex] := 'Init success, sensor is measuring.';
+                        iResultIndex := iResultIndex +1;
+                        fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+                    ELSIF q_stStatus.bStatus.0 = 1 THEN
+                        iStep :=21; // if the sensor is busy, and not yet measuring, perhaps we try again
+                        q_asResult[iResultIndex] := 'Sensor is busy...';
+                        iResultIndex := iResultIndex +1;
+                        fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+                    ELSE
+                        iStep := 9000;
+                        q_asResult[iResultIndex +1] := 'Failed to start cont. measurement in step 21';
+                    END_IF
+                ELSE
+                    iStep := 9000;
+                    q_asResult[iResultIndex] := 'Memcpy in step 21 failed';
+                    iResultIndex := iResultIndex +1;
+                END_IF
+            ELSE
+                q_asResult[iResultIndex] := 'No status data returned in step 21';
+                iResultIndex := iResultIndex +1;
+                iStep := 9000;
+            END_IF
+        END_IF
+
+        30: //Get last measurement
+            tonDelay.IN:=TRUE;
+            abTxData[1]:=0;
+            fbSensirionTransaction(
+            i_xExecute:= tonDelay.Q,
+            i_bAdr:= i_stControl.bAdr,
+            i_bLen:= 1,
+            i_bCmd:= 16#35,
+            i_abTxData := abTxData,
+            i_tTimeOut:= i_tTimeOut,
+            iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+            iq_stSerialTXBuffer:= iq_stSerialTXBuffer
+            );
+        IF fbSensirionTransaction.q_xError THEN
+            q_asResult[iResultIndex] := CONCAT('in Step 30 serial transaction failed with message: ', fbSensirionTransaction.q_sResult);
+            iResultIndex := iResultIndex +1;
+            iStep := 9000;
+        ELSIF fbSensirionTransaction.q_xDone THEN
+            (* The flow measurement is available at the rx data here *)
+            IF fbSensirionTransaction.q_iRxLen > 0 THEN
+                IF UDINT_TO_BOOL(MEMCPY(destAddr:=ADR(q_stStatus.uiSensorOutput), srcAddr:=ADR(fbSensirionTransaction.q_baRxData), n:=2)) THEN //always 2 for the 16 bit wide integer
+                    q_stStatus.uiSensorOutput := WORD_TO_UINT(HOST_TO_BE16(UINT_TO_WORD(q_stStatus.uiSensorOutput))); //memcpy effs up an produces a little endian number, sensirion transmits be
+                    IF (q_stStatus.uiSensorOutput AND 32768) = 32768 THEN
+                        q_stStatus.iFlowTicks := UINT_TO_INT(-1*((q_stStatus.uiSensorOutput XOR 65535) + 1));
+                    ELSE
+                        q_stStatus.iFlowTicks := UINT_TO_INT(q_stStatus.uiSensorOutput);
+                    END_IF
+                    //Conversion from int to real value using the unit
+                    IF ((INT_TO_WORD(iUnit) AND 16#000F)=16#0003) OR ((INT_TO_WORD(iUnit) AND 16#000F)=16#0004) THEN //lsb of iUnit is magnitude, should only be one thing
+
+                        q_stStatus.rFlow := (INT_TO_REAL(q_stStatus.iFlowTicks)/INT_TO_REAL(iScale))*EXPT(10,-3); //converting from nL to uL
+
+                        (* Check flow readback against calibration range for OoR *)
+                        //calibration of 0 for precision mode, 250 nL/min - 5000 nL/min
+                        // calibration of 1 for extended mode, 2000 nL/min - 20000 nL/min
+                        IF (q_stStatus.xFMMode =0 ) THEN
+                            IF (ABS(q_stStatus.rFlow) < (250E-3)) THEN
+                                q_stStatus.iState := 2; //<OoR
+                            ELSIF (ABS(q_stStatus.rFlow) > (5000E-3)) THEN
+                                q_stStatus.iState := 1; //OoR>
+                            ELSE
+                                q_stStatus.iState := 0; //OK
+                            END_IF
+                        ELSIF (q_stStatus.xFMMode =1 ) THEN
+                            IF (ABS(q_stStatus.rFlow) < (2000E-3)) THEN
+                                q_stStatus.iState := 2; //<OoR Add to xOoR variable
+                            ELSIF (ABS(q_stStatus.rFlow) > (20000E-3)) THEN
+                                q_stStatus.iState := 1; //OoR>
+                            ELSE
+                                q_stStatus.iState := 0; // OK
+                            END_IF
+                        END_IF
+                        q_stStatus.xFlowValid := (q_stStatus.iState = 0); // Flow valid if OK
+
+                        // Limit the measured flowrate based on the calmode
+                        IF q_stStatus.xFMMode THEN
+                            q_stStatus.rFlow := LIMIT(-20000E-3, q_stStatus.rFlow, 20000E-3);
+                        ELSE
+                            q_stStatus.rFlow := LIMIT(-5000E-3, q_stStatus.rFlow, 5000E-3);
+                        END_IF
+
+                    ELSE
+                        iStep := 9000;
+                        q_asResult[iResultIndex] := 'iUnit not recognized in step 30';
+                        iResultIndex := iResultIndex +1;
+                    END_IF
+                    (* Stuff worked, go to 8000 *)
+                    iStep := 8000;
+                    fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+                    tonDelay.IN := FALSE;
+                ELSE
+                    iStep := 9000;
+                    q_asResult[iResultIndex] := 'Memcpy in step 30 failed';
+                    iResultIndex := iResultIndex +1;
+                END_IF
+            ELSE
+                q_asResult[iResultIndex] := 'No flow data returned';
+                iResultIndex := iResultIndex +1;
+                iStep := 9000;
+            END_IF
+        END_IF
+
+        8000: (* done *)
+            q_xDone := TRUE;
+            IF q_asResult[iResultIndex] = '' THEN
+                q_asResult[iResultIndex] := 'Success';
+                iResultIndex := iResultIndex +1;
+
+            END_IF
+            IF  i_xExecute = FALSE THEN
+                q_xDone:= FALSE;
+                iStep := 0;
+            END_IF
+
+        9000:
+            q_xTimeout := fbSensirionTransaction.q_xTimeout;
+            q_xError := TRUE;
+            // If we're having issues communicating we don't want to be left thinking there's a flow... even if we know it's not valid.
+            q_stStatus.xFlowValid := FALSE;
+            q_stStatus.iState := 3; // Flow invalid
+            q_stStatus.rFlow := 0;
+    END_CASE
+
+    tonDelay(PT:=T#500MS);
+
+    //q_stStatus.rFlow := INT_TO_REAL(iFlow);
+    iStepIndex := iStepIndex +1;
+    aiSteps[iStepIndex]:=iStep;
+
+
+    q_xInitComplete := xInitComplete;
+
+    IF iStepIndex >256 THEN iStepIndex:=1; END_IF
+    IF iResultIndex >60 THEN iResultIndex:=1; END_IF
+
+    END_FUNCTION_BLOCK
+
+    ACTION A_ClearTransaction:
+    fbSensirionTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+    END_ACTION
+
+    ACTION Get:
+
+    END_ACTION
+
+    METHOD Reset
+    VAR_INPUT
+    END_VAR
+    // If this works....
+
+    THIS^(i_xExecute := False,
+        iq_stSerialRXBuffer := THIS^.iq_stSerialRXBuffer,
+        iq_stSerialTXBuffer := THIS^.iq_stSerialTXBuffer,);
+    END_METHOD
+
+
+Related:
+    * `FB_SensirionTransaction`_
+    * `ST_SensirionFMControl`_
+    * `ST_SensirionFMStatus`_
+
+
+FB_SensirionTransaction
+^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_SensirionTransaction
+    VAR CONSTANT
+        c_ArraySize : INT := 600;
+        c_DebugArraySize	:	INT:=40;
+    END_VAR
+    VAR_INPUT
+        i_xExecute				: 	BOOL;				(* Rising edge execute *)
+        i_bCmd					: 	BYTE; 				(* Command parameter *)
+        i_bAdr					:	BYTE;	//Address parameter
+        i_bLen					:	BYTE;	//Length of transmission
+        i_abTxData				:	ARRAY[1..256] OF BYTE; //Transmission
+        i_tTimeOut				:	TIME := T#10S;  	(* Maximum wait time for reply *)
+    END_VAR
+    VAR_OUTPUT
+        q_xDone					: BOOL;
+        q_baRxData				: ARRAY[1..c_ArraySize] OF BYTE; //Rx data from the frame, parse this in the driver
+        q_iRxLen				: INT;
+        q_xError				: BOOL;
+        q_xTimeout				: BOOL;
+        q_sResult				: STRING(255);
+        q_abLastTxData		: ARRAY[1..c_DebugArraySize,1..c_ArraySize] OF BYTE;			(* Last byte stream sent to serial device - for debugging *)
+        q_abLastRxData		: ARRAY[1..c_DebugArraySize,1..c_ArraySize] OF BYTE;			(* Last byte stream received from serial device - for debugging *)
+
+        q_bState	:	BYTE;
+
+        q_baRxUnit	:	ARRAY[1..c_ArraySize] OF BYTE;
+    END_VAR
+    VAR_IN_OUT
+        iq_stSerialRXBuffer 	: ComBuffer;
+        iq_stSerialTXBuffer 	: ComBuffer;
+    END_VAR
+    VAR
+        //Usual stuff
+        rtExecute				: R_TRIG;
+        iStep					: INT;
+        fbClearComBuffer		: ClearComBuffer;
+        fbSendData				: SendData;
+        udiTxLen				: UDINT;
+        udiRxLen				: UDINT;
+        fbReceiveData			: ReceiveData;
+        baRxData			: ARRAY[1..c_ArraySize] OF BYTE;
+        baTxData			: ARRAY[1..c_ArraySize] OF BYTE;
+        tonTimeout				: TON;
+        iDataTx: INT := 1;
+        iDataRx: INT := 1;
+
+        //Device specific
+        iSeek : INT :=1 ;
+        bDelimiter	:	BYTE:=16#7E;
+        bRxLen	:	BYTE;
+        fbShiftByteArray	:	FB_ShiftByteArray;
+        iFrameWidth	:	INT;
+        bCatch : BYTE;
+        xCatch : BOOL;
+
+    END_VAR
+    (* This function block performs serial transactions for the SHDCLC (Sensirion) Interface  *)
+    (* Note the SHDLC transaction uses bytes and not strings *)
+
+    (* rising edge trigger *)
+    rtExecute(CLK:= i_xExecute);
+    IF rtExecute.Q THEN
+        q_xDone	:= FALSE;
+        //Clear the Tx and Rx buffer
+        MEMSET(destAddr:=ADR(baRxData), fillByte:=16#00, n:=SIZEOF(baRxData));
+        MEMSET(destAddr:=ADR(baTxData), fillByte:=16#00, n:=SIZEOF(baTxData));
+        q_xError := FALSE;
+        q_xTimeout := FALSE;
+        q_sResult:= '';
+        //MEMSET(destAddr:=ADR(q_abLastTxData[iDataTx,1]), fillByte:=16#00, n:=c_ArraySize);
+        //MEMSET(destAddr:=ADR(q_abLastTxData[iDataRx,1]), fillByte:=16#00, n:=c_ArraySize);
+
+        (* clear com buffers *)
+        fbClearComBuffer(Buffer:= iq_stSerialRXBuffer);
+        fbClearComBuffer(Buffer:= iq_stSerialTXBuffer);
+        (* Reset receive *)
+        fbReceiveData(
+            Reset:= TRUE,
+            RXbuffer:= iq_stSerialRXBuffer );
+        iStep := 10;
+    END_IF
+
+    CASE iStep OF
+        0:
+            ; (* idle *)
+
+        10:
+            (* Build the byte array *)
+            //Every message starts with 0x7e, but we don't add that here.
+            baTxData[1]:=16#00;
+            //Address, command and message length
+            baTxData[2]:=i_bAdr;
+            baTxData[3]:=i_bCmd;
+            baTxData[4]:=i_bLen;
+            //Add the message
+            IF i_bLen > 0 THEN
+                MEMCPY(destAddr:=ADR(baTxData[5]), srcAddr:=ADR(i_abTxData), n:=i_bLen);
+            END_IF
+            //Add the checksum
+            baTxData[5+i_bLen]:=fSHDLCChecksum(i_bAdr:=i_bAdr, i_bCmd:=i_bCmd, i_bLen:=i_bLen, i_pbaTxData:=ADR(i_abTxData));
+
+
+
+            //Calc the framewidth, a useful number
+            // start + adr + cmd + len + tx data (len) + chk + stop
+            udiTxLen:=(4+BYTE_TO_UDINT(i_bLen)+1);
+            (* Byte stuffing
+            If any special bytes are found in the message, they must be replaced with a special pair of bytes *)
+            (* Seek through the byte array for any of the special bytes
+             0x7e
+             0x7d
+             0x11
+             0x13 *)
+             FOR iSeek:=2 TO UDINT_TO_INT(udiTxLen) DO
+                 IF (baTxData[iSeek]=16#7E) OR (baTxData[iSeek]=16#7D) OR (baTxData[iSeek]=16#11) OR (baTxData[iSeek]=16#13) THEN
+                     (* When a special byte is found, move the remaining message to the right by one byte *)
+                     fbShiftByteArray(ptArray:=ADR(baTxData), iSize:=256, iCurrIndex:=iSeek, iMessageLen:=(5+BYTE_TO_INT(i_bLen)+1), iShift:=1);
+                     IF fbShiftByteArray.q_xError THEN
+                         q_sResult:='Transaction failed in step 10 while making room for the stuffing';
+                         iStep := 9000;
+                         RETURN; //this way we catch what happened.
+                        ELSE
+                            //Stuff in the byte
+                            baTxData[iSeek]:=16#7D;
+                            //Change the original byte, which now resides at iSeek+1, to invert the fifth bit
+                            baTxData[iSeek+1]:=baTxData[iSeek+1] XOR 16#10;
+                            //Update the framewidth to be +1
+                            udiTxLen := udiTxLen + 1;
+                     END_IF
+                 END_IF
+             END_FOR
+             //If we made it this far, we're done with building the message, and stuffing it, frame it
+             baTxData[1]:=bDelimiter;
+             //Add one to the frame width
+             udiTxLen := udiTxLen +1;
+             baTxData[udiTxLen]:=bDelimiter;
+
+
+            fbSendData(TXbuffer:= iq_stSerialTXBuffer,pSendData:=ADR(baTxData), Length:=udiTxLen);
+            //For debugging:
+            MEMCPY(destAddr:=ADR(q_abLastTxData[iDataTx,1]), srcAddr:=ADR(baTxData), n:=INT_TO_UDINT(c_ArraySize));
+            IF iDataTx = c_DebugArraySize THEN iDataTx := 1; ELSE iDataTx := iDataTx +1; END_IF
+
+            if i_bCmd = bCatch THEN xCatch := TRUE; END_IF
+
+            iStep := iStep + 10;
+
+        20: (* Finish sending the data *)
+            IF fbSendData.Busy THEN
+                fbSendData(TXbuffer:= iq_stSerialTXBuffer,pSendData:=ADR(baTxData), Length:=udiTxLen);
+            ELSIF fbSendData.Error <> 0 THEN
+                q_sResult := CONCAT('In step 20 fbSendData resulted in error: ', INT_TO_STRING(fbSendData.Error));
+                iStep := 9000;
+            ELSIF NOT fbSendData.Busy THEN
+                iStep:=iStep + 10;
+            END_IF
+            tonTimeout(IN:= FALSE);
+
+        30: (* Get reply *)
+            fbReceiveData(
+                pPrefix:=ADR(bDelimiter),
+                LenPrefix:=1,
+                pSuffix:=ADR(bDelimiter),
+                LenSuffix:=1,
+                pReceiveData:=ADR(baRxData),
+                SizeReceiveData:=SIZEOF(baRxData),
+                Timeout:= i_tTimeOut,
+                Reset:= FALSE,
+                RXbuffer:= iq_stSerialRXBuffer );
+            tonTimeout(IN:= TRUE, PT:= i_tTimeOut);
+            IF fbReceiveData.Error <> 0 THEN
+                q_sResult := CONCAT('In step 30 fbReceiveData resulted in error: ', INT_TO_STRING(fbReceiveData.Error));
+                iStep := 9000;
+            ELSIF fbReceiveData.RxTimeout OR tonTimeout.Q THEN
+                q_sResult := 'Serial device failed to reply within timeout period';
+                q_xTimeout := TRUE;
+                iStep := 9000;
+            ELSIF fbReceiveData.DataReceived THEN
+                udiRxLen := fbReceiveData.LenReceiveData;
+                // For troubleshooting, use this to capture a specific command message reply
+
+
+                IF udiRxLen > 0 THEN
+                    //Remove the stuffing
+                    FOR iSeek:=1 TO UDINT_TO_INT(udiRxLen) DO
+                        IF baRxData[iSeek]=16#7D THEN
+                            fbShiftByteArray(ptArray:=ADR(baRxData), iSize:=256, iCurrIndex:=iSeek, iMessageLen:=UDINT_TO_INT(udiRxLen), iShift:=-1);
+                            IF fbShiftByteArray.q_xError THEN
+                                q_sResult:='Transaction failed in step 30, while removing the stuffing Hans dropped some on the floor, oh Hans!';
+                                iStep:=9000;
+                                RETURN; // this way we catch the problem
+                                ELSE
+                                    //iSeek now points to the escaped byte, once again invert the fifth bit to recover
+                                    baRxData[iSeek]:=baRxData[iSeek] XOR 16#10;
+                                    //Reduce the message length by one byte
+                                    udiRxLen := udiRxLen - 1;
+                            END_IF
+                        END_IF
+                    END_FOR
+                    //Byte stuffing removed and cleared at this point
+                    //Could check the checksum here...
+                    //naaa
+                    //Determine the Rx data length
+                    bRxLen := baRxData[5];
+                    IF i_bCmd = bCatch and bRxLen > 0 THEN
+                    MEMCPY(destAddr:=ADR(q_baRxUnit), srcAddr:=ADR(baRxData), n:=udiRxLen);
+                    END_IF
+                    //Snag the state byte while we're here
+                    q_bState := baRxData[4];
+                    q_iRxLen := BYTE_TO_INT(bRxLen);
+                    //Memcpy ze' data, check if memcpy is successful (returns other than zero) or bRxLen is zero (which causes memcpy to return zero)
+                    IF UDINT_TO_BOOL(MEMCPY(srcAddr:=(ADR(baRxData)+5), destAddr:=ADR(q_baRxData), n:=BYTE_TO_UINT(bRxLen))) OR (bRxLen=0) THEN
+                        q_sResult := 'Success';
+                        iStep:=100;
+                        //For debugging
+                        //MEMCPY(destAddr:=ADR(q_abLastRxData[iDataRx,1]), srcAddr:=ADR(baRxData), n:=c_ArraySize);
+                        //IF iDataRx = c_DebugArraySize THEN iDataRx := 1; ELSE iDataRx := iDataRx +1; END_IF
+                    ELSE
+                        q_sResult := 'Memcpy step failed, expected some bytes but was NOT able to export them via memcpy, investigate transaction fb';
+                        iStep := 9000;
+                    END_IF
+                END_IF
+            END_IF
+
+
+        100: (* done *)
+            q_xDone:=TRUE;
+            IF  i_xExecute = FALSE THEN
+                q_xDone:= FALSE;
+                q_bState:=16#00;
+                iStep := 0;
+            END_IF
+
+        9000:
+            q_xError := TRUE;
+    END_CASE
+
+    END_FUNCTION_BLOCK
+
+
+Related:
+    * `FB_ShiftByteArray`_
+    * `fSHDLCChecksum`_
+
+
+FB_SerialCommWrapper
+^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_SerialCommWrapper
+    VAR_INPUT
+    END_VAR
+    VAR_OUTPUT
+
+    END_VAR
+    VAR_IN_Out
+        stSerialComm : ST_SerialComm;
+    END_VAR
+    VAR
+        fbSerialLineControl : SerialLineControl;
+    END_VAR
+    fbSerialLineControl(
+        Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
+        pComIn:= ADR(stSerialComm.stComIn),
+        pComOut:=ADR(stSerialComm.stComOut) ,
+        SizeComIn:= UINT_TO_INT(SIZEOF(stSerialComm.stComOut)),
+        TxBuffer:= stSerialComm.TxBuffer,
+        RxBuffer:= stSerialComm.RxBuffer,
+        Error=> ,
+        ErrorID=> );
+
+    END_FUNCTION_BLOCK
+
+
+Related:
+    * `ST_SerialComm`_
+
+
+FB_ShiftByteArray
+^^^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_ShiftByteArray
+    VAR_INPUT
+        ptArray	:	POINTER TO BYTE;
+        iSize	:	INT;
+        iCurrIndex	:	INT;
+        iMessageLen	:	INT;
+        iShift		:	INT;
+
+    END_VAR
+    VAR_OUTPUT
+        q_xError	:	BOOL;
+    END_VAR
+    VAR
+        howbig	: UINT;
+    END_VAR
+    howbig := sizeof(ptArray^);
+    // Clear error bit
+    q_xError := FALSE;
+    IF iMessageLen = iCurrIndex THEN
+        //Dont do a damn thing
+        ;
+    // Check the remaining length and shift amount summed is not greater than the total array width.
+    ELSIF iSize < (iMessageLen - iCurrIndex) + iShift THEN
+        q_xError := TRUE;
+    ELSE// MEMMOVE from 1+ the current index to the remaining length by the shift amount
+        IF MEMMOVE(srcAddr:=(ptArray + iCurrIndex + 1), destAddr:=(ptArray + iCurrIndex + 1 + iShift), n:=INT_TO_UDINT(iMessageLen + 1 - iCurrIndex)) =0 THEN
+            q_xError := TRUE;
+        END_IF
+    END_IF
+
+    END_FUNCTION_BLOCK
+
+
+
+
+FB_SolenoidPair
+^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_SolenoidPair
+    VAR_INPUT
+    END_VAR
+    VAR_OUTPUT
+    END_VAR
+    VAR_IN_OUT
+    END_VAR
+    VAR
+        {attribute 'pytmc' := '
+            pv: Valve:01:Open
+            io: io
+         '}
+        q_xDO1 AT %Q*	:	BOOL;
+        {attribute 'pytmc' := '
+            pv: Valve:02:Open
+            io: io
+         '}
+        q_xDO2 AT %Q*	:	BOOL;
+
+        {attribute 'pytmc' := '
+            pv: Switch
+            io: o
+         '}
+        i_xEpics AT %I* : BOOL; // open A when False, open B when True
+
+        {attribute 'pytmc' := '
+            pv: Debug
+            io: o
+         '}
+        i_xDebug AT %I* : BOOL; // if True, do not set valves according to i_xEpics
+    END_VAR
+    (* If debug, set independently. Else, only open one valve according to i_xEpics *)
+    IF NOT i_xDebug THEN
+        q_xDO1 := NOT i_xEpics;
+        q_xDO2 := i_xEpics;
+    END_IF
+
+    END_FUNCTION_BLOCK
+
+
+
+
+FB_TECDriver
+^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_TECDriver
+
+    VAR_INPUT
+        i_xExecute				: BOOL;					(* rising edge execute *)
+        i_tTimeOut				: TIME := t#10s;  		(* Maximum wait time for reply *)
+        i_stControl				: ST_TECControl;
+    END_VAR
+    VAR_OUTPUT
+        q_xDone					: BOOL;
+        q_xError				: BOOL;
+        q_xWarning				: BOOL;					(* set in the event of an unexpected reply *)
+        q_xTimeout				: BOOL;
+        q_sResult				: STRING(255);
+        q_sLastSentString		: ARRAY[1..40] OF STRING;				(* Last String Sent to Serial Device - for debugging *)
+        q_sLastReceivedString	: ARRAY[1..40] OF STRING;				(* Last String Received from Serial Device - for debugging *)
+        q_stStatus				: ST_TECStatus;
+    END_VAR
+    VAR_IN_OUT
+        iq_stSerialRXBuffer 	: ComBuffer;
+        iq_stSerialTXBuffer 	: ComBuffer;
+    END_VAR
+    VAR
+        rtExecute				: R_TRIG;
+        iStep					: INT;
+        sSendData				: STRING;
+        fbTECTransaction		: FB_TECTransaction;
+        (*fbFormatString			: FB_FormatString;*)
+        (*fbSplit					: FB_Split255;*)
+        asReplyFields			: ARRAY[1..20] OF T_MaxString;
+        wChecksum: WORD;
+        rtStartIntegration: R_TRIG;
+        rtEndReset: R_TRIG;
+
+        sWorking: STRING;
+        strResponseExpected: STRING;
+        diWorking	:	DINT;
+    END_VAR
+    (* This function block performs serial communication with a TC-36-25 TEC Driver *)
+
+    (* rising edge trigger *)
+    rtExecute(CLK:= i_xExecute);
+    IF rtExecute.Q  THEN
+        q_xDone	:= FALSE;
+        q_xError := FALSE;
+        q_xWarning := FALSE;
+        q_xTimeout := FALSE;
+        q_sResult:= '';
+        fbTECTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+
+        iStep := 10;
+    END_IF
+
+    CASE iStep OF
+        0: (* idle *)
+            ;
+
+        10: (* Get Current Temperature *)
+            fbTECTransaction(
+                i_xExecute:= TRUE,
+                i_sAddress:=i_stControl.sAddress,
+                i_sCmd:= '01',
+                i_diParameter := 0,
+                i_tTimeOut:= i_tTimeOut,
+                iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+                iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
+                i_CmdFlag :=FALSE);
+
+            IF fbTECTransaction.q_xError THEN
+                q_sResult := CONCAT('in Step 10 serial transaction failed with message: ', fbTECTransaction.q_sResult);
+                iStep := 9000;
+            ELSIF fbTECTransaction.q_xDone THEN
+                q_stStatus.sReply := fbTECTransaction.q_sResponseData;
+                sWorking :=LEFT(q_stStatus.sReply, 8);
+                sWorking := CONCAT('16#', sWorking);
+                q_stStatus.diTemp1 := STRING_TO_DINT(sWorking);
+                fbTECTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer, i_CmdFlag :=FALSE);  (* reset *)
+                iStep := 20;
+
+            END_IF
+        20: (* Read setpoint *)
+            fbTECTransaction(
+                i_xExecute:= TRUE,
+                i_sAddress:=i_stControl.sAddress,
+                i_sCmd:= '03', // command
+                i_diParameter := 0, // always zero for query
+                i_tTimeOut:= i_tTimeOut,
+                iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+                iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
+                i_CmdFlag :=FALSE);
+
+            IF fbTECTransaction.q_xError THEN
+                q_sResult := CONCAT('in Step 20 serial transaction failed with message: ', fbTECTransaction.q_sResult);
+                iStep := 9000;
+            ELSIF fbTECTransaction.q_xDone THEN
+                q_stStatus.sReply := fbTECTransaction.q_sResponseData;
+                sWorking :=LEFT(q_stStatus.sReply, 8);
+                sWorking := CONCAT('16#', sWorking);
+                q_stStatus.diSetPoint := STRING_TO_DINT(sWorking);
+                fbTECTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer, i_CmdFlag :=FALSE);  (* reset *)
+                iStep := 25;
+            END_IF
+
+        25: (* Read output ON/OFF *)
+            fbTECTransaction(
+                i_xExecute:= TRUE,
+                i_sAddress:=i_stControl.sAddress,
+                i_sCmd:= '46', // command
+                i_diParameter := 0, // always zero for query
+                i_tTimeOut:= i_tTimeOut,
+                iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+                iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
+                i_CmdFlag :=FALSE);
+
+            IF fbTECTransaction.q_xError THEN
+                q_sResult := CONCAT('in Step 25 serial transaction failed with message: ', fbTECTransaction.q_sResult);
+                iStep := 9000;
+            ELSIF fbTECTransaction.q_xDone THEN
+                q_stStatus.sReply := fbTECTransaction.q_sResponseData;
+                sWorking :=LEFT(q_stStatus.sReply, 8);
+                sWorking := CONCAT('16#', sWorking);
+                diWorking := STRING_TO_DINT(sWorking);
+                q_stStatus.xOutputOn := DINT_TO_BOOL(diWorking);
+                A_ResetTransaction();
+                iStep := 30;
+            END_IF
+
+        30: (* Read the alarm status *)
+            fbTECTransaction(
+                i_xExecute:= TRUE,
+                i_sAddress:=i_stControl.sAddress,
+                i_sCmd:= '05', // command
+                i_diParameter := 0, // always zero for query
+                i_tTimeOut:= i_tTimeOut,
+                iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+                iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
+                i_CmdFlag :=FALSE);
+
+            IF fbTECTransaction.q_xError THEN
+                q_sResult := CONCAT('in Step 10 serial transaction failed with message: ', fbTECTransaction.q_sResult);
+                iStep := 9000;
+            ELSIF fbTECTransaction.q_xDone THEN
+                q_stStatus.sReply := fbTECTransaction.q_sResponseData;
+                sWorking :=LEFT(q_stStatus.sReply, 8);
+                sWorking := CONCAT('16#', sWorking);
+                diWorking := STRING_TO_DINT(sWorking);
+
+                //Alarm assignment
+                q_stStatus.xHiTemp	:=	diWorking.0;
+                q_stStatus.xLoTemp	:=	diWorking.1;
+                q_stStatus.xLoTemp	:=	diWorking.2;
+                q_stStatus.xOverCurrent	:=	diWorking.3;
+                q_stStatus.xOpenInput1	:=	diWorking.4;
+                q_stStatus.xOpenInput2	:=	diWorking.5;
+                q_stStatus.xDriverLowVoltage	:=	diWorking.6;
+
+                fbTECTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer, i_CmdFlag :=FALSE);  (* reset *)
+                iStep := 40;
+            END_IF
+
+        40: (* Output Power *)
+            fbTECTransaction(
+                i_xExecute:= TRUE,
+                i_sAddress:=i_stControl.sAddress,
+                i_sCmd:= '02', // command
+                i_diParameter := 0, // always zero for query
+                i_tTimeOut:= i_tTimeOut,
+                iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+                iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
+                i_CmdFlag :=FALSE);
+
+            IF fbTECTransaction.q_xError THEN
+                q_sResult := CONCAT('in Step 10 serial transaction failed with message: ', fbTECTransaction.q_sResult);
+                iStep := 9000;
+            ELSIF fbTECTransaction.q_xDone THEN
+                q_stStatus.sReply := fbTECTransaction.q_sResponseData;
+                sWorking :=LEFT(q_stStatus.sReply, 8);
+                sWorking := CONCAT('16#', sWorking);
+                diWorking := STRING_TO_DINT(sWorking);
+
+                q_stStatus.diPercentOut := (diWorking/511)*100; //in percentage
+
+                fbTECTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer, i_CmdFlag :=FALSE);  (* reset *)
+                iStep := 5000;
+            END_IF
+
+        5000: (* Change Setpoint *)
+            IF q_stStatus.diSetpoint <> i_stControl.diTempSetpoint THEN
+
+                fbTECTransaction(
+                    i_xExecute:= TRUE,
+                    i_sAddress:=i_stControl.sAddress,
+                    i_sCmd:= '1c', // command
+                    i_diParameter := i_stControl.diTempSetpoint,
+                    i_tTimeOut:= i_tTimeOut,
+                    iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+                    iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
+                    i_CmdFlag :=TRUE);
+                IF fbTECTransaction.q_xError THEN
+                    q_sResult := CONCAT('in Step 5000 serial transaction failed with message: ', fbTECTransaction.q_sResult);
+                    iStep := 9000;
+                ELSIF fbTECTransaction.q_xDone THEN
+                    fbTECTransaction(
+                         i_xExecute:= FALSE,
+                        iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+                        iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
+                        i_CmdFlag:=FALSE );  (* reset *)
+                    iStep := 5010;
+                END_IF
+            ELSE
+                iStep := 5010;
+            END_IF
+
+        5010: (* Output ON/OFF *)
+            IF q_stStatus.xOutputOn <> i_stControl.xOutputOn THEN
+
+                fbTECTransaction(
+                    i_xExecute:= TRUE,
+                    i_sAddress:=i_stControl.sAddress,
+                    i_sCmd:= '2d', // command
+                    i_diParameter := BOOL_TO_DINT(i_stControl.xOutputOn),
+                    i_tTimeOut:= i_tTimeOut,
+                    iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+                    iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
+                    i_CmdFlag :=TRUE);
+                IF fbTECTransaction.q_xError THEN
+                    q_sResult := CONCAT('in Step 5010 serial transaction failed with message: ', fbTECTransaction.q_sResult);
+                    iStep := 9000;
+                ELSIF fbTECTransaction.q_xDone THEN
+                    fbTECTransaction(
+                         i_xExecute:= FALSE,
+                        iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+                        iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
+                        i_CmdFlag:=FALSE );  (* reset *)
+                    iStep := 8000;
+                END_IF
+            ELSE
+                iStep := 8000;
+            END_IF
+
+
+        8000: (* done *)
+            q_xDone := TRUE;
+            IF q_sResult = '' THEN
+                q_sResult := 'Success';
+                q_stStatus.xStatusValid := TRUE;
+            END_IF
+            IF  i_xExecute = FALSE THEN
+                q_xDone:= FALSE;
+                iStep := 0;
+            END_IF
+
+        9000:
+            _A_ClearStatus();
+            q_xTimeout := fbTECTransaction.q_xTimeout;
+            q_xError := TRUE;
+            q_stStatus.xStatusValid := FALSE;
+
+
+    END_CASE
+
+    q_sLastSentString := fbTECTransaction.q_sLastSentString;
+    q_sLastReceivedString := fbTECTransaction.q_sLastReceivedString;
+
+    END_FUNCTION_BLOCK
+
+    ACTION A_ResetTransaction:
+    fbTECTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer, i_CmdFlag :=FALSE);  (* reset *)
+    END_ACTION
+
+    ACTION _A_ClearStatus:
+    q_stStatus.sReply := '';
+    END_ACTION
+
+
+Related:
+    * `FB_TECTransaction`_
+    * `ST_TECControl`_
+    * `ST_TECStatus`_
+
+
+FB_TECTransaction
+^^^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_TECTransaction
+    VAR_INPUT
+        i_xExecute				: 	BOOL;				(* Rising edge execute *)
+        i_sCmd					: 	STRING(2); 			(* Send Data *)
+        i_sAddress				:	STRING(2);
+        i_diParameter			:	DINT;
+        i_tTimeOut				:	TIME := T#10S;  	(* Maximum wait time for reply *)
+        i_CmdFlag: BOOL := FALSE;
+    END_VAR
+    VAR_OUTPUT
+        q_xDone					: BOOL;
+        q_sResponseData			: STRING;
+        q_xError				: BOOL;
+        q_xTimeout				: BOOL;
+        q_sResult				: STRING;
+        q_sLastSentString		: ARRAY[1..40] OF STRING;			(* Last String Sent to Serial Device - for debugging *)
+        q_sLastReceivedString	: ARRAY[1..40] OF STRING;			(* Last String Received from Serial Device - for debugging *)
+    END_VAR
+    VAR_IN_OUT
+        iq_stSerialRXBuffer 	: ComBuffer;
+        iq_stSerialTXBuffer 	: ComBuffer;
+    END_VAR
+    VAR
+        rtExecute				: R_TRIG;
+        iStep					: INT;
+        fbClearComBuffer		: ClearComBuffer;
+        fbSendString			: SendString;
+        fbReceiveString			: ReceiveString;
+        sReceivedString			: STRING;
+        tonTimeout				: TON;
+        sSendString: STRING;
+        iStringTx: INT := 1;
+        iStringRx: INT := 1;
+
+        iStringTxRx: INT := 1;
+        sTxRxString: ARRAY[1..40] OF STRING;
+
+        fbFormatParamString	:	FB_FormatString;
+        fbFormatParamZPadString	:	FB_FormatString;
+        fbFormatCSString	:	FB_FormatString;
+        sParameter: STRING;
+        iIndexChkSum: INT;
+        wCsSum: WORD;
+        udiParameter: UDINT;
+
+    END_VAR
+    (* This function block performs serial transactions with a TC-36-25 TEC Driver  *)
+
+    (* rising edge trigger *)
+    rtExecute(CLK:= i_xExecute);
+    IF rtExecute.Q THEN
+        q_xDone	:= FALSE;
+        q_sResponseData := '';
+        q_xError := FALSE;
+        q_xTimeout := FALSE;
+        q_sResult:= '';
+        q_sLastSentString[iStringTx] := '';
+        q_sLastReceivedString[iStringRx]:= '';
+        iStep := 10;
+    END_IF
+
+    CASE iStep OF
+        0:
+            ; (* idle *)
+
+        10: (* clear com buffers *)
+            fbClearComBuffer(Buffer:= iq_stSerialRXBuffer);
+            fbClearComBuffer(Buffer:= iq_stSerialTXBuffer);
+            (* Reset receive *)
+            fbReceiveString(
+                Reset:= TRUE,
+                ReceivedString:= sReceivedString,
+                RXbuffer:= iq_stSerialRXBuffer );
+            (* build the string *)
+            sSendString := CONCAT(i_sAddress, i_sCmd); (* adding the address and command/query *)
+            IF i_CmdFlag THEN
+                (* Convert the parameter into an 8-wide hex string twos complemented*)
+                udiParameter := DINT_TO_UDINT(i_diParameter);
+                fbFormatParamString(sFormat:= '%x', arg1:=F_UDINT(udiParameter)); // first convert to a string
+                fbFormatParamZPadString(sFormat:='%08s', arg1:=F_STRING(fbFormatParamString.sOut));// then zero pad, because FB_Format string does not zero-pad hex strings naturally
+                sParameter := fbFormatParamZPadString.sOut;
+            ELSE
+                sParameter := '00000000'; (* send zeros if we're querying *)
+            END_IF
+            (* Add parameter *)
+            sSendString := CONCAT(sSendString, sParameter);
+
+            (* Compute checksum *)
+            A_Checksum();
+
+            (* add stx at start *)
+            sSendString := CONCAT('*', sSendString);
+            (* append checksum *)
+            fbFormatCSString(sFormat := '%02x', arg1:=F_WORD(wCsSum));
+            sSendString	:= CONCAT(sSendString, fbFormatCSString.sOut);
+             (*adding tail *)
+            sSendString := CONCAT(sSendString,'$R'); (* add <cr> *)
+
+            IF fbFormatParamString.bError OR fbFormatCSString.bError THEN
+                q_sResult := CONCAT('In step 10 fbFormatString resulted in error: ', UDINT_TO_STRING(fbFormatParamString.nErrId));
+                iStep := 9000;
+            ELSE
+                fbSendString( SendString:= sSendString, TXbuffer:= iq_stSerialTXBuffer );
+            END_IF
+            q_sLastSentString[iStringTx] := sSendString;
+            IF iStringTx = 40 THEN iStringTx := 1; ELSE iStringTx := iStringTx +1; END_IF
+            iStep := iStep + 10;
+
+        20: (* Finish sending the String *)
+            IF fbSendString.Busy THEN
+                fbSendString( SendString:= sSendString, TXbuffer:= iq_stSerialTXBuffer );
+            ELSIF fbSendString.Error <> 0 THEN
+                q_sResult := CONCAT('In step 20 fbSendString resulted in error: ', INT_TO_STRING(fbSendString.Error));
+                iStep := 9000;
+            ELSIF NOT fbSendString.Busy THEN
+                iStep:=iStep + 10;
+            END_IF
+            tonTimeout(IN:= FALSE);
+
+        30: (* Get reply *)
+            fbReceiveString(
+                Prefix:= '*',
+                Suffix:= '^',
+                Timeout:= i_tTimeOut,
+                Reset:= FALSE,
+                ReceivedString:= sReceivedString,
+                RXbuffer:= iq_stSerialRXBuffer );
+            tonTimeout(IN:= TRUE, PT:= i_tTimeOut);
+            IF fbReceiveString.Error <> 0 THEN
+                q_sResult := CONCAT('In step 30 fbReceiveString resulted in error: ', INT_TO_STRING(fbReceiveString.Error));
+                iStep := 9000;
+            ELSIF fbReceiveString.RxTimeout OR tonTimeout.Q THEN
+                q_sResult := 'Serial device failed to reply within timeout period';
+                q_xTimeout := TRUE;
+                iStep := 9000;
+            ELSIF fbReceiveString.StringReceived THEN
+                q_sLastReceivedString[iStringRx] := sReceivedString;
+                IF iStringRx = 40 THEN iStringRx := 1; ELSE iStringRx := iStringRx +1; END_IF
+                IF LEN(sReceivedString) < 2 THEN
+                    q_sResult := 'Reply too short.';
+                    iStep := 9000;
+                ELSE
+                    (* Removing stx and ack *)
+                    q_sResponseData := LEFT(sReceivedString,LEN(sReceivedString)-1);
+                    q_sResponseData := RIGHT(q_sResponseData,LEN(q_sResponseData)-1);
+                    (* Checking for error messages *)
+                    IF q_sResponseData = 'XXXXXXXXc0' THEN
+                            q_sResult := 'Checksum error reported by driver';
+                            iStep := 9000;
+                    END_IF
+                    q_sResult := 'Success.';
+                    q_xDone:= TRUE;
+                    iStep := 100;
+                END_IF
+            END_IF
+
+
+
+
+        100: (* done *)
+            IF  i_xExecute = FALSE THEN
+                q_xDone:= FALSE;
+                iStep := 0;
+            END_IF
+            IF NOT i_CmdFlag THEN
+                sTxRxString[iStringTxRx]:=CONCAT(CONCAT(q_sLastSentString[iStringTx], ' received '), q_sLastReceivedString[iStringRx]);
+            END_IF
+            IF iStringTxRx = 40 THEN iStringTxRx := 1; ELSE iStringTxRx := iStringTxRx +1; END_IF
+
+        9000:
+            q_xError := TRUE;;
+
+
+
+
+    END_CASE
+
+    END_FUNCTION_BLOCK
+
+    ACTION A_Checksum:
+    wCsSum := 0;
+
+    FOR iIndexChkSum := 0 TO (LEN(sSendString) -1) DO
+        wCsSum:= wCsSum + BYTE_TO_WORD(sSendString[iIndexChkSum]);
+    END_FOR
+    wCsSum	:= wCsSum MOD 256; (* modulo 256 *)
+    END_ACTION
+
+
+
+
+FB_ViciDriver
+^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_ViciDriver
+    VAR_INPUT
+        i_xExecute				: BOOL;					(* rising edge execute *)
+        i_tTimeOut				: TIME := t#10s;  		(* Maximum wait time for reply *)
+        i_stControl				: ST_ViciControl;
+    END_VAR
+    VAR_OUTPUT
+        q_xDone					: BOOL;
+        q_xError				: BOOL;
+        q_xWarning				: BOOL;					(* set in the event of an unexpected reply *)
+        q_xTimeout				: BOOL;
+        q_sResult				: STRING(255);
+        q_sLastSentString		: ARRAY[1..40] OF STRING;				(* Last String Sent to Serial Device - for debugging *)
+        q_sLastReceivedString	: ARRAY[1..40] OF STRING;				(* Last String Received from Serial Device - for debugging *)
+        q_stStatus				: ST_ViciStatus;
+    END_VAR
+    VAR_IN_OUT
+        iq_stSerialRXBuffer 	: ComBuffer;
+        iq_stSerialTXBuffer 	: ComBuffer;
+    END_VAR
+    VAR
+        iReqPosReverse          : INT;
+        rtExecute				: R_TRIG;
+        iStep					: INT;
+        sSendData				: STRING;
+        fbViciTransaction		: FB_ViciTransaction;
+        (*fbFormatString			: FB_FormatString;*)
+        (*fbSplit					: FB_Split255;*)
+        asReplyFields			: ARRAY[1..20] OF T_MaxString;
+        wChecksum: WORD;
+        rtStartIntegration: R_TRIG;
+        rtEndReset: R_TRIG;
+        sWorking: STRING;
+        strResponseExpected: STRING;
+    END_VAR
+    (* This function block performs serial transactions with a Vici *)
+
+    (* rising edge trigger *)
+    rtExecute(CLK:= i_xExecute);
+    IF rtExecute.Q  THEN
+        q_xDone	:= FALSE;
+        q_xError := FALSE;
+        q_xWarning := FALSE;
+        q_xTimeout := FALSE;
+        q_sResult:= '';
+        FBViciTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+        iStep := 10;
+    END_IF
+
+    CASE iStep OF
+        0: (* idle *)
+            ;
+
+        10: (* Get Position *)
+            FBViciTransaction(
+                i_xExecute:= TRUE,
+                i_iAddress:=i_stControl.iAddress,
+                i_sSendData:= 'CP', (*declared postion readback Vici command*)
+                i_tTimeOut:= i_tTimeOut,
+                iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+                iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
+                i_CmdFlag :=FALSE);
+            IF FBViciTransaction.q_xError THEN
+                q_sResult := CONCAT('in Step 10 serial transaction failed with message: ', FBViciTransaction.q_sResult);
+                q_stStatus.xPosValid := FALSE; (* used to signal an invalid readback or control exchange *)
+                iStep := 9000;
+            ELSIF FBViciTransaction.q_xDone THEN
+                q_stStatus.sViciReply := FBViciTransaction.q_sResponseData;
+                (* grab the left two characters, they should equal CP *)
+                strResponseExpected := CONCAT(INT_TO_STRING( i_stControl.iAddress), 'CP');
+                IF LEFT(q_stStatus.sViciReply, 3) <> strResponseExpected (*'1CP'*) THEN
+                    (*use q-s Result to specify error type*)
+                    q_sResult := CONCAT(CONCAT('in step 10 unexpected response recieved: ', LEFT(q_stStatus.sViciReply, 3)),CONCAT(' instead of: ', CONCAT(INT_TO_STRING( i_stControl.iAddress), 'CP')));
+                        q_xWarning := TRUE;
+                    (* If they don't equal CP, then error *)
+                    q_stStatus.xPosValid := FALSE; (* used to signal an invalid readback or control exchange *)
+                    iStep := 9000;
+                (* else then grab the right two characters and convert to INT *)
+                ELSE
+                sWorking := RIGHT(q_stStatus.sViciReply, 2);
+                q_stStatus.iCurrPos := 13 - STRING_TO_INT(sWorking); (* pass that INT to the q_stStatus.iCurrPos, mirroring positions *)
+                q_stStatus.xPosValid := TRUE;
+                FBViciTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer, i_CmdFlag :=FALSE);  (* reset *)
+                iStep := 5000;
+                END_IF
+            END_IF
+
+
+        5000: (* Set position*)
+            (* Limit the requested position to the valid 12 possible positions *)
+            IF i_stControl.iReqPos > 12 OR i_stControl.iReqPos < 1 THEN
+                q_sResult := CONCAT('in step 5000 port range exceeded: ',FBViciTransaction.q_sResponseData);
+                i_stControl.iReqPos := LIMIT(1, i_stControl.iReqPos,12);
+            END_IF
+            (* Mirror the "clock" value across the vertical axis of symmetry *)
+            iReqPosReverse := 13 - i_stControl.iReqPos;
+            IF q_stStatus.iReqPos <> i_stControl.iReqPos THEN
+                IF q_stStatus.iCurrPos > i_stControl.iReqPos THEN
+                    IF ABS(q_stStatus.iCurrPos - i_stControl.iReqPos) >= 6 THEN
+                        sSendData := CONCAT('CW', INT_TO_STRING(iReqPosReverse));
+                    ELSE
+                        sSendData := CONCAT('CC', INT_TO_STRING(iReqPosReverse));
+                    END_IF
+                END_IF
+                IF q_stStatus.iCurrPos < i_stControl.iReqPos THEN
+                    IF ABS(q_stStatus.iCurrPos - i_stControl.iReqPos) >= 6 THEN
+                        sSendData := CONCAT('CC', INT_TO_STRING(iReqPosReverse));
+                    ELSE
+                        sSendData := CONCAT('CW', INT_TO_STRING(iReqPosReverse));
+                    END_IF
+                END_IF
+                FBViciTransaction(
+                    i_xExecute:= TRUE,
+                    i_sSendData:= sSendData,
+                    i_tTimeOut:= i_tTimeOut,
+                    i_iAddress:=i_stControl.iAddress,
+                    iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+                    iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
+                    i_CmdFlag:=TRUE);
+                IF FBViciTransaction.q_xError THEN
+                    q_sResult := CONCAT('in Step 5000 serial transaction failed with message: ', FBViciTransaction.q_sResult);
+                    iStep := 9000;
+                ELSIF FBViciTransaction.q_xDone THEN
+                    FBViciTransaction(
+                         i_xExecute:= FALSE,
+                        iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+                        iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
+                        i_CmdFlag:=FALSE );  (* reset *)
+                    q_stStatus.iReqPos := i_stControl.iReqPos;
+                    iStep := 8000;
+                END_IF
+            ELSE
+                iStep := 8000;
+            END_IF
+
+
+        8000: (* done *)
+            q_xDone := TRUE;
+            IF q_sResult = '' THEN
+                q_sResult := 'Success';
+            END_IF
+            IF  i_xExecute = FALSE THEN
+                q_xDone:= FALSE;
+                iStep := 0;
+            END_IF
+
+        9000:
+            _A_ClearStatus();
+            q_xTimeout := FBViciTransaction.q_xTimeout;
+            q_xError := TRUE;
+
+
+    END_CASE
+
+    q_sLastSentString := FBViciTransaction.q_sLastSentString;
+    q_sLastReceivedString := FBViciTransaction.q_sLastReceivedString;
+
+    END_FUNCTION_BLOCK
+
+    ACTION _A_ClearStatus:
+    q_stStatus.sViciReply := '';
+    END_ACTION
+
+
+Related:
+    * `FB_ViciTransaction`_
+    * `ST_ViciControl`_
+    * `ST_ViciStatus`_
+
+
+FB_ViciTransaction
+^^^^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_ViciTransaction
+    VAR_INPUT
+        i_xExecute				: BOOL;				(* Rising edge execute *)
+        i_sSendData				: STRING; 			(* Send Data *)
+        i_iAddress				:INT;
+        i_tTimeOut				: TIME := t#10s;  	(* Maximum wait time for reply *)
+        i_CmdFlag: BOOL := FALSE;
+    END_VAR
+    VAR_OUTPUT
+        q_xDone					: BOOL;
+        q_sResponseData			: STRING;
+        q_xError				: BOOL;
+        q_xTimeout				: BOOL;
+        q_sResult				: STRING;
+        q_sLastSentString		: ARRAY[1..40] OF STRING;			(* Last String Sent to Serial Device - for debugging *)
+        q_sLastReceivedString	: ARRAY[1..40] OF STRING;			(* Last String Received from Serial Device - for debugging *)
+    END_VAR
+    VAR_IN_OUT
+        iq_stSerialRXBuffer 	: ComBuffer;
+        iq_stSerialTXBuffer 	: ComBuffer;
+    END_VAR
+    VAR
+        rtExecute				: R_TRIG;
+        iStep					: INT;
+        fbClearComBuffer		: ClearComBuffer;
+        fbSendString			: SendString;
+        fbReceiveString			: ReceiveString;
+        sReceivedString			: STRING;
+        tonTimeout				: TON;
+        sSendString: STRING;
+        iStringTx: INT := 1;
+        iStringRx: INT := 1;
+
+        iStringTxRx: INT := 1;
+        sTxRxString: ARRAY[1..40] OF STRING;
+    END_VAR
+    (* This function block performs serial transactions with a VICI *)
+
+    (* rising edge trigger *)
+    rtExecute(CLK:= i_xExecute);
+    IF rtExecute.Q THEN
+        q_xDone	:= FALSE;
+        q_sResponseData := '';
+        q_xError := FALSE;
+        q_xTimeout := FALSE;
+        q_sResult:= '';
+        q_sLastSentString[iStringTx] := '';
+        q_sLastReceivedString[iStringRx]:= '';
+        iStep := 10;
+    END_IF
+
+    CASE iStep OF
+        0:
+            ; (* idle *)
+
+        10: (* clear com buffers *)
+            fbClearComBuffer(Buffer:= iq_stSerialRXBuffer);
+            fbClearComBuffer(Buffer:= iq_stSerialTXBuffer);
+            (* Reset receive *)
+            fbReceiveString(
+                Reset:= TRUE,
+                ReceivedString:= sReceivedString,
+                RXbuffer:= iq_stSerialRXBuffer );
+            (* send the string *)
+            sSendString := INT_TO_STRING(i_iAddress); (*building address header *)
+            sSendString := CONCAT(sSendString, i_sSendData); (* adding the header *)
+            sSendString := CONCAT(sSendString,'$R$L'); (* add <cr><lf> *) (*adding tail *)
+            fbSendString( SendString:= sSendString, TXbuffer:= iq_stSerialTXBuffer );
+            q_sLastSentString[iStringTx] := sSendString;
+    IF iStringTx = 40 THEN iStringTx := 1; ELSE iStringTx := iStringTx +1; END_IF
+            iStep := iStep + 10;
+
+        20: (* Finish sending the String *)
+            IF fbSendString.Busy THEN
+                fbSendString( SendString:= sSendString, TXbuffer:= iq_stSerialTXBuffer );
+            ELSIF fbSendString.Error <> 0 THEN
+                q_sResult := CONCAT('In step 20 fbSendString resulted in error: ', INT_TO_STRING(fbSendString.Error));
+                iStep := 9000;
+            ELSIF NOT fbSendString.Busy THEN
+                (* if we are sending a position change request then we expect no reply *)
+                IF i_CmdFlag THEN
+                    q_sResult := 'String sent....';
+                    q_xDone:= TRUE;
+                    iStep := 100;
+                ELSE
+                    iStep:=iStep + 10;
+                END_IF
+            END_IF
+            tonTimeout(IN:= FALSE);
+
+        30: (* Get reply *)
+            fbReceiveString(
+                Prefix:= ,
+                Suffix:= '$R',
+                Timeout:= i_tTimeOut,
+                Reset:= FALSE,
+                ReceivedString:= sReceivedString,
+                RXbuffer:= iq_stSerialRXBuffer );
+            tonTimeout(IN:= TRUE, PT:= i_tTimeOut);
+            IF fbReceiveString.Error <> 0 THEN
+                q_sResult := CONCAT('In step 30 fbReceiveString resulted in error: ', INT_TO_STRING(fbReceiveString.Error));
+                iStep := 9000;
+            ELSIF fbReceiveString.RxTimeout OR tonTimeout.Q THEN
+                q_sResult := 'Serial device failed to reply within timeout period';
+                q_xTimeout := TRUE;
+                iStep := 9000;
+            ELSIF fbReceiveString.StringReceived THEN
+                q_sLastReceivedString[iStringRx] := sReceivedString;
+                IF iStringRx = 40 THEN iStringRx := 1; ELSE iStringRx := iStringRx +1; END_IF
+                IF LEN(sReceivedString) < 2 THEN
+                    q_sResult := 'Reply too short.';
+                    iStep := 9000;
+                ELSE
+                    q_sResponseData := LEFT(sReceivedString,LEN(sReceivedString)-1);
+                    q_sResult := 'Success.';
+                    q_xDone:= TRUE;
+                    iStep := 100;
+
+                END_IF
+            END_IF
+
+
+
+
+        100: (* done *)
+            IF  i_xExecute = FALSE THEN
+                q_xDone:= FALSE;
+                iStep := 0;
+            END_IF
+            IF NOT i_CmdFlag THEN
+                sTxRxString[iStringTxRx]:=CONCAT(CONCAT(q_sLastSentString[iStringTx], ' received '), q_sLastReceivedString[iStringRx]);
+            END_IF
+            IF iStringTxRx = 40 THEN iStringTxRx := 1; ELSE iStringTxRx := iStringTxRx +1; END_IF
+
+        9000:
+            q_xError := TRUE;;
+
+
+
+
+    END_CASE
+
+    END_FUNCTION_BLOCK
+
+
+
+
+fSHDLCChecksum
+^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION fSHDLCChecksum : BYTE
+    VAR_INPUT
+        i_bAdr	:	BYTE;
+        i_bCmd	:	BYTE;
+        i_bLen	:	BYTE;
+        i_pbaTxData	:	POINTER TO BYTE;
+    END_VAR
+    VAR
+        iIndex	:	INT;
+    END_VAR
+    (* Checksum is calc like so
+    Sum all the bytes within the frame
+    Take the LSN ie. nibble of the result and invert it
+    *)
+
+    fSHDLCChecksum := i_bAdr + i_bCmd + i_bLen;
+
+    IF i_bLen > 0 THEN
+    FOR iIndex:=0 TO BYTE_TO_INT(i_bLen)DO
+        fSHDLCChecksum := fSHDLCChecksum + i_pbaTxData^;
+        i_pbaTxData := i_pbaTxData + 1;
+    END_FOR
+    END_IF
+
+    // Inverting LSN
+    fSHDLCChecksum := fSHDLCChecksum XOR 16#FF;
+
+    END_FUNCTION
+
+
+
+
+MAIN
+^^^^
+
+::
+
+    PROGRAM MAIN
+    VAR
+    END_VAR
+    M3SelectorA();
+    M3SelectorB();
+    M3SelectorC();
+    M3SelectorD();
+    PCMA();
+    PCMB();
+    PCMC();
+    PCMD();
+    GasMan();
+    BronkhorstA();
+    BronkhorstB();
+    BronkhorstC();
+    BronkhorstD();
+    SolenoidPairA();
+
+    (* Following execution of all the programs, set the first pass false *)
+    g_xFirstPass := FALSE;
+
+    END_PROGRAM
+
+
+
+
+MC_SmoothMover
+^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK MC_SmoothMover
+    VAR_IN_OUT
+        Axis	:	AXIS_REF;
+    END_VAR
+    VAR_INPUT
+        Velocity : LREAL;
+        ReqAbsPos : LREAL; //A
+        Enable	:	BOOL; //While true the block will accept new positions and attempt to move to them if they are different
+        Execute	:	BOOL; //Will retry a move if the target position is the same
+    END_VAR
+    VAR_OUTPUT
+        Done	:	BOOL;
+        Busy	:	BOOL;
+        Error	:	BOOL;
+    END_VAR
+    VAR
+        mcMoveAbsolute : ARRAY[1..2] OF MC_MoveAbsolute;
+        iI: INT;
+        imcBlockIndex: INT;
+        ReqAbsPosPrevious	: LREAL;
+        rtExecute: R_TRIG;
+    END_VAR
+    (* Smooth Mover
+    2017-8-30
+    A. Wallace
+
+    Enable means the block will always aquire new positions as they are updated. Execute
+    can be used to retry a move.
+    *)
+
+
+    rtExecute(CLK:=Execute);
+
+    IF ( (ReqAbsPos <> ReqAbsPosPrevious AND Enable) OR rtExecute.Q) THEN
+                mcMoveAbsolute[imcBlockIndex].Execute := FALSE;
+                imcBlockIndex := imcBlockIndex + 1;
+                IF imcBlockIndex >2 THEN imcBlockIndex := 1; END_IF
+                mcMoveAbsolute[imcBlockIndex].Position := ReqAbsPos;
+                mcMoveAbsolute[imcBlockIndex].Execute := TRUE;
+                ReqAbsPosPrevious := ReqAbsPos;
+            ELSIF mcMoveAbsolute[imcBlockIndex].Done OR
+                    mcMoveAbsolute[imcBlockIndex].CommandAborted OR
+                    mcMoveAbsolute[imcBlockIndex].Busy OR
+                    mcMoveAbsolute[imcBlockIndex].Error THEN
+                mcMoveAbsolute[imcBlockIndex].Execute := FALSE;
+            END_IF
+
+    FOR iI := 1 TO 2 DO
+        mcMoveAbsolute[iI](Axis := Axis, Velocity:=Velocity, BufferMode:=MC_Aborting);
+    END_FOR
+
+    Error := mcMoveAbsolute[1].Error OR mcMoveAbsolute[2].Error;
+    Done S= mcMoveAbsolute[1].Done OR mcMoveAbsolute[2].Done;
+    Busy := mcMoveAbsolute[1].Busy OR mcMoveAbsolute[2].Busy;
+    Done R= Busy OR Error;
+
+    END_FUNCTION_BLOCK
+
+
+
+
+p_ALI
+^^^^^
+
+::
+
+    PROGRAM p_ALI
+    VAR
+        fbALI_A	:	FB_ALI;
+    END_VAR
+    fbALI_A(iq_Injector:=stALI);
+
+    END_PROGRAM
+
+
+Related:
+    * `FB_ALI`_
+
+
+p_Autosave
+^^^^^^^^^^
+
+::
+
+    PROGRAM p_Autosave
+    VAR
+    END_VAR
+    (* If first pass, copy all persistent variables (which should be intialized to old values) back into the operational variables *)
+    IF g_xFirstPass THEN
+
+        stRegProp1 := gp_stRegProp1;
+        stRegProp2 := gp_stRegProp2;
+        stRegProp3 := gp_stRegProp3;
+        stRegProp4 := gp_stRegProp4;
+
+    ELSE
+        gp_stRegProp1 := stRegProp1;
+        gp_stRegProp2 := stRegProp2;
+        gp_stRegProp3 := stRegProp3;
+        gp_stRegProp4 := stRegProp4;
+
+    END_IF
+
+    END_PROGRAM
+
+
+
+
+p_AutoWash
+^^^^^^^^^^
+
+::
+
+    PROGRAM p_AutoWash
+    VAR
+
+
+
+    END_VAR
+
+
+    END_PROGRAM
+
+
+
+
+p_CoolerShaker
+^^^^^^^^^^^^^^
+
+::
+
+    PROGRAM p_CoolerShaker
+    VAR
+
+    afbTECDriver	:	ARRAY[1..3] OF FB_TECDriver;
+
+        index: INT :=1 ;
+    END_VAR
+    stTECCtrl[1].sAddress := '01'; //62 is 98 in hex which is default address
+    stTECCtrl[2].sAddress := '02';
+    stTECCtrl[3].sAddress := '62';
+
+    stTECCtrl[1].diTempSetpoint := 30; //98 in hex which is default address
+    stTECCtrl[2].diTempSetpoint := 30;
+    stTECCtrl[3].diTempSetpoint := 30;
+
+    afbTECDriver[index](
+        i_xExecute:= TRUE,
+        i_tTimeOut:= t#1s,
+        i_stControl:= stTECCtrl[index],
+        iq_stSerialRXBuffer:= SerialRXBuffer_CoolerShakerTEC,
+        iq_stSerialTXBuffer:= SerialTXBuffer_CoolerShakerTEC,
+        q_stStatus=>stTECStatus[index]);
+
+    IF afbTECDriver[index].q_xDone OR
+        afbTECDriver[index].q_xError OR
+        afbTECDriver[index].q_xTimeout THEN
+        (* reset function for next time *)
+        afbTECDriver[index](i_xExecute:=FALSE, iq_stSerialRXBuffer:= SerialRXBuffer_CoolerShakerTEC, iq_stSerialTXBuffer:=  SerialTXBuffer_CoolerShakerTEC);
+
+        index := index + 1;
+        IF index > 2 THEN index := 1; END_IF
+
+    END_IF
+
+    END_PROGRAM
+
+
+Related:
+    * `FB_TECDriver`_
+
+
+p_ESTOP
+^^^^^^^
+
+::
+
+    PROGRAM p_ESTOP
+    VAR
+        rtEstop : R_TRIG;
+    END_VAR
+    (*
+    Estop checks for a rising edge on the estop global variable then triggeres the following actions
+    1. Set selector to position 12, the default resting place
+    2. Set the water regulator to 0
+    The sheath regulator is not set to zero at this point because we don't want to ice the jet.
+    *)
+
+    rtEstop(CLK:=g_xEstop);
+
+    (* Check for E-Stop *)
+    IF rtEstop.Q THEN
+        stSelector.iVici1ReqPos := 12;
+        stSelector.iVici2ReqPos := 12;
+        stSelector.iSyncReqPos	:= 12;
+    END_IF
+
+    END_PROGRAM
+
+
+
+
+p_Manifold
+^^^^^^^^^^
+
+::
+
+    PROGRAM p_Manifold
+    VAR
+        fbManiValve : FB_ManiValve;
+    END_VAR
+    (* Valve 1 *)
+    stGasMani.stManiVlv1.xILK := stGasMani.xOnline;
+    fbManiValve(iq_valve:=stGasMani.stManiVlv1);
+
+    (* Valve 2 *)
+    stGasMani.stManiVlv2.xILK := stGasMani.xOnline;
+    fbManiValve(iq_valve:=stGasMani.stManiVlv2);
+
+    (* Valve 3 *)
+    stGasMani.stManiVlv3.xILK := stGasMani.xOnline;
+    fbManiValve(iq_valve:=stGasMani.stManiVlv3);
+
+    (* Valve 4 *)
+    stGasMani.stManiVlv4.xILK := stGasMani.xOnline;
+    fbManiValve(iq_valve:=stGasMani.stManiVlv4);
+
+    (* Valve 5 *)
+    stGasMani.stManiVlv5.xILK := stGasMani.xOnline;
+    fbManiValve(iq_valve:=stGasMani.stManiVlv5);
+
+    (* Valve 6 *)
+    stGasMani.stManiVlv6.xILK := stGasMani.xOnline;
+    fbManiValve(iq_valve:=stGasMani.stManiVlv6);
+
+    (* Valve 7 *)
+    stGasMani.stManiVlv7.xILK := stGasMani.xOnline;
+    fbManiValve(iq_valve:=stGasMani.stManiVlv7);
+
+    (* Valve 8 *)
+    stGasMani.stManiVlv8.xILK := stGasMani.xOnline;
+    fbManiValve(iq_valve:=stGasMani.stManiVlv8);
+
+    END_PROGRAM
+
+
+Related:
+    * `FB_ManiValve`_
+
+
+p_Regulators
+^^^^^^^^^^^^
+
+::
+
+    PROGRAM p_Regulators
+    VAR
+
+    fbRegProp1	:	FB_ProportionairRegulator;
+    fbRegProp2	:	FB_ProportionairRegulator;
+    fbRegProp3	:	FB_ProportionairRegulator;
+    fbRegProp4	:	FB_ProportionairRegulator;
+
+    END_VAR
+    (* Proportionair regulators *)
+    fbRegProp1(iq_stRegProp:=stRegProp1);
+    fbRegProp2(iq_stRegProp:=stRegProp2);
+    fbRegProp3(iq_stRegProp:=stRegProp3);
+    fbRegProp4(iq_stRegProp:=stRegProp4);
+
+    END_PROGRAM
+
+
+Related:
+    * `FB_ProportionairRegulator`_
+
+
+p_Shakers
+^^^^^^^^^
+
+::
+
+    PROGRAM p_Shakers
+    VAR
+    END_VAR
+
+
+    END_PROGRAM
+
+
+
+
+p_SoftIO
+^^^^^^^^
+
+::
+
+    PROGRAM p_SoftIO
+    VAR
+    END_VAR
+    (* Shakers *)
+    stSelector.stShaker01.i_xSwitch := iq_stM2SelectorA.i_EP2338_Ch5;
+    stSelector.stShaker02.i_xSwitch := iq_stM2SelectorA.i_EP2338_Ch6;
+    stSelector.stShaker03.i_xSwitch := iq_stM2SelectorA.i_EP2338_Ch7;
+    stSelector.stShaker04.i_xSwitch := iq_stM2SelectorA.i_EP2338_Ch8;
+
+    iq_stM2SelectorA.q_EP2338_Ch1	:= stSelector.stShaker01.q_xPwrDO;
+    iq_stM2SelectorA.q_EP2338_Ch2	:= stSelector.stShaker02.q_xPwrDO;
+    iq_stM2SelectorA.q_EP2338_Ch3	:= stSelector.stShaker03.q_xPwrDO;
+    iq_stM2SelectorA.q_EP2338_Ch4	:= stSelector.stShaker04.q_xPwrDO;
+
+    stSelector2.stShaker01.i_xSwitch := iq_stM2SelectorB.i_EP2338_Ch5;
+    stSelector2.stShaker02.i_xSwitch := iq_stM2SelectorB.i_EP2338_Ch6;
+    stSelector2.stShaker03.i_xSwitch := iq_stM2SelectorB.i_EP2338_Ch7;
+    stSelector2.stShaker04.i_xSwitch := iq_stM2SelectorB.i_EP2338_Ch8;
+
+    iq_stM2SelectorB.q_EP2338_Ch1	:= stSelector2.stShaker01.q_xPwrDO;
+    iq_stM2SelectorB.q_EP2338_Ch2	:= stSelector2.stShaker02.q_xPwrDO;
+    iq_stM2SelectorB.q_EP2338_Ch3	:= stSelector2.stShaker03.q_xPwrDO;
+    iq_stM2SelectorB.q_EP2338_Ch4	:= stSelector2.stShaker04.q_xPwrDO;
+
+    stRegProp1.iPressureRaw := iq_stPressCtrlA.i_EP4374_Ch1;
+    stRegProp2.iPressureRaw := iq_stPressCtrlA.i_EP4374_Ch2;
+
+    iq_stPressCtrlA.q_EP4374_Ch3 := stRegProp1.iSetpointRaw;
+    iq_stPressCtrlA.q_EP4374_Ch4 := stRegProp2.iSetpointRaw;
+
+    stRegProp3.iPressureRaw := iq_stPressCtrlB.i_EP4374_Ch1;
+    stRegProp4.iPressureRaw := iq_stPressCtrlB.i_EP4374_Ch2;
+
+    iq_stPressCtrlB.q_EP4374_Ch3 := stRegProp3.iSetpointRaw;
+    iq_stPressCtrlB.q_EP4374_Ch4 := stRegProp4.iSetpointRaw;
+
+    stGasMani.xOnline := NOT iq_stM3GasManifold.i_SyncUnitWC;
+
+    iq_stM3GasManifold.q_EP2338_Ch1 := stGasMani.stManiVlv1.qxDO;
+    iq_stM3GasManifold.q_EP2338_Ch2 := stGasMani.stManiVlv2.qxDO;
+    iq_stM3GasManifold.q_EP2338_Ch3 := stGasMani.stManiVlv3.qxDO;
+    iq_stM3GasManifold.q_EP2338_Ch4 := stGasMani.stManiVlv4.qxDO;
+    iq_stM3GasManifold.q_EP2338_Ch5 := stGasMani.stManiVlv5.qxDO;
+    iq_stM3GasManifold.q_EP2338_Ch6 := stGasMani.stManiVlv6.qxDO;
+    iq_stM3GasManifold.q_EP2338_Ch7 := stGasMani.stManiVlv7.qxDO;
+    iq_stM3GasManifold.q_EP2338_Ch8 := stGasMani.stManiVlv8.qxDO;
+
+    stGasMani.stManiVlv1.ixOPN := iq_stM3GasManifold.i_EP2338_Ch1;
+    stGasMani.stManiVlv2.ixOPN := iq_stM3GasManifold.i_EP2338_Ch2;
+    stGasMani.stManiVlv3.ixOPN := iq_stM3GasManifold.i_EP2338_Ch3;
+    stGasMani.stManiVlv4.ixOPN := iq_stM3GasManifold.i_EP2338_Ch4;
+    stGasMani.stManiVlv5.ixOPN := iq_stM3GasManifold.i_EP2338_Ch5;
+    stGasMani.stManiVlv6.ixOPN := iq_stM3GasManifold.i_EP2338_Ch6;
+    stGasMani.stManiVlv7.ixOPN := iq_stM3GasManifold.i_EP2338_Ch7;
+    stGasMani.stManiVlv8.ixOPN := iq_stM3GasManifold.i_EP2338_Ch8;
+
+    END_PROGRAM
+
+
+
+
+p_StatusLights
+^^^^^^^^^^^^^^
+
+::
+
+    PROGRAM p_StatusLights
+    VAR
+    END_VAR
+    gxRedLight := xEnableRemoteControl;//Remote control in use
+    gxGreenLight := NOT (gxRedLight OR gxYellowLight); (* attach system error or something here someday *)
+
+    END_PROGRAM
+
+
+
+
+p_VacGaugeSup
+^^^^^^^^^^^^^
+
+::
+
+    PROGRAM p_VacGaugeSup
+
+    VAR
+
+
+
+    END_VAR
+
+
+    END_PROGRAM
+
+
+
+
+SerialTxRx
+^^^^^^^^^^
+
+::
+
+    PROGRAM SerialTxRx
+    VAR
+    (*
+        fbSerialLineControl_M2SelAVici: SerialLineControl;
+        fbSerialLineControl_M2SelBVici: SerialLineControl;
+        fbSerialLineControl_M2SelAFM: SerialLineControl;
+        fbSerialLineControl_M2SelBFM: SerialLineControl;
+
+        fbSerialLineControl_M3SelAVici: SerialLineControl;
+        fbSerialLineControl_M3SelAFM: SerialLineControl;
+        fbSerialLineControl_M3SelBVici: SerialLineControl;
+        fbSerialLineControl_M3SelBFM: SerialLineControl;
+    *)
+    END_VAR
+    M3SelectorA.SerialComm();
+    M3SelectorB.SerialComm();
+    M3SelectorC.SerialComm();
+    M3SelectorD.SerialComm();
+
+    PCMA.SerialComm();
+    PCMB.SerialComm();
+    PCMC.SerialComm();
+    PCMD.SerialComm();
+
+    END_PROGRAM
+
+
+

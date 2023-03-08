@@ -3,18 +3,18 @@
   <POU Name="FB_Regulator" Id="{aa85a243-cf4d-4b77-a154-ab7f2bb33020}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_Regulator
 VAR_INPUT
-	iI: INT;
-	lrVelocity	:	LREAL := 360;
+    iI: INT;
+    lrVelocity	:	LREAL := 360;
 END_VAR
 VAR_OUTPUT
 q_asResult: ARRAY [1..20] OF STRING;
 q_xError	:	BOOL;
 END_VAR
 VAR_IN_OUT
-	iq_stRegulator	:	ST_Regulator;
+    iq_stRegulator	:	ST_Regulator;
 END_VAR
 VAR
-	
+
 
 mcPower	:	MC_Power;
 mcSetHome	:	MC_SetPosition;
@@ -24,21 +24,21 @@ mcStatus : MC_ReadStatus;
 
 mcHalt	:	MC_Halt;
 
-	iPressDiff: INT;
-	iTolerance: INT := 50;
-	xMoveOK: BOOL;
-	iStep: INT;
-	
-	indexResult: INT := 1;
-	
-	xInitComplete	:	BOOL := FALSE;
-	
-	ftBackToAuto	:	F_TRIG;
-	iPercSPOld: UINT;
-	imcBlockIndex: INT;
-	imcBlockIndexPrev : INT;
-	
-	rtEnable : R_TRIG;
+    iPressDiff: INT;
+    iTolerance: INT := 50;
+    xMoveOK: BOOL;
+    iStep: INT;
+
+    indexResult: INT := 1;
+
+    xInitComplete	:	BOOL := FALSE;
+
+    ftBackToAuto	:	F_TRIG;
+    iPercSPOld: UINT;
+    imcBlockIndex: INT;
+    imcBlockIndexPrev : INT;
+
+    rtEnable : R_TRIG;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -59,63 +59,63 @@ iq_stRegulator.wOutPress := LIMIT(0, F_rPressure(iRawVoltage := iq_stRegulator.i
 (* Check for regulator enable *)
 xMoveOK := iq_stRegulator.xRegEnab;
 IF NOT xMoveOK THEN
-	(*iq_stRegulator.wPressSP := 0; not preferred *)
-	iq_stRegulator.xRegEnab := FALSE;
-	(* add motor error here *)
+    (*iq_stRegulator.wPressSP := 0; not preferred *)
+    iq_stRegulator.xRegEnab := FALSE;
+    (* add motor error here *)
 END_IF
 
 IF q_xError THEN
-	iStep := 9000;
+    iStep := 9000;
 ELSIF rtEnable.Q THEN
-	xInitComplete := FALSE;
-	iStep := 10;
+    xInitComplete := FALSE;
+    iStep := 10;
 ELSIF xInitComplete THEN
-	iStep := 3000;
+    iStep := 3000;
 END_IF
 
 
 CASE iStep OF
-	0: iStep := 10;
-	10:
-	(* Start by initializing the motor axis *)
-	mcPower.Enable := TRUE;
-	iq_stRegulator.lrUpperLimPos := 2887;
-	IF mcPower.Status THEN
-		xInitComplete := TRUE;
-		q_asResult[indexResult] := 'Motor init success';
-		indexResult := indexResult + 1;
-		iStep := 3000;
-	ELSIF mcPower.Error THEN
-		mcPower.Enable := FALSE;
-		iStep := 9000;
-		q_xError	:=	TRUE;
-		q_asResult[indexResult] := CONCAT('Initilizing regulator motor in step 10 failed with error code: ', UDINT_TO_STRING(mcPower.ErrorID));
-		indexResult := indexResult +1;
-	END_IF
-		
-	//Knob controls
-	3000:
-	
-	IF iq_stRegulator.i_iPercSP <> iPercSPOld  AND xMoveOK THEN
-		mcMoveAbsolute[imcBlockIndex].Execute := FALSE;
-		imcBlockIndex := imcBlockIndex + 1;
-		IF imcBlockIndex >2 THEN imcBlockIndex := 1; END_IF
-		mcMoveAbsolute[imcBlockIndex].Position := LIMIT(0, UINT_TO_LREAL(iq_stRegulator.i_iPercSP) * iq_stRegulator.lrUpperLimPos/65535, MAX(iq_stRegulator.lrUpperLimPos,1));
-		mcMoveAbsolute[imcBlockIndex].Execute := TRUE;
-		iPercSPOld := iq_stRegulator.i_iPercSP;
-	ELSIF mcMoveAbsolute[imcBlockIndex].Done or mcMoveAbsolute[imcBlockIndex].CommandAborted or mcMoveAbsolute[imcBlockIndex].Busy or mcMoveAbsolute[imcBlockIndex].Error THEN
-		mcMoveAbsolute[imcBlockIndex].Execute := FALSE;
-	END_IF
-	
-	9000:
-	(* Error *)
-	mcReset.Execute := iq_stRegulator.xRegEnab;
-	IF mcReset.Done THEN
-		q_xError := FALSE;
-		mcReset.Execute := FALSE;
-		iStep:=10;
-	END_IF
-	
+    0: iStep := 10;
+    10:
+    (* Start by initializing the motor axis *)
+    mcPower.Enable := TRUE;
+    iq_stRegulator.lrUpperLimPos := 2887;
+    IF mcPower.Status THEN
+        xInitComplete := TRUE;
+        q_asResult[indexResult] := 'Motor init success';
+        indexResult := indexResult + 1;
+        iStep := 3000;
+    ELSIF mcPower.Error THEN
+        mcPower.Enable := FALSE;
+        iStep := 9000;
+        q_xError	:=	TRUE;
+        q_asResult[indexResult] := CONCAT('Initilizing regulator motor in step 10 failed with error code: ', UDINT_TO_STRING(mcPower.ErrorID));
+        indexResult := indexResult +1;
+    END_IF
+
+    //Knob controls
+    3000:
+
+    IF iq_stRegulator.i_iPercSP <> iPercSPOld  AND xMoveOK THEN
+        mcMoveAbsolute[imcBlockIndex].Execute := FALSE;
+        imcBlockIndex := imcBlockIndex + 1;
+        IF imcBlockIndex >2 THEN imcBlockIndex := 1; END_IF
+        mcMoveAbsolute[imcBlockIndex].Position := LIMIT(0, UINT_TO_LREAL(iq_stRegulator.i_iPercSP) * iq_stRegulator.lrUpperLimPos/65535, MAX(iq_stRegulator.lrUpperLimPos,1));
+        mcMoveAbsolute[imcBlockIndex].Execute := TRUE;
+        iPercSPOld := iq_stRegulator.i_iPercSP;
+    ELSIF mcMoveAbsolute[imcBlockIndex].Done or mcMoveAbsolute[imcBlockIndex].CommandAborted or mcMoveAbsolute[imcBlockIndex].Busy or mcMoveAbsolute[imcBlockIndex].Error THEN
+        mcMoveAbsolute[imcBlockIndex].Execute := FALSE;
+    END_IF
+
+    9000:
+    (* Error *)
+    mcReset.Execute := iq_stRegulator.xRegEnab;
+    IF mcReset.Done THEN
+        q_xError := FALSE;
+        mcReset.Execute := FALSE;
+        iStep:=10;
+    END_IF
+
 END_CASE
 
 //Reset the debugging index
@@ -139,14 +139,14 @@ mcMoveAbsolute[iI](Axis := iq_stRegulator.stRegulatorMotor, Velocity:=iq_stRegul
 END_FOR
 
 IF mcMoveAbsolute[1].Error OR mcMoveAbsolute[2].Error THEN
-	q_xError	:=	TRUE;
-	mcMoveAbsolute[1].Execute := FALSE;
-	mcMoveAbsolute[2].Execute := FALSE;
-	q_asResult[indexResult] := 'Error occured with motion blocks';
-	indexResult := indexResult +1;
+    q_xError	:=	TRUE;
+    mcMoveAbsolute[1].Execute := FALSE;
+    mcMoveAbsolute[2].Execute := FALSE;
+    q_asResult[indexResult] := 'Error occured with motion blocks';
+    indexResult := indexResult +1;
 ELSIF mcPower.Error THEN
-	q_xError := TRUE;
-	q_asResult[indexResult] := concat('mcPower block error: ', UDINT_TO_STRING(mcPower.ErrorID));
+    q_xError := TRUE;
+    q_asResult[indexResult] := concat('mcPower block error: ', UDINT_TO_STRING(mcPower.ErrorID));
 END_IF]]></ST>
     </Implementation>
     <Action Name="ActPower" Id="{e34cb278-3582-4d00-9245-81999faf4464}">

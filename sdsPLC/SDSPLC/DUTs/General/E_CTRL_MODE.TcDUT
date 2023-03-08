@@ -5,7 +5,7 @@
 {attribute 'strict'}
 TYPE E_CTRL_MODE :
 (
-	enum_member := 0
+    enum_member := 0
 );
 END_TYPE
 ]]></Declaration>

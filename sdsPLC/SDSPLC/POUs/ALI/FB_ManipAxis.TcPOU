@@ -3,42 +3,42 @@
   <POU Name="FB_ManipAxis" Id="{2c576ec6-7433-4ec0-8547-ab9b5dd393c9}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ManipAxis
 VAR_INPUT
-	i_xHotPlug	:	BOOL;
+    i_xHotPlug	:	BOOL;
 END_VAR
 VAR_OUTPUT
-	q_asResult: ARRAY [1..20] OF STRING;
-	q_xError	:	BOOL;
+    q_asResult: ARRAY [1..20] OF STRING;
+    q_xError	:	BOOL;
 END_VAR
 VAR_IN_OUT
-	iq_ManipAxis	:	ST_ManipAxis;
+    iq_ManipAxis	:	ST_ManipAxis;
 END_VAR
 VAR
 
-	mcPower	:	MC_Power;
-	mcReset	:	MC_Reset;
-	mcMoveAbsolute : ARRAY[1..2] OF MC_MoveAbsolute;
-	mcHalt	:	MC_Halt;
-	mcSmoothMover	:	MC_SmoothMover;
-	//Error Stuff
-	indexResult: INT := 1;
-	fbFormatString	:	FB_FormatString;
-	
-	xInitComplete	:	BOOL := FALSE;
-	
-	imcBlockIndex: INT;
-	
-	rtEnable : R_TRIG;
-	ftEnable : F_TRIG;
-	rtStop	:	R_TRIG;
-	rtStart	:	R_TRIG;
-	rReqAbsPosOld: REAL := 0;
-	rReqAbsPosPrevious: REAL;
-	iI: INT;
+    mcPower	:	MC_Power;
+    mcReset	:	MC_Reset;
+    mcMoveAbsolute : ARRAY[1..2] OF MC_MoveAbsolute;
+    mcHalt	:	MC_Halt;
+    mcSmoothMover	:	MC_SmoothMover;
+    //Error Stuff
+    indexResult: INT := 1;
+    fbFormatString	:	FB_FormatString;
+
+    xInitComplete	:	BOOL := FALSE;
+
+    imcBlockIndex: INT;
+
+    rtEnable : R_TRIG;
+    ftEnable : F_TRIG;
+    rtStop	:	R_TRIG;
+    rtStart	:	R_TRIG;
+    rReqAbsPosOld: REAL := 0;
+    rReqAbsPosPrevious: REAL;
+    iI: INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[(* Manipulator Axis Function Block
-Alex Wallace, 2016-8-8 
+Alex Wallace, 2016-8-8
 
 This block works by jumping between two absolute move blocks and buffering
 the motion between them.
@@ -52,10 +52,10 @@ ftEnable(CLK:=iq_ManipAxis.xEnable);
 iq_ManipAxis.stAxis();
 
 IF rtEnable.Q OR ftEnable.Q THEN
-	xInitComplete := FALSE;
-	iq_ManipAxis.eState := Init;
+    xInitComplete := FALSE;
+    iq_ManipAxis.eState := Init;
 ELSIF xInitComplete THEN
-	iq_ManipAxis.eState := MoveEnabled;
+    iq_ManipAxis.eState := MoveEnabled;
 END_IF
 
 //For EPICS, because the modbus map was made for 32 bit..
@@ -63,53 +63,53 @@ iq_ManipAxis.rActPos := LREAL_TO_REAL(iq_ManipAxis.stAxis.NcToPlc.ActPos);
 
 
 CASE iq_ManipAxis.eState OF
-	0: iq_ManipAxis.eState := Init;
-	Init:
-	(* Start by initializing the motor axis *)
-	mcPower.Enable := iq_ManipAxis.xEnable;
-	iq_ManipAxis.rReqAbsPos := iq_ManipAxis.rActPos; //do this when the PLC comes up so we don't just lose the position if we tweak
-	IF mcPower.Status THEN //success
-		xInitComplete := TRUE;
-		q_asResult[indexResult] := 'Motor init success';
-		indexResult := indexResult + 1;
-		iq_ManipAxis.eState := MoveEnabled;
-	ELSIF mcPower.Error THEN
-		mcPower.Enable := FALSE;
-		fbFormatString(sFormat:='Init mcPower Error: %s', arg1:=F_UDINT(mcPower.ErrorID));
-		ActError();
-	END_IF
-		
-	MoveEnabled:
-		mcSmoothMover.Enable := iq_ManipAxis.xEnable;
-		mcSmoothMover.ReqAbsPos := LIMIT(-100, REAL_TO_LREAL(iq_ManipAxis.rReqAbsPos), 100);
-		mcSmoothMover.Execute := iq_ManipAxis.xStart;
-		(*We've already captured the rising edge of start (if there was one, so 
-		go ahead and reset it.*)
-		iq_ManipAxis.xStart := FALSE;
-		
-		//Halt
-		mcHalt.Execute S= iq_ManipAxis.xStop;
-		mcHalt.Execute R= mcHalt.Busy;
-		iq_ManipAxis.xStop R= mcHalt.Busy;
-		IF mcPower.Error OR mcSmoothMover.Error THEN
-			iq_ManipAxis.eState:=Error;
-		END_IF
-	
+    0: iq_ManipAxis.eState := Init;
+    Init:
+    (* Start by initializing the motor axis *)
+    mcPower.Enable := iq_ManipAxis.xEnable;
+    iq_ManipAxis.rReqAbsPos := iq_ManipAxis.rActPos; //do this when the PLC comes up so we don't just lose the position if we tweak
+    IF mcPower.Status THEN //success
+        xInitComplete := TRUE;
+        q_asResult[indexResult] := 'Motor init success';
+        indexResult := indexResult + 1;
+        iq_ManipAxis.eState := MoveEnabled;
+    ELSIF mcPower.Error THEN
+        mcPower.Enable := FALSE;
+        fbFormatString(sFormat:='Init mcPower Error: %s', arg1:=F_UDINT(mcPower.ErrorID));
+        ActError();
+    END_IF
 
-	
+    MoveEnabled:
+        mcSmoothMover.Enable := iq_ManipAxis.xEnable;
+        mcSmoothMover.ReqAbsPos := LIMIT(-100, REAL_TO_LREAL(iq_ManipAxis.rReqAbsPos), 100);
+        mcSmoothMover.Execute := iq_ManipAxis.xStart;
+        (*We've already captured the rising edge of start (if there was one, so
+        go ahead and reset it.*)
+        iq_ManipAxis.xStart := FALSE;
+
+        //Halt
+        mcHalt.Execute S= iq_ManipAxis.xStop;
+        mcHalt.Execute R= mcHalt.Busy;
+        iq_ManipAxis.xStop R= mcHalt.Busy;
+        IF mcPower.Error OR mcSmoothMover.Error THEN
+            iq_ManipAxis.eState:=Error;
+        END_IF
+
+
+
 END_CASE
 
 
 mcReset.Execute := rtEnable.Q OR i_xHotPlug OR iq_ManipAxis.xReset;
 //Reset the reset controls for the next reset
 IF mcReset.Done THEN
-	mcReset.Execute := FALSE;
-	iq_ManipAxis.xReset := FALSE;
-	iq_ManipAxis.eState:=Init;
+    mcReset.Execute := FALSE;
+    iq_ManipAxis.xReset := FALSE;
+    iq_ManipAxis.eState:=Init;
 END_IF
 //Set function block state once axis is happy again
 IF NOT iq_ManipAxis.stAxis.Status.Error THEN
-	q_xError := FALSE;
+    q_xError := FALSE;
 END_IF
 
 
@@ -117,7 +117,7 @@ END_IF
 ActPower();
 mcReset(Axis:=iq_ManipAxis.stAxis);
 mcSmoothMover(Axis:=iq_ManipAxis.stAxis,
-	Velocity:=iq_ManipAxis.lrVelocity);
+    Velocity:=iq_ManipAxis.lrVelocity);
 mcHalt(Axis:=iq_ManipAxis.stAxis);
 
 iq_ManipAxis.xDmov := mcHalt.Done OR mcSmoothMover.Done;
@@ -489,47 +489,5 @@ q_asResult[indexResult] := fbFormatString.sOut;
 indexResult := indexResult +1;]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="FB_ManipAxis">
-      <LineId Id="3" Count="2" />
-      <LineId Id="259" Count="0" />
-      <LineId Id="6" Count="14" />
-      <LineId Id="174" Count="0" />
-      <LineId Id="22" Count="0" />
-      <LineId Id="171" Count="0" />
-      <LineId Id="169" Count="1" />
-      <LineId Id="23" Count="17" />
-      <LineId Id="260" Count="3" />
-      <LineId Id="279" Count="0" />
-      <LineId Id="278" Count="0" />
-      <LineId Id="264" Count="0" />
-      <LineId Id="67" Count="0" />
-      <LineId Id="70" Count="3" />
-      <LineId Id="221" Count="1" />
-      <LineId Id="280" Count="0" />
-      <LineId Id="75" Count="0" />
-      <LineId Id="81" Count="1" />
-      <LineId Id="325" Count="2" />
-      <LineId Id="335" Count="0" />
-      <LineId Id="341" Count="0" />
-      <LineId Id="336" Count="0" />
-      <LineId Id="339" Count="1" />
-      <LineId Id="337" Count="0" />
-      <LineId Id="328" Count="0" />
-      <LineId Id="334" Count="0" />
-      <LineId Id="329" Count="0" />
-      <LineId Id="333" Count="0" />
-      <LineId Id="83" Count="4" />
-      <LineId Id="281" Count="1" />
-      <LineId Id="88" Count="1" />
-      <LineId Id="286" Count="1" />
-      <LineId Id="177" Count="0" />
-      <LineId Id="216" Count="0" />
-      <LineId Id="178" Count="1" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_ManipAxis.ActError">
-      <LineId Id="2" Count="8" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

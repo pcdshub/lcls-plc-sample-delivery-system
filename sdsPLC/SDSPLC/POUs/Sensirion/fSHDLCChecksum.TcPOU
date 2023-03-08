@@ -3,13 +3,13 @@
   <POU Name="fSHDLCChecksum" Id="{a9b3b4d5-8205-40aa-be47-6f11775318a7}">
     <Declaration><![CDATA[FUNCTION fSHDLCChecksum : BYTE
 VAR_INPUT
-	i_bAdr	:	BYTE;
-	i_bCmd	:	BYTE;
-	i_bLen	:	BYTE;
-	i_pbaTxData	:	POINTER TO BYTE;	
+    i_bAdr	:	BYTE;
+    i_bCmd	:	BYTE;
+    i_bLen	:	BYTE;
+    i_pbaTxData	:	POINTER TO BYTE;
 END_VAR
 VAR
-	iIndex	:	INT;
+    iIndex	:	INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -22,8 +22,8 @@ fSHDLCChecksum := i_bAdr + i_bCmd + i_bLen;
 
 IF i_bLen > 0 THEN
 FOR iIndex:=0 TO BYTE_TO_INT(i_bLen)DO
-	fSHDLCChecksum := fSHDLCChecksum + i_pbaTxData^;
-	i_pbaTxData := i_pbaTxData + 1;
+    fSHDLCChecksum := fSHDLCChecksum + i_pbaTxData^;
+    i_pbaTxData := i_pbaTxData + 1;
 END_FOR
 END_IF
 

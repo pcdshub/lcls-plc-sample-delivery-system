@@ -2,22 +2,22 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
   <GVL Name="GVL_ComBuffers" Id="{ee5e8366-e426-4696-b6a2-52ab207bc2cf}">
     <Declaration><![CDATA[VAR_GLOBAL
-	
-	SerialRXBuffer_SelVici : ComBuffer;
-	SerialTXBuffer_SelVici : ComBuffer;
-	
-	SerialRXBuffer_SelFlwMtr : ComBuffer;
-	SerialTXBuffer_SelFlwMtr : ComBuffer;
-	
-	SerialRXBuffer_Sel2FlwMtr : ComBuffer;
-	SerialTXBuffer_Sel2FlwMtr : ComBuffer;
-	
-	SerialRXBuffer_Sel2Vici : ComBuffer;
-	SerialTXBuffer_Sel2Vici : ComBuffer;
-	
-	SerialRXBuffer_CoolerShakerTEC : ComBuffer;
-	SerialTXBuffer_CoolerShakerTEC : ComBuffer;
-	
+
+    SerialRXBuffer_SelVici : ComBuffer;
+    SerialTXBuffer_SelVici : ComBuffer;
+
+    SerialRXBuffer_SelFlwMtr : ComBuffer;
+    SerialTXBuffer_SelFlwMtr : ComBuffer;
+
+    SerialRXBuffer_Sel2FlwMtr : ComBuffer;
+    SerialTXBuffer_Sel2FlwMtr : ComBuffer;
+
+    SerialRXBuffer_Sel2Vici : ComBuffer;
+    SerialTXBuffer_Sel2Vici : ComBuffer;
+
+    SerialRXBuffer_CoolerShakerTEC : ComBuffer;
+    SerialTXBuffer_CoolerShakerTEC : ComBuffer;
+
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

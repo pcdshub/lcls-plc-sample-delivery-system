@@ -4,7 +4,7 @@
     <Declaration><![CDATA[TYPE ST_TECControl :
 STRUCT
 
-sAddress	:	STRING(2);	
+sAddress	:	STRING(2);
 diTempSetpoint	:	DINT;
 xOutputOn	:	BOOL;
 

@@ -5,11 +5,11 @@
 {attribute 'strict'}
 TYPE E_PropValveFBState :
 (
-	Init := 0,
-	Hold := 10,
-	Manual := 100,
-	Pressure := 200,
-	Error := 9000
+    Init := 0,
+    Hold := 10,
+    Manual := 100,
+    Pressure := 200,
+    Error := 9000
 );
 END_TYPE
 ]]></Declaration>

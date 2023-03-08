@@ -5,7 +5,7 @@
 VAR_INPUT
 END_VAR
 VAR_OUTPUT
-    
+
 END_VAR
 VAR_IN_Out
     stSerialComm : ST_SerialComm;
@@ -16,14 +16,14 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[fbSerialLineControl(
-	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
-	pComIn:= ADR(stSerialComm.stComIn),
-	pComOut:=ADR(stSerialComm.stComOut) ,
-	SizeComIn:= UINT_TO_INT(SIZEOF(stSerialComm.stComOut)),
-	TxBuffer:= stSerialComm.TxBuffer,
-	RxBuffer:= stSerialComm.RxBuffer,
-	Error=> ,
-	ErrorID=> );]]></ST>
+    Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
+    pComIn:= ADR(stSerialComm.stComIn),
+    pComOut:=ADR(stSerialComm.stComOut) ,
+    SizeComIn:= UINT_TO_INT(SIZEOF(stSerialComm.stComOut)),
+    TxBuffer:= stSerialComm.TxBuffer,
+    RxBuffer:= stSerialComm.RxBuffer,
+    Error=> ,
+    ErrorID=> );]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

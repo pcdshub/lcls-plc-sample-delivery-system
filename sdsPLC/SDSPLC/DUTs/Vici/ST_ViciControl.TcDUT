@@ -3,10 +3,10 @@
   <DUT Name="ST_ViciControl" Id="{3dbe2ab7-c9fe-4a0a-8fa6-39ab515d681c}">
     <Declaration><![CDATA[TYPE ST_ViciControl :
 STRUCT
-	sViciReply			: STRING;
-	iReqPos				: INT;
-	xDirection			: BOOL;
-	iAddress			: INT;
+    sViciReply			: STRING;
+    iReqPos				: INT;
+    xDirection			: BOOL;
+    iAddress			: INT;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

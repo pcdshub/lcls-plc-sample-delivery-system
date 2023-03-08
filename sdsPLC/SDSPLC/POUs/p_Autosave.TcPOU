@@ -8,20 +8,20 @@ END_VAR
     <Implementation>
       <ST><![CDATA[(* If first pass, copy all persistent variables (which should be intialized to old values) back into the operational variables *)
 IF g_xFirstPass THEN
-	
-	stRegProp1 := gp_stRegProp1;
-	stRegProp2 := gp_stRegProp2;
-	stRegProp3 := gp_stRegProp3;
-	stRegProp4 := gp_stRegProp4;
-	
+
+    stRegProp1 := gp_stRegProp1;
+    stRegProp2 := gp_stRegProp2;
+    stRegProp3 := gp_stRegProp3;
+    stRegProp4 := gp_stRegProp4;
+
 ELSE
-	gp_stRegProp1 := stRegProp1;
-	gp_stRegProp2 := stRegProp2;
-	gp_stRegProp3 := stRegProp3;
-	gp_stRegProp4 := stRegProp4;
-	
+    gp_stRegProp1 := stRegProp1;
+    gp_stRegProp2 := stRegProp2;
+    gp_stRegProp3 := stRegProp3;
+    gp_stRegProp4 := stRegProp4;
+
 END_IF
- 
+
 
 
 

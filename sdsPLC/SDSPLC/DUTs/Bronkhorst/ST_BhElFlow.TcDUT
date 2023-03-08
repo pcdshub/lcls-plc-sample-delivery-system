@@ -3,28 +3,28 @@
   <DUT Name="ST_BhElFlow" Id="{aa56882c-6739-4583-9306-a6edfd4b5ed1}">
     <Declaration><![CDATA[TYPE ST_BhElFlow :
 STRUCT
-	eFlowUnit	:	E_BHElFlowUnit;
-    
+    eFlowUnit	:	E_BHElFlowUnit;
+
     {attribute 'pytmc' := '
         pv: Unit
         io: i
      '}
-	i_sUnit			AT %I*	:	STRING;
-	 
-	i_udiUnit	:	UDINT;
-	
+    i_sUnit			AT %I*	:	STRING;
+
+    i_udiUnit	:	UDINT;
+
     {attribute 'pytmc' := '
         pv: Flow
         io: i
      '}
-	i_rFlow			AT %I*	:	REAL;
-	
-	{attribute 'pytmc' := '
+    i_rFlow			AT %I*	:	REAL;
+
+    {attribute 'pytmc' := '
         pv: Setpoint
         io: o
      '}
-	q_rSetpoint 	AT %Q*	:	REAL;
-	
+    q_rSetpoint 	AT %Q*	:	REAL;
+
 END_STRUCT
 END_TYPE
 ]]></Declaration>

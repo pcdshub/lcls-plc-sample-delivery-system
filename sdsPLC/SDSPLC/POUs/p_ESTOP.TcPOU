@@ -3,11 +3,11 @@
   <POU Name="p_ESTOP" Id="{56f6f6e5-239f-4cf4-a815-302180d5dfcd}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM p_ESTOP
 VAR
-	rtEstop : R_TRIG;
+    rtEstop : R_TRIG;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(* 
+      <ST><![CDATA[(*
 Estop checks for a rising edge on the estop global variable then triggeres the following actions
 1. Set selector to position 12, the default resting place
 2. Set the water regulator to 0
@@ -18,17 +18,12 @@ rtEstop(CLK:=g_xEstop);
 
 (* Check for E-Stop *)
 IF rtEstop.Q THEN
-	stSelector.iVici1ReqPos := 12;
-	stSelector.iVici2ReqPos := 12;
-	stSelector.iSyncReqPos	:= 12;	
+    stSelector.iVici1ReqPos := 12;
+    stSelector.iVici2ReqPos := 12;
+    stSelector.iSyncReqPos	:= 12;
 END_IF
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="p_ESTOP">
-      <LineId Id="3" Count="9" />
-      <LineId Id="14" Count="5" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

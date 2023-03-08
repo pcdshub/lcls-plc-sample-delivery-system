@@ -4,25 +4,25 @@
     <Declaration><![CDATA[TYPE ST_SensirionFMStatus :
 STRUCT
 
-	iFlowTicks	:	INT;
-	uiSensorOutput	: UINT;
-	iState	:	INT;
-	rFlow	:	REAL; // units of uL/min
-	xOoR	:	BOOL; // Out of range
-	xFMMode :	BOOL; // calib mode readback 0 = prec, 1 = extended
-	xFlowValid	:	BOOL; // driver completes successfully
-	abReply	:	ARRAY[1..500] OF BYTE;
-	bStatus	:	BYTE; //Sensor status
+    iFlowTicks	:	INT;
+    uiSensorOutput	: UINT;
+    iState	:	INT;
+    rFlow	:	REAL; // units of uL/min
+    xOoR	:	BOOL; // Out of range
+    xFMMode :	BOOL; // calib mode readback 0 = prec, 1 = extended
+    xFlowValid	:	BOOL; // driver completes successfully
+    abReply	:	ARRAY[1..500] OF BYTE;
+    bStatus	:	BYTE; //Sensor status
 (* Bit 0: 0: Sensor idle
-		1: Sensor Busy
+        1: Sensor Busy
 Bit 1: 	0: Continuous Measurement disabled
-		1: Continuous Measurement enabled
+        1: Continuous Measurement enabled
 Bit 2: (for Firmware . 1.3)
-		0: Auto detection Measurement disabled
-		1: Auto detection Measurement enabled
+        0: Auto detection Measurement disabled
+        1: Auto detection Measurement enabled
 Bit 3: (for Firmware . 1.3)
-		0: No Auto Measurement since last read out Status
-		1: Auto Measurement finished since last read out Status, is set back to 0 after read out *)
+        0: No Auto Measurement since last read out Status
+        1: Auto Measurement finished since last read out Status, is set back to 0 after read out *)
 
 END_STRUCT
 END_TYPE

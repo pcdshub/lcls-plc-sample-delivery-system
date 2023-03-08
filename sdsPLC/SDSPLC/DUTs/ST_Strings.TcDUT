@@ -3,67 +3,67 @@
   <DUT Name="ST_Strings" Id="{732f2c27-82d7-468b-9b70-d5e6f1796e6b}">
     <Declaration><![CDATA[TYPE ST_Strings :
 STRUCT
-	(* Twelve strings used to store sample names *)
-	{attribute 'pytmc' := '
+    (* Twelve strings used to store sample names *)
+    {attribute 'pytmc' := '
         pv: 01
-		io: i
+        io: i
      '}
-	 s1 : STRING;
-	 {attribute 'pytmc' := '
+     s1 : STRING;
+     {attribute 'pytmc' := '
         pv: 02
-		io: i
+        io: i
      '}
-	 s2 : STRING;
-	 {attribute 'pytmc' := '
+     s2 : STRING;
+     {attribute 'pytmc' := '
         pv: 03
-		io: i
+        io: i
      '}
-	 s3 : STRING;
-	 {attribute 'pytmc' := '
+     s3 : STRING;
+     {attribute 'pytmc' := '
         pv: 04
-		io: i
+        io: i
      '}
-	 s4 : STRING;
-	 {attribute 'pytmc' := '
+     s4 : STRING;
+     {attribute 'pytmc' := '
         pv: 05
-		io: i
+        io: i
      '}
-	 s5 : STRING;
-	 {attribute 'pytmc' := '
+     s5 : STRING;
+     {attribute 'pytmc' := '
         pv: 06
-		io: i
+        io: i
      '}
-	 s6 : STRING;
-	 {attribute 'pytmc' := '
+     s6 : STRING;
+     {attribute 'pytmc' := '
         pv: 07
-		io: i
+        io: i
      '}
-	 s7 : STRING;
-	 {attribute 'pytmc' := '
+     s7 : STRING;
+     {attribute 'pytmc' := '
         pv: 08
-		io: i
+        io: i
      '}
-	 s8 : STRING;
-	 {attribute 'pytmc' := '
+     s8 : STRING;
+     {attribute 'pytmc' := '
         pv: 09
-		io: i
+        io: i
      '}
-	 s9 : STRING;
-	 {attribute 'pytmc' := '
+     s9 : STRING;
+     {attribute 'pytmc' := '
         pv: 10
-		io: i
+        io: i
      '}
-	 s10 : STRING;
-	 {attribute 'pytmc' := '
+     s10 : STRING;
+     {attribute 'pytmc' := '
         pv: 11
-		io: i
+        io: i
      '}
-	 s11 : STRING;
-	 {attribute 'pytmc' := '
+     s11 : STRING;
+     {attribute 'pytmc' := '
         pv: 12
-		io: i
+        io: i
      '}
-	 s12 : STRING;
+     s12 : STRING;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

@@ -27,7 +27,7 @@ xMovn	:	BOOL;
 xDmov	:	BOOL;
 //EPICS Reset
 xReset	:	BOOL;
-	
+
 (* Axis motor *)
 stAxis	:	AXIS_REF;
 lrVelocity	:	LREAL	:=1; //mm/s

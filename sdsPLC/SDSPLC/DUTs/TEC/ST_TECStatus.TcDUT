@@ -3,24 +3,24 @@
   <DUT Name="ST_TECStatus" Id="{df12744f-874c-412c-aed2-7be14a84a0c5}">
     <Declaration><![CDATA[TYPE ST_TECStatus :
 STRUCT
-	//Parameters
-	diTemp1	:	DINT;
-	diSetPoint	:	DINT;
-	diPercentOut	:	DINT;
-	diCurrent	:	DINT;
-	xOutputOn	:	BOOL;
-	
-	//Alarms
-	xHiTemp	:	BOOL;
-	xLoTemp	:	BOOL;
-	xCompCtrlAlrm	:	BOOL;
-	xOverCurrent	:	BOOL;
-	xOpenInput1		:	BOOL;
-	xOpenInput2		:	BOOL;
-	xDriverLowVoltage	:	BOOL;
-	
-	
-	//Interface Diagnosis
+    //Parameters
+    diTemp1	:	DINT;
+    diSetPoint	:	DINT;
+    diPercentOut	:	DINT;
+    diCurrent	:	DINT;
+    xOutputOn	:	BOOL;
+
+    //Alarms
+    xHiTemp	:	BOOL;
+    xLoTemp	:	BOOL;
+    xCompCtrlAlrm	:	BOOL;
+    xOverCurrent	:	BOOL;
+    xOpenInput1		:	BOOL;
+    xOpenInput2		:	BOOL;
+    xDriverLowVoltage	:	BOOL;
+
+
+    //Interface Diagnosis
 xStatusValid	:	BOOL;
 sReply	:	STRING;
 

@@ -6,9 +6,9 @@ TYPE ST_SerialComm :
 STRUCT
     RxBuffer    :   ComBuffer;
     TxBuffer    :   ComBuffer;
-    
+
     stComIn		AT %I*	:	EL6inData22B (*KL6inData22B*);
-	stComOut	AT %Q*	:	EL6outData22B (*KL6outData22B*);
+    stComOut	AT %Q*	:	EL6outData22B (*KL6outData22B*);
 END_STRUCT
 END_TYPE
 ]]></Declaration>

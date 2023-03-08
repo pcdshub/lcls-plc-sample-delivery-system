@@ -5,9 +5,9 @@
 (* Maps to an EPICS MBBI/O *)
 TYPE HMI_PropValveCtrlState :
 (
-	Manual := 0,
-	Pressure := 1,
-	Hold := 2
+    Manual := 0,
+    Pressure := 1,
+    Hold := 2
 ) WORD;
 END_TYPE
 ]]></Declaration>

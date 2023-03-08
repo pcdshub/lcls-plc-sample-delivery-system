@@ -3,7 +3,7 @@
   <DUT Name="ST_ShakerControls" Id="{9cbbc00e-43f1-4085-876b-85a268f5e488}">
     <Declaration><![CDATA[TYPE ST_ShakerControls :
 STRUCT
-	
+
 xShaker1On	:	BOOL;
 xShaker2On	:	BOOL;
 xShaker3On	:	BOOL;

@@ -7,7 +7,7 @@ END_VAR
 VAR_OUTPUT
 END_VAR
 VAR_IN_OUT
-	iq_stRegProp	:	ST_Proportionair;
+    iq_stRegProp	:	ST_Proportionair;
 END_VAR
 VAR
 

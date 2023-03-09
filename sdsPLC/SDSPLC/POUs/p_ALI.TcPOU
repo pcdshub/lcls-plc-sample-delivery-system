@@ -3,14 +3,11 @@
   <POU Name="p_ALI" Id="{2f24df4a-4e55-4a2a-b530-4a66a8831e7d}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM p_ALI
 VAR
-	fbALI_A	:	FB_ALI;
+    fbALI_A	:	FB_ALI;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[fbALI_A(iq_Injector:=stALI);]]></ST>
     </Implementation>
-    <LineIds Name="p_ALI">
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

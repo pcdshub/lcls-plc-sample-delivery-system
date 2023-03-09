@@ -3,21 +3,21 @@
   <GVL Name="GVL_misc" Id="{011daca9-920b-4950-a0b3-3f54a8463703}">
     <Declaration><![CDATA[VAR_GLOBAL
 
-	(* Overall system controls *)
-	xN2Purge :	BOOL;
-	g_xEstop	:	BOOL;
+    (* Overall system controls *)
+    xN2Purge :	BOOL;
+    g_xEstop	:	BOOL;
 
 
-	
-	(* Shakers *)
-	st_Shakers : ST_ShakerControls;
-	
-	xEnableRemoteControl : BOOL := TRUE;
-	xSystemPressurized : BOOL := TRUE;
-	
-	gxRedLight : BOOL;
-	gxYellowLight : BOOL;
-	gxGreenLight : BOOL;
+
+    (* Shakers *)
+    st_Shakers : ST_ShakerControls;
+
+    xEnableRemoteControl : BOOL := TRUE;
+    xSystemPressurized : BOOL := TRUE;
+
+    gxRedLight : BOOL;
+    gxYellowLight : BOOL;
+    gxGreenLight : BOOL;
 
 END_VAR]]></Declaration>
     <ObjectProperties />

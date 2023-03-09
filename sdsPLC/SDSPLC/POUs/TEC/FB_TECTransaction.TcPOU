@@ -3,49 +3,49 @@
   <POU Name="FB_TECTransaction" Id="{1ffe0eb0-0e59-4dd0-a7e9-103cff394f9b}">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_TECTransaction
 VAR_INPUT
-	i_xExecute				: 	BOOL;				(* Rising edge execute *)
-	i_sCmd					: 	STRING(2); 			(* Send Data *)
-	i_sAddress				:	STRING(2);
-	i_diParameter			:	DINT;
-	i_tTimeOut				:	TIME := T#10S;  	(* Maximum wait time for reply *)
-	i_CmdFlag: BOOL := FALSE;
+    i_xExecute				: 	BOOL;				(* Rising edge execute *)
+    i_sCmd					: 	STRING(2); 			(* Send Data *)
+    i_sAddress				:	STRING(2);
+    i_diParameter			:	DINT;
+    i_tTimeOut				:	TIME := T#10S;  	(* Maximum wait time for reply *)
+    i_CmdFlag: BOOL := FALSE;
 END_VAR
 VAR_OUTPUT
-	q_xDone					: BOOL;
-	q_sResponseData			: STRING;
-	q_xError				: BOOL;
-	q_xTimeout				: BOOL;
-	q_sResult				: STRING;
-	q_sLastSentString		: ARRAY[1..40] OF STRING;			(* Last String Sent to Serial Device - for debugging *)
-	q_sLastReceivedString	: ARRAY[1..40] OF STRING;			(* Last String Received from Serial Device - for debugging *)
+    q_xDone					: BOOL;
+    q_sResponseData			: STRING;
+    q_xError				: BOOL;
+    q_xTimeout				: BOOL;
+    q_sResult				: STRING;
+    q_sLastSentString		: ARRAY[1..40] OF STRING;			(* Last String Sent to Serial Device - for debugging *)
+    q_sLastReceivedString	: ARRAY[1..40] OF STRING;			(* Last String Received from Serial Device - for debugging *)
 END_VAR
 VAR_IN_OUT
-	iq_stSerialRXBuffer 	: ComBuffer;
-	iq_stSerialTXBuffer 	: ComBuffer;
+    iq_stSerialRXBuffer 	: ComBuffer;
+    iq_stSerialTXBuffer 	: ComBuffer;
 END_VAR
 VAR
-	rtExecute				: R_TRIG;
-	iStep					: INT;
-	fbClearComBuffer		: ClearComBuffer;
-	fbSendString			: SendString;
-	fbReceiveString			: ReceiveString;
-	sReceivedString			: STRING;
-	tonTimeout				: TON;
-	sSendString: STRING;
-	iStringTx: INT := 1;
-	iStringRx: INT := 1;
-	
-	iStringTxRx: INT := 1;
-	sTxRxString: ARRAY[1..40] OF STRING;
-	
-	fbFormatParamString	:	FB_FormatString;
-	fbFormatParamZPadString	:	FB_FormatString;
-	fbFormatCSString	:	FB_FormatString;
-	sParameter: STRING;
-	iIndexChkSum: INT;
-	wCsSum: WORD;
-	udiParameter: UDINT;
-	
+    rtExecute				: R_TRIG;
+    iStep					: INT;
+    fbClearComBuffer		: ClearComBuffer;
+    fbSendString			: SendString;
+    fbReceiveString			: ReceiveString;
+    sReceivedString			: STRING;
+    tonTimeout				: TON;
+    sSendString: STRING;
+    iStringTx: INT := 1;
+    iStringRx: INT := 1;
+
+    iStringTxRx: INT := 1;
+    sTxRxString: ARRAY[1..40] OF STRING;
+
+    fbFormatParamString	:	FB_FormatString;
+    fbFormatParamZPadString	:	FB_FormatString;
+    fbFormatCSString	:	FB_FormatString;
+    sParameter: STRING;
+    iIndexChkSum: INT;
+    wCsSum: WORD;
+    udiParameter: UDINT;
+
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -54,126 +54,126 @@ END_VAR
 (* rising edge trigger *)
 rtExecute(CLK:= i_xExecute);
 IF rtExecute.Q THEN
-	q_xDone	:= FALSE;
-	q_sResponseData := '';
-	q_xError := FALSE;
-	q_xTimeout := FALSE;
-	q_sResult:= '';
-	q_sLastSentString[iStringTx] := '';
-	q_sLastReceivedString[iStringRx]:= '';
-	iStep := 10;
+    q_xDone	:= FALSE;
+    q_sResponseData := '';
+    q_xError := FALSE;
+    q_xTimeout := FALSE;
+    q_sResult:= '';
+    q_sLastSentString[iStringTx] := '';
+    q_sLastReceivedString[iStringRx]:= '';
+    iStep := 10;
 END_IF
 
 CASE iStep OF
-	0:
-		; (* idle *)
+    0:
+        ; (* idle *)
 
-	10: (* clear com buffers *)
-		fbClearComBuffer(Buffer:= iq_stSerialRXBuffer);
-		fbClearComBuffer(Buffer:= iq_stSerialTXBuffer);
-		(* Reset receive *)
-		fbReceiveString(
-			Reset:= TRUE,
-			ReceivedString:= sReceivedString,
-			RXbuffer:= iq_stSerialRXBuffer );
-		(* build the string *)
-		sSendString := CONCAT(i_sAddress, i_sCmd); (* adding the address and command/query *)
-		IF i_CmdFlag THEN
-			(* Convert the parameter into an 8-wide hex string twos complemented*)
-			udiParameter := DINT_TO_UDINT(i_diParameter);
-			fbFormatParamString(sFormat:= '%x', arg1:=F_UDINT(udiParameter)); // first convert to a string
-			fbFormatParamZPadString(sFormat:='%08s', arg1:=F_STRING(fbFormatParamString.sOut));// then zero pad, because FB_Format string does not zero-pad hex strings naturally
-			sParameter := fbFormatParamZPadString.sOut;
-		ELSE
-			sParameter := '00000000'; (* send zeros if we're querying *)
-		END_IF
-		(* Add parameter *)
-		sSendString := CONCAT(sSendString, sParameter);
-		
-		(* Compute checksum *)
-		A_Checksum();
-		
-		(* add stx at start *)
-		sSendString := CONCAT('*', sSendString);
-		(* append checksum *)
-		fbFormatCSString(sFormat := '%02x', arg1:=F_WORD(wCsSum));
-		sSendString	:= CONCAT(sSendString, fbFormatCSString.sOut);
-	 	(*adding tail *)
-		sSendString := CONCAT(sSendString,'$R'); (* add <cr> *)
-		
-		IF fbFormatParamString.bError OR fbFormatCSString.bError THEN
-			q_sResult := CONCAT('In step 10 fbFormatString resulted in error: ', UDINT_TO_STRING(fbFormatParamString.nErrId));
-			iStep := 9000;
-		ELSE
-			fbSendString( SendString:= sSendString, TXbuffer:= iq_stSerialTXBuffer );
-		END_IF
-		q_sLastSentString[iStringTx] := sSendString;
-		IF iStringTx = 40 THEN iStringTx := 1; ELSE iStringTx := iStringTx +1; END_IF
-		iStep := iStep + 10;
+    10: (* clear com buffers *)
+        fbClearComBuffer(Buffer:= iq_stSerialRXBuffer);
+        fbClearComBuffer(Buffer:= iq_stSerialTXBuffer);
+        (* Reset receive *)
+        fbReceiveString(
+            Reset:= TRUE,
+            ReceivedString:= sReceivedString,
+            RXbuffer:= iq_stSerialRXBuffer );
+        (* build the string *)
+        sSendString := CONCAT(i_sAddress, i_sCmd); (* adding the address and command/query *)
+        IF i_CmdFlag THEN
+            (* Convert the parameter into an 8-wide hex string twos complemented*)
+            udiParameter := DINT_TO_UDINT(i_diParameter);
+            fbFormatParamString(sFormat:= '%x', arg1:=F_UDINT(udiParameter)); // first convert to a string
+            fbFormatParamZPadString(sFormat:='%08s', arg1:=F_STRING(fbFormatParamString.sOut));// then zero pad, because FB_Format string does not zero-pad hex strings naturally
+            sParameter := fbFormatParamZPadString.sOut;
+        ELSE
+            sParameter := '00000000'; (* send zeros if we're querying *)
+        END_IF
+        (* Add parameter *)
+        sSendString := CONCAT(sSendString, sParameter);
 
-	20: (* Finish sending the String *)
-		IF fbSendString.Busy THEN
-			fbSendString( SendString:= sSendString, TXbuffer:= iq_stSerialTXBuffer );
-		ELSIF fbSendString.Error <> 0 THEN
-			q_sResult := CONCAT('In step 20 fbSendString resulted in error: ', INT_TO_STRING(fbSendString.Error));
-			iStep := 9000;
-		ELSIF NOT fbSendString.Busy THEN
-			iStep:=iStep + 10;
-		END_IF
-		tonTimeout(IN:= FALSE);
+        (* Compute checksum *)
+        A_Checksum();
 
-	30: (* Get reply *)
-		fbReceiveString(
-			Prefix:= '*',
-			Suffix:= '^',
-			Timeout:= i_tTimeOut,
-			Reset:= FALSE,
-			ReceivedString:= sReceivedString,
-			RXbuffer:= iq_stSerialRXBuffer );
-		tonTimeout(IN:= TRUE, PT:= i_tTimeOut);
-		IF fbReceiveString.Error <> 0 THEN
-			q_sResult := CONCAT('In step 30 fbReceiveString resulted in error: ', INT_TO_STRING(fbReceiveString.Error));
-			iStep := 9000;
-		ELSIF fbReceiveString.RxTimeout OR tonTimeout.Q THEN
-			q_sResult := 'Serial device failed to reply within timeout period';
-			q_xTimeout := TRUE;
-			iStep := 9000;
-		ELSIF fbReceiveString.StringReceived THEN
-			q_sLastReceivedString[iStringRx] := sReceivedString;
-			IF iStringRx = 40 THEN iStringRx := 1; ELSE iStringRx := iStringRx +1; END_IF
-			IF LEN(sReceivedString) < 2 THEN
-				q_sResult := 'Reply too short.';
-				iStep := 9000;
-			ELSE
-				(* Removing stx and ack *)
-				q_sResponseData := LEFT(sReceivedString,LEN(sReceivedString)-1);
-				q_sResponseData := RIGHT(q_sResponseData,LEN(q_sResponseData)-1);
-				(* Checking for error messages *)
-				IF q_sResponseData = 'XXXXXXXXc0' THEN
-						q_sResult := 'Checksum error reported by driver';
-						iStep := 9000;
-				END_IF
-				q_sResult := 'Success.';
-				q_xDone:= TRUE;
-				iStep := 100;
-			END_IF
-		END_IF
-		
-		
-		
+        (* add stx at start *)
+        sSendString := CONCAT('*', sSendString);
+        (* append checksum *)
+        fbFormatCSString(sFormat := '%02x', arg1:=F_WORD(wCsSum));
+        sSendString	:= CONCAT(sSendString, fbFormatCSString.sOut);
+         (*adding tail *)
+        sSendString := CONCAT(sSendString,'$R'); (* add <cr> *)
 
-	100: (* done *)
-		IF  i_xExecute = FALSE THEN
-			q_xDone:= FALSE;
-			iStep := 0;
-		END_IF
-		IF NOT i_CmdFlag THEN
-			sTxRxString[iStringTxRx]:=CONCAT(CONCAT(q_sLastSentString[iStringTx], ' received '), q_sLastReceivedString[iStringRx]);
-		END_IF
-		IF iStringTxRx = 40 THEN iStringTxRx := 1; ELSE iStringTxRx := iStringTxRx +1; END_IF
+        IF fbFormatParamString.bError OR fbFormatCSString.bError THEN
+            q_sResult := CONCAT('In step 10 fbFormatString resulted in error: ', UDINT_TO_STRING(fbFormatParamString.nErrId));
+            iStep := 9000;
+        ELSE
+            fbSendString( SendString:= sSendString, TXbuffer:= iq_stSerialTXBuffer );
+        END_IF
+        q_sLastSentString[iStringTx] := sSendString;
+        IF iStringTx = 40 THEN iStringTx := 1; ELSE iStringTx := iStringTx +1; END_IF
+        iStep := iStep + 10;
 
-	9000:
-		q_xError := TRUE;;
+    20: (* Finish sending the String *)
+        IF fbSendString.Busy THEN
+            fbSendString( SendString:= sSendString, TXbuffer:= iq_stSerialTXBuffer );
+        ELSIF fbSendString.Error <> 0 THEN
+            q_sResult := CONCAT('In step 20 fbSendString resulted in error: ', INT_TO_STRING(fbSendString.Error));
+            iStep := 9000;
+        ELSIF NOT fbSendString.Busy THEN
+            iStep:=iStep + 10;
+        END_IF
+        tonTimeout(IN:= FALSE);
+
+    30: (* Get reply *)
+        fbReceiveString(
+            Prefix:= '*',
+            Suffix:= '^',
+            Timeout:= i_tTimeOut,
+            Reset:= FALSE,
+            ReceivedString:= sReceivedString,
+            RXbuffer:= iq_stSerialRXBuffer );
+        tonTimeout(IN:= TRUE, PT:= i_tTimeOut);
+        IF fbReceiveString.Error <> 0 THEN
+            q_sResult := CONCAT('In step 30 fbReceiveString resulted in error: ', INT_TO_STRING(fbReceiveString.Error));
+            iStep := 9000;
+        ELSIF fbReceiveString.RxTimeout OR tonTimeout.Q THEN
+            q_sResult := 'Serial device failed to reply within timeout period';
+            q_xTimeout := TRUE;
+            iStep := 9000;
+        ELSIF fbReceiveString.StringReceived THEN
+            q_sLastReceivedString[iStringRx] := sReceivedString;
+            IF iStringRx = 40 THEN iStringRx := 1; ELSE iStringRx := iStringRx +1; END_IF
+            IF LEN(sReceivedString) < 2 THEN
+                q_sResult := 'Reply too short.';
+                iStep := 9000;
+            ELSE
+                (* Removing stx and ack *)
+                q_sResponseData := LEFT(sReceivedString,LEN(sReceivedString)-1);
+                q_sResponseData := RIGHT(q_sResponseData,LEN(q_sResponseData)-1);
+                (* Checking for error messages *)
+                IF q_sResponseData = 'XXXXXXXXc0' THEN
+                        q_sResult := 'Checksum error reported by driver';
+                        iStep := 9000;
+                END_IF
+                q_sResult := 'Success.';
+                q_xDone:= TRUE;
+                iStep := 100;
+            END_IF
+        END_IF
+
+
+
+
+    100: (* done *)
+        IF  i_xExecute = FALSE THEN
+            q_xDone:= FALSE;
+            iStep := 0;
+        END_IF
+        IF NOT i_CmdFlag THEN
+            sTxRxString[iStringTxRx]:=CONCAT(CONCAT(q_sLastSentString[iStringTx], ' received '), q_sLastReceivedString[iStringRx]);
+        END_IF
+        IF iStringTxRx = 40 THEN iStringTxRx := 1; ELSE iStringTxRx := iStringTxRx +1; END_IF
+
+    9000:
+        q_xError := TRUE;;
 
 
 
@@ -185,10 +185,10 @@ END_CASE]]></ST>
         <ST><![CDATA[wCsSum := 0;
 
 FOR iIndexChkSum := 0 TO (LEN(sSendString) -1) DO
-	wCsSum:= wCsSum + BYTE_TO_WORD(sSendString[iIndexChkSum]);
+    wCsSum:= wCsSum + BYTE_TO_WORD(sSendString[iIndexChkSum]);
 END_FOR
 wCsSum	:= wCsSum MOD 256; (* modulo 256 *)
-	]]></ST>
+    ]]></ST>
       </Implementation>
     </Action>
     <ObjectProperties />

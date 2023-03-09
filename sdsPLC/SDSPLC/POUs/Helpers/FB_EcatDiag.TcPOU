@@ -3,20 +3,20 @@
   <POU Name="FB_EcatDiag" Id="{5f761df3-17d1-44c1-84cd-865068aed9a8}">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_EcatDiag
 VAR_INPUT
-	i_AMSNetId	:	AMSNETID; //Connect this to an AMSNETID structure as a PLC input. Then link the input to the AMSNETID name in the master info.
-	i_xFirstPass	:	BOOL;
+    i_AMSNetId	:	AMSNETID; //Connect this to an AMSNETID structure as a PLC input. Then link the input to the AMSNETID name in the master info.
+    i_xFirstPass	:	BOOL;
 END_VAR
 VAR_OUTPUT
-	q_xAllStatesGood	:	BOOL;
+    q_xAllStatesGood	:	BOOL;
 END_VAR
 VAR
-	sNetId : T_AmsNetId;
-	astTermStates : ARRAY[1..256] OF ST_EcSlaveState;
-	
-	fbGetAllSlaveStates     : FB_EcGetAllSlaveStates;
-	ftReset	: F_TRIG;
-	
-	iterator: INT;
+    sNetId : T_AmsNetId;
+    astTermStates : ARRAY[1..256] OF ST_EcSlaveState;
+
+    fbGetAllSlaveStates     : FB_EcGetAllSlaveStates;
+    ftReset	: F_TRIG;
+
+    iterator: INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -32,12 +32,12 @@ fbGetAllSlaveStates(sNetId:=sNetId, pStateBuf := ADR(astTermStates), cbBufLen:=S
 //Cycle through each entry in the array and check if we have anyone not in OP and that the link state is good.
 // If so, then set our global IO bad boolean.
 IF fbGetAllSlaveStates.nSlaves > 0 THEN
-	q_xAllStatesGood := TRUE;
+    q_xAllStatesGood := TRUE;
 FOR iterator := 1 TO (fbGetAllSlaveStates.nSlaves -1) BY 1
-	DO
-	IF NOT( (astTermStates[iterator].deviceState = EC_DEVICE_STATE_OP) AND (astTermStates[iterator].linkState = EC_LINK_STATE_OK)) THEN
-		q_xAllStatesGood := FALSE;
-	END_IF
+    DO
+    IF NOT( (astTermStates[iterator].deviceState = EC_DEVICE_STATE_OP) AND (astTermStates[iterator].linkState = EC_LINK_STATE_OK)) THEN
+        q_xAllStatesGood := FALSE;
+    END_IF
 END_FOR
 END_IF]]></ST>
     </Implementation>

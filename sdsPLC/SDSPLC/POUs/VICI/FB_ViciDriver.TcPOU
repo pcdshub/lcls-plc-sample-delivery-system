@@ -2,40 +2,39 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_ViciDriver" Id="{0a9d4465-4ab2-4b83-97fa-f91b77d4959f}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ViciDriver
-FUNCTION_BLOCK FB_ViciDriver
 VAR_INPUT
-	i_xExecute				: BOOL;					(* rising edge execute *)
-	i_tTimeOut				: TIME := t#10s;  		(* Maximum wait time for reply *)
-	i_stControl				: ST_ViciControl;
+    i_xExecute				: BOOL;					(* rising edge execute *)
+    i_tTimeOut				: TIME := t#10s;  		(* Maximum wait time for reply *)
+    i_stControl				: ST_ViciControl;
 END_VAR
 VAR_OUTPUT
-	q_xDone					: BOOL;
-	q_xError				: BOOL;
-	q_xWarning				: BOOL;					(* set in the event of an unexpected reply *)
-	q_xTimeout				: BOOL;
-	q_sResult				: STRING(255);
-	q_sLastSentString		: ARRAY[1..40] OF STRING;				(* Last String Sent to Serial Device - for debugging *)
-	q_sLastReceivedString	: ARRAY[1..40] OF STRING;				(* Last String Received from Serial Device - for debugging *)
-	q_stStatus				: ST_ViciStatus;
+    q_xDone					: BOOL;
+    q_xError				: BOOL;
+    q_xWarning				: BOOL;					(* set in the event of an unexpected reply *)
+    q_xTimeout				: BOOL;
+    q_sResult				: STRING(255);
+    q_sLastSentString		: ARRAY[1..40] OF STRING;				(* Last String Sent to Serial Device - for debugging *)
+    q_sLastReceivedString	: ARRAY[1..40] OF STRING;				(* Last String Received from Serial Device - for debugging *)
+    q_stStatus				: ST_ViciStatus;
 END_VAR
 VAR_IN_OUT
-	iq_stSerialRXBuffer 	: ComBuffer;
-	iq_stSerialTXBuffer 	: ComBuffer;
+    iq_stSerialRXBuffer 	: ComBuffer;
+    iq_stSerialTXBuffer 	: ComBuffer;
 END_VAR
 VAR
-	iReqPosReverse          : INT;
-	rtExecute				: R_TRIG;
-	iStep					: INT;
-	sSendData				: STRING;
-	fbViciTransaction		: FB_ViciTransaction;
-	(*fbFormatString			: FB_FormatString;*)
-	(*fbSplit					: FB_Split255;*)
-	asReplyFields			: ARRAY[1..20] OF T_MaxString;
-	wChecksum: WORD;
-	rtStartIntegration: R_TRIG;
-	rtEndReset: R_TRIG;
-	sWorking: STRING;
-	strResponseExpected: STRING;
+    iReqPosReverse          : INT;
+    rtExecute				: R_TRIG;
+    iStep					: INT;
+    sSendData				: STRING;
+    fbViciTransaction		: FB_ViciTransaction;
+    (*fbFormatString			: FB_FormatString;*)
+    (*fbSplit					: FB_Split255;*)
+    asReplyFields			: ARRAY[1..20] OF T_MaxString;
+    wChecksum: WORD;
+    rtStartIntegration: R_TRIG;
+    rtEndReset: R_TRIG;
+    sWorking: STRING;
+    strResponseExpected: STRING;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -44,117 +43,117 @@ END_VAR
 (* rising edge trigger *)
 rtExecute(CLK:= i_xExecute);
 IF rtExecute.Q  THEN
-	q_xDone	:= FALSE;
-	q_xError := FALSE;
-	q_xWarning := FALSE;
-	q_xTimeout := FALSE;
-	q_sResult:= '';
-	FBViciTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
-	iStep := 10;
+    q_xDone	:= FALSE;
+    q_xError := FALSE;
+    q_xWarning := FALSE;
+    q_xTimeout := FALSE;
+    q_sResult:= '';
+    FBViciTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer );  (* reset *)
+    iStep := 10;
 END_IF
 
 CASE iStep OF
-	0: (* idle *)
-		;
+    0: (* idle *)
+        ;
 
-	10: (* Get Position *)
-		FBViciTransaction(
-			i_xExecute:= TRUE,
-			i_iAddress:=i_stControl.iAddress,
-			i_sSendData:= 'CP', (*declared postion readback Vici command*)
-			i_tTimeOut:= i_tTimeOut,
-			iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
-			iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
-			i_CmdFlag :=FALSE);
-		IF FBViciTransaction.q_xError THEN
-			q_sResult := CONCAT('in Step 10 serial transaction failed with message: ', FBViciTransaction.q_sResult);
-			q_stStatus.xPosValid := FALSE; (* used to signal an invalid readback or control exchange *)
-			iStep := 9000;
-		ELSIF FBViciTransaction.q_xDone THEN
-			q_stStatus.sViciReply := FBViciTransaction.q_sResponseData;
-			(* grab the left two characters, they should equal CP *)
-			strResponseExpected := CONCAT(INT_TO_STRING( i_stControl.iAddress), 'CP');
-			IF LEFT(q_stStatus.sViciReply, 3) <> strResponseExpected (*'1CP'*) THEN
-				(*use q-s Result to specify error type*)
-				q_sResult := CONCAT(CONCAT('in step 10 unexpected response recieved: ', LEFT(q_stStatus.sViciReply, 3)),CONCAT(' instead of: ', CONCAT(INT_TO_STRING( i_stControl.iAddress), 'CP')));
-					q_xWarning := TRUE;
-				(* If they don't equal CP, then error *)
-				q_stStatus.xPosValid := FALSE; (* used to signal an invalid readback or control exchange *)
-				iStep := 9000;
-			(* else then grab the right two characters and convert to INT *)
-			ELSE
-			sWorking := RIGHT(q_stStatus.sViciReply, 2);
-			q_stStatus.iCurrPos := 13 - STRING_TO_INT(sWorking); (* pass that INT to the q_stStatus.iCurrPos, mirroring positions *)
-			q_stStatus.xPosValid := TRUE;
-			FBViciTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer, i_CmdFlag :=FALSE);  (* reset *)
-			iStep := 5000;
-			END_IF
-		END_IF
-
-
-	5000: (* Set position*)
-		(* Limit the requested position to the valid 12 possible positions *)
-		IF i_stControl.iReqPos > 12 OR i_stControl.iReqPos < 1 THEN
-			q_sResult := CONCAT('in step 5000 port range exceeded: ',FBViciTransaction.q_sResponseData);
-			i_stControl.iReqPos := LIMIT(1, i_stControl.iReqPos,12);
-		END_IF
-		(* Mirror the "clock" value across the vertical axis of symmetry *)
-		iReqPosReverse := 13 - i_stControl.iReqPos;
-		IF q_stStatus.iReqPos <> i_stControl.iReqPos THEN
-			IF q_stStatus.iCurrPos > i_stControl.iReqPos THEN
-				IF ABS(q_stStatus.iCurrPos - i_stControl.iReqPos) >= 6 THEN
-					sSendData := CONCAT('CW', INT_TO_STRING(iReqPosReverse));
-				ELSE
-					sSendData := CONCAT('CC', INT_TO_STRING(iReqPosReverse));
-				END_IF
-			END_IF
-			IF q_stStatus.iCurrPos < i_stControl.iReqPos THEN
-				IF ABS(q_stStatus.iCurrPos - i_stControl.iReqPos) >= 6 THEN
-					sSendData := CONCAT('CC', INT_TO_STRING(iReqPosReverse));
-				ELSE
-					sSendData := CONCAT('CW', INT_TO_STRING(iReqPosReverse));
-				END_IF
-			END_IF
-			FBViciTransaction(
-				i_xExecute:= TRUE,
-				i_sSendData:= sSendData,
-				i_tTimeOut:= i_tTimeOut,
-				i_iAddress:=i_stControl.iAddress,
-				iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
-				iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
-				i_CmdFlag:=TRUE);
-			IF FBViciTransaction.q_xError THEN
-				q_sResult := CONCAT('in Step 5000 serial transaction failed with message: ', FBViciTransaction.q_sResult);
-				iStep := 9000;
-			ELSIF FBViciTransaction.q_xDone THEN
-				FBViciTransaction(
-					 i_xExecute:= FALSE,
-					iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
-					iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
-					i_CmdFlag:=FALSE );  (* reset *)
-				q_stStatus.iReqPos := i_stControl.iReqPos;
-				iStep := 8000;
-			END_IF
-		ELSE
-			iStep := 8000;
-		END_IF
+    10: (* Get Position *)
+        FBViciTransaction(
+            i_xExecute:= TRUE,
+            i_iAddress:=i_stControl.iAddress,
+            i_sSendData:= 'CP', (*declared postion readback Vici command*)
+            i_tTimeOut:= i_tTimeOut,
+            iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+            iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
+            i_CmdFlag :=FALSE);
+        IF FBViciTransaction.q_xError THEN
+            q_sResult := CONCAT('in Step 10 serial transaction failed with message: ', FBViciTransaction.q_sResult);
+            q_stStatus.xPosValid := FALSE; (* used to signal an invalid readback or control exchange *)
+            iStep := 9000;
+        ELSIF FBViciTransaction.q_xDone THEN
+            q_stStatus.sViciReply := FBViciTransaction.q_sResponseData;
+            (* grab the left two characters, they should equal CP *)
+            strResponseExpected := CONCAT(INT_TO_STRING( i_stControl.iAddress), 'CP');
+            IF LEFT(q_stStatus.sViciReply, 3) <> strResponseExpected (*'1CP'*) THEN
+                (*use q-s Result to specify error type*)
+                q_sResult := CONCAT(CONCAT('in step 10 unexpected response recieved: ', LEFT(q_stStatus.sViciReply, 3)),CONCAT(' instead of: ', CONCAT(INT_TO_STRING( i_stControl.iAddress), 'CP')));
+                    q_xWarning := TRUE;
+                (* If they don't equal CP, then error *)
+                q_stStatus.xPosValid := FALSE; (* used to signal an invalid readback or control exchange *)
+                iStep := 9000;
+            (* else then grab the right two characters and convert to INT *)
+            ELSE
+            sWorking := RIGHT(q_stStatus.sViciReply, 2);
+            q_stStatus.iCurrPos := 13 - STRING_TO_INT(sWorking); (* pass that INT to the q_stStatus.iCurrPos, mirroring positions *)
+            q_stStatus.xPosValid := TRUE;
+            FBViciTransaction( i_xExecute:= FALSE, iq_stSerialRXBuffer:= iq_stSerialRXBuffer, iq_stSerialTXBuffer:= iq_stSerialTXBuffer, i_CmdFlag :=FALSE);  (* reset *)
+            iStep := 5000;
+            END_IF
+        END_IF
 
 
-	8000: (* done *)
-		q_xDone := TRUE;
-		IF q_sResult = '' THEN
-			q_sResult := 'Success';
-		END_IF
-		IF  i_xExecute = FALSE THEN
-			q_xDone:= FALSE;
-			iStep := 0;
-		END_IF
+    5000: (* Set position*)
+        (* Limit the requested position to the valid 12 possible positions *)
+        IF i_stControl.iReqPos > 12 OR i_stControl.iReqPos < 1 THEN
+            q_sResult := CONCAT('in step 5000 port range exceeded: ',FBViciTransaction.q_sResponseData);
+            i_stControl.iReqPos := LIMIT(1, i_stControl.iReqPos,12);
+        END_IF
+        (* Mirror the "clock" value across the vertical axis of symmetry *)
+        iReqPosReverse := 13 - i_stControl.iReqPos;
+        IF q_stStatus.iReqPos <> i_stControl.iReqPos THEN
+            IF q_stStatus.iCurrPos > i_stControl.iReqPos THEN
+                IF ABS(q_stStatus.iCurrPos - i_stControl.iReqPos) >= 6 THEN
+                    sSendData := CONCAT('CW', INT_TO_STRING(iReqPosReverse));
+                ELSE
+                    sSendData := CONCAT('CC', INT_TO_STRING(iReqPosReverse));
+                END_IF
+            END_IF
+            IF q_stStatus.iCurrPos < i_stControl.iReqPos THEN
+                IF ABS(q_stStatus.iCurrPos - i_stControl.iReqPos) >= 6 THEN
+                    sSendData := CONCAT('CC', INT_TO_STRING(iReqPosReverse));
+                ELSE
+                    sSendData := CONCAT('CW', INT_TO_STRING(iReqPosReverse));
+                END_IF
+            END_IF
+            FBViciTransaction(
+                i_xExecute:= TRUE,
+                i_sSendData:= sSendData,
+                i_tTimeOut:= i_tTimeOut,
+                i_iAddress:=i_stControl.iAddress,
+                iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+                iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
+                i_CmdFlag:=TRUE);
+            IF FBViciTransaction.q_xError THEN
+                q_sResult := CONCAT('in Step 5000 serial transaction failed with message: ', FBViciTransaction.q_sResult);
+                iStep := 9000;
+            ELSIF FBViciTransaction.q_xDone THEN
+                FBViciTransaction(
+                     i_xExecute:= FALSE,
+                    iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+                    iq_stSerialTXBuffer:= iq_stSerialTXBuffer,
+                    i_CmdFlag:=FALSE );  (* reset *)
+                q_stStatus.iReqPos := i_stControl.iReqPos;
+                iStep := 8000;
+            END_IF
+        ELSE
+            iStep := 8000;
+        END_IF
 
-	9000:
-		_A_ClearStatus();
-		q_xTimeout := FBViciTransaction.q_xTimeout;
-		q_xError := TRUE;
-		
+
+    8000: (* done *)
+        q_xDone := TRUE;
+        IF q_sResult = '' THEN
+            q_sResult := 'Success';
+        END_IF
+        IF  i_xExecute = FALSE THEN
+            q_xDone:= FALSE;
+            iStep := 0;
+        END_IF
+
+    9000:
+        _A_ClearStatus();
+        q_xTimeout := FBViciTransaction.q_xTimeout;
+        q_xError := TRUE;
+
 
 END_CASE
 

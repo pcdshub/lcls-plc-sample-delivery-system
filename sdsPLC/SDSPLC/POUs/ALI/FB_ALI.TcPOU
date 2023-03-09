@@ -3,26 +3,26 @@
   <POU Name="FB_ALI" Id="{04310620-f9dd-4995-a4e2-9924022b4884}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ALI
 VAR_IN_OUT
-	iq_Injector	:	ST_ALI;
+    iq_Injector	:	ST_ALI;
 END_VAR
 VAR_INPUT
 END_VAR
 VAR_OUTPUT
 END_VAR
 VAR
-	fb925ALINB1 : FB_9XX;
-	fb925ALINB2 : FB_9XX;
-	fb722ALINB3 : FB_GCM;
-	
-	fbManipX	:	FB_ManipAxis;
-	fbManipY	:	FB_ManipAxis;
-	fbManipZ	:	FB_ManipAxis;
-	
+    fb925ALINB1 : FB_9XX;
+    fb925ALINB2 : FB_9XX;
+    fb722ALINB3 : FB_GCM;
 
-	
-	fbPropValve		:	FB_PropValve;
-	
-	ftHotPlug	:	F_TRIG;
+    fbManipX	:	FB_ManipAxis;
+    fbManipY	:	FB_ManipAxis;
+    fbManipZ	:	FB_ManipAxis;
+
+
+
+    fbPropValve		:	FB_PropValve;
+
+    ftHotPlug	:	F_TRIG;
 END_VAR
 ]]></Declaration>
     <Implementation>

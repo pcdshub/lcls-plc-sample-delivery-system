@@ -17,13 +17,13 @@ VAR
         pv: IO
      '}
     stBaseIO : ST_M3DeviceBaseIO;
-	
+
     stSerial1 : ST_SerialComm;
     stSerial2 : ST_SerialComm;
-    
+
     fbSerial1 : FB_SerialCommWrapper;
     fbSerial2 : FB_SerialCommWrapper;
-    
+
     {attribute 'pytmc' := '
         pv: PropAir:01
      '}
@@ -32,7 +32,7 @@ VAR
         pv: PropAir:02
      '}
     stPropAir2 : ST_Proportionair;
-    
+
     PropAir1 : FB_ProportionairRegulator;
     PropAir2 : FB_ProportionairRegulator;
 END_VAR

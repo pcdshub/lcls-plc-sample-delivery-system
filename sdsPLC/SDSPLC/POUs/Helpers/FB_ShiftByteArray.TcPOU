@@ -3,18 +3,18 @@
   <POU Name="FB_ShiftByteArray" Id="{4ec9fba6-d602-4cf1-98d7-79ad87f6fbee}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ShiftByteArray
 VAR_INPUT
-	ptArray	:	POINTER TO BYTE;
-	iSize	:	INT;
-	iCurrIndex	:	INT;
-	iMessageLen	:	INT;
-	iShift		:	INT;
-	
+    ptArray	:	POINTER TO BYTE;
+    iSize	:	INT;
+    iCurrIndex	:	INT;
+    iMessageLen	:	INT;
+    iShift		:	INT;
+
 END_VAR
 VAR_OUTPUT
-	q_xError	:	BOOL;
+    q_xError	:	BOOL;
 END_VAR
 VAR
-	howbig	: UINT;
+    howbig	: UINT;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -22,15 +22,15 @@ END_VAR
 // Clear error bit
 q_xError := FALSE;
 IF iMessageLen = iCurrIndex THEN
-	//Dont do a damn thing
-	;
+    //Dont do a damn thing
+    ;
 // Check the remaining length and shift amount summed is not greater than the total array width.
 ELSIF iSize < (iMessageLen - iCurrIndex) + iShift THEN
-	q_xError := TRUE;
+    q_xError := TRUE;
 ELSE// MEMMOVE from 1+ the current index to the remaining length by the shift amount
-	IF MEMMOVE(srcAddr:=(ptArray + iCurrIndex + 1), destAddr:=(ptArray + iCurrIndex + 1 + iShift), n:=INT_TO_UDINT(iMessageLen + 1 - iCurrIndex)) =0 THEN
-		q_xError := TRUE;
-	END_IF
+    IF MEMMOVE(srcAddr:=(ptArray + iCurrIndex + 1), destAddr:=(ptArray + iCurrIndex + 1 + iShift), n:=INT_TO_UDINT(iMessageLen + 1 - iCurrIndex)) =0 THEN
+        q_xError := TRUE;
+    END_IF
 END_IF]]></ST>
     </Implementation>
   </POU>

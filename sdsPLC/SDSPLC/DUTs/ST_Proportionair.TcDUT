@@ -3,7 +3,7 @@
   <DUT Name="ST_Proportionair" Id="{1cb50253-0c45-4afc-8e14-284b1dbf64b6}">
     <Declaration><![CDATA[TYPE ST_Proportionair :
 STRUCT
-	
+
 (* Control *)
 {attribute 'pytmc' := '
         pv: Enable

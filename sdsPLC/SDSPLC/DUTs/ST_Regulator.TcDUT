@@ -6,7 +6,7 @@ STRUCT
 
 (* Regulator enable *)
 xRegEnab	:	BOOL;
-	
+
 (* Regulator motor *)
 stRegulatorMotor	:	AXIS_REF;
 wPercentageOpen		:	WORD;

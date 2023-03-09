@@ -3,7 +3,7 @@
   <POU Name="p_Manifold" Id="{7c0ffa86-dfae-423e-93c2-5474c4362dd8}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM p_Manifold
 VAR
-	fbManiValve : FB_ManiValve;
+    fbManiValve : FB_ManiValve;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -40,9 +40,5 @@ stGasMani.stManiVlv8.xILK := stGasMani.xOnline;
 fbManiValve(iq_valve:=stGasMani.stManiVlv8);
 ]]></ST>
     </Implementation>
-    <LineIds Name="p_Manifold">
-      <LineId Id="3" Count="30" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

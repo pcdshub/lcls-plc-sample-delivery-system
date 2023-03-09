@@ -3,7 +3,7 @@
   <DUT Name="ST_RegDeadbandControls" Id="{a04513ee-c76f-4682-bef9-04f3920c05e2}">
     <Declaration><![CDATA[TYPE ST_RegDeadbandControls :
 STRUCT
-	(* Deadband controls *)
+    (* Deadband controls *)
 iDeadband	:	INT;
 iMaxSpeed	:	INT; // degrees per second
 END_STRUCT

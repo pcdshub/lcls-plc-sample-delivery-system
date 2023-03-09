@@ -3,10 +3,10 @@
   <POU Name="F_AxisRef_To_MSTA" Id="{6037187c-3053-436d-ba08-ac7db25710cf}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION F_AxisRef_To_MSTA	: UINT
 VAR_INPUT
-	stManipAxis	:	ST_ManipAxis;
+    stManipAxis	:	ST_ManipAxis;
 END_VAR
 VAR_OUTPUT
-	MSTA	:	UINT;
+    MSTA	:	UINT;
 END_VAR
 VAR
 END_VAR
@@ -18,10 +18,5 @@ END_VAR
 MSTA.1 := stManipAxis.stAxis.Status.Error;
 MSTA.0 := stManipAxis.xEnabled;]]></ST>
     </Implementation>
-    <LineIds Name="F_AxisRef_To_MSTA">
-      <LineId Id="10" Count="2" />
-      <LineId Id="15" Count="0" />
-      <LineId Id="9" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

@@ -59,13 +59,5 @@ stGasMani.stManiVlv6.ixOPN := iq_stM3GasManifold.i_EP2338_Ch6;
 stGasMani.stManiVlv7.ixOPN := iq_stM3GasManifold.i_EP2338_Ch7;
 stGasMani.stManiVlv8.ixOPN := iq_stM3GasManifold.i_EP2338_Ch8;]]></ST>
     </Implementation>
-    <LineIds Name="p_SoftIO">
-      <LineId Id="3" Count="24" />
-      <LineId Id="34" Count="5" />
-      <LineId Id="43" Count="0" />
-      <LineId Id="61" Count="1" />
-      <LineId Id="44" Count="16" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

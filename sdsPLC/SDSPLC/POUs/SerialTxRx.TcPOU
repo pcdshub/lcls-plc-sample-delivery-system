@@ -3,16 +3,16 @@
   <POU Name="SerialTxRx" Id="{8ce33525-cb60-4010-bca4-10eb26b43a58}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM SerialTxRx
 VAR
-(*	
-	fbSerialLineControl_M2SelAVici: SerialLineControl;
-	fbSerialLineControl_M2SelBVici: SerialLineControl;
-	fbSerialLineControl_M2SelAFM: SerialLineControl;
-	fbSerialLineControl_M2SelBFM: SerialLineControl;
-	
-	fbSerialLineControl_M3SelAVici: SerialLineControl;
-	fbSerialLineControl_M3SelAFM: SerialLineControl;
-	fbSerialLineControl_M3SelBVici: SerialLineControl;
-	fbSerialLineControl_M3SelBFM: SerialLineControl;
+(*
+    fbSerialLineControl_M2SelAVici: SerialLineControl;
+    fbSerialLineControl_M2SelBVici: SerialLineControl;
+    fbSerialLineControl_M2SelAFM: SerialLineControl;
+    fbSerialLineControl_M2SelBFM: SerialLineControl;
+
+    fbSerialLineControl_M3SelAVici: SerialLineControl;
+    fbSerialLineControl_M3SelAFM: SerialLineControl;
+    fbSerialLineControl_M3SelBVici: SerialLineControl;
+    fbSerialLineControl_M3SelBFM: SerialLineControl;
 *)
 END_VAR
 ]]></Declaration>

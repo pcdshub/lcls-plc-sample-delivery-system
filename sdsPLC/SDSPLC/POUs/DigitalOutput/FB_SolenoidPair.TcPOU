@@ -9,35 +9,35 @@ END_VAR
 VAR_IN_OUT
 END_VAR
 VAR
-	{attribute 'pytmc' := '
+    {attribute 'pytmc' := '
         pv: Valve:01:Open
-		io: io
+        io: io
      '}
-	q_xDO1 AT %Q*	:	BOOL;
-	{attribute 'pytmc' := '
+    q_xDO1 AT %Q*	:	BOOL;
+    {attribute 'pytmc' := '
         pv: Valve:02:Open
-		io: io
+        io: io
      '}
-	q_xDO2 AT %Q*	:	BOOL;
-	
-	{attribute 'pytmc' := '
+    q_xDO2 AT %Q*	:	BOOL;
+
+    {attribute 'pytmc' := '
         pv: Switch
-		io: o
+        io: o
      '}
-	i_xEpics AT %I* : BOOL; // open A when False, open B when True
-	
-	{attribute 'pytmc' := '
+    i_xEpics AT %I* : BOOL; // open A when False, open B when True
+
+    {attribute 'pytmc' := '
         pv: Debug
-		io: o
+        io: o
      '}
-	i_xDebug AT %I* : BOOL; // if True, do not set valves according to i_xEpics
+    i_xDebug AT %I* : BOOL; // if True, do not set valves according to i_xEpics
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[(* If debug, set independently. Else, only open one valve according to i_xEpics *)
 IF NOT i_xDebug THEN
-	q_xDO1 := NOT i_xEpics;
-	q_xDO2 := i_xEpics;
+    q_xDO1 := NOT i_xEpics;
+    q_xDO2 := i_xEpics;
 END_IF]]></ST>
     </Implementation>
   </POU>

@@ -3,59 +3,59 @@
   <POU Name="FB_SensirionTransaction" Id="{8e8df19b-a4b0-41c3-b925-62273ee34de0}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SensirionTransaction
 VAR CONSTANT
-	c_ArraySize : INT := 600;
-	c_DebugArraySize	:	INT:=40;
+    c_ArraySize : INT := 600;
+    c_DebugArraySize	:	INT:=40;
 END_VAR
 VAR_INPUT
-	i_xExecute				: 	BOOL;				(* Rising edge execute *)
-	i_bCmd					: 	BYTE; 				(* Command parameter *)
-	i_bAdr					:	BYTE;	//Address parameter
-	i_bLen					:	BYTE;	//Length of transmission
-	i_abTxData				:	ARRAY[1..256] OF BYTE; //Transmission
-	i_tTimeOut				:	TIME := T#10S;  	(* Maximum wait time for reply *)
+    i_xExecute				: 	BOOL;				(* Rising edge execute *)
+    i_bCmd					: 	BYTE; 				(* Command parameter *)
+    i_bAdr					:	BYTE;	//Address parameter
+    i_bLen					:	BYTE;	//Length of transmission
+    i_abTxData				:	ARRAY[1..256] OF BYTE; //Transmission
+    i_tTimeOut				:	TIME := T#10S;  	(* Maximum wait time for reply *)
 END_VAR
 VAR_OUTPUT
-	q_xDone					: BOOL;
-	q_baRxData				: ARRAY[1..c_ArraySize] OF BYTE; //Rx data from the frame, parse this in the driver
-	q_iRxLen				: INT;
-	q_xError				: BOOL;
-	q_xTimeout				: BOOL;
-	q_sResult				: STRING(255);
-	q_abLastTxData		: ARRAY[1..c_DebugArraySize,1..c_ArraySize] OF BYTE;			(* Last byte stream sent to serial device - for debugging *)
-	q_abLastRxData		: ARRAY[1..c_DebugArraySize,1..c_ArraySize] OF BYTE;			(* Last byte stream received from serial device - for debugging *)
-	
-	q_bState	:	BYTE;
-	
-	q_baRxUnit	:	ARRAY[1..c_ArraySize] OF BYTE;
+    q_xDone					: BOOL;
+    q_baRxData				: ARRAY[1..c_ArraySize] OF BYTE; //Rx data from the frame, parse this in the driver
+    q_iRxLen				: INT;
+    q_xError				: BOOL;
+    q_xTimeout				: BOOL;
+    q_sResult				: STRING(255);
+    q_abLastTxData		: ARRAY[1..c_DebugArraySize,1..c_ArraySize] OF BYTE;			(* Last byte stream sent to serial device - for debugging *)
+    q_abLastRxData		: ARRAY[1..c_DebugArraySize,1..c_ArraySize] OF BYTE;			(* Last byte stream received from serial device - for debugging *)
+
+    q_bState	:	BYTE;
+
+    q_baRxUnit	:	ARRAY[1..c_ArraySize] OF BYTE;
 END_VAR
 VAR_IN_OUT
-	iq_stSerialRXBuffer 	: ComBuffer;
-	iq_stSerialTXBuffer 	: ComBuffer;
+    iq_stSerialRXBuffer 	: ComBuffer;
+    iq_stSerialTXBuffer 	: ComBuffer;
 END_VAR
 VAR
-	//Usual stuff
-	rtExecute				: R_TRIG;
-	iStep					: INT;
-	fbClearComBuffer		: ClearComBuffer;
-	fbSendData				: SendData;
-	udiTxLen				: UDINT;
-	udiRxLen				: UDINT;
-	fbReceiveData			: ReceiveData;
-	baRxData			: ARRAY[1..c_ArraySize] OF BYTE;
-	baTxData			: ARRAY[1..c_ArraySize] OF BYTE;			
-	tonTimeout				: TON;
-	iDataTx: INT := 1;
-	iDataRx: INT := 1;
-	
-	//Device specific
-	iSeek : INT :=1 ;
-	bDelimiter	:	BYTE:=16#7E;
-	bRxLen	:	BYTE;
-	fbShiftByteArray	:	FB_ShiftByteArray;
-	iFrameWidth	:	INT;
-	bCatch : BYTE;
-	xCatch : BOOL;
-	
+    //Usual stuff
+    rtExecute				: R_TRIG;
+    iStep					: INT;
+    fbClearComBuffer		: ClearComBuffer;
+    fbSendData				: SendData;
+    udiTxLen				: UDINT;
+    udiRxLen				: UDINT;
+    fbReceiveData			: ReceiveData;
+    baRxData			: ARRAY[1..c_ArraySize] OF BYTE;
+    baTxData			: ARRAY[1..c_ArraySize] OF BYTE;
+    tonTimeout				: TON;
+    iDataTx: INT := 1;
+    iDataRx: INT := 1;
+
+    //Device specific
+    iSeek : INT :=1 ;
+    bDelimiter	:	BYTE:=16#7E;
+    bRxLen	:	BYTE;
+    fbShiftByteArray	:	FB_ShiftByteArray;
+    iFrameWidth	:	INT;
+    bCatch : BYTE;
+    xCatch : BOOL;
+
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -65,179 +65,179 @@ END_VAR
 (* rising edge trigger *)
 rtExecute(CLK:= i_xExecute);
 IF rtExecute.Q THEN
-	q_xDone	:= FALSE;
-	//Clear the Tx and Rx buffer
-	MEMSET(destAddr:=ADR(baRxData), fillByte:=16#00, n:=SIZEOF(baRxData));
-	MEMSET(destAddr:=ADR(baTxData), fillByte:=16#00, n:=SIZEOF(baTxData));
-	q_xError := FALSE;
-	q_xTimeout := FALSE;
-	q_sResult:= '';
-	//MEMSET(destAddr:=ADR(q_abLastTxData[iDataTx,1]), fillByte:=16#00, n:=c_ArraySize);
-	//MEMSET(destAddr:=ADR(q_abLastTxData[iDataRx,1]), fillByte:=16#00, n:=c_ArraySize);
-	
-	(* clear com buffers *)
-	fbClearComBuffer(Buffer:= iq_stSerialRXBuffer);
-	fbClearComBuffer(Buffer:= iq_stSerialTXBuffer);
-	(* Reset receive *)
-	fbReceiveData(
-		Reset:= TRUE,
-		RXbuffer:= iq_stSerialRXBuffer );
-	iStep := 10;
+    q_xDone	:= FALSE;
+    //Clear the Tx and Rx buffer
+    MEMSET(destAddr:=ADR(baRxData), fillByte:=16#00, n:=SIZEOF(baRxData));
+    MEMSET(destAddr:=ADR(baTxData), fillByte:=16#00, n:=SIZEOF(baTxData));
+    q_xError := FALSE;
+    q_xTimeout := FALSE;
+    q_sResult:= '';
+    //MEMSET(destAddr:=ADR(q_abLastTxData[iDataTx,1]), fillByte:=16#00, n:=c_ArraySize);
+    //MEMSET(destAddr:=ADR(q_abLastTxData[iDataRx,1]), fillByte:=16#00, n:=c_ArraySize);
+
+    (* clear com buffers *)
+    fbClearComBuffer(Buffer:= iq_stSerialRXBuffer);
+    fbClearComBuffer(Buffer:= iq_stSerialTXBuffer);
+    (* Reset receive *)
+    fbReceiveData(
+        Reset:= TRUE,
+        RXbuffer:= iq_stSerialRXBuffer );
+    iStep := 10;
 END_IF
 
 CASE iStep OF
-	0:
-		; (* idle *)
+    0:
+        ; (* idle *)
 
-	10: 	
-		(* Build the byte array *)
-		//Every message starts with 0x7e, but we don't add that here.
-		baTxData[1]:=16#00;
-		//Address, command and message length
-		baTxData[2]:=i_bAdr;
-		baTxData[3]:=i_bCmd;
-		baTxData[4]:=i_bLen;
-		//Add the message
-		IF i_bLen > 0 THEN
-			MEMCPY(destAddr:=ADR(baTxData[5]), srcAddr:=ADR(i_abTxData), n:=i_bLen);	
-		END_IF
-		//Add the checksum
-		baTxData[5+i_bLen]:=fSHDLCChecksum(i_bAdr:=i_bAdr, i_bCmd:=i_bCmd, i_bLen:=i_bLen, i_pbaTxData:=ADR(i_abTxData));
-	
-		
-		
-		//Calc the framewidth, a useful number
-		// start + adr + cmd + len + tx data (len) + chk + stop
-		udiTxLen:=(4+BYTE_TO_UDINT(i_bLen)+1);
-		(* Byte stuffing
-		If any special bytes are found in the message, they must be replaced with a special pair of bytes *)
-		(* Seek through the byte array for any of the special bytes
-		 0x7e
-		 0x7d
-		 0x11
-		 0x13 *)
-		 FOR iSeek:=2 TO UDINT_TO_INT(udiTxLen) DO
-			 IF (baTxData[iSeek]=16#7E) OR (baTxData[iSeek]=16#7D) OR (baTxData[iSeek]=16#11) OR (baTxData[iSeek]=16#13) THEN
-				 (* When a special byte is found, move the remaining message to the right by one byte *)
-				 fbShiftByteArray(ptArray:=ADR(baTxData), iSize:=256, iCurrIndex:=iSeek, iMessageLen:=(5+BYTE_TO_INT(i_bLen)+1), iShift:=1);
-				 IF fbShiftByteArray.q_xError THEN
-					 q_sResult:='Transaction failed in step 10 while making room for the stuffing';
-					 iStep := 9000;
-					 RETURN; //this way we catch what happened.
-					ELSE
-						//Stuff in the byte
-						baTxData[iSeek]:=16#7D;
-						//Change the original byte, which now resides at iSeek+1, to invert the fifth bit
-						baTxData[iSeek+1]:=baTxData[iSeek+1] XOR 16#10;
-						//Update the framewidth to be +1
-						udiTxLen := udiTxLen + 1;
-				 END_IF
-			 END_IF
-		 END_FOR
-		 //If we made it this far, we're done with building the message, and stuffing it, frame it
-		 baTxData[1]:=bDelimiter;
-		 //Add one to the frame width
-		 udiTxLen := udiTxLen +1;
-		 baTxData[udiTxLen]:=bDelimiter;
-		
-		
-		fbSendData(TXbuffer:= iq_stSerialTXBuffer,pSendData:=ADR(baTxData), Length:=udiTxLen);
-		//For debugging: 
-		MEMCPY(destAddr:=ADR(q_abLastTxData[iDataTx,1]), srcAddr:=ADR(baTxData), n:=INT_TO_UDINT(c_ArraySize));
-		IF iDataTx = c_DebugArraySize THEN iDataTx := 1; ELSE iDataTx := iDataTx +1; END_IF
-		
-		if i_bCmd = bCatch THEN xCatch := TRUE; END_IF
-		
-		iStep := iStep + 10;
+    10:
+        (* Build the byte array *)
+        //Every message starts with 0x7e, but we don't add that here.
+        baTxData[1]:=16#00;
+        //Address, command and message length
+        baTxData[2]:=i_bAdr;
+        baTxData[3]:=i_bCmd;
+        baTxData[4]:=i_bLen;
+        //Add the message
+        IF i_bLen > 0 THEN
+            MEMCPY(destAddr:=ADR(baTxData[5]), srcAddr:=ADR(i_abTxData), n:=i_bLen);
+        END_IF
+        //Add the checksum
+        baTxData[5+i_bLen]:=fSHDLCChecksum(i_bAdr:=i_bAdr, i_bCmd:=i_bCmd, i_bLen:=i_bLen, i_pbaTxData:=ADR(i_abTxData));
 
-	20: (* Finish sending the data *)
-		IF fbSendData.Busy THEN
-			fbSendData(TXbuffer:= iq_stSerialTXBuffer,pSendData:=ADR(baTxData), Length:=udiTxLen);
-		ELSIF fbSendData.Error <> 0 THEN
-			q_sResult := CONCAT('In step 20 fbSendData resulted in error: ', INT_TO_STRING(fbSendData.Error));
-			iStep := 9000;
-		ELSIF NOT fbSendData.Busy THEN
-			iStep:=iStep + 10;
-		END_IF
-		tonTimeout(IN:= FALSE);
 
-	30: (* Get reply *)
-		fbReceiveData(
-			pPrefix:=ADR(bDelimiter),
-			LenPrefix:=1,
-			pSuffix:=ADR(bDelimiter),
-			LenSuffix:=1,
-			pReceiveData:=ADR(baRxData),
-			SizeReceiveData:=SIZEOF(baRxData),
-			Timeout:= i_tTimeOut,
-			Reset:= FALSE,
-			RXbuffer:= iq_stSerialRXBuffer );
-		tonTimeout(IN:= TRUE, PT:= i_tTimeOut);
-		IF fbReceiveData.Error <> 0 THEN
-			q_sResult := CONCAT('In step 30 fbReceiveData resulted in error: ', INT_TO_STRING(fbReceiveData.Error));
-			iStep := 9000;
-		ELSIF fbReceiveData.RxTimeout OR tonTimeout.Q THEN
-			q_sResult := 'Serial device failed to reply within timeout period';
-			q_xTimeout := TRUE;
-			iStep := 9000;
-		ELSIF fbReceiveData.DataReceived THEN
-			udiRxLen := fbReceiveData.LenReceiveData;
-			// For troubleshooting, use this to capture a specific command message reply
-			
-			
-			IF udiRxLen > 0 THEN
-				//Remove the stuffing
-				FOR iSeek:=1 TO UDINT_TO_INT(udiRxLen) DO
-					IF baRxData[iSeek]=16#7D THEN
-						fbShiftByteArray(ptArray:=ADR(baRxData), iSize:=256, iCurrIndex:=iSeek, iMessageLen:=UDINT_TO_INT(udiRxLen), iShift:=-1);
-						IF fbShiftByteArray.q_xError THEN
-							q_sResult:='Transaction failed in step 30, while removing the stuffing Hans dropped some on the floor, oh Hans!';
-							iStep:=9000;
-							RETURN; // this way we catch the problem
-							ELSE
-								//iSeek now points to the escaped byte, once again invert the fifth bit to recover
-								baRxData[iSeek]:=baRxData[iSeek] XOR 16#10;
-								//Reduce the message length by one byte
-								udiRxLen := udiRxLen - 1;
-						END_IF
-					END_IF
-				END_FOR
-				//Byte stuffing removed and cleared at this point
-				//Could check the checksum here...
-				//naaa
-				//Determine the Rx data length
-				bRxLen := baRxData[5];
-				IF i_bCmd = bCatch and bRxLen > 0 THEN
-				MEMCPY(destAddr:=ADR(q_baRxUnit), srcAddr:=ADR(baRxData), n:=udiRxLen);
-				END_IF
-				//Snag the state byte while we're here
-				q_bState := baRxData[4];
-				q_iRxLen := BYTE_TO_INT(bRxLen);
-				//Memcpy ze' data, check if memcpy is successful (returns other than zero) or bRxLen is zero (which causes memcpy to return zero)
-				IF UDINT_TO_BOOL(MEMCPY(srcAddr:=(ADR(baRxData)+5), destAddr:=ADR(q_baRxData), n:=BYTE_TO_UINT(bRxLen))) OR (bRxLen=0) THEN
-					q_sResult := 'Success';
-					iStep:=100;
-					//For debugging
-					//MEMCPY(destAddr:=ADR(q_abLastRxData[iDataRx,1]), srcAddr:=ADR(baRxData), n:=c_ArraySize);
-					//IF iDataRx = c_DebugArraySize THEN iDataRx := 1; ELSE iDataRx := iDataRx +1; END_IF
-				ELSE
-					q_sResult := 'Memcpy step failed, expected some bytes but was NOT able to export them via memcpy, investigate transaction fb';
-					iStep := 9000;
-				END_IF	
-			END_IF
-		END_IF
-		
 
-	100: (* done *)
-		q_xDone:=TRUE;
-		IF  i_xExecute = FALSE THEN
-			q_xDone:= FALSE;
-			q_bState:=16#00;
-			iStep := 0;
-		END_IF
+        //Calc the framewidth, a useful number
+        // start + adr + cmd + len + tx data (len) + chk + stop
+        udiTxLen:=(4+BYTE_TO_UDINT(i_bLen)+1);
+        (* Byte stuffing
+        If any special bytes are found in the message, they must be replaced with a special pair of bytes *)
+        (* Seek through the byte array for any of the special bytes
+         0x7e
+         0x7d
+         0x11
+         0x13 *)
+         FOR iSeek:=2 TO UDINT_TO_INT(udiTxLen) DO
+             IF (baTxData[iSeek]=16#7E) OR (baTxData[iSeek]=16#7D) OR (baTxData[iSeek]=16#11) OR (baTxData[iSeek]=16#13) THEN
+                 (* When a special byte is found, move the remaining message to the right by one byte *)
+                 fbShiftByteArray(ptArray:=ADR(baTxData), iSize:=256, iCurrIndex:=iSeek, iMessageLen:=(5+BYTE_TO_INT(i_bLen)+1), iShift:=1);
+                 IF fbShiftByteArray.q_xError THEN
+                     q_sResult:='Transaction failed in step 10 while making room for the stuffing';
+                     iStep := 9000;
+                     RETURN; //this way we catch what happened.
+                    ELSE
+                        //Stuff in the byte
+                        baTxData[iSeek]:=16#7D;
+                        //Change the original byte, which now resides at iSeek+1, to invert the fifth bit
+                        baTxData[iSeek+1]:=baTxData[iSeek+1] XOR 16#10;
+                        //Update the framewidth to be +1
+                        udiTxLen := udiTxLen + 1;
+                 END_IF
+             END_IF
+         END_FOR
+         //If we made it this far, we're done with building the message, and stuffing it, frame it
+         baTxData[1]:=bDelimiter;
+         //Add one to the frame width
+         udiTxLen := udiTxLen +1;
+         baTxData[udiTxLen]:=bDelimiter;
 
-	9000:
-		q_xError := TRUE;
+
+        fbSendData(TXbuffer:= iq_stSerialTXBuffer,pSendData:=ADR(baTxData), Length:=udiTxLen);
+        //For debugging:
+        MEMCPY(destAddr:=ADR(q_abLastTxData[iDataTx,1]), srcAddr:=ADR(baTxData), n:=INT_TO_UDINT(c_ArraySize));
+        IF iDataTx = c_DebugArraySize THEN iDataTx := 1; ELSE iDataTx := iDataTx +1; END_IF
+
+        if i_bCmd = bCatch THEN xCatch := TRUE; END_IF
+
+        iStep := iStep + 10;
+
+    20: (* Finish sending the data *)
+        IF fbSendData.Busy THEN
+            fbSendData(TXbuffer:= iq_stSerialTXBuffer,pSendData:=ADR(baTxData), Length:=udiTxLen);
+        ELSIF fbSendData.Error <> 0 THEN
+            q_sResult := CONCAT('In step 20 fbSendData resulted in error: ', INT_TO_STRING(fbSendData.Error));
+            iStep := 9000;
+        ELSIF NOT fbSendData.Busy THEN
+            iStep:=iStep + 10;
+        END_IF
+        tonTimeout(IN:= FALSE);
+
+    30: (* Get reply *)
+        fbReceiveData(
+            pPrefix:=ADR(bDelimiter),
+            LenPrefix:=1,
+            pSuffix:=ADR(bDelimiter),
+            LenSuffix:=1,
+            pReceiveData:=ADR(baRxData),
+            SizeReceiveData:=SIZEOF(baRxData),
+            Timeout:= i_tTimeOut,
+            Reset:= FALSE,
+            RXbuffer:= iq_stSerialRXBuffer );
+        tonTimeout(IN:= TRUE, PT:= i_tTimeOut);
+        IF fbReceiveData.Error <> 0 THEN
+            q_sResult := CONCAT('In step 30 fbReceiveData resulted in error: ', INT_TO_STRING(fbReceiveData.Error));
+            iStep := 9000;
+        ELSIF fbReceiveData.RxTimeout OR tonTimeout.Q THEN
+            q_sResult := 'Serial device failed to reply within timeout period';
+            q_xTimeout := TRUE;
+            iStep := 9000;
+        ELSIF fbReceiveData.DataReceived THEN
+            udiRxLen := fbReceiveData.LenReceiveData;
+            // For troubleshooting, use this to capture a specific command message reply
+
+
+            IF udiRxLen > 0 THEN
+                //Remove the stuffing
+                FOR iSeek:=1 TO UDINT_TO_INT(udiRxLen) DO
+                    IF baRxData[iSeek]=16#7D THEN
+                        fbShiftByteArray(ptArray:=ADR(baRxData), iSize:=256, iCurrIndex:=iSeek, iMessageLen:=UDINT_TO_INT(udiRxLen), iShift:=-1);
+                        IF fbShiftByteArray.q_xError THEN
+                            q_sResult:='Transaction failed in step 30, while removing the stuffing Hans dropped some on the floor, oh Hans!';
+                            iStep:=9000;
+                            RETURN; // this way we catch the problem
+                            ELSE
+                                //iSeek now points to the escaped byte, once again invert the fifth bit to recover
+                                baRxData[iSeek]:=baRxData[iSeek] XOR 16#10;
+                                //Reduce the message length by one byte
+                                udiRxLen := udiRxLen - 1;
+                        END_IF
+                    END_IF
+                END_FOR
+                //Byte stuffing removed and cleared at this point
+                //Could check the checksum here...
+                //naaa
+                //Determine the Rx data length
+                bRxLen := baRxData[5];
+                IF i_bCmd = bCatch and bRxLen > 0 THEN
+                MEMCPY(destAddr:=ADR(q_baRxUnit), srcAddr:=ADR(baRxData), n:=udiRxLen);
+                END_IF
+                //Snag the state byte while we're here
+                q_bState := baRxData[4];
+                q_iRxLen := BYTE_TO_INT(bRxLen);
+                //Memcpy ze' data, check if memcpy is successful (returns other than zero) or bRxLen is zero (which causes memcpy to return zero)
+                IF UDINT_TO_BOOL(MEMCPY(srcAddr:=(ADR(baRxData)+5), destAddr:=ADR(q_baRxData), n:=BYTE_TO_UINT(bRxLen))) OR (bRxLen=0) THEN
+                    q_sResult := 'Success';
+                    iStep:=100;
+                    //For debugging
+                    //MEMCPY(destAddr:=ADR(q_abLastRxData[iDataRx,1]), srcAddr:=ADR(baRxData), n:=c_ArraySize);
+                    //IF iDataRx = c_DebugArraySize THEN iDataRx := 1; ELSE iDataRx := iDataRx +1; END_IF
+                ELSE
+                    q_sResult := 'Memcpy step failed, expected some bytes but was NOT able to export them via memcpy, investigate transaction fb';
+                    iStep := 9000;
+                END_IF
+            END_IF
+        END_IF
+
+
+    100: (* done *)
+        q_xDone:=TRUE;
+        IF  i_xExecute = FALSE THEN
+            q_xDone:= FALSE;
+            q_bState:=16#00;
+            iStep := 0;
+        END_IF
+
+    9000:
+        q_xError := TRUE;
 END_CASE]]></ST>
     </Implementation>
   </POU>

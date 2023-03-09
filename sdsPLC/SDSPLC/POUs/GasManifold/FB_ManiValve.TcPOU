@@ -7,7 +7,7 @@ END_VAR
 VAR_OUTPUT
 END_VAR
 VAR_IN_OUT
-	iq_valve	:	ST_ManifoldValve;
+    iq_valve	:	ST_ManifoldValve;
 END_VAR
 VAR
 END_VAR
@@ -15,7 +15,7 @@ END_VAR
     <Implementation>
       <ST><![CDATA[(* Basic valve control block *)
 IF NOT iq_valve.xILK THEN
-	iq_valve.xSW := FALSE;
+    iq_valve.xSW := FALSE;
 END_IF
 
 iq_valve.qxDO := NOT (iq_valve.xILK and iq_valve.xSW); // These are normally open valves, qxDO closes the valve]]></ST>

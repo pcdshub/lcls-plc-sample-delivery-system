@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
   <POU Name="p_VacGaugeSup" Id="{8e9fa5f5-c53d-4922-8abf-bf4fbe3eb8d0}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM p_VacGaugeSup 
+    <Declaration><![CDATA[PROGRAM p_VacGaugeSup
 
 VAR
 
-	
-	
+
+
 END_VAR
 ]]></Declaration>
     <Implementation>

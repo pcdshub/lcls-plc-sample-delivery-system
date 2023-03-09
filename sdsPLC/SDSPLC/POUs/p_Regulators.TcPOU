@@ -19,11 +19,5 @@ fbRegProp3(iq_stRegProp:=stRegProp3);
 fbRegProp4(iq_stRegProp:=stRegProp4);
 ]]></ST>
     </Implementation>
-    <LineIds Name="p_Regulators">
-      <LineId Id="3" Count="1" />
-      <LineId Id="15" Count="1" />
-      <LineId Id="5" Count="0" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

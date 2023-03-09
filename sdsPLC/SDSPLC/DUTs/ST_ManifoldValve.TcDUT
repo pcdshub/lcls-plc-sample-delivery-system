@@ -3,34 +3,34 @@
   <DUT Name="ST_ManifoldValve" Id="{f073cd80-1d86-4317-ae5a-812f4c6d74ea}">
     <Declaration><![CDATA[TYPE ST_ManifoldValve :
 STRUCT
-	
-	(* Controls *)
+
+    (* Controls *)
     {attribute 'pytmc' := '
         pv: Open
         io: o
      '}
-	xSW : BOOL; //epics control
+    xSW : BOOL; //epics control
     {attribute 'pytmc' := '
         pv: CloseDO
         io: i
      '}
-	qxDO AT %Q* : BOOL; //actual valve output
-	
-	(* Readbacks *)
+    qxDO AT %Q* : BOOL; //actual valve output
+
+    (* Readbacks *)
     {attribute 'pytmc' := '
         pv: OpenSW
         io: i
      '}
-	ixOPN AT %I*: BOOL;
-	
-	(* Soft variables *)
+    ixOPN AT %I*: BOOL;
+
+    (* Soft variables *)
     {attribute 'pytmc' := '
         pv: Ilk
         io: i
      '}
-	xILK :	BOOL; // permissive bit
+    xILK :	BOOL; // permissive bit
 
-	{attribute 'pytmc' := '
+    {attribute 'pytmc' := '
         pv: Name
         io: i
     '}

@@ -3,10 +3,10 @@
   <POU Name="p_CoolerShaker" Id="{0402abe6-bce2-4631-aa1a-091f67d33390}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM p_CoolerShaker
 VAR
-	
+
 afbTECDriver	:	ARRAY[1..3] OF FB_TECDriver;
 
-	index: INT :=1 ;
+    index: INT :=1 ;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -20,22 +20,22 @@ stTECCtrl[2].diTempSetpoint := 30;
 stTECCtrl[3].diTempSetpoint := 30;
 
 afbTECDriver[index](
-	i_xExecute:= TRUE,
-	i_tTimeOut:= t#1s,
-	i_stControl:= stTECCtrl[index],
-	iq_stSerialRXBuffer:= SerialRXBuffer_CoolerShakerTEC,
-	iq_stSerialTXBuffer:= SerialTXBuffer_CoolerShakerTEC,
-	q_stStatus=>stTECStatus[index]);
+    i_xExecute:= TRUE,
+    i_tTimeOut:= t#1s,
+    i_stControl:= stTECCtrl[index],
+    iq_stSerialRXBuffer:= SerialRXBuffer_CoolerShakerTEC,
+    iq_stSerialTXBuffer:= SerialTXBuffer_CoolerShakerTEC,
+    q_stStatus=>stTECStatus[index]);
 
 IF afbTECDriver[index].q_xDone OR
-	afbTECDriver[index].q_xError OR
-	afbTECDriver[index].q_xTimeout THEN
-	(* reset function for next time *)
-	afbTECDriver[index](i_xExecute:=FALSE, iq_stSerialRXBuffer:= SerialRXBuffer_CoolerShakerTEC, iq_stSerialTXBuffer:=  SerialTXBuffer_CoolerShakerTEC);
-	
-	index := index + 1;
-	IF index > 2 THEN index := 1; END_IF
-	
+    afbTECDriver[index].q_xError OR
+    afbTECDriver[index].q_xTimeout THEN
+    (* reset function for next time *)
+    afbTECDriver[index](i_xExecute:=FALSE, iq_stSerialRXBuffer:= SerialRXBuffer_CoolerShakerTEC, iq_stSerialTXBuffer:=  SerialTXBuffer_CoolerShakerTEC);
+
+    index := index + 1;
+    IF index > 2 THEN index := 1; END_IF
+
 END_IF]]></ST>
     </Implementation>
   </POU>

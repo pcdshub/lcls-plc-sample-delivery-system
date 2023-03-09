@@ -3,7 +3,7 @@
   <DUT Name="ST_SensirionFMControl" Id="{89f4a14e-1f6e-4779-bc2b-905b7f9fda62}">
     <Declaration><![CDATA[TYPE ST_SensirionFMControl :
 STRUCT
-	
+
 xCalMode	:	BOOL; // calib mode request 0 = prec, 1 = extended
 
 xReset		:	BOOL; // reset request

@@ -11,8 +11,8 @@ VAR
         pv: IO
      '}
     stBaseIO : ST_M3DeviceBaseIO;
-    
-    
+
+
     {attribute 'pytmc' := '
         pv: Valve
      '}
@@ -26,7 +26,7 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[FOR idx := 1 to MANIFOLD_VALVES DO
-	stValve[idx].xILK := TRUE; // these valves have no interlock
+    stValve[idx].xILK := TRUE; // these valves have no interlock
     fbValve[idx](iq_valve := stValve[idx]);
 END_FOR]]></ST>
     </Implementation>

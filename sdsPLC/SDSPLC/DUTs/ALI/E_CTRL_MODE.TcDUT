@@ -5,10 +5,10 @@
 {attribute 'strict'}
 TYPE E_CTRL_MODE :
 (
-	Init := 0,
-	Run	:= 10,
-	Hold	:= 20,
-	Error	:= 9000
+    Init := 0,
+    Run	:= 10,
+    Hold	:= 20,
+    Error	:= 9000
 );
 END_TYPE
 ]]></Declaration>

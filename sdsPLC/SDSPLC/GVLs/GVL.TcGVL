@@ -2,10 +2,10 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL" Id="{f639b635-2ac5-4d16-9ee0-ff8224cf5b4c}">
     <Declaration><![CDATA[VAR_GLOBAL
- 	g_xFirstPass: BOOL := TRUE;
-	g_xIOState	:	BOOL := FALSE;
-	g_aEcatMaster1 AT %I* : AMSNETID;
-	g_aEcatMaster2 AT %I* : AMSNETID;
+     g_xFirstPass: BOOL := TRUE;
+    g_xIOState	:	BOOL := FALSE;
+    g_aEcatMaster1 AT %I* : AMSNETID;
+    g_aEcatMaster2 AT %I* : AMSNETID;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

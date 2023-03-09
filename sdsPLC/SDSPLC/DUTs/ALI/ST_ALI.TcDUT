@@ -3,28 +3,28 @@
   <DUT Name="ST_ALI" Id="{0b7a7a1a-1335-4a3d-a5dc-8467cfe96304}">
     <Declaration><![CDATA[TYPE ST_ALI EXTENDS ST_ALIIO:
 STRUCT
-	(* Aerodynamic Lens Injector *)
+    (* Aerodynamic Lens Injector *)
 
-	(* Manipulator *)
-	axisX	:	ST_ManipAxis;
-	axisY	:	ST_ManipAxis;
-	axisZ	:	ST_ManipAxis;
-	
-	(* Vacuum gauges *)
-	//925
-	stNozzleBoxVG	: ST_VG;
-	//925
-	stSkimmerVG	: ST_VG;
-	//722
-	stRelaxVG	: ST_VG := (rFULL_SCALE:=10);
-	
-	(* Butterfly valve pressure controller *)
-	stPropVlv	:	ST_PropValveMKS253;
-	
-	(* PropValve Pressure Controller *)
-	//stPressCtrl	:	ST_PressureController;
-	
-	
+    (* Manipulator *)
+    axisX	:	ST_ManipAxis;
+    axisY	:	ST_ManipAxis;
+    axisZ	:	ST_ManipAxis;
+
+    (* Vacuum gauges *)
+    //925
+    stNozzleBoxVG	: ST_VG;
+    //925
+    stSkimmerVG	: ST_VG;
+    //722
+    stRelaxVG	: ST_VG := (rFULL_SCALE:=10);
+
+    (* Butterfly valve pressure controller *)
+    stPropVlv	:	ST_PropValveMKS253;
+
+    (* PropValve Pressure Controller *)
+    //stPressCtrl	:	ST_PressureController;
+
+
 END_STRUCT
 END_TYPE
 ]]></Declaration>

@@ -3,9 +3,9 @@
   <DUT Name="E_AxisMotionState" Id="{76fd406e-4c8d-41a4-9b2d-13dbdd19a9ab}">
     <Declaration><![CDATA[TYPE E_AxisMotionState :
 (
-	Init := 10,
-	MoveEnabled := 3000,
-	Error := 9000
+    Init := 10,
+    MoveEnabled := 3000,
+    Error := 9000
 );
 END_TYPE
 ]]></Declaration>

@@ -69,8 +69,8 @@ STRUCT
      '}
     rHighFlow	:	REAL; //Sensirion Sheath liquid flowrate
 
-	// Sample Names
-	{attribute 'pytmc' := '
+    // Sample Names
+    {attribute 'pytmc' := '
         pv: SampleNames
         io: i
     '}

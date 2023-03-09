@@ -3,19 +3,19 @@
   <DUT Name="ST_ViciStatus" Id="{3cbe973d-3413-4383-8a07-6d21d8bf92fd}">
     <Declaration><![CDATA[TYPE ST_ViciStatus :
 STRUCT
-	sViciReq			: STRING;
-	sViciReply		:STRING;
-	{attribute 'pytmc' := '
+    sViciReq			: STRING;
+    sViciReply		:STRING;
+    {attribute 'pytmc' := '
         pv: CurrentPos
         io: i
      '}
     iCurrPos				: INT;
-	iReqPos		:	INT;
-	xPosValid	:	BOOL;
-	(*iAddress				:INT;*)
-	(* Do not use this address. If you do, the driver
-	will overwrite this address with zero each time
-	it runs, as the status is an input, not in_out *)			
+    iReqPos		:	INT;
+    xPosValid	:	BOOL;
+    (*iAddress				:INT;*)
+    (* Do not use this address. If you do, the driver
+    will overwrite this address with zero each time
+    it runs, as the status is an input, not in_out *)
 END_STRUCT
 END_TYPE
 ]]></Declaration>

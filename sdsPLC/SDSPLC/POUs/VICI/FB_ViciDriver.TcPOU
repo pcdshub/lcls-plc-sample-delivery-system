@@ -2,7 +2,6 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_ViciDriver" Id="{0a9d4465-4ab2-4b83-97fa-f91b77d4959f}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ViciDriver
-FUNCTION_BLOCK FB_ViciDriver
 VAR_INPUT
     i_xExecute				: BOOL;					(* rising edge execute *)
     i_tTimeOut				: TIME := t#10s;  		(* Maximum wait time for reply *)

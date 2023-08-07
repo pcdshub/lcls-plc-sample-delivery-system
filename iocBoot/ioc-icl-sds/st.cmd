@@ -1,13 +1,13 @@
-#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.6.0/bin/rhel7-x86_64/adsIoc
+#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.6.1/bin/rhel7-x86_64/adsIoc
 ################### AUTO-GENERATED DO NOT EDIT ###################
 #
 #         Project: SDS.tsproj
 #        PLC name: SDSPLC (SDSPLC Instance)
-# Generated using: pytmc 2.14.1
-# Project version: v1.0.0-26-gefaa292
-#    Project hash: efaa2923797b13bbf5d3fd5d7b0a165c933412fb
+# Generated using: pytmc 2.15.1
+# Project version: fbee30a
+#    Project hash: fbee30a8e3b15b636612f0b2b322b1679be73a4a
 #     PLC IP/host: plc-sds-raptor (Specified in Makefile; project has: 172.21.148.118)
-#      PLC Net ID: 172.21.148.118.1.1 (Specified in Makefile; project has: 172.21.148.118.1.1)
+#      PLC Net ID: 172.21.38.26.1.1 (Specified in Makefile; project has: 172.21.148.118.1.1)
 #  ** Production mode IOC **
 #  Using /cds/data/iocData for autosave and archiver settings.
 #
@@ -22,7 +22,7 @@
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
-epicsEnvSet("ENGINEER", "wwright8" )
+epicsEnvSet("ENGINEER", "jozamudi" )
 epicsEnvSet("LOCATION", "PLC:SDSPLC" )
 epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
 epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
@@ -36,7 +36,7 @@ adsIoc_registerRecordDeviceDriver(pdbbase)
 
 epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
 epicsEnvSet("IPADDR",           "plc-sds-raptor")
-epicsEnvSet("AMSID",            "172.21.148.118.1.1")
+epicsEnvSet("AMSID",            "172.21.38.26.1.1")
 epicsEnvSet("AMS_PORT",         "851")
 epicsEnvSet("ADS_MAX_PARAMS",   "1405")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
@@ -84,7 +84,7 @@ dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:SDSPLC,IDX=1"
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:SDSPLC,IDX=2")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:SDSPLC")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:SDSPLC,PROJECT=SDS.tsproj,HASH=efaa292,VERSION=v1.0.0-26-gefaa292,PYTMC=2.14.1,PLC_HOST=plc-sds-raptor")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:SDSPLC,PROJECT=SDS.tsproj,HASH=fbee30a,VERSION=fbee30a,PYTMC=2.15.1,PLC_HOST=plc-sds-raptor")
 
 #   Tc2_Standard: * -> 3.3.2.0 (Beckhoff Automation GmbH)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:SDSPLC,DEPENDENCY=Tc2_Standard,VERSION=3.3.2.0,VENDOR=Beckhoff Automation GmbH")

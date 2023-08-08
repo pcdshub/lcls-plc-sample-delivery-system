@@ -5,9 +5,9 @@
 
 //(* ALI - rarely used, stages need to be redone in new format *)
 //	stALI	:	ST_ALI;
-//{attribute 'pytmc' := '
+//	 'pytmc' := '
 //    pv: @(P):PCM:A
-// '}
+//
 //ALI : FB_ALI;
 
 

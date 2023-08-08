@@ -1173,6 +1173,20 @@ record(waveform, "$(P):SEL:A:SampleNames:01_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:A:SampleNames:01") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s1
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s1")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s1=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:A:SampleNames:10_RBV") {
   # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s10
   field(DESC, "GVL_Devices.M3Select...stSampleNames.s10")
@@ -1186,6 +1200,20 @@ record(waveform, "$(P):SEL:A:SampleNames:10_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:A:SampleNames:10") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s10
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s10")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s10=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -1205,6 +1233,20 @@ record(waveform, "$(P):SEL:A:SampleNames:11_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:A:SampleNames:11") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s11
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s11")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s11=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:A:SampleNames:12_RBV") {
   # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s12
   field(DESC, "GVL_Devices.M3Select...stSampleNames.s12")
@@ -1218,6 +1260,20 @@ record(waveform, "$(P):SEL:A:SampleNames:12_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:A:SampleNames:12") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s12
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s12")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s12=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -1237,6 +1293,20 @@ record(waveform, "$(P):SEL:A:SampleNames:02_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:A:SampleNames:02") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s2
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s2")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s2=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:A:SampleNames:03_RBV") {
   # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s3
   field(DESC, "GVL_Devices.M3Select....stSampleNames.s3")
@@ -1250,6 +1320,20 @@ record(waveform, "$(P):SEL:A:SampleNames:03_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:A:SampleNames:03") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s3
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s3")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s3=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -1269,6 +1353,20 @@ record(waveform, "$(P):SEL:A:SampleNames:04_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:A:SampleNames:04") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s4
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s4")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s4=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:A:SampleNames:05_RBV") {
   # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s5
   field(DESC, "GVL_Devices.M3Select....stSampleNames.s5")
@@ -1282,6 +1380,20 @@ record(waveform, "$(P):SEL:A:SampleNames:05_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:A:SampleNames:05") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s5
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s5")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s5=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -1301,6 +1413,20 @@ record(waveform, "$(P):SEL:A:SampleNames:06_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:A:SampleNames:06") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s6
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s6")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s6=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:A:SampleNames:07_RBV") {
   # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s7
   field(DESC, "GVL_Devices.M3Select....stSampleNames.s7")
@@ -1314,6 +1440,20 @@ record(waveform, "$(P):SEL:A:SampleNames:07_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:A:SampleNames:07") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s7
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s7")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s7=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -1333,6 +1473,20 @@ record(waveform, "$(P):SEL:A:SampleNames:08_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:A:SampleNames:08") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s8
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s8")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s8=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:A:SampleNames:09_RBV") {
   # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s9
   field(DESC, "GVL_Devices.M3Select....stSampleNames.s9")
@@ -1346,6 +1500,20 @@ record(waveform, "$(P):SEL:A:SampleNames:09_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:A:SampleNames:09") {
+  # GVL_Devices.M3SelectorA.stSelector.stSampleNames.s9
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s9")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorA.stSelector.stSampleNames.s9=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -2053,6 +2221,20 @@ record(waveform, "$(P):SEL:B:SampleNames:01_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:B:SampleNames:01") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s1
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s1")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s1=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:B:SampleNames:10_RBV") {
   # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s10
   field(DESC, "GVL_Devices.M3Select...stSampleNames.s10")
@@ -2066,6 +2248,20 @@ record(waveform, "$(P):SEL:B:SampleNames:10_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:B:SampleNames:10") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s10
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s10")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s10=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -2085,6 +2281,20 @@ record(waveform, "$(P):SEL:B:SampleNames:11_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:B:SampleNames:11") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s11
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s11")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s11=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:B:SampleNames:12_RBV") {
   # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s12
   field(DESC, "GVL_Devices.M3Select...stSampleNames.s12")
@@ -2098,6 +2308,20 @@ record(waveform, "$(P):SEL:B:SampleNames:12_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:B:SampleNames:12") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s12
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s12")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s12=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -2117,6 +2341,20 @@ record(waveform, "$(P):SEL:B:SampleNames:02_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:B:SampleNames:02") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s2
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s2")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s2=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:B:SampleNames:03_RBV") {
   # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s3
   field(DESC, "GVL_Devices.M3Select....stSampleNames.s3")
@@ -2130,6 +2368,20 @@ record(waveform, "$(P):SEL:B:SampleNames:03_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:B:SampleNames:03") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s3
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s3")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s3=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -2149,6 +2401,20 @@ record(waveform, "$(P):SEL:B:SampleNames:04_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:B:SampleNames:04") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s4
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s4")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s4=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:B:SampleNames:05_RBV") {
   # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s5
   field(DESC, "GVL_Devices.M3Select....stSampleNames.s5")
@@ -2162,6 +2428,20 @@ record(waveform, "$(P):SEL:B:SampleNames:05_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:B:SampleNames:05") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s5
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s5")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s5=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -2181,6 +2461,20 @@ record(waveform, "$(P):SEL:B:SampleNames:06_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:B:SampleNames:06") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s6
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s6")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s6=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:B:SampleNames:07_RBV") {
   # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s7
   field(DESC, "GVL_Devices.M3Select....stSampleNames.s7")
@@ -2194,6 +2488,20 @@ record(waveform, "$(P):SEL:B:SampleNames:07_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:B:SampleNames:07") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s7
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s7")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s7=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -2213,6 +2521,20 @@ record(waveform, "$(P):SEL:B:SampleNames:08_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:B:SampleNames:08") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s8
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s8")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s8=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:B:SampleNames:09_RBV") {
   # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s9
   field(DESC, "GVL_Devices.M3Select....stSampleNames.s9")
@@ -2226,6 +2548,20 @@ record(waveform, "$(P):SEL:B:SampleNames:09_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:B:SampleNames:09") {
+  # GVL_Devices.M3SelectorB.stSelector.stSampleNames.s9
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s9")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorB.stSelector.stSampleNames.s9=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -2933,6 +3269,20 @@ record(waveform, "$(P):SEL:C:SampleNames:01_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:C:SampleNames:01") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s1
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s1")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s1=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:C:SampleNames:10_RBV") {
   # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s10
   field(DESC, "GVL_Devices.M3Select...stSampleNames.s10")
@@ -2946,6 +3296,20 @@ record(waveform, "$(P):SEL:C:SampleNames:10_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:C:SampleNames:10") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s10
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s10")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s10=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -2965,6 +3329,20 @@ record(waveform, "$(P):SEL:C:SampleNames:11_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:C:SampleNames:11") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s11
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s11")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s11=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:C:SampleNames:12_RBV") {
   # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s12
   field(DESC, "GVL_Devices.M3Select...stSampleNames.s12")
@@ -2978,6 +3356,20 @@ record(waveform, "$(P):SEL:C:SampleNames:12_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:C:SampleNames:12") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s12
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s12")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s12=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -2997,6 +3389,20 @@ record(waveform, "$(P):SEL:C:SampleNames:02_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:C:SampleNames:02") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s2
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s2")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s2=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:C:SampleNames:03_RBV") {
   # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s3
   field(DESC, "GVL_Devices.M3Select....stSampleNames.s3")
@@ -3010,6 +3416,20 @@ record(waveform, "$(P):SEL:C:SampleNames:03_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:C:SampleNames:03") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s3
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s3")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s3=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -3029,6 +3449,20 @@ record(waveform, "$(P):SEL:C:SampleNames:04_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:C:SampleNames:04") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s4
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s4")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s4=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:C:SampleNames:05_RBV") {
   # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s5
   field(DESC, "GVL_Devices.M3Select....stSampleNames.s5")
@@ -3042,6 +3476,20 @@ record(waveform, "$(P):SEL:C:SampleNames:05_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:C:SampleNames:05") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s5
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s5")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s5=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -3061,6 +3509,20 @@ record(waveform, "$(P):SEL:C:SampleNames:06_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:C:SampleNames:06") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s6
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s6")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s6=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:C:SampleNames:07_RBV") {
   # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s7
   field(DESC, "GVL_Devices.M3Select....stSampleNames.s7")
@@ -3074,6 +3536,20 @@ record(waveform, "$(P):SEL:C:SampleNames:07_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:C:SampleNames:07") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s7
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s7")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s7=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -3093,6 +3569,20 @@ record(waveform, "$(P):SEL:C:SampleNames:08_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:C:SampleNames:08") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s8
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s8")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s8=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:C:SampleNames:09_RBV") {
   # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s9
   field(DESC, "GVL_Devices.M3Select....stSampleNames.s9")
@@ -3106,6 +3596,20 @@ record(waveform, "$(P):SEL:C:SampleNames:09_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:C:SampleNames:09") {
+  # GVL_Devices.M3SelectorC.stSelector.stSampleNames.s9
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s9")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorC.stSelector.stSampleNames.s9=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -3813,6 +4317,20 @@ record(waveform, "$(P):SEL:D:SampleNames:01_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:D:SampleNames:01") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s1
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s1")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s1=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:D:SampleNames:10_RBV") {
   # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s10
   field(DESC, "GVL_Devices.M3Select...stSampleNames.s10")
@@ -3826,6 +4344,20 @@ record(waveform, "$(P):SEL:D:SampleNames:10_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:D:SampleNames:10") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s10
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s10")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s10=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -3845,6 +4377,20 @@ record(waveform, "$(P):SEL:D:SampleNames:11_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:D:SampleNames:11") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s11
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s11")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s11=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:D:SampleNames:12_RBV") {
   # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s12
   field(DESC, "GVL_Devices.M3Select...stSampleNames.s12")
@@ -3858,6 +4404,20 @@ record(waveform, "$(P):SEL:D:SampleNames:12_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:D:SampleNames:12") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s12
+  field(DESC, "GVL_Devices.M3Select...stSampleNames.s12")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s12=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -3877,6 +4437,20 @@ record(waveform, "$(P):SEL:D:SampleNames:02_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:D:SampleNames:02") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s2
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s2")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s2=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:D:SampleNames:03_RBV") {
   # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s3
   field(DESC, "GVL_Devices.M3Select....stSampleNames.s3")
@@ -3890,6 +4464,20 @@ record(waveform, "$(P):SEL:D:SampleNames:03_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:D:SampleNames:03") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s3
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s3")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s3=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -3909,6 +4497,20 @@ record(waveform, "$(P):SEL:D:SampleNames:04_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:D:SampleNames:04") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s4
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s4")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s4=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:D:SampleNames:05_RBV") {
   # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s5
   field(DESC, "GVL_Devices.M3Select....stSampleNames.s5")
@@ -3922,6 +4524,20 @@ record(waveform, "$(P):SEL:D:SampleNames:05_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:D:SampleNames:05") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s5
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s5")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s5=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -3941,6 +4557,20 @@ record(waveform, "$(P):SEL:D:SampleNames:06_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:D:SampleNames:06") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s6
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s6")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s6=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:D:SampleNames:07_RBV") {
   # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s7
   field(DESC, "GVL_Devices.M3Select....stSampleNames.s7")
@@ -3954,6 +4584,20 @@ record(waveform, "$(P):SEL:D:SampleNames:07_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:D:SampleNames:07") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s7
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s7")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s7=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -3973,6 +4617,20 @@ record(waveform, "$(P):SEL:D:SampleNames:08_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "$(P):SEL:D:SampleNames:08") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s8
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s8")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s8=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(waveform, "$(P):SEL:D:SampleNames:09_RBV") {
   # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s9
   field(DESC, "GVL_Devices.M3Select....stSampleNames.s9")
@@ -3986,6 +4644,20 @@ record(waveform, "$(P):SEL:D:SampleNames:09_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(P):SEL:D:SampleNames:09") {
+  # GVL_Devices.M3SelectorD.stSelector.stSampleNames.s9
+  field(DESC, "GVL_Devices.M3Select....stSampleNames.s9")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.M3SelectorD.stSelector.stSampleNames.s9=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 

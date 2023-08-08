@@ -4,10 +4,10 @@
 #         Project: SDS.tsproj
 #        PLC name: SDSPLC (SDSPLC Instance)
 # Generated using: pytmc 2.15.1
-# Project version: fbee30a
-#    Project hash: fbee30a8e3b15b636612f0b2b322b1679be73a4a
-#     PLC IP/host: plc-sds-raptor (Specified in Makefile; project has: 172.21.148.118)
-#      PLC Net ID: 172.21.38.26.1.1 (Specified in Makefile; project has: 172.21.148.118.1.1)
+# Project version: 560f2f2
+#    Project hash: 560f2f2927345a0dfbdeedcce1d43db42abd336d
+#     PLC IP/host: plc-sds-raptor (Specified in Makefile; project has: 172.21.38.26)
+#      PLC Net ID: 172.21.38.26.1.1 (Specified in Makefile; project has: 172.21.38.26.1.1)
 #  ** Production mode IOC **
 #  Using /cds/data/iocData for autosave and archiver settings.
 #
@@ -38,7 +38,7 @@ epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
 epicsEnvSet("IPADDR",           "plc-sds-raptor")
 epicsEnvSet("AMSID",            "172.21.38.26.1.1")
 epicsEnvSet("AMS_PORT",         "851")
-epicsEnvSet("ADS_MAX_PARAMS",   "1405")
+epicsEnvSet("ADS_MAX_PARAMS",   "1453")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
 epicsEnvSet("ADS_MAX_DELAY_MS", "100")
 epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
@@ -84,7 +84,7 @@ dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:SDSPLC,IDX=1"
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:SDSPLC,IDX=2")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:SDSPLC")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:SDSPLC,PROJECT=SDS.tsproj,HASH=fbee30a,VERSION=fbee30a,PYTMC=2.15.1,PLC_HOST=plc-sds-raptor")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:SDSPLC,PROJECT=SDS.tsproj,HASH=560f2f2,VERSION=560f2f2,PYTMC=2.15.1,PLC_HOST=plc-sds-raptor")
 
 #   Tc2_Standard: * -> 3.3.2.0 (Beckhoff Automation GmbH)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:SDSPLC,DEPENDENCY=Tc2_Standard,VERSION=3.3.2.0,VENDOR=Beckhoff Automation GmbH")
@@ -98,8 +98,8 @@ cd "$(IOC_TOP)"
 ## PLC Project Database files ##
 dbLoadRecords("SDSPLC.db", "PORT=$(ASYN_PORT),PREFIX=PLC:SDSPLC:,IOCNAME=$(IOC),IOC=$(IOC),P=ICL:SDS")
 
-# Total records: 405
-callbackSetQueueSize(2810)
+# Total records: 453
+callbackSetQueueSize(2906)
 
 # Autosave and archive settings:
 save_restoreSet_status_prefix("PLC:SDSPLC:")

@@ -3,11 +3,11 @@
   <GVL Name="GVL_Devices" Id="{c147c728-648e-463f-984d-4f986cb4ad03}">
     <Declaration><![CDATA[VAR_GLOBAL
 
-(* ALI - rarely used, stages need to be redone in new format *)
+//(* ALI - rarely used, stages need to be redone in new format *)
 //	stALI	:	ST_ALI;
-//{attribute 'pytmc' := '
+//	 'pytmc' := '
 //    pv: @(P):PCM:A
-// '}
+//
 //ALI : FB_ALI;
 
 

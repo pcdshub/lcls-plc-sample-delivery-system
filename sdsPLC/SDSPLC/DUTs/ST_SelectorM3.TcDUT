@@ -72,7 +72,7 @@ STRUCT
     // Sample Names
     {attribute 'pytmc' := '
         pv: SampleNames
-        io: i
+        io: io
     '}
     stSampleNames	:	ST_Strings;
 

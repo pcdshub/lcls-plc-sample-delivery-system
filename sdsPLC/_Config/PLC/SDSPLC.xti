@@ -235,7 +235,7 @@
 					<Name>GVL_Devices.M3SelectorA.stBaseIO.i_SyncUnitWC</Name>
 					<Comment>
 						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					</Comment>
 					<Type>BOOL</Type>
@@ -244,7 +244,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Name>GVL_Devices.M3SelectorB.stBaseIO.i_SyncUnitWC</Name>
 					<Comment>
 						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					</Comment>
 					<Type>BOOL</Type>
@@ -253,7 +253,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Name>GVL_Devices.M3SelectorC.stBaseIO.i_SyncUnitWC</Name>
 					<Comment>
 						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					</Comment>
 					<Type>BOOL</Type>
@@ -262,7 +262,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Name>GVL_Devices.M3SelectorD.stBaseIO.i_SyncUnitWC</Name>
 					<Comment>
 						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					</Comment>
 					<Type>BOOL</Type>
@@ -271,7 +271,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Name>GVL_Devices.PCMA.stBaseIO.i_SyncUnitWC</Name>
 					<Comment>
 						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					</Comment>
 					<Type>BOOL</Type>
@@ -288,7 +288,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Name>GVL_Devices.PCMB.stBaseIO.i_SyncUnitWC</Name>
 					<Comment>
 						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					</Comment>
 					<Type>BOOL</Type>
@@ -305,7 +305,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Name>GVL_Devices.PCMC.stBaseIO.i_SyncUnitWC</Name>
 					<Comment>
 						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					</Comment>
 					<Type>BOOL</Type>
@@ -322,7 +322,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Name>GVL_Devices.PCMD.stBaseIO.i_SyncUnitWC</Name>
 					<Comment>
 						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					</Comment>
 					<Type>BOOL</Type>
@@ -339,7 +339,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					<Name>GVL_Devices.GasMan.stBaseIO.i_SyncUnitWC</Name>
 					<Comment>
 						<![CDATA[ This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive]]>
 					</Comment>
 					<Type>BOOL</Type>

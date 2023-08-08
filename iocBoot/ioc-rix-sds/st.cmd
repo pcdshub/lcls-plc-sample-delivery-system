@@ -4,8 +4,8 @@
 #         Project: SDS.tsproj
 #        PLC name: SDSPLC (SDSPLC Instance)
 # Generated using: pytmc 2.15.1
-# Project version: 560f2f2
-#    Project hash: 560f2f2927345a0dfbdeedcce1d43db42abd336d
+# Project version: 1e35136
+#    Project hash: 1e35136af1f2e5a7f0d9c7e62c1fa430bc8e106b
 #     PLC IP/host: plc-rix-sds (Specified in Makefile; project has: 172.21.38.26)
 #      PLC Net ID: 172.21.140.88.1.1 (Specified in Makefile; project has: 172.21.38.26.1.1)
 #  ** Production mode IOC **
@@ -84,7 +84,7 @@ dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:SDSPLC,IDX=1"
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:SDSPLC,IDX=2")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:SDSPLC")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:SDSPLC,PROJECT=SDS.tsproj,HASH=560f2f2,VERSION=560f2f2,PYTMC=2.15.1,PLC_HOST=plc-rix-sds")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:SDSPLC,PROJECT=SDS.tsproj,HASH=1e35136,VERSION=1e35136,PYTMC=2.15.1,PLC_HOST=plc-rix-sds")
 
 #   Tc2_Standard: * -> 3.3.2.0 (Beckhoff Automation GmbH)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:SDSPLC,DEPENDENCY=Tc2_Standard,VERSION=3.3.2.0,VENDOR=Beckhoff Automation GmbH")

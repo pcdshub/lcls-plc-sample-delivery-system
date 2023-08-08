@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{8852069A-E759-946B-ECED-377742C393CC}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{15EE222B-DB3A-92DB-5FEA-3358144728BA}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name>ST_M3DeviceBaseIO</Name>
@@ -8,7 +8,7 @@
         <Name>i_SyncUnitWC</Name>
         <Type>BOOL</Type>
         <Comment> This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Comment>
         <BitSize>8</BitSize>
         <BitOffs>0</BitOffs>
@@ -115,7 +115,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
             <Name>pytmc</Name>
             <Value>
         pv: 01
-		io: i
+        io: io
      </Value>
           </Property>
         </Properties>
@@ -130,7 +130,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
             <Name>pytmc</Name>
             <Value>
         pv: 02
-		io: i
+        io: io
      </Value>
           </Property>
         </Properties>
@@ -145,7 +145,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
             <Name>pytmc</Name>
             <Value>
         pv: 03
-		io: i
+        io: io
      </Value>
           </Property>
         </Properties>
@@ -160,7 +160,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
             <Name>pytmc</Name>
             <Value>
         pv: 04
-		io: i
+        io: io
      </Value>
           </Property>
         </Properties>
@@ -175,7 +175,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
             <Name>pytmc</Name>
             <Value>
         pv: 05
-		io: i
+        io: io
      </Value>
           </Property>
         </Properties>
@@ -190,7 +190,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
             <Name>pytmc</Name>
             <Value>
         pv: 06
-		io: i
+        io: io
      </Value>
           </Property>
         </Properties>
@@ -205,7 +205,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
             <Name>pytmc</Name>
             <Value>
         pv: 07
-		io: i
+        io: io
      </Value>
           </Property>
         </Properties>
@@ -220,7 +220,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
             <Name>pytmc</Name>
             <Value>
         pv: 08
-		io: i
+        io: io
      </Value>
           </Property>
         </Properties>
@@ -235,7 +235,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
             <Name>pytmc</Name>
             <Value>
         pv: 09
-		io: i
+        io: io
      </Value>
           </Property>
         </Properties>
@@ -250,7 +250,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
             <Name>pytmc</Name>
             <Value>
         pv: 10
-		io: i
+        io: io
      </Value>
           </Property>
         </Properties>
@@ -265,7 +265,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
             <Name>pytmc</Name>
             <Value>
         pv: 11
-		io: i
+        io: io
      </Value>
           </Property>
         </Properties>
@@ -280,7 +280,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
             <Name>pytmc</Name>
             <Value>
         pv: 12
-		io: i
+        io: io
      </Value>
           </Property>
         </Properties>
@@ -489,7 +489,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
             <Name>pytmc</Name>
             <Value>
         pv: SampleNames
-        io: i
+        io: io
     </Value>
           </Property>
         </Properties>
@@ -15087,7 +15087,7 @@ fbSplit					: FB_Split255;</Comment>
             <Name>pytmc</Name>
             <Value>
         pv: Valve:01:Open
-		io: io
+        io: io
      </Value>
           </Property>
           <Property>
@@ -15106,7 +15106,7 @@ fbSplit					: FB_Split255;</Comment>
             <Name>pytmc</Name>
             <Value>
         pv: Valve:02:Open
-		io: io
+        io: io
      </Value>
           </Property>
           <Property>
@@ -15126,7 +15126,7 @@ fbSplit					: FB_Split255;</Comment>
             <Name>pytmc</Name>
             <Value>
         pv: Switch
-		io: o
+        io: o
      </Value>
           </Property>
           <Property>
@@ -15146,7 +15146,7 @@ fbSplit					: FB_Split255;</Comment>
             <Name>pytmc</Name>
             <Value>
         pv: Debug
-		io: o
+        io: o
      </Value>
           </Property>
           <Property>
@@ -15780,14 +15780,14 @@ ALI : FB_ALI;</Comment>
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.stSensSerial.stComIn.Status := TIIB[M3 Selector A Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
-						  .stViciSerial.stComIn.Status := TIIB[M3 Selector A Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
-						  .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector A Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
-						  .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector A Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
-						  .stShaker01.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 9^Output;
-						  .stShaker02.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 10^Output;
-						  .stShaker03.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 11^Output;
-						  .stShaker04.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 12^Output;
-						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector A (EP1111)^WcState^WcState;
+                          .stViciSerial.stComIn.Status := TIIB[M3 Selector A Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+                          .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector A Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                          .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector A Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                          .stShaker01.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 9^Output;
+                          .stShaker02.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 10^Output;
+                          .stShaker03.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 11^Output;
+                          .stShaker04.q_xPwrDO := TIIB[M3 Selector A Digital IO (EP2338-1001)]^Channel 12^Output;
+                          .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector A (EP1111)^WcState^WcState;
 </Value>
               </Property>
               <Property>
@@ -15810,14 +15810,14 @@ ALI : FB_ALI;</Comment>
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.stSensSerial.stComIn.Status := TIIB[M3 Selector B Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
-						  .stViciSerial.stComIn.Status := TIIB[M3 Selector B Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
-						  .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector B Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
-						  .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector B Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
-						  .stShaker01.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 9^Output;
-						  .stShaker02.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 10^Output;
-						  .stShaker03.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 11^Output;
-						  .stShaker04.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 12^Output;
-						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector B (EP1111)^WcState^WcState
+                          .stViciSerial.stComIn.Status := TIIB[M3 Selector B Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+                          .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector B Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                          .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector B Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                          .stShaker01.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 9^Output;
+                          .stShaker02.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 10^Output;
+                          .stShaker03.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 11^Output;
+                          .stShaker04.q_xPwrDO := TIIB[M3 Selector B Digital IO (EP2338-1001)]^Channel 12^Output;
+                          .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector B (EP1111)^WcState^WcState
 </Value>
               </Property>
               <Property>
@@ -15840,14 +15840,14 @@ ALI : FB_ALI;</Comment>
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.stSensSerial.stComIn.Status := TIIB[M3 Selector C Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
-						  .stViciSerial.stComIn.Status := TIIB[M3 Selector C Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
-						  .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector C Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
-						  .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector C Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
-						  .stShaker01.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 9^Output;
-						  .stShaker02.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 10^Output;
-						  .stShaker03.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 11^Output;
-						  .stShaker04.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 12^Output;
-						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector C (EP1111)^WcState^WcState
+                          .stViciSerial.stComIn.Status := TIIB[M3 Selector C Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+                          .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector C Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                          .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector C Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                          .stShaker01.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 9^Output;
+                          .stShaker02.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 10^Output;
+                          .stShaker03.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 11^Output;
+                          .stShaker04.q_xPwrDO := TIIB[M3 Selector C Digital IO (EP2338-1001)]^Channel 12^Output;
+                          .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector C (EP1111)^WcState^WcState
 </Value>
               </Property>
               <Property>
@@ -15870,14 +15870,14 @@ ALI : FB_ALI;</Comment>
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.stSensSerial.stComIn.Status := TIIB[M3 Selector D Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
-						  .stViciSerial.stComIn.Status := TIIB[M3 Selector D Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
-						  .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector D Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
-						  .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector D Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
-						  .stShaker01.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 9^Output;
-						  .stShaker02.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 10^Output;
-						  .stShaker03.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 11^Output;
-						  .stShaker04.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 12^Output;
-						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector D (EP1111)^WcState^WcState
+                          .stViciSerial.stComIn.Status := TIIB[M3 Selector D Serial IO (EP6002-0002)]^COM TxPDO-Map Inputs Channel 2^Status;
+                          .stSensSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector D Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                          .stViciSerial.stComOut.Ctrl := TIID^MAIN (EtherCAT)^M3 Selector D Serial IO (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                          .stShaker01.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 9^Output;
+                          .stShaker02.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 10^Output;
+                          .stShaker03.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 11^Output;
+                          .stShaker04.q_xPwrDO := TIIB[M3 Selector D Digital IO (EP2338-1001)]^Channel 12^Output;
+                          .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^M3 Selector D (EP1111)^WcState^WcState
 </Value>
               </Property>
               <Property>
@@ -15900,14 +15900,14 @@ ALI : FB_ALI;</Comment>
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.stPropAir1.i_iPressRB := TIID^MAIN (EtherCAT)^PCM A (EP4374-0002)^AI Inputs Channel 1^Value;
-						  .stPropAir2.i_iPressRB := TIID^MAIN (EtherCAT)^PCM A (EP4374-0002)^AI Inputs Channel 2^Value;
-						  .stPropAir1.q_iPressCt := TIID^MAIN (EtherCAT)^PCM A (EP4374-0002)^AO Outputs Channel 3^Analog output;
-						  .stPropAir2.q_iPressCt := TIID^MAIN (EtherCAT)^PCM A (EP4374-0002)^AO Outputs Channel 4^Analog output;
-						  .stSerial1.stComIn.Status := TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)^COM TxPDO-Map Inputs Channel 1^Status;
-						  .stSerial2.stComIn.Status := TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)^COM TxPDO-Map Inputs Channel 2^Status;
-						  .stSerial1.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
-						  .stSerial2.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
-						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^PCM A (EP1111)^WcState^WcState;
+                          .stPropAir2.i_iPressRB := TIID^MAIN (EtherCAT)^PCM A (EP4374-0002)^AI Inputs Channel 2^Value;
+                          .stPropAir1.q_iPressCt := TIID^MAIN (EtherCAT)^PCM A (EP4374-0002)^AO Outputs Channel 3^Analog output;
+                          .stPropAir2.q_iPressCt := TIID^MAIN (EtherCAT)^PCM A (EP4374-0002)^AO Outputs Channel 4^Analog output;
+                          .stSerial1.stComIn.Status := TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)^COM TxPDO-Map Inputs Channel 1^Status;
+                          .stSerial2.stComIn.Status := TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)^COM TxPDO-Map Inputs Channel 2^Status;
+                          .stSerial1.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                          .stSerial2.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM A (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                          .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^PCM A (EP1111)^WcState^WcState;
 </Value>
               </Property>
               <Property>
@@ -15930,14 +15930,14 @@ ALI : FB_ALI;</Comment>
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.stPropAir1.i_iPressRB := TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)^AI Inputs Channel 1^Value;
-						  .stPropAir2.i_iPressRB := TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)^AI Inputs Channel 2^Value;
-						  .stPropAir1.q_iPressCt := TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)^AO Outputs Channel 3^Analog output;
-						  .stPropAir2.q_iPressCt := TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)^AO Outputs Channel 4^Analog output;
-						  .stSerial1.stComIn.Status := TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)^COM TxPDO-Map Inputs Channel 1^Status;
-						  .stSerial2.stComIn.Status := TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)^COM TxPDO-Map Inputs Channel 2^Status;
-						  .stSerial1.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
-						  .stSerial2.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
-						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^PCM B (EP1111)^WcState^WcState;
+                          .stPropAir2.i_iPressRB := TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)^AI Inputs Channel 2^Value;
+                          .stPropAir1.q_iPressCt := TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)^AO Outputs Channel 3^Analog output;
+                          .stPropAir2.q_iPressCt := TIID^MAIN (EtherCAT)^PCM B (EP4374-0002)^AO Outputs Channel 4^Analog output;
+                          .stSerial1.stComIn.Status := TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)^COM TxPDO-Map Inputs Channel 1^Status;
+                          .stSerial2.stComIn.Status := TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)^COM TxPDO-Map Inputs Channel 2^Status;
+                          .stSerial1.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                          .stSerial2.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM B (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                          .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^PCM B (EP1111)^WcState^WcState;
 
 </Value>
               </Property>
@@ -15961,14 +15961,14 @@ ALI : FB_ALI;</Comment>
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.stPropAir1.i_iPressRB := TIID^MAIN (EtherCAT)^PCM C (EP4374-0002)^AI Inputs Channel 1^Value;
-						  .stPropAir2.i_iPressRB := TIID^MAIN (EtherCAT)^PCM C (EP4374-0002)^AI Inputs Channel 2^Value;
-						  .stPropAir1.q_iPressCt := TIID^MAIN (EtherCAT)^PCM C (EP4374-0002)^AO Outputs Channel 3^Analog output;
-						  .stPropAir2.q_iPressCt := TIID^MAIN (EtherCAT)^PCM C (EP4374-0002)^AO Outputs Channel 4^Analog output;
-						  .stSerial1.stComIn.Status := TIID^MAIN (EtherCAT)^PCM C (EP6002-0002)^COM TxPDO-Map Inputs Channel 1^Status;
-						  .stSerial2.stComIn.Status := TIID^MAIN (EtherCAT)^PCM C (EP6002-0002)^COM TxPDO-Map Inputs Channel 2^Status;
-						  .stSerial1.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM C (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
-						  .stSerial2.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM C (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
-						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^PCM C (EP1111)^WcState^WcState;
+                          .stPropAir2.i_iPressRB := TIID^MAIN (EtherCAT)^PCM C (EP4374-0002)^AI Inputs Channel 2^Value;
+                          .stPropAir1.q_iPressCt := TIID^MAIN (EtherCAT)^PCM C (EP4374-0002)^AO Outputs Channel 3^Analog output;
+                          .stPropAir2.q_iPressCt := TIID^MAIN (EtherCAT)^PCM C (EP4374-0002)^AO Outputs Channel 4^Analog output;
+                          .stSerial1.stComIn.Status := TIID^MAIN (EtherCAT)^PCM C (EP6002-0002)^COM TxPDO-Map Inputs Channel 1^Status;
+                          .stSerial2.stComIn.Status := TIID^MAIN (EtherCAT)^PCM C (EP6002-0002)^COM TxPDO-Map Inputs Channel 2^Status;
+                          .stSerial1.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM C (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                          .stSerial2.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM C (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                          .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^PCM C (EP1111)^WcState^WcState;
 </Value>
               </Property>
               <Property>
@@ -15991,14 +15991,14 @@ ALI : FB_ALI;</Comment>
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.stPropAir1.i_iPressRB := TIID^MAIN (EtherCAT)^PCM D (EP4374-0002)^AI Inputs Channel 1^Value;
-						  .stPropAir2.i_iPressRB := TIID^MAIN (EtherCAT)^PCM D (EP4374-0002)^AI Inputs Channel 2^Value;
-						  .stPropAir1.q_iPressCt := TIID^MAIN (EtherCAT)^PCM D (EP4374-0002)^AO Outputs Channel 3^Analog output;
-						  .stPropAir2.q_iPressCt := TIID^MAIN (EtherCAT)^PCM D (EP4374-0002)^AO Outputs Channel 4^Analog output;
-						  .stSerial1.stComIn.Status := TIID^MAIN (EtherCAT)^PCM D (EP6002-0002)^COM TxPDO-Map Inputs Channel 1^Status;
-						  .stSerial2.stComIn.Status := TIID^MAIN (EtherCAT)^PCM D (EP6002-0002)^COM TxPDO-Map Inputs Channel 2^Status;
-						  .stSerial1.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM D (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
-						  .stSerial2.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM D (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
-						  .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^PCM D (EP1111)^WcState^WcState;
+                          .stPropAir2.i_iPressRB := TIID^MAIN (EtherCAT)^PCM D (EP4374-0002)^AI Inputs Channel 2^Value;
+                          .stPropAir1.q_iPressCt := TIID^MAIN (EtherCAT)^PCM D (EP4374-0002)^AO Outputs Channel 3^Analog output;
+                          .stPropAir2.q_iPressCt := TIID^MAIN (EtherCAT)^PCM D (EP4374-0002)^AO Outputs Channel 4^Analog output;
+                          .stSerial1.stComIn.Status := TIID^MAIN (EtherCAT)^PCM D (EP6002-0002)^COM TxPDO-Map Inputs Channel 1^Status;
+                          .stSerial2.stComIn.Status := TIID^MAIN (EtherCAT)^PCM D (EP6002-0002)^COM TxPDO-Map Inputs Channel 2^Status;
+                          .stSerial1.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM D (EP6002-0002)^COM RxPDO-Map Outputs Channel 1^Ctrl;
+                          .stSerial2.stComOut.Ctrl := TIID^MAIN (EtherCAT)^PCM D (EP6002-0002)^COM RxPDO-Map Outputs Channel 2^Ctrl;
+                          .stBaseIO.i_SyncUnitWC := TIID^MAIN (EtherCAT)^PCM D (EP1111)^WcState^WcState;
 </Value>
               </Property>
               <Property>
@@ -16126,7 +16126,7 @@ ALI : FB_ALI;</Comment>
           <Symbol>
             <Name>GVL_Devices.M3SelectorA.stBaseIO.i_SyncUnitWC</Name>
             <Comment> This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Comment>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
@@ -16151,7 +16151,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
           <Symbol>
             <Name>GVL_Devices.M3SelectorB.stBaseIO.i_SyncUnitWC</Name>
             <Comment> This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Comment>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
@@ -16176,7 +16176,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
           <Symbol>
             <Name>GVL_Devices.M3SelectorC.stBaseIO.i_SyncUnitWC</Name>
             <Comment> This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Comment>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
@@ -16201,7 +16201,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
           <Symbol>
             <Name>GVL_Devices.M3SelectorD.stBaseIO.i_SyncUnitWC</Name>
             <Comment> This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Comment>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
@@ -16226,7 +16226,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
           <Symbol>
             <Name>GVL_Devices.PCMA.stBaseIO.i_SyncUnitWC</Name>
             <Comment> This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Comment>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
@@ -16283,7 +16283,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
           <Symbol>
             <Name>GVL_Devices.PCMB.stBaseIO.i_SyncUnitWC</Name>
             <Comment> This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Comment>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
@@ -16340,7 +16340,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
           <Symbol>
             <Name>GVL_Devices.PCMC.stBaseIO.i_SyncUnitWC</Name>
             <Comment> This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Comment>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
@@ -16397,7 +16397,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
           <Symbol>
             <Name>GVL_Devices.PCMD.stBaseIO.i_SyncUnitWC</Name>
             <Comment> This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Comment>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
@@ -16454,7 +16454,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
           <Symbol>
             <Name>GVL_Devices.GasMan.stBaseIO.i_SyncUnitWC</Name>
             <Comment> This structure should be used as a basis for M3 arch. IO clusters.
-	Will stash stuff like ethercat diagnostics and other general purpose stuff 
+    Will stash stuff like ethercat diagnostics and other general purpose stuff 
 WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Comment>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
@@ -16778,7 +16778,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
                 <Name>pytmc</Name>
                 <Value>
         pv: Switch
-		io: o
+        io: o
      </Value>
               </Property>
               <Property>
@@ -16798,7 +16798,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
                 <Name>pytmc</Name>
                 <Value>
         pv: Debug
-		io: o
+        io: o
      </Value>
               </Property>
               <Property>
@@ -17471,7 +17471,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
                 <Name>pytmc</Name>
                 <Value>
         pv: Valve:01:Open
-		io: io
+        io: io
      </Value>
               </Property>
               <Property>
@@ -17490,7 +17490,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
                 <Name>pytmc</Name>
                 <Value>
         pv: Valve:02:Open
-		io: io
+        io: io
      </Value>
               </Property>
               <Property>
@@ -22897,20 +22897,20 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.stValve[1].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 9^Output;
-						  .stValve[1].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 1^Input;
-						  .stValve[2].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 10^Output;
-						  .stValve[2].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 2^Input;
-						  .stValve[3].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 11^Output;
-						  .stValve[3].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 3^Input;
-						  .stValve[4].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 12^Output;
-						  .stValve[4].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 4^Input;
-						  .stValve[5].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 13^Output;
-						  .stValve[5].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 5^Input;
-						  .stValve[6].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 14^Output;
-						  .stValve[6].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 6^Input;
-						  .stValve[7].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 15^Output;
-						  .stValve[7].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 7^Input;
-						  .stBaseIO.i_SyncUnitWC :=	TIID^MAIN (EtherCAT)^Gas_Mani (EP1111)^WcState^WcState;
+                          .stValve[1].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 1^Input;
+                          .stValve[2].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 10^Output;
+                          .stValve[2].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 2^Input;
+                          .stValve[3].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 11^Output;
+                          .stValve[3].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 3^Input;
+                          .stValve[4].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 12^Output;
+                          .stValve[4].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 4^Input;
+                          .stValve[5].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 13^Output;
+                          .stValve[5].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 5^Input;
+                          .stValve[6].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 14^Output;
+                          .stValve[6].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 6^Input;
+                          .stValve[7].qxDO := TIIB[Gas_Mani_ValveCtrl (EP2338-0001)]^Channel 15^Output;
+                          .stValve[7].ixOPN := TIIB[Gas_Mani_ValveRbk (EP2338-0001)]^Channel 7^Input;
+                          .stBaseIO.i_SyncUnitWC :=	TIID^MAIN (EtherCAT)^Gas_Mani (EP1111)^WcState^WcState;
 </Value>
               </Property>
               <Property>
@@ -22933,7 +22933,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.stMFM.i_rFlow := TIID^MAIN (EtherCAT)^Bronkhorst MFM A^TxPDO Map^fMeasure;
-						  .stMFM.q_rSetpoint := TIID^MAIN (EtherCAT)^Bronkhorst MFM A^RxPDO Map^fSetpoint;
+                          .stMFM.q_rSetpoint := TIID^MAIN (EtherCAT)^Bronkhorst MFM A^RxPDO Map^fSetpoint;
 </Value>
               </Property>
               <Property>
@@ -22956,7 +22956,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.stMFM.i_rFlow := TIID^MAIN (EtherCAT)^Bronkhorst MFM B^TxPDO Map^fMeasure;
-						  .stMFM.q_rSetpoint := TIID^MAIN (EtherCAT)^Bronkhorst MFM B^RxPDO Map^fSetpoint;
+                          .stMFM.q_rSetpoint := TIID^MAIN (EtherCAT)^Bronkhorst MFM B^RxPDO Map^fSetpoint;
 </Value>
               </Property>
               <Property>
@@ -22979,7 +22979,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.stMFM.i_rFlow := TIID^MAIN (EtherCAT)^Bronkhorst MFM C^TxPDO Map^fMeasure;
-						  .stMFM.q_rSetpoint := TIID^MAIN (EtherCAT)^Bronkhorst MFM C^RxPDO Map^fSetpoint;
+                          .stMFM.q_rSetpoint := TIID^MAIN (EtherCAT)^Bronkhorst MFM C^RxPDO Map^fSetpoint;
 </Value>
               </Property>
               <Property>
@@ -23002,7 +23002,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.stMFM.i_rFlow := TIID^MAIN (EtherCAT)^Bronkhorst MFM D^TxPDO Map^fMeasure;
-						  .stMFM.q_rSetpoint := TIID^MAIN (EtherCAT)^Bronkhorst MFM D^RxPDO Map^fSetpoint;
+                          .stMFM.q_rSetpoint := TIID^MAIN (EtherCAT)^Bronkhorst MFM D^RxPDO Map^fSetpoint;
 </Value>
               </Property>
               <Property>
@@ -23025,7 +23025,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.q_xDO1 := TIIB[Solenoid Pair A Digital IO (EP2338-0001)]^Channel 9^Output;
-						  .q_xDO2 := TIIB[Solenoid Pair A Digital IO (EP2338-0001)]^Channel 10^Output;
+                          .q_xDO2 := TIIB[Solenoid Pair A Digital IO (EP2338-0001)]^Channel 10^Output;
 </Value>
               </Property>
               <Property>
@@ -23340,7 +23340,7 @@ WC bit tells you if the sync unit is OK, which tells you if cluster is alive</Co
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2022-05-17T18:44:16</Value>
+          <Value>2023-08-08T09:41:02</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>

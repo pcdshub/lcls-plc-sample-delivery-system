@@ -1,67 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <DUT Name="ST_Strings" Id="{732f2c27-82d7-468b-9b70-d5e6f1796e6b}">
     <Declaration><![CDATA[TYPE ST_Strings :
 STRUCT
     (* Twelve strings used to store sample names *)
     {attribute 'pytmc' := '
         pv: 01
-        io: i
+        io: io
      '}
      s1 : STRING;
      {attribute 'pytmc' := '
         pv: 02
-        io: i
+        io: io
      '}
      s2 : STRING;
      {attribute 'pytmc' := '
         pv: 03
-        io: i
+        io: io
      '}
      s3 : STRING;
      {attribute 'pytmc' := '
         pv: 04
-        io: i
+        io: io
      '}
      s4 : STRING;
      {attribute 'pytmc' := '
         pv: 05
-        io: i
+        io: io
      '}
      s5 : STRING;
      {attribute 'pytmc' := '
         pv: 06
-        io: i
+        io: io
      '}
      s6 : STRING;
      {attribute 'pytmc' := '
         pv: 07
-        io: i
+        io: io
      '}
      s7 : STRING;
      {attribute 'pytmc' := '
         pv: 08
-        io: i
+        io: io
      '}
      s8 : STRING;
      {attribute 'pytmc' := '
         pv: 09
-        io: i
+        io: io
      '}
      s9 : STRING;
      {attribute 'pytmc' := '
         pv: 10
-        io: i
+        io: io
      '}
      s10 : STRING;
      {attribute 'pytmc' := '
         pv: 11
-        io: i
+        io: io
      '}
      s11 : STRING;
      {attribute 'pytmc' := '
         pv: 12
-        io: i
+        io: io
      '}
      s12 : STRING;
 END_STRUCT

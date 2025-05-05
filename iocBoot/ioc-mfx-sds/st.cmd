@@ -1,13 +1,13 @@
-#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.6.0/bin/rhel7-x86_64/adsIoc
+#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.6.1/bin/rhel7-x86_64/adsIoc
 ################### AUTO-GENERATED DO NOT EDIT ###################
 #
 #         Project: SDS.tsproj
 #        PLC name: SDSPLC (SDSPLC Instance)
-# Generated using: pytmc 2.14.1
-# Project version: v1.0.0-26-gefaa292
-#    Project hash: efaa2923797b13bbf5d3fd5d7b0a165c933412fb
-#     PLC IP/host: plc-mfx-sds (Specified in Makefile; project has: 172.21.148.118)
-#      PLC Net ID: 172.21.72.113.1.1 (Specified in Makefile; project has: 172.21.148.118.1.1)
+# Generated using: pytmc 2.15.1
+# Project version: 1e35136
+#    Project hash: 1e35136af1f2e5a7f0d9c7e62c1fa430bc8e106b
+#     PLC IP/host: plc-mfx-sds (Specified in Makefile; project has: 172.21.38.26)
+#      PLC Net ID: 172.21.72.113.1.1 (Specified in Makefile; project has: 172.21.38.26.1.1)
 #  ** Production mode IOC **
 #  Using /cds/data/iocData for autosave and archiver settings.
 #
@@ -22,7 +22,7 @@
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
-epicsEnvSet("ENGINEER", "wwright8" )
+epicsEnvSet("ENGINEER", "jozamudi" )
 epicsEnvSet("LOCATION", "PLC:SDSPLC" )
 epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
 epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
@@ -38,7 +38,7 @@ epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
 epicsEnvSet("IPADDR",           "plc-mfx-sds")
 epicsEnvSet("AMSID",            "172.21.72.113.1.1")
 epicsEnvSet("AMS_PORT",         "851")
-epicsEnvSet("ADS_MAX_PARAMS",   "1405")
+epicsEnvSet("ADS_MAX_PARAMS",   "1453")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
 epicsEnvSet("ADS_MAX_DELAY_MS", "100")
 epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
@@ -84,7 +84,7 @@ dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:SDSPLC,IDX=1"
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:SDSPLC,IDX=2")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:SDSPLC")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:SDSPLC,PROJECT=SDS.tsproj,HASH=efaa292,VERSION=v1.0.0-26-gefaa292,PYTMC=2.14.1,PLC_HOST=plc-mfx-sds")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:SDSPLC,PROJECT=SDS.tsproj,HASH=1e35136,VERSION=1e35136,PYTMC=2.15.1,PLC_HOST=plc-mfx-sds")
 
 #   Tc2_Standard: * -> 3.3.2.0 (Beckhoff Automation GmbH)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:SDSPLC,DEPENDENCY=Tc2_Standard,VERSION=3.3.2.0,VENDOR=Beckhoff Automation GmbH")
@@ -98,8 +98,8 @@ cd "$(IOC_TOP)"
 ## PLC Project Database files ##
 dbLoadRecords("SDSPLC.db", "PORT=$(ASYN_PORT),PREFIX=PLC:SDSPLC:,IOCNAME=$(IOC),IOC=$(IOC),P=MFX:SDS")
 
-# Total records: 405
-callbackSetQueueSize(2810)
+# Total records: 453
+callbackSetQueueSize(2906)
 
 # Autosave and archive settings:
 save_restoreSet_status_prefix("PLC:SDSPLC:")
